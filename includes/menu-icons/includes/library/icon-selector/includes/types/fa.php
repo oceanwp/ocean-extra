@@ -157,7 +157,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'a11y',
-				'id'    => 'fa-volume-control-phone',
+				'id'    => 'fa-phone-volume',
 				'name'  => __( 'Phone Volume Control', 'ocean-extra' ),
 			),
 			array(
@@ -239,7 +239,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-bitbucket-square',
+				'id'    => 'fa-bitbucket',
 				'name'  => 'Bitbucket',
 			),
 			array(
@@ -329,8 +329,8 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-eercast',
-				'name'  => 'eercast',
+				'id'    => 'fa-sellcast',
+				'name'  => 'sellcast',
 			),
 			array(
 				'group' => 'brand',
@@ -349,7 +349,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-facebook-official',
+				'id'    => 'fa-facebook-f',
 				'name'  => 'Facebook',
 			),
 			array(
@@ -434,8 +434,8 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-gittip',
-				'name'  => 'GitTip',
+				'id'    => 'fa-gratipay',
+				'name'  => 'Gratipay',
 			),
 			array(
 				'group' => 'brand',
@@ -529,12 +529,12 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-linkedin',
+				'id'    => 'fa-linkedin-in',
 				'name'  => 'LinkedIn',
 			),
 			array(
 				'group' => 'brand',
-				'id'    => 'fa-linkedin-square',
+				'id'    => 'fa-linkedin',
 				'name'  => 'LinkedIn',
 			),
 			array(
@@ -551,11 +551,6 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 				'group' => 'brand',
 				'id'    => 'fa-maxcdn',
 				'name'  => 'MaxCDN',
-			),
-			array(
-				'group' => 'brand',
-				'id'    => 'fa-meanpath',
-				'name'  => 'meanpath',
 			),
 			array(
 				'group' => 'brand',
@@ -951,22 +946,22 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			/* Chart (chart) */
 			array(
 				'group' => 'chart',
-				'id'    => 'fa-area-chart',
+				'id'    => 'fa-chart-area',
 				'name'  => __( 'Area Chart', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'chart',
-				'id'    => 'fa-bar-chart-o',
+				'id'    => 'fa-chart-bar',
 				'name'  => __( 'Bar Chart', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'chart',
-				'id'    => 'fa-line-chart',
+				'id'    => 'fa-chart-line',
 				'name'  => __( 'Line Chart', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'chart',
-				'id'    => 'fa-pie-chart',
+				'id'    => 'fa-chart-pie',
 				'name'  => __( 'Pie Chart', 'ocean-extra' ),
 			),
 
@@ -978,17 +973,17 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-dollar',
+				'id'    => 'fa-dollar-sign',
 				'name'  => __( 'Dollar', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-euro',
+				'id'    => 'fa-euro-sign',
 				'name'  => __( 'Euro', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-gbp',
+				'id'    => 'fa-pound-sign',
 				'name'  => __( 'GBP', 'ocean-extra' ),
 			),
 			array(
@@ -1003,37 +998,37 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-ils',
+				'id'    => 'fa-sheqel-sign',
 				'name'  => __( 'Israeli Sheqel', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-money',
+				'id'    => 'fa-money-check-alt',
 				'name'  => __( 'Money', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-rouble',
+				'id'    => 'fa-ruble-sign',
 				'name'  => __( 'Rouble', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-inr',
+				'id'    => 'fa-rupee-sign',
 				'name'  => __( 'Rupee', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-try',
+				'id'    => 'fa-lira-sign',
 				'name'  => __( 'Turkish Lira', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-krw',
+				'id'    => 'fa-won-sign',
 				'name'  => __( 'Won', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'currency',
-				'id'    => 'fa-jpy',
+				'id'    => 'fa-yen-sign',
 				'name'  => __( 'Yen', 'ocean-extra' ),
 			),
 
@@ -1080,22 +1075,22 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrow-circle-o-down',
+				'id'    => 'fa-arrow-alt-circle-down',
 				'name'  => __( 'Arrow Circle Down', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrow-circle-o-left',
+				'id'    => 'fa-arrow-alt-circle-left',
 				'name'  => __( 'Arrow Circle Left', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrow-circle-o-right',
+				'id'    => 'fa-arrow-alt-circle-right',
 				'name'  => __( 'Arrow Circle Right', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrow-circle-o-up',
+				'id'    => 'fa-arrow-alt-circle-up',
 				'name'  => __( 'Arrow Circle Up', 'ocean-extra' ),
 			),
 			array(
@@ -1140,7 +1135,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrows',
+				'id'    => 'fa-arrows-alt-v',
 				'name'  => __( 'Arrows', 'ocean-extra' ),
 			),
 			array(
@@ -1150,12 +1145,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-arrows-h',
-				'name'  => __( 'Arrows', 'ocean-extra' ),
-			),
-			array(
-				'group' => 'directional',
-				'id'    => 'fa-arrows-v',
+				'id'    => 'fa-arrows-alt-h',
 				'name'  => __( 'Arrows', 'ocean-extra' ),
 			),
 			array(
@@ -1180,22 +1170,22 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-caret-square-o-down',
+				'id'    => 'fa-caret-square-down',
 				'name'  => __( 'Caret Down', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-caret-square-o-left',
+				'id'    => 'fa-caret-square-left',
 				'name'  => __( 'Caret Left', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-caret-square-o-right',
+				'id'    => 'fa-caret-square-right',
 				'name'  => __( 'Caret Right', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-caret-square-o-up',
+				'id'    => 'fa-caret-square-up',
 				'name'  => __( 'Caret Up', 'ocean-extra' ),
 			),
 			array(
@@ -1240,42 +1230,42 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-hand-o-down',
+				'id'    => 'fa-hand-point-down',
 				'name'  => __( 'Hand Down', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-hand-o-left',
+				'id'    => 'fa-hand-point-left',
 				'name'  => __( 'Hand Left', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-hand-o-right',
+				'id'    => 'fa-hand-point-right',
 				'name'  => __( 'Hand Right', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-hand-o-up',
+				'id'    => 'fa-hand-point-up',
 				'name'  => __( 'Hand Up', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-long-arrow-down',
+				'id'    => 'fa-long-arrow-alt-down',
 				'name'  => __( 'Long Arrow Down', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-long-arrow-left',
+				'id'    => 'fa-long-arrow-alt-left',
 				'name'  => __( 'Long Arrow Left', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-long-arrow-right',
+				'id'    => 'fa-long-arrow-alt-right',
 				'name'  => __( 'Long Arrow Right', 'ocean-extra' ),
 			),
 			array(
 				'group' => 'directional',
-				'id'    => 'fa-long-arrow-up',
+				'id'    => 'fa-long-arrow-alt-up',
 				'name'  => __( 'Long Arrow Up', 'ocean-extra' ),
 			),
 
