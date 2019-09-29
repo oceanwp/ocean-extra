@@ -28,7 +28,7 @@ class OE_Icon_Picker_Type_Font_Awesome extends OE_Icon_Picker_Type_Font {
 	 * Icon type version
 	 *
 	 */
-	protected $version = '4.7.0';
+	protected $version = '5.11.2';
 
 	/**
 	 * Stylesheet ID
