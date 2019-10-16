@@ -45,6 +45,8 @@ final class OE_Icon_Selector {
 	 */
 	protected $default_types = array(
 		'fa'               		=> 'Font_Awesome',
+		'fas'               	=> 'Font_Awesome_Solid',
+		'fab'               	=> 'Font_Awesome_Brand',
 		'simple-line-icons' 	=> 'Simple_Line_Icons',
 		'dashicons'        		=> 'Dashicons',
 		'elusive'          		=> 'Elusive',
