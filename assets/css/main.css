@@ -1092,7 +1092,7 @@ h6 {
 
 .theme-heading .text::before {
   content: '\f105';
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 600 14px/1 'Font Awesome 5 Free';
   font-size: 18px;
   font-weight: 600;
   color: #13aff0;
@@ -1383,7 +1383,7 @@ input[type=checkbox]:checked:before {
   display: inline-block;
   vertical-align: middle;
   width: 16px;
-  font: 400 14px/1 FontAwesome;
+  font: 400 14px/1 'Font Awesome 5 Free';
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -180,7 +180,7 @@ body.breadcrumbs-position-default .page-header-title {
   content: '\f105';
   margin: 0 6px;
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal 600 14px/1 'Font Awesome 5 Free';
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
