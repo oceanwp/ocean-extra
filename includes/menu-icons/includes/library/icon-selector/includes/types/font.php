@@ -48,7 +48,7 @@ abstract class OE_Icon_Picker_Type_Font extends OE_Icon_Picker_Type {
 	 */
 	public function get_stylesheet_uri() {
 		$stylesheet_uri = '';
-		
+
 		if ( 'font-awesome' != $this->stylesheet_id
 			&& 'simple-line-icons' != $this->stylesheet_id ) {
 			$stylesheet_uri = sprintf(
@@ -61,7 +61,7 @@ abstract class OE_Icon_Picker_Type_Font extends OE_Icon_Picker_Type {
 
 		if ( class_exists( 'OCEANWP_Theme_Class' ) ) {
 			if ( 'font-awesome' == $this->stylesheet_id ) {
-				$stylesheet_uri = OCEANWP_CSS_DIR_URI .'third/font-awesome.min.css';
+				$stylesheet_uri = OCEANWP_THEME_URI .'/assets/fonts/fontawesome/css/all.min.css';
 			}
 
 			if ( 'simple-line-icons' == $this->stylesheet_id ) {

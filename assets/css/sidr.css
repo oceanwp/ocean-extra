@@ -145,9 +145,10 @@ a.sidr-class-toggle-sidr-close i {
 }
 
 .sidr-class-dropdown-toggle:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: '+';
   font-size: 20px;
+  Font-weight: 600;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -163,10 +164,11 @@ a.sidr-class-toggle-sidr-close i {
 }
 
 .sidr-class-dropdown-menu ul a:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome 5 Free';
   content: '\f105';
   display: inline-block;
   margin: 0 10px;
+  Font-weight: 600;
 }
 
 .sidr-class-dropdown-menu ul ul a:before {

@@ -135,6 +135,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				.oceanwp-social-widget-services-list li p { margin: 0 }
 				.oceanwp-social-widget-services-list li label { margin-bottom: 3px; display: block; color: #222; }
 				.oceanwp-social-widget-services-list li label span.fa { margin-right: 10px }
+				.oceanwp-social-widget-services-list li label span.fab { margin-right: 10px }
 				.oceanwp-social-widget-services-list .placeholder { border: 1px dashed #e3e3e3 }
 				.oceanwp-widget-select { width: 100% }
 				.color-label { display: block; margin-bottom: 5px; }
@@ -278,7 +279,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						$name     = $social_services_array[$key]['name'];
 						if ( $link ) {
 							$key  = 'vimeo-square' == $key ? 'vimeo' : $key;
-							$icon = 'youtube' == $key ? 'youtube-play' : $key;
+							$icon = 'youtube' == $key ? 'youtube' : $key;
 							$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
 							$icon = 'bloglovin' == $key ? 'heart' : $icon;
 							$icon = 'vimeo-square' == $key ? 'vimeo' : $icon;
@@ -293,7 +294,12 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 								echo '<a href="'. $link .'" title="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'">';
 
-									echo '<i class="fa fa-'. esc_attr( $icon ) .'"></i>';
+									//echo '<i class="fab fa-'. esc_attr( $icon ) .'"></i>';
+									if($icon == 'rss') {
+										echo '<i class="fa fa-'. esc_attr( $icon ) .'"></i>';
+									} else {
+										echo '<i class="fab fa-'. esc_attr( $icon ) .'"></i>';
+									}
 
 								echo '</a>';
 

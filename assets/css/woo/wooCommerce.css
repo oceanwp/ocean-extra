@@ -126,7 +126,7 @@ del .amount { color: #555 }
 .select2-container .select2-choice { line-height: 40px; height: 40px; border-color: #ddd; border-radius: 3px; }
 .select2-container .select2-choice .select2-arrow { width: 30px; }
 .select2-container .select2-choice .select2-arrow b,
-.select2-container .select2-choice abbr { font-family: 'FontAwesome'; font-size: 15px; line-height: 40px; text-align: center; }
+.select2-container .select2-choice abbr { font-family: 'Font Awesome 5 Free'; font-size: 15px; line-height: 40px; text-align: center; font-weight: 600; }
 .select2-container .select2-choice .select2-arrow b:before { content: '\f107'; }
 .select2-container .select2-choice .select2-arrow b:after { display: none; }
 .select2-drop-active,
@@ -157,7 +157,7 @@ Buttons
 .woocommerce #respond input#submit.loading:after,
 .woocommerce a.button.loading:after,
 .woocommerce button.button.loading:after,
-.woocommerce input.button.loading:after { display: inline-block; font-family: 'FontAwesome'; content: '\f110'; position: inherit; top: auto; right: auto; margin-left: 6px; vertical-align: top; font-weight: 400; -webkit-font-smoothing: antialiased; -webkit-animation: spin 2s infinite linear; -moz-animation: spin 2s infinite linear; animation: spin 2s infinite linear; color: inherit; opacity: 1; }
+.woocommerce input.button.loading:after { display: inline-block; font-family: 'Font Awesome 5 Free'; content: '\f110'; position: inherit; top: auto; right: auto; margin-left: 6px; vertical-align: top; font-weight: 400; -webkit-font-smoothing: antialiased; -webkit-animation: spin 2s infinite linear; -moz-animation: spin 2s infinite linear; animation: spin 2s infinite linear; color: inherit; opacity: 1; }
 
 @-webkit-keyframes spin { 25% { -webkit-transform: rotate(270deg); } 50% { -webkit-transform: rotate(90deg); } 75% { -webkit-transform: rotate(360deg); } 100% { -webkit-transform: rotate(180deg); } }
 @-moz-keyframes spin { 25% { -moz-transform: rotate(270deg); } 50% { -moz-transform: rotate(90deg); } 75% { -moz-transform: rotate(360deg); } 100% { -moz-transform: rotate(180deg); } }
@@ -173,7 +173,7 @@ Buttons
 .woocommerce button.alt:disabled { background-color: #777 }
 
 /* Button > Return to shop */
-.return-to-shop .button.wc-backward:before { font-family: 'FontAwesome'; content: '\f104'; margin-right: 8px; }
+.return-to-shop .button.wc-backward:before { font-family: 'Font Awesome 5 Free'; content: '\f104'; margin-right: 8px; font-weight: 600; }
 
 /*------------------------------------------------------------------
 Store
@@ -230,14 +230,14 @@ Notices
 .woocommerce-info a:hover { background-color: #0b7cac; }
 .woocommerce-message:before,
 .woocommerce-error:before,
-.woocommerce-info:before { font-family: 'FontAwesome'; margin-right: 10px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.woocommerce-info:before { font-family: 'Font Awesome 5 Free'; margin-right: 10px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 600; }
 
 ul.woocommerce-message:before,
 ul.woocommerce-error:before,
 ul.woocommerce-info:before { display: none; }
 ul.woocommerce-message li:before,
 ul.woocommerce-error li:before,
-ul.woocommerce-info li:before { font-family: 'FontAwesome'; margin-right: 10px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+ul.woocommerce-info li:before { font-family: 'Font Awesome 5 Free'; margin-right: 10px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-weight: 600; }
 
 /* notices > success */
 .woocommerce-message:before,
@@ -374,7 +374,7 @@ Single Product
 .woocommerce div.product .woocommerce-product-gallery { position: relative; }
 .woocommerce div.product .woocommerce-product-gallery .zoomImg { background-color: #fff; }
 .woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger { position: absolute; top: 10px; right: 10px; display: block; height: 32px; width: 32px; background-color: #eeeeee; color: #333333; border-radius: 3px; z-index: 99; text-align: center; text-indent: -999px; overflow: hidden; }
-.woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:before { display: inline-block; font: normal normal normal 16px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: block; content: '\f002'; line-height: 32px; text-indent: 0; }
+.woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:before { display: inline-block; font: normal normal 600 16px/1 'Font Awesome 5 Free'; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: block; content: '\f002'; line-height: 32px; text-indent: 0; }
 .woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger img { display: none !important; }
 .woocommerce div.product .woocommerce-product-gallery img { margin: 0; }
 .woocommerce div.product .woocommerce-product-gallery .flex-viewport { margin-bottom: 20px; }
@@ -759,7 +759,7 @@ Checkout
 .woocommerce-checkout #payment ul.payment_methods { padding-bottom: 20px; }
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > input[type=radio]:first-child { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label { display: block; font-size: 16px; font-weight: 600; padding: 20px; cursor: pointer; margin: 0; letter-spacing: 0.4px; }
-.woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before { font: normal normal normal 1em/1 FontAwesome; text-rendering: auto; -moz-osx-font-smoothing: grayscale; }
+.woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before { font: normal normal 600 1em/1 'Font Awesome 5 Free'; text-rendering: auto; -moz-osx-font-smoothing: grayscale; }
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > label:before { display: inline-block; font-size: inherit; -webkit-font-smoothing: antialiased; content: '\f10c'; color: #333; margin-right: 10px; -webkit-transition: color ease .2s; -moz-transition: color ease .2s; transition: color ease .2s; }
 .woocommerce-checkout #payment ul.payment_methods .wc_payment_method > input[type=radio]:first-child:checked + label:before { content: '\f192'; color: #13aff0; }
 .woocommerce-checkout #payment ul.payment_methods li { background-color: #fafafa; text-align: left; margin-bottom: 1px; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; }

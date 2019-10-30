@@ -97,7 +97,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 				.oceanwp-about-me-widget-services-list li { cursor: move; background: #fafafa; padding: 10px; border: 1px solid #e5e5e5; margin-bottom: 10px; }
 				.oceanwp-about-me-widget-services-list li p { margin: 0 }
 				.oceanwp-about-me-widget-services-list li label { margin-bottom: 3px; display: block; color: #222; }
-				.oceanwp-about-me-widget-services-list li label span.fa { margin-right: 10px }
+				.oceanwp-about-me-widget-services-list li label span.fab { margin-right: 10px }
 				.oceanwp-about-me-widget-services-list .placeholder { border: 1px dashed #e3e3e3 }
 				.oceanwp-widget-select { width: 100% }
 			</style>
@@ -212,9 +212,9 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 								$name     = $social_services_array[$key]['name'];
 								$nofollow = isset( $social_services_array[$key]['nofollow'] ) ? ' rel="nofollow"' : '';
 								if ( $link ) {
-									$icon = 'youtube' == $key ? 'youtube-play' : $key;
+									$icon = 'youtube' == $key ? 'youtube' : $key;
 									$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_html( $name ) .'"  target="_'.esc_attr( $target ).'""><i class="fa fa-'. esc_attr( $icon ) .'"></i></a></li>';
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_html( $name ) .'"  target="_'.esc_attr( $target ).'""><i class="fab fa-'. esc_attr( $icon ) .'"></i></a></li>';
 								}
 							} ?>
 
