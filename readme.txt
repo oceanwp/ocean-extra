@@ -3,7 +3,7 @@ Contributors: oceanwp
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 4.6
 Tested up to: 5.2
-Stable tag: 1.5.17
+Stable tag: 1.5.19
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,13 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 1.5.19 =
+- Fixed: Icon issue.
+- Fixed: Compatibility with WP5.3
+
+= 1.5.18 =
+- Fixed: Fatal Error.
 
 = 1.5.17 =
 - Added: Updated to FontAwesome-5 to fix the version conflict.

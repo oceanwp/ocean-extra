@@ -91,7 +91,7 @@ class QuietSkin extends \WP_Upgrader_Skin {
         }
     }
 
-    public function feedback($string) { /* no output */
+    public function feedback($string, ...$args) { /* no output */
     }
 
 }
