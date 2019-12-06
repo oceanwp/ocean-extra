@@ -30,7 +30,7 @@ function oceanwpWooMenuCart() {
 
 		// Hide cart dropdown
 		$j( 'div#current-shop-items-dropdown' ).click( function( event ) {
-			event.stopPropagation(); 
+			event.stopPropagation();
 		} );
 		$j( document ).click( function() {
 			$j( 'div#current-shop-items-dropdown' ).removeClass( 'show' );

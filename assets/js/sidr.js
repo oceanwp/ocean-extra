@@ -88,7 +88,7 @@ function oceanwpMobileMenu( event ) {
 
 				// Remove active dropdowns
 				$j( '.sidr-class-menu-item-has-children.active' ).removeClass( 'active' ).children( 'ul' ).hide();
-				
+
 				// FadeOut overlay
 				$j( '.oceanwp-sidr-overlay' ).fadeOut( 300, function() {
 					$j( this ).remove();

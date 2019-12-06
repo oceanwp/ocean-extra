@@ -283,7 +283,7 @@ __webpack_require__(2);
 
 	// Settings meta box
 	$('#oe-icons-settings-save').on('click', function (e) {
-		
+
 		var $button = $(this).prop('disabled', true),
 		    $spinner = $button.siblings('span.spinner');
 
@@ -426,7 +426,7 @@ var MenuIcons = wp.media.view.MediaFrame.IconPicker.extend({
 			this.off( 'open', this.setMenuTabPanelAriaAttributes, this );
 			// Set the router ARIA tab panel attributes when the modal opens.
 			this.off( 'open', this.setRouterTabPanelAriaAttributes, this );
-	
+
 			// Update the menu ARIA tab panel attributes when the content updates.
 			this.off( 'content:render', this.setMenuTabPanelAriaAttributes, this );
 			// Update the router ARIA tab panel attributes when the content updates.
