@@ -455,8 +455,8 @@ if ( ! function_exists( 'oceanwp_woo_total_cart_shortcode' ) ) {
 		}
 
 		$html  = '<span class="oceanwp-woo-total">';
-	    $html .= WC()->cart->get_total();
-	    $html .= '</span>';
+		$html .= WC()->cart->get_total();
+		$html .= '</span>';
 
 		return $html;
 

@@ -33,8 +33,7 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.5.20 =
-- Fixed: Menu icon picker.
-- Fixed: Updated Freemius SDK.
+- Fixed: - Fixed: Menu Icon Library: icon library loading blank.
 
 = 1.5.19 =
 - Fixed: Icon issue.

@@ -145,36 +145,15 @@
                         }
 
                         if ( is_array( $pricing ) && 0 < count( $pricing ) ) {
-                            $filtered_pricing = array();
+                            $has_paid_plan = true;
 
-                            foreach ( $pricing as $prices ) {
+                            foreach ( $pricing as &$prices ) {
                                 $prices = new FS_Pricing( $prices );
-
-                                if ( ! $prices->is_usd() ) {
-                                    /**
-                                     * Skip non-USD pricing.
-                                     *
-                                     * @author Leo Fajardo (@leorw)
-                                     * @since 2.3.1
-                                     */
-                                    continue;
-                                }
-
-                                if ( ( $prices->has_monthly() && $prices->monthly_price > 1.0 ) ||
-                                     ( $prices->has_annual() && $prices->annual_price > 1.0 ) ||
-                                     ( $prices->has_lifetime() && $prices->lifetime_price > 1.0 )
-                                ) {
-                                    $filtered_pricing[] = $prices;
-                                }
                             }
 
-                            if ( ! empty( $filtered_pricing ) ) {
-                                $has_paid_plan = true;
+                            $plan->pricing = $pricing;
 
-                                $plan->pricing = $filtered_pricing;
-
-                                $has_pricing = true;
-                            }
+                            $has_pricing = true;
                         }
 
                         if ( is_array( $features ) && 0 < count( $features ) ) {
