@@ -19,7 +19,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			
+
 			parent::__construct(
 	            'ocean_instagram',
 	            $name = __( '&raquo; Instagram', 'ocean-extra' ),
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 	        wp_enqueue_script( 'oe-insta-admin-script', OE_URL .'includes/widgets/js/insta-admin.min.js', array( 'jquery' ), false, true );
 
 	    }
-		
+
 		/**
 		 * Front-end display of widget.
 		 *
@@ -68,7 +68,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 			// After widget WP hook
 			echo $args['after_widget'];
 		}
-		
+
 		/**
 		 * Sanitize widget form values as they are saved.
 		 *
@@ -100,7 +100,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 			$instance['follow'] 			= $new_instance['follow'];
 			return $instance;
 		}
-		
+
 		/**
 		 * Back-end widget form.
 		 *
@@ -132,7 +132,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 			<div class="oceanwp-container">
 
 				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e('Title', 'ocean-extra'); ?></label>			
+					<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e('Title', 'ocean-extra'); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 				</p>
 
@@ -212,7 +212,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 						<div class="oceanwp-display-header-options <?php if ( 'yes' != $instance['display_header'] ) echo 'hidden'; ?>">
 							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label> 
+								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label>
 								<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['avatar'] ); ?>" style="margin-bottom:10px;" />
 								<input class="oceanwp-insta-avatar button button-secondary" type="button" value="<?php esc_html_e( 'Upload Image', 'ocean-extra' ); ?>" />
 							</p>
@@ -378,7 +378,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 							}
 
 							$output .= '<div class="oceanwp-instagram-info">';
-							
+
 								if ( $display_name == '' ) {
 									$name = $username;
 								} else {
@@ -386,7 +386,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 								}
 
 								$output .= '<h3 class="oceanwp-instagram-username"><a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">'. $name .'</a></h3>';
-								
+
 								if ( $description != '' ) {
 									$output .= '<p class="oceanwp-instagram-desc">'. do_shortcode( $description ) .'</p>';
 								}
@@ -426,7 +426,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 							}
 
 							$output .= '<div class="oceanwp-instagram-info">';
-							
+
 								if ( $display_name == '' ) {
 									$name = $username;
 								} else {
@@ -434,7 +434,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 								}
 
 								$output .= '<h3 class="oceanwp-instagram-username"><a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">'. $name .'</a></h3>';
-								
+
 								if ( $description != '' ) {
 									$output .= '<p class="oceanwp-instagram-desc">'. do_shortcode( $description ) .'</p>';
 								}
@@ -460,7 +460,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 			return $output;
 		}
-		
+
 		/**
 		 * based on https://gist.github.com/cosmocatalano/4544576
 		 */

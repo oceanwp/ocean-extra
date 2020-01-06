@@ -7,7 +7,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Holds field & argument defaults
-	 * 
+	 *
 	 */
 	protected static $defaults = array(
 		'field' => array(
@@ -27,7 +27,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Holds field attributes
-	 * 
+	 *
 	 */
 	protected static $types = array(
 		'text'            => 'OE_Form_Field_Text',
@@ -47,7 +47,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Holds forbidden attributes
-	 * 
+	 *
 	 */
 	protected static $forbidden_attributes = array(
 		'id',
@@ -59,7 +59,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Holds allowed html tags
-	 * 
+	 *
 	 */
 	protected $allowed_html = array(
 		'a'      => array(
@@ -76,13 +76,13 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Holds constructed field
-	 * 
+	 *
 	 */
 	protected $field;
 
 	/**
 	 * Holds field attributes
-	 * 
+	 *
 	 */
 	protected $attributes = array();
 
@@ -107,7 +107,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Create field
-	 * 
+	 *
 	 */
 	final public static function create( array $field, $args = array() ) {
 		$field = wp_parse_args( $field, self::$defaults['field'] );
@@ -141,7 +141,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 */
 	public function __construct( $field, $args ) {
 		$this->field = $field;
@@ -165,7 +165,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Attribute
-	 * 
+	 *
 	 */
 	public function __get( $key ) {
 		foreach ( array( 'attributes', 'field' ) as $group ) {
@@ -179,7 +179,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Create id/name attribute
-	 * 
+	 *
 	 */
 	protected function create_id_name( $format ) {
 		return call_user_func_array(
@@ -193,7 +193,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Create id attribute
-	 * 
+	 *
 	 */
 	protected function create_id() {
 		$format = implode( '-', $this->args->keys );
@@ -203,7 +203,7 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Create name attribute
-	 * 
+	 *
 	 */
 	protected function create_name() {
 		$format  = '%s';
@@ -214,13 +214,13 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Set field properties
-	 * 
+	 *
 	 */
 	protected function set_properties() {}
 
 	/**
 	 * Build field attributes
-	 * 
+	 *
 	 */
 	protected function build_attributes( $excludes = array() ) {
 		$excludes   = array_filter( (array) $excludes );
@@ -247,13 +247,13 @@ abstract class OE_Form_Field {
 
 	/**
 	 * Print field
-	 * 
+	 *
 	 */
 	abstract public function render();
 
 	/**
 	 * Print field description
-	 * 
+	 *
 	 */
 	public function description() {
 		if ( ! empty( $this->field['description'] ) ) {

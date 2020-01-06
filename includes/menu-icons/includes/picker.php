@@ -11,7 +11,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Initialize class
-	 * 
+	 *
 	 */
 	public static function init() {
 		add_action( 'load-nav-menus.php', array( __CLASS__, '_load_nav_menus' ) );
@@ -23,7 +23,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Load Icon Picker
-	 * 
+	 *
 	 */
 	public static function _load_nav_menus() {
 		OE_Icon_Selector::instance()->load();
@@ -33,7 +33,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Get menu item setting fields
-	 * 
+	 *
 	 */
 	protected static function _get_menu_item_fields( $meta ) {
 		$fields = array_merge(
@@ -57,7 +57,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Print fields
-	 * 
+	 *
 	 */
 	public static function _fields( $id, $item, $depth, $args ) {
 		$input_id      = sprintf( 'oe-icons-%d', $item->ID );
@@ -106,7 +106,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Add our field to the screen options toggle
-	 * 
+	 *
 	 */
 	public static function _columns( $columns ) {
 		$columns['icon'] = __( 'Icon', 'ocean-extra' );
@@ -116,7 +116,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Save menu item's icons metadata
-	 * 
+	 *
 	 */
 	public static function _save( $menu_id, $menu_item_db_id, $menu_item_args ) {
 		if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) {
@@ -145,7 +145,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Get and print media templates from all types
-	 * 
+	 *
 	 */
 	public static function _media_templates() {
 		$id_prefix = 'tmpl-oe-icons';
@@ -155,7 +155,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Print media template
-	 * 
+	 *
 	 */
 	protected static function _print_tempate( $id, $template ) {
 		?>
@@ -167,7 +167,7 @@ final class OE_Menu_Icons_Picker {
 
 	/**
 	 * Add extra icon type properties data
-	 * 
+	 *
 	 */
 	public static function _add_extra_type_props_data( $props, $id, $type ) {
 		$settings_fields = array(

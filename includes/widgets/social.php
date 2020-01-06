@@ -222,7 +222,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			// Get social services and 
+			// Get social services and
 			$social_services = isset( $instance['social_services'] ) ? $instance['social_services'] : '';
 
 			// Return if no services defined
@@ -375,7 +375,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			) ); ?>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label> 
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 			</p>
 
@@ -398,7 +398,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 					<option value="zoomout" <?php selected( $instance['transition'], 'zoomout' ) ?>><?php esc_html_e( 'Zoom Out', 'ocean-extra' ); ?></option>
 				</select>
 			</p>
-			
+
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"><?php esc_html_e( 'Link Target', 'ocean-extra' ); ?>:</label>
 				<br />
@@ -407,7 +407,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 					<option value="self" <?php selected( $instance['target'], 'self' ) ?>><?php esc_html_e( 'Self', 'ocean-extra' ); ?></option>
 				</select>
 			</p>
-			
+
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>"><?php esc_html_e( 'Dimensions', 'ocean-extra' ); ?>:</label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'size' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'size' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['size'] ); ?>" />
@@ -510,13 +510,13 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				|| $color || $color_hover
 				|| $border_color || $border_hover_color ) : ?>
 				<style>
-					#<?php echo $id; ?>.widget-oceanwp-social ul li a { 
+					#<?php echo $id; ?>.widget-oceanwp-social ul li a {
 						<?php if ( $bg_color ) { echo 'background-color:' . $bg_color; } ?>;
 						<?php if ( $color ) { echo 'color:' . $color; } ?>;
 						<?php if ( $border_color ) { echo 'border-color:' . $border_color; } ?>;
 					}
 
-					#<?php echo $id; ?>.widget-oceanwp-social ul li a:hover { 
+					#<?php echo $id; ?>.widget-oceanwp-social ul li a:hover {
 						<?php if ( $bg_hover_color ) { echo 'background-color:' . $bg_hover_color; } ?>;
 						<?php if ( $color_hover ) { echo 'color:' . $color_hover .'!important'; } ?>;
 						<?php if ( $border_hover_color ) { echo 'border-color:' . $border_hover_color .'!important'; } ?>;

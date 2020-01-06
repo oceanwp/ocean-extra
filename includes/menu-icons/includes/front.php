@@ -2,19 +2,19 @@
 
 /**
  * Front end functionalities
- * 
+ *
  */
 final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Icon types
-	 * 
+	 *
 	 */
 	protected static $icon_types = array();
 
 	/**
 	 * Default icon style
-	 * 
+	 *
 	 */
 	protected static $default_style = array(
 		'font_size'      => array(
@@ -39,13 +39,13 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Hidden label class
-	 * 
+	 *
 	 */
 	protected static $hidden_label_class = 'hidden';
 
 	/**
 	 * Add hooks for front-end functionalities
-	 * 
+	 *
 	 */
 	public static function init() {
 		$active_types = OE_Menu_Icons_Settings::get( 'global', 'icon_types' );
@@ -62,13 +62,13 @@ final class OE_Menu_Icons_Front_End {
 
 		/**
 		 * Allow themes/plugins to override the hidden label class
-		 * 
+		 *
 		 */
 		self::$hidden_label_class = apply_filters( 'oe_menu_icons_hidden_label_class', self::$hidden_label_class );
 
 		/**
 		 * Allow themes/plugins to override default inline style
-		 * 
+		 *
 		 */
 		self::$default_style = apply_filters( 'oe_menu_icons_default_style', self::$default_style );
 
@@ -80,7 +80,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get nav menu ID based on arguments passed to wp_nav_menu()
-	 * 
+	 *
 	 */
 	public static function get_nav_menu_id( $args ) {
 		$args = (object) $args;
@@ -115,7 +115,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Enqueue stylesheets
-	 * 
+	 *
 	 */
 	public static function _enqueue_styles() {
 		foreach ( self::$icon_types as $type ) {
@@ -132,7 +132,7 @@ final class OE_Menu_Icons_Front_End {
 	 *
 	 * We need to filter the menu item title but **not** regular post titles.
 	 * Thus, we're adding the filter when `wp_nav_menu()` is called.
-	 * 
+	 *
 	 */
 	public static function _add_menu_item_title_filter( $args ) {
 
@@ -152,7 +152,7 @@ final class OE_Menu_Icons_Front_End {
 		$priority = array_pop(self::$priorities_used);
 
 		remove_filter( 'the_title', array( __CLASS__, '_add_icon' ), $priority, 2 );
-		
+
 		return wp_page_menu( $args );
 	}
 
@@ -170,7 +170,7 @@ final class OE_Menu_Icons_Front_End {
 	 *
 	 * Because we don't want to filter post titles, we need to remove our
 	 * filter when `wp_nav_menu()` exits.
-	 * 
+	 *
 	 */
 	public static function _remove_menu_item_title_filter( $nav_menu ) {
 
@@ -183,7 +183,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Add icon to menu item title
-	 * 
+	 *
 	 */
 	public static function _add_icon( $title, $id ) {
 		$meta = OE_Menu_Icons_Meta::get( $id );
@@ -226,7 +226,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get icon
-	 * 
+	 *
 	 */
 	public static function get_icon( $meta ) {
 		$icon = '';
@@ -266,7 +266,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get icon style
-	 * 
+	 *
 	 */
 	public static function get_icon_style( $meta, $keys, $as_attribute = true ) {
 		$style_a = array();
@@ -310,7 +310,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get icon classes
-	 * 
+	 *
 	 */
 	public static function get_icon_classes( $meta, $output = 'string' ) {
 		$classes = array( 'icon' );
@@ -328,7 +328,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get font icon
-	 * 
+	 *
 	 */
 	public static function get_font_icon( $meta ) {
 		$classes = sprintf( '%s %s %s', self::get_icon_classes( $meta ), $meta['type'], $meta['icon'] );
@@ -339,7 +339,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get image icon
-	 * 
+	 *
 	 */
 	public static function get_image_icon( $meta ) {
 		$args = array(
@@ -357,7 +357,7 @@ final class OE_Menu_Icons_Front_End {
 
 	/**
 	 * Get SVG icon
-	 * 
+	 *
 	 */
 	public static function get_svg_icon( $meta ) {
 		$classes = sprintf( '%s svg', self::get_icon_classes( $meta ) );

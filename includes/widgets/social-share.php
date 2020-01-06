@@ -230,7 +230,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			// Get social share and 
+			// Get social share and
 			$social_share = isset( $instance['social_share'] ) ? $instance['social_share'] : '';
 
 			// Return if no social defined
@@ -364,7 +364,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 			) ); ?>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label> 
+				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 			</p>
 
@@ -442,7 +442,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 				|| $color
 				|| $border_color ) : ?>
 				<style>
-					#<?php echo $id; ?>.widget-oceanwp-social-share ul li a { 
+					#<?php echo $id; ?>.widget-oceanwp-social-share ul li a {
 						<?php if ( $bg_color ) { echo 'background-color:' . $bg_color; } ?>;
 						<?php if ( $color ) { echo 'color:' . $color; } ?>;
 						<?php if ( $border_color ) { echo 'border-color:' . $border_color; } ?>;

@@ -52,7 +52,7 @@ if ( ! class_exists( 'Ocean_Extra_Video_Widget' ) ) {
 				if ( $title ) {
 					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
-				
+
 				// Show video
 				if ( $video_url )  {
 					echo '<p class="responsive-video-wrap clr">';
@@ -60,10 +60,10 @@ if ( ! class_exists( 'Ocean_Extra_Video_Widget' ) ) {
 							'width' => 270
 						) );
 					echo '</p>';
-				} else { 
+				} else {
 					esc_html_e( 'You forgot to enter a video URL.', 'ocean-extra' );
 				}
-				
+
 				// Show video description if field isn't empty
 				if ( $description ) {
 					echo '<div class="oceanwp-video-widget-description">'. do_shortcode( $description ) .'</div>';
