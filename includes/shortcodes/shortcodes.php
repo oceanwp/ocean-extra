@@ -90,7 +90,7 @@ if ( ! function_exists( 'oceanwp_date_shortcode' ) ) {
 		$date .= date( 'Y' );
 
 		return esc_attr( $date );
-			
+
 	}
 
 }
@@ -163,7 +163,7 @@ if ( ! function_exists( 'oceanwp_site_url_shortcode' ) ) {
 
 		// Return
 		return $html;
-			
+
 	}
 
 }
@@ -455,9 +455,9 @@ if ( ! function_exists( 'oceanwp_woo_total_cart_shortcode' ) ) {
 		}
 
 		$html  = '<span class="oceanwp-woo-total">';
-	    $html .= WC()->cart->get_total();
-	    $html .= '</span>';
-			
+		$html .= WC()->cart->get_total();
+		$html .= '</span>';
+
 		return $html;
 
 	}
@@ -489,7 +489,7 @@ if ( ! function_exists( 'oceanwp_woo_cart_items_shortcode' ) ) {
 		$html  = '<span class="oceanwp-woo-cart-count">';
 	    $html .= WC()->cart->get_cart_contents_count();
 	    $html .= '</span>';
-			
+
 		return $html;
 
 	}
@@ -618,7 +618,7 @@ if ( ! function_exists( 'update_oceanwp_woo_free_shipping_left_shortcode' ) ) {
 
 	function update_oceanwp_woo_free_shipping_left_shortcode() {
 	    $atts = array();
-	   
+
 	    if ( ( isset( $_POST['content'] )
 	    	&& ( $_POST['content'] !== '' ) )
 	    		|| ( isset( $_POST['content_rech_data'] )
@@ -643,7 +643,7 @@ add_action( 'wp_ajax_update_oceanwp_woo_free_shipping_left_shortcode', 'update_o
 add_action( 'wp_ajax_nopriv_update_oceanwp_woo_free_shipping_left_shortcode', 'update_oceanwp_woo_free_shipping_left_shortcode' );
 
 /**
- * Add js code 
+ * Add js code
  *
  * @since 1.4.24
  */

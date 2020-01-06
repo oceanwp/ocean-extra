@@ -7,7 +7,7 @@
 if ( ! function_exists( 'oe_get_array_value_deep' ) ) {
 	/**
 	 * Get value of a multidimensional array
-	 * 
+	 *
 	 */
 	function oe_get_array_value_deep( array $array, array $keys ) {
 		if ( empty( $array ) || empty( $keys ) ) {
@@ -38,7 +38,7 @@ if ( ! function_exists( 'oe_get_array_value_deep' ) ) {
 if ( ! function_exists( 'oe_validate' ) ) {
 	/**
 	 * Validate settings values
-	 * 
+	 *
 	 */
 	function oe_validate( $values, $sanitize_cb = 'wp_kses_data' ) {
 		foreach ( $values as $key => $value ) {
@@ -59,7 +59,7 @@ if ( ! function_exists( 'oe_validate' ) ) {
 if ( ! function_exists( 'oe_get_image_sizes' ) ) {
 	/**
 	 * Get image sizes
-	 * 
+	 *
 	 */
 	function oe_get_image_sizes() {
 		$_sizes = array(
@@ -86,7 +86,7 @@ if ( ! function_exists( 'oe_get_image_sizes' ) ) {
 if ( ! function_exists( 'oe_get_script_suffix' ) ) {
 	/**
 	 * Get script & style suffix
-	 * 
+	 *
 	 */
 	function oe_get_script_suffix() {
 		return ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';

@@ -48,7 +48,7 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                 // first run for automatic message after first 24 hour
                 if (!get_option("automatic_2nd_notice")) {
                     update_option("automatic_2nd_notice", "second-time");
-                   
+
                 } else {
                     // clear cronjob after second 24 hour
                     wp_clear_scheduled_hook('add_second_notice');
@@ -58,7 +58,7 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                     wp_safe_redirect(admin_url());
                     exit;
                 }
-                
+
             }
         }
 
@@ -122,22 +122,8 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                         </div>
                     </div>
                 <?php
-                } else { ?>
-                    <div class="updated notice-success owp-extra-notice owp-contest-notice">
-                        <div class="notice-inner">
-                            <span class="dashicons dashicons-heart icon-side"></span>
-                            <div class="notice-content">
-                                <p><?php echo sprintf(
-                                    esc_html__( 'Thank you for installing OceanWP! As a gesture of our appreciation, here&rsquo;s your chance to win our best-selling %1$sCore Extension Bundle%2$s, which includes more than 14 premium extensions that&rsquo;ll enhance this website with state-of-the-art functionality. 5 winners are selected each month, so sign up today, you&rsquo;ve got nothing to lose!', 'ocean-extra' ),
-                                    '<a href="https://oceanwp.org/core-extensions-bundle/" target="_blank">', '</a>'
-                                    ); ?></p>
-                                <p><a href="https://oceanwp.org/bundle-contest/" class="btn button-primary" target="_blank"><?php _e( 'I want to win', 'ocean-extra' ); ?></a><a href="<?php echo esc_url((add_query_arg('owp_wizard_hide_notice', '2nd_notice'))); ?>" class="btn button-secondary"><?php _e( 'No thanks', 'ocean-extra' ); ?></a></p>
-                            </div>
-                            <a href="<?php echo esc_url((add_query_arg('owp_wizard_hide_notice', '2nd_notice'))); ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
-                        </div>
-                    </div>
-                <?php
-                } ?>
+                }
+                ?>
 
                 <style type="text/css">
                     .owp-extra-notice.updated { border-color: #13aff0; }
@@ -531,7 +517,7 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                         <div class="owp-wizard-setup-actions">
                             <button class="install-demos-button disabled" disabled data-next_step="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e("Install Demo", 'ocean-extra'); ?></button>
                             <a class="skip-btn" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e("Skip Step", 'ocean-extra'); ?></a>
-                        </div>                
+                        </div>
                     </div>
 
                 </div>
@@ -704,7 +690,7 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                         <input type="hidden" name="save_step" value="save_step"/>
                         <button class="continue" type="submit" ><?php esc_attr_e("Continue", 'ocean-extra'); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr($icon); ?>-alt"></i></button>
                         <a class="skip-btn" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e("Skip Step", 'ocean-extra'); ?></a>
-                    </div> 
+                    </div>
                 </form>
             </div>
             <?php
@@ -836,8 +822,12 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
          * Define cronjob
          */
         public static function cronjob_activation() {
-            date_default_timezone_set(get_option('timezone_string'));
-            $new_time_format = time() + (24 * 60 * 60 );      
+            $timezone_string = get_option( 'timezone_string' );
+            if ( ! $timezone_string ) {
+                return false;
+            }
+            date_default_timezone_set($timezone_string);
+            $new_time_format = time() + (24 * 60 * 60 );
             if (!wp_next_scheduled('add_second_notice')) {
                 wp_schedule_event($new_time_format, 'daily', 'add_second_notice');
             }
@@ -848,7 +838,7 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
          */
         public static function cronjob_deactivation() {
             wp_clear_scheduled_hook('add_second_notice');
-           
+
         }
 
     }

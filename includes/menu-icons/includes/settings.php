@@ -1,7 +1,7 @@
 <?php
 /**
  * Settings
- * 
+ *
  */
 
 /**
@@ -17,7 +17,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Default setting values
-	 * 
+	 *
 	 */
 	protected static $defaults = array(
 		'global' => array(
@@ -27,19 +27,19 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Setting values
-	 * 
+	 *
 	 */
 	protected static $settings = array();
 
 	/**
 	 * Script dependencies
-	 * 
+	 *
 	 */
 	protected static $script_deps = array( 'jquery' );
 
 	/**
 	 * Get setting value
-	 * 
+	 *
 	 */
 	public static function get() {
 		$args = func_get_args();
@@ -49,7 +49,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Get menu settings
-	 * 
+	 *
 	 */
 	public static function get_menu_settings( $menu_id ) {
 		$menu_settings = self::get( sprintf( 'menu_%d', $menu_id ) );
@@ -64,7 +64,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Check if menu icons is disabled for a menu
-	 * 
+	 *
 	 */
 	public static function is_menu_icons_disabled_for_menu( $menu_id = 0 ) {
 		if ( empty( $menu_id ) ) {
@@ -85,12 +85,12 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Settings init
-	 * 
+	 *
 	 */
 	public static function init() {
 		/**
 		 * Allow themes/plugins to override the default settings
-		 * 
+		 *
 		 */
 		self::$defaults = apply_filters( 'oe_menu_icons_settings_defaults', self::$defaults );
 
@@ -117,7 +117,7 @@ final class OE_Menu_Icons_Settings {
 
 		/**
 		 * Allow themes/plugins to override the settings
-		 * 
+		 *
 		 */
 		self::$settings = apply_filters( 'oe_menu_icons_settings', self::$settings );
 
@@ -137,14 +137,14 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Prepare wp-admin/nav-menus.php page
-	 * 
+	 *
 	 */
 	public static function _load_nav_menus() {
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, '_enqueue_assets' ), 99 );
 
 		/**
 		 * Allow settings meta box to be disabled.
-		 * 
+		 *
 		 */
 		$settings_disabled = apply_filters( 'oe_menu_icons_disable_settings', false );
 		if ( true === $settings_disabled ) {
@@ -159,7 +159,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Update settings
-	 * 
+	 *
 	 */
 	public static function _maybe_update_settings() {
 		if ( ! empty( $_POST['oe-icons']['settings'] ) ) {
@@ -175,7 +175,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Update settings
-	 * 
+	 *
 	 */
 	protected static function _update_settings( $values ) {
 		update_option(
@@ -197,7 +197,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Reset settings
-	 * 
+	 *
 	 */
 	protected static function _reset_settings() {
 		delete_option( 'oe-icons' );
@@ -213,7 +213,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Update settings via ajax
-	 * 
+	 *
 	 */
 	public static function _ajax_oe_menu_icons_update_settings() {
 		check_ajax_referer( self::UPDATE_KEY, self::UPDATE_KEY );
@@ -228,7 +228,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Print admin notices
-	 * 
+	 *
 	 */
 	public static function _admin_notices() {
 		$messages = array(
@@ -250,7 +250,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Settings meta box
-	 * 
+	 *
 	 */
 	private static function _add_settings_meta_box() {
 		add_meta_box(
@@ -266,7 +266,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Get ID of menu being edited
-	 * 
+	 *
 	 */
 	public static function get_current_menu_id() {
 		global $nav_menu_selected_id;
@@ -286,7 +286,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Get settings fields
-	 * 
+	 *
 	 */
 	public static function get_settings_fields( array $values = array() ) {
 		$fields = array(
@@ -416,7 +416,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Get settings sections
-	 * 
+	 *
 	 */
 	public static function get_fields() {
 		$menu_id    = self::get_current_menu_id();
@@ -464,7 +464,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Get processed settings fields
-	 * 
+	 *
 	 */
 	private static function _get_fields() {
 		if ( ! class_exists( 'OE_Form_Field' ) ) {
@@ -492,7 +492,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Settings meta box
-	 * 
+	 *
 	 */
 	public static function _meta_box() {
 		?>
@@ -563,7 +563,7 @@ final class OE_Menu_Icons_Settings {
 
 	/**
 	 * Enqueue scripts & styles for Appearance > Menus page
-	 * 
+	 *
 	 */
 	public static function _enqueue_assets() {
 		$url    = OE_Menu_Icons::get( 'url' );

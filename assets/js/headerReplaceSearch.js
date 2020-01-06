@@ -27,7 +27,7 @@ function oceanwpHeaderReplaceSearch() {
 		var $headerReplace 	= $j( '#searchform-header-replace' ),
 			$siteLeft 		= $j( '#site-header.top-header .header-top .left' ),
 			$siteRight 		= $j( '#site-header.top-header .header-top .right' );
-		
+
 		$j( 'a.search-header-replace-toggle' ).click( function( event ) {
 			// Display search form
 			$headerReplace.toggleClass( 'show' );
@@ -67,7 +67,7 @@ function oceanwpHeaderReplaceSearch() {
 		// Show
 		var $headerReplace 	= $j( '#searchform-header-replace' ),
 			$siteNavigation = $j( '#site-header.header-replace #site-navigation' );
-		
+
 		$j( 'a.search-header-replace-toggle' ).click( function( event ) {
 			// Display search form
 			$headerReplace.toggleClass( 'show' );

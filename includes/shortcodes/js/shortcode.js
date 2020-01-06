@@ -28,7 +28,7 @@ jQuery( function($) {
                     content_rech_data: rech_data
                 },
 
-                success: function( response ) {  
+                success: function( response ) {
                     spanSelect.html( '' );
                     spanSelect.html( response );
                 }

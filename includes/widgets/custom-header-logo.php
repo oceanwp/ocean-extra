@@ -59,7 +59,7 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Header_Logo_Widget' ) ) {
 					get_template_part( 'partials/header/logo' ); ?>
 
 				</div>
-				
+
 			<?php
 			// After widget WP hook
 			echo $args['after_widget'];

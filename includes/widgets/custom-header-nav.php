@@ -65,7 +65,7 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Header_Nav_Widget' ) ) {
 					get_template_part( 'partials/mobile/mobile-dropdown' ); ?>
 
 				</div>
-				
+
 			<?php
 			// After widget WP hook
 			echo $args['after_widget'];

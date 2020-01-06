@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) {
 }
 require_once(ABSPATH . 'wp-admin/includes/class-wp-upgrader.php');
 /*
- * Hide the 'Activate Plugin' and other links when not using QuietSkin as these links will 
- * fail when not called from /wp-admin 
+ * Hide the 'Activate Plugin' and other links when not using QuietSkin as these links will
+ * fail when not called from /wp-admin
  */
 
 class QuietSkin extends \WP_Upgrader_Skin {

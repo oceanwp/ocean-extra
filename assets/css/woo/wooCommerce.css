@@ -970,7 +970,7 @@ Responsive
 Tablet & Small Desktop Widths
 --------------------------------------------------------------*/
 @media only screen and (max-width: 1280px) {
-	
+
 	/* images thumbnails */
 	.woocommerce div.product .product-thumbnails { width: 275px; }
 
@@ -980,7 +980,7 @@ Tablet & Small Desktop Widths
 All Devices Under 992px
 --------------------------------------------------------------*/
 @media only screen and (max-width: 992px) {
-	
+
 	/* account page */
 	.woocommerce #customer_login .lost_password,
 	.woocommerce .oceanwp-loginform-wrap .lost_password { float: none; margin-top: 10px !important; line-height: 1; }
@@ -1025,9 +1025,9 @@ Phone Portrait & Landscape
 	.woocommerce div.product div.summary,
 	.woocommerce.content-full-width div.product div.images,
 	.woocommerce.content-full-width div.product div.summary { float: none; width: 100%; }
-	
+
 	.col2-set > div:first-child { margin-bottom: 30px; }
-	
+
 	.woocommerce #customer_login .form-row label[for="rememberme"] { margin: 0 0 0 4px; }
 
 	/* image */
@@ -1085,10 +1085,10 @@ All devices under 320px
 	/* shop toolbar */
 	.woocommerce .woocommerce-ordering .orderby,
 	.woocommerce .woocommerce-ordering .orderby span { width: 175px !important; }
-	
+
 	/* images thumbnails */
 	.woocommerce div.product .product-thumbnails { width: 215px; }
-	
+
 	/* product reviews */
 	.woocommerce #reviews #comments ol.commentlist li .comment_container { padding: 0; }
 	.woocommerce #reviews #comments ol.commentlist li img.avatar { display: none; }

@@ -10,7 +10,7 @@ final class OE_Menu_Icons_Meta {
 
 	/**
 	 * Default meta value
-	 * 
+	 *
 	 */
 	protected static $defaults = array(
 		'type' => '',
@@ -20,7 +20,7 @@ final class OE_Menu_Icons_Meta {
 
 	/**
 	 * Initialize metadata functionalities
-	 * 
+	 *
 	 */
 	public static function init() {
 		add_filter( 'is_protected_meta', array( __CLASS__, '_protect_meta_key' ), 10, 3 );
@@ -28,7 +28,7 @@ final class OE_Menu_Icons_Meta {
 
 	/**
 	 * Protect meta key
-	 * 
+	 *
 	 */
 	public static function _protect_meta_key( $protected, $meta_key, $meta_type ) {
 		if ( self::KEY === $meta_key ) {
@@ -40,7 +40,7 @@ final class OE_Menu_Icons_Meta {
 
 	/**
 	 * Get menu item meta value
-	 * 
+	 *
 	 */
 	public static function get( $id, $defaults = array() ) {
 		$defaults = wp_parse_args( $defaults, self::$defaults );
@@ -83,7 +83,7 @@ final class OE_Menu_Icons_Meta {
 
 	/**
 	 * Update menu item metadata
-	 * 
+	 *
 	 */
 	public static function update( $id, $value ) {
 		/**

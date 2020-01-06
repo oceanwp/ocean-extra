@@ -37,14 +37,14 @@ function oceanwpAutoLightbox() {
             && ! $j( this ).hasClass( 'woo-thumbnail' ) ) {
 
             $j( this ).addClass( 'oceanwp-lightbox' );
-            
+
         }
 
         if ( ! $j( this ).hasClass( 'no-lightbox' )
             && $j( this ).parent().hasClass( 'gallery-icon' ) ) {
 
             $j( this ).addClass( 'gallery-lightbox' );
-            
+
         }
 
     } );
