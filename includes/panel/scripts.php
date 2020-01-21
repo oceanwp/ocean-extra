@@ -483,7 +483,7 @@ class Ocean_Extra_Scripts_Panel {
             </div>
 
             <form id="oceanwp-scripts-panel-form" method="post" action="options.php">
-        
+
         <?php settings_fields('oe_scripts_settings'); ?>
                 <div class="oceanwp-modules">
 
@@ -596,7 +596,7 @@ class Ocean_Extra_Scripts_Panel {
                      *
                      * @since 1.2.1
                      */
-                    public function generate_js() {
+                    public static function generate_js() {
 
                         // Return if is not OceanWP or not writable
                         if (!class_exists('OCEANWP_Theme_Class') || !self::is_writable('js')) {
