@@ -1,3 +1,8 @@
+= 1.6.0 =
+- Updated: Freemius SDK for better account and license management.
+- Fixed: [oceanwp_nav] shortcode mobile menu issue.
+- Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
+
 = 1.5.20 =
 - Fixed: Menu Icon Library: icon library loading blank.
 

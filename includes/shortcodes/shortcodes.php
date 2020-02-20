@@ -57,7 +57,7 @@ if ( ! function_exists( 'oceanwp_nav_shortcode' ) ) {
 			get_template_part( 'partials/header/nav' );
 
 			// Mobile nav
-			get_template_part( 'partials/header/mobile-icon' ); ?>
+			get_template_part( 'partials/mobile/mobile-icon' ); ?>
 		</div>
 
 	<?php

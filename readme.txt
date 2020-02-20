@@ -2,8 +2,8 @@
 Contributors: oceanwp
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 4.6
-Tested up to: 5.3
-Stable tag: 1.5.20
+Tested up to: 5.3.2
+Stable tag: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,11 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 1.6.0 =
+- Updated: Freemius SDK for better account and license management.
+- Fixed: [oceanwp_nav] shortcode mobile menu issue.
+- Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
 
 = 1.5.20 =
 - Fixed: - Fixed: Menu Icon Library: icon library loading blank.
