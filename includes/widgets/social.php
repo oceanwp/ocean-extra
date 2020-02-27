@@ -296,9 +296,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 									//echo '<i class="fab fa-'. esc_attr( $icon ) .'"></i>';
 									if($icon == 'rss') {
-										echo '<i class="fa fa-'. esc_attr( $icon ) .'"></i>';
+										echo '<i class="fa fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 									} else {
-										echo '<i class="fab fa-'. esc_attr( $icon ) .'"></i>';
+										echo '<i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 									}
 
 								echo '</a>';

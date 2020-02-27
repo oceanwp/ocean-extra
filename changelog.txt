@@ -2,6 +2,8 @@
 - Updated: Freemius SDK for better account and license management.
 - Fixed: [oceanwp_nav] shortcode mobile menu issue.
 - Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
+- Fixed: Replaced get_woocommerce_term_meta (deprecated) by get_term_meta.
+- Added: Accessibility Improvement - Added 'aria-hidden' labels to the social icon widget.
 
 = 1.5.20 =
 - Fixed: Menu Icon Library: icon library loading blank.
