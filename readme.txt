@@ -1,9 +1,10 @@
 === Ocean Extra ===
-Contributors: oceanwp
+Contributors: oceanwp, apprimit
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
-Requires at least: 4.6
+Requires at least: 5.0
 Tested up to: 5.3.2
 Stable tag: 1.6.0
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +37,8 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 - Updated: Freemius SDK for better account and license management.
 - Fixed: [oceanwp_nav] shortcode mobile menu issue.
 - Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
+- Fixed: Replaced get_woocommerce_term_meta (deprecated) by get_term_meta.
+- Added: Accessibility Improvement - Added 'aria-hidden' labels to the social icon widget.
 
 = 1.5.20 =
 - Fixed: - Fixed: Menu Icon Library: icon library loading blank.

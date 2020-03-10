@@ -635,6 +635,7 @@ class Ocean_Extra_Scripts_Panel {
 
                         // Get js directory uri
                         $tDir = get_template_directory() . '/assets/js/';
+                        $oeDir = OE_PATH . '/assets/js/';
 
                         // If a script is disabled
                         if (!$customSelect || !$dropDownSearch || !$headerReplaceSearch || !$overlaySearch || !$fitVids || !$fixedFooter || !$parallax_footer || !$fullScreenMenu || !$verticalHeader || !$headerSearchForm || !$infiniteScroll || !$isotope || !$lightbox || !$matchHeight || !$megaMenu || !$navNoClick || !$scrollEffect || !$scrollTop || !$sidr || !$dropdown_mobile || !$fullscreen_mobile || !$slick || !$smoothScroll || !$superfish || !$wooAccountLinks || !$wooGridList || !$wooQuantityButtons || !$wooReviewsScroll) {
@@ -778,7 +779,7 @@ class Ocean_Extra_Scripts_Panel {
 
                                 // Load wooGridList js
                                 if ($wooGridList) {
-                                    $aFiles[] = $tDir . 'devs/cookie.js';
+                                    $aFiles[] = $oeDir . 'cookie.js';
                                     $aFiles[] = $tDir . 'third/woo/devs/wooGridList.js';
                                 }
 

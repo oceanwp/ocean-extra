@@ -126,6 +126,7 @@ module.exports = function ( grunt ) {
 					'!.git/**',
 					'!Gruntfile.js',
 					'!package.json',
+					'!package-lock.json',
 					'!.tern-project',
 					'!.gitignore',
 					'!.jshintrc',
@@ -137,6 +138,20 @@ module.exports = function ( grunt ) {
 					'!**/*~'
 				],
 				dest: 'build/<%= pkg.name %>/'
+			}
+		},
+
+		// Compress build directory into <name>.zip
+		compress: {
+			build: {
+				options: {
+					mode: 'zip',
+					archive: './build/<%= pkg.name %>.zip'
+				},
+				expand: true,
+				cwd: 'build/<%= pkg.name %>/',
+				src: [ '**/*' ],
+				dest: '<%= pkg.name %>/'
 			}
 		},
 

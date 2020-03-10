@@ -407,7 +407,7 @@
                 );
 
                 // Cache result (15-min).
-                set_transient( $transient_key, $response, 15 * MINUTE_IN_SECONDS );
+                $this->set_transient( $transient_key, $response, 15 * MINUTE_IN_SECONDS );
             }
 
             set_transient( "fs_license_migration_{$this->_product_id}_last_response", $response, WP_FS__TIME_24_HOURS_IN_SEC * 30 );
@@ -445,7 +445,7 @@
                             case 'invalid_license_key':
                             case 'license_expired':
                             case 'license_disabled':
-                                set_transient( $should_migrate_transient, 'no', WP_FS__TIME_24_HOURS_IN_SEC * 365 );
+                                $this->set_transient( $should_migrate_transient, 'no', WP_FS__TIME_24_HOURS_IN_SEC * 365 );
                                 break;
                             default:
                                 // Unexpected error.
@@ -461,7 +461,7 @@
                 }
 
                 // Delete transient on successful migration.
-                delete_transient( $transient_key );
+                $this->delete_transient_mixed( $transient_key );
 
                 if ( $this->_was_freemius_in_prev_version && $this->_fs->is_registered() ) {
                     if ( $this->_license_accessor->is_network_migration() ) {
@@ -548,7 +548,7 @@
                 }
 
                 // Upon successful migration, store the no-migration flag for 5 years.
-                set_transient( $should_migrate_transient, 'no', WP_FS__TIME_24_HOURS_IN_SEC * 365 * 5 );
+                $this->set_transient( $should_migrate_transient, 'no', WP_FS__TIME_24_HOURS_IN_SEC * 365 * 5 );
 
                 do_action( 'fs_after_client_migration', $this->_license_accessor );
 
@@ -774,7 +774,7 @@
                     $all_licenses   = $result['licenses'];
 
                     $transient_key = 'fs_license_migration_' . $this->_product_id . '_' . md5( implode( '', $all_licenses ) );
-                    $response      = get_transient( $transient_key );
+                    $response      = $this->get_transient_mixed( $transient_key );
 
                     $response->error->message = 'Migration error: ' . var_export( $response, true );
                 }
@@ -1087,7 +1087,7 @@
         protected function should_try_migrate() {
             $key = $this->get_should_migrate_transient_key();
 
-            $should_migrate = get_transient( $key );
+            $should_migrate = $this->get_transient_mixed( $key );
 
             return ( ! is_string( $should_migrate ) || 'no' !== $should_migrate );
         }
@@ -1123,6 +1123,35 @@
             }
 
             return $value;
+        }
+
+        /**
+         * @author Leo Fajardo (@leorw)
+         * @since 1.1.2.1
+         *
+         * @param string $transient
+         *
+         * @return mixed
+         */
+        private function get_transient_mixed( $transient ) {
+            $value = get_transient( $transient );
+
+            if ( false === $value ) {
+                $value = $this->get_transient( $transient );
+            }
+
+            return $value;
+        }
+
+        /**
+         * @author Leo Fajardo (@leorw)
+         * @since 1.1.2.1
+         *
+         * @param string $transient
+         */
+        private function delete_transient_mixed( $transient ) {
+            delete_transient( $transient );
+            $this->delete_transient( $transient );
         }
 
         /**
@@ -1163,6 +1192,43 @@
             }
 
             return false;
+        }
+
+        /**
+         * @author Leo Fajardo (@leorw)
+         * @since 1.1.2.1
+         *
+         * @param string $transient
+         * @param mixed  $value
+         * @param int    $expiration
+         *
+         * @return bool true if successfully updated a transient.
+         */
+        private function set_transient( $transient, $value, $expiration = 0 ) {
+            $this->delete_transient( $transient );
+
+            return $this->add_transient( $transient, $value, $expiration );
+        }
+
+        /**
+         * @author Leo Fajardo (@leorw)
+         * @since 1.1.2.1
+         *
+         * @param string $transient
+         *
+         * @return bool true if successfully removed.
+         */
+        private function delete_transient( $transient ) {
+            $transient_option  = '_fs_transient_' . $transient;
+            $transient_timeout = '_fs_transient_timeout_' . $transient;
+
+            $result = delete_option( $transient_option );
+
+            if ( false !== $result ) {
+                delete_option( $transient_timeout );
+            }
+
+            return $result;
         }
 
         #endregion
