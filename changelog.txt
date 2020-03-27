@@ -1,3 +1,6 @@
+= 1.6.1 =
+- fixed: Shortocde [oceanwp_nav] is not working..
+
 = 1.6.0 =
 - fixed: Freemius account details display.
 - Added: Updated custom header nav widget with respect to theme for accessibitly.
