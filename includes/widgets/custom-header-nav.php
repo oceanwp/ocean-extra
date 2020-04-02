@@ -47,11 +47,6 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Header_Nav_Widget' ) ) {
 			// Add classes
 			$classes 	= array( 'custom-header-nav', 'clr' );
 
-			// Add class for mobile sidebar menu style
-			if ( 'sidebar' == get_theme_mod( 'ocean_mobile_menu_style', 'sidebar' ) ) {
-				$classes[] = 'mobile-sidebar-menu-style';
-			}
-
 			$classes[] 	= $position;
 			$classes 	= implode( ' ', $classes );
 

@@ -7,10 +7,10 @@
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
- * Tested up to:		5.3.2
+ * Tested up to:		5.4
  *
  * Text Domain: ocean-extra
- * Domain Path: /languages/
+ * Domain Path: /languages
  *
  * @package Ocean_Extra
  * @category Core
@@ -204,7 +204,7 @@ final class Ocean_Extra {
 	 * @return  void
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
