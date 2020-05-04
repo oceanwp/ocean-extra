@@ -14508,7 +14508,12 @@
          * @return bool
          */
         function is_user_in_admin() {
-            return is_admin() && ! self::is_ajax() && ! self::is_cron();
+            return (
+                is_admin() &&
+                ! self::is_ajax() &&
+                ! self::is_cron() &&
+                ( 'admin-post.php' !== self::get_current_page() )
+            );
         }
 
         /**
@@ -23005,7 +23010,7 @@
                     if ( ! empty( $this->_dynamically_added_top_level_page_hook_name ) ) {
                         if ( $this->is_network_registered() ) {
                             $page = 'account';
-                        } else if ( $this->is_network_anonymous() ) {
+                        } else if ( $this->is_pending_activation() || $this->is_network_anonymous() ) {
                             $this->maybe_set_slug_and_network_menu_exists_flag();
                         }
                     }

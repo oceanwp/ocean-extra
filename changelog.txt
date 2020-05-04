@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.6.3 =
+- fixed: Uncaught ReferenceError: butterbean is not defined
+- fixed: OceanWP javascripts won't execute on fast pages
+
 = 1.6.2 =
 - fixed: [oceanwp_nav] error.
 
