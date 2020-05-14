@@ -801,11 +801,13 @@ if ( ! class_exists( 'ButterBean' ) ) {
 		public function render_views() { ?>
 
 			<script type="text/javascript">
-				( function( api ) {
-					if ( _.isObject( api ) && _.isFunction( api.render ) ) {
-						api.render();
-					}
-				}( butterbean ) );
+				if (typeof butterbean !== 'undefined') {
+					( function( api ) {
+						if ( _.isObject( api ) && _.isFunction( api.render ) ) {
+							api.render();
+						}
+					}( butterbean ) );
+				}
 			</script>
 		<?php }
 

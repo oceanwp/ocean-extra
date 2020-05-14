@@ -1,3 +1,24 @@
+== Changelog ==
+
+= 1.6.3 =
+- fixed: Uncaught ReferenceError: butterbean is not defined
+- fixed: OceanWP javascripts won't execute on fast pages
+
+= 1.6.2 =
+- fixed: [oceanwp_nav] error.
+
+= 1.6.1 =
+- fixed: Shortocde [oceanwp_nav] is not working.
+
+= 1.6.0 =
+- fixed: Freemius account details display.
+- Added: Updated custom header nav widget with respect to theme for accessibitly.
+- Updated: Freemius SDK for better account and license management.
+- Fixed: [oceanwp_nav] shortcode mobile menu issue.
+- Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
+- Fixed: Replaced get_woocommerce_term_meta (deprecated) by get_term_meta.
+- Added: Accessibility Improvement - Added 'aria-hidden' labels to the social icon widget.
+
 = 1.5.20 =
 - Fixed: Menu Icon Library: icon library loading blank.
 

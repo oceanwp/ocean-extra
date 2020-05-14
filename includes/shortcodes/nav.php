@@ -30,6 +30,7 @@ if ( ! class_exists( 'OceanWP_Nav_Shortcode' ) ) {
 
 			// Add classes
 			$classes 		= array( 'custom-header-nav', 'clr' );
+
 			$classes[] 		= $position;
 			$classes 		= implode( ' ', $classes ); ?>
 

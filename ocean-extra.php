@@ -3,14 +3,14 @@
  * Plugin Name:			Ocean Extra
  * Plugin URI:			https://oceanwp.org/extension/ocean-extra/
  * Description:			Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:				1.5.20
+ * Version:				1.6.3
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
- * Requires at least:	4.5.0
- * Tested up to:		5.3
+ * Requires at least:	5.3
+ * Tested up to:		5.4.1
  *
  * Text Domain: ocean-extra
- * Domain Path: /languages/
+ * Domain Path: /languages
  *
  * @package Ocean_Extra
  * @category Core
@@ -86,7 +86,7 @@ final class Ocean_Extra {
 		$this->token 			= 'ocean-extra';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.5.20';
+		$this->version 			= '1.6.3';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -204,7 +204,7 @@ final class Ocean_Extra {
 	 * @return  void
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
@@ -446,7 +446,7 @@ final class Ocean_Extra {
 			&& is_product_category() ) {
 		    global $wp_query;
 		    $cat = $wp_query->get_queried_object();
-		    $thumbnail_id = get_woocommerce_term_meta( $cat->term_id, 'thumbnail_id', true );
+		    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
 		    $get_image = wp_get_attachment_url( $thumbnail_id );
 		    if ( $get_image ) {
 				$image = $get_image;

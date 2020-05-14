@@ -46,6 +46,7 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Header_Nav_Widget' ) ) {
 
 			// Add classes
 			$classes 	= array( 'custom-header-nav', 'clr' );
+
 			$classes[] 	= $position;
 			$classes 	= implode( ' ', $classes );
 

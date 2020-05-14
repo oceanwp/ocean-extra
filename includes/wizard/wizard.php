@@ -86,7 +86,12 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                 delete_option("owp_wizard");
                 if (!get_option("2nd_notice")) {
                     update_option("2nd_notice", "second-time");
-                    date_default_timezone_set(get_option('timezone_string'));
+                    $timezone_string = get_option( 'timezone_string' );
+                    if ( ! $timezone_string ) {
+                        return false;
+                    }
+                    date_default_timezone_set($timezone_string);
+
                     // set time for next day
                     $new_time_format = time() + (24 * 60 * 60 );
                     //add "add_second_notice" cronjob

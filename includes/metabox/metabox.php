@@ -481,8 +481,8 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		        array(
 		            'section' 		=> 'oceanwp_mb_main',
 		            'type'    		=> 'buttonset',
-		            'label'   		=> esc_html__( 'Margins', 'ocean-extra' ),
-		            'description'   => esc_html__( 'Enable or disable the margin top and bottom.', 'ocean-extra' ),
+		            'label'   		=> esc_html__( 'Paddings', 'ocean-extra' ),
+		            'description'   => esc_html__( 'Enable or disable the padding top and bottom.', 'ocean-extra' ),
 					'choices' 		=> array(
 						'enable' 	=> esc_html__( 'Enable', 'ocean-extra' ),
 						'on' 		=> esc_html__( 'Disable', 'ocean-extra' ),
