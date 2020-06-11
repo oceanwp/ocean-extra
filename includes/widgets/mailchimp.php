@@ -43,7 +43,7 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
 
             if ( $email && $apikey && $list_id ) {
 
-                $root = 'https://api.mailchimp.com/2.0';
+                $root = 'https://api.mailchimp.com/3.0';
 
                 if ( strstr( $apikey, '-' ) ) {
                     list( $key, $dc ) = explode( '-', $apikey, 2 );

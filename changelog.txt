@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.6.4 =
+- fixed: Updated Mailchimp API
+- fixed: Missing Dependencies script 'butterbean'
+
 = 1.6.3 =
 - fixed: Uncaught ReferenceError: butterbean is not defined
 - fixed: OceanWP javascripts won't execute on fast pages
