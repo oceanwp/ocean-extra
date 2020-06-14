@@ -3,10 +3,10 @@
 = 1.6.4 =
 - Fixed: Updated Mailchimp API
 - Fixed: Missing Dependencies script 'butterbean'
-- Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me
-- Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me
-- Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me,
-- Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me
+- Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me, Social Icons
+- Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me, Social Icons
+- Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me, Social Icons
+- Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me, Social Icons
 
 = 1.6.3 =
 - Fixed: Uncaught ReferenceError: butterbean is not defined
