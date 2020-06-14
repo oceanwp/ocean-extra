@@ -580,7 +580,38 @@ final class Ocean_Extra {
 
 	}
 
-} // End Class
+} // End Class.
+
+/**
+ * Check link rel and return correct aria label
+ * @since 1.6.4
+ */
+
+if ( ! function_exists( 'ocean_link_rel' ) ) {
+	
+	function ocean_link_rel( $ocean_srt, $nofollow, $target ) {
+			
+		if ( $nofollow === 'yes' ) {
+			if ( $target === 'blank' ) {
+				$link_rel = 'rel="nofollow noopener noreferrer"';
+				$ocean_sr = $ocean_srt;
+			} else {
+				$link_rel = 'rel="nofollow"';
+				$ocean_sr = '';
+			}
+		} elseif ( $nofollow === 'no' || $nofollow === '' ) {
+			if ( $target === 'blank' ) {
+				$link_rel = 'rel="noopener noreferrer"';
+				$ocean_sr = $ocean_srt;
+			} else {
+				$link_rel = '';
+				$ocean_sr = '';
+			}
+		}
+	
+		return array( $ocean_sr, $link_rel );
+	}
+}
 
 #--------------------------------------------------------------------------------
 #region Freemius
