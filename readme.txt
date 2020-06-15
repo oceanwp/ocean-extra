@@ -34,12 +34,15 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.6.4 =
-- Fixed: Updated Mailchimp API
-- Fixed: Missing Dependencies script 'butterbean'
+- Fixed: Updated Mailchimp API.
+- Fixed: Missing Dependencies script 'butterbean'.
 - Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me, Social Icons
 - Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me, Social Icons
 - Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me, Social Icons
 - Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me, Social Icons
+- Added: New options to the Instagram Widget.
+- Fixed: Instagram Widget - incorrect link target on images display.
+- Fixed: Instagram Widget - avatar image only displaying square radius if position set to After Images.
 
 = 1.6.3 =
 - Fixed: Uncaught ReferenceError: butterbean is not defined
