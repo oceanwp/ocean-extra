@@ -212,7 +212,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 						<div class="oceanwp-display-header-options <?php if ( 'yes' != $instance['display_header'] ) echo 'hidden'; ?>">
 							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label>
+								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label> 
 								<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['avatar'] ); ?>" style="margin-bottom:10px;" />
 								<input class="oceanwp-insta-avatar button button-secondary" type="button" value="<?php esc_html_e( 'Upload Image', 'ocean-extra' ); ?>" />
 							</p>
