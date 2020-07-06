@@ -216,7 +216,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		public function enqueue_scripts( $hook ) {
 
 			// Only needed on these admin screens
-			if ( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' ) {
+			if ( $hook != 'post.php' && $hook != 'post-new.php' ) {
 				return;
 			}
 

@@ -3,14 +3,15 @@
  * About Me Widget.
  *
  * @package OceanWP WordPress theme
+ * @since 1.0.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Start class
+// Start class.
 if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 	class Ocean_Extra_About_Me_Widget extends WP_Widget {
 
@@ -21,51 +22,56 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 */
 		public function __construct() {
 
-			// Declare social services array
-			$this->social_services_array = apply_filters( 'ocean_about_me_widget_profiles', array(
-				'facebook'		=> array(
-					'name'		=> 'Facebook',
-					'url'		=> ''
-				),
-				'google-plus'	=> array(
-					'name'		=> 'GooglePlus',
-					'url'		=> ''
-				),
-				'instagram'		=> array(
-					'name'		=> 'Instagram',
-					'url'		=> ''
-				),
-				'linkedin' 		=> array(
-					'name'		=> 'LinkedIn',
-					'url'		=> ''
-				),
-				'pinterest' 	=> array(
-					'name'		=> 'Pinterest',
-					'url'		=> ''
-				),
-				'twitter' 		=> array(
-					'name'		=> 'Twitter',
-					'url'		=> ''
-				),
-				'youtube' 		=> array(
-					'name'		=> 'Youtube',
-					'url'		=> ''
-				),
-			) );
+			// Declare social services array.
+			$this->social_services_array = apply_filters( 'ocean_about_me_widget_profiles',
+				array(
+					'facebook'      => array(
+						'name'      => 'Facebook',
+						'url'       => ''
+					),
+					'google-plus'   => array(
+						'name'      => 'GooglePlus',
+						'url'       => ''
+					),
+					'instagram'     => array(
+						'name'      => 'Instagram',
+						'url'       => ''
+					),
+					'linkedin'      => array(
+						'name'      => 'LinkedIn',
+						'url'       => ''
+					),
+					'pinterest'     => array(
+						'name'      => 'Pinterest',
+						'url'       => ''
+					),
+					'twitter'       => array(
+						'name'      => 'Twitter',
+						'url'       => ''
+					),
+					'youtube'       => array(
+						'name'      => 'Youtube',
+						'url'       => ''
+					),
+				)
+			);
 
-			// Start up widget
+			// Start up widget.
 			parent::__construct(
 				'ocean_about_me',
 				esc_html__( '&raquo; About Me', 'ocean-extra' ),
 				array(
 					'classname'   => 'widget-oceanwp-about-me about-me-widget',
-					'description' => esc_html__( 'Adds a about me widget.', 'ocean-extra' ),
+					'description' => esc_html__( 'Adds an About Me widget.', 'ocean-extra' ),
 					'customize_selective_refresh' => true,
 				)
 			);
 			add_action( 'load-widgets.php', array( $this, 'scripts' ), 100 );
 
-			// Since 1.3.8
+			/**
+			 * @since 1.3.8
+			 *
+			 */
 			add_action( 'admin_head-widgets.php', array( $this, 'social_widget_style' ) );
 			add_action( 'admin_footer-widgets.php', array( $this, 'print_scripts' ) );
 		}
@@ -76,7 +82,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 * @since 1.0.0
 		 */
 		public function scripts() {
-			// If is not customizer to avoid conflct
+			// If is not customizer to avoid conflict.
 			if ( is_customize_preview() ) {
 				return;
 			}
@@ -91,7 +97,8 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 *
 		 * @param string $hook_suffix
 		 */
-		public function social_widget_style() { ?>
+		public function social_widget_style() {
+?>
 			<style>
 				.oceanwp-about-me-widget-services-list { padding-top: 10px; }
 				.oceanwp-about-me-widget-services-list li { cursor: move; background: #fafafa; padding: 10px; border: 1px solid #e5e5e5; margin-bottom: 10px; }
@@ -110,10 +117,11 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 * @since 1.3.8
 		 */
 		public function print_scripts() {
-			// If is not customizer to avoid conflct
+			// If it's not customizer to avoid conflict.
 			if ( is_customize_preview() ) {
 				return;
-			} ?>
+			}
+		?>
 
 			<script>
 				( function( $ ){
@@ -151,72 +159,99 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			// Get social services and
+			// Get social services.
 			$social_services = isset( $instance['social_services'] ) ? $instance['social_services'] : '';
 
-			// Return if no services defined
+			// Return if no services defined.
 			if ( ! $social_services ) {
 				return;
 			}
 
-			// Define vars
-			$title       		= isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$avatar 			= isset( $instance['avatar'] ) ? $instance['avatar'] : '';
-			$name 				= isset( $instance['name'] ) ? $instance['name'] : '';
-			$text 				= isset( $instance['text'] ) ? $instance['text'] : '';
-			$social_style 		= isset( $instance['social_style'] ) ? $instance['social_style'] : '';
-			$target 			= isset( $instance['target'] ) ? $instance['target'] : '';
+			// Define vars.
+			$title              = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+			$avatar             = isset( $instance['avatar'] ) ? $instance['avatar'] : '';
+			$name               = isset( $instance['name'] ) ? $instance['name'] : '';
+			$text               = isset( $instance['text'] ) ? $instance['text'] : '';
+			$social_style       = isset( $instance['social_style'] ) ? $instance['social_style'] : '';
+			$target             = isset( $instance['target'] ) ? $instance['target'] : '';
+			$nofollow           = isset( $instance['nofollow'] ) ? $instance['nofollow'] : '';
 
-			// Before widget WP hook
+			// Before widget WP hook.
 			echo $args['before_widget'];
 
-				// Show widget title
+				// Show widget title.
 				if ( $title ) {
 					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
-				} ?>
+				}
+				?>
 
 				<div class="oceanwp-about-me">
 
 					<div class="oceanwp-about-me-avatar clr">
 
 						<?php
-						// Display the avatar
+						// Display the avatar.
 						if ( $avatar ) : ?>
-							<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_html( $title ); ?>" />
-						<?php endif;
+							<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $title ); ?>" />
+						<?php
+						endif;
 
-						// Display the name
-						if ( $name ) :?>
+						// Display the name.
+						if ( $name ) :
+						?>
 							<h3 class="oceanwp-about-me-name"><?php echo esc_html( $name ); ?></h3>
 						<?php endif; ?>
 
 					</div><!-- .oceanwp-about-me-avatar -->
 
 					<?php
-					// Display the text
-					if ( $text ) : ?>
+					// Display the text.
+					if ( $text ) :
+					?>
 						<div class="oceanwp-about-me-text clr"><?php echo do_shortcode( $text ); ?></div>
-					<?php endif;
+					<?php
+					endif;
 
-					// Display the social
-					if ( $social_services ) : ?>
+					//Determine link rel
+					$ocean_srt = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
+				
+					$results = ocean_link_rel( $ocean_srt, $nofollow, $target );
+
+					$ocean_sr = $results[0];
+					$link_rel = $results[1];
+
+					// Display the social.
+					if ( $social_services ) :
+						?>
 
 						<ul class="oceanwp-about-me-social style-<?php echo esc_attr( $social_style ); ?>">
 							<?php
-							// Original Array
+							// Original Array.
 							$social_services_array = $this->social_services_array;
 
-							// Loop through each item in the array
+							// Loop through each item in the array.
 							foreach( $social_services as $key => $val ) {
 								$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
 								$name     = $social_services_array[$key]['name'];
-								$nofollow = isset( $social_services_array[$key]['nofollow'] ) ? ' rel="nofollow"' : '';
+								$name     = esc_html( $name );
+
+								/** 
+								 * 
+								 * Return correct aria label. 
+								 * @since 1.6.4
+								 */
+								$aria_label = 'aria-label="'. $name .'"';
+
+								// Display social links.
 								if ( $link ) {
 									$icon = 'youtube' == $key ? 'youtube' : $key;
 									$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" title="'. esc_html( $name ) .'"  target="_'.esc_attr( $target ).'""><i class="fab fa-'. esc_attr( $icon ) .'"></i></a></li>';
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'><i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i></a>';
+										echo $ocean_sr;
+									echo '</li>';
 								}
-							} ?>
+							}
+							?>
 
 						</ul>
 
@@ -225,7 +260,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 				</div>
 
 			<?php
-			// After widget WP hook
+			// After widget WP hook.
 			echo $args['after_widget'];
 
 		}
@@ -242,14 +277,15 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 * @return array Updated safe values to be saved.
 		 */
 		public function update( $new_instance, $old_instance ) {
-			$instance                		= $old_instance;
-			$instance['title']       		= strip_tags( $new_instance['title'] );
-			$instance['avatar']       		= strip_tags( $new_instance['avatar'] );
-			$instance['name']   			= strip_tags( $new_instance['name'] );
-			$instance['text']   			= $new_instance['text'];
-			$instance['social_style']   	= strip_tags( $new_instance['social_style'] );
-			$instance['target']   			= strip_tags( $new_instance['target'] );
-			$instance['social_services'] 	= $new_instance['social_services'];
+			$instance                       = $old_instance;
+			$instance['title']              = strip_tags( $new_instance['title'] );
+			$instance['avatar']             = strip_tags( $new_instance['avatar'] );
+			$instance['name']               = strip_tags( $new_instance['name'] );
+			$instance['text']               = $new_instance['text'];
+			$instance['social_style']       = strip_tags( $new_instance['social_style'] );
+			$instance['target']             = strip_tags( $new_instance['target'] );
+			$instance['nofollow']           = strip_tags( $new_instance['nofollow'] );
+			$instance['social_services']    = $new_instance['social_services'];
 			return $instance;
 		}
 
@@ -262,15 +298,19 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function form( $instance ) {
-			$instance = wp_parse_args( ( array ) $instance, array(
-				'title'       		=> esc_html__( 'About Me', 'ocean-extra' ),
-				'avatar' 			=> OE_URL .'assets/img/about-avatar.png',
-				'name'  			=> esc_html__( 'John Doe', 'ocean-extra' ),
-				'text' 				=> 'Lorem ipsum ex vix illud nonummy novumtatio et his. At vix patrioque scribentur at fugitertissi ext scriptaset verterem molestiae.',
-				'social_style' 		=> 'color',
-				'target' 			=> 'blank',
-				'social_services' 	=> $this->social_services_array
-			) ); ?>
+			$instance = wp_parse_args( ( array ) $instance,
+				array(
+					'title'             => esc_html__( 'About Me', 'ocean-extra' ),
+					'avatar'            => OE_URL .'assets/img/about-avatar.png',
+					'name'              => esc_html__( 'John Doe', 'ocean-extra' ),
+					'text'              => 'Lorem ipsum ex vix illud nonummy novumtatio et his. At vix patrioque scribentur at fugitertissi ext scriptaset verterem molestiae.',
+					'social_style'      => 'color',
+					'target'            => 'blank',
+					'nofollow'          => 'no',
+					'social_services'   => $this->social_services_array
+				)
+			);
+			?>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label>
@@ -284,7 +324,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 			</p>
 
 			<p>
-			    <label for="<?php echo esc_attr( $this->get_field_id( 'name' ) ); ?>"><?php esc_html_e('Name:', 'ocean-extra') ?></label>
+			    <label for="<?php echo esc_attr( $this->get_field_id( 'name' ) ); ?>"><?php esc_html_e( 'Name:', 'ocean-extra' ) ?></label>
 			    <input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'name' ) ); ?>" value="<?php echo esc_attr( $instance['name'] ); ?>" />
 			</p>
 
@@ -294,9 +334,9 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id('social_style') ); ?>"><?php esc_html_e('Social Style:', 'ocean-extra'); ?></label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'social_style' ) ); ?>"><?php esc_html_e( 'Social Style:', 'ocean-extra' ); ?></label>
 				<br />
-				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('social_style') ); ?>" id="<?php echo esc_attr( $this->get_field_id('social_style') ); ?>">
+				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'social_style' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id('social_style') ); ?>">
 					<option value="color" <?php selected( $instance['social_style'], 'color' ) ?>><?php esc_html_e( 'Color', 'ocean-extra' ); ?></option>
 					<option value="light" <?php selected( $instance['social_style'], 'light' ) ?>><?php esc_html_e( 'Light', 'ocean-extra' ); ?></option>
 					<option value="dark" <?php selected( $instance['social_style'], 'dark' ) ?>><?php esc_html_e( 'Dark', 'ocean-extra' ); ?></option>
@@ -304,30 +344,44 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id('target') ); ?>"><?php esc_html_e( 'Social Link Target:', 'ocean-extra' ); ?></label>
-				<br />
-				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('target') ); ?>" id="<?php echo esc_attr( $this->get_field_id('target') ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"><?php esc_html_e( 'Social Link Target:', 'ocean-extra' ); ?></label>
+				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'target' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>">
 					<option value="blank" <?php selected( $instance['target'], 'blank' ) ?>><?php esc_html_e( 'Blank', 'ocean-extra' ); ?></option>
 					<option value="self" <?php selected( $instance['target'], 'self' ) ?>><?php esc_html_e( 'Self', 'ocean-extra' ); ?></option>
 				</select>
 			</p>
 
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>"><?php esc_html_e( 'Add Nofollow Link Rel:', 'ocean-extra' ); ?></label>
+				<select class='widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'nofollow' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>">
+					<option value="no" <?php selected( $instance['nofollow'], 'no' ) ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
+					<option value="yes" <?php selected( $instance['nofollow'], 'yes' ) ?>><?php esc_html_e( 'Yes', 'ocean-extra' ); ?></option>
+				</select>
+			</p>
+
 			<?php
 			$field_id_services   = $this->get_field_id( 'social_services' );
-			$field_name_services = $this->get_field_name( 'social_services' ); ?>
+			$field_name_services = $this->get_field_name( 'social_services' );
+			?>
+
 			<h3 style="margin-top:20px;margin-bottom:0;"><?php esc_html_e( 'Social Links','ocean-extra' ); ?></h3>
 			<ul id="<?php echo esc_attr( $field_id_services ); ?>" class="oceanwp-about-me-widget-services-list">
 				<input type="hidden" id="<?php echo esc_attr( $field_name_services ); ?>" value="<?php echo esc_attr( $field_name_services ); ?>">
 				<input type="hidden" id="<?php echo esc_attr( wp_create_nonce( 'oceanwp_fontawesome_social_widget_nonce' ) ); ?>">
+				
 				<?php
-				// Social array
+				// Social array.
 				$social_services_array = $this->social_services_array;
-				// Get current services display
+
+				// Get current services display.
 				$display_services = isset ( $instance['social_services'] ) ? $instance['social_services']: '';
-				// Loop through social services to display inputs
+
+				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
 					$url  = ! empty( $display_services[$key]['url'] ) ? esc_url( $display_services[$key]['url'] ) : null;
-					$name = $social_services_array[$key]['name']; ?>
+					$name = $social_services_array[$key]['name'];
+					?>
+
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
 						<p>
 							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo esc_html( strip_tags( $name ) ); ?>:</label>

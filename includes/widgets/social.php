@@ -3,9 +3,10 @@
  * Social widget.
  *
  * @package OceanWP WordPress theme
+ * @since 1.0.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -20,91 +21,93 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 */
 		public function __construct() {
 
-			// Declare social services array
-			$this->social_services_array = apply_filters( 'ocean_social_widget_profiles', array(
-				'twitter' => array(
-					'name' => 'Twitter',
-					'url'  => '',
-				),
-				'facebook' => array(
-					'name' => 'Facebook',
-					'url'  => '',
-				),
-				'instagram' => array(
-					'name' => 'Instagram',
-					'url'  => '',
-				),
-				'google-plus' => array(
-					'name' => 'GooglePlus',
-					'url'  => '',
-				),
-				'linkedin' => array(
-					'name' => 'LinkedIn',
-					'url'  => '',
-				),
-				'pinterest' => array(
-					'name' => 'Pinterest',
-					'url'  => '',
-				),
-				'yelp' => array(
-					'name' => 'Yelp',
-					'url'  => '',
-				),
-				'dribbble' => array(
-					'name' => 'Dribbble',
-					'url'  => '',
-				),
-				'flickr' => array(
-					'name' => 'Flickr',
-					'url'  => '',
-				),
-				'vk' => array(
-					'name' => 'VK',
-					'url'  => '',
-				),
-				'github' => array(
-					'name' => 'GitHub',
-					'url'  => '',
-				),
-				'tumblr' => array(
-					'name' => 'Tumblr',
-					'url'  => '',
-				),
-				'skype' => array(
-					'name' => 'Skype',
-					'url'  => '',
-				),
-				'trello' => array(
-					'name' => 'Trello',
-					'url'  => '',
-				),
-				'foursquare' => array(
-					'name' => 'Foursquare',
-					'url'  => '',
-				),
-				'xing' => array(
-					'name' => 'Xing',
-					'url'  => '',
-				),
-				'vimeo-square' => array(
-					'name' => 'Vimeo',
-					'url'  => '',
-				),
-				'vine' => array(
-					'name' => 'Vine',
-					'url'  => '',
-				),
-				'youtube' => array(
-					'name' => 'Youtube',
-					'url'  => '',
-				),
-				'rss' => array(
-					'name' => 'RSS',
-					'url'  => '',
-				),
-			) );
+			// Declare social services array.
+			$this->social_services_array = apply_filters( 'ocean_social_widget_profiles',
+				array(
+					'twitter' => array(
+						'name' => 'Twitter',
+						'url'  => '',
+					),
+					'facebook' => array(
+						'name' => 'Facebook',
+						'url'  => '',
+					),
+					'instagram' => array(
+						'name' => 'Instagram',
+						'url'  => '',
+					),
+					'google-plus' => array(
+						'name' => 'GooglePlus',
+						'url'  => '',
+					),
+					'linkedin' => array(
+						'name' => 'LinkedIn',
+						'url'  => '',
+					),
+					'pinterest' => array(
+						'name' => 'Pinterest',
+						'url'  => '',
+					),
+					'yelp' => array(
+						'name' => 'Yelp',
+						'url'  => '',
+					),
+					'dribbble' => array(
+						'name' => 'Dribbble',
+						'url'  => '',
+					),
+					'flickr' => array(
+						'name' => 'Flickr',
+						'url'  => '',
+					),
+					'vk' => array(
+						'name' => 'VK',
+						'url'  => '',
+					),
+					'github' => array(
+						'name' => 'GitHub',
+						'url'  => '',
+					),
+					'tumblr' => array(
+						'name' => 'Tumblr',
+						'url'  => '',
+					),
+					'skype' => array(
+						'name' => 'Skype',
+						'url'  => '',
+					),
+					'trello' => array(
+						'name' => 'Trello',
+						'url'  => '',
+					),
+					'foursquare' => array(
+						'name' => 'Foursquare',
+						'url'  => '',
+					),
+					'xing' => array(
+						'name' => 'Xing',
+						'url'  => '',
+					),
+					'vimeo-square' => array(
+						'name' => 'Vimeo',
+						'url'  => '',
+					),
+					'vine' => array(
+						'name' => 'Vine',
+						'url'  => '',
+					),
+					'youtube' => array(
+						'name' => 'Youtube',
+						'url'  => '',
+					),
+					'rss' => array(
+						'name' => 'RSS',
+						'url'  => '',
+					),
+				)
+			);
 
-			// Start up widget
+			// Start up widget.
 			parent::__construct(
 				'ocean_social',
 				esc_html__( '&raquo; Social Icons', 'ocean-extra' ),
@@ -115,7 +118,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				)
 			);
 
-			// Since 1.3.8
+			// Since 1.3.8.
 			add_action( 'admin_head-widgets.php', array( $this, 'social_widget_style' ) );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 			add_action( 'admin_footer-widgets.php', array( $this, 'print_scripts' ) );
@@ -128,7 +131,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 *
 		 * @param string $hook_suffix
 		 */
-		public function social_widget_style() { ?>
+		public function social_widget_style() {
+			?>
+
 			<style>
 				.oceanwp-social-widget-services-list { padding-top: 10px; }
 				.oceanwp-social-widget-services-list li { cursor: move; background: #fafafa; padding: 10px; border: 1px solid #e5e5e5; margin-bottom: 10px; }
@@ -189,7 +194,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 					function initColorPicker( widget ) {
 						widget.find( '.color-picker' ).wpColorPicker( {
-							change: _.throttle( function() { // For Customizer
+							change: _.throttle( function() { // For Customizer.
 								$(this).trigger( 'change' );
 							}, 3000 )
 						});
@@ -222,24 +227,25 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			// Get social services and
+			// Get social services.
 			$social_services = isset( $instance['social_services'] ) ? $instance['social_services'] : '';
 
-			// Return if no services defined
+			// Return if no services defined.
 			if ( ! $social_services ) {
 				return;
 			}
 
-			// Define vars
-			$title         	= isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$style   		= isset( $instance['style'] ) ? $instance['style'] : '';
-			$transition   	= isset( $instance['transition'] ) ? $instance['transition'] : '';
-			$target        	= isset( $instance['target'] ) ? $instance['target'] : '';
-			$size          	= isset( $instance['size'] ) ? $instance['size'] : '';
-			$font_size     	= isset( $instance['font_size'] ) ? $instance['font_size'] : '';
-			$border_radius 	= isset( $instance['border_radius'] ) ? $instance['border_radius'] : '';
+			// Define vars.
+			$title          = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+			$style          = isset( $instance['style'] ) ? $instance['style'] : '';
+			$transition     = isset( $instance['transition'] ) ? $instance['transition'] : '';
+			$target         = isset( $instance['target'] ) ? $instance['target'] : '';
+			$nofollow       = isset( $instance['nofollow'] ) ? $instance['nofollow'] : '';
+			$size           = isset( $instance['size'] ) ? $instance['size'] : '';
+			$font_size      = isset( $instance['font_size'] ) ? $instance['font_size'] : '';
+			$border_radius  = isset( $instance['border_radius'] ) ? $instance['border_radius'] : '';
 
-			// Sanitize vars
+			// Sanitize vars.
 			$size          = $size ? $size : '';
 			$font_size     = $font_size ? $font_size : '';
 			$border_radius = $border_radius ? $border_radius  : '';
@@ -259,43 +265,63 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				$add_style = ' style="' . esc_attr( $add_style ) . '"';
 			}
 
-			// Before widget hook
+			// Before widget hook.
 			echo $args['before_widget'];
 
-				// Display title
+				// Display title.
 				if ( $title ) {
 					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
-				// Display the social icons. ?>
+				// Determine link rel.
+				$ocean_srt = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
+				
+				$results = ocean_link_rel( $ocean_srt, $nofollow, $target );
+
+				$ocean_sr = $results[0];
+				$link_rel = $results[1];
+
+				// Display social icons.
+				?>
+
 				<ul class="oceanwp-social-icons <?php echo esc_attr( $transition ); ?> style-<?php echo esc_attr( $style ); ?>">
 					<?php
-					// Original Array
+					// Original Array.
 					$social_services_array = $this->social_services_array;
 
-					// Loop through each item in the array
+					// Loop through each item in the array.
 					foreach( $social_services as $key => $val ) {
 						$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
 						$name     = $social_services_array[$key]['name'];
-						if ( $link ) {
-							$key  = 'vimeo-square' == $key ? 'vimeo' : $key;
-							$icon = 'youtube' == $key ? 'youtube' : $key;
-							$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-							$icon = 'bloglovin' == $key ? 'heart' : $icon;
-							$icon = 'vimeo-square' == $key ? 'vimeo' : $icon;
 
-							if ( 'skype' == $key ) {
+						if ( $link ) {
+							$key  = 'vimeo-square' === $key ? 'vimeo' : $key;
+							$icon = 'youtube' === $key ? 'youtube' : $key;
+							$icon = 'pinterest' === $key ? 'pinterest-p' : $icon;
+							$icon = 'bloglovin' === $key ? 'heart' : $icon;
+							$icon = 'vimeo-square' === $key ? 'vimeo' : $icon;
+
+							if ( 'skype' === $key ) {
 								$link = 'skype:'. esc_attr( $link ) .'?call';
+								$target = 'self';
+								if ( $nofollow === 'yes' ) {
+									$link_rel = 'rel="nofollow"';
+								} else if ( $nofollow === 'no' || $nofollow === '' ) {
+									$link_rel = '';
+								}
+								$ocean_sr = '';
+								$ocean_sr_skype = '<span class="screen-reader-text">'. esc_html__( 'Opens in your application', 'ocean-extra' ) .'</span>';
 							} else {
 								$link = esc_url( $link );
+								$ocean_sr_skype = '';
 							}
 
 							echo '<li class="oceanwp-'. esc_attr( $key ) .'">';
 
-								echo '<a href="'. $link .'" title="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'">';
+								echo '<a href="'. $link .'" aria-label="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'" '. $link_rel .'>';
 
-									//echo '<i class="fab fa-'. esc_attr( $icon ) .'"></i>';
-									if($icon == 'rss') {
+									// Display icons.
+									if( $icon === 'rss' ) {
 										echo '<i class="fa fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 									} else {
 										echo '<i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
@@ -303,9 +329,14 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 								echo '</a>';
 
+								// Display screen reader text.
+								echo $ocean_sr;
+								echo $ocean_sr_skype;
+
 							echo '</li>';
 						}
-					} ?>
+					}
+					?>
 				</ul>
 
 				<?php $this->colors( $args, $instance ); ?>
@@ -328,22 +359,23 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 * @return array Updated safe values to be saved.
 		 */
 		public function update( $new_instance, $old_instance ) {
-			// Sanitize data
+			// Sanitize data.
 			$instance = $old_instance;
-			$instance['title']           	= ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : null;
-			$instance['style'] 				= ! empty( $new_instance['style'] ) ? strip_tags( $new_instance['style'] ) : 'light';
-			$instance['transition'] 	 	= ! empty( $new_instance['transition'] ) ? strip_tags( $new_instance['transition'] ) : 'rotate';
-			$instance['target']          	= ! empty( $new_instance['target'] ) ? strip_tags( $new_instance['target'] ) : 'blank';
-			$instance['size']            	= ! empty( $new_instance['size'] ) ? strip_tags( $new_instance['size'] ) : '';
-			$instance['border_radius']   	= ! empty( $new_instance['border_radius'] ) ? strip_tags( $new_instance['border_radius'] ) : '';
-			$instance['bg_color']   	    = ! empty( $new_instance['bg_color'] ) ? sanitize_hex_color( $new_instance['bg_color'] ) : '';
-			$instance['bg_hover_color']   	= ! empty( $new_instance['bg_hover_color'] ) ? sanitize_hex_color( $new_instance['bg_hover_color'] ) : '';
-			$instance['color']   	        = ! empty( $new_instance['color'] ) ? sanitize_hex_color( $new_instance['color'] ) : '';
-			$instance['color_hover']   	    = ! empty( $new_instance['color_hover'] ) ? sanitize_hex_color( $new_instance['color_hover'] ) : '';
-			$instance['border_color']   	= ! empty( $new_instance['border_color'] ) ? sanitize_hex_color( $new_instance['border_color'] ) : '';
+			$instance['title']              = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : null;
+			$instance['style']              = ! empty( $new_instance['style'] ) ? strip_tags( $new_instance['style'] ) : 'light';
+			$instance['transition']         = ! empty( $new_instance['transition'] ) ? strip_tags( $new_instance['transition'] ) : 'rotate';
+			$instance['target']             = ! empty( $new_instance['target'] ) ? strip_tags( $new_instance['target'] ) : 'blank';
+			$instance['nofollow']           = ! empty( $new_instance['nofollow'] ) ? strip_tags( $new_instance['nofollow'] ) : '';
+			$instance['size']               = ! empty( $new_instance['size'] ) ? strip_tags( $new_instance['size'] ) : '';
+			$instance['border_radius']      = ! empty( $new_instance['border_radius'] ) ? strip_tags( $new_instance['border_radius'] ) : '';
+			$instance['bg_color']           = ! empty( $new_instance['bg_color'] ) ? sanitize_hex_color( $new_instance['bg_color'] ) : '';
+			$instance['bg_hover_color']     = ! empty( $new_instance['bg_hover_color'] ) ? sanitize_hex_color( $new_instance['bg_hover_color'] ) : '';
+			$instance['color']              = ! empty( $new_instance['color'] ) ? sanitize_hex_color( $new_instance['color'] ) : '';
+			$instance['color_hover']        = ! empty( $new_instance['color_hover'] ) ? sanitize_hex_color( $new_instance['color_hover'] ) : '';
+			$instance['border_color']       = ! empty( $new_instance['border_color'] ) ? sanitize_hex_color( $new_instance['border_color'] ) : '';
 			$instance['border_hover_color'] = ! empty( $new_instance['border_hover_color'] ) ? sanitize_hex_color( $new_instance['border_hover_color'] ) : '';
-			$instance['font_size']       	= ! empty( $new_instance['font_size'] ) ? strip_tags( $new_instance['font_size'] ) : '';
-			$instance['social_services'] 	= $new_instance['social_services'];
+			$instance['font_size']          = ! empty( $new_instance['font_size'] ) ? strip_tags( $new_instance['font_size'] ) : '';
+			$instance['social_services']   = $new_instance['social_services'];
 			return $instance;
 		}
 
@@ -357,22 +389,26 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 */
 		public function form( $instance ) {
 
-			$instance = wp_parse_args( ( array ) $instance, array(
-				'title'           	 => esc_attr__( 'Follow Us', 'ocean-extra' ),
-				'style' 	  		 => esc_html__( 'Light', 'ocean-extra' ),
-				'transition' 	  	 => esc_html__( 'Rotate', 'ocean-extra' ),
-				'font_size'       	 => '',
-				'border_radius'   	 => '',
-				'bg_color'   	     => '',
-				'bg_hover_color'   	 => '',
-				'color'   	         => '',
-				'color_hover'   	 => '',
-				'border_color'   	 => '',
-				'border_hover_color' => '',
-				'target'          	 => 'blank',
-				'size'            	 => '',
-				'social_services' 	 => $this->social_services_array
-			) ); ?>
+			$instance = wp_parse_args( ( array ) $instance,
+				array(
+					'title'              => esc_attr__( 'Follow Us', 'ocean-extra' ),
+					'style'              => esc_html__( 'Light', 'ocean-extra' ),
+					'transition'         => esc_html__( 'Rotate', 'ocean-extra' ),
+					'font_size'          => '',
+					'border_radius'      => '',
+					'bg_color'           => '',
+					'bg_hover_color'     => '',
+					'color'              => '',
+					'color_hover'        => '',
+					'border_color'       => '',
+					'border_hover_color' => '',
+					'target'             => 'blank',
+					'nofollow'           => esc_html__( 'No', 'ocean-extra' ),
+					'size'               => '',
+					'social_services'    => $this->social_services_array,
+				)
+			);
+			?>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label>
@@ -401,10 +437,17 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"><?php esc_html_e( 'Link Target', 'ocean-extra' ); ?>:</label>
-				<br />
 				<select class="oceanwp-widget-select" name="<?php echo esc_attr( $this->get_field_name( 'target' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>">
 					<option value="blank" <?php selected( $instance['target'], 'blank' ) ?>><?php esc_html_e( 'Blank', 'ocean-extra' ); ?></option>
 					<option value="self" <?php selected( $instance['target'], 'self' ) ?>><?php esc_html_e( 'Self', 'ocean-extra' ); ?></option>
+				</select>
+			</p>
+
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>"><?php esc_html_e( 'Add Nofollow Link Rel:', 'ocean-extra' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name( 'nofollow' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>">
+					<option value="no" <?php selected( $instance['nofollow'], 'no' ) ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
+					<option value="yes" <?php selected( $instance['nofollow'], 'yes' ) ?>><?php esc_html_e( 'Yes', 'ocean-extra' ); ?></option>
 				</select>
 			</p>
 
@@ -458,20 +501,26 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 			<?php
 			$field_id_services   = $this->get_field_id( 'social_services' );
-			$field_name_services = $this->get_field_name( 'social_services' ); ?>
+			$field_name_services = $this->get_field_name( 'social_services' );
+			?>
+
 			<h3 style="margin-top:20px;margin-bottom:0;"><?php esc_html_e( 'Social Links','ocean-extra' ); ?></h3>
 			<ul id="<?php echo esc_attr( $field_id_services ); ?>" class="oceanwp-social-widget-services-list">
 				<input type="hidden" id="<?php echo esc_attr( $field_name_services ); ?>" value="<?php echo esc_attr( $field_name_services ); ?>">
 				<input type="hidden" id="<?php echo esc_attr( wp_create_nonce( 'oceanwp_fontawesome_social_widget_nonce' ) ); ?>">
 				<?php
-				// Social array
+				// Social array.
 				$social_services_array = $this->social_services_array;
-				// Get current services display
+
+				// Get current services display.
 				$display_services = isset ( $instance['social_services'] ) ? $instance['social_services']: '';
-				// Loop through social services to display inputs
+
+				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
 					$url  = ! empty( $display_services[$key]['url'] ) ? $display_services[$key]['url'] : null;
-					$name = $social_services_array[$key]['name']; ?>
+					$name = $social_services_array[$key]['name'];
+					?>
+
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
 						<p>
 							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo esc_attr( strip_tags( $name ) ); ?>:</label>
@@ -494,10 +543,10 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function colors( $args, $instance ) {
-			// get the widget ID
+			// get the widget ID.
 			$id = $args['widget_id'];
 
-			// Define vars
+			// Define vars.
 			$bg_color           = isset( $instance['bg_color'] ) ? sanitize_hex_color( $instance['bg_color'] ) : '';
 			$bg_hover_color     = isset( $instance['bg_hover_color'] ) ? sanitize_hex_color( $instance['bg_hover_color'] ) : '';
 			$color              = isset( $instance['color'] ) ? sanitize_hex_color( $instance['color'] ) : '';
@@ -508,7 +557,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			<?php
 			if ( $bg_color || $bg_hover_color
 				|| $color || $color_hover
-				|| $border_color || $border_hover_color ) : ?>
+				|| $border_color || $border_hover_color ) :
+				?>
+
 				<style>
 					#<?php echo $id; ?>.widget-oceanwp-social ul li a {
 						<?php if ( $bg_color ) { echo 'background-color:' . $bg_color; } ?>;

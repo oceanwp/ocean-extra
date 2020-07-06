@@ -3,11 +3,11 @@
  * Plugin Name:			Ocean Extra
  * Plugin URI:			https://oceanwp.org/extension/ocean-extra/
  * Description:			Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:				1.6.3
+ * Version:				1.6.4
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
- * Tested up to:		5.4.1
+ * Tested up to:		5.4.2
  *
  * Text Domain: ocean-extra
  * Domain Path: /languages
@@ -86,7 +86,7 @@ final class Ocean_Extra {
 		$this->token 			= 'ocean-extra';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.6.3';
+		$this->version 			= '1.6.4';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -580,7 +580,38 @@ final class Ocean_Extra {
 
 	}
 
-} // End Class
+} // End Class.
+
+/**
+ * Check link rel and return correct aria label
+ * @since 1.6.4
+ */
+
+if ( ! function_exists( 'ocean_link_rel' ) ) {
+	
+	function ocean_link_rel( $ocean_srt, $nofollow, $target ) {
+			
+		if ( $nofollow === 'yes' ) {
+			if ( $target === 'blank' ) {
+				$link_rel = 'rel="nofollow noopener noreferrer"';
+				$ocean_sr = $ocean_srt;
+			} else {
+				$link_rel = 'rel="nofollow"';
+				$ocean_sr = '';
+			}
+		} elseif ( $nofollow === 'no' || $nofollow === '' ) {
+			if ( $target === 'blank' ) {
+				$link_rel = 'rel="noopener noreferrer"';
+				$ocean_sr = $ocean_srt;
+			} else {
+				$link_rel = '';
+				$ocean_sr = '';
+			}
+		}
+	
+		return array( $ocean_sr, $link_rel );
+	}
+}
 
 #--------------------------------------------------------------------------------
 #region Freemius

@@ -124,7 +124,6 @@ module.exports = function ( grunt ) {
 					'!node_modules/**',
 					'!build/**',
 					'!.git/**',
-					'!changelog.txt',
 					'!Gruntfile.js',
 					'!package.json',
 					'!package-lock.json',
