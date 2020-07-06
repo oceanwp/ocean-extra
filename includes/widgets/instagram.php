@@ -3,10 +3,9 @@
  * Instagram Widget.
  *
  * @package OceanWP WordPress theme
- * @since 1.0.0
  */
 
-// Exit if accessed directly.
+// Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -22,26 +21,26 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		public function __construct() {
 
 			parent::__construct(
-				'ocean_instagram',
-				$name = __( '&raquo; Instagram', 'ocean-extra' ),
-				array(
-					'classname'     => 'widget-oceanwp-instagram instagram-widget',
-					'description'   => esc_html__( 'Displays Instagram photos based on a hashtag.', 'ocean-extra' ),
+	            'ocean_instagram',
+	            $name = __( '&raquo; Instagram', 'ocean-extra' ),
+	            array(
+	                'classname'		=> 'widget-oceanwp-instagram instagram-widget',
+					'description'	=> esc_html__( 'Displays Instagram photos.', 'ocean-extra' ),
 					'customize_selective_refresh' => true,
-				)
-			);
+	            )
+	        );
 
-			add_action( 'admin_enqueue_scripts', array( $this, 'ocean_extra_instagram_js' ) );
-
-		}
-
-		 /**
-		 * Upload the Javascripts for the media uploader
-		 */
-		public function ocean_extra_instagram_js() {
-			wp_enqueue_script( 'oe-insta-admin-script', OE_URL .'includes/widgets/js/insta-admin.min.js', array( 'jquery' ), false, true );
+	        add_action( 'admin_enqueue_scripts', array( $this, 'ocean_extra_instagram_js' ) );
 
 		}
+
+	    /**
+	     * Upload the Javascripts for the media uploader
+	     */
+	    public function ocean_extra_instagram_js() {
+	        wp_enqueue_script( 'oe-insta-admin-script', OE_URL .'includes/widgets/js/insta-admin.min.js', array( 'jquery' ), false, true );
+
+	    }
 
 		/**
 		 * Front-end display of widget.
@@ -55,18 +54,18 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 			$title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 
-			// Before widget WP hook.
+			// Before widget WP hook
 			echo $args['before_widget'];
 
-				// Show widget title.
+				// Show widget title
 				if ( $title ) {
 					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
-				// Display the widget.
+				// Display the widget
 				echo $this->display_widget( $instance );
 
-			// After widget WP hook.
+			// After widget WP hook
 			echo $args['after_widget'];
 		}
 
@@ -81,28 +80,24 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		 * @return array Updated safe values to be saved.
 		 */
 		public function update( $new_instance, $old_instance ) {
-			$instance                       = $old_instance;
-			$instance['title']              = strip_tags( $new_instance['title'] );
-			$instance['real_username']      = $new_instance['real_username'];
-			$instance['username']           = $new_instance['username'];
-			$instance['number']             = $new_instance['number'];
-			$instance['display_header']     = $new_instance['display_header'];
-			$instance['avatar']             = strip_tags( $new_instance['avatar'] );
-			$instance['picture_radius']     = $new_instance['picture_radius'];
-			$instance['display_name']       = $new_instance['display_name'];
-			$instance['title_link']         = $new_instance['title_link'];
-			$instance['description']        = $new_instance['description'];
-			$instance['header_position']    = $new_instance['header_position'];
-			$instance['header_align']       = $new_instance['header_align'];
-			$instance['columns']            = strip_tags( $new_instance['columns'] );
-			$instance['margin']             = $new_instance['margin'];
-			$instance['size']               = $new_instance['size'];
-			$instance['image_caption']      = $new_instance['image_caption'];
-			$instance['images_link']        = $new_instance['images_link'];
-			$instance['custom_url']         = $new_instance['custom_url'];
-			$instance['target']             = $new_instance['target'];
-			$instance['follow']             = $new_instance['follow'];
-			$instance['button_link']        = $new_instance['button_link'];
+			$instance 						= $old_instance;
+			$instance['title'] 				= strip_tags($new_instance['title']);
+			$instance['username']       	= $new_instance['username'];
+			$instance['number'] 			= $new_instance['number'];
+			$instance['display_header']   	= $new_instance['display_header'];
+			$instance['avatar']  			= strip_tags( $new_instance['avatar'] );
+			$instance['picture_radius']   	= $new_instance['picture_radius'];
+			$instance['display_name']   	= $new_instance['display_name'];
+			$instance['description']   		= $new_instance['description'];
+			$instance['header_position']   	= $new_instance['header_position'];
+			$instance['header_align']   	= $new_instance['header_align'];
+			$instance['columns'] 			= strip_tags($new_instance['columns']);
+			$instance['margin'] 			= $new_instance['margin'];
+			$instance['size']     			= $new_instance['size'];
+			$instance['images_link']    	= $new_instance['images_link'];
+			$instance['custom_url']     	= $new_instance['custom_url'];
+			$instance['target'] 			= $new_instance['target'];
+			$instance['follow'] 			= $new_instance['follow'];
 			return $instance;
 		}
 
@@ -114,59 +109,46 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance,
-				array(
-					'title'             => __( 'Instagram', 'ocean-extra' ),
-					'real_username'     => '',
-					'username'          => __( 'adidas', 'ocean-extra' ),
-					'number'            => 10,
-					'display_header'    => __( 'No', 'ocean-extra' ),
-					'avatar'            => '',
-					'picture_radius'    => __( 'Rounded', 'ocean-extra' ),
-					'display_name'      => '',
-					'title_link'        => 'link_default',
-					'description'       => '',
-					'header_position'   => __( 'Before', 'ocean-extra' ),
-					'header_align'      => __( 'Left', 'ocean-extra' ),
-					'columns'           => '',
-					'margin'            => __( 'Yes', 'ocean-extra' ),
-					'size'              => 'small',
-					'image_caption'     => '',
-					'images_link'       => 'image_url',
-					'custom_url'        => '',
-					'target'            => 'blank',
-					'follow'            => __( 'Follow Us', 'ocean-extra' ),
-					'button_link'       => 'button_default',
-				)
-			);
-			?>
+			$instance = wp_parse_args( (array) $instance, array(
+				'title' 			=> __('Instagram','ocean-extra'),
+				'username'         	=> __('adidas','ocean-extra'),
+				'number' 			=> 10,
+				'display_header'    => __('No','ocean-extra'),
+				'avatar'			=> '',
+				'picture_radius'   	=> __('Rounded','ocean-extra'),
+				'display_name'     	=> '',
+				'description'     	=> '',
+				'header_position'   => __('Before','ocean-extra'),
+				'header_align'   	=> __('Left','ocean-extra'),
+				'columns' 			=> '',
+				'margin' 			=> __('Yes','ocean-extra'),
+				'size'       		=> 'small',
+				'images_link'      	=> 'image_url',
+				'custom_url'       	=> '',
+				'target' 			=> 'blank',
+				'follow' 			=> __('Follow Us','ocean-extra'),
+			)); ?>
 
 			<div class="oceanwp-container">
 
 				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?></label>
-					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e('Title', 'ocean-extra'); ?></label>
+					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
 				</p>
 
 				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'real_username' ) ); ?>"><?php esc_html_e( 'Your Instagram @username', 'ocean-extra' ); ?>: <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'real_username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'real_username' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['real_username'] ); ?>" /></label>
-					<small><?php esc_html_e( 'Fallback option if hashtag is used to call images', 'ocean-extra' ); ?></small>
+					<label for="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>"><?php esc_html_e( '@username or #tag', 'ocean-extra' ); ?>: <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'username' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['username'] ); ?>" /></label>
 				</p>
 
 				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>"><?php esc_html_e( 'Your Instagram #tag or @username', 'ocean-extra' ); ?>: <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'username' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['username'] ); ?>" /></label>
-					<small><?php esc_html_e( 'Option to call images from Instagram', 'ocean-extra' ); ?></small>
-				</p>
-
-				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number Of Images To Show:', 'ocean-extra' ); ?>
+					<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number Images To Show:', 'ocean-extra' ); ?>
 						<input class="small-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" min="0" value="<?php echo esc_attr( $instance['number'] ); ?>" />
 					</label>
 				</p>
 
 				<p class="oceanwp-left">
-					<label for="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>"><?php esc_html_e( 'Images Style:', 'ocean-extra' ); ?></label>
-					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'columns' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'columns' ) ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id('columns') ); ?>"><?php esc_html_e('Images Style:', 'ocean-extra'); ?></label>
+					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('columns') ); ?>" id="<?php echo esc_attr( $this->get_field_id('columns') ); ?>">
 						<option value="style-one" <?php if($instance['columns'] == 'style-one') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 1', 'ocean-extra' ); ?></option>
 						<option value="style-two" <?php if($instance['columns'] == 'style-two') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 2', 'ocean-extra' ); ?></option>
 						<option value="style-three" <?php if($instance['columns'] == 'style-three') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Style 3', 'ocean-extra' ); ?></option>
@@ -184,8 +166,8 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 				</p>
 
 				<p class="oceanwp-right">
-					<label for="<?php echo esc_attr( $this->get_field_id( 'margin' ) ); ?>"><?php esc_html_e( 'Margin:', 'ocean-extra' ); ?></label>
-					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('margin') ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'margin' ) ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id('margin') ); ?>"><?php esc_html_e('Margin:', 'ocean-extra'); ?></label>
+					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('margin') ); ?>" id="<?php echo esc_attr( $this->get_field_id('margin') ); ?>">
 						<option value="margin" <?php if($instance['margin'] == 'margin') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Margin', 'ocean-extra' ); ?></option>
 						<option value="no-margin" <?php if($instance['margin'] == 'no-margin') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No Margin', 'ocean-extra' ); ?></option>
 					</select>
@@ -202,14 +184,6 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 				</p>
 
 				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'image_caption' ) ); ?>"><?php esc_html_e( 'Display Image Caption:', 'ocean-extra' ); ?></label>
-					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'image_caption' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'image_caption' ) ); ?>">
-						<option value="ic_yes" <?php if($instance['image_caption'] == 'ic_yes') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Yes', 'ocean-extra' ); ?></option>
-						<option value="ic_no" <?php if($instance['image_caption'] == 'ic_no') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
-					</select>
-				</p>
-
-				<p>
 					<label for="<?php echo esc_attr( $this->get_field_id( 'images_link' ) ); ?>"><strong><?php esc_html_e( 'Link To', 'ocean-extra' ); ?></strong>
 						<select class="widefat" name="<?php echo esc_attr( $this->get_field_name( 'images_link' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'images_link' ) ); ?>">
 							<option value="image_url" <?php selected( $instance['images_link'], 'image_url', true); ?>><?php esc_html_e( 'Instagram Image', 'ocean-extra' ); ?></option>
@@ -222,15 +196,15 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 				<p class="<?php if ( 'custom_url' != $instance['images_link'] ) echo 'hidden'; ?>">
 					<label for="<?php echo esc_attr( $this->get_field_id( 'custom_url' ) ); ?>"><?php esc_html_e( 'Custom Link:', 'ocean-extra'); ?></label>
 					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'custom_url' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'custom_url' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['custom_url'] ); ?>" />
-					<small><?php esc_html_e( 'Use this field only if the above option is set to Custom Link', 'ocean-extra' ); ?></small>
+					<small><?php esc_html_e('Use this field only if the above option is set to <strong>Custom Link</strong>', 'ocean-extra'); ?></small>
 				</p>
 
 				<div class="oceanwp-header-wrap">
 					<div class="oceanwp-header-options oceanwp-clr">
 						<h4 class="oceanwp-header-title"><?php esc_html_e( 'Header Options', 'ocean-extra'); ?></h4>
 						<p>
-							<label for="<?php echo esc_attr( $this->get_field_id( 'display_header' ) ); ?>"><?php esc_html_e( 'Display Header:', 'ocean-extra' ); ?></label>
-							<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'display_header' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'display_header' ) ); ?>">
+							<label for="<?php echo esc_attr( $this->get_field_id('display_header') ); ?>"><?php esc_html_e('Display Header:', 'ocean-extra'); ?></label>
+							<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('display_header') ); ?>" id="<?php echo esc_attr( $this->get_field_id('display_header') ); ?>">
 								<option value="no" <?php if($instance['display_header'] == 'no') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
 								<option value="yes" <?php if($instance['display_header'] == 'yes') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Yes', 'ocean-extra' ); ?></option>
 							</select>
@@ -244,8 +218,8 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 							</p>
 
 							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'picture_radius' ) ); ?>"><?php esc_html_e( 'Picture Radius:', 'ocean-extra' ); ?></label>
-								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'picture_radius' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'picture_radius' ) ); ?>">
+								<label for="<?php echo esc_attr( $this->get_field_id('picture_radius') ); ?>"><?php esc_html_e( 'Picture Radius:', 'ocean-extra' ); ?></label>
+								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('picture_radius') ); ?>" id="<?php echo esc_attr( $this->get_field_id('picture_radius') ); ?>">
 									<option value="rounded" <?php if($instance['picture_radius'] == 'rounded') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Rounded', 'ocean-extra' ); ?></option>
 									<option value="square" <?php if($instance['picture_radius'] == 'square') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Square', 'ocean-extra'); ?></option>
 								</select>
@@ -253,38 +227,29 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 							<p>
 								<label for="<?php echo esc_attr( $this->get_field_id( 'display_name' ) ); ?>"><?php esc_html_e( 'Display Name:', 'ocean-extra' ); ?>
-									<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'display_name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_name' ) ); ?>" type="text" placeholder="<?php esc_html_e( 'Default is the Call-Option', 'ocean-extra' ); ?>" value="<?php echo esc_attr( $instance['display_name'] ); ?>" />
+									<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'display_name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'display_name' ) ); ?>" type="text" placeholder="<?php esc_html_e( 'Default is username', 'ocean-extra' ); ?>" value="<?php echo esc_attr( $instance['display_name'] ); ?>" />
 								</label>
 							</p>
 
 							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'title_link' ) ); ?>"><?php esc_html_e( 'Title Link:', 'ocean-extra' ); ?></label>
-									<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'title_link' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'title_link' ) ); ?>">
-										<option value="link_default" <?php if( $instance['title_link'] === 'link_default' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Default', 'ocean-extra' ); ?></option>
-										<option value="link_username" <?php if( $instance['title_link'] === 'link_username' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Link to Username', 'ocean-extra' ); ?></option>
-										<option value="link_hashtag" <?php if( $instance['title_link'] === 'link_hashtag' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Link to Hashtag', 'ocean-extra'); ?></option>
-									</select>
-							</p>
-
-							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php esc_html_e( 'Description:', 'ocean-extra' ); ?></label>
+								<label for="<?php echo esc_attr( $this->get_field_id('description') ); ?>"><?php esc_html_e('Description:', 'ocean-extra'); ?></label>
 								<textarea rows="15" id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>" class="widefat" style="height: 100px;"><?php if (  !empty( $instance['description'] ) ) { echo esc_attr( $instance['description'] ); } ?></textarea>
 							</p>
 
 							<p class="oceanwp-left">
-								<label for="<?php echo esc_attr( $this->get_field_id( 'header_position' ) ); ?>"><?php esc_html_e( 'Position:', 'ocean-extra' ); ?></label>
-								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'header_position' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'header_position' ) ); ?>">
-									<option value="before" <?php if( $instance['header_position'] == 'before' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Before Images', 'ocean-extra' ); ?></option>
-									<option value="after" <?php if( $instance['header_position'] == 'after' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'After Images', 'ocean-extra' ); ?></option>
+								<label for="<?php echo esc_attr( $this->get_field_id('header_position') ); ?>"><?php esc_html_e( 'Position:', 'ocean-extra' ); ?></label>
+								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('header_position') ); ?>" id="<?php echo esc_attr( $this->get_field_id('header_position') ); ?>">
+									<option value="before" <?php if($instance['header_position'] == 'before') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Before Images', 'ocean-extra' ); ?></option>
+									<option value="after" <?php if($instance['header_position'] == 'after') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'After Images', 'ocean-extra'); ?></option>
 								</select>
 							</p>
 
 							<p class="oceanwp-right">
-								<label for="<?php echo esc_attr( $this->get_field_id( 'header_align' ) ); ?>"><?php esc_html_e( 'Align:', 'ocean-extra' ); ?></label>
-								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'header_align' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'header_align' ) ); ?>">
-									<option value="left" <?php if( $instance['header_align'] == 'left' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Left', 'ocean-extra' ); ?></option>
-									<option value="right" <?php if( $instance['header_align'] == 'right' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Right', 'ocean-extra' ); ?></option>
-									<option value="center" <?php if( $instance['header_align'] == 'center' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Center', 'ocean-extra' ); ?></option>
+								<label for="<?php echo esc_attr( $this->get_field_id('header_align') ); ?>"><?php esc_html_e( 'Align:', 'ocean-extra' ); ?></label>
+								<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('header_align') ); ?>" id="<?php echo esc_attr( $this->get_field_id('header_align') ); ?>">
+									<option value="left" <?php if($instance['header_align'] == 'left') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Left', 'ocean-extra' ); ?></option>
+									<option value="right" <?php if($instance['header_align'] == 'right') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Right', 'ocean-extra'); ?></option>
+									<option value="center" <?php if($instance['header_align'] == 'center') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Center', 'ocean-extra'); ?></option>
 								</select>
 							</p>
 						</div>
@@ -292,28 +257,18 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 				</div>
 
 				<p class="oceanwp-left">
-					<label for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"><?php esc_html_e( 'Button Target:', 'ocean-extra' ); ?></label>
-					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'target' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>">
+					<label for="<?php echo esc_attr( $this->get_field_id('target') ); ?>"><?php esc_html_e( 'Button Target:', 'ocean-extra' ); ?></label>
+					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name('target') ); ?>" id="<?php echo esc_attr( $this->get_field_id('target') ); ?>">
 						<option value="blank" <?php if($instance['target'] == 'blank') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Blank', 'ocean-extra' ); ?></option>
-						<option value="self" <?php if($instance['target'] == 'self') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Self', 'ocean-extra' ); ?></option>
+						<option value="self" <?php if($instance['target'] == 'self') { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Self', 'ocean-extra'); ?></option>
 					</select>
 					<small><?php esc_html_e( 'Same or new window', 'ocean-extra' ); ?></small>
 				</p>
 
 				<p class="oceanwp-right">
-					<label for="<?php echo esc_attr( $this->get_field_id( 'follow' ) ); ?>"><?php esc_html_e( 'Button Text:', 'ocean-extra' ); ?></label>
-					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'follow' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'follow' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['follow'] ); ?>" />
+					<label for="<?php echo esc_attr( $this->get_field_id('follow') ); ?>"><?php esc_html_e( 'Button Text:', 'ocean-extra' ); ?></label>
+					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('follow') ); ?>" name="<?php echo esc_attr( $this->get_field_name('follow') ); ?>" type="text" value="<?php echo esc_attr( $instance['follow'] ); ?>" />
 					<small><?php esc_html_e( 'Leave empty for no button', 'ocean-extra' ); ?></small>
-				</p>
-				
-				<p>
-					<label for="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>"><?php esc_html_e( 'Button Link:', 'ocean-extra' ); ?></label>
-					<select class='oceanwp-widget-select widefat' name="<?php echo esc_attr( $this->get_field_name( 'button_link' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'button_link' ) ); ?>">
-						<option value="button_default" <?php if( $instance['button_link'] === 'button_default' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Default', 'ocean-extra' ); ?></option>
-						<option value="button_username" <?php if( $instance['button_link'] === 'button_username' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Link to Username', 'ocean-extra' ); ?></option>
-						<option value="button_hashtag" <?php if( $instance['button_link'] === 'button_hashtag' ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'Link to Hashtag', 'ocean-extra'); ?></option>
-					</select>
-					<small><?php esc_html_e( 'Default is the Call-Option', 'ocean-extra' ); ?></small>
 				</p>
 
 				<div style="clear:both;"></div>
@@ -365,45 +320,30 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 		<?php
 		}
-
 		/**
 		 * Display the widget.
 		 */
 		private function display_widget( $args ) {
 
-			$real_username      = isset( $args['real_username'] ) && !empty( $args['real_username'] ) ? $args['real_username'] : '';
-			$username           = isset( $args['username'] ) && !empty( $args['username'] ) ? $args['username'] : 'adidas';
-			$number             = isset( $args['number'] ) ? $args['number'] : 10;
-			$display_header     = isset( $args['display_header'] ) ? $args['display_header'] : 'no';
-			$avatar             = isset( $args['avatar'] ) ? $args['avatar'] : '';
-			$picture_radius     = isset( $args['picture_radius'] ) ? $args['picture_radius'] : 'rounded';
-			$display_name       = isset( $args['display_name'] ) ? $args['display_name'] : '';
-			$title_link         = isset( $args['title_link'] ) ? $args['title_link'] : 'link_default';
-			$description        = isset( $args['description'] ) ? $args['description'] : '';
-			$header_position    = isset( $args['header_position'] ) ? $args['header_position'] : '';
-			$header_align       = isset( $args['header_align'] ) ? $args['header_align'] : '';
-			$columns            = isset( $args['columns'] ) ? $args['columns'] : '';
-			$margin             = isset( $args['margin'] ) ? $args['margin'] : '';
-			$size               = isset( $args['size'] ) ? $args['size'] : 'small';
-			$image_caption      = isset( $args['image_caption'] ) ? $args['image_caption'] : '';
-			$images_link        = isset( $args['images_link'] ) ? $args['images_link'] : 'local_image_url';
-			$custom_url         = isset( $args['custom_url'] ) ? $args['custom_url'] : '';
-			$target             = isset( $args['target'] ) ? $args['target'] : '';
-			$follow             = isset( $args['follow'] ) ? $args['follow'] : '';
-			$button_link        = isset( $args['button_link'] ) ? $args['button_link'] : 'button_default';
+			$username         	= isset( $args['username'] ) && !empty( $args['username'] ) ? $args['username'] : 'adidas';
+			$number 			= isset( $args['number'] ) ? $args['number'] : 10;
+			$display_header 	= isset( $args['display_header'] ) ? $args['display_header'] : 'no';
+			$avatar 			= isset( $args['avatar'] ) ? $args['avatar'] : '';
+			$picture_radius 	= isset( $args['picture_radius'] ) ? $args['picture_radius'] : 'rounded';
+			$display_name     	= isset( $args['display_name'] ) ? $args['display_name'] : '';
+			$description 		= isset( $args['description'] ) ? $args['description'] : '';
+			$header_position 	= isset( $args['header_position'] ) ? $args['header_position'] : '';
+			$header_align 		= isset( $args['header_align'] ) ? $args['header_align'] : '';
+			$columns 			= isset( $args['columns'] ) ? $args['columns'] : '';
+			$margin 			= isset( $args['margin'] ) ? $args['margin'] : '';
+			$size       		= isset( $args['size'] ) ? $args['size'] : 'small';
+			$images_link      	= isset( $args['images_link'] ) ? $args['images_link'] : 'local_image_url';
+			$custom_url       	= isset( $args['custom_url'] ) ? $args['custom_url'] : '';
+			$target 			= isset( $args['target'] ) ? $args['target'] : '';
+			$follow 			= isset( $args['follow'] ) ? $args['follow'] : '';
 
 			$output = '';
-			$ocean_sr = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
 
-			// Sanitize username.
-			if ( $real_username !== '' ) {
-
-				$real_username = trim( strtolower( $real_username ) );
-				$real_username = str_replace( '@', '', $real_username );
-
-			}
-
-			// Display Instagram feed.
 			if ( '' !== $username ) {
 
 				$media_array = $this->instagram_data( $username );
@@ -422,76 +362,30 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 					}
 
 					if ( 'style-four' == $columns ) {
-						if ( $real_username !== '' ) {
-							$output .= '<div class="oceanwp-instagram-bar"><a class="instagram-logo" href="https://instagram.com/' . esc_attr( $real_username ) . '/" target="_blank" rel="nofollow noopener noreferrer"></a>';
-								$output .= $ocean_sr;
-							$output .= '</div>';
-						} else {
-							$output .= '<div class="oceanwp-instagram-bar"><a class="instagram-logo" href="https://instagram.com/' . esc_attr( $username ) . '/" target="_blank" rel="nofollow noopener noreferrer"></a>';
-								$output .= $ocean_sr;
-							$output .= '</div>';
-						}
+						$output .= '<div class="oceanwp-instagram-bar"><a class="instagram-logo" href="https://instagram.com/' . esc_attr( $username ) . '/" target="_blank" rel="nofollow"></a></div>';
 					}
 
 					if ( $display_header != 'no' && $header_position == 'before' ) {
 						$output .= '<div class="oceanwp-instagram-header oceanwp-before oceanwp-'. esc_attr( $header_align ) .' clr">';
 
-							/**
-							 * 
-							 * Set outbound URL for avatar
-							 * @since 1.6.4
-							 */
-							if ( $title_link === 'link_default' ) {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							} else if ( $title_link === 'link_username' && $real_username !== '' ) {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $real_username ) .'/"';
-								$avatar_desc = $real_username;
-							} else if ( $title_link === 'link_hashtag' ) {
-								$avatar_link = 'https://instagram.com/explore/tags/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							} else {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							}
-
 							if ( $avatar ) {
 								$output .= '<div class="oceanwp-instagram-avatar '. esc_attr( $picture_radius ) .'">';
-									$output .= '<a href="'. $avatar_link .'" target="_blank" rel="nofollow noopener noreferrer">';
-										$output .= '<img src="'. esc_url( $avatar ) .'" alt="'. esc_attr( $avatar_desc ) .'" />';
+									$output .= '<a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">';
+										$output .= '<img src="'. esc_url( $avatar ) .'" alt="'. esc_attr( $username ) .'" />';
 										$output .= '<span class="oceanwp-instagram-follow"><span>Follow</span></span>';
 									$output .= '</a>';
-									$output .= $ocean_sr;
 								$output .= '</div>';
 							}
 
 							$output .= '<div class="oceanwp-instagram-info">';
 
-								/**
-								 * 
-								 * Set title URL.
-								 * @since 1.6.4
-								 */
-								if ( $title_link === 'link_default' ) {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								} else if ( $title_link === 'link_username' && $real_username !== '' ) {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $real_username ) .'/';
-								} else if ( $title_link === 'link_hashtag' ) {
-									$title_link_url = 'https://instagram.com/explore/tags/'. esc_attr( $username ) .'/"';
-								} else {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								}
-
-								// Choose Display Name.
 								if ( $display_name == '' ) {
 									$name = $username;
 								} else {
 									$name = $display_name;
 								}
 
-								$output .= '<h3 class="oceanwp-instagram-username"><a href="'. $title_link_url .'" target="_blank" rel="nofollow noopener noreferrer">'. $name .'</a>';
-									$output .= $ocean_sr;
-								$output .= '</h3>';
+								$output .= '<h3 class="oceanwp-instagram-username"><a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">'. $name .'</a></h3>';
 
 								if ( $description != '' ) {
 									$output .= '<p class="oceanwp-instagram-desc">'. do_shortcode( $description ) .'</p>';
@@ -508,33 +402,13 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 							if ( 'image_url' == $images_link ) {
 								$link = $item['link'];
-							} else if ( 'user_url' === $images_link ) {
-								if ( $real_username !== '' ) {
-									$link = 'https://instagram.com/'. esc_attr( $real_username ) .'/';
-								} else {
-									$link = 'https://instagram.com/' . esc_attr( $username ) . '/';
-								}	
-							} else if ( 'custom_url' == $images_link ) {
+							} elseif ( 'user_url' == $images_link ) {
+								$link = 'instagram.com/' . esc_attr( $username ) . '/';
+							} elseif ( 'custom_url' == $images_link ) {
 								$link = $custom_url;
 							}
 
-							// Check target to output screen reader text.
-							if ( $target === 'blank' ) {
-								$ocean_srt = $ocean_sr;
-							} else {
-								$ocean_srt = '';
-							}
-
-							// Determine whether to display image caption.
-							if ( $image_caption === 'ic_no' ) {
-								$image_cap = '';
-							} else {
-								$image_cap = 'title="' . esc_attr( $item['description'] ) . '"';
-							}
-
-							$output .= '<li><a href="' . esc_url( $link ) . '" target="_' . esc_attr( $target ) . '" ><img src="' . esc_url( $item[$size] ) . '"  alt="' . esc_attr( $item['description'] ) . '" '. $image_cap .'></a>';
-								$output .= $ocean_srt;
-							$output .= '</li>';
+							$output .= '<li><a href="' . esc_url( $link ) . '" target="' . esc_attr( $target ) . '" ><img src="' . esc_url( $item[$size] ) . '"  alt="' . esc_attr( $item['description'] ) . '" title="' . esc_attr( $item['description'] ) . '" /></a></li>';
 						}
 
 					$output .= '</ul>';
@@ -542,62 +416,24 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 					if ( $display_header != 'no' && $header_position == 'after' ) {
 						$output .= '<div class="oceanwp-instagram-header oceanwp-after oceanwp-'. esc_attr( $header_align ) .' clr">';
 
-							/**
-							 * 
-							 * Set outbound URL for avatar
-							 * @since 1.6.4
-							 */
-							if ( $title_link === 'link_default' ) {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							} else if ( $title_link === 'link_username' && $real_username !== '' ) {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $real_username ) .'/';
-								$avatar_desc = $real_username;
-							} else if ( $title_link === 'link_hashtag' ) {
-								$avatar_link = 'https://instagram.com/explore/tags/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							} else {
-								$avatar_link = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								$avatar_desc = $username;
-							}
-
 							if ( $avatar ) {
-								$output .= '<div class="oceanwp-instagram-avatar '. esc_attr( $picture_radius ) .'">';
-									$output .= '<a href="'. $avatar_link .'" target="_blank" rel="nofollow noopener noreferrer">';
-										$output .= '<img src="'. esc_url( $avatar ) .'" alt="'. esc_attr( $avatar_desc ) .'" />';
+								$output .= '<div class="oceanwp-instagram-avatar">';
+									$output .= '<a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">';
+										$output .= '<img src="'. esc_url( $avatar ) .'" alt="'. esc_attr( $username ) .'" />';
 										$output .= '<span class="oceanwp-instagram-follow"><span>Follow</span></span>';
 									$output .= '</a>';
-									$output .= $ocean_sr;
 								$output .= '</div>';
 							}
 
 							$output .= '<div class="oceanwp-instagram-info">';
 
-								/**
-								 * 
-								 * Set title URL.
-								 * @since 1.6.4
-								 */
-								if ( $title_link === 'link_default' ) {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								} elseif ( $title_link === 'link_username' && $real_username !== '' ) {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $real_username ) .'/';
-								} elseif ( $title_link === 'link_hashtag' ) {
-									$title_link_url = 'https://instagram.com/explore/tags/'. esc_attr( $username ) .'/';
-								} else {
-									$title_link_url = 'https://instagram.com/'. esc_attr( $username ) .'/';
-								}
-
-								// Choose Display Name.
 								if ( $display_name == '' ) {
 									$name = $username;
 								} else {
 									$name = $display_name;
 								}
 
-								$output .= '<h3 class="oceanwp-instagram-username"><a href="'. $title_link_url .'" target="_blank" rel="nofollow noopener noreferrer">'. $name .'</a>';
-									$output .= $ocean_sr;
-								$output .= '</h3>';
+								$output .= '<h3 class="oceanwp-instagram-username"><a href="https://instagram.com/'. esc_attr( $username ) .'/" target="_blank" rel="nofollow">'. $name .'</a></h3>';
 
 								if ( $description != '' ) {
 									$output .= '<p class="oceanwp-instagram-desc">'. do_shortcode( $description ) .'</p>';
@@ -608,31 +444,8 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 						$output .= '</div>';
 					}
 
-					// Check target to output screen reader text.
-					if ( $target === 'blank' ) {
-						$ocean_srt = $ocean_sr;
-					} else {
-						$ocean_srt = '';
-					}
-
 					if ( $follow != '' ) {
-						if ( $button_link === 'button_default' ) {
-							$output .= '<p class="oceanwp-instagram-link clr"><a href="https://instagram.com/'. esc_attr( $username ) .'/" rel="me" target="_'. esc_attr( $target ) .'">'. esc_attr( $follow ) .'</a>';
-								$output .= $ocean_srt;
-							$output .= '</p>';
-						} elseif ( $button_link === 'button_username' && $real_username !== '' ) {
-							$output .= '<p class="oceanwp-instagram-link clr"><a href="https://instagram.com/'. esc_attr( $real_username ) .'/" rel="me" target="_'. esc_attr( $target ) .'">'. esc_attr( $follow ) .'</a>';
-								$output .= $ocean_srt;
-							$output .= '</p>';
-						} elseif ( $button_link === 'button_hashtag' ) {
-							$output .= '<p class="oceanwp-instagram-link clr"><a href="https://instagram.com/explore/tags/'. esc_attr( $username ) .'/" rel="me" target="_'. esc_attr( $target ) .'">'. esc_attr( $follow ) .'</a>';
-								$output .= $ocean_srt;
-							$output .= '</p>';
-						} else {
-							$output .= '<p class="oceanwp-instagram-link clr"><a href="https://instagram.com/'. esc_attr( $username ) .'/" rel="me" target="_'. esc_attr( $target ) .'">'. esc_attr( $follow ) .'</a>';
-								$output .= $ocean_srt;
-							$output .= '</p>';
-						}
+						$output .= '<p class="oceanwp-instagram-link clr"><a href="https://instagram.com/'. esc_attr( $username ) .'/" rel="me" target="_'. esc_attr( $target ) .'">'. esc_attr( $follow ) .'</a></p>';
 					}
 
 					if ( 'style-four' == $columns ) {
@@ -642,7 +455,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 				}
 
 			} else {
-				$output .= __( 'No images found! <br> Try another hashtag', 'ocean-extra' );
+				$output .= __( 'No images found! <br> Try some other hashtag or username', 'ocean-extra' );
 			}
 
 			return $output;
@@ -689,8 +502,8 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 				if ( isset( $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'] ) ) {
 					$images = $insta_array['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
-				} elseif ( isset( $insta_array['entry_data']['TagPage'][0]['graphql']['username']['edge_hashtag_to_media']['edges'] ) ) {
-					$images = $insta_array['entry_data']['TagPage'][0]['graphql']['username']['edge_hashtag_to_media']['edges'];
+				} elseif ( isset( $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'] ) ) {
+					$images = $insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
 				} else {
 					return new WP_Error( 'bad_json_2', esc_html__( 'Instagram has returned invalid data.', 'ocean-extra' ) );
 				}

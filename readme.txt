@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
-Tested up to: 5.4.1
+Tested up to: 5.4.2
 Stable tag: 1.6.4
 Requires PHP: 7.0
 License: GPLv2 or later
@@ -34,15 +34,12 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.6.4 =
-- Fixed: Updated Mailchimp API
 - Fixed: Missing Dependencies script 'butterbean'
+- Fixed: Updated Mailchimp API
 - Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
 - Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
 - Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me, Social Icons, Contact Info.
 - Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me, Social Icons, Contact Info.
-- Added: New options to the Instagram Widget.
-- Fixed: Instagram Widget - incorrect link target on images display.
-- Fixed: Instagram Widget - avatar image only displaying square radius if position set to After Images.
 
 = 1.6.3 =
 - Fixed: Uncaught ReferenceError: butterbean is not defined
