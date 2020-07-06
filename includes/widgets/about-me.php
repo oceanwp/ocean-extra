@@ -127,8 +127,10 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 				( function( $ ){
 					$(document).ajaxSuccess(function(e, xhr, settings) {
 						var widget_id_base = 'ocean_about_me';
-						if ( settings.data.search( 'action=save-widget' ) != -1 && settings.data.search( 'id_base=' + widget_id_base) != -1 ) {
-							oceanwpSortServices();
+						if (typeof(settings.data) !== 'undefined' && typeof(settings.data.search) !== 'undefined') {
+							if ( settings.data.search( 'action=save-widget' ) !== 'undefined' && typeof(settings.data.search( 'id_base=' + widget_id_base)) !== 'undefined' ) {
+								oceanwpSortServices();
+							}
 						}
 					} );
 
