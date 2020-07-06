@@ -3,9 +3,10 @@
  * Custom Links Widget.
  *
  * @package OceanWP WordPress theme
+ * @since 1.0.0
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -41,33 +42,45 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Links_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			$title 	= isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$count 	= isset( $instance['count'] ) ? $instance['count'] : '';
-			$target = isset( $instance['target'] ) ? $instance['target'] : '';
+			$title    = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+			$count    = isset( $instance['count'] ) ? $instance['count'] : '';
+			$target   = isset( $instance['target'] ) ? $instance['target'] : '';
+			$nofollow = isset( $instance['nofollow'] ) ? $instance['nofollow'] : '';
 
-			// Before widget WP hook
+
+			// Before widget WP hook.
 			echo $args['before_widget'];
 
-				// Show widget title
+				// Show widget title.
 				if ( $title ) {
 					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 				}
 
+				// Determine link rel.
+				$ocean_srt = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
+				
+				$results = ocean_link_rel( $ocean_srt, $nofollow, $target );
+
+				$ocean_sr = $results[0];
+				$link_rel = $results[1];
+
+				// Display custom links.
 				echo '<ul class="oceanwp-custom-links">';
 					if ( $count !== '0' ) {
 						for ( $i=1; $i<=$count; $i++ ) {
-							$url 	= isset( $instance["url_".$i] ) ? $instance["url_".$i] : '';
-							$text 	= isset( $instance["text_".$i] ) ? $instance["text_".$i]:'';
+							$url    = isset( $instance["url_".$i] ) ? $instance["url_".$i] : '';
+							$text   = isset( $instance["text_".$i] ) ? $instance["text_".$i]:'';
 
 							echo '<li>';
-								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $target ) .'">'. esc_attr( $text ) .'</a>';
+								echo '<a href="'. esc_url( $url ) .'" target="_'. esc_attr( $target ) .'" '. $link_rel .'>'. esc_attr( $text ) .'</a>';
+								echo $ocean_sr;
 							echo '</li>';
 
 						}
 					}
 				echo '</ul>';
 
-			// After widget WP hook
+			// After widget WP hook.
 			echo $args['after_widget'];
 
 		}
@@ -80,11 +93,12 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Links_Widget' ) ) {
 		public function update( $new_instance, $old_instance ) {
 			$instance                   = $old_instance;
 			$instance['title']          = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
-			$instance['count']        	= ! empty( $new_instance['count'] ) ? strip_tags( $new_instance['count'] ) : '';
+			$instance['count']          = ! empty( $new_instance['count'] ) ? strip_tags( $new_instance['count'] ) : '';
 			$instance['target']         = ! empty( $new_instance['target'] ) ? strip_tags( $new_instance['target'] ) : '';
+			$instance['nofollow']       = ! empty( $new_instance['nofollow'] ) ? strip_tags( $new_instance['nofollow'] ) : '';
 			for ( $i=1;$i<=$instance['count'];$i++ ) {
-				$instance["url_".$i] 	= ! empty( $new_instance['url_'.$i] ) ? strip_tags( $new_instance['url_'.$i] ) : '';
-				$instance["text_".$i] 	= ! empty( $new_instance['text_'.$i] ) ? strip_tags( $new_instance['text_'.$i] ) : '';
+				$instance["url_".$i]    = ! empty( $new_instance['url_'.$i] ) ? strip_tags( $new_instance['url_'.$i] ) : '';
+				$instance["text_".$i]   = ! empty( $new_instance['text_'.$i] ) ? strip_tags( $new_instance['text_'.$i] ) : '';
 			}
 			return $instance;
 		}
@@ -99,19 +113,23 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Links_Widget' ) ) {
 		 */
 		public function form( $instance ) {
 
-			// Parse arguments
-			extract( wp_parse_args( (array) $instance, array(
-				'title'             => esc_attr__( 'Useful Links', 'ocean-extra' ),
-				'count'             => '5',
-				'target' 			=> esc_html__( 'Blank', 'ocean-extra' ),
-			) ) );
+			// Parse arguments.
+			extract( wp_parse_args( (array) $instance,
+				array(
+					'title'             => esc_attr__( 'Useful Links', 'ocean-extra' ),
+					'count'             => '5',
+					'target'            => esc_html__( 'Blank', 'ocean-extra' ),
+					'nofollow'          => esc_html__( 'No', 'ocean-extra' ),
+				) )
+			);
 
 			for ( $i=1;$i<=15;$i++ ) {
-				$url 			= 'url_'.$i;
-				$$url 			= isset( $instance[$url] ) ? $instance[$url] : '';
-				$text 			= 'text_'.$i;
-				$$text 			= isset( $instance[$text] ) ? $instance[$text] : '';
-			} ?>
+				$url            = 'url_'.$i;
+				$$url           = isset( $instance[$url] ) ? $instance[$url] : '';
+				$text           = 'text_'.$i;
+				$$text          = isset( $instance[$text] ) ? $instance[$text] : '';
+			}
+			?>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?>:</label>
@@ -119,12 +137,21 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Links_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id('target') ); ?>"><?php esc_html_e( 'Link Target:', 'ocean-extra' ); ?></label>
-				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name('target') ); ?>" id="<?php echo esc_attr( $this->get_field_id('target') ); ?>">
+				<label for="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>"><?php esc_html_e( 'Link Target:', 'ocean-extra' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name( 'target' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'target' ) ); ?>">
 					<option value="blank" <?php selected( $target, 'blank' ) ?>><?php esc_html_e( 'Blank', 'ocean-extra' ); ?></option>
 					<option value="self" <?php selected( $target, 'self' ) ?>><?php esc_html_e( 'Self', 'ocean-extra' ); ?></option>
 				</select>
 			</p>
+
+			<p>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>"><?php esc_html_e( 'Add Nofollow Link Rel:', 'ocean-extra' ); ?></label>
+				<select class='widefat' name="<?php echo esc_attr( $this->get_field_name( 'nofollow' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'nofollow' ) ); ?>">
+					<option value="no" <?php selected( $nofollow, 'no' ) ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
+					<option value="yes" <?php selected( $nofollow, 'yes' ) ?>><?php esc_html_e( 'Yes', 'ocean-extra' ); ?></option>
+				</select>
+			</p>
+
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id('count') ); ?>"><?php esc_html_e( 'Number of Custom Links:', 'ocean-extra' ); ?></label>
@@ -164,10 +191,10 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Links_Widget' ) ) {
 						<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( $text ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( $text ) ); ?>" type="text" value="<?php echo esc_attr( $$text ); ?>" />
 					</p>
 				</div>
-				<?php endfor;?>
+				<?php endfor; ?>
 			</div>
 
-		<?php
+			<?php
 
 		}
 

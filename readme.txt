@@ -15,15 +15,15 @@ This plugin requires the [OceanWP](https://oceanwp.org/) theme to be installed.
 
 == Installation ==
 
-1. Upload `ocean-extra` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Upload `ocean-extra` to the `/wp-content/plugins/` directory;
+2. Activate the plugin through the 'Plugins > Installed Plugins' menu in WordPress dashboard;
 3. Done!
 
 == Frequently Asked Questions ==
 
 = I installed the plugin but it does not work =
 
-This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
+This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 == Screenshots ==
 
@@ -34,17 +34,25 @@ This plugin will only work with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.6.4 =
-- fixed: Updated Mailchimp API
+- Fixed: Updated Mailchimp API
+- Fixed: Missing Dependencies script 'butterbean'
+- Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
+- Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
+- Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me, Social Icons, Contact Info.
+- Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me, Social Icons, Contact Info.
+- Added: New options to the Instagram Widget.
+- Fixed: Instagram Widget - incorrect link target on images display.
+- Fixed: Instagram Widget - avatar image only displaying square radius if position set to After Images.
 
 = 1.6.3 =
-- fixed: Uncaught ReferenceError: butterbean is not defined
-- fixed: OceanWP javascripts won't execute on fast pages
+- Fixed: Uncaught ReferenceError: butterbean is not defined
+- Fixed: OceanWP javascripts won't execute on fast pages
 
 = 1.6.2 =
-- fixed: [oceanwp_nav] error.
+- Fixed: [oceanwp_nav] error.
 
 = 1.6.1 =
-- fixed: Shortocde [oceanwp_nav] is not working.
+- Fixed: Shortocde [oceanwp_nav] is not working.
 
 = 1.6.0 =
 - Updated: Freemius SDK for better account and license management.

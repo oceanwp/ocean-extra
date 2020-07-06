@@ -1,25 +1,32 @@
 == Changelog ==
 
 = 1.6.4 =
-- fixed: Updated Mailchimp API
-- fixed: Missing Dependencies script 'butterbean'
+- Fixed: Updated Mailchimp API
+- Fixed: Missing Dependencies script 'butterbean'
+- Added: SEO Improvement - added "noopener noreferrer" tags when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
+- Added: Accessibility Improvement - aria labels with warnings when link opens in a new tab: Custom Links, About Me, Social Icons, Contact Info.
+- Added: Accessibility Improvement - aria-hidden on icons for following widgets: About Me, Social Icons, Contact Info.
+- Added: Option to add a 'nofollow' link rel to following widgets: Custom Links, About Me, Social Icons, Contact Info.
+- Added: New options to the Instagram Widget.
+- Fixed: Instagram Widget - incorrect link target on images display.
+- Fixed: Instagram Widget - avatar image only displaying square radius if position set to After Images.
 
 = 1.6.3 =
-- fixed: Uncaught ReferenceError: butterbean is not defined
-- fixed: OceanWP javascripts won't execute on fast pages
+- Fixed: Uncaught ReferenceError: butterbean is not defined
+- Fixed: OceanWP javascripts doesn't execute on fast pages
 
 = 1.6.2 =
-- fixed: [oceanwp_nav] error.
+- Fixed: [oceanwp_nav] error.
 
 = 1.6.1 =
-- fixed: Shortocde [oceanwp_nav] is not working.
+- Fixed: Shortocde [oceanwp_nav] is not working.
 
 = 1.6.0 =
-- fixed: Freemius account details display.
+- Fixed: Freemius account details display.
 - Added: Updated custom header nav widget with respect to theme for accessibitly.
 - Updated: Freemius SDK for better account and license management.
 - Fixed: [oceanwp_nav] shortcode mobile menu issue.
-- Fixed: Theme Panel > Scripts & Styles - PHP7.4 Warning message after disabling/enabling styles & scripts.
+- Fixed: Theme Panel > Scripts & Styles - PHP 7.4 Warning message after disabling/enabling styles & scripts.
 - Fixed: Replaced get_woocommerce_term_meta (deprecated) by get_term_meta.
 - Added: Accessibility Improvement - Added 'aria-hidden' labels to the social icon widget.
 
