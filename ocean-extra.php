@@ -3,11 +3,11 @@
  * Plugin Name:			Ocean Extra
  * Plugin URI:			https://oceanwp.org/extension/ocean-extra/
  * Description:			Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:				1.6.4
+ * Version:				1.6.6
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
- * Tested up to:		5.4.2
+ * Tested up to:		5.5
  *
  * Text Domain: ocean-extra
  * Domain Path: /languages
@@ -86,7 +86,7 @@ final class Ocean_Extra {
 		$this->token 			= 'ocean-extra';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.6.4';
+		$this->version 			= '1.6.6';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -94,17 +94,11 @@ final class Ocean_Extra {
         define( 'OE_FILE_PATH', __FILE__ );
 		define( 'OE_ADMIN_PANEL_HOOK_PREFIX', 'theme-panel_page_oceanwp-panel' );
 
-		// WPForms partner ID
-		add_filter( 'wpforms_upgrade_link', array( $this, 'wpforms_upgrade_link' ) );
-
 		// WooCommerce Wishlist partner ID
 		if ( class_exists( 'TInvWL_Wishlist' ) ) {
 			define( 'TINVWL_PARTNER', 'oceanwporg' );
 			define( 'TINVWL_CAMPAIGN', 'oceanwp_theme' );
 		}
-
-		// WooCommerce Variation Swatches partner ID
-		add_filter( 'gwp_affiliate_id', array( $this, 'gwp_affiliate_id' ) );
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
@@ -166,36 +160,6 @@ final class Ocean_Extra {
 			self::$_instance = new self();
 		return self::$_instance;
 	} // End instance()
-
-	/**
-	 * WPForms partner ID
-	 *
-	 * @since 1.0.0
-	 */
-	public function wpforms_upgrade_link() {
-		$url = 'https://wpforms.com/lite-upgrade/?discount=LITEUPGRADE&amp;utm_source=WordPress&amp;utm_medium=' . sanitize_key( apply_filters( 'wpforms_upgrade_link_medium', 'link' ) ) . '&amp;utm_campaign=liteplugin';
-
-		// Build final URL
-		$final_url = sprintf( 'http://www.shareasale.com/r.cfm?B=837827&U=%s&M=64312&urllink=%s', '1591020', $url );
-
-		// Return URL.
-		return esc_url( $final_url );
-	}
-
-	/**
-	 * WooCommerce Variation Swatches partner ID
-	 *
-	 * @since 1.0.0
-	 */
-	public function gwp_affiliate_id() {
-
-		// Return if the plugin is not active
-		if ( ! class_exists( 'Woo_Variation_Swatches' ) ) {
-			return;
-		}
-
-		return 69;
-	}
 
 	/**
 	 * Load the localisation file.

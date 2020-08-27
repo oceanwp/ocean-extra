@@ -1,7 +1,6 @@
 <?php
 /**
  * Allows plugins to use their own update API.
- * 
  */
 if (!class_exists('OceanWP_Plugin_Updater')) {
 
@@ -244,7 +243,9 @@ if (!class_exists('OceanWP_Plugin_Updater')) {
          * @return type
          */
         public function add_core_extensions_bundle_validation() {
-            if (!current_user_can('manage_options') ||(isset($_REQUEST['_wpnonce'])&& !wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
+            if (!current_user_can('manage_options') ||
+            ! isset($_REQUEST['_wpnonce']) ||
+            (isset($_REQUEST['_wpnonce'])&& !wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
                 return;
             static $validation;
 
@@ -561,7 +562,9 @@ if (!class_exists('OceanWP_Plugin_Updater')) {
          * @return  void
          */
         public function oceanwp_activate_license() {
-            if (!current_user_can('manage_options') || (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
+            if (!current_user_can('manage_options') ||
+            ! isset($_REQUEST['_wpnonce']) ||
+            (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
                 return;
 
             if (!isset($_POST['oceanwp_options']) || !isset($_POST['oceanwp_licensekey_activateall'])) {
@@ -634,7 +637,9 @@ if (!class_exists('OceanWP_Plugin_Updater')) {
          * @return  void
          */
         public function oceanwp_deactivate_license() {
-            if (!current_user_can('manage_options') || (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
+            if (!current_user_can('manage_options') ||
+            ! isset($_REQUEST['_wpnonce']) ||
+            (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'oceanwp_options-options')))
                 return;
             if (!isset($_POST['oceanwp_options'])) {
                 return;
@@ -931,9 +936,11 @@ if (!class_exists('OceanWP_Plugin_Updater')) {
          * @return  void
          */
         public function oceanwp_show_changelog() {
-            if (!current_user_can('manage_options') || (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'changelog_link_nonce')))
+            if (!current_user_can('manage_options') ||
+            ! isset($_REQUEST['_wpnonce']) ||
+            (isset($_REQUEST['_wpnonce'])&&!wp_verify_nonce($_REQUEST['_wpnonce'], 'changelog_link_nonce')))
                 return;
-            
+        
             if (empty($_REQUEST['edd_sl_action']) || 'view_plugin_changelog' != $_REQUEST['edd_sl_action']) {
                 return;
             }
