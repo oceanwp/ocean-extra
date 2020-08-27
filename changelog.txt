@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.6.6 =
+- Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
+
+= 1.6.5 =
+- Fixed: Data saving error - about me widget.
+- Removed: All affiliate links has been removed.
+
 = 1.6.4 =
 - Fixed: Missing Dependencies script 'butterbean'
 - Fixed: Updated Mailchimp API
