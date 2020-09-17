@@ -35,6 +35,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.6.6 =
 - Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
+- Fixed: Remove filter for 5 star rating from review link.
 
 = 1.6.5 =
 - Fixed: Data saving error - about me widget.
