@@ -114,7 +114,6 @@ final class Ocean_Extra {
 			require_once( OE_PATH .'/includes/panel/integrations-tab.php' );
 			require_once( OE_PATH .'/includes/panel/library.php' );
 			require_once( OE_PATH .'/includes/panel/library-shortcode.php' );
-			require_once( OE_PATH .'/includes/panel/updater.php' );
 			require_once( OE_PATH .'/includes/menu-icons/menu-icons.php' );
 			require_once( OE_PATH .'/includes/wizard/wizard.php' );
 

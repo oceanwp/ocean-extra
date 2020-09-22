@@ -35,7 +35,7 @@
 			// Insights platform information.
 			$fs->get_usage_tracking_terms_url();
 
-		$freemius_link = '<a href="' . $freemius_site_url . '" target="_blank" tabindex="0">freemius.com</a>';
+		$freemius_link = '<a href="' . $freemius_site_url . '" target="_blank" rel="noopener" tabindex="0">freemius.com</a>';
 
 		$message_below_input_field = sprintf(
 			fs_text_inline( 'The %1$s will be periodically sending data to %2$s to check for security and feature updates, and verify the validity of your license.', 'license-sync-disclaimer', $slug ),
@@ -812,7 +812,9 @@ HTML;
                 $singleInstallDetails.prev().data( 'blog-id' ) :
                 null;
 
+            <?php if ( $fs->apply_filters( 'enable_per_site_activation', true ) ) : ?>
             $multisiteOptionsContainer.toggle( isNetworkActivation && ! isSingleSiteActivation );
+            <?php endif ?>
 
             if ( hasLicenseTypes ) {
                 $licenseTypes.attr( 'checked', false );
