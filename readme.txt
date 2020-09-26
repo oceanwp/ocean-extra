@@ -1,8 +1,8 @@
 === Ocean Extra ===
-Contributors: oceanwp, apprimit
+Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
-Tested up to: 5.5
+Tested up to: 5.5.1
 Stable tag: 1.6.6
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -35,12 +35,13 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.6.6 =
 - Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
-- Fixed: Remove filter for 5 star rating from review link.
+- Fixed: Remove  5-star rating filter from review link.
+- Fixed: PHP 7.4 notice 'Trying to access array offset on value of type bool' in ocean-extra file.
 - Updated: Freemius version.
 
 = 1.6.5 =
-- Fixed: Data saving error - about me widget.
-- Removed: All affiliate links has been removed.
+- Fixed: Data saving error - About Me widget.
+- Removed: All affiliate links have been removed.
 
 = 1.6.4 =
 - Fixed: Missing Dependencies script 'butterbean'

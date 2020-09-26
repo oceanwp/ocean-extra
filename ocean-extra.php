@@ -402,7 +402,7 @@ final class Ocean_Extra {
 			$description = html_entity_decode( htmlspecialchars_decode( oceanwp_excerpt( 40 ) ) );
 		}
 
-		// Image
+		// Image.
 		$image = '';
 		$has_img = false;
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
@@ -417,11 +417,14 @@ final class Ocean_Extra {
 			}
 		} else {
 			$get_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-			$image = $get_image[0];
-			$has_img = true;
+
+			if ( is_array( $get_image ) ) {
+				$image = $get_image[0];
+				$has_img = true;
+			}
 		}
 
-		// Post author
+		// Post author.
 		if ( $facebook_url ) {
 			$author = $facebook_url;
 		}
