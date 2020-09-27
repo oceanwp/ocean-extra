@@ -1,7 +1,7 @@
 ( function( $ ) {
 	"use strict";
 
-	$( document ).on( 'ready', function() {
+	$( function() {
 
 		// Show/hide both sidebars options
 		var bothSidebarsField       = $( '#butterbean-control-ocean_post_layout select' ),

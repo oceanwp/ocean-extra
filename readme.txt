@@ -36,8 +36,9 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 = 1.6.6 =
 - Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
 - Fixed: Remove  5-star rating filter from review link.
-- Fixed: PHP 7.4 notice 'Trying to access array offset on value of type bool' in ocean-extra file.
-- Updated: Freemius version.
+- Fixed: PHP 7.4 notice - 'Trying to access array offset on value of type bool' in ocean-extra file.
+- Fixed: jQuery notice - 'ready' function has been deprecated - metabox.js file.
+- Updated: Freemius SDK version.
 
 = 1.6.5 =
 - Fixed: Data saving error - About Me widget.
