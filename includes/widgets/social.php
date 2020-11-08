@@ -26,83 +26,103 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				array(
 					'twitter' => array(
 						'name' => 'Twitter',
-						'url'  => '',
+                        'url'  => '',
+                        'icon_class' => 'fab fa-twitter',
 					),
 					'facebook' => array(
 						'name' => 'Facebook',
 						'url'  => '',
+                        'icon_class' => 'fab fa-facebook',
 					),
 					'instagram' => array(
 						'name' => 'Instagram',
 						'url'  => '',
+                        'icon_class' => 'fab fa-instagram',
 					),
 					'google-plus' => array(
 						'name' => 'GooglePlus',
 						'url'  => '',
+                        'icon_class' => 'fab fa-google-plus',
 					),
 					'linkedin' => array(
 						'name' => 'LinkedIn',
 						'url'  => '',
+                        'icon_class' => 'fab fa-linkedin',
 					),
 					'pinterest' => array(
 						'name' => 'Pinterest',
 						'url'  => '',
+                        'icon_class' => 'fab fa-pinterest-p',
 					),
 					'yelp' => array(
 						'name' => 'Yelp',
 						'url'  => '',
+                        'icon_class' => 'fab fa-yelp',
 					),
 					'dribbble' => array(
 						'name' => 'Dribbble',
 						'url'  => '',
+                        'icon_class' => 'fab fa-dribbble',
 					),
 					'flickr' => array(
 						'name' => 'Flickr',
 						'url'  => '',
+                        'icon_class' => 'fab fa-flickr',
 					),
 					'vk' => array(
 						'name' => 'VK',
 						'url'  => '',
+                        'icon_class' => 'fab fa-vk',
 					),
 					'github' => array(
 						'name' => 'GitHub',
 						'url'  => '',
+                        'icon_class' => 'fab fa-github',
 					),
 					'tumblr' => array(
 						'name' => 'Tumblr',
 						'url'  => '',
+                        'icon_class' => 'fab fa-tumblr',
 					),
 					'skype' => array(
 						'name' => 'Skype',
 						'url'  => '',
+                        'icon_class' => 'fab fa-skype',
 					),
 					'trello' => array(
 						'name' => 'Trello',
 						'url'  => '',
+                        'icon_class' => 'fab fa-trello',
 					),
 					'foursquare' => array(
 						'name' => 'Foursquare',
 						'url'  => '',
+                        'icon_class' => 'fab fa-foursquare',
 					),
 					'xing' => array(
 						'name' => 'Xing',
 						'url'  => '',
+                        'icon_class' => 'fab fa-xing',
 					),
 					'vimeo-square' => array(
 						'name' => 'Vimeo',
 						'url'  => '',
+                        'icon_class' => 'fab fa-vimeo',
 					),
 					'vine' => array(
 						'name' => 'Vine',
 						'url'  => '',
+                        'icon_class' => 'fab fa-vine',
 					),
 					'youtube' => array(
 						'name' => 'Youtube',
 						'url'  => '',
+                        'icon_class' => 'fab fa-youtube',
 					),
 					'rss' => array(
 						'name' => 'RSS',
 						'url'  => '',
+                        'icon_class' => 'fas fa-rss',
 					),
 				)
 			);
@@ -292,16 +312,12 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 					$social_services_array = $this->social_services_array;
 
 					// Loop through each item in the array.
-					foreach( $social_services as $key => $val ) {
+					foreach( $social_services_array as $key => $val ) {
 						$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
-						$name     = $social_services_array[$key]['name'];
+                        $name     = $social_services_array[$key]['name'];
+                        $icon     = $social_services_array[$key]['icon_class'];
 
 						if ( $link ) {
-							$key  = 'vimeo-square' === $key ? 'vimeo' : $key;
-							$icon = 'youtube' === $key ? 'youtube' : $key;
-							$icon = 'pinterest' === $key ? 'pinterest-p' : $icon;
-							$icon = 'bloglovin' === $key ? 'heart' : $icon;
-							$icon = 'vimeo-square' === $key ? 'vimeo' : $icon;
 
 							if ( 'skype' === $key ) {
 								$link = 'skype:'. esc_attr( $link ) .'?call';
@@ -322,12 +338,8 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 								echo '<a href="'. $link .'" aria-label="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'" '. $link_rel .'>';
 
-									// Display icons.
-									if( $icon === 'rss' ) {
-										echo '<i class="fa fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
-									} else {
-										echo '<i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
-									}
+                                    // Display icons.
+                                    echo '<i class="'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
 
 								echo '</a>';
 
@@ -515,18 +527,17 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				$social_services_array = $this->social_services_array;
 
 				// Get current services display.
-				$display_services = isset ( $instance['social_services'] ) ? $instance['social_services']: '';
-
+                $display_services = isset ( $instance['social_services'] ) ? $instance['social_services']: '';
+                
 				// Loop through social services to display inputs.
-				foreach( $display_services as $key => $val ) {
+				foreach( $social_services_array as $key => $val ) {
 					$url  = ! empty( $display_services[$key]['url'] ) ? $display_services[$key]['url'] : null;
-					$name = $social_services_array[$key]['name'];
+                    $name = $social_services_array[$key]['name'];
 					?>
 
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
 						<p>
 							<label for="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-name"><?php echo esc_attr( strip_tags( $name ) ); ?>:</label>
-							<input type="hidden" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][name]' ); ?>" value="<?php echo esc_attr( $name ); ?>">
 							<input type="text" class="widefat" id="<?php echo esc_attr( $field_id_services ); ?>-<?php echo esc_attr( $key ); ?>-url" name="<?php echo esc_attr( $field_name_services .'['.$key.'][url]' ); ?>" value="<?php echo esc_attr( $url ); ?>" />
 						</p>
 					</li>
