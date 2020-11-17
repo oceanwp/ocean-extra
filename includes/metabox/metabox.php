@@ -339,7 +339,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'priority'  => 'high'
 		        )
 		    );
-			
+
 			$manager = $butterbean->get_manager( 'oceanwp_mb_settings' );
 			
 			$manager->register_section(
@@ -390,7 +390,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_both_sidebars_style', // Same as control name.
 		        array(
@@ -1689,14 +1689,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Enter a URL that is compatible with WP\'s built-in oEmbed feature. This setting is used for your video and audio post formats.', 'ocean-extra' ) .'<br /><a href="http://codex.wordpress.org/Embeds" target="_blank">'. esc_html__( 'Learn More', 'ocean-extra' ) .' &rarr;</a>',
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_oembed', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_self_hosted_media', // Same as setting name.
 		        array(
@@ -1706,7 +1706,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Insert your self hosted video or audio url here.', 'ocean-extra' ) .'<br /><a href="http://make.wordpress.org/core/2013/04/08/audio-video-support-in-core/" target="_blank">'. esc_html__( 'Learn More', 'ocean-extra' ) .' &rarr;</a>',
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_self_hosted_media', // Same as control name.
 		        array(
