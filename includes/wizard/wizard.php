@@ -499,8 +499,17 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                                     <div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr($demo); ?>">
 
                                         <div class="theme-screenshot">
-                                            <img src="<?php echo OE_URL . 'includes/panel/demos/' . esc_attr($demo); ?>.jpg" />
+                                        
+                                            <?php
+									        $demo_png = array( 'bakery', 'barber', 'book', 'bright', 'computer', 'corporate', 'destination', 'florist', 'freelance', 'lauren' );
+									        if ( in_array( $demo, $demo_png ) ) {
+									    	$demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.png';
+									        } else {
+										    $demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.jpg';
+									        }
+									        ?>
 
+									        <img src="<?php echo $demo_img_src; ?>" />
                                         </div>
 
                                         <div class="theme-id-container">
