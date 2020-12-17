@@ -499,8 +499,17 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                                     <div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr($demo); ?>">
 
                                         <div class="theme-screenshot">
-                                            <img src="https://raw.githubusercontent.com/oceanwp/oceanwp-sample-data/master/preview/<?php echo esc_attr($demo); ?>.jpg" />
+                                        
+                                            <?php
+									        $demo_png = array( 'bakery', 'barber', 'book', 'bright', 'computer', 'corporate', 'destination', 'florist', 'freelance', 'lauren' );
+									        if ( in_array( $demo, $demo_png ) ) {
+									    	$demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.png';
+									        } else {
+										    $demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.jpg';
+									        }
+									        ?>
 
+									        <img src="<?php echo $demo_img_src; ?>" />
                                         </div>
 
                                         <div class="theme-id-container">
@@ -714,28 +723,35 @@ if (!class_exists('Ocean_Extra_Theme_Wizard')):
                 set_theme_mod('ocean_retina_logo', $_POST['ocean-retina-logo']);
 
             if (isset($_POST['ocean-site-title']))
-                update_option('blogname', $_POST['ocean-site-title']);
+                $site_title = sanitize_hex_color( $_POST['ocean-site-title'] );
+                update_option('blogname', esc_html($site_title));
 
             if (isset($_POST['ocean-tagline']))
-                update_option('blogdescription', $_POST['ocean-tagline']);
+                $site_tagline = sanitize_hex_color( $_POST['ocean-tagline'] );
+                update_option('blogdescription', esc_html($site_tagline));
 
             if (isset($_POST['ocean-favicon']))
                 update_option('site_icon', $_POST['ocean-favicon']);
 
             if (isset($_POST['ocean-primary-color']))
-                set_theme_mod('ocean_primary_color', $_POST['ocean-primary-color']);
+                $primary_color = sanitize_hex_color( $_POST['ocean-primary-color'] );
+                set_theme_mod('ocean_primary_color',  esc_html($primary_color));
 
             if (isset($_POST['ocean-hover-primary-color']))
-                set_theme_mod('ocean_hover_primary_color', $_POST['ocean-hover-primary-color']);
+                $primary_color_hover = sanitize_hex_color( $_POST['ocean-hover-primary-color'] );
+                set_theme_mod('ocean_hover_primary_color', esc_html($primary_color_hover));
 
             if (isset($_POST['ocean-main-border-color']))
-                set_theme_mod('ocean_main_border_color', $_POST['ocean-main-border-color']);
+                $main_border_color = sanitize_hex_color( $_POST['ocean-main-border-color'] );
+                set_theme_mod('ocean_main_border_color',  esc_html($main_border_color));
 
             if (isset($_POST['ocean-links-color']))
-                set_theme_mod('ocean_links_color', $_POST['ocean-links-color']);
+                $links_color = sanitize_hex_color( $_POST['ocean-links-color'] );
+                set_theme_mod('ocean_links_color', esc_html($links_color));
 
             if (isset($_POST['ocean-links-hover-color']))
-                set_theme_mod('ocean_links_color_hover', $_POST['ocean-links-hover-color']);
+                $links_color_hover = sanitize_hex_color( $_POST['ocean-links-hover-color'] );
+                set_theme_mod('ocean_links_color_hover', esc_html($links_color_hover));
 
             wp_safe_redirect($this->get_next_step_link());
             exit;

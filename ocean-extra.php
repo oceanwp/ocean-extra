@@ -3,11 +3,11 @@
  * Plugin Name:			Ocean Extra
  * Plugin URI:			https://oceanwp.org/extension/ocean-extra/
  * Description:			Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:				1.6.6
+ * Version:				1.6.8
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
- * Tested up to:		5.5
+ * Tested up to:		5.6
  *
  * Text Domain: ocean-extra
  * Domain Path: /languages
@@ -86,7 +86,7 @@ final class Ocean_Extra {
 		$this->token 			= 'ocean-extra';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.6.6';
+		$this->version 			= '1.6.8';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -114,7 +114,6 @@ final class Ocean_Extra {
 			require_once( OE_PATH .'/includes/panel/integrations-tab.php' );
 			require_once( OE_PATH .'/includes/panel/library.php' );
 			require_once( OE_PATH .'/includes/panel/library-shortcode.php' );
-			require_once( OE_PATH .'/includes/panel/updater.php' );
 			require_once( OE_PATH .'/includes/menu-icons/menu-icons.php' );
 			require_once( OE_PATH .'/includes/wizard/wizard.php' );
 
@@ -403,7 +402,7 @@ final class Ocean_Extra {
 			$description = html_entity_decode( htmlspecialchars_decode( oceanwp_excerpt( 40 ) ) );
 		}
 
-		// Image
+		// Image.
 		$image = '';
 		$has_img = false;
 		if ( OCEANWP_WOOCOMMERCE_ACTIVE
@@ -418,11 +417,14 @@ final class Ocean_Extra {
 			}
 		} else {
 			$get_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-			$image = $get_image[0];
-			$has_img = true;
+
+			if ( is_array( $get_image ) ) {
+				$image = $get_image[0];
+				$has_img = true;
+			}
 		}
 
-		// Post author
+		// Post author.
 		if ( $facebook_url ) {
 			$author = $facebook_url;
 		}

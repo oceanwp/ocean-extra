@@ -1,12 +1,23 @@
 == Changelog ==
 
+= 1.6.8 =
+- Fixed: MailChimp Widget: failed subscription error.
+- Fixed: WC_Cart->taxes is deprecated since version 3.2 error when oceanwp_woo_free_shipping_left shortcode is in use.
+- Fixed: Broken demo images.
+
+= 1.6.7 =
+- Updated: Freemius SDK version.
+
 = 1.6.6 =
 - Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
-- Fixed: Remove filter for 5 star rating from review link.
+- Fixed: Remove  5-star rating filter from review link.
+- Fixed: PHP 7.4 notice - 'Trying to access array offset on value of type bool' in ocean-extra file.
+- Fixed: jQuery notice - 'ready' function has been deprecated - metabox.js file.
+- Updated: Freemius SDK version.
 
 = 1.6.5 =
-- Fixed: Data saving error - about me widget.
-- Removed: All affiliate links has been removed.
+- Fixed: Data saving error - About Me widget.
+- Removed: All affiliate links have been removed.
 
 = 1.6.4 =
 - Fixed: Missing Dependencies script 'butterbean'

@@ -1,9 +1,9 @@
 === Ocean Extra ===
-Contributors: oceanwp, apprimit
+Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
-Tested up to: 5.5
-Stable tag: 1.6.6
+Tested up to: 5.6
+Stable tag: 1.6.8
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,13 +33,24 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
+= 1.6.8 =
+- Fixed: MailChimp Widget: failed subscription error.
+- Fixed: WC_Cart->taxes is deprecated since version 3.2 error when oceanwp_woo_free_shipping_left shortcode is in use.
+- Fixed: Broken demo images.
+
+= 1.6.7 =
+- Updated: Freemius SDK version.
+
 = 1.6.6 =
 - Fixed: Security issue - If $_REQUEST['_wpnonce'] is not set, it won't be checked.
-- Fixed: Remove filter for 5 star rating from review link.
+- Fixed: Remove  5-star rating filter from review link.
+- Fixed: PHP 7.4 notice - 'Trying to access array offset on value of type bool' in ocean-extra file.
+- Fixed: jQuery notice - 'ready' function has been deprecated - metabox.js file.
+- Updated: Freemius SDK version.
 
 = 1.6.5 =
-- Fixed: Data saving error - about me widget.
-- Removed: All affiliate links has been removed.
+- Fixed: Data saving error - About Me widget.
+- Removed: All affiliate links have been removed.
 
 = 1.6.4 =
 - Fixed: Missing Dependencies script 'butterbean'

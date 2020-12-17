@@ -555,7 +555,7 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left' ) ) {
 
 		if ( 0 != $min_free_shipping_amount ) {
 			if ( isset( WC()->cart->cart_contents_total ) ) {
-				$total = ( WC()->cart->prices_include_tax ) ? WC()->cart->cart_contents_total + array_sum( WC()->cart->taxes ) : WC()->cart->cart_contents_total;
+				$total = ( WC()->cart->prices_include_tax ) ? ( WC()->cart->cart_contents_total + WC()->cart->get_cart_contents_tax() ) : WC()->cart->cart_contents_total;
 				if ( $total >= $min_free_shipping_amount ) {
 					return do_shortcode( $content_reached );
 				} else {

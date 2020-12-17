@@ -55,7 +55,8 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
                 $params = array(
                     'apikey'            => $apikey,
                     'id'                => $list_id,
-                    'email'             => array( 'email' => $email ),
+                    'email_address'     => $email,
+		            'status'		    => 'subscribed',
                     'double_optin'      => FALSE,
                     'send_welcome'      => FALSE,
                     'replace_interests' => FALSE,
@@ -65,13 +66,11 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
                 $ch     = curl_init();
                 $params = json_encode( $params );
 
-                curl_setopt( $ch, CURLOPT_URL, $root . '/lists/subscribe' . '.json' );
-
-                curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json',
-                    'Authorization: ' . $apikey
-                ) );
+                curl_setopt( $ch, CURLOPT_URL, $root . '/lists/' . $list_id . '/members/' . $email );
+				curl_setopt( $ch, CURLOPT_USERPWD, 'user:' . $apikey);
+				curl_setopt( $ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json'] );
                 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
-
+                curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'PUT');
                 curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
 
                 $response_body  = curl_exec( $ch );
