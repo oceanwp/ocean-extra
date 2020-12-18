@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.6.9 =
+- Fixed: Demo import issue and Elementor page styling after import.
+
 = 1.6.8 =
 - Fixed: MailChimp Widget: failed subscription error.
 - Fixed: WC_Cart->taxes is deprecated since version 3.2 error when oceanwp_woo_free_shipping_left shortcode is in use.

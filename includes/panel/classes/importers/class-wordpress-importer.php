@@ -1,22 +1,26 @@
 <?php
 /*
 Plugin Name: WordPress Importer
-Plugin URI: http://wordpress.org/extend/plugins/wordpress-importer/
+Plugin URI: https://wordpress.org/plugins/wordpress-importer/
 Description: Import posts, pages, comments, custom fields, categories, tags and more from a WordPress export file.
 Author: wordpressdotorg
-Author URI: http://wordpress.org/
-Version: 0.6.3
-Text Domain: wordpress-importer
-License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Author URI: https://wordpress.org/
+Version: 0.7
+Text Domain: ocean-extra
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-if ( ! defined( 'WP_LOAD_IMPORTERS' ) )
+if ( ! defined( 'WP_LOAD_IMPORTERS' ) ) {
 	return;
+}
 
 /** Display verbose errors */
-define( 'IMPORT_DEBUG', false );
+if ( ! defined( 'IMPORT_DEBUG' ) ) {
+	define( 'IMPORT_DEBUG', WP_DEBUG );
+}
 
-// Load Importer API
+/** WordPress Import Administration API */
 require_once ABSPATH . 'wp-admin/includes/import.php';
 
 if ( ! class_exists( 'WP_Importer' ) ) {
@@ -25,16 +29,31 @@ if ( ! class_exists( 'WP_Importer' ) ) {
 		require $class_wp_importer;
 }
 
-// include WXR file parsers
-require OE_PATH . '/includes/panel/classes/importers/class-parsers.php';
+/** OWP_Parser class */
+require OE_PATH . '/includes/panel/classes/importers/parsers/class-owp-parser.php';
+
+/** OWP_Parser_SimpleXML class */
+require OE_PATH . '/includes/panel/classes/importers/parsers/class-owp-parser-simplexml.php';
+
+/** OWP_Parser_XML class */
+require OE_PATH . '/includes/panel/classes/importers/parsers/class-owp-parser-xml.php';
+
+/** OWP_Parser_Regex class */
+require OE_PATH . '/includes/panel/classes/importers/parsers/class-owp-parser-regex.php';
+
+function owp_importer_init() {
+	/**
+	 * WordPress Importer object for registering the import callback
+	 * @global WP_Import $wp_import
+	 */
+	$GLOBALS['wp_import'] = new WP_Import();
+	register_importer( 'wordpress', 'WordPress', __('Import <strong>posts, pages, comments, custom fields, categories, and tags</strong> from a WordPress export file.', 'ocean-extra'), array( $GLOBALS['wp_import'], 'dispatch' ) );
+}
+add_action( 'admin_init', 'owp_importer_init' );
 
 /**
- * WordPress Importer class for managing the import process of a WXR file
- *
- * @package WordPress
- * @subpackage Importer
+ * WordPress importer class.
  */
-if ( class_exists( 'WP_Importer' ) ) {
 class WP_Import extends WP_Importer {
 	var $max_wxr_version = 1.2; // max. supported WXR version
 
@@ -262,7 +281,7 @@ class WP_Import extends WP_Importer {
 
 <?php if ( ! empty( $this->authors ) ) : ?>
 	<h3><?php _e( 'Assign Authors', 'wordpress-importer' ); ?></h3>
-	<p><?php _e( 'To make it easier for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site. For example, you may want to import all the entries as <code>admin</code>s entries.', 'wordpress-importer' ); ?></p>
+	<p><?php _e( 'To make it simpler for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site, such as your primary administrator account.', 'wordpress-importer' ); ?></p>
 <?php if ( $this->allow_create_users() ) : ?>
 	<p><?php printf( __( 'If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary.', 'wordpress-importer' ), esc_html( get_option('default_role') ) ); ?></p>
 <?php endif; ?>
@@ -304,6 +323,7 @@ class WP_Import extends WP_Importer {
 
 		$create_users = $this->allow_create_users();
 		if ( $create_users ) {
+			echo '<label for="user_new_'. $n . '">';
 			if ( $this->version != '1.0' ) {
 				_e( 'or create new user with login name:', 'wordpress-importer' );
 				$value = '';
@@ -311,15 +331,28 @@ class WP_Import extends WP_Importer {
 				_e( 'as a new user:', 'wordpress-importer' );
 				$value = esc_attr( sanitize_user( $author['author_login'], true ) );
 			}
+			echo '</label>';
 
-			echo ' <input type="text" name="user_new['.$n.']" value="'. $value .'" /><br />';
+			echo ' <input type="text" id="user_new_' . $n . '" name="user_new['.$n.']" value="'. $value .'" /><br />';
 		}
 
-		if ( ! $create_users && $this->version == '1.0' )
+		echo '<label for="imported_authors_'. $n . '">';
+		if ( ! $create_users && $this->version == '1.0' ) {
 			_e( 'assign posts to an existing user:', 'wordpress-importer' );
-		else
+		} else {
 			_e( 'or assign posts to an existing user:', 'wordpress-importer' );
-		wp_dropdown_users( array( 'name' => "user_map[$n]", 'multi' => true, 'show_option_all' => __( '- Select -', 'wordpress-importer' ) ) );
+		}
+		echo '</label>';
+
+		echo ' ' . wp_dropdown_users( array(
+			'name'            => "user_map[$n]",
+			'id'              => 'imported_authors_' . $n,
+			'multi'           => true,
+			'show_option_all' => __( '- Select -', 'wordpress-importer' ),
+			'show'            => 'display_name_with_login',
+			'echo'            => 0,
+		) );
+
 		echo '<input type="hidden" name="imported_authors['.$n.']" value="' . esc_attr( $author['author_login'] ) . '" />';
 
 		if ( $this->version != '1.0' )
@@ -406,18 +439,18 @@ class WP_Import extends WP_Importer {
 				continue;
 			}
 
-			$category_parent = empty( $cat['category_parent'] ) ? 0 : category_exists( $cat['category_parent'] );
-			$category_description = isset( $cat['category_description'] ) ? $cat['category_description'] : '';
-			$catarr = array(
-				'category_nicename' => $cat['category_nicename'],
-				'category_parent' => $category_parent,
-				'cat_name' => $cat['cat_name'],
-				'category_description' => $category_description
-			);
-			$catarr = wp_slash( $catarr );
+			$parent      = empty( $cat['category_parent'] ) ? 0 : category_exists( $cat['category_parent'] );
+			$description = isset( $cat['category_description'] ) ? $cat['category_description'] : '';
 
-			$id = wp_insert_category( $catarr );
-			if ( ! is_wp_error( $id ) ) {
+			$data = array(
+				'category_nicename'    => $cat['category_nicename'],
+				'category_parent'      => $parent,
+				'cat_name'             => wp_slash( $cat['cat_name'] ),
+				'category_description' => wp_slash( $description ),
+			);
+
+			$id = wp_insert_category( $data );
+			if ( ! is_wp_error( $id ) && $id > 0 ) {
 				if ( isset($cat['term_id']) )
 					$this->processed_terms[intval($cat['term_id'])] = $id;
 			} else {
@@ -428,7 +461,7 @@ class WP_Import extends WP_Importer {
 				continue;
 			}
 
-			$this->process_termmeta( $cat, $id['term_id'] );
+			$this->process_termmeta( $cat, $id );
 		}
 
 		unset( $this->categories );
@@ -455,11 +488,13 @@ class WP_Import extends WP_Importer {
 				continue;
 			}
 
-			$tag = wp_slash( $tag );
-			$tag_desc = isset( $tag['tag_description'] ) ? $tag['tag_description'] : '';
-			$tagarr = array( 'slug' => $tag['tag_slug'], 'description' => $tag_desc );
+			$description = isset( $tag['tag_description'] ) ? $tag['tag_description'] : '';
+			$args        = array(
+				'slug'        => $tag['tag_slug'],
+				'description' => wp_slash( $description ),
+			);
 
-			$id = wp_insert_term( $tag['tag_name'], 'post_tag', $tagarr );
+			$id = wp_insert_term( wp_slash( $tag['tag_name'] ), 'post_tag', $args );
 			if ( ! is_wp_error( $id ) ) {
 				if ( isset($tag['term_id']) )
 					$this->processed_terms[intval($tag['term_id'])] = $id['term_id'];
@@ -502,13 +537,19 @@ class WP_Import extends WP_Importer {
 				$parent = 0;
 			} else {
 				$parent = term_exists( $term['term_parent'], $term['term_taxonomy'] );
-				if ( is_array( $parent ) ) $parent = $parent['term_id'];
+				if ( is_array( $parent ) ) {
+					$parent = $parent['term_id'];
+				}
 			}
-			$term = wp_slash( $term );
-			$description = isset( $term['term_description'] ) ? $term['term_description'] : '';
-			$termarr = array( 'slug' => $term['slug'], 'description' => $description, 'parent' => intval($parent) );
 
-			$id = wp_insert_term( $term['term_name'], $term['term_taxonomy'], $termarr );
+			$description = isset( $term['term_description'] ) ? $term['term_description'] : '';
+			$args        = array(
+				'slug'        => $term['slug'],
+				'description' => wp_slash( $description ),
+				'parent'      => (int) $parent
+			);
+
+			$id = wp_insert_term( wp_slash( $term['term_name'] ), $term['term_taxonomy'], $args );
 			if ( ! is_wp_error( $id ) ) {
 				if ( isset($term['term_id']) )
 					$this->processed_terms[intval($term['term_id'])] = $id['term_id'];
@@ -535,6 +576,10 @@ class WP_Import extends WP_Importer {
 	 * @param int   $term_id ID of the newly created term.
 	 */
 	protected function process_termmeta( $term, $term_id ) {
+		if ( ! function_exists( 'add_term_meta' ) ) {
+			return;
+		}
+
 		if ( ! isset( $term['termmeta'] ) ) {
 			$term['termmeta'] = array();
 		}
@@ -572,7 +617,7 @@ class WP_Import extends WP_Importer {
 			// Export gets meta straight from the DB so could have a serialized string
 			$value = maybe_unserialize( $meta['value'] );
 
-			add_term_meta( $term_id, $key, $value );
+			add_term_meta( $term_id, wp_slash( $key ), wp_slash_strings_only( $value ) );
 
 			/**
 			 * Fires after term meta is imported.
@@ -784,15 +829,22 @@ class WP_Import extends WP_Importer {
 				foreach ( $newcomments as $key => $comment ) {
 					// if this is a new post we can skip the comment_exists() check
 					if ( ! $post_exists || ! comment_exists( $comment['comment_author'], $comment['comment_date'] ) ) {
-						if ( isset( $inserted_comments[$comment['comment_parent']] ) )
-							$comment['comment_parent'] = $inserted_comments[$comment['comment_parent']];
-						$comment = wp_filter_comment( $comment );
-						$inserted_comments[$key] = wp_insert_comment( $comment );
-						do_action( 'wp_import_insert_comment', $inserted_comments[$key], $comment, $comment_post_ID, $post );
+						if ( isset( $inserted_comments[$comment['comment_parent']] ) ) {
+							$comment['comment_parent'] = $inserted_comments[ $comment['comment_parent'] ];
+						}
+
+						$comment_data = wp_slash( $comment );
+						unset( $comment_data['commentmeta'] ); // Handled separately, wp_insert_comment() also expects `comment_meta`.
+						$comment_data = wp_filter_comment( $comment_data );
+
+						$inserted_comments[ $key ] = wp_insert_comment( $comment_data );
+
+						do_action( 'wp_import_insert_comment', $inserted_comments[ $key ], $comment, $comment_post_ID, $post );
 
 						foreach( $comment['commentmeta'] as $meta ) {
 							$value = maybe_unserialize( $meta['value'] );
-							add_comment_meta( $inserted_comments[$key], $meta['key'], $value );
+
+							add_comment_meta( $inserted_comments[ $key ], wp_slash( $meta['key'] ), wp_slash_strings_only( $value ) );
 						}
 
 						$num_comments++;
@@ -821,10 +873,12 @@ class WP_Import extends WP_Importer {
 
 					if ( $key ) {
 						// export gets meta straight from the DB so could have a serialized string
-						if ( ! $value )
+						if ( ! $value ) {
 							$value = maybe_unserialize( $meta['value'] );
+						}
 
-						add_post_meta( $post_id, $key, $value );
+						add_post_meta( $post_id, wp_slash( $key ), wp_slash_strings_only( $value ) );
+
 						do_action( 'import_post_meta', $post_id, $key, $value );
 
 						// if the post has a featured image, take note of this in case of remap
@@ -922,21 +976,6 @@ class WP_Import extends WP_Importer {
 		);
 
 		$id = wp_update_nav_menu_item( $menu_id, 0, $args );
-
-		// Make sure all custom menu fields are imported correctly
-		if ( ! $args['menu-item-parent-id'] ) {
-			$field_name_suffix = array( 'nolink', 'category_post', 'megamenu', 'megamenu_auto_width', 'megamenu_col', 'megamenu_heading', 'icon' );
-		} else {
-			$field_name_suffix = array( 'nolink', 'category_post', 'icon', 'megamenu_widgetarea' );
-		}
-
-		foreach ( $field_name_suffix as $suffix ) {
-			$key = '_menu_item_' . $suffix;
-			if ( isset( $$key ) ) {
-				update_post_meta( $id, '_menu_item_' . $suffix , $$key );
-			}
-		}
-
 		if ( $id && ! is_wp_error( $id ) )
 			$this->processed_menu_items[intval($item['post_id'])] = (int) $id;
 	}
@@ -994,46 +1033,141 @@ class WP_Import extends WP_Importer {
 	 * @return array|WP_Error Local file location details on success, WP_Error otherwise
 	 */
 	function fetch_remote_file( $url, $post ) {
-		// extract the file name and extension from the url
-		$file_name = basename( $url );
+		// Extract the file name from the URL.
+		$file_name = basename( parse_url( $url, PHP_URL_PATH ) );
 
-		// get placeholder file in the upload dir with a unique, sanitized filename
-		$upload = wp_upload_bits( $file_name, 0, '', $post['upload_date'] );
-		if ( $upload['error'] )
-			return new WP_Error( 'upload_dir_error', $upload['error'] );
+		if ( ! $file_name ) {
+			$file_name = md5( $url );
+		}
 
-		// fetch the remote url and write it to the placeholder file
-		$headers = OWP_Demos_Helpers::wp_get_http( $url, $upload['file'] );
+		$tmp_file_name = wp_tempnam( $file_name );
+		if ( ! $tmp_file_name ) {
+			return new WP_Error( 'import_no_file', __( 'Could not create temporary file.', 'wordpress-importer' ) );
+		}
 
-		// request failed
+		// Fetch the remote URL and write it to the placeholder file.
+		$remote_response = wp_safe_remote_get( $url, array(
+			'timeout'    => 300,
+			'stream'     => true,
+			'filename'   => $tmp_file_name,
+			'headers'    => array(
+				'Accept-Encoding' => 'identity',
+			),
+		) );
+
+		if ( is_wp_error( $remote_response ) ) {
+			@unlink( $tmp_file_name );
+			return new WP_Error(
+				'import_file_error',
+				sprintf(
+					/* translators: 1: The WordPress error message. 2: The WordPress error code. */
+					__( 'Request failed due to an error: %1$s (%2$s)', 'wordpress-importer' ),
+					esc_html( $remote_response->get_error_message() ),
+					esc_html( $remote_response->get_error_code() )
+				)
+			);
+		}
+
+		$remote_response_code = (int) wp_remote_retrieve_response_code( $remote_response );
+
+		// Make sure the fetch was successful.
+		if ( 200 !== $remote_response_code ) {
+			@unlink( $tmp_file_name );
+			return new WP_Error(
+				'import_file_error',
+				sprintf(
+					/* translators: 1: The HTTP error message. 2: The HTTP error code. */
+					__( 'Remote server returned the following unexpected result: %1$s (%2$s)', 'wordpress-importer' ),
+					get_status_header_desc( $remote_response_code ),
+					esc_html( $remote_response_code )
+				)
+			);
+		}
+
+		$headers = wp_remote_retrieve_headers( $remote_response );
+
+		// Request failed.
 		if ( ! $headers ) {
-			@unlink( $upload['file'] );
+			@unlink( $tmp_file_name );
 			return new WP_Error( 'import_file_error', __('Remote server did not respond', 'wordpress-importer') );
 		}
 
-		// make sure the fetch was successful
-		if ( $headers['response'] != '200' ) {
-			@unlink( $upload['file'] );
-			return new WP_Error( 'import_file_error', sprintf( __('Remote server returned error response %1$d %2$s', 'wordpress-importer'), esc_html($headers['response']), get_status_header_desc($headers['response']) ) );
-		}
+		$filesize = (int) filesize( $tmp_file_name );
 
-		$filesize = filesize( $upload['file'] );
-
-		if ( isset( $headers['content-length'] ) && $filesize != $headers['content-length'] ) {
-			@unlink( $upload['file'] );
-			return new WP_Error( 'import_file_error', __('Remote file is incorrect size', 'wordpress-importer') );
-		}
-
-		if ( 0 == $filesize ) {
-			@unlink( $upload['file'] );
+		if ( 0 === $filesize ) {
+			@unlink( $tmp_file_name );
 			return new WP_Error( 'import_file_error', __('Zero size file downloaded', 'wordpress-importer') );
+		}
+
+		if ( ! isset( $headers['content-encoding'] ) && isset( $headers['content-length'] ) && $filesize !== (int) $headers['content-length'] ) {
+			@unlink( $tmp_file_name );
+			return new WP_Error( 'import_file_error', __('Downloaded file has incorrect size', 'wordpress-importer' ) );
 		}
 
 		$max_size = (int) $this->max_attachment_size();
 		if ( ! empty( $max_size ) && $filesize > $max_size ) {
-			@unlink( $upload['file'] );
-			return new WP_Error( 'import_file_error', sprintf(__('Remote file is too large, limit is %s', 'wordpress-importer'), size_format($max_size) ) );
+			@unlink( $tmp_file_name );
+			return new WP_Error( 'import_file_error', sprintf(__('Remote file is too large, limit is %s', 'wordpress-importer' ), size_format($max_size) ) );
 		}
+
+		// Override file name with Content-Disposition header value.
+		if ( ! empty( $headers['content-disposition'] ) ) {
+			$file_name_from_disposition = self::get_filename_from_disposition( (array) $headers['content-disposition'] );
+			if ( $file_name_from_disposition ) {
+				$file_name = $file_name_from_disposition;
+			}
+		}
+
+		// Set file extension if missing.
+		$file_ext = pathinfo( $file_name, PATHINFO_EXTENSION );
+		if ( ! $file_ext && ! empty( $headers['content-type'] ) ) {
+			$extension = self::get_file_extension_by_mime_type( $headers['content-type'] );
+			if ( $extension ) {
+				$file_name = "{$file_name}.{$extension}";
+			}
+		}
+
+		// Handle the upload like _wp_handle_upload() does.
+		$wp_filetype     = wp_check_filetype_and_ext( $tmp_file_name, $file_name );
+		$ext             = empty( $wp_filetype['ext'] ) ? '' : $wp_filetype['ext'];
+		$type            = empty( $wp_filetype['type'] ) ? '' : $wp_filetype['type'];
+		$proper_filename = empty( $wp_filetype['proper_filename'] ) ? '' : $wp_filetype['proper_filename'];
+
+		// Check to see if wp_check_filetype_and_ext() determined the filename was incorrect.
+		if ( $proper_filename ) {
+			$file_name = $proper_filename;
+		}
+
+		if ( ( ! $type || ! $ext ) && ! current_user_can( 'unfiltered_upload' ) ) {
+			return new WP_Error( 'import_file_error', __( 'Sorry, this file type is not permitted for security reasons.', 'wordpress-importer' ) );
+		}
+
+		$uploads = wp_upload_dir( $post['upload_date'] );
+		if ( ! ( $uploads && false === $uploads['error'] ) ) {
+			return new WP_Error( 'upload_dir_error', $uploads['error'] );
+		}
+
+		// Move the file to the uploads dir.
+		$file_name     = wp_unique_filename( $uploads['path'], $file_name );
+		$new_file      = $uploads['path'] . "/$file_name";
+		$move_new_file = copy( $tmp_file_name, $new_file );
+
+		if ( ! $move_new_file ) {
+			@unlink( $tmp_file_name );
+			return new WP_Error( 'import_file_error', __( 'The uploaded file could not be moved', 'wordpress-importer' ) );
+		}
+
+		// Set correct file permissions.
+		$stat  = stat( dirname( $new_file ) );
+		$perms = $stat['mode'] & 0000666;
+		chmod( $new_file, $perms );
+
+		$upload = array(
+			'file'  => $new_file,
+			'url'   => $uploads['url'] . "/$file_name",
+			'type'  => $wp_filetype['type'],
+			'error' => false,
+		);
 
 		// keep track of the old and new urls so we can substitute them later
 		$this->url_remap[$url] = $upload['url'];
@@ -1063,8 +1197,10 @@ class WP_Import extends WP_Importer {
 			if ( isset( $this->processed_posts[$parent_id] ) )
 				$local_parent_id = $this->processed_posts[$parent_id];
 
-			if ( $local_child_id && $local_parent_id )
+			if ( $local_child_id && $local_parent_id ) {
 				$wpdb->update( $wpdb->posts, array( 'post_parent' => $local_parent_id ), array( 'ID' => $local_child_id ), '%d', '%d' );
+				clean_post_cache( $local_child_id );
+			}
 		}
 
 		// all other posts/terms are imported, retry menu items with missing associated object
@@ -1123,14 +1259,13 @@ class WP_Import extends WP_Importer {
 	 * @return array Information gathered from the WXR file
 	 */
 	function parse( $file ) {
-		$parser = new WXR_Parser();
+		$parser = new OWP_Parser();
 		return $parser->parse( $file );
 	}
 
 	// Display import page title
 	function header() {
 		echo '<div class="wrap">';
-		screen_icon();
 		echo '<h2>' . __( 'Import WordPress', 'wordpress-importer' ) . '</h2>';
 
 		$updates = get_plugin_updates();
@@ -1216,6 +1351,102 @@ class WP_Import extends WP_Importer {
 	function cmpr_strlen( $a, $b ) {
 		return strlen($b) - strlen($a);
 	}
-}
 
-} // class_exists( 'WP_Importer' )
+	/**
+	 * Parses filename from a Content-Disposition header value.
+	 *
+	 * As per RFC6266:
+	 *
+	 *     content-disposition = "Content-Disposition" ":"
+	 *                            disposition-type *( ";" disposition-parm )
+	 *
+	 *     disposition-type    = "inline" | "attachment" | disp-ext-type
+	 *                         ; case-insensitive
+	 *     disp-ext-type       = token
+	 *
+	 *     disposition-parm    = filename-parm | disp-ext-parm
+	 *
+	 *     filename-parm       = "filename" "=" value
+	 *                         | "filename*" "=" ext-value
+	 *
+	 *     disp-ext-parm       = token "=" value
+	 *                         | ext-token "=" ext-value
+	 *     ext-token           = <the characters in token, followed by "*">
+	 *
+	 * @since 0.7.0
+	 *
+	 * @see WP_REST_Attachments_Controller::get_filename_from_disposition()
+	 *
+	 * @link http://tools.ietf.org/html/rfc2388
+	 * @link http://tools.ietf.org/html/rfc6266
+	 *
+	 * @param string[] $disposition_header List of Content-Disposition header values.
+	 * @return string|null Filename if available, or null if not found.
+	 */
+	protected static function get_filename_from_disposition( $disposition_header ) {
+		// Get the filename.
+		$filename = null;
+
+		foreach ( $disposition_header as $value ) {
+			$value = trim( $value );
+
+			if ( strpos( $value, ';' ) === false ) {
+				continue;
+			}
+
+			list( $type, $attr_parts ) = explode( ';', $value, 2 );
+
+			$attr_parts = explode( ';', $attr_parts );
+			$attributes = array();
+
+			foreach ( $attr_parts as $part ) {
+				if ( strpos( $part, '=' ) === false ) {
+					continue;
+				}
+
+				list( $key, $value ) = explode( '=', $part, 2 );
+
+				$attributes[ trim( $key ) ] = trim( $value );
+			}
+
+			if ( empty( $attributes['filename'] ) ) {
+				continue;
+			}
+
+			$filename = trim( $attributes['filename'] );
+
+			// Unquote quoted filename, but after trimming.
+			if ( substr( $filename, 0, 1 ) === '"' && substr( $filename, -1, 1 ) === '"' ) {
+				$filename = substr( $filename, 1, -1 );
+			}
+		}
+
+		return $filename;
+	}
+
+	/**
+	 * Retrieves file extension by mime type.
+	 *
+	 * @since 0.7.0
+	 *
+	 * @param string $mime_type Mime type to search extension for.
+	 * @return string|null File extension if available, or null if not found.
+	 */
+	protected static function get_file_extension_by_mime_type( $mime_type ) {
+		static $map = null;
+
+		if ( is_array( $map ) ) {
+			return isset( $map[ $mime_type ] ) ? $map[ $mime_type ] : null;
+		}
+
+		$mime_types = wp_get_mime_types();
+		$map        = array_flip( $mime_types );
+
+		// Some types have multiple extensions, use only the first one.
+		foreach ( $map as $type => $extensions ) {
+			$map[ $type ] = strtok( $extensions, '|' );
+		}
+
+		return isset( $map[ $mime_type ] ) ? $map[ $mime_type ] : null;
+	}
+}
