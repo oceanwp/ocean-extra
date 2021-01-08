@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.7.0 =
+- Fixed: PHP 8 compatibility with demo import.
+- Added: New demo, Maria: https://maria.oceanwp.org/
+- Added: New demo, Photos: https://photos.oceanwp.org/
+- Updated: Freemius SDK version.
+
 = 1.6.9 =
 - Fixed: Demo import issue and Elementor page styling after import.
 

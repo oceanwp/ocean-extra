@@ -137,6 +137,83 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 			$data = array(
 
+				'maria' => array(
+					'categories'        => array( 'Blog', 'One Page' ),
+					'xml_file'     		=> $url . 'maria/sample-data.xml',
+					'theme_settings' 	=> $url . 'maria/oceanwp-export.dat',
+					'widgets_file'  	=> $url . 'maria/widgets.wie',
+					'form_file'  		=> $url . 'maria/form.json',
+					'home_title'  		=> '',
+					'blog_title'  		=> 'Home',
+					'posts_to_show'  	=> '7',
+					'elementor_width'  	=> '1220',
+					'required_plugins'  => array(
+						'free' => array(
+							array(
+								'slug'  	=> 'ocean-extra',
+								'init'  	=> 'ocean-extra/ocean-extra.php',
+								'name'  	=> 'Ocean Extra',
+							),
+							array(
+								'slug'  	=> 'ocean-social-sharing',
+								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+								'name'  	=> 'Ocean Social Sharing',
+							),
+							array(
+								'slug'  	=> 'elementor',
+								'init'  	=> 'elementor/elementor.php',
+								'name'  	=> 'Elementor',
+							),
+							array(
+								'slug'  	=> 'wpforms-lite',
+								'init'  	=> 'wpforms-lite/wpforms.php',
+								'name'  	=> 'WPForms',
+							),
+							array(
+								'slug'  	=> 'ocean-stick-anything',
+								'init'  	=> 'ocean-stick-anything/ocean-stick-anything.php',
+								'name'  	=> 'Ocean Stick Anything',
+							),
+						),
+					),
+				),
+
+				'photos' => array(
+					'categories'        => array( 'Business', 'Corporate' ),
+					'xml_file'     		=> $url . 'photos/sample-data.xml',
+					'theme_settings' 	=> $url . 'photos/oceanwp-export.dat',
+					'widgets_file'  	=> $url . 'photos/widgets.wie',
+					'form_file'  		=> $url . 'photos/form.json',
+					'home_title'  		=> 'Home',
+					'blog_title'  		=> 'Blog',
+					'posts_to_show'  	=> '7',
+					'elementor_width'  	=> '1220',
+					'required_plugins'  => array(
+						'free' => array(
+							array(
+								'slug'  	=> 'ocean-extra',
+								'init'  	=> 'ocean-extra/ocean-extra.php',
+								'name'  	=> 'Ocean Extra',
+							),
+							array(
+								'slug'  	=> 'ocean-social-sharing',
+								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+								'name'  	=> 'Ocean Social Sharing',
+							),
+							array(
+								'slug'  	=> 'elementor',
+								'init'  	=> 'elementor/elementor.php',
+								'name'  	=> 'Elementor',
+							),
+							array(
+								'slug'  	=> 'wpforms-lite',
+								'init'  	=> 'wpforms-lite/wpforms.php',
+								'name'  	=> 'WPForms',
+							),
+						),
+					),
+				),
+
 				'architect' => array(
 					'categories'        => array( 'Business' ),
 					'xml_file'     		=> $url . 'architect/sample-data.xml',
@@ -1006,7 +1083,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function required_plugins( $plugins, $return ) {
+		public static function required_plugins( $plugins, $return ) {
 
 			foreach ( $plugins as $key => $plugin ) {
 

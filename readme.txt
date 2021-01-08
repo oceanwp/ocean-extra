@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
 Tested up to: 5.6
-Stable tag: 1.6.9
+Stable tag: 1.7.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,15 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 1.7.0 =
+- Fixed: PHP 8 compatibility with demo import.
+- Added: New demo, Maria: https://maria.oceanwp.org/
+- Added: New demo, Photos: https://photos.oceanwp.org/
+- Updated: Freemius SDK version.
+
+= 1.6.9 =
+- Fixed: Demo import issue and Elementor page styling after import.
 
 = 1.6.8 =
 - Fixed: MailChimp Widget: failed subscription error.
