@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.7.1 =
+- Added: New demos.
+
 = 1.7.0 =
 - Fixed: PHP 8 compatibility with demo import.
 - Added: New demo, Maria: https://maria.oceanwp.org/
