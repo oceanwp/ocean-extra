@@ -1,7 +1,12 @@
 == Changelog ==
 
+= 1.7.2 =
+- Fixed: [oceanwp_login] shortcode: logout '404 page not found' error when WooCommerce enabled.
+- Added: New shortcode to display the modified date on posts and pages: [oceanwp_last_modified]
+- Added: New demos
+
 = 1.7.1 =
-- Added: New demos.
+- Added: New demos
 
 = 1.7.0 =
 - Fixed: PHP 8 compatibility with demo import.

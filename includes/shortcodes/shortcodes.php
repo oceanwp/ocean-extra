@@ -186,14 +186,14 @@ if ( ! function_exists( 'oceanwp_login_shortcode' ) ) {
 			'logout_redirect' 	=> '',
 		), $atts ) );
 
-		// Custom login url
+		// Custom login url.
 		if ( ! empty( $custom_url ) ) {
 			$login_url = $custom_url;
 		} else {
 			$login_url = wp_login_url();
 		}
 
-		// Logout redirect
+		// Logout redirect.
 		if ( ! empty( $logout_redirect ) ) {
 			$current = get_permalink();
 			if ( 'current' == $logout_redirect
@@ -206,19 +206,15 @@ if ( ! function_exists( 'oceanwp_login_shortcode' ) ) {
 			$logout_redirect = home_url( '/' );
 		}
 
-		// Logout link
-		if ( class_exists( 'WooCommerce' ) ) {
-			$logout_url = wc_logout_url( $logout_redirect );
-		} else {
-			$logout_url = wp_logout_url( $logout_redirect );
-		}
+		// Logout link. 
+		$logout_url = wp_logout_url( $logout_redirect );
 
-		// Logged in link
+		// Logged in link.
 		if ( is_user_logged_in() ) {
 			return '<a href="'. esc_url( $logout_url ) .'" title="'. esc_attr( $logout_text ) .'" class="oceanwp-logout">'. strip_tags( $logout_text ) .'</a>';
 		}
 
-		// Logged out link
+		// Logged out link.
 		else {
 			return '<a href="'. esc_url( $login_url ) .'" title="'. esc_attr( $login_text ) .'" class="oceanwp-login" target="_'. esc_attr( $target ) .'">'. strip_tags( $login_text ) .'</a>';
 		}
@@ -229,7 +225,7 @@ if ( ! function_exists( 'oceanwp_login_shortcode' ) ) {
 add_shortcode( 'oceanwp_login', 'oceanwp_login_shortcode' );
 
 /**
- * Login/logout link
+ * Current User Shortcode
  *
  * @since 1.2.1
  */
@@ -733,3 +729,31 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 
 }
 add_shortcode( 'oceanwp_breadcrumb', 'oceanwp_breadcrumb_shortcode' );
+
+/**
+ * Last Modified Date Shortcode
+ * 
+ * @since 1.7.1
+ */
+if ( ! function_exists( 'oceanwp_last_modified_shortcode' ) ) {
+	function oceanwp_last_modified_shortcode( $atts ) {
+
+		// Attrbibutes. 
+		extract( shortcode_atts( array(
+			'olm_text'          => esc_html__( 'Last Updated on:', 'ocean-extra' ),
+			'olm_date_format'   => '',
+		), $atts ) );
+
+		if ( ! empty( $olm_date_format ) ) {
+			$olm_date = get_the_modified_date( $olm_date_format );
+		} else {
+			$olm_date = get_the_modified_date( 'F j, Y' );
+		}
+
+		$olm_shortcode = '<p class="ocean-last-modified">' . esc_html( $olm_text . ' ' . $olm_date ) . '</p>';
+
+		// Return.
+		return $olm_shortcode;
+	}
+}
+add_shortcode( 'oceanwp_last_modified', 'oceanwp_last_modified_shortcode' );
