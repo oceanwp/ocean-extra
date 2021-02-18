@@ -1,5 +1,22 @@
 == Changelog ==
 
+= 1.7.2 =
+- Fixed: [oceanwp_login] shortcode: logout '404 page not found' error when WooCommerce enabled.
+- Added: New shortcode to display the modified date on posts and pages: [oceanwp_last_modified]
+- Added: New demos
+
+= 1.7.1 =
+- Added: New demos
+
+= 1.7.0 =
+- Fixed: PHP 8 compatibility with demo import.
+- Added: New demo, Maria: https://maria.oceanwp.org/
+- Added: New demo, Photos: https://photos.oceanwp.org/
+- Updated: Freemius SDK version.
+
+= 1.6.9 =
+- Fixed: Demo import issue and Elementor page styling after import.
+
 = 1.6.8 =
 - Fixed: MailChimp Widget: failed subscription error.
 - Fixed: WC_Cart->taxes is deprecated since version 3.2 error when oceanwp_woo_free_shipping_left shortcode is in use.
