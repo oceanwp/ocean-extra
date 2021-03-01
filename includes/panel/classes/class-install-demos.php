@@ -98,13 +98,7 @@ class OWP_Install_Demos {
 
 								<div class="theme-screenshot">
 									<?php
-									$demo_png = array( 'bakery', 'barber', 'book', 'bright', 'computer', 'corporate', 'destination', 'florist', 'freelance', 'lauren' );
-									if ( in_array( $demo, $demo_png ) ) {
-										$demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.png';
-									} else {
-										$demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.jpg';
-									}
-									?>
+									$demo_img_src = OE_URL . 'includes/panel/demos/' . esc_attr( $demo ) . '.png'; ?>
 									<img src="<?php echo $demo_img_src; ?>" />
 
 									<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
