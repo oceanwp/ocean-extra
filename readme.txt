@@ -35,6 +35,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.7.4 =
 - Updated: Freemius SDK version.
+- Added: New demos
 
 = 1.7.3 =
 - Added: New demos
