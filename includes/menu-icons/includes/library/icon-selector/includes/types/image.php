@@ -92,7 +92,9 @@ class OE_Icon_Picker_Type_Image extends OE_Icon_Picker_Type {
 		$mime_types = apply_filters( 'oe_icon_picker_image_mime_types', $mime_types );
 
 		// We need to exclude image/svg*.
-		unset( $mime_types['svg'] );
+		if ( apply_filters( 'oe_icon_picker_image_mime_types_svg', true ) ) {
+			unset( $mime_types['svg'] );
+		}
 
 		return $mime_types;
 	}
