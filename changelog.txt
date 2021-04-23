@@ -1,7 +1,8 @@
 == Changelog ==
 
 = 1.7.5 =
-- filter 'oe_icon_picker_image_mime_types_svg' to handle svg types.
+- Added: filter 'oe_icon_picker_image_mime_types_svg' to handle svg types.
+- Added: New demos
 
 = 1.7.4 =
 - Updated: Freemius SDK version.

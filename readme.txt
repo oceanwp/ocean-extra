@@ -33,6 +33,10 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
+= 1.7.5 =
+- Added: filter 'oe_icon_picker_image_mime_types_svg' to handle svg types.
+- Added: New demos
+
 = 1.7.4 =
 - Updated: Freemius SDK version.
 - Added: New demos
