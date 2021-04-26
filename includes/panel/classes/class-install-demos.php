@@ -51,7 +51,7 @@ class OWP_Install_Demos {
 	 *
 	 * @since 1.0.0
 	 */
-	public function img_url( $demo ) {
+	public static function img_url( $demo ) {
 		$url = 'https://demos.oceanwp.org/0images/' . esc_attr( $demo ) . '.png';
 
 		// Return

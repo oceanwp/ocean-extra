@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
-Tested up to: 5.7
+Tested up to: 5.7.1
 Stable tag: 1.7.5
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -34,8 +34,9 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.7.5 =
-- Added: filter 'oe_icon_picker_image_mime_types_svg' to handle svg types.
 - Added: New demos
+- Fixed: Demos images missing on the setup wizard
+- Added: filter 'oe_icon_picker_image_mime_types_svg' to handle svg types.
 
 = 1.7.4 =
 - Updated: Freemius SDK version.
