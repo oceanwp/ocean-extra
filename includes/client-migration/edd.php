@@ -53,11 +53,11 @@
                 'fs_id'        => '3758',
                 'fs_shortcode' => 'oh_fs',
             ),
-            'Ocean_Instagram'         => array(
+            /*'Ocean_Instagram'         => array(
                 'name'         => 'Instagram',
                 'fs_id'        => '3763',
                 'fs_shortcode' => 'ocean_instagram_fs',
-            ),
+            ),*/
             'Ocean_Popup_Login'       => array(
                 'name'         => 'Popup Login',
                 'fs_id'        => '3764',
