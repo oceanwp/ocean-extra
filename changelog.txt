@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.7.6 =
+- Added: OceanWP SVG icons.
+
 = 1.7.5 =
 - Added: New demos
 - Fixed: Demos images missing on the setup wizard

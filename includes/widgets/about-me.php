@@ -29,10 +29,6 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'name'      => 'Facebook',
 						'url'       => ''
 					),
-					'google-plus'   => array(
-						'name'      => 'GooglePlus',
-						'url'       => ''
-					),
 					'instagram'     => array(
 						'name'      => 'Instagram',
 						'url'       => ''
@@ -247,8 +243,8 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 								// Display social links.
 								if ( $link ) {
 									$icon = 'youtube' == $key ? 'youtube' : $key;
-									$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'><i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i></a>';
+									$icon = 'pinterest' == $key ? 'pinterest' : $icon;
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'>' . oceanwp_icon( $icon, false ) . '</a>';
 										echo $ocean_sr;
 									echo '</li>';
 								}

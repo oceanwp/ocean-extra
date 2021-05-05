@@ -48,6 +48,10 @@
 		    color: #fff;
 		}
 
+		&.style-color li a .owp-icon use, &.style-color li a:hover .owp-icon use {
+		    stroke: #fff;
+		}
+
 		&.style-color li {
 			&.facebook a {
 			    background-color: #37589b;
@@ -62,14 +66,6 @@
 
 			    &:hover {
 				    background-color: #7ee1fe;
-				}
-			}
-
-			&.google-plus a {
-			    background-color: #de5a49;
-
-			    &:hover {
-				    background-color: #fc7a69;
 				}
 			}
 
@@ -109,47 +105,74 @@
 		&.style-light li a {
 		    color: #aaa;
     		border: 1px solid $border-color;
+
+			.owp-icon use {
+				stroke: #aaa;
+			}
 		}
 
 		&.style-dark li a {
 		    color: $color-4;
     		border: 1px solid $color-11;
+
+			.owp-icon use {
+				stroke: $color-4;
+			}
 		}
 
 		&.style-light li, &.style-dark li {
 			&.facebook a:hover {
 			    color: #37589b;
     			border-color: #37589b;
+
+				.owp-icon use {
+					stroke: #37589b;
+				}
 			}
 
 			&.twitter a:hover {
 			    color: #46d4fe;
     			border-color: #46d4fe;
-			}
 
-			&.google-plus a:hover {
-			    color: #de5a49;
-    			border-color: #de5a49;
+				.owp-icon use {
+					stroke: #46d4fe;
+				}
 			}
 
 			&.instagram a:hover {
 			    color: #5996c7;
     			border-color: #5996c7;
+
+				.owp-icon use {
+					stroke: #5996c7;
+				}
 			}
 
 			&.linkedin a:hover {
 			    color: #419cca;
     			border-color: #419cca;
+
+				.owp-icon use {
+					stroke: #419cca;
+				}
 			}
 
 			&.pinterest a:hover {
 			    color: #cb2027;
     			border-color: #cb2027;
+
+				.owp-icon use {
+					stroke: #cb2027;
+				}
 			}
 
 			&.youtube a:hover {
 			    color: #dd4646;
     			border-color: #dd4646;
+
+				.owp-icon use {
+					stroke: #dd4646;
+				}
 			}
 		}
 	}

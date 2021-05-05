@@ -58,7 +58,8 @@
 
 /* Default style */
 .contact-info-widget.default {
-	i {
+	i,
+	.owp-icon {
 	    float: left;
 	    width: 40px;
 	    height: 40px;
@@ -70,6 +71,14 @@
 	    -webkit-border-radius: 2px;
 	    -moz-border-radius: 2px;
 	    border-radius: 2px;
+	}
+
+	.owp-icon {
+		padding: 10px;
+
+		use {
+			stroke: $color-5;
+		}
 	}
 
 	.oceanwp-info-wrap {
@@ -96,7 +105,8 @@
 		}
 	}
 
-	i {
+	i,
+	.owp-icon {
 	    float: left;
 	    width: 72px;
 	    height: 72px;
@@ -114,10 +124,27 @@
 	    transition: all .3s ease;
 	}
 
+	.owp-icon {
+		padding: 16px;
+
+		use {
+			stroke: $color-5;
+		}
+	}
+
 	li:hover i {
 	    background-color: $color-5;
 	    color: #fff;
 	    border-color: $color-5;
+	}
+
+	li:hover .owp-icon {
+	    background-color: $color-5;
+	    border-color: $color-5;
+
+		use {
+			stroke: #fff;
+		}
 	}
 
 	.oceanwp-info-wrap {

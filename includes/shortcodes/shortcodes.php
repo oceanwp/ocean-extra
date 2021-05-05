@@ -110,7 +110,7 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 			'width' 		=> '',
 			'height' 		=> '',
 			'placeholder' 	=> esc_html__( 'Search', 'ocean-extra' ),
-			'btn_icon' 		=> 'icon-magnifier',
+			'btn_icon' 		=> oceanwp_icon( 'search', false ),
 			'post_type' 	=> 'any',
 		), $atts ) );
 
@@ -134,7 +134,7 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 			if ( 'any' != $post_type ) {
 				$html .= '<input type="hidden" name="post_type" value="'.esc_attr( $post_type ) .'">';
 			}
-			$html .= '<button type="submit" class="search-submit" value=""><i class="'. esc_attr( $btn_icon ) .'"></i></button>';
+			$html .= '<button type="submit" class="search-submit" value="">' . $btn_icon . '</button>';
 		$html .= '</form>';
 
 		// Return

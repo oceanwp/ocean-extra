@@ -36,10 +36,6 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						'name' => 'Instagram',
 						'url'  => '',
 					),
-					'google-plus' => array(
-						'name' => 'GooglePlus',
-						'url'  => '',
-					),
 					'linkedin' => array(
 						'name' => 'LinkedIn',
 						'url'  => '',
@@ -88,7 +84,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						'name' => 'Xing',
 						'url'  => '',
 					),
-					'vimeo-square' => array(
+					'vimeo' => array(
 						'name' => 'Vimeo',
 						'url'  => '',
 					),
@@ -253,7 +249,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			$border_radius = $border_radius ? $border_radius  : '';
 
 			// Inline style
-			$add_style = '';
+			$add_style     = '';
 			if ( $size && 'simple' != $style ) {
 				$add_style .= 'height:'. esc_attr( $size ) .';width:'. esc_attr( $size ) .';line-height:'. esc_attr( $size ) .';';
 			}
@@ -263,7 +259,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			if ( $border_radius && 'simple' != $style ) {
 				$add_style .= 'border-radius:'. esc_attr( $border_radius ) .';';
 			}
-			if ( $add_style ) {
+			if ( $add_style && 'svg' !== oceanwp_theme_icon_class() ) {
 				$add_style = ' style="' . esc_attr( $add_style ) . '"';
 			}
 
@@ -299,9 +295,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						if ( $link ) {
 							$key  = 'vimeo-square' === $key ? 'vimeo' : $key;
 							$icon = 'youtube' === $key ? 'youtube' : $key;
-							$icon = 'pinterest' === $key ? 'pinterest-p' : $icon;
+							$icon = 'pinterest' === $key ? 'pinterest' : $icon;
 							$icon = 'bloglovin' === $key ? 'heart' : $icon;
-							$icon = 'vimeo-square' === $key ? 'vimeo' : $icon;
+							$icon = 'vimeo' === $key ? 'vimeo' : $icon;
 
 							if ( 'skype' === $key ) {
 								$link = 'skype:'. esc_attr( $link ) .'?call';
@@ -322,12 +318,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 								echo '<a href="'. $link .'" aria-label="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'" '. $link_rel .'>';
 
-									// Display icons.
-									if( $icon === 'rss' ) {
-										echo '<i class="fa fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
-									} else {
-										echo '<i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i>';
-									}
+									oceanwp_icon( $icon );
 
 								echo '</a>';
 
@@ -554,7 +545,8 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			$color              = isset( $instance['color'] ) ? sanitize_hex_color( $instance['color'] ) : '';
 			$color_hover        = isset( $instance['color_hover'] ) ? sanitize_hex_color( $instance['color_hover'] ) : '';
 			$border_color       = isset( $instance['border_color'] ) ? sanitize_hex_color( $instance['border_color'] ) : '';
-			$border_hover_color = isset( $instance['border_hover_color'] ) ? sanitize_hex_color( $instance['border_hover_color'] ) : ''; ?>
+			$border_hover_color = isset( $instance['border_hover_color'] ) ? sanitize_hex_color( $instance['border_hover_color'] ) : '';
+			$font_size          = isset( $instance['font_size'] ) ? $instance['font_size'] : ''; ?>
 
 			<?php
 			if ( $bg_color || $bg_hover_color
@@ -569,10 +561,22 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						<?php if ( $border_color ) { echo 'border-color:' . $border_color; } ?>;
 					}
 
+					#<?php echo $id; ?>.widget-oceanwp-social ul li a .owp-icon use {
+						<?php if ( $color ) { echo 'stroke:' . $color; } ?>;
+					}
+
+					#<?php echo $id; ?>.widget-oceanwp-social ul li a .owp-icon {
+						<?php if ( $font_size ) { echo 'width:' . $font_size . '; height:' . $font_size; } ?>;
+					}
+
 					#<?php echo $id; ?>.widget-oceanwp-social ul li a:hover {
 						<?php if ( $bg_hover_color ) { echo 'background-color:' . $bg_hover_color; } ?>;
 						<?php if ( $color_hover ) { echo 'color:' . $color_hover .'!important'; } ?>;
 						<?php if ( $border_hover_color ) { echo 'border-color:' . $border_hover_color .'!important'; } ?>;
+					}
+
+					#<?php echo $id; ?>.widget-oceanwp-social ul li a:hover .owp-icon use {
+						<?php if ( $color_hover ) { echo 'stroke:' . $color_hover .'!important'; } ?>;
 					}
 				</style>
 			<?php endif; ?>
