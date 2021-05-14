@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.3
-Tested up to: 5.7.1
+Tested up to: 5.7.2
 Stable tag: 1.7.6
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -35,6 +35,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.7.6 =
 - Added: OceanWP SVG icons.
+- Added: Custom body classes in page level setting #329
 
 = 1.7.5 =
 - Added: New demos
