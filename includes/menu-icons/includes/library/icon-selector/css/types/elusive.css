@@ -1,10 +1,6 @@
 @font-face {
 	font-family: 'Elusive-Icons';
-	src:url('./Elusive-Icons.eot');
-	src:url('./Elusive-Icons.eot?#iefix') format('embedded-opentype'),
-		url('./Elusive-Icons.ttf') format('truetype'),
-		url('./Elusive-Icons.woff') format('woff'),
-		url('./Elusive-Icons.svg#Elusive-Icons') format('svg');
+	src:url('./Elusive-Icons.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
