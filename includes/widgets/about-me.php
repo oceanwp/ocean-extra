@@ -45,8 +45,68 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'name'      => 'Twitter',
 						'url'       => ''
 					),
-					'youtube'       => array(
-						'name'      => 'Youtube',
+					'telegram'       => array(
+						'name'      => 'Telegram',
+						'url'       => ''
+					),
+					'twitch'       => array(
+						'name'      => 'Twitch',
+						'url'       => ''
+					),
+					'line'       => array(
+						'name'      => 'Line',
+						'url'       => ''
+					),
+					'xing'       => array(
+						'name'      => 'Xing',
+						'url'       => ''
+					),
+					'vine'       => array(
+						'name'      => 'Vine',
+						'url'       => ''
+					),
+					'vimeo'       => array(
+						'name'      => 'Vimeo',
+						'url'       => ''
+					),
+					'github'       => array(
+						'name'      => 'Github',
+						'url'       => ''
+					),
+					'flickr'       => array(
+						'name'      => 'Flickr',
+						'url'       => ''
+					),
+					'yelp'       => array(
+						'name'      => 'Yelp',
+						'url'       => ''
+					),
+					'tripadvisor'       => array(
+						'name'      => 'Tripadvisor',
+						'url'       => ''
+					),
+					'rss'       => array(
+						'name'      => 'RSS',
+						'url'       => ''
+					),
+					'medium'       => array(
+						'name'      => 'Medium',
+						'url'       => ''
+					),
+					'tiktok'       => array(
+						'name'      => 'tiktok',
+						'url'       => ''
+					),
+					'vk'       => array(
+						'name'      => 'VK',
+						'url'       => ''
+					),
+					'dribbble'       => array(
+						'name'      => 'Dribbble',
+						'url'       => ''
+					),
+					'tumblr'       => array(
+						'name'      => 'Tumblr',
 						'url'       => ''
 					),
 				)

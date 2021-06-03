@@ -3,6 +3,7 @@
 = 1.7.6 =
 - Added: OceanWP SVG icons.
 - Added: Custom body classes in page level setting #329
+- Added: New social option in about me and social icon widget.
 
 = 1.7.5 =
 - Added: New demos

@@ -98,6 +98,18 @@
 		&.oceanwp-rss a:hover .owp-icon use { stroke: #ff7900 !important; }
 		&.oceanwp-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
 		&.oceanwp-email a:hover .owp-icon use { stroke: #13aff0 !important; }
+		&.oceanwp-telegram a:hover { color: #0088cc !important; border-color: #0088cc !important; }
+		&.oceanwp-telegram a:hover .owp-icon use { stroke: #0088cc !important; }
+		&.oceanwp-twitch a:hover { color: #6441a5 !important; border-color: #6441a5 !important; }
+		&.oceanwp-twitch a:hover .owp-icon use { stroke: #6441a5 !important; }
+		&.oceanwp-line a:hover { color: #00c300 !important; border-color: #00c300 !important; }
+		&.oceanwp-line a:hover .owp-icon use { stroke: #00c300 !important; }
+		&.oceanwp-medium a:hover { color: #00ab6c !important; border-color: #00ab6c !important; }
+		&.oceanwp-medium a:hover .owp-icon use { stroke: #00ab6c !important; }
+		&.oceanwp-tiktok a:hover { color: #000000 !important; border-color: #000000 !important; }
+		&.oceanwp-tiktok a:hover .owp-icon use { stroke: #000000 !important; }
+		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 	}
 
 	&.style-dark li {
@@ -152,6 +164,18 @@
 		&.oceanwp-rss a:hover .owp-icon use { stroke: #ff7900 !important; }
 		&.oceanwp-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
 		&.oceanwp-email a:hover .owp-icon use { stroke: #13aff0 !important; }
+		&.oceanwp-telegram a:hover { color: #0088cc !important; border-color: #0088cc !important; }
+		&.oceanwp-telegram a:hover .owp-icon use { stroke: #0088cc !important; }
+		&.oceanwp-twitch a:hover { color: #6441a5 !important; border-color: #6441a5 !important; }
+		&.oceanwp-twitch a:hover .owp-icon use { stroke: #6441a5 !important; }
+		&.oceanwp-line a:hover { color: #00c300 !important; border-color: #00c300 !important; }
+		&.oceanwp-line a:hover .owp-icon use { stroke: #00c300 !important; }
+		&.oceanwp-medium a:hover { color: #00ab6c !important; border-color: #00ab6c !important; }
+		&.oceanwp-medium a:hover .owp-icon use { stroke: #00ab6c !important; }
+		&.oceanwp-tiktok a:hover { color: #000000 !important; border-color: #000000 !important; }
+		&.oceanwp-tiktok a:hover .owp-icon use { stroke: #000000 !important; }
+		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 	}
 
 	&.style-colored li {
@@ -213,6 +237,12 @@
 		&.oceanwp-rss a:hover { background-color: #d46603; }
 		&.oceanwp-email a { background-color: #13aff0; }
 		&.oceanwp-email a:hover { background-color: #0f8dc2; }
+		&.oceanwp-telegram a:hover { background-color: #0088cc; }
+		&.oceanwp-twitch a:hover { background-color: #6441a5; }
+		&.oceanwp-line a:hover { background-color: #00c300; }
+		&.oceanwp-medium a:hover { background-color: #00ab6c; }
+		&.oceanwp-tiktok a:hover { background-color: #000000; }
+		&.oceanwp-vk a:hover { background-color: #597BA5; }
 	}
 
 	&.style-simple li {

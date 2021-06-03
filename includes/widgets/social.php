@@ -100,6 +100,35 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						'name' => 'RSS',
 						'url'  => '',
 					),
+					'telegram'       => array(
+						'name'      => 'Telegram',
+						'url'       => ''
+					),
+					'twitch'       => array(
+						'name'      => 'Twitch',
+						'url'       => ''
+					),
+					'line'       => array(
+						'name'      => 'Line',
+						'url'       => ''
+					),
+					'tripadvisor'       => array(
+						'name'      => 'Tripadvisor',
+						'url'       => ''
+					),
+					'medium'       => array(
+						'name'      => 'Medium',
+						'url'       => ''
+					),
+					'tiktok'       => array(
+						'name'      => 'tiktok',
+						'url'       => ''
+					),
+					'vk'       => array(
+						'name'      => 'VK',
+						'url'       => ''
+					),
+
 				)
 			);
 
