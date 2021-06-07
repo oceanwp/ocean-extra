@@ -37,7 +37,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 - Added: OceanWP SVG icons.
 - Added: Custom body classes in page level setting #329
 - Added: New social option in about me and social icon widget.
-- Fixed: MaiNewsletter Widget - MailChimp failed subscription issue.
+- Fixed: Newsletter Widget - MailChimp failed subscription issue.
 
 = 1.7.5 =
 - Added: New demos
