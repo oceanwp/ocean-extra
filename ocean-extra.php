@@ -211,6 +211,29 @@ final class Ocean_Extra {
 	}
 
 	/**
+	 * Return the correct icon
+	 *
+	 * @param string  $icon        Icon class.
+	 * @param bool    $echo        Print string.
+	 * @param string  $class       Icon class.
+	 * @param string  $title       Optional SVG title.
+	 * @param string  $desc        Optional SVG description.
+	 * @param string  $aria_hidden Optional SVG description.
+	 * @param boolean $fallback    Fallback icon.
+	 *
+	 * @since 1.7.6
+	 * @return string OceanWP Icon.
+	 */
+	public static function oe_svg_icon( $icon, $echo = true, $class = '', $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
+
+		if ( function_exists( 'oceanwp_icon' ) ) {
+			oceanwp_icon( $icon, $echo, $class, $title, $desc, $aria_hidden, $fallback );
+		} else {
+			return;
+		}
+	}
+
+	/**
 	 * All theme functions hook into the oceanwp_footer_js filter for this function.
 	 *
 	 * @since 1.3.8

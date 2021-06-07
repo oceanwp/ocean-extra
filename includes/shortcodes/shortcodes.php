@@ -110,7 +110,7 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 			'width' 		=> '',
 			'height' 		=> '',
 			'placeholder' 	=> esc_html__( 'Search', 'ocean-extra' ),
-			'btn_icon' 		=> oceanwp_icon( 'search', false ),
+			'btn_icon' 		=> Ocean_Extra::oe_svg_icon( 'search', false ),
 			'post_type' 	=> 'any',
 		), $atts ) );
 

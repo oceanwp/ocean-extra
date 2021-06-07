@@ -504,7 +504,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'section' 		=> 'oceanwp_mb_main',
 		            'type'    		=> 'text',
 		            'label'   		=> esc_html__( 'Custom Body Class', 'ocean-extra' ),
-		            'description'   => esc_html__( 'Don not add dot (.) or comma for the class and separation.', 'ocean-extra' ),
+		            'description'   => esc_html__( 'Use space (space tab) to separate multiple classes. Do not use dots (.) or commas (,) to separate classes. Correct example: class-1 class-2 new-class-3', 'ocean-extra' ),
 		        )
 		    );
 

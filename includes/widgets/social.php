@@ -347,7 +347,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 								echo '<a href="'. $link .'" aria-label="'. esc_attr( $name ) .'" '. wp_kses_post( $add_style ) . ' target="_'. esc_attr( $target ) .'" '. $link_rel .'>';
 
-									oceanwp_icon( $icon );
+									Ocean_Extra::oe_svg_icon( $icon );
 
 								echo '</a>';
 

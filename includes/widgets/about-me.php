@@ -304,7 +304,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 								if ( $link ) {
 									$icon = 'youtube' == $key ? 'youtube' : $key;
 									$icon = 'pinterest' == $key ? 'pinterest' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'>' . oceanwp_icon( $icon, false ) . '</a>';
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'>' . Ocean_Extra::oe_svg_icon( $icon, false ) . '</a>';
 										echo $ocean_sr;
 									echo '</li>';
 								}

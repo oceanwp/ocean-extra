@@ -125,7 +125,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="address">';
 							if ( 'no-icons' != $style ) {
 								if ( 'map_marker' === $address_icon ) {
-									oceanwp_icon( $address_icon );
+									Ocean_Extra::oe_svg_icon( $address_icon );
 								} else {
 									echo '<i class="'. esc_attr( $address_icon ) .'" aria-hidden="true"></i>';
 								}
@@ -149,7 +149,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="phone">';
 							if ( 'no-icons' != $style ) {
 								if ( 'phone' === $phone_icon ) {
-									oceanwp_icon( $phone_icon );
+									Ocean_Extra::oe_svg_icon( $phone_icon );
 								} else {
 									echo '<i class="'. esc_attr( $phone_icon ) .'" aria-hidden="true"></i>';
 								}
@@ -173,7 +173,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="mobile">';
 							if ( 'no-icons' != $style ) {
 								if ( 'smartphone' === $mobile_icon ) {
-									oceanwp_icon( $mobile_icon );
+									Ocean_Extra::oe_svg_icon( $mobile_icon );
 								} else {
 									echo '<i class="'. esc_attr( $mobile_icon ) .'" aria-hidden="true"></i>';
 								}
@@ -197,7 +197,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="fax">';
 							if ( 'no-icons' != $style ) {
 								if ( 'fax' === $fax_icon ) {
-									oceanwp_icon( $fax_icon );
+									Ocean_Extra::oe_svg_icon( $fax_icon );
 								} else {
 									echo '<i class="'. esc_attr( $fax_icon ) .'" aria-hidden="true"></i>';
 								}
@@ -213,7 +213,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="email">';
 							if ( 'no-icons' != $style ) {
 								if ( 'envelope' === $email_icon ) {
-									oceanwp_icon( $email_icon );
+									Ocean_Extra::oe_svg_icon( $email_icon );
 								} else {
 									echo '<i class="'. esc_attr( $email_icon ) .'" aria-hidden="true"></i>';
 								}
@@ -238,7 +238,7 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 						echo '<li class="web">';
 							if ( 'no-icons' != $style ) {
 								if ( 'link' === $web_icon ) {
-									oceanwp_icon( $web_icon );
+									Ocean_Extra::oe_svg_icon( $web_icon );
 								} else {
 									echo '<i class="'. esc_attr( $web_icon ) .'" aria-hidden="true"></i>';
 								}

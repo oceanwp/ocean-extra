@@ -173,7 +173,7 @@ if ( ! class_exists( 'Ocean_Extra_Custom_Menu_Widget' ) ) {
 					( function( $ ) {
 						$( '.<?php echo esc_attr( $this->id ); ?>.oceanwp-custom-menu.dropdown-click ul.dropdown-menu' ).each( function() {
 
-					        var IconDown 	= oceanwp_icon( 'angle_down', false ),
+					        var IconDown 	= '<i class="fa fa-angle-down"></i>',
 					        	linkHeight 	= $( this ).find( 'li.menu-item-has-children > a' ).outerHeight(),
 					        	target;
 
