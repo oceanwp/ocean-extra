@@ -71,6 +71,7 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
 				curl_setopt( $ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json'] );
                 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
                 curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
                 curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
 
                 $response_body  = curl_exec( $ch );
@@ -280,9 +281,7 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
          */
         public function ocean_extra_mailchimp_js() {
             // Load only if the widget is used
-            if ( is_active_widget( '', '', 'ocean_mailchimp' ) ) {
-                wp_enqueue_script('oe-mailchimp-script', OE_URL . 'includes/widgets/js/mailchimp.min.js', array('jquery'), false, true);
-            }
+            wp_enqueue_script('oe-mailchimp-script', OE_URL . 'includes/widgets/js/mailchimp.min.js', array('jquery'), false, true);
         }
 
         /**
