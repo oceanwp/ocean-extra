@@ -226,10 +226,21 @@ final class Ocean_Extra {
 	 */
 	public static function oe_svg_icon( $icon, $echo = true, $class = '', $title = '', $desc = '', $aria_hidden = true, $fallback = false ) {
 
+		// Get icon class.
+		$theme_icons = oceanwp_theme_icons();
+
 		if ( function_exists( 'oceanwp_icon' ) ) {
 			oceanwp_icon( $icon, $echo, $class, $title, $desc, $aria_hidden, $fallback );
 		} else {
+
+			if( true === $echo ) {
+				echo '<i class="' . $class . ' ' . $theme_icons[ $icon ][ 'fai' ] . '"' . $aria_hidden . ' role="img"></i>';
+			} else {
+				return '<i class="' . $class . ' ' . $theme_icons[ $icon ][ 'fai' ] . '"' . $aria_hidden . ' role="img"></i>';
+			}
+
 			return;
+
 		}
 	}
 
