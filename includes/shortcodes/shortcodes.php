@@ -766,28 +766,30 @@ add_shortcode( 'oceanwp_last_modified', 'oceanwp_last_modified_shortcode' );
  *
  * @since 1.7.6
  */
-function oceanwp_svg_icon_shortcode( $atts, $content = null ) {
+if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 
-	$owp_icon = '';
+	function oceanwp_svg_icon_shortcode( $atts, $content = null ) {
 
-	// Extract attributes.
-	$attr = shortcode_atts(
-		array(
-			'icon'        => 'Add an icon class',
-			'class'       => '',
-			'title'       => '',
-			'desc'        => '',
-			'area_hidden' => true,
-			'fallback'    => false,
-		),
-		$atts
-	);
+		$owp_icon = '';
 
-	if ( function_exists( 'ocean_svg' ) ) {
-		$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
+		// Extract attributes.
+		$attr = shortcode_atts(
+			array(
+				'icon'        => 'Add an icon class',
+				'class'       => '',
+				'title'       => '',
+				'desc'        => '',
+				'area_hidden' => true,
+				'fallback'    => false,
+			),
+			$atts
+		);
+
+		if ( function_exists( 'ocean_svg' ) ) {
+			$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
+		}
+
+		return $owp_icon;
 	}
-
-	return $owp_icon;
-
 }
 add_shortcode( 'oceanwp_icon', 'oceanwp_svg_icon_shortcode' );
