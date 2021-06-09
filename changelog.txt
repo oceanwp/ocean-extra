@@ -4,6 +4,8 @@
 - Added: OceanWP SVG icons.
 - Added: Custom body classes in page level setting #329
 - Added: New social option in about me and social icon widget.
+- Added: New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon] - https://docs.oceanwp.org/article/779-oceanwp-icon-shortcode
+- Added: All SVG icons - https://oceanwp.org/oceanwp-svg-icons/
 - Fixed: Newsletter Widget - MailChimp failed subscription issue.
 
 = 1.7.5 =

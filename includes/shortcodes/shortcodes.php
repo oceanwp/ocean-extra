@@ -732,13 +732,13 @@ add_shortcode( 'oceanwp_breadcrumb', 'oceanwp_breadcrumb_shortcode' );
 
 /**
  * Last Modified Date Shortcode
- * 
+ *
  * @since 1.7.1
  */
 if ( ! function_exists( 'oceanwp_last_modified_shortcode' ) ) {
 	function oceanwp_last_modified_shortcode( $atts ) {
 
-		// Attrbibutes. 
+		// Attrbibutes.
 		extract( shortcode_atts( array(
 			'olm_text'          => esc_html__( 'Last Updated on:', 'ocean-extra' ),
 			'olm_date_format'   => '',
@@ -757,3 +757,37 @@ if ( ! function_exists( 'oceanwp_last_modified_shortcode' ) ) {
 	}
 }
 add_shortcode( 'oceanwp_last_modified', 'oceanwp_last_modified_shortcode' );
+
+/**
+ * SVG icon shortcode
+ *
+ * @param array $atts    An associative array of attributes.
+ * @param obj   $content The enclosed content.
+ *
+ * @since 1.7.6
+ */
+function oceanwp_svg_icon_shortcode( $atts, $content = null ) {
+
+	$owp_icon = '';
+
+	// Extract attributes.
+	$attr = shortcode_atts(
+		array(
+			'icon'        => 'Add an icon class',
+			'class'       => '',
+			'title'       => '',
+			'desc'        => '',
+			'area_hidden' => true,
+			'fallback'    => false,
+		),
+		$atts
+	);
+
+	if ( function_exists( 'ocean_svg' ) ) {
+		$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
+	}
+
+	return $owp_icon;
+
+}
+add_shortcode( 'oceanwp_icon', 'oceanwp_svg_icon_shortcode' );
