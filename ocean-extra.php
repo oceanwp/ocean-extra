@@ -3,7 +3,7 @@
  * Plugin Name:			Ocean Extra
  * Plugin URI:			https://oceanwp.org/extension/ocean-extra/
  * Description:			Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:				1.7.6
+ * Version:				1.7.7
  * Author:				OceanWP
  * Author URI:			https://oceanwp.org/
  * Requires at least:	5.3
@@ -230,7 +230,7 @@ final class Ocean_Extra {
 		$theme_icons = oceanwp_theme_icons();
 
 		if ( function_exists( 'oceanwp_icon' ) ) {
-			oceanwp_icon( $icon, $echo, $class, $title, $desc, $aria_hidden, $fallback );
+			return oceanwp_icon( $icon, $echo, $class, $title, $desc, $aria_hidden, $fallback );
 		} else {
 
 			if( true === $echo ) {
