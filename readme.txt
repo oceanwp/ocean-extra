@@ -35,6 +35,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.7.7 =
 - Fixed: Icon missing in About me widget.
+- Fixed: PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
 
 = 1.7.6 =
 - Added: OceanWP SVG icons.

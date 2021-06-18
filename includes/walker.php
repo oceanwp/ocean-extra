@@ -148,7 +148,7 @@ if ( ! class_exists( 'Ocean_Extra_Nav_Walker' ) ) {
 		/**
 		 * Icon if sub menu.
 		 */
-		public function display_element( $element, &$children_elements, $max_depth, $depth=0, $args, &$output ) {
+		public function display_element( $element, &$children_elements, $max_depth, $depth=0, $args = array(), &$output ) {
 
 			// Define vars
 			$id_field     = $this->db_fields['id'];
