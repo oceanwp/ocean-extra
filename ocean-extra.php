@@ -426,7 +426,7 @@ final class Ocean_Extra {
 		if ( is_singular() ) {
 			$title = get_the_title();
 		} else {
-			$title = oceanwp_title();
+			$title = oceanwp_has_page_title();
 		}
 
 		// Description
