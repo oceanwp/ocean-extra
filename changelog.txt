@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.7.8 =
+- Improved: Accessibility: oceanwp_search shortcode.
+- Fixed: Shortcodes: oceanwp_search icon display issue.
+
 = 1.7.7 =
 - Fixed: Icon missing in About me widget.
 - Fixed: PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.

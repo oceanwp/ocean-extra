@@ -105,16 +105,16 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 
 	function oceanwp_search_shortcode( $atts ) {
 
-		// Extract attributes
+		// Extract attributes.
 		extract( shortcode_atts( array(
 			'width' 		=> '',
 			'height' 		=> '',
 			'placeholder' 	=> esc_html__( 'Search', 'ocean-extra' ),
-			'btn_icon' 		=> Ocean_Extra::oe_svg_icon( 'search', false ),
+			'btn_icon' 		=> 'icon-magnifier',
 			'post_type' 	=> 'any',
 		), $atts ) );
 
-		// Styles
+		// Styles.
 		$style = array();
 		if ( ! empty( $width ) ) {
 			$style[] = 'width: '. intval( $width ) .'px;';
@@ -129,15 +129,16 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 			$style = ' style="' . esc_attr( $style) . '"';
 		}
 
-		$html = '<form method="get" class="oceanwp-searchform" id="searchform" action="'. esc_url( home_url( '/' ) ) .'"'. $style .'>';
+		$html = '<form role="search" method="get" class="oceanwp-searchform" id="searchform" action="'. esc_url( home_url( '/' ) ) .'"'. $style .'>';
+			$html .= '<span class="screen-reader-text">'. esc_html_e( 'Search for:', 'ocean-extra' ) .'</span>';
 			$html .= '<input type="text" class="field" name="s" id="s" placeholder="'. strip_tags( $placeholder ) .'">';
 			if ( 'any' != $post_type ) {
 				$html .= '<input type="hidden" name="post_type" value="'.esc_attr( $post_type ) .'">';
 			}
-			$html .= '<button type="submit" class="search-submit" value="">' . $btn_icon . '</button>';
+			$html .= '<button type="submit" class="search-submit" value=""><i class="'. esc_attr( $btn_icon ) .'" aria-hidden="true"></i></button>';
 		$html .= '</form>';
 
-		// Return
+		// Return.
 		return $html;
 
 	}
