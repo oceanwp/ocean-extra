@@ -34,7 +34,11 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 1.7.8 =
+- Added: Ocean Extra translation string filters.
 - Improved: Accessibility: oceanwp_search shortcode.
+- Improved: Accessibility: oceanwp_login shortcode.
+- Improved: Accessibility: MailChimp widget.
+- Improved: Accessibility: Recent Posts widget.
 - Fixed: Shortcodes: oceanwp_search icon display issue.
 
 = 1.7.7 =

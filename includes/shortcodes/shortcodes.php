@@ -129,13 +129,12 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 			$style = ' style="' . esc_attr( $style) . '"';
 		}
 
-		$html = '<form role="search" method="get" class="oceanwp-searchform" id="searchform" action="'. esc_url( home_url( '/' ) ) .'"'. $style .'>';
-			$html .= '<span class="screen-reader-text">'. esc_html_e( 'Search for:', 'ocean-extra' ) .'</span>';
-			$html .= '<input type="text" class="field" name="s" id="s" placeholder="'. strip_tags( $placeholder ) .'">';
+		$html = '<form aria-label="'. oe_lang_strings( 'oe-string-search-form-label', false ) .'" role="search" method="get" class="oceanwp-searchform" id="searchform" action="'. esc_url( home_url( '/' ) ) .'"'. $style .'>';
+			$html .= '<input aria-label="'. oe_lang_strings( 'oe-string-search-field', false ) .'" type="text" class="field" name="s" id="s" placeholder="'. strip_tags( $placeholder ) .'">';
 			if ( 'any' != $post_type ) {
 				$html .= '<input type="hidden" name="post_type" value="'.esc_attr( $post_type ) .'">';
 			}
-			$html .= '<button type="submit" class="search-submit" value=""><i class="'. esc_attr( $btn_icon ) .'" aria-hidden="true"></i></button>';
+			$html .= '<button aria-label="'. oe_lang_strings( 'oe_string_search_submit', false ) .'" type="submit" class="search-submit" value=""><i class="'. esc_attr( $btn_icon ) .'" aria-hidden="true"></i></button>';
 		$html .= '</form>';
 
 		// Return.
@@ -212,12 +211,12 @@ if ( ! function_exists( 'oceanwp_login_shortcode' ) ) {
 
 		// Logged in link.
 		if ( is_user_logged_in() ) {
-			return '<a href="'. esc_url( $logout_url ) .'" title="'. esc_attr( $logout_text ) .'" class="oceanwp-logout">'. strip_tags( $logout_text ) .'</a>';
+			return '<a href="'. esc_url( $logout_url ) .'" class="oceanwp-logout">'. strip_tags( $logout_text ) .'</a>';
 		}
 
 		// Logged out link.
 		else {
-			return '<a href="'. esc_url( $login_url ) .'" title="'. esc_attr( $login_text ) .'" class="oceanwp-login" target="_'. esc_attr( $target ) .'">'. strip_tags( $login_text ) .'</a>';
+			return '<a href="'. esc_url( $login_url ) .'" class="oceanwp-login" target="_'. esc_attr( $target ) .'">'. strip_tags( $login_text ) .'</a>';
 		}
 
 	}

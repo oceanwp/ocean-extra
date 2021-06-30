@@ -70,8 +70,8 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
 				curl_setopt( $ch, CURLOPT_USERPWD, 'user:' . $apikey);
 				curl_setopt( $ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json'] );
                 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, TRUE );
-                curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'PUT' );
+                curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
                 curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
 
                 $response_body  = curl_exec( $ch );
@@ -147,26 +147,26 @@ if (!class_exists('Ocean_Extra_MailChimp_Widget')) {
                     <form action="" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate<?php echo wp_kses_post($form_style); ?>>
 
                         <div class="email-wrap elem-wrap">
-                            <input type="email" placeholder="<?php echo esc_attr($placeholder); ?>" onfocus="if (this.value == this.defaultValue)this.value = '';" onblur="if (this.value == '')this.value = this.defaultValue;" name="EMAIL" class="required email"<?php echo wp_kses_post($input_style); ?>>
+                            <input aria-label="<?php oe_lang_strings( 'oe-string-mc-email' ); ?>" type="email" placeholder="<?php echo esc_attr($placeholder); ?>" onfocus="if (this.value == this.defaultValue)this.value = '';" onblur="if (this.value == '')this.value = this.defaultValue;" name="EMAIL" class="required email"<?php echo wp_kses_post($input_style); ?>>
 
                             <?php if ($submit_text) { ?>
-                                <button type="submit" value="" name="subscribe" class="button">
+                                <button aria-label="<?php oe_lang_strings( 'oe-string-mc-submit' ); ?>" type="submit" value="" name="subscribe" class="button">
                                     <?php echo esc_attr($submit_text); ?>
                                 </button>
                             <?php } ?>
                         </div>
-                        <span class="email-err err-msg req" style="display:none;"><?php _e("Email is required.", "ocean-extra"); ?></span>
-                        <span class="email-err err-msg not-valid" style="display:none;"><?php _e("Email not valid.", "ocean-extra"); ?></span>
+                        <span class="email-err err-msg req" style="display:none;"><?php oe_lang_strings( 'oe-string-mc-email-req-alert' ); ?></span>
+                        <span class="email-err err-msg not-valid" style="display:none;"><?php oe_lang_strings( 'oe-string-mc-email-inv-alert' ); ?></span>
 
                         <?php if ($mailchimp_gdpr_label) { ?>
                             <div class="gdpr-wrap elem-wrap">
-                                <label><input type="checkbox" name="GDPR" value="1" class="gdpr required"><?php echo $mailchimp_gdpr_label; ?></label>
-                                <span class="gdpr-err err-msg" style="display:none;"><?php _e("This field is required", "ocean-extra"); ?></span>
+                                <label><input aria-required="true" type="checkbox" name="GDPR" value="1" class="gdpr required"><?php echo $mailchimp_gdpr_label; ?></label>
+                                <span class="gdpr-err err-msg" style="display:none;"><?php oe_lang_strings( 'oe-string-mc-gdpr-check' ); ?></span>
                             </div>
                         <?php } ?>
 
-                        <div class="success res-msg" style="display:none;"><?php _e("Thanks for your subscription.", "ocean-extra"); ?></div>
-                        <div class="failed  res-msg" style="display:none;"><?php _e("Failed to subscribe, please contact admin.", "ocean-extra"); ?></div>
+                        <div class="success res-msg" style="display:none;"><?php oe_lang_strings( 'oe-string-mc-msg-succ' ); ?></div>
+                        <div class="failed  res-msg" style="display:none;"><?php oe_lang_strings( 'oe-string-mc-msg-fail' ); ?></div>
                     </form>
 
                 </div><!--.oceanwp-newsletter-form-wrap-->
