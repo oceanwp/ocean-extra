@@ -124,10 +124,6 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						'name'      => 'tiktok',
 						'url'       => ''
 					),
-					'vk'       => array(
-						'name'      => 'VK',
-						'url'       => ''
-					),
 
 				)
 			);
@@ -318,6 +314,10 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 					// Loop through each item in the array.
 					foreach( $social_services as $key => $val ) {
+						if (!array_key_exists($key, $social_services_array )) {
+							continue;
+						}
+
 						$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
 						$name     = $social_services_array[$key]['name'];
 
