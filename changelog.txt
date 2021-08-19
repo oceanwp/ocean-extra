@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.7.9 =
+- Fixed: Menu: Walker: Warnings related to PHP 8+ version.
+- Fixed: Demo Import: minor bugs.
+- Fixed: Setup Wizard: minor bugs.
+- Fixed: Setup Wizard: admin notice position issue
+
 = 1.7.8 =
 - Added: Ocean Extra translation string filters.
 - Improved: Accessibility: oceanwp_search shortcode.
