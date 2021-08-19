@@ -484,7 +484,7 @@ class Ocean_Extra_Scripts_Panel {
 			<h1><?php esc_attr_e( 'Scripts & Styles Panel', 'ocean-extra' ); ?></h1>
 
 			<div class="oceanwp-desc notice notice-warning">
-				<p><?php esc_html_e( 'In the Oceanwp 3, you can not disable the scripts, We have plan to enable and disable scripts automatically on every page in the future.', 'ocean-extra' ); ?></p>
+				<p><?php esc_html_e( "With OceanWP 3+, please leave all scripts enabled so it doesn't conflict with the new JavaScript, This feature will be deprecated and fully automatized.", 'ocean-extra' ); ?></p>
 			</div>
 
 			<form id="oceanwp-scripts-panel-form" method="post" action="options.php">
