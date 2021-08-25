@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.8.0 =
+- Improved: MailChimp Widget: Conditional script loading.
+- Fixed: Minor issues.
+
 = 1.7.9 =
 - Fixed: Menu: Walker: Warnings related to PHP 8+ version.
 - Fixed: Demo Import: minor bugs.
