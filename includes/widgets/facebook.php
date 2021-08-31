@@ -127,6 +127,10 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 
 			$instance['title'] = trim( strip_tags( stripslashes( $new_instance['title'] ) ) );
 
+			if( isset( $new_instance['like_args'] ) && ! empty( $new_instance['like_args'] ) ) {
+				return $new_instance;
+			}
+
 			// Set up widget values
 			$instance['like_args'] = array(
 				'href'        => trim( strip_tags( stripslashes( $new_instance['href'] ) ) ),

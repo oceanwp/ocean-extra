@@ -187,7 +187,7 @@ final class Ocean_Extra {
 	}
 
 	/**
-	 * Unserializing instances of this class is forbidden.
+	 * Deserializing instances of this class is forbidden.
 	 *
 	 * @since 1.0.0
 	 */
