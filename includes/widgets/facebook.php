@@ -137,7 +137,7 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				'width'       => (int) $new_instance['width'],
 				'height'      => (int) $new_instance['height'],
 				'colorscheme' => $new_instance['colorscheme'],
-				'show_faces'  => (bool) $new_instance['show_faces'],
+				'show_faces'  => isset ( $new_instance['show_faces'] ) ? (bool) $new_instance['show_faces'] : false,
 				'stream'      => (bool) $new_instance['stream'],
 				'show_border' => (bool) $new_instance['show_border'],
 				'header'      => false, // The header just displays "Find us on Facebook"; it's redundant with the title

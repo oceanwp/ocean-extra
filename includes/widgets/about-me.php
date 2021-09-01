@@ -272,7 +272,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 
 					//Determine link rel
 					$ocean_srt = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
-				
+
 					$results = ocean_link_rel( $ocean_srt, $nofollow, $target );
 
 					$ocean_sr = $results[0];
@@ -290,12 +290,15 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 							// Loop through each item in the array.
 							foreach( $social_services as $key => $val ) {
 								$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
+								if ( ! isset ( $social_services_array[$key] ) ) {
+									continue;
+								}
 								$name     = $social_services_array[$key]['name'];
 								$name     = esc_html( $name );
 
-								/** 
-								 * 
-								 * Return correct aria label. 
+								/**
+								 *
+								 * Return correct aria label.
 								 * @since 1.6.4
 								 */
 								$aria_label = 'aria-label="'. $name .'"';
@@ -426,7 +429,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 			<ul id="<?php echo esc_attr( $field_id_services ); ?>" class="oceanwp-about-me-widget-services-list">
 				<input type="hidden" id="<?php echo esc_attr( $field_name_services ); ?>" value="<?php echo esc_attr( $field_name_services ); ?>">
 				<input type="hidden" id="<?php echo esc_attr( wp_create_nonce( 'oceanwp_fontawesome_social_widget_nonce' ) ); ?>">
-				
+
 				<?php
 				// Social array.
 				$social_services_array = $this->social_services_array;
@@ -436,6 +439,9 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 
 				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
+					if( ! isset( $social_services_array[$key] ) ) {
+						continue;
+					}
 					$url  = ! empty( $display_services[$key]['url'] ) ? esc_url( $display_services[$key]['url'] ) : null;
 					$name = $social_services_array[$key]['name'];
 					?>
