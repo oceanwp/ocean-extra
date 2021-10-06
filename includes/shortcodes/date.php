@@ -22,11 +22,14 @@ if ( ! class_exists( 'OceanWP_Date_Shortcode' ) ) {
 		 * @since 1.1.8
 		 */
 		public function date_shortcode( $atts, $content = null ) {
+			$settings = shortcode_atts(
+				array(
+					'year' => '',
+				),
+				$atts
+			);
 
-			// Extract attributes
-			extract( shortcode_atts( array(
-				'year' => '',
-			), $atts ) );
+			$year = $settings['year'];
 
 			// Var
 			$date = '';
