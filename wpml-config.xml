@@ -44,5 +44,6 @@
     <custom-field action="translate">ocean_post_title</custom-field>
     <custom-field action="translate">ocean_post_subheading</custom-field>
     <custom-field action="copy-once">ocean_post_title_style</custom-field>
+    <custom-field action="copy-once">ocean_post_layout</custom-field>
   </custom-fields>
 </wpml-config>
