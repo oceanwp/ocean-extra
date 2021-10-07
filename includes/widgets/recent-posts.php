@@ -23,20 +23,20 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 				'ocean_recent_posts',
 				esc_html__( '&raquo; Recent Posts', 'ocean-extra' ),
 				array(
-					'classname'   => 'widget-oceanwp-recent-posts recent-posts-widget',
-					'description' => esc_html__( 'Shows a listing of your recent or random posts.', 'ocean-extra' ),
+					'classname'                   => 'widget-oceanwp-recent-posts recent-posts-widget',
+					'description'                 => esc_html__( 'Shows a listing of your recent or random posts.', 'ocean-extra' ),
 					'customize_selective_refresh' => true,
 				)
 			);
 
 			$this->defaults = array(
-				'title'      => esc_html__( 'Recent Posts', 'ocean-extra' ),
-				'number'     => '3',
-				'post_type'  => 'post',
-				'taxonomy'   => '',
-				'terms'      => '',
-				'order'      => 'DESC',
-				'orderby'    => 'date',
+				'title'     => esc_html__( 'Recent Posts', 'ocean-extra' ),
+				'number'    => '3',
+				'post_type' => 'post',
+				'taxonomy'  => '',
+				'terms'     => '',
+				'order'     => 'DESC',
+				'orderby'   => 'date',
 			);
 		}
 
@@ -50,9 +50,14 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget( $args, $instance ) {
-
-			// Parse instance
-			extract( wp_parse_args( $instance, $this->defaults ) );
+			$new_instance = wp_parse_args( $instance, $this->defaults );
+			$title        = ! empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+			$post_type    = ! empty( $new_instance['post_type'] ) ? $new_instance['post_type'] : '';
+			$taxonomy     = ! empty( $new_instance['taxonomy'] ) ? $new_instance['taxonomy'] : '';
+			$terms        = ! empty( $new_instance['terms'] ) ? $new_instance['terms'] : '';
+			$number       = ! empty( $new_instance['number'] ) ? $new_instance['number'] : '';
+			$order        = ! empty( $new_instance['order'] ) ? $new_instance['order'] : '';
+			$orderby      = ! empty( $new_instance['orderby'] ) ? $new_instance['orderby'] : '';
 
 			// Apply filters to the title
 			$title = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
@@ -61,9 +66,9 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 			echo $args['before_widget'];
 
 				// Show widget title
-				if ( $title ) {
-					echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
-				} ?>
+			if ( $title ) {
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			} ?>
 
 				<ul class="oceanwp-recent-posts clr">
 
@@ -91,7 +96,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 						$terms = explode( ',', $terms );
 
 						// Add to query arg
-						$query_args['tax_query']  = array(
+						$query_args['tax_query'] = array(
 							array(
 								'taxonomy' => $taxonomy,
 								'field'    => 'slug',
@@ -111,7 +116,9 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 
 					if ( $oceanwp_query->have_posts() ) :
 
-						while ( $oceanwp_query->have_posts() ) : $oceanwp_query->the_post(); ?>
+						while ( $oceanwp_query->have_posts() ) :
+							$oceanwp_query->the_post();
+							?>
 
 							<li class="clr">
 
@@ -119,10 +126,14 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="recent-posts-thumbnail">
 										<?php
 										// Display post thumbnail
-										the_post_thumbnail( 'thumbnail', array(
-											'alt'		=> get_the_title(),
-											'itemprop' 	=> 'image',
-										) ); ?>
+										the_post_thumbnail(
+											'thumbnail',
+											array(
+												'alt'      => get_the_title(),
+												'itemprop' => 'image',
+											)
+										);
+										?>
 
 										<span class="overlay"></span>
 									</a>
@@ -136,7 +147,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 
 										<div class="recent-posts-info clr">
 											<div class="recent-posts-date"><?php echo get_the_date(); ?><span class="sep">/</span></div>
-											<div class="recent-posts-comments"><a href="<?php comments_link(); ?>"><?php comments_number( esc_html__( '0 Comments', 'ocean-extra' ), esc_html__( '1 Comment',  'ocean-extra' ), esc_html__( '% Comments', 'ocean-extra' ) ); ?></a></div>
+											<div class="recent-posts-comments"><a href="<?php comments_link(); ?>"><?php comments_number( esc_html__( '0 Comments', 'ocean-extra' ), esc_html__( '1 Comment', 'ocean-extra' ), esc_html__( '% Comments', 'ocean-extra' ) ); ?></a></div>
 										</div>
 
 									</div>
@@ -150,7 +161,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 					<?php else : ?>
 
 						<p class="not-found">
-							<?php esc_html_e('No posts found.', 'ocean-extra'); ?>
+							<?php esc_html_e( 'No posts found.', 'ocean-extra' ); ?>
 						</p>
 
 					<?php endif; ?>
@@ -177,14 +188,14 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 		 * @return array Updated safe values to be saved.
 		 */
 		public function update( $new_instance, $old_instance ) {
-			$instance 				= $old_instance;
-			$instance['title']      = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
-			$instance['post_type']  = ! empty( $new_instance['post_type'] ) ? strip_tags( $new_instance['post_type'] ) : '';
-			$instance['taxonomy']   = ! empty( $new_instance['taxonomy'] ) ? strip_tags( $new_instance['taxonomy'] ) : '';
-			$instance['terms']      = ! empty( $new_instance['terms'] ) ? strip_tags( $new_instance['terms'] ) : '';
-			$instance['number']     = ! empty( $new_instance['number'] ) ? strip_tags( $new_instance['number'] ) : '';
-			$instance['order']      = ! empty( $new_instance['order'] ) ? strip_tags( $new_instance['order'] ) : '';
-			$instance['orderby']    = ! empty( $new_instance['orderby'] ) ? strip_tags( $new_instance['orderby'] ) : '';
+			$instance              = $old_instance;
+			$instance['title']     = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
+			$instance['post_type'] = ! empty( $new_instance['post_type'] ) ? strip_tags( $new_instance['post_type'] ) : '';
+			$instance['taxonomy']  = ! empty( $new_instance['taxonomy'] ) ? strip_tags( $new_instance['taxonomy'] ) : '';
+			$instance['terms']     = ! empty( $new_instance['terms'] ) ? strip_tags( $new_instance['terms'] ) : '';
+			$instance['number']    = ! empty( $new_instance['number'] ) ? strip_tags( $new_instance['number'] ) : '';
+			$instance['order']     = ! empty( $new_instance['order'] ) ? strip_tags( $new_instance['order'] ) : '';
+			$instance['orderby']   = ! empty( $new_instance['orderby'] ) ? strip_tags( $new_instance['orderby'] ) : '';
 			return $instance;
 		}
 
@@ -197,8 +208,16 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function form( $instance ) {
+			$new_instance = wp_parse_args( (array) $instance, $this->defaults );
+			$title        = ! empty( $new_instance['title'] ) ? $new_instance['title'] : '';
+			$post_type    = ! empty( $new_instance['post_type'] ) ? $new_instance['post_type'] : '';
+			$taxonomy     = ! empty( $new_instance['taxonomy'] ) ? $new_instance['taxonomy'] : '';
+			$terms        = ! empty( $new_instance['terms'] ) ? $new_instance['terms'] : '';
+			$number       = ! empty( $new_instance['number'] ) ? $new_instance['number'] : '';
+			$order        = ! empty( $new_instance['order'] ) ? $new_instance['order'] : '';
+			$orderby      = ! empty( $new_instance['orderby'] ) ? $new_instance['orderby'] : '';
 
-			extract( wp_parse_args( ( array ) $instance, $this->defaults ) ); ?>
+			?>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?></label>
@@ -217,11 +236,16 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 					<option value="post" <?php selected( $post_type, 'post' ); ?>><?php esc_html_e( 'Post', 'ocean-extra' ); ?></option>
 					<?php
 					// Get Post Types
-					$get_post_types = get_post_types( array(
-						'public'   => true,
-						'_builtin' => false,
-					), 'objects', 'and' );
-					foreach ( $get_post_types as $key => $val ) : ?>
+					$get_post_types = get_post_types(
+						array(
+							'public'   => true,
+							'_builtin' => false,
+						),
+						'objects',
+						'and'
+					);
+					foreach ( $get_post_types as $key => $val ) :
+						?>
 						<?php if ( $key != 'post' ) { ?>
 							<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $post_type, $key ); ?>><?php echo esc_html( $val->labels->name ); ?></option>
 						<?php } ?>
@@ -233,12 +257,20 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_html_e( 'Query By Taxonomy', 'ocean-extra' ); ?></label>
 				<br />
 				<select class='oceanwp-select' name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>" style="width:100%;">
-					<option value="" <?php if ( ! $taxonomy ) { ?>selected="selected"<?php } ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
+					<option value="" 
+					<?php
+					if ( ! $taxonomy ) {
+						?>
+						selected="selected"<?php } ?>><?php esc_html_e( 'No', 'ocean-extra' ); ?></option>
 					<?php
 					// Get Taxonomies
-					$get_taxonomies = get_taxonomies( array(
-						'public' => true,
-					), 'objects' ); ?>
+					$get_taxonomies = get_taxonomies(
+						array(
+							'public' => true,
+						),
+						'objects'
+					);
+					?>
 					<?php foreach ( $get_taxonomies as $get_taxonomy ) : ?>
 						<option value="<?php echo esc_attr( $get_taxonomy->name ); ?>" <?php selected( $taxonomy, $get_taxonomy->name ); ?>><?php echo esc_html( ucfirst( $get_taxonomy->labels->singular_name ) ); ?></option>
 					<?php endforeach; ?>
@@ -267,7 +299,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 				<select class='oceanwp-select' name="<?php echo esc_attr( $this->get_field_name( 'orderby' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'orderby' ) ); ?>" style="width:100%;">
 				<?php
 				// Orderby options
-				$orderby_array = array (
+				$orderby_array = array(
 					'date'          => esc_html__( 'Date', 'ocean-extra' ),
 					'title'         => esc_html__( 'Title', 'ocean-extra' ),
 					'modified'      => esc_html__( 'Modified', 'ocean-extra' ),
@@ -275,7 +307,8 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 					'rand'          => esc_html__( 'Random', 'ocean-extra' ),
 					'comment_count' => esc_html__( 'Comment Count', 'ocean-extra' ),
 				);
-				foreach ( $orderby_array as $key => $value ) { ?>
+				foreach ( $orderby_array as $key => $value ) {
+					?>
 					<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $orderby, $key ); ?>>
 						<?php echo esc_attr( strip_tags( $value ) ); ?>
 					</option>
@@ -283,7 +316,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 				</select>
 			</p>
 
-		<?php
+			<?php
 
 		}
 
