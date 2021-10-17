@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.8.2 =
+- Updated: WPML translation config file: include ocean post layout.
+- Updated: Notice on Theme Panel > Scripts and Styles: For disabling scripts see Customize > General Options > Performance.
+- Updated: Code revision and improvement for widgets.
+- Updated: Code revision and improvement for shortcodes: extract() function removed.
+
 = 1.8.1 =
 - Fixed: Widgets: Facebook: Issue on save.
 - Fixed: PHP notices on deprecated icons.
