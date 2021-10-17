@@ -126,7 +126,7 @@ final class Ocean_Extra {
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );
 
 			// Register Custom JS file
-			add_action( 'after_oceanwp_register_customizer_controls', array( $this, 'setup_customizer_register' ) );
+			add_action( 'init', array( $this, 'register_custom_js' ) );
 
 			// Move the Custom CSS section into the Custom CSS/JS section
 			add_action( 'customize_register', array( $this, 'customize_register' ), 11 );
@@ -147,24 +147,6 @@ final class Ocean_Extra {
 		// Allow for the use of shortcodes in the WordPress excerpt
 		add_filter( 'the_excerpt', 'shortcode_unautop' );
 		add_filter( 'the_excerpt', 'do_shortcode' );
-	}
-
-	/**
-	 * Add Customizer Register hook
-	 *
-	 * @param $tab Customizer Current Tab.
-	 * @since 1.8.2
-	 */
-	public function setup_customizer_register( $tab = 'all' ) {
-
-		// Check Customizer Current Tab
-		if( $tab !== 'all'
-			&& $tab !== 'general'
-		) {
-			return;
-		}
-
-		add_action( 'init', array( $this, 'register_custom_js' ) );
 	}
 
 	/**

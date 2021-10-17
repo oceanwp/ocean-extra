@@ -14,9 +14,6 @@
 		init: function() {
 			var that = this;
 
-			// Categories filter
-			this.categoriesFilter();
-
 			// Search functionality.
 			$( '.owp-search-input' ).on( 'keyup', function() {
 				if ( 0 < $( this ).val().length ) {
@@ -56,13 +53,43 @@
 			$( document ).on( 'wp-plugin-installing' 		, this.pluginInstalling );
 			$( document ).on( 'wp-plugin-install-error'		, this.installError );
 
+			// Elementor
+			$( '.owp-elementor-link' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).parent().addClass( 'active' );
+				$( '.owp-gutenberg-link' ).parent().removeClass( 'active' );
+
+				$( '.owp-navigation .elementor-demos' ).show();
+				$( '.owp-navigation .gutenberg-demos' ).hide();
+				$( '.owp-demo-wrap .themes.elementor-items' ).show();
+				$( '.owp-demo-wrap .themes.gutenberg-items' ).hide();
+			} );
+
+			// Gutenberg
+			$( '.owp-gutenberg-link' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).parent().addClass( 'active' );
+				$( '.owp-elementor-link' ).parent().removeClass( 'active' );
+
+				$( '.owp-navigation .gutenberg-demos' ).show();
+				$( '.owp-navigation .elementor-demos' ).hide();
+				$( '.owp-demo-wrap .themes.gutenberg-items' ).show();
+				$( '.owp-demo-wrap .themes.elementor-items' ).hide();
+			} );
+
+			// Filter for Elementor demos
+			this.categoriesFilter( '.elementor-items', '.elementor-demos' );
+
+			// Filter for Gutenberg demos
+			this.categoriesFilter( '.gutenberg-items', '.gutenberg-demos' );
+
 		},
 
-		// Category filter.
-		categoriesFilter: function() {
+		// Category filter for Elementor demos
+		categoriesFilter: function( items, link ) {
 
 			// Cache selector to all items
-			var $items 				= $( '.owp-demo-wrap .themes' ).find( '.theme-wrap' ),
+			var $items 				= $( '.owp-demo-wrap .themes' + items ).find( '.theme-wrap' ),
 				fadeoutClass 		= 'owp-is-fadeout',
 				fadeinClass 		= 'owp-is-fadein',
 				animationDuration 	= 200;
@@ -110,7 +137,7 @@
 				return dfd;
 			};
 
-			$( '.owp-navigation-link' ).on( 'click', function( event ) {
+			$( link + ' .owp-navigation-link' ).on( 'click', function( event ) {
 				event.preventDefault();
 
 				// Remove 'active' class from the previous nav list items.
@@ -122,7 +149,7 @@
 				var category = this.hash.slice(1);
 
 				// show/hide the right items, based on category selected
-				var $container = $( '.owp-demo-wrap .themes' );
+				var $container = $( '.owp-demo-wrap .themes' + items );
 				$container.css( 'min-width', $container.outerHeight() );
 
 				var promise = animate( category );
