@@ -77,29 +77,62 @@ class OWP_Install_Demos {
 				<?php
 				// Vars
 				$demos = OceanWP_Demos::get_demos_data();
-				$categories = OceanWP_Demos::get_demo_all_categories( $demos ); ?>
+				$el_demos = $demos['elementor'];
+				$gu_demos = '';
+				$el_cat = OceanWP_Demos::get_demo_all_categories( $el_demos );
 
-				<?php if ( ! empty( $categories ) ) : ?>
-					<div class="owp-header-bar">
-						<nav class="owp-navigation">
-							<ul>
-								<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
-								<?php foreach ( $categories as $key => $name ) : ?>
-									<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
-								<?php endforeach; ?>
+				// If Gutenberg
+				if ( ! empty( $demos['gutenberg'] ) ) {
+					$gu_demos = $demos['gutenberg'];
+					$gu_cat = OceanWP_Demos::get_demo_all_categories( $gu_demos );
+				} ?>
+
+				<div class="owp-header-bar">
+					<nav class="owp-navigation">
+
+						<?php
+						if ( ! empty( $gu_demos ) ) { ?>
+							<ul class="owp-demo-linked">
+								<li class="active"><a href="#" class="owp-elementor-link"><?php esc_html_e( 'Elementor', 'ocean-extra' ); ?></a></li>
+								<li><a href="#" class="owp-gutenberg-link"><?php esc_html_e( 'Gutenberg', 'ocean-extra' ); ?></a></li>
 							</ul>
-						</nav>
-						<div clas="owp-search">
-							<input type="text" class="owp-search-input" name="owp-search" value="" placeholder="<?php esc_html_e( 'Search demos...', 'ocean-extra' ); ?>">
-						</div>
-					</div>
-				<?php endif; ?>
+						<?php
+						} ?>
 
-				<div class="themes wp-clearfix">
+						<?php
+						if ( ! empty( $el_cat ) ) { ?>
+							<ul class="elementor-demos">
+								<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
+								<?php foreach ( $el_cat as $key => $name ) { ?>
+									<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
+								<?php } ?>
+							</ul>
+						<?php
+						} ?>
+
+						<?php
+						if ( ! empty( $gu_demos )
+							&& ! empty( $gu_cat ) ) { ?>
+							<ul class="gutenberg-demos" style="display: none;">
+								<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
+								<?php foreach ( $gu_cat as $key => $name ) { ?>
+									<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
+								<?php } ?>
+							</ul>
+						<?php
+						} ?>
+
+					</nav>
+					<div clas="owp-search">
+						<input type="text" class="owp-search-input" name="owp-search" value="" placeholder="<?php esc_html_e( 'Search demos...', 'ocean-extra' ); ?>">
+					</div>
+				</div>
+
+				<div class="themes wp-clearfix elementor-items">
 
 					<?php
 					// Loop through all demos
-					foreach ( $demos as $demo => $key ) {
+					foreach ( $el_demos as $demo => $key ) {
 
 						// Vars
 						$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
@@ -130,9 +163,56 @@ class OWP_Install_Demos {
 
 						</div>
 
-					<?php } ?>
+					<?php
+					} ?>
 
 				</div>
+
+				<?php
+				if ( ! empty( $gu_demos ) ) { ?>
+
+					<div class="themes wp-clearfix gutenberg-items" style="display: none;">
+
+						<?php
+						// Loop through all demos
+						foreach ( $gu_demos as $demo => $key ) {
+
+							// Vars
+							$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
+
+							<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
+
+								<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>">
+
+									<div class="theme-screenshot">
+										<img src="<?php echo $this->img_url( $demo ); ?>" />
+
+										<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
+
+										<div class="demo-import-loader preview-icon preview-<?php echo esc_attr( $demo ); ?>"><i class="custom-loader"></i></div>
+									</div>
+
+									<div class="theme-id-container">
+
+										<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
+
+										<div class="theme-actions">
+											<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						<?php
+						} ?>
+
+					</div>
+
+				<?php
+				} ?>
 
 			</div>
 
