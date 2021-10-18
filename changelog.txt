@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.8.3 =
+- Added: Codes for the updated version of Ocean Pro Demos plugin.
+
 = 1.8.2 =
 - Updated: WPML translation config file: include ocean post layout.
 - Updated: Notice on Theme Panel > Scripts and Styles: For disabling scripts see Customize > General Options > Performance.
