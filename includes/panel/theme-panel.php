@@ -238,7 +238,7 @@ class Ocean_Extra_Theme_Panel {
 
     /**
      * Validate Settings Options
-     * 
+     *
      * @since 1.0.0
      */
     public static function admin_sanitize_license_options($input) {
@@ -274,7 +274,7 @@ class Ocean_Extra_Theme_Panel {
 
                 $settings[$key] = !empty($settings[$key]) ? true : false;
             }
-        } 
+        }
 
         // Return the validated/sanitized settings
         return $settings;
@@ -448,6 +448,20 @@ class Ocean_Extra_Theme_Panel {
                     <form id="oceanwp-theme-panel-form" method="post" action="options.php">
                 <?php // wp_nonce_field('oe_panels_settings_nounce', 'oe_panels_settings_nounce'); ?>
                 <?php settings_fields('oe_panels_settings'); ?>
+                        <div class="oceanwp-panels clr">
+
+                            <h2 class="oceanwp-title"><?php esc_html_e('Customizer Search', 'ocean-extra'); ?></h2>
+
+                            <p class="oceanwp-desc"><?php esc_html_e('Disable or Enable the Customizer Search. ', 'ocean-extra'); ?></p>
+                            <div id="ocean-customizer-search" class="column-wrap clr">
+                                <label for="oceanwp-switch-customizer-search" class="column-name clr">
+                                    <h3 class="title"><?php esc_html_e('Customizer Search', 'ocean-extra'); ?></h3>
+                                    <input type="checkbox" name="oe_panels_settings[customizer-search]" value="true" id="oceanwp-switch[customizer-search]" <?php checked( (bool) self::get_setting( 'customizer-search' ) ); ?>>
+                            </label>
+
+                            </div>
+                        </div>
+
 
                         <div class="oceanwp-panels clr">
 
