@@ -73,6 +73,36 @@ var name = "";
             $(document).on('wp-plugin-installing', this.pluginInstalling);
             $(document).on('wp-plugin-install-error', this.installError);
 
+            // Elementor
+            $( '.owp-elementor-link' ).on( 'click', function( e ) {
+                e.preventDefault();
+                $( this ).parent().addClass( 'active' );
+                $( '.owp-gutenberg-link' ).parent().removeClass( 'active' );
+
+                $( '.owp-navigation .elementor-demos' ).show();
+                $( '.owp-navigation .gutenberg-demos' ).hide();
+                $( '.owp-demo-wrap .themes.elementor-items' ).show();
+                $( '.owp-demo-wrap .themes.gutenberg-items' ).hide();
+            } );
+
+            // Gutenberg
+            $( '.owp-gutenberg-link' ).on( 'click', function( e ) {
+                e.preventDefault();
+                $( this ).parent().addClass( 'active' );
+                $( '.owp-elementor-link' ).parent().removeClass( 'active' );
+
+                $( '.owp-navigation .gutenberg-demos' ).show();
+                $( '.owp-navigation .elementor-demos' ).hide();
+                $( '.owp-demo-wrap .themes.gutenberg-items' ).show();
+                $( '.owp-demo-wrap .themes.elementor-items' ).hide();
+            } );
+
+            // Filter for Elementor demos
+            this.categoriesFilter( '.elementor-items', '.elementor-demos' );
+
+            // Filter for Gutenberg demos
+            this.categoriesFilter( '.gutenberg-items', '.gutenberg-demos' );
+
         },
         // Category filter.
         categoriesFilter: function () {

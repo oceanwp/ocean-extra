@@ -467,8 +467,6 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		 * Step 2 list demo
 		 */
 		public function ocean_demo_setup() {
-			$demos = OceanWP_Demos::get_demos_data();
-
 			// Button icon
 			if ( is_RTL() ) {
 				$icon = 'left';
@@ -494,27 +492,68 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						</p>
 					<div class="theme-browser rendered">
 
-						<?php $categories = OceanWP_Demos::get_demo_all_categories( $demos ); ?>
+						<?php
+						// Vars
+						$demos    = OceanWP_Demos::get_demos_data();
+						$el_demos = $demos['elementor'];
+						$gu_demos = '';
+						$el_cat   = OceanWP_Demos::get_demo_all_categories( $el_demos );
 
-			<?php if ( ! empty( $categories ) ) : ?>
-							<div class="owp-header-bar">
-								<nav class="owp-navigation">
-									<ul>
-										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
-										<?php foreach ( $categories as $key => $name ) : ?>
-											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
-				<?php endforeach; ?>
+						// If Gutenberg
+						if ( ! empty( $demos['gutenberg'] ) ) {
+							$gu_demos = $demos['gutenberg'];
+							$gu_cat   = OceanWP_Demos::get_demo_all_categories( $gu_demos );
+						}
+						?>
+
+						<div class="owp-header-bar">
+							<nav class="owp-navigation">
+								<?php
+								if ( ! empty( $gu_demos ) ) {
+									?>
+									<ul class="owp-demo-linked">
+										<li class="active"><a href="#" class="owp-elementor-link"><?php esc_html_e( 'Elementor', 'ocean-extra' ); ?></a></li>
+										<li><a href="#" class="owp-gutenberg-link"><?php esc_html_e( 'Gutenberg', 'ocean-extra' ); ?></a></li>
 									</ul>
-								</nav>
+									<?php
+								}
+								?>
 
-							</div>
-			<?php endif; ?>
+								<?php
+								if ( ! empty( $el_cat ) ) {
+									?>
+									<ul class="elementor-demos">
+										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
+										<?php foreach ( $el_cat as $key => $name ) { ?>
+											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
+										<?php } ?>
+									</ul>
+									<?php
+								}
+								?>
 
-						<div class="themes wp-clearfix">
+								<?php
+								if ( ! empty( $gu_demos )
+									&& ! empty( $gu_cat ) ) {
+									?>
+									<ul class="gutenberg-demos" style="display: none;">
+										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
+										<?php foreach ( $gu_cat as $key => $name ) { ?>
+											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
+										<?php } ?>
+									</ul>
+									<?php
+								}
+								?>
+							</nav>
+
+						</div>
+
+						<div class="themes wp-clearfix elementor-items">
 
 							<?php
 							// Loop through all demos
-							foreach ( $demos as $demo => $key ) {
+							foreach ( $el_demos as $demo => $key ) {
 
 								// Vars
 								$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
@@ -522,26 +561,85 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 								<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
-									<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>">
+									<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="elementor" >
 
 										<div class="theme-screenshot">
 											<img src="<?php echo OWP_Install_Demos::img_url( $demo ); ?>" />
+
+											<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
+
+											<div class="demo-import-loader preview-icon preview-<?php echo esc_attr( $demo ); ?>"><i class="custom-loader"></i></div>
 										</div>
 
 										<div class="theme-id-container">
 
 											<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
+
 											<div class="theme-actions">
 												<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
-												<span class="button button-secondary"><?php _e( 'Select', 'ocean-extra' ); ?></span>
 											</div>
+
 										</div>
 
 									</div>
 
 								</div>
 
-			<?php } ?>
+								<?php
+							}
+							?>
+
+						</div>
+
+						<?php
+						if ( ! empty( $gu_demos ) ) {
+							?>
+
+							<div class="themes wp-clearfix gutenberg-items" style="display: none;">
+
+								<?php
+								// Loop through all demos
+								foreach ( $gu_demos as $demo => $key ) {
+
+									// Vars
+									$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
+									?>
+
+									<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
+
+										<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="gutenberg">
+
+											<div class="theme-screenshot">
+												<img src="<?php echo OWP_Install_Demos::img_url( $demo ); ?>" />
+
+												<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
+
+												<div class="demo-import-loader preview-icon preview-<?php echo esc_attr( $demo ); ?>"><i class="custom-loader"></i></div>
+											</div>
+
+											<div class="theme-id-container">
+
+												<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
+
+												<div class="theme-actions">
+													<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+									<?php
+								}
+								?>
+
+							</div>
+
+							<?php
+						}
+						?>
 
 						</div>
 						<div class="owp-wizard-setup-actions">
