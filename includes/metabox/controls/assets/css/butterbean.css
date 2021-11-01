@@ -1,7 +1,7 @@
 /* Custom CSS */
 body .butterbean-manager .butterbean-content .butterbean-control:after { content: ''; display: block; height: 0; clear: both; visibility: hidden; zoom: 1; }
 
-body .butterbean-manager .butterbean-nav li[aria-selected=true] a { font-weight: 400; background-color: #fff; margin-right: -1px; }
+body .butterbean-manager .butterbean-nav li[aria-selected=true] a { font-weight: bold; background-color: #fff; margin-right: -1px; }
 body .butterbean-manager .butterbean-nav li a { color: #555; }
 body .butterbean-manager .butterbean-nav .dashicons { margin-right: 8px; }
 
