@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.9.0 =
+- New: Customizer Search: Enable / Disable option in Theme Panel.
+- Updated: Meta Box: Styling.
+- Fixed: Quick Setup.
+- Deprecated: Widgets: Instagram widget.
+
 = 1.8.3 =
 - Added: Codes for the updated version of Ocean Pro Demos plugin.
 
