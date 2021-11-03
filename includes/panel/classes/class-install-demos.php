@@ -85,7 +85,9 @@ class OWP_Install_Demos {
 				if ( ! empty( $demos['gutenberg'] ) ) {
 					$gu_demos = $demos['gutenberg'];
 					$gu_cat = OceanWP_Demos::get_demo_all_categories( $gu_demos );
-				} ?>
+				}
+
+				?>
 
 				<div class="owp-header-bar">
 					<nav class="owp-navigation">
@@ -139,7 +141,7 @@ class OWP_Install_Demos {
 
 						<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
-							<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>">
+							<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="elementor" >
 
 								<div class="theme-screenshot">
 									<img src="<?php echo $this->img_url( $demo ); ?>" />
@@ -182,7 +184,7 @@ class OWP_Install_Demos {
 
 							<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
-								<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>">
+								<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="gutenberg">
 
 									<div class="theme-screenshot">
 										<img src="<?php echo $this->img_url( $demo ); ?>" />

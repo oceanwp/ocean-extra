@@ -25,7 +25,7 @@ class OWP_Settings_Importer {
 		$data = @unserialize( $raw );
 
 		// Delete import file
-		unlink( $file );
+		//unlink( $file );
 
 		// If wp_css is set then import it.
 		if ( function_exists( 'wp_update_custom_css_post' ) && isset( $data['wp_css'] ) && '' !== $data['wp_css'] ) {

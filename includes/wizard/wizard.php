@@ -494,57 +494,50 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 						<?php
 						// Vars
-						$demos    = OceanWP_Demos::get_demos_data();
+						$demos = OceanWP_Demos::get_demos_data();
 						$el_demos = $demos['elementor'];
 						$gu_demos = '';
-						$el_cat   = OceanWP_Demos::get_demo_all_categories( $el_demos );
+						$el_cat = OceanWP_Demos::get_demo_all_categories( $el_demos );
 
 						// If Gutenberg
 						if ( ! empty( $demos['gutenberg'] ) ) {
 							$gu_demos = $demos['gutenberg'];
-							$gu_cat   = OceanWP_Demos::get_demo_all_categories( $gu_demos );
-						}
-						?>
+							$gu_cat = OceanWP_Demos::get_demo_all_categories( $gu_demos );
+						} ?>
 
 						<div class="owp-header-bar">
 							<nav class="owp-navigation">
 								<?php
-								if ( ! empty( $gu_demos ) ) {
-									?>
+								if ( ! empty( $gu_demos ) ) { ?>
 									<ul class="owp-demo-linked">
 										<li class="active"><a href="#" class="owp-elementor-link"><?php esc_html_e( 'Elementor', 'ocean-extra' ); ?></a></li>
 										<li><a href="#" class="owp-gutenberg-link"><?php esc_html_e( 'Gutenberg', 'ocean-extra' ); ?></a></li>
 									</ul>
-									<?php
-								}
-								?>
+								<?php
+								} ?>
 
 								<?php
-								if ( ! empty( $el_cat ) ) {
-									?>
+								if ( ! empty( $el_cat ) ) { ?>
 									<ul class="elementor-demos">
 										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
 										<?php foreach ( $el_cat as $key => $name ) { ?>
 											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
 										<?php } ?>
 									</ul>
-									<?php
-								}
-								?>
+								<?php
+								} ?>
 
 								<?php
 								if ( ! empty( $gu_demos )
-									&& ! empty( $gu_cat ) ) {
-									?>
+									&& ! empty( $gu_cat ) ) { ?>
 									<ul class="gutenberg-demos" style="display: none;">
 										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
 										<?php foreach ( $gu_cat as $key => $name ) { ?>
 											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
 										<?php } ?>
 									</ul>
-									<?php
-								}
-								?>
+								<?php
+								} ?>
 							</nav>
 
 						</div>
@@ -556,8 +549,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 							foreach ( $el_demos as $demo => $key ) {
 
 								// Vars
-								$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
-								?>
+								$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
 
 								<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
@@ -585,15 +577,13 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 								</div>
 
-								<?php
-							}
-							?>
+							<?php
+							} ?>
 
 						</div>
 
 						<?php
-						if ( ! empty( $gu_demos ) ) {
-							?>
+						if ( ! empty( $gu_demos ) ) { ?>
 
 							<div class="themes wp-clearfix gutenberg-items" style="display: none;">
 
@@ -602,8 +592,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 								foreach ( $gu_demos as $demo => $key ) {
 
 									// Vars
-									$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
-									?>
+									$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
 
 									<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
@@ -631,15 +620,13 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 									</div>
 
-									<?php
-								}
-								?>
+								<?php
+								} ?>
 
 							</div>
 
-							<?php
-						}
-						?>
+						<?php
+						} ?>
 
 						</div>
 						<div class="owp-wizard-setup-actions">
