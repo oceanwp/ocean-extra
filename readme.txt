@@ -43,6 +43,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.8.3 =
 - Added: Codes for the updated version of Ocean Pro Demos plugin.
+- Added: Enabled support for php code editor with Gutenberg support for my library template.
 
 = 1.8.2 =
 - Updated: WPML translation config file: include ocean post layout.
