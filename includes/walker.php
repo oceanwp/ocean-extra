@@ -111,7 +111,7 @@ if ( ! class_exists( 'Ocean_Extra_Nav_Walker' ) ) {
 		    if ( $item->icon != '' ) {
 		    	$text_before = '<span class="menu-text">';
 		    	$text_after  = '</span>';
-		    }	    
+		    }
 
 		    // Output
 		    $item_output = $args->before;
@@ -148,7 +148,7 @@ if ( ! class_exists( 'Ocean_Extra_Nav_Walker' ) ) {
 		/**
 		 * Icon if sub menu.
 		 */
-		public function display_element( $element, &$children_elements, $max_depth, $depth=0, $args = array(), &$output ) {
+		public function display_element( $element, $children_elements = array(), $max_depth, $depth = 0, $args = array(), $output = "" ) {
 
 			// Define vars
 			$id_field     = $this->db_fields['id'];
