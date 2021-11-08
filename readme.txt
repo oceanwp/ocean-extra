@@ -35,9 +35,11 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 1.9.0 =
 - New: Customizer Search: Enable / Disable option in Theme Panel.
+- New: My Library support for Gutenberg.
 - Updated: Meta Box: Styling.
 - Fixed: Quick Setup.
 - Deprecated: Widgets: Instagram widget.
+
 
 = 1.8.3 =
 - Added: Codes for the updated version of Ocean Pro Demos plugin.
@@ -267,11 +269,11 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 - Fixed: Social Share widget not displayed in the widget page.
 
 = 1.4.15 =
-- Added: New widget Social Share. 
+- Added: New widget Social Share.
 - Added: New premium extension Full Screen in the extensions page.
 
 = 1.4.14 =
-- Added: New premium extension "Ocean Cookie Notice" in the Extensions admin page. 
+- Added: New premium extension "Ocean Cookie Notice" in the Extensions admin page.
 
 = 1.4.13 =
 - Tweak: MailChimp widget improved, you just need to add your MailChimp API Key and List ID in Theme Panel > Integration, and the form will don't redirect anymore.

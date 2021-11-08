@@ -7,7 +7,7 @@
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.3
- * Tested up to:        5.8
+ * Tested up to:        5.8.1
  *
  * Text Domain: ocean-extra
  * Domain Path: /languages
