@@ -1,7 +1,7 @@
 === Ocean Extra ===
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
-Requires at least: 5.3
+Requires at least: 5.6
 Tested up to: 5.8.1
 Stable tag: 1.9.0
 Requires PHP: 7.2

@@ -6,7 +6,7 @@
  * Version:             1.9.0
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
- * Requires at least:   5.3
+ * Requires at least:   5.6
  * Tested up to:        5.8.1
  *
  * Text Domain: ocean-extra
