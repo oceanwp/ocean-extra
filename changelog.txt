@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.9.1 =
+- Updated: OceanWP Facebook group link in Theme Panel.
+
 = 1.9.0 =
 - New: Customizer Search: Enable / Disable option in Theme Panel.
 - New: My Library support for Gutenberg.
