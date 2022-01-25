@@ -200,10 +200,12 @@
 	butterbean.views.register_control( 'editor', {
 
 		ready : function() {
-
-			if ( typeof tinyMCE !== "undefined" ) {
-                tinyMCE.execCommand( 'mceAddEditor', true, this.model.get( 'field_name' ) );
-            }
+			let self = this;
+			setTimeout( function() {
+				if ( typeof tinyMCE !== "undefined" ) {
+					tinyMCE.execCommand( 'mceAddEditor', true, self.model.get( 'field_name' ) );
+				}
+			}, 500);
 		}
 	} );
     

@@ -111,83 +111,85 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		}
 
 		public function add_notice() {
-			if ( ( get_option( 'owp_wizard' ) == 'un-setup' ) && ( empty( $_GET['page'] ) || 'owp_setup' !== $_GET['page'] ) ) {
-				if ( ! get_option( '2nd_notice' ) && ! get_option( 'automatic_2nd_notice' ) ) {?>
-					<div class="updated notice-success owp-extra-notice">
-						<div class="notice-inner">
-							<div class="notice-content">
-								<p><?php _e( '<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?', 'ocean-extra' ); ?></p>
-								<p class="submit">
-									<a href="<?php echo esc_url( admin_url( 'admin.php?page=owp_setup' ) ); ?>" class="btn button-primary"><?php _e( 'Run the Setup Wizard', 'ocean-extra' ); ?></a>
-									<a class="btn button-secondary" href="<?php echo esc_url( ( add_query_arg( 'owp_wizard_hide_notice', '2nd_notice' ) ) ); ?>"><?php _e( 'Skip setup', 'ocean-extra' ); ?></a>
-								</p>
+			if( current_user_can( 'administrator') ) {
+				if ( ( get_option( 'owp_wizard' ) == 'un-setup' ) && ( empty( $_GET['page'] ) || 'owp_setup' !== $_GET['page'] ) ) {
+					if ( ! get_option( '2nd_notice' ) && ! get_option( 'automatic_2nd_notice' ) ) {?>
+						<div class="updated notice-success owp-extra-notice">
+							<div class="notice-inner">
+								<div class="notice-content">
+									<p><?php _e( '<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?', 'ocean-extra' ); ?></p>
+									<p class="submit">
+										<a href="<?php echo esc_url( admin_url( 'admin.php?page=owp_setup' ) ); ?>" class="btn button-primary"><?php _e( 'Run the Setup Wizard', 'ocean-extra' ); ?></a>
+										<a class="btn button-secondary" href="<?php echo esc_url( ( add_query_arg( 'owp_wizard_hide_notice', '2nd_notice' ) ) ); ?>"><?php _e( 'Skip setup', 'ocean-extra' ); ?></a>
+									</p>
+								</div>
 							</div>
 						</div>
-					</div>
+						<?php
+					}
+					?>
+
+					<style type="text/css">
+						.owp-extra-notice {
+							display: none;
+						}
+					
+						body.wp-admin .owp-extra-notice {
+							display: block;
+						}
+						
+						body.wp-admin > .owp-extra-notice {
+							margin-left: 180px;
+						}
+
+						body.folded > .owp-extra-notice {
+							margin-left: 56px;
+						}
+					
+						.owp-extra-notice.updated { border-color: #13aff0; }
+						.owp-extra-notice .button-primary { background: #13aff0; border-color: #1e9bd0; box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 0 #1e9bd0; color: #fff; text-shadow: 0 -1px 1px #1e9bd0, 1px 0 1px #1e9bd0, 0 1px 1px #1e9bd0, -1px 0 1px #1e9bd0; }
+
+						.owp-extra-notice.owp-contest-notice { position: relative; border: none; padding: 0; }
+						.owp-extra-notice.owp-contest-notice:after { content: ''; display: block; visibility: hidden; clear: both; zoom: 1; height: 0; }
+						.owp-extra-notice.owp-contest-notice { position: relative; }
+						.owp-extra-notice.owp-contest-notice span.icon-side { color: #fff; position: absolute; top: 0; left: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -moz-align-items: center; align-items: center; font-size: 30px; width: 60px; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+						.owp-extra-notice.owp-contest-notice span.dashicons-heart { background-color: #13aff0; }
+						.owp-extra-notice.owp-contest-notice { padding: 10px 40px 15px 74px; }
+						.owp-extra-notice.owp-contest-notice p { font-size: 14px; }
+						.owp-extra-notice.owp-contest-notice p:first-child { margin-top: 0; }
+						.owp-extra-notice.owp-contest-notice p:last-child { margin-bottom: 0; }
+						.owp-extra-notice.owp-contest-notice a { text-decoration: none; -webkit-box-shadow: none !important; box-shadow: none !important; }
+						.owp-extra-notice.owp-contest-notice a.btn { height: auto; font-size: 12px; line-height: 1; background-color: #13aff0; color: #fff; border: 1px solid #13aff0; padding: 10px 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; text-shadow: none; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; }
+						.owp-extra-notice.owp-contest-notice a.btn:hover { background-color: #0b7cac; border-color: #0b7cac; }
+						.owp-extra-notice.owp-contest-notice a.btn.button-secondary { background-color: #f2f2f2; color: #666; border-color: #dadada; margin-left: 10px; }
+						.owp-extra-notice.owp-contest-notice a.btn.button-secondary:hover { background-color: #e6e6e6; border-color: #e6e6e6; }
+						.owp-extra-notice.owp-contest-notice a.dismiss { position: absolute; top: 10px; right: 10px; text-decoration: none; color: #13aff0; -webkit-box-shadow: none !important; box-shadow: none !important; }
+
+						/* Rating notice */
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice span.dashicons-star-filled { background-color: #ffb900; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice p:last-child { margin-top: 20px; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn { background-color: #ffb900; border-color: #ffb900; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn:hover { background-color: #e6a803; border-color: #e6a803; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn.button-secondary { background-color: #f2f2f2; color: #666; border-color: #dadada; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn.button-secondary:hover { background-color: #e6e6e6; border-color: #e6e6e6; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a span { vertical-align: middle; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a span.dashicons { font-size: 1.4em; padding-right: 5px; height: auto; }
+						.owp-extra-notice.oe-rating-notice.owp-contest-notice a.dismiss { color: #ffb900; }
+
+						body.rtl .owp-extra-notice.owp-contest-notice span.dashicons-heart { right: 0; left: auto; }
+						body.rtl .owp-extra-notice.owp-contest-notice { padding-right: 74px; padding-left: 40px; }
+						body.rtl .owp-extra-notice.owp-contest-notice a.btn.button-secondary { margin-right: 10px; margin-left: 0; }
+						body.rtl .owp-extra-notice.owp-contest-notice a.dismiss { left: 10px; right: auto; }
+
+						@media screen and ( max-width: 480px ) {
+							.owp-extra-notice.owp-contest-notice span.dashicons-heart { display: none; }
+							.owp-extra-notice.owp-contest-notice { padding-left: 14px;  }
+							body.rtl .owp-extra-notice.owp-contest-notice { padding-right: 14px; }
+						}
+					</style>
+
 					<?php
 				}
-				?>
-
-				<style type="text/css">
-					.owp-extra-notice {
-						display: none;
-					}
-				
-					body.wp-admin .owp-extra-notice {
-						display: block;
-					}
-					
-					body.wp-admin > .owp-extra-notice {
-						margin-left: 180px;
-					}
-
-					body.folded > .owp-extra-notice {
-						margin-left: 56px;
-					}
-				
-					.owp-extra-notice.updated { border-color: #13aff0; }
-					.owp-extra-notice .button-primary { background: #13aff0; border-color: #1e9bd0; box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 1px 0 #1e9bd0; color: #fff; text-shadow: 0 -1px 1px #1e9bd0, 1px 0 1px #1e9bd0, 0 1px 1px #1e9bd0, -1px 0 1px #1e9bd0; }
-
-					.owp-extra-notice.owp-contest-notice { position: relative; border: none; padding: 0; }
-					.owp-extra-notice.owp-contest-notice:after { content: ''; display: block; visibility: hidden; clear: both; zoom: 1; height: 0; }
-					.owp-extra-notice.owp-contest-notice { position: relative; }
-					.owp-extra-notice.owp-contest-notice span.icon-side { color: #fff; position: absolute; top: 0; left: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -webkit-align-items: center; -moz-align-items: center; align-items: center; font-size: 30px; width: 60px; height: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-					.owp-extra-notice.owp-contest-notice span.dashicons-heart { background-color: #13aff0; }
-					.owp-extra-notice.owp-contest-notice { padding: 10px 40px 15px 74px; }
-					.owp-extra-notice.owp-contest-notice p { font-size: 14px; }
-					.owp-extra-notice.owp-contest-notice p:first-child { margin-top: 0; }
-					.owp-extra-notice.owp-contest-notice p:last-child { margin-bottom: 0; }
-					.owp-extra-notice.owp-contest-notice a { text-decoration: none; -webkit-box-shadow: none !important; box-shadow: none !important; }
-					.owp-extra-notice.owp-contest-notice a.btn { height: auto; font-size: 12px; line-height: 1; background-color: #13aff0; color: #fff; border: 1px solid #13aff0; padding: 10px 18px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; text-shadow: none; transition: all .3s ease; -webkit-transition: all .3s ease; -moz-transition: all .3s ease; -o-transition: all .3s ease; -ms-transition: all .3s ease; }
-					.owp-extra-notice.owp-contest-notice a.btn:hover { background-color: #0b7cac; border-color: #0b7cac; }
-					.owp-extra-notice.owp-contest-notice a.btn.button-secondary { background-color: #f2f2f2; color: #666; border-color: #dadada; margin-left: 10px; }
-					.owp-extra-notice.owp-contest-notice a.btn.button-secondary:hover { background-color: #e6e6e6; border-color: #e6e6e6; }
-					.owp-extra-notice.owp-contest-notice a.dismiss { position: absolute; top: 10px; right: 10px; text-decoration: none; color: #13aff0; -webkit-box-shadow: none !important; box-shadow: none !important; }
-
-					/* Rating notice */
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice span.dashicons-star-filled { background-color: #ffb900; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice p:last-child { margin-top: 20px; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn { background-color: #ffb900; border-color: #ffb900; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn:hover { background-color: #e6a803; border-color: #e6a803; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn.button-secondary { background-color: #f2f2f2; color: #666; border-color: #dadada; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a.btn.button-secondary:hover { background-color: #e6e6e6; border-color: #e6e6e6; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a span { vertical-align: middle; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a span.dashicons { font-size: 1.4em; padding-right: 5px; height: auto; }
-					.owp-extra-notice.oe-rating-notice.owp-contest-notice a.dismiss { color: #ffb900; }
-
-					body.rtl .owp-extra-notice.owp-contest-notice span.dashicons-heart { right: 0; left: auto; }
-					body.rtl .owp-extra-notice.owp-contest-notice { padding-right: 74px; padding-left: 40px; }
-					body.rtl .owp-extra-notice.owp-contest-notice a.btn.button-secondary { margin-right: 10px; margin-left: 0; }
-					body.rtl .owp-extra-notice.owp-contest-notice a.dismiss { left: 10px; right: auto; }
-
-					@media screen and ( max-width: 480px ) {
-						.owp-extra-notice.owp-contest-notice span.dashicons-heart { display: none; }
-						.owp-extra-notice.owp-contest-notice { padding-left: 14px;  }
-						body.rtl .owp-extra-notice.owp-contest-notice { padding-right: 14px; }
-					}
-				</style>
-
-				<?php
 			}
 		}
 
