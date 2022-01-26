@@ -137,743 +137,747 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 			$data = array(
 
-				'maria' => array(
-					'categories'        => array( 'Blog', 'One Page' ),
-					'xml_file'     		=> $url . 'maria/sample-data.xml',
-					'theme_settings' 	=> $url . 'maria/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'maria/widgets.wie',
-					'form_file'  		=> $url . 'maria/form.json',
-					'home_title'  		=> '',
-					'blog_title'  		=> 'Home',
-					'posts_to_show'  	=> '7',
-					'elementor_width'  	=> '1220',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-							array(
-								'slug'  	=> 'ocean-stick-anything',
-								'init'  	=> 'ocean-stick-anything/ocean-stick-anything.php',
-								'name'  	=> 'Ocean Stick Anything',
-							),
-						),
-					),
-				),
+				'elementor' => array(
 
-				'photos' => array(
-					'categories'        => array( 'Business', 'Corporate' ),
-					'xml_file'     		=> $url . 'photos/sample-data.xml',
-					'theme_settings' 	=> $url . 'photos/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'photos/widgets.wie',
-					'form_file'  		=> $url . 'photos/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '7',
-					'elementor_width'  	=> '1220',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
+					'maria' => array(
+						'categories'  		=> array( 'Blog', 'One Page' ),
+						'xml_file'     		=> $url . 'maria/sample-data.xml',
+						'theme_settings' 	=> $url . 'maria/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'maria/widgets.wie',
+						'form_file'  		=> $url . 'maria/form.json',
+						'home_title'  		=> '',
+						'blog_title'  		=> 'Home',
+						'posts_to_show'  	=> '7',
+						'elementor_width'  	=> '1220',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+								array(
+									'slug'  	=> 'ocean-stick-anything',
+									'init'  	=> 'ocean-stick-anything/ocean-stick-anything.php',
+									'name'  	=> 'Ocean Stick Anything',
+								),
 							),
 						),
 					),
-				),
 
-				'architect' => array(
-					'categories'        => array( 'Business' ),
-					'xml_file'     		=> $url . 'architect/sample-data.xml',
-					'theme_settings' 	=> $url . 'architect/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'architect/widgets.wie',
-					'form_file'  		=> $url . 'architect/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'elementor_width'  	=> '1220',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
+					'photos' => array(
+						'categories'  		=> array( 'Business', 'Corporate' ),
+						'xml_file'     		=> $url . 'photos/sample-data.xml',
+						'theme_settings' 	=> $url . 'photos/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'photos/widgets.wie',
+						'form_file'  		=> $url . 'photos/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '7',
+						'elementor_width'  	=> '1220',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
 						),
 					),
-				),
-				
-				'blogger' => array(
-					'categories'        => array( 'Blog' ),
-					'xml_file'     		=> $url . 'blogger/sample-data.xml',
-					'theme_settings' 	=> $url . 'blogger/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'blogger/widgets.wie',
-					'form_file'  		=> $url . 'blogger/form.json',
-					'home_title'  		=> '',
-					'blog_title'  		=> 'Home',
-					'posts_to_show'  	=> '12',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+
+					'architect' => array(
+						'categories'  		=> array( 'Business' ),
+						'xml_file'     		=> $url . 'architect/sample-data.xml',
+						'theme_settings' 	=> $url . 'architect/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'architect/widgets.wie',
+						'form_file'  		=> $url . 'architect/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'elementor_width'  	=> '1220',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-						),
-					),
-				),
-				
-				'coach' => array(
-					'categories'        => array( 'Business', 'Sport', 'One Page' ),
-					'xml_file'     		=> $url . 'coach/sample-data.xml',
-					'theme_settings' 	=> $url . 'coach/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'coach/widgets.wie',
-					'form_file'  		=> $url . 'coach/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
 							),
 						),
 					),
-				),
-				
-				'gym' => array(
-					'categories'        => array( 'Business', 'Sport' ),
-					'xml_file'     		=> $url . 'gym/sample-data.xml',
-					'theme_settings' 	=> $url . 'gym/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'gym/widgets.wie',
-					'form_file'  		=> $url . 'gym/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'News',
-					'posts_to_show'  	=> '3',
-					'elementor_width'  	=> '1100',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'blogger' => array(
+						'categories'  		=> array( 'Blog' ),
+						'xml_file'     		=> $url . 'blogger/sample-data.xml',
+						'theme_settings' 	=> $url . 'blogger/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'blogger/widgets.wie',
+						'form_file'  		=> $url . 'blogger/form.json',
+						'home_title'  		=> '',
+						'blog_title'  		=> 'Home',
+						'posts_to_show'  	=> '12',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
 							),
 						),
 					),
-				),
-				
-				'lawyer' => array(
-					'categories'        => array( 'Business' ),
-					'xml_file'     		=> $url . 'lawyer/sample-data.xml',
-					'theme_settings' 	=> $url . 'lawyer/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'lawyer/widgets.wie',
-					'form_file'  		=> $url . 'lawyer/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'elementor_width'  	=> '1220',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'coach' => array(
+						'categories'  		=> array( 'Business', 'Sport', 'One Page' ),
+						'xml_file'     		=> $url . 'coach/sample-data.xml',
+						'theme_settings' 	=> $url . 'coach/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'coach/widgets.wie',
+						'form_file'  		=> $url . 'coach/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-side-panel',
-								'init'  	=> 'ocean-side-panel/ocean-side-panel.php',
-								'name' 		=> 'Ocean Side Panel',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
 							),
 						),
 					),
-				),
-				
-				'megagym' => array(
-					'categories'        => array( 'Business', 'Sport', 'One Page' ),
-					'xml_file'     		=> $url . 'megagym/sample-data.xml',
-					'theme_settings' 	=> $url . 'megagym/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'megagym/widgets.wie',
-					'form_file'  		=> $url . 'megagym/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'gym' => array(
+						'categories'  		=> array( 'Business', 'Sport' ),
+						'xml_file'     		=> $url . 'gym/sample-data.xml',
+						'theme_settings' 	=> $url . 'gym/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'gym/widgets.wie',
+						'form_file'  		=> $url . 'gym/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'News',
+						'posts_to_show'  	=> '3',
+						'elementor_width'  	=> '1100',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
-							),
-						),
-					),
-				),
-				
-				'personal' => array(
-					'categories'        => array( 'Blog' ),
-					'xml_file'     		=> $url . 'personal/sample-data.xml',
-					'theme_settings' 	=> $url . 'personal/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'personal/widgets.wie',
-					'form_file'  		=> $url . 'personal/form.json',
-					'home_title'  		=> '',
-					'blog_title'  		=> 'Home',
-					'posts_to_show'  	=> '3',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-posts-slider',
-								'init'  	=> 'ocean-posts-slider/ocean-posts-slider.php',
-								'name'  	=> 'Ocean Posts Slider',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
 							),
 						),
 					),
-				),
-				
-				'simple' => array(
-					'categories'        => array( 'eCommerce' ),
-					'xml_file'     		=> $url . 'simple/sample-data.xml',
-					'theme_settings' 	=> $url . 'simple/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'simple/widgets.wie',
-					'form_file'  		=> $url . 'simple/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'elementor_width'  	=> '1100',
-					'is_shop'  			=> true,
-					'woo_image_size'  	=> '454',
-					'woo_thumb_size' 	=> '348',
-					'woo_crop_width'  	=> '3',
-					'woo_crop_height' 	=> '4',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'lawyer' => array(
+						'categories'  		=> array( 'Business' ),
+						'xml_file'     		=> $url . 'lawyer/sample-data.xml',
+						'theme_settings' 	=> $url . 'lawyer/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'lawyer/widgets.wie',
+						'form_file'  		=> $url . 'lawyer/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'elementor_width'  	=> '1220',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-modal-window',
-								'init'  	=> 'ocean-modal-window/ocean-modal-window.php',
-								'name'  	=> 'Ocean Modal Window',
-							),
-							array(
-								'slug'  	=> 'ocean-product-sharing',
-								'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
-								'name'  	=> 'Ocean Product Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-							array(
-								'slug'  	=> 'woocommerce',
-								'init'  	=> 'woocommerce/woocommerce.php',
-								'name'  	=> 'WooCommerce',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
-							),
-							array(
-								'slug' 		=> 'ocean-footer-callout',
-								'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
-								'name' 		=> 'Ocean Footer Callout',
-							),
-							array(
-								'slug' 		=> 'ocean-sticky-footer',
-								'init'  	=> 'ocean-sticky-footer/ocean-sticky-footer.php',
-								'name' 		=> 'Ocean Sticky Footer',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-side-panel',
+									'init'  	=> 'ocean-side-panel/ocean-side-panel.php',
+									'name' 		=> 'Ocean Side Panel',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
 							),
 						),
 					),
-				),
-				
-				'store' => array(
-					'categories'        => array( 'eCommerce' ),
-					'xml_file'     		=> $url . 'store/sample-data.xml',
-					'theme_settings' 	=> $url . 'store/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'store/widgets.wie',
-					'form_file'  		=> $url . 'store/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '6',
-					'elementor_width'  	=> '1220',
-					'is_shop'  			=> true,
-					'woo_image_size'  	=> '504',
-					'woo_thumb_size' 	=> '265',
-					'woo_crop_width'  	=> '4',
-					'woo_crop_height' 	=> '5',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'megagym' => array(
+						'categories'  		=> array( 'Business', 'Sport', 'One Page' ),
+						'xml_file'     		=> $url . 'megagym/sample-data.xml',
+						'theme_settings' 	=> $url . 'megagym/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'megagym/widgets.wie',
+						'form_file'  		=> $url . 'megagym/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-custom-sidebar',
-								'init'  	=> 'ocean-custom-sidebar/ocean-custom-sidebar.php',
-								'name'  	=> 'Ocean Custom Sidebar',
-							),
-							array(
-								'slug'  	=> 'ocean-product-sharing',
-								'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
-								'name'  	=> 'Ocean Product Sharing',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'ocean-stick-anything',
-								'init'  	=> 'ocean-stick-anything/ocean-stick-anything.php',
-								'name'  	=> 'Ocean Stick Anything',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-							array(
-								'slug'  	=> 'woocommerce',
-								'init'  	=> 'woocommerce/woocommerce.php',
-								'name'  	=> 'WooCommerce',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
-							),
-							array(
-								'slug' 		=> 'ocean-footer-callout',
-								'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
-								'name' 		=> 'Ocean Footer Callout',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
 							),
 						),
 					),
-				),
-				
-				'stylish' => array(
-					'categories'        => array( 'Business' ),
-					'xml_file'     		=> $url . 'stylish/sample-data.xml',
-					'theme_settings' 	=> $url . 'stylish/oceanwp-export.dat',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '12',
-					'elementor_width'  	=> '1420',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'personal' => array(
+						'categories'  		=> array( 'Blog' ),
+						'xml_file'     		=> $url . 'personal/sample-data.xml',
+						'theme_settings' 	=> $url . 'personal/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'personal/widgets.wie',
+						'form_file'  		=> $url . 'personal/form.json',
+						'home_title'  		=> '',
+						'blog_title'  		=> 'Home',
+						'posts_to_show'  	=> '3',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-posts-slider',
+									'init'  	=> 'ocean-posts-slider/ocean-posts-slider.php',
+									'name'  	=> 'Ocean Posts Slider',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
 							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-						),
-					),
-				),
-				
-				'travel' => array(
-					'categories'        => array( 'Blog' ),
-					'xml_file'     		=> $url . 'travel/sample-data.xml',
-					'theme_settings' 	=> $url . 'travel/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'travel/widgets.wie',
-					'form_file'  		=> $url . 'travel/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '4',
-					'elementor_width'  	=> '1220',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'ocean-custom-sidebar',
-								'init'  	=> 'ocean-custom-sidebar/ocean-custom-sidebar.php',
-								'name'  	=> 'Ocean Custom Sidebar',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
 							),
 						),
 					),
-				),
-				
-				'lingerie' => array(
-					'categories'        => array( 'eCommerce' ),
-					'xml_file'     		=> $url . 'lingerie/sample-data.xml',
-					'theme_settings' 	=> $url . 'lingerie/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'lingerie/widgets.wie',
-					'form_file'  		=> $url . 'lingerie/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'elementor_width'  	=> '1220',
-					'is_shop'  			=> true,
-					'woo_image_size'  	=> '433',
-					'woo_thumb_size' 	=> '265',
-					'woo_crop_width'  	=> '4',
-					'woo_crop_height' 	=> '5',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
+					
+					'simple' => array(
+						'categories'  		=> array( 'eCommerce' ),
+						'xml_file'     		=> $url . 'simple/sample-data.xml',
+						'theme_settings' 	=> $url . 'simple/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'simple/widgets.wie',
+						'form_file'  		=> $url . 'simple/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'elementor_width'  	=> '1100',
+						'is_shop'  			=> true,
+						'woo_image_size'  	=> '454',
+						'woo_thumb_size' 	=> '348',
+						'woo_crop_width'  	=> '3',
+						'woo_crop_height' 	=> '4',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-modal-window',
+									'init'  	=> 'ocean-modal-window/ocean-modal-window.php',
+									'name'  	=> 'Ocean Modal Window',
+								),
+								array(
+									'slug'  	=> 'ocean-product-sharing',
+									'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
+									'name'  	=> 'Ocean Product Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+								array(
+									'slug'  	=> 'woocommerce',
+									'init'  	=> 'woocommerce/woocommerce.php',
+									'name'  	=> 'WooCommerce',
+								),
 							),
-							array(
-								'slug'  	=> 'ocean-product-sharing',
-								'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
-								'name'  	=> 'Ocean Product Sharing',
-							),
-							array(
-								'slug'  	=> 'ocean-social-sharing',
-								'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
-								'name'  	=> 'Ocean Social Sharing',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-							array(
-								'slug'  	=> 'woocommerce',
-								'init'  	=> 'woocommerce/woocommerce.php',
-								'name'  	=> 'WooCommerce',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
-							),
-							array(
-								'slug' 		=> 'ocean-elementor-widgets',
-								'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
-								'name' 		=> 'Ocean Elementor Widgets',
-							),
-							array(
-								'slug' 		=> 'ocean-footer-callout',
-								'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
-								'name' 		=> 'Ocean Footer Callout',
-							),
-							array(
-								'slug' 		=> 'ocean-woo-popup',
-								'init'  	=> 'ocean-woo-popup/ocean-woo-popup.php',
-								'name' 		=> 'Ocean Woo Popup',
-							),
-						),
-					),
-				),
-				
-				'yoga' => array(
-					'categories'        => array( 'Business', 'Sport' ),
-					'xml_file'     		=> $url . 'yoga/sample-data.xml',
-					'theme_settings' 	=> $url . 'yoga/oceanwp-export.dat',
-					'widgets_file'  	=> $url . 'yoga/widgets.wie',
-					'form_file'  		=> $url . 'yoga/form.json',
-					'home_title'  		=> 'Home',
-					'blog_title'  		=> 'Blog',
-					'posts_to_show'  	=> '3',
-					'required_plugins'  => array(
-						'free' => array(
-							array(
-								'slug'  	=> 'ocean-extra',
-								'init'  	=> 'ocean-extra/ocean-extra.php',
-								'name'  	=> 'Ocean Extra',
-							),
-							array(
-								'slug'  	=> 'elementor',
-								'init'  	=> 'elementor/elementor.php',
-								'name'  	=> 'Elementor',
-							),
-							array(
-								'slug'  	=> 'wpforms-lite',
-								'init'  	=> 'wpforms-lite/wpforms.php',
-								'name'  	=> 'WPForms',
-							),
-						),
-						'premium' => array(
-							array(
-								'slug' 		=> 'ocean-sticky-header',
-								'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
-								'name' 		=> 'Ocean Sticky Header',
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
+								array(
+									'slug' 		=> 'ocean-footer-callout',
+									'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
+									'name' 		=> 'Ocean Footer Callout',
+								),
+								array(
+									'slug' 		=> 'ocean-sticky-footer',
+									'init'  	=> 'ocean-sticky-footer/ocean-sticky-footer.php',
+									'name' 		=> 'Ocean Sticky Footer',
+								),
 							),
 						),
 					),
+					
+					'store' => array(
+						'categories'  		=> array( 'eCommerce' ),
+						'xml_file'     		=> $url . 'store/sample-data.xml',
+						'theme_settings' 	=> $url . 'store/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'store/widgets.wie',
+						'form_file'  		=> $url . 'store/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '6',
+						'elementor_width'  	=> '1220',
+						'is_shop'  			=> true,
+						'woo_image_size'  	=> '504',
+						'woo_thumb_size' 	=> '265',
+						'woo_crop_width'  	=> '4',
+						'woo_crop_height' 	=> '5',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-custom-sidebar',
+									'init'  	=> 'ocean-custom-sidebar/ocean-custom-sidebar.php',
+									'name'  	=> 'Ocean Custom Sidebar',
+								),
+								array(
+									'slug'  	=> 'ocean-product-sharing',
+									'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
+									'name'  	=> 'Ocean Product Sharing',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'ocean-stick-anything',
+									'init'  	=> 'ocean-stick-anything/ocean-stick-anything.php',
+									'name'  	=> 'Ocean Stick Anything',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+								array(
+									'slug'  	=> 'woocommerce',
+									'init'  	=> 'woocommerce/woocommerce.php',
+									'name'  	=> 'WooCommerce',
+								),
+							),
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
+								array(
+									'slug' 		=> 'ocean-footer-callout',
+									'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
+									'name' 		=> 'Ocean Footer Callout',
+								),
+							),
+						),
+					),
+					
+					'stylish' => array(
+						'categories'  		=> array( 'Business' ),
+						'xml_file'     		=> $url . 'stylish/sample-data.xml',
+						'theme_settings' 	=> $url . 'stylish/oceanwp-export.dat',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '12',
+						'elementor_width'  	=> '1420',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+							),
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+							),
+						),
+					),
+					
+					'travel' => array(
+						'categories'  		=> array( 'Blog' ),
+						'xml_file'     		=> $url . 'travel/sample-data.xml',
+						'theme_settings' 	=> $url . 'travel/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'travel/widgets.wie',
+						'form_file'  		=> $url . 'travel/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '4',
+						'elementor_width'  	=> '1220',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-custom-sidebar',
+									'init'  	=> 'ocean-custom-sidebar/ocean-custom-sidebar.php',
+									'name'  	=> 'Ocean Custom Sidebar',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+							),
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
+							),
+						),
+					),
+					
+					'lingerie' => array(
+						'categories'  		=> array( 'eCommerce' ),
+						'xml_file'     		=> $url . 'lingerie/sample-data.xml',
+						'theme_settings' 	=> $url . 'lingerie/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'lingerie/widgets.wie',
+						'form_file'  		=> $url . 'lingerie/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'elementor_width'  	=> '1220',
+						'is_shop'  			=> true,
+						'woo_image_size'  	=> '433',
+						'woo_thumb_size' 	=> '265',
+						'woo_crop_width'  	=> '4',
+						'woo_crop_height' 	=> '5',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'ocean-product-sharing',
+									'init'  	=> 'ocean-product-sharing/ocean-product-sharing.php',
+									'name'  	=> 'Ocean Product Sharing',
+								),
+								array(
+									'slug'  	=> 'ocean-social-sharing',
+									'init'  	=> 'ocean-social-sharing/ocean-social-sharing.php',
+									'name'  	=> 'Ocean Social Sharing',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+								array(
+									'slug'  	=> 'woocommerce',
+									'init'  	=> 'woocommerce/woocommerce.php',
+									'name'  	=> 'WooCommerce',
+								),
+							),
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+								array(
+									'slug' 		=> 'ocean-elementor-widgets',
+									'init'  	=> 'ocean-elementor-widgets/ocean-elementor-widgets.php',
+									'name' 		=> 'Ocean Elementor Widgets',
+								),
+								array(
+									'slug' 		=> 'ocean-footer-callout',
+									'init'  	=> 'ocean-footer-callout/ocean-footer-callout.php',
+									'name' 		=> 'Ocean Footer Callout',
+								),
+								array(
+									'slug' 		=> 'ocean-woo-popup',
+									'init'  	=> 'ocean-woo-popup/ocean-woo-popup.php',
+									'name' 		=> 'Ocean Woo Popup',
+								),
+							),
+						),
+					),
+					
+					'yoga' => array(
+						'categories'  		=> array( 'Business', 'Sport' ),
+						'xml_file'     		=> $url . 'yoga/sample-data.xml',
+						'theme_settings' 	=> $url . 'yoga/oceanwp-export.dat',
+						'widgets_file'  	=> $url . 'yoga/widgets.wie',
+						'form_file'  		=> $url . 'yoga/form.json',
+						'home_title'  		=> 'Home',
+						'blog_title'  		=> 'Blog',
+						'posts_to_show'  	=> '3',
+						'required_plugins'  => array(
+							'free' => array(
+								array(
+									'slug'  	=> 'ocean-extra',
+									'init'  	=> 'ocean-extra/ocean-extra.php',
+									'name'  	=> 'Ocean Extra',
+								),
+								array(
+									'slug'  	=> 'elementor',
+									'init'  	=> 'elementor/elementor.php',
+									'name'  	=> 'Elementor',
+								),
+								array(
+									'slug'  	=> 'wpforms-lite',
+									'init'  	=> 'wpforms-lite/wpforms.php',
+									'name'  	=> 'WPForms',
+								),
+							),
+							'premium' => array(
+								array(
+									'slug' 		=> 'ocean-sticky-header',
+									'init'  	=> 'ocean-sticky-header/ocean-sticky-header.php',
+									'name' 		=> 'Ocean Sticky Header',
+								),
+							),
+						),
+					),
+
 				),
 
 			);
@@ -976,12 +980,17 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 			// Get all demos
 			$demos = self::get_demos_data();
+			$demo_data = $demos['elementor'];
+			if ( ! empty( $demos['gutenberg'] ) ) {
+				$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+			}
 
 			// Get selected demo
 			$demo = $_GET['demo_name'];
+			$demo_has_type = $_GET['demo_type'];
 
 			// Get required plugins
-			$plugins = $demos[$demo][ 'required_plugins' ];
+			$plugins = $demo_data[$demo][ 'required_plugins' ];
 
 			// Get free plugins
 			$free = $plugins[ 'free' ];
@@ -1020,7 +1029,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 			<form method="post" id="owp-demo-import-form">
 
-				<input id="owp_import_demo" type="hidden" name="owp_import_demo" value="<?php echo esc_attr( $demo ); ?>" />
+				<input id="owp_import_demo" type="hidden" name="owp_import_demo" value="<?php echo esc_attr( $demo ); ?>" data-demo-type="<?php echo esc_attr( $demo_has_type ); ?>" />
 
 				<div class="owp-demo-import-form-types">
 
@@ -1222,7 +1231,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function ajax_import_xml() {
+		public static function ajax_import_xml() {
 			if ( !current_user_can('manage_options')||! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
@@ -1231,9 +1240,14 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$demo_type 			= $_POST['owp_import_demo'];
 
 			// Get demos data
-			$demo 				= OceanWP_Demos::get_demos_data()[ $demo_type ];
+			$demos = self::get_demos_data();
+			$demo_data = $demos['elementor'];
+			if ( ! empty( $demos['gutenberg'] ) ) {
+				$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+			}
+			$demo = $demo_data[ $demo_type ];
 
-			// Content file
+			// Content
 			$xml_file 			= isset( $demo['xml_file'] ) ? $demo['xml_file'] : '';
 
 			// Delete the default post and page
@@ -1249,7 +1263,8 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			}
 
 			// Import Posts, Pages, Images, Menus.
-			$result = $this->process_xml( $xml_file );
+			$instance = new OceanWP_Demos();
+			$result = $instance->process_xml( $xml_file );
 
 			if ( is_wp_error( $result ) ) {
 				echo json_encode( $result->errors );
@@ -1265,7 +1280,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function ajax_import_theme_settings() {
+		public static function ajax_import_theme_settings() {
 			if (!current_user_can('manage_options') || ! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
@@ -1277,7 +1292,12 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$demo_type 			= $_POST['owp_import_demo'];
 
 			// Get demos data
-			$demo 				= OceanWP_Demos::get_demos_data()[ $demo_type ];
+			$demos = self::get_demos_data();
+			$demo_data = $demos['elementor'];
+			if ( ! empty( $demos['gutenberg'] ) ) {
+				$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+			}
+			$demo = $demo_data[ $demo_type ];
 
 			// Settings file
 			$theme_settings 	= isset( $demo['theme_settings'] ) ? $demo['theme_settings'] : '';
@@ -1300,7 +1320,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function ajax_import_widgets() {
+		public static function ajax_import_widgets() {
 			if (!current_user_can('manage_options') || ! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
@@ -1312,7 +1332,12 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$demo_type 			= $_POST['owp_import_demo'];
 
 			// Get demos data
-			$demo 				= OceanWP_Demos::get_demos_data()[ $demo_type ];
+			$demos = self::get_demos_data();
+			$demo_data = $demos['elementor'];
+			if ( ! empty( $demos['gutenberg'] ) ) {
+				$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+			}
+			$demo = $demo_data[ $demo_type ];
 
 			// Widgets file
 			$widgets_file 		= isset( $demo['widgets_file'] ) ? $demo['widgets_file'] : '';
@@ -1335,7 +1360,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function ajax_import_forms() {
+		public static function ajax_import_forms() {
 			if ( !current_user_can('manage_options') ||! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
@@ -1347,7 +1372,12 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$demo_type 			= $_POST['owp_import_demo'];
 
 			// Get demos data
-			$demo 				= OceanWP_Demos::get_demos_data()[ $demo_type ];
+			$demos = self::get_demos_data();
+			$demo_data = $demos['elementor'];
+			if ( ! empty( $demos['gutenberg'] ) ) {
+				$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+			}
+			$demo = $demo_data[ $demo_type ];
 
 			// Widgets file
 			$form_file 			= isset( $demo['form_file'] ) ? $demo['form_file'] : '';
@@ -1370,7 +1400,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 *
 		 * @since 1.4.5
 		 */
-		public function ajax_after_import() {
+		public static function ajax_after_import() {
 			if ( !current_user_can('manage_options') ||! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
@@ -1379,10 +1409,16 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			if ( $_POST['owp_import_is_xml'] === 'true' ) {
 
 				// Get the selected demo
-				$demo_type 			= $_POST['owp_import_demo'];
+				$demo_type    = $_POST['owp_import_demo'];
+				$demo_builder = $_POST['owp_import_demo_type'];
 
 				// Get demos data
-				$demo 				= OceanWP_Demos::get_demos_data()[ $demo_type ];
+				$demos = self::get_demos_data();
+				$demo_data = $demos['elementor'];
+				if ( ! empty( $demos['gutenberg'] ) ) {
+					$demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+				}
+				$demo = $demo_data[ $demo_type ];
 
 				// Elementor width setting
 				$elementor_width 	= isset( $demo['elementor_width'] ) ? $demo['elementor_width'] : '';
@@ -1492,7 +1528,16 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			    if ( ! empty( $posts_to_show ) ) {
 					update_option( 'posts_per_page', $posts_to_show );
 				}
-				
+
+				if ( 'elementor' !== $demo_builder ) {
+
+					$page_ids = get_all_page_ids();
+
+					foreach ( $page_ids as $id ) {
+						delete_post_meta( $id, '_elementor_edit_mode', '' );
+					}
+
+				}
 			}
 
 			die();

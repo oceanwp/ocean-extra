@@ -30,6 +30,10 @@
 		    padding: 0;
 		    text-align: center;
 		}
+
+		.owp-icon {
+			vertical-align: inherit;
+		}
 	}
 
 	&.style-light li a,
@@ -46,68 +50,148 @@
 		a {
 		    color: $color-13;
 		    border: 1px solid $border-color;
+
+			.owp-icon use {
+				stroke: $color-13;
+			}
 		}
 
 		&.oceanwp-twitter a:hover { color: #46d4fe !important; border-color: #46d4fe !important; }
+		&.oceanwp-twitter a:hover .owp-icon use { stroke: #46d4fe !important; }
 		&.oceanwp-facebook a:hover { color: #37589b !important; border-color: #37589b !important; }
-		&.oceanwp-google-plus a:hover { color: #de5a49 !important; border-color: #de5a49 !important; }
+		&.oceanwp-facebook a:hover .owp-icon use { stroke: #37589b !important; }
 		&.oceanwp-pinterest a:hover { color: #cb2027 !important; border-color: #cb2027 !important; }
+		&.oceanwp-pinterest a:hover .owp-icon use { stroke: #cb2027 !important; }
 		&.oceanwp-dribbble a:hover { color: #ea4c89 !important; border-color: #ea4c89 !important; }
+		&.oceanwp-dribbble a:hover .owp-icon use { stroke: #ea4c89 !important; }
 		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 		&.oceanwp-instagram a:hover { color: #3F729B !important; border-color: #3F729B !important; }
+		&.oceanwp-instagram a:hover .owp-icon use { stroke: #3F729B !important; }
 		&.oceanwp-linkedin a:hover { color: #3399CC !important; border-color: #3399CC !important; }
+		&.oceanwp-linkedin a:hover .owp-icon use { stroke: #3399CC !important; }
 		&.oceanwp-tumblr a:hover { color: #2C4762 !important; border-color: #2C4762 !important; }
+		&.oceanwp-tumblr a:hover .owp-icon use { stroke: #2C4762 !important; }
 		&.oceanwp-github a:hover { color: #60b044 !important; border-color: #60b044 !important; }
+		&.oceanwp-github a:hover .owp-icon use { stroke: #60b044 !important; }
 		&.oceanwp-flickr a:hover { color: #fa4086 !important;border-color: #fa4086 !important; }
+		&.oceanwp-flickr a:hover .owp-icon use { stroke: #fa4086 !important; }
 		&.oceanwp-skype a:hover { color: #00AFF0 !important; border-color: #00AFF0 !important; }
+		&.oceanwp-skype a:hover .owp-icon use { stroke: #00AFF0 !important; }
 		&.oceanwp-trello a:hover { color: #0079bf !important; border-color: #0079bf !important; }
+		&.oceanwp-trello a:hover .owp-icon use { stroke: #0079bf !important; }
 		&.oceanwp-foursquare a:hover { color: #2d5be3 !important; border-color: #2d5be3 !important; }
+		&.oceanwp-foursquare a:hover .owp-icon use { stroke: #2d5be3 !important; }
 		&.oceanwp-youtube a:hover { color: #C4302B !important; border-color: #C4302B !important; }
+		&.oceanwp-youtube a:hover .owp-icon use { stroke: #C4302B !important; }
 		&.oceanwp-vimeo a:hover { color: #1ab7ea !important; border-color: #1ab7ea !important; }
+		&.oceanwp-vimeo a:hover .owp-icon use { stroke: #1ab7ea !important; }
 		&.oceanwp-vine a:hover { color: #00bf8f !important; border-color: #00bf8f !important; }
+		&.oceanwp-vine a:hover .owp-icon use { stroke: #00bf8f !important; }
 		&.oceanwp-xing a:hover { color: #006464 !important; border-color: #006464 !important; }
+		&.oceanwp-xing a:hover .owp-icon use { stroke: #006464 !important; }
 		&.oceanwp-yelp a:hover { color: #C41200 !important; border-color: #C41200 !important; }
+		&.oceanwp-yelp a:hover .owp-icon use { stroke: #C41200 !important; }
 		&.oceanwp-tripadvisor a:hover { color: #589442 !important; border-color: #589442 !important; }
+		&.oceanwp-tripadvisor a:hover .owp-icon use { stroke: #589442 !important; }
 		&.oceanwp-rss a:hover { color: #ff7900 !important; border-color: #ff7900 !important; }
+		&.oceanwp-rss a:hover .owp-icon use { stroke: #ff7900 !important; }
 		&.oceanwp-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
+		&.oceanwp-email a:hover .owp-icon use { stroke: #13aff0 !important; }
+		&.oceanwp-telegram a:hover { color: #0088cc !important; border-color: #0088cc !important; }
+		&.oceanwp-telegram a:hover .owp-icon use { stroke: #0088cc !important; }
+		&.oceanwp-twitch a:hover { color: #6441a5 !important; border-color: #6441a5 !important; }
+		&.oceanwp-twitch a:hover .owp-icon use { stroke: #6441a5 !important; }
+		&.oceanwp-line a:hover { color: #00c300 !important; border-color: #00c300 !important; }
+		&.oceanwp-line a:hover .owp-icon use { stroke: #00c300 !important; }
+		&.oceanwp-medium a:hover { color: #00ab6c !important; border-color: #00ab6c !important; }
+		&.oceanwp-medium a:hover .owp-icon use { stroke: #00ab6c !important; }
+		&.oceanwp-tiktok a:hover { color: #000000 !important; border-color: #000000 !important; }
+		&.oceanwp-tiktok a:hover .owp-icon use { stroke: #000000 !important; }
+		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 	}
 
 	&.style-dark li {
 		a {
 		    color: $color-2;
 		    border: 1px solid $color-2;
+
+			.owp-icon use {
+				stroke: $color-2;
+			}
 		}
 
 		&.oceanwp-twitter a:hover { color: #46d4fe !important; border-color: #46d4fe !important; }
+		&.oceanwp-twitter a:hover .owp-icon use { stroke: #46d4fe !important; }
 		&.oceanwp-facebook a:hover { color: #37589b !important; border-color: #37589b !important; }
-		&.oceanwp-google-plus a:hover { color: #de5a49 !important; border-color: #de5a49 !important; }
+		&.oceanwp-facebook a:hover .owp-icon use { stroke: #37589b !important; }
 		&.oceanwp-pinterest a:hover { color: #cb2027 !important; border-color: #cb2027 !important; }
+		&.oceanwp-pinterest a:hover .owp-icon use { stroke: #cb2027 !important; }
 		&.oceanwp-dribbble a:hover { color: #ea4c89 !important; border-color: #ea4c89 !important; }
+		&.oceanwp-dribbble a:hover .owp-icon use { stroke: #ea4c89 !important; }
 		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 		&.oceanwp-instagram a:hover { color: #3F729B !important; border-color: #3F729B !important; }
+		&.oceanwp-instagram a:hover .owp-icon use { stroke: #3F729B !important; }
 		&.oceanwp-linkedin a:hover { color: #3399CC !important; border-color: #3399CC !important; }
+		&.oceanwp-linkedin a:hover .owp-icon use { stroke: #3399CC !important; }
 		&.oceanwp-tumblr a:hover { color: #2C4762 !important; border-color: #2C4762 !important; }
+		&.oceanwp-tumblr a:hover .owp-icon use { stroke: #2C4762 !important; }
 		&.oceanwp-github a:hover { color: #60b044 !important; border-color: #60b044 !important; }
+		&.oceanwp-github a:hover .owp-icon use { stroke: #60b044 !important; }
 		&.oceanwp-flickr a:hover { color: #fa4086 !important;border-color: #fa4086 !important; }
+		&.oceanwp-flickr a:hover .owp-icon use { stroke: #fa4086 !important; }
 		&.oceanwp-skype a:hover { color: #00AFF0 !important; border-color: #00AFF0 !important; }
+		&.oceanwp-skype a:hover .owp-icon use { stroke: #00AFF0 !important; }
 		&.oceanwp-trello a:hover { color: #0079bf !important; border-color: #0079bf !important; }
+		&.oceanwp-trello a:hover .owp-icon use { stroke: #0079bf !important; }
 		&.oceanwp-foursquare a:hover { color: #2d5be3 !important; border-color: #2d5be3 !important; }
+		&.oceanwp-foursquare a:hover .owp-icon use { stroke: #2d5be3 !important; }
 		&.oceanwp-youtube a:hover { color: #C4302B !important; border-color: #C4302B !important; }
+		&.oceanwp-youtube a:hover .owp-icon use { stroke: #C4302B !important; }
 		&.oceanwp-vimeo a:hover { color: #1ab7ea !important; border-color: #1ab7ea !important; }
+		&.oceanwp-vimeo a:hover .owp-icon use { stroke: #1ab7ea !important; }
 		&.oceanwp-vine a:hover { color: #00bf8f !important; border-color: #00bf8f !important; }
+		&.oceanwp-vine a:hover .owp-icon use { stroke: #00bf8f !important; }
 		&.oceanwp-xing a:hover { color: #006464 !important; border-color: #006464 !important; }
+		&.oceanwp-xing a:hover .owp-icon use { stroke: #006464 !important; }
 		&.oceanwp-yelp a:hover { color: #C41200 !important; border-color: #C41200 !important; }
+		&.oceanwp-yelp a:hover .owp-icon use { stroke: #C41200 !important; }
 		&.oceanwp-tripadvisor a:hover { color: #589442 !important; border-color: #589442 !important; }
+		&.oceanwp-tripadvisor a:hover .owp-icon use { stroke: #589442 !important; }
 		&.oceanwp-rss a:hover { color: #ff7900 !important; border-color: #ff7900 !important; }
+		&.oceanwp-rss a:hover .owp-icon use { stroke: #ff7900 !important; }
 		&.oceanwp-email a:hover { color: #13aff0 !important; border-color: #13aff0 !important; }
+		&.oceanwp-email a:hover .owp-icon use { stroke: #13aff0 !important; }
+		&.oceanwp-telegram a:hover { color: #0088cc !important; border-color: #0088cc !important; }
+		&.oceanwp-telegram a:hover .owp-icon use { stroke: #0088cc !important; }
+		&.oceanwp-twitch a:hover { color: #6441a5 !important; border-color: #6441a5 !important; }
+		&.oceanwp-twitch a:hover .owp-icon use { stroke: #6441a5 !important; }
+		&.oceanwp-line a:hover { color: #00c300 !important; border-color: #00c300 !important; }
+		&.oceanwp-line a:hover .owp-icon use { stroke: #00c300 !important; }
+		&.oceanwp-medium a:hover { color: #00ab6c !important; border-color: #00ab6c !important; }
+		&.oceanwp-medium a:hover .owp-icon use { stroke: #00ab6c !important; }
+		&.oceanwp-tiktok a:hover { color: #000000 !important; border-color: #000000 !important; }
+		&.oceanwp-tiktok a:hover .owp-icon use { stroke: #000000 !important; }
+		&.oceanwp-vk a:hover { color: #597BA5 !important; border-color: #597BA5 !important; }
+		&.oceanwp-vk a:hover .owp-icon use { stroke: #597BA5 !important; }
 	}
 
 	&.style-colored li {
 		a {
 		    color: $color-1;
 
+			.owp-icon use {
+				stroke: $color-1;
+			}
+
 		    &:hover {
 		    	color: $color-1;
+
+				.owp-icon use {
+					stroke: $color-1;
+				}
 		    }
 		}
 
@@ -115,8 +199,6 @@
 		&.oceanwp-twitter a:hover { background-color: #39b4d8; }
 		&.oceanwp-facebook a { background-color: #37589b; }
 		&.oceanwp-facebook a:hover{ background-color: #2d477c; }
-		&.oceanwp-google-plus a { background-color: #de5a49; }
-		&.oceanwp-google-plus a:hover { background-color: #bb4c3e; }
 		&.oceanwp-pinterest a { background-color: #cb2027; }
 		&.oceanwp-pinterest a:hover { background-color: #a91d23; }
 		&.oceanwp-dribbble a { background-color: #ea4c89; }
@@ -155,6 +237,12 @@
 		&.oceanwp-rss a:hover { background-color: #d46603; }
 		&.oceanwp-email a { background-color: #13aff0; }
 		&.oceanwp-email a:hover { background-color: #0f8dc2; }
+		&.oceanwp-telegram a:hover { background-color: #0088cc; }
+		&.oceanwp-twitch a:hover { background-color: #6441a5; }
+		&.oceanwp-line a:hover { background-color: #00c300; }
+		&.oceanwp-medium a:hover { background-color: #00ab6c; }
+		&.oceanwp-tiktok a:hover { background-color: #000000; }
+		&.oceanwp-vk a:hover { background-color: #597BA5; }
 	}
 
 	&.style-simple li {

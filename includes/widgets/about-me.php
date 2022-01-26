@@ -29,10 +29,6 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'name'      => 'Facebook',
 						'url'       => ''
 					),
-					'google-plus'   => array(
-						'name'      => 'GooglePlus',
-						'url'       => ''
-					),
 					'instagram'     => array(
 						'name'      => 'Instagram',
 						'url'       => ''
@@ -49,8 +45,68 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'name'      => 'Twitter',
 						'url'       => ''
 					),
-					'youtube'       => array(
-						'name'      => 'Youtube',
+					'telegram'       => array(
+						'name'      => 'Telegram',
+						'url'       => ''
+					),
+					'twitch'       => array(
+						'name'      => 'Twitch',
+						'url'       => ''
+					),
+					'line'       => array(
+						'name'      => 'Line',
+						'url'       => ''
+					),
+					'xing'       => array(
+						'name'      => 'Xing',
+						'url'       => ''
+					),
+					'vine'       => array(
+						'name'      => 'Vine',
+						'url'       => ''
+					),
+					'vimeo'       => array(
+						'name'      => 'Vimeo',
+						'url'       => ''
+					),
+					'github'       => array(
+						'name'      => 'Github',
+						'url'       => ''
+					),
+					'flickr'       => array(
+						'name'      => 'Flickr',
+						'url'       => ''
+					),
+					'yelp'       => array(
+						'name'      => 'Yelp',
+						'url'       => ''
+					),
+					'tripadvisor'       => array(
+						'name'      => 'Tripadvisor',
+						'url'       => ''
+					),
+					'rss'       => array(
+						'name'      => 'RSS',
+						'url'       => ''
+					),
+					'medium'       => array(
+						'name'      => 'Medium',
+						'url'       => ''
+					),
+					'tiktok'       => array(
+						'name'      => 'tiktok',
+						'url'       => ''
+					),
+					'vk'       => array(
+						'name'      => 'VK',
+						'url'       => ''
+					),
+					'dribbble'       => array(
+						'name'      => 'Dribbble',
+						'url'       => ''
+					),
+					'tumblr'       => array(
+						'name'      => 'Tumblr',
 						'url'       => ''
 					),
 				)
@@ -216,7 +272,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 
 					//Determine link rel
 					$ocean_srt = '<span class="screen-reader-text">'. esc_html__( 'Opens in a new tab', 'ocean-extra' ) .'</span>';
-				
+
 					$results = ocean_link_rel( $ocean_srt, $nofollow, $target );
 
 					$ocean_sr = $results[0];
@@ -234,12 +290,15 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 							// Loop through each item in the array.
 							foreach( $social_services as $key => $val ) {
 								$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
+								if ( ! isset ( $social_services_array[$key] ) ) {
+									continue;
+								}
 								$name     = $social_services_array[$key]['name'];
 								$name     = esc_html( $name );
 
-								/** 
-								 * 
-								 * Return correct aria label. 
+								/**
+								 *
+								 * Return correct aria label.
 								 * @since 1.6.4
 								 */
 								$aria_label = 'aria-label="'. $name .'"';
@@ -247,8 +306,8 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 								// Display social links.
 								if ( $link ) {
 									$icon = 'youtube' == $key ? 'youtube' : $key;
-									$icon = 'pinterest' == $key ? 'pinterest-p' : $icon;
-									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'><i class="fab fa-'. esc_attr( $icon ) .'" aria-hidden="true"></i></a>';
+									$icon = 'pinterest' == $key ? 'pinterest' : $icon;
+									echo '<li class="'. esc_attr( $key ) .'"><a href="'. esc_url( $link ) .'" '. $aria_label .'  target="_'. esc_attr( $target ) .'" '. $link_rel .'>' . Ocean_Extra::oe_svg_icon( $icon, false ) . '</a>';
 										echo $ocean_sr;
 									echo '</li>';
 								}
@@ -370,7 +429,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 			<ul id="<?php echo esc_attr( $field_id_services ); ?>" class="oceanwp-about-me-widget-services-list">
 				<input type="hidden" id="<?php echo esc_attr( $field_name_services ); ?>" value="<?php echo esc_attr( $field_name_services ); ?>">
 				<input type="hidden" id="<?php echo esc_attr( wp_create_nonce( 'oceanwp_fontawesome_social_widget_nonce' ) ); ?>">
-				
+
 				<?php
 				// Social array.
 				$social_services_array = $this->social_services_array;
@@ -380,6 +439,9 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 
 				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
+					if( ! isset( $social_services_array[$key] ) ) {
+						continue;
+					}
 					$url  = ! empty( $display_services[$key]['url'] ) ? esc_url( $display_services[$key]['url'] ) : null;
 					$name = $social_services_array[$key]['name'];
 					?>

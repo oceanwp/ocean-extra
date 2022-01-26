@@ -14,9 +14,6 @@
 		init: function() {
 			var that = this;
 
-			// Categories filter
-			this.categoriesFilter();
-
 			// Search functionality.
 			$( '.owp-search-input' ).on( 'keyup', function() {
 				if ( 0 < $( this ).val().length ) {
@@ -41,13 +38,14 @@
 
 				// Vars
 				var $selected_demo 		= $( this ).data( 'demo-id' ),
+					$demo_type			= $( this ).data( 'demo-type' ),
 					$loading_icon 		= $( '.preview-' + $selected_demo ),
 					$disable_preview 	= $( '.preview-all-' + $selected_demo );
 
 				$loading_icon.show();
 				$disable_preview.show();
-				
-				that.getDemoData( $selected_demo );
+
+				that.getDemoData( $selected_demo, $demo_type );
 			} );
 
 			$( document ).on( 'click' 						, '.install-now', this.installNow );
@@ -56,13 +54,43 @@
 			$( document ).on( 'wp-plugin-installing' 		, this.pluginInstalling );
 			$( document ).on( 'wp-plugin-install-error'		, this.installError );
 
+			// Elementor
+			$( '.owp-elementor-link' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).parent().addClass( 'active' );
+				$( '.owp-gutenberg-link' ).parent().removeClass( 'active' );
+
+				$( '.owp-navigation .elementor-demos' ).show();
+				$( '.owp-navigation .gutenberg-demos' ).hide();
+				$( '.owp-demo-wrap .themes.elementor-items' ).show();
+				$( '.owp-demo-wrap .themes.gutenberg-items' ).hide();
+			} );
+
+			// Gutenberg
+			$( '.owp-gutenberg-link' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).parent().addClass( 'active' );
+				$( '.owp-elementor-link' ).parent().removeClass( 'active' );
+
+				$( '.owp-navigation .gutenberg-demos' ).show();
+				$( '.owp-navigation .elementor-demos' ).hide();
+				$( '.owp-demo-wrap .themes.gutenberg-items' ).show();
+				$( '.owp-demo-wrap .themes.elementor-items' ).hide();
+			} );
+
+			// Filter for Elementor demos
+			this.categoriesFilter( '.elementor-items', '.elementor-demos' );
+
+			// Filter for Gutenberg demos
+			this.categoriesFilter( '.gutenberg-items', '.gutenberg-demos' );
+
 		},
 
-		// Category filter.
-		categoriesFilter: function() {
+		// Category filter for Elementor demos
+		categoriesFilter: function( items, link ) {
 
 			// Cache selector to all items
-			var $items 				= $( '.owp-demo-wrap .themes' ).find( '.theme-wrap' ),
+			var $items 				= $( '.owp-demo-wrap .themes' + items ).find( '.theme-wrap' ),
 				fadeoutClass 		= 'owp-is-fadeout',
 				fadeinClass 		= 'owp-is-fadein',
 				animationDuration 	= 200;
@@ -110,7 +138,7 @@
 				return dfd;
 			};
 
-			$( '.owp-navigation-link' ).on( 'click', function( event ) {
+			$( link + ' .owp-navigation-link' ).on( 'click', function( event ) {
 				event.preventDefault();
 
 				// Remove 'active' class from the previous nav list items.
@@ -122,7 +150,7 @@
 				var category = this.hash.slice(1);
 
 				// show/hide the right items, based on category selected
-				var $container = $( '.owp-demo-wrap .themes' );
+				var $container = $( '.owp-demo-wrap .themes' + items );
 				$container.css( 'min-width', $container.outerHeight() );
 
 				var promise = animate( category );
@@ -135,7 +163,7 @@
 		},
 
 		// Get demo data.
-		getDemoData: function( demo_name ) {
+		getDemoData: function( demo_name, demo_type ) {
 			var that = this;
 
 			// Get import data
@@ -146,6 +174,7 @@
 				data: {
 					action: 'owp_ajax_get_import_data',
 					demo_name: demo_name,
+					demo_type: demo_type,
 					security: owpDemos.owp_import_data_nonce
 				},
 
@@ -162,6 +191,7 @@
 				data: {
 					action : 'owp_ajax_get_demo_data',
 					demo_name: demo_name,
+					demo_type: demo_type,
 					demo_data_nonce: owpDemos.demo_data_nonce
 				},
 
@@ -219,8 +249,9 @@
 				e.preventDefault();
 
 				// Vars
-				var demo 	= $( this ).find( '[name="owp_import_demo"]' ).val(),
-					nonce 	= $( this ).find( '[name="owp_import_demo_data_nonce"]' ).val(),
+				var demo 	 = $( this ).find( '[name="owp_import_demo"]' ).val(),
+					demoType = $( this ).find( '[name="owp_import_demo"]' ).data( 'demo-type' ),
+					nonce 	 = $( this ).find( '[name="owp_import_demo_data_nonce"]' ).val(),
 					contentToImport = [];
 
 				// Check what need to be imported
@@ -237,6 +268,7 @@
 				// Start importing the content
 				that.importContent( {
 					demo: demo,
+					demoType: demoType,
 					nonce: nonce,
 					contentToImport: contentToImport,
 					isXML: $( '#owp_import_xml' ).is( ':checked' )
@@ -253,6 +285,7 @@
 				timerStart = Date.now(),
 				ajaxData = {
 					owp_import_demo: importData.demo,
+					owp_import_demo_type: importData.demoType,
 					owp_import_demo_data_nonce: importData.nonce
 				};
 
@@ -275,6 +308,7 @@
 					data: {
 						action: 'owp_after_import',
 						owp_import_demo: importData.demo,
+						owp_import_demo_type: importData.demoType,
 						owp_import_demo_data_nonce: importData.nonce,
 						owp_import_is_xml: importData.isXML
 					},

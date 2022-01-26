@@ -5,6 +5,10 @@
  * Thank you very much to SiteGround for the code.
  */
 
+if ( ! class_exists( 'WPForms' ) ) {
+	return;
+}
+
 class OWP_WPForms_Importer {
 
 	/**

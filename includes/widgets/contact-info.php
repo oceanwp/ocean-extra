@@ -124,7 +124,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $address ) {
 						echo '<li class="address">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $address_icon ) .'" aria-hidden="true"></i>';
+								if ( 'map_marker' === $address_icon ) {
+									Ocean_Extra::oe_svg_icon( $address_icon );
+								} else {
+									echo '<i class="'. esc_attr( $address_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $address_text ) .'</span>';
@@ -144,7 +148,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $phone ) {
 						echo '<li class="phone">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $phone_icon ) .'" aria-hidden="true"></i>';
+								if ( 'phone' === $phone_icon ) {
+									Ocean_Extra::oe_svg_icon( $phone_icon );
+								} else {
+									echo '<i class="'. esc_attr( $phone_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $phone_text ) .'</span>';
@@ -164,7 +172,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $mobile ) {
 						echo '<li class="mobile">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $mobile_icon ) .'" aria-hidden="true"></i>';
+								if ( 'smartphone' === $mobile_icon ) {
+									Ocean_Extra::oe_svg_icon( $mobile_icon );
+								} else {
+									echo '<i class="'. esc_attr( $mobile_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $mobile_text ) .'</span>';
@@ -184,7 +196,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $fax ) {
 						echo '<li class="fax">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $fax_icon ) .'" aria-hidden="true"></i>';
+								if ( 'fax' === $fax_icon ) {
+									Ocean_Extra::oe_svg_icon( $fax_icon );
+								} else {
+									echo '<i class="'. esc_attr( $fax_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $fax_text ) .'</span>';
@@ -196,7 +212,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $email ) {
 						echo '<li class="email">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $email_icon ) .'" aria-hidden="true"></i>';
+								if ( 'envelope' === $email_icon ) {
+									Ocean_Extra::oe_svg_icon( $email_icon );
+								} else {
+									echo '<i class="'. esc_attr( $email_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $email_text ) .'</span>';
@@ -217,7 +237,11 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					if ( $web ) {
 						echo '<li class="web">';
 							if ( 'no-icons' != $style ) {
-								echo '<i class="'. esc_attr( $web_icon ) .'" aria-hidden="true"></i>';
+								if ( 'link' === $web_icon ) {
+									Ocean_Extra::oe_svg_icon( $web_icon );
+								} else {
+									echo '<i class="'. esc_attr( $web_icon ) .'" aria-hidden="true"></i>';
+								}
 							}
 							echo '<div class="oceanwp-info-wrap">';
 								echo '<span class="oceanwp-contact-title">'. esc_html( $web_text ) .'</span>';
@@ -318,26 +342,26 @@ if ( ! class_exists( 'Ocean_Extra_Contact_Info_Widget' ) ) {
 					'text'          => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, aspernatur, velit. Adipisci, animi, molestiae, neque voluptatum non voluptas atque aperiam.',
 					'target'        => 'self',
 					'nofollow'      => 'no',
-					'address_icon'  => 'icon-location-pin',
+					'address_icon'  => 'map_marker',
 					'address_text'  => esc_attr__( 'Address:', 'ocean-extra' ),
 					'address'       => esc_attr__( 'Street Name, FL 54785', 'ocean-extra' ),
 					'address_link'  => '',
-					'phone_icon'    => 'icon-phone',
+					'phone_icon'    => 'phone',
 					'phone_text'    => esc_attr__( 'Phone:', 'ocean-extra' ),
 					'phone'         => '621-254-2147',
 					'phone_link'    => '',
-					'mobile_icon'   => 'icon-screen-smartphone',
+					'mobile_icon'   => 'smartphone',
 					'mobile_text'   => esc_attr__( 'Mobile:', 'ocean-extra' ),
 					'mobile'        => '621-254-2147',
 					'mobile_link'   => '',
-					'fax_icon'      => 'icon-printer',
+					'fax_icon'      => 'fax',
 					'fax_text'      => esc_attr__( 'Fax:', 'ocean-extra' ),
 					'fax'           => '621-254-2147',
-					'email_icon'    => 'icon-envelope',
+					'email_icon'    => 'envelope',
 					'email_text'    => esc_attr__( 'Email:', 'ocean-extra' ),
 					'email'         => 'contact@support.com',
 					'emailtxt'      => 'contact@support.com',
-					'web_icon'      => 'icon-link',
+					'web_icon'      => 'link',
 					'web_text'      => esc_attr__( 'Website:', 'ocean-extra' ),
 					'web'           => '#',
 					'webtxt'        => 'yourwebsite.com',

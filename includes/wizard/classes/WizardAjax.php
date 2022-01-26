@@ -10,33 +10,36 @@ Class WizardAjax {
     }
 
     public function ajax_demo_data() {
-
-
-        if (!wp_verify_nonce($_GET['demo_data_nonce'], 'get-demo-data')) {
-            die('This action was stopped for security purposes.');
+        if ( !current_user_can('manage_options')||! wp_verify_nonce( $_GET['demo_data_nonce'], 'get-demo-data' ) ) {
+            die( 'This action was stopped for security purposes.' );
         }
 
         // Database reset url
-        if (is_plugin_active('wordpress-database-reset/wp-reset.php')) {
-            $plugin_link = admin_url('tools.php?page=database-reset');
+        if ( is_plugin_active( 'wordpress-database-reset/wp-reset.php' ) ) {
+            $plugin_link    = admin_url( 'tools.php?page=database-reset' );
         } else {
-            $plugin_link = admin_url('plugin-install.php?s=Wordpress+Database+Reset&tab=search');
+            $plugin_link    = admin_url( 'plugin-install.php?s=Wordpress+Database+Reset&tab=search' );
         }
 
         // Get all demos
         $demos = OceanWP_Demos::get_demos_data();
+        $demo_data = $demos['elementor'];
+        if ( ! empty( $demos['gutenberg'] ) ) {
+            $demo_data = array_merge( $demo_data, $demos['gutenberg'] );
+        }
 
         // Get selected demo
         $demo = $_GET['demo_name'];
+        $demo_has_type = $_GET['demo_type'];
 
         // Get required plugins
-        $plugins = $demos[$demo]['required_plugins'];
+        $plugins = $demo_data[$demo][ 'required_plugins' ];
 
         // Get free plugins
-        $free = $plugins['free'];
+        $free = $plugins[ 'free' ];
 
         // Get premium plugins
-        $premium = $plugins['premium'];
+        $premium = $plugins[ 'premium' ];
         ?>
 
         <div id="owp-demo-plugins">
@@ -70,7 +73,7 @@ Class WizardAjax {
 
         <form method="post" id="owp-demo-import-form">
 
-            <input id="owp_import_demo" type="hidden" name="owp_import_demo" value="<?php echo esc_attr($demo); ?>" />
+            <input id="owp_import_demo" type="hidden" name="owp_import_demo" value="<?php echo esc_attr($demo); ?>" data-demo-type="<?php echo esc_attr( $demo_has_type ); ?>" />
 
             <div class="owp-demo-import-form-types">
 
@@ -80,21 +83,21 @@ Class WizardAjax {
                     <li>
                         <label for="owp_import_xml">
                             <input id="owp_import_xml" type="checkbox" name="owp_import_xml" checked="checked" />
-                            <strong><?php esc_html_e('Import XML Data', 'ocean-extra'); ?></strong> (<?php esc_html_e('pages, posts, images, menus, etc...', 'ocean-extra'); ?>)
+                            <strong><?php esc_html_e( 'Import XML Data', 'ocean-extra' ); ?></strong> (<?php esc_html_e( 'pages, posts, images, menus, etc...', 'ocean-extra' ); ?>)
                         </label>
                     </li>
 
                     <li>
                         <label for="owp_theme_settings">
                             <input id="owp_theme_settings" type="checkbox" name="owp_theme_settings" checked="checked" />
-                            <strong><?php esc_html_e('Import Customizer Settings', 'ocean-extra'); ?></strong>
+                            <strong><?php esc_html_e( 'Import Customizer Settings', 'ocean-extra' ); ?></strong>
                         </label>
                     </li>
 
                     <li>
                         <label for="owp_import_widgets">
                             <input id="owp_import_widgets" type="checkbox" name="owp_import_widgets" checked="checked" />
-                            <strong><?php esc_html_e('Import Widgets', 'ocean-extra'); ?></strong>
+                            <strong><?php esc_html_e( 'Import Widgets', 'ocean-extra' ); ?></strong>
                         </label>
                     </li>
                 </ul>

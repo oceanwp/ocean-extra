@@ -1,9 +1,9 @@
 === Ocean Extra ===
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
-Requires at least: 5.3
-Tested up to: 5.7.1
-Stable tag: 1.7.5
+Requires at least: 5.6
+Tested up to: 5.8.2
+Stable tag: 1.9.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,65 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 1.9.2 =
+- Fixed: Minor issues.
+
+= 1.9.1 =
+- Updated: OceanWP Facebook group link in Theme Panel.
+
+= 1.9.0 =
+- New: Customizer Search: Enable / Disable option in Theme Panel.
+- New: My Library support for Gutenberg.
+- Updated: Meta Box: Styling.
+- Fixed: Quick Setup.
+- Deprecated: Widgets: Instagram widget.
+
+
+= 1.8.3 =
+- Added: Codes for the updated version of Ocean Pro Demos plugin.
+- Added: Enabled support for php code editor with Gutenberg support for my library template.
+
+= 1.8.2 =
+- Updated: WPML translation config file: include ocean post layout.
+- Updated: Notice on Theme Panel > Scripts and Styles: For disabling scripts see Customize > General Options > Performance.
+- Updated: Code revision and improvement for widgets.
+- Updated: Code revision and improvement for shortcodes: extract() function removed.
+
+= 1.8.1 =
+- Fixed: Widgets: Facebook: Issue on save.
+- Fixed: PHP notices on deprecated icons.
+
+= 1.8.0 =
+- Improved: MailChimp Widget: Conditional script loading.
+- Fixed: Minor issues.
+
+= 1.7.9 =
+- Fixed: Menu: Walker: Warnings related to PHP 8+ version.
+- Fixed: Demo Import: minor bugs.
+- Fixed: Setup Wizard: minor bugs.
+- Fixed: Setup Wizard: admin notice position issue
+
+= 1.7.8 =
+- Added: Ocean Extra translation string filters.
+- Improved: Accessibility: oceanwp_search shortcode.
+- Improved: Accessibility: oceanwp_login shortcode.
+- Improved: Accessibility: MailChimp widget.
+- Improved: Accessibility: Recent Posts widget.
+- Fixed: Shortcodes: oceanwp_search icon display issue.
+
+= 1.7.7 =
+- Fixed: Icon missing in About me widget.
+- Fixed: PHP Deprecated: Required parameter $output follows optional parameter $depth in menu-walker.
+
+= 1.7.6 =
+- Added: OceanWP SVG icons.
+- Added: Custom body classes in page level setting #329
+- Added: New social option in about me and social icon widget.
+- Added: New shortcode for the use of OceanWP SVG icons across website: [oceanwp_icon] - https://docs.oceanwp.org/article/779-oceanwp-icon-shortcode
+- Added: All SVG icons - https://oceanwp.org/oceanwp-svg-icons/
+- Fixed: Newsletter Widget - MailChimp failed subscription issue.
+- Fixed: Newsletter Widget - MailChimp failed subscription issue.
 
 = 1.7.5 =
 - Added: New demos
@@ -217,11 +276,11 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 - Fixed: Social Share widget not displayed in the widget page.
 
 = 1.4.15 =
-- Added: New widget Social Share. 
+- Added: New widget Social Share.
 - Added: New premium extension Full Screen in the extensions page.
 
 = 1.4.14 =
-- Added: New premium extension "Ocean Cookie Notice" in the Extensions admin page. 
+- Added: New premium extension "Ocean Cookie Notice" in the Extensions admin page.
 
 = 1.4.13 =
 - Tweak: MailChimp widget improved, you just need to add your MailChimp API Key and List ID in Theme Panel > Integration, and the form will don't redirect anymore.

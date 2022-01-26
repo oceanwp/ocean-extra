@@ -47,7 +47,9 @@ class OE_Icon_Picker_Type_Svg extends OE_Icon_Picker_Type_Image {
 	 */
 	public function _add_mime_type( array $mimes ) {
 		if ( ! isset( $mimes['svg'] ) ) {
-			$mimes['svg'] = $this->mime_type;
+			if ( apply_filters( 'oe_icon_picker_svg_mime_type', true ) ) {
+				$mimes['svg'] = $this->mime_type;
+			}
 		}
 
 		return $mimes;

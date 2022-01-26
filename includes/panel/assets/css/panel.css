@@ -23,7 +23,7 @@ body .button.owp-button:active { -webkit-transform: none; -ms-transform: none; t
 .oceanwp-panels .column-name h3.title { float: left; display: block; position: relative; font-size: 18px; color: #333; margin: 0; z-index: 2; }
 .oceanwp-panels .column-name .desc { display: block; position: relative; font-size: 17px; line-height: 1.6; font-weight: 400; color: #777; z-index: 2; }
 .oceanwp-panels input[type=checkbox] { float: right; width: 22px; height: 22px; min-width: 22px; margin: 0; }
-.oceanwp-panels input[type=checkbox]:checked:before { width: 22px; font-size: 27px; }
+.oceanwp-panels input[type=checkbox]:checked:before { width: 26px; font-size: 27px; }
 .oceanwp-panels p.submit { display: inline-block; width: 100%; margin: 10px 0 0 0.5%; padding: 0; clear: both; }
 
 /* Customizer options */
