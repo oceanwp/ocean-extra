@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 1.9.3 =
+- Fixed: PHP 8 Compatibility: PHP Deprecated: Required parameter $max_depth follows optional parameter $children_elements.
+- Fixed: TinyMC / Bootstrap Issue in Metaboxes: Unable to add / edit content.
+- Fixed: Setup Wizard conditional: Message displayed to all roles instead just to website admins.
+- Fixed: Occasional Fatal Error on Setup Wizard.
+
 = 1.9.2 =
 - Fixed: Minor issues.
 
