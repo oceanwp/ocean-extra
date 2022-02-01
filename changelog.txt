@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.9.4 =
+- Added: Demo tag for free, pro and vip demos.
+
 = 1.9.3 =
 - Fixed: PHP 8 Compatibility: PHP Deprecated: Required parameter $max_depth follows optional parameter $children_elements.
 - Fixed: TinyMC / Bootstrap Issue in Metaboxes: Unable to add / edit content.

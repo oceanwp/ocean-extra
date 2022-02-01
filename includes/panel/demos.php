@@ -1023,7 +1023,46 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 				</div>
 
-				<a class="owp-button owp-plugins-next" href="#"><?php esc_html_e( 'Go to the next step', 'ocean-extra' ); ?></a>
+				<?php
+					$pricing_id = null;
+					$quota      = null;
+					if ( ocean_pro_demos_fs()->has_features_enabled_license() ) {
+						$license = ocean_pro_demos_fs()->_get_license();
+
+						// Get the pricing ID and handle it.
+						$pricing_id = $license->pricing_id;
+						$quota      = $license->quota;;
+					}
+					if ( $demo_data[$demo]['demo_type'] === 'pro' ) {
+						if ( ocean_pro_demos_fs()->is_plan( 'pro', true ) ) {
+							?>
+								<a class="owp-button owp-plugins-next" href="#"><?php esc_html_e( 'Go to the next step', 'ocean-extra' ); ?></a>
+							<?php
+						} else {
+							?>
+								<a class="owp-button" href="#"><?php esc_html_e( 'Upgrade to pro version', 'ocean-extra' ); ?></a>
+							<?php
+						}
+					} else if ( $demo_data[$demo]['demo_type'] === 'vip' ) {
+						if ( ocean_pro_demos_fs()->is_plan( 'pro', true ) && ( $pricing_id === '5382' || $pricing_id === '5383' ) ) {
+							?>
+								<a class="owp-button owp-plugins-next" href="#"><?php esc_html_e( 'Go to the next step', 'ocean-extra' ); ?></a>
+							<?php
+						} else if ( ocean_pro_demos_fs()->is_plan( 'pro', true ) && $pricing_id === null && ( $quota === null || $quota > 5 ) ) {
+							?>
+								<a class="owp-button owp-plugins-next" href="#"><?php esc_html_e( 'Go to the next step', 'ocean-extra' ); ?></a>
+							<?php
+						} else {
+							?>
+								<a class="owp-button" href="#"><?php esc_html_e( 'Upgrade to Business or Agency plan', 'ocean-extra' ); ?></a>
+							<?php
+						}
+					} else {
+						?>
+							<a class="owp-button owp-plugins-next" href="#"><?php esc_html_e( 'Go to the next step', 'ocean-extra' ); ?></a>
+						<?php
+					}
+				?>
 
 			</div>
 

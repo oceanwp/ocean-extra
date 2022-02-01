@@ -107,6 +107,32 @@
 	box-sizing: border-box; 
 	width: 33.33%;
 	padding: 0 15px 30px 15px;
+	position: relative;
+}
+
+.owp-demo-wrap .theme-wrap .owp-demo-type {
+	position: absolute;
+	color: #ffffff;
+	background: #24a105;
+    top: 5px;
+    right: 20px;
+	border-radius: 2px;
+	padding: 4px 10px;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+	z-index: 999;
+}
+
+.owp-demo-wrap .theme-wrap .owp-demo-type.demo-vip {
+    color: #ffffff;
+	background: #6504ff;
+}
+
+.owp-demo-wrap .theme-wrap .owp-demo-type.demo-pro {
+	color: #1f1e1e;
+	background: #ffb100;
 }
 
 .owp-demo-wrap .theme {

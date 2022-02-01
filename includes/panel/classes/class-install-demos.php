@@ -163,6 +163,22 @@ class OWP_Install_Demos {
 
 							</div>
 
+							<?php
+								$is_demo_type = isset( $key['demo_type'] ) ? $key['demo_type'] : 'free';
+								$tag_class = '';
+								if ( 'pro' === $is_demo_type ) {
+									$tag_class = 'demo-pro';
+								} else if ( 'vip' === $is_demo_type ) {
+									$tag_class = 'demo-vip';
+								} else {
+									$tag_class = 'demo-free';
+								}
+							?>
+
+							<span class="owp-demo-type <?php echo $tag_class;  ?>">
+								<?php echo esc_attr( $is_demo_type ); ?>
+							</span>
+
 						</div>
 
 					<?php
@@ -205,6 +221,10 @@ class OWP_Install_Demos {
 									</div>
 
 								</div>
+
+								<span class="owp-demo-type">
+									<?php echo esc_attr( isset( $key['demo_type'] ) ? $key['demo_type'] : 'Free' ); ?>
+								</span>
 
 							</div>
 
