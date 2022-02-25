@@ -319,7 +319,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						}
 
 						$link     = ! empty( $social_services[$key]['url'] ) ? $social_services[$key]['url'] : null;
-						$name     = $social_services_array[$key]['name'];
+						$name     = $social_services_array[$key]['name'] ?? null;
 
 						if ( $link ) {
 							$key  = 'vimeo-square' === $key ? 'vimeo' : $key;
@@ -566,7 +566,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 		 */
 		public function colors( $args, $instance ) {
 			// get the widget ID.
-			$id = $args['widget_id'];
+			$id = $args['widget_id'] ?? null;;
 
 			// Define vars.
 			$bg_color           = isset( $instance['bg_color'] ) ? sanitize_hex_color( $instance['bg_color'] ) : '';
