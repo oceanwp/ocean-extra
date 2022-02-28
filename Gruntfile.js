@@ -21,10 +21,8 @@ module.exports = function (grunt) {
                     "includes/panel/assets/js/scripts.min.js": "includes/panel/assets/js/scripts.js",
                     "includes/panel/assets/js/demos.min.js": "includes/panel/assets/js/demos.js",
                     "includes/wizard/assets/js/wizard.min.js": "includes/wizard/assets/js/wizard.js",
-                    "includes/metabox/controls/assets/js/select2.full.min.js":
-                        "includes/metabox/controls/assets/js/select2.full.js",
-                    "includes/metabox/controls/assets/js/butterbean.min.js":
-                        "includes/metabox/controls/assets/js/butterbean.js",
+                    "includes/metabox/controls/assets/js/select2.full.min.js": "includes/metabox/controls/assets/js/select2.full.js",
+                    "includes/metabox/controls/assets/js/butterbean.min.js": "includes/metabox/controls/assets/js/butterbean.js",
                     "includes/widgets/js/insta-admin.min.js": "includes/widgets/js/insta-admin.js",
                     "includes/widgets/js/mailchimp.min.js": "includes/widgets/js/mailchimp.js",
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
