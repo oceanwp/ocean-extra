@@ -38,6 +38,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 - Fixed: TinyMC / Bootstrap Issue in Metaboxes: Unable to add / edit content.
 - Fixed: Setup Wizard conditional: Message displayed to all roles instead just to website admins.
 - Fixed: Occasional Fatal Error on Setup Wizard.
+- Fixed: Metabox - TinyMce editor breaks occasionally when using HTML.
 
 = 1.9.2 =
 - Fixed: Minor issues.

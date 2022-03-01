@@ -203,10 +203,23 @@
 			let self = this;
 			setTimeout( function() {
 				if ( typeof tinyMCE !== "undefined" ) {
-					tinyMCE.execCommand( 'mceAddEditor', true, self.model.get( 'field_name' ) );
+					tinymce.init( {
+						mode : "exact",
+						elements : self.model.get( 'field_name' ),
+						theme: "modern",
+						skin: "lightgray",
+						toolbar: [
+							"bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | undo redo"
+						],
+						plugins : "paste",
+						paste_auto_cleanup_on_paste : true,
+						paste_postprocess : function( pl, o ) {
+							o.node.innerHTML = o.node.innerHTML.replace( /&nbsp;+/ig, " " );
+						}
+					} );
 				}
 			}, 500);
 		}
 	} );
-    
+
 }() );

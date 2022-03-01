@@ -828,13 +828,15 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 				}
 
 				if ( isset( $_POST['ocean-site-title'] ) ) {
-					$site_title = sanitize_hex_color( $_POST['ocean-site-title'] );
+					$site_title = wp_filter_nohtml_kses( $_POST['ocean-site-title'] );
 				}
+				$this->removeElementorUpdateOptionAction( 'blogname' );
 				update_option( 'blogname', esc_html( $site_title ) );
 
 				if ( isset( $_POST['ocean-tagline'] ) ) {
-					$site_tagline = sanitize_hex_color( $_POST['ocean-tagline'] );
+					$site_tagline = wp_filter_nohtml_kses( $_POST['ocean-tagline'] );
 				}
+				$this->removeElementorUpdateOptionAction( 'blogdescription' );
 				update_option( 'blogdescription', esc_html( $site_tagline ) );
 
 				if ( isset( $_POST['ocean-favicon'] ) ) {
@@ -998,6 +1000,21 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 			wp_clear_scheduled_hook( 'add_second_notice' );
 
 		}
+
+		/**
+         * Remove Elementor Update Option
+         */
+        private function removeElementorUpdateOptionAction( $option_name ) {
+            $action_name = 'update_option_' . $option_name;
+            global $wp_filter;
+            if ( isset( $wp_filter[ $action_name ] ) ) {
+                foreach ( $wp_filter[ $action_name ]->callbacks as $priority => $callbacks ) {
+                    foreach ( $callbacks as $callback_key => $callback_data ) {
+                        unset ( $wp_filter[ $action_name ]->callbacks[ $priority ][ $callback_key ] );
+                    }
+                }
+            }
+        }
 
 	}
 
