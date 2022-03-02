@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 5.9
-Stable tag: 1.9.3
+Tested up to: 5.9.1
+Stable tag: 1.9.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,12 +33,16 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 == Changelog ==
 
+= 1.9.4 =
+- Updated: Freemius SDK.
+- Fixed: Import Wizard error.
+- Fixed: Metabox - TinyMce editor breaks occasionally when using HTML.
+
 = 1.9.3 =
 - Fixed: PHP 8 Compatibility: PHP Deprecated: Required parameter $max_depth follows optional parameter $children_elements.
 - Fixed: TinyMC / Bootstrap Issue in Metaboxes: Unable to add / edit content.
 - Fixed: Setup Wizard conditional: Message displayed to all roles instead just to website admins.
 - Fixed: Occasional Fatal Error on Setup Wizard.
-- Fixed: Metabox - TinyMce editor breaks occasionally when using HTML.
 
 = 1.9.2 =
 - Fixed: Minor issues.
