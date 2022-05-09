@@ -489,7 +489,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_disable_margins', // Same as control name.
 		        array(
@@ -497,7 +497,24 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'enable',
 		        )
 		    );
-			
+
+			$manager->register_control(
+		        'ocean_add_body_class', // Same as setting name.
+		        array(
+		            'section' 		=> 'oceanwp_mb_main',
+		            'type'    		=> 'text',
+		            'label'   		=> esc_html__( 'Custom Body Class', 'ocean-extra' ),
+		            'description'   => esc_html__( 'Use space (space tab) to separate multiple classes. Do not use dots (.) or commas (,) to separate classes. Correct example: class-1 class-2 new-class-3', 'ocean-extra' ),
+		        )
+		    );
+
+			$manager->register_setting(
+		        'ocean_add_body_class', // Same as control name.
+		        array(
+		            'sanitize_callback' => 'sanitize_text_field',
+		        )
+		    );
+
 			$manager->register_section(
 		        'oceanwp_mb_shortcodes',
 		        array(
@@ -1888,11 +1905,17 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		 * @since  1.2.10
 		 */
 		public function body_class( $classes ) {
-			
+
 			// Disabled margins
 			if ( 'on' == get_post_meta( oceanwp_post_id(), 'ocean_disable_margins', true )
 				&& ! is_search() ) {
 				$classes[] = 'no-margins';
+			}
+
+			$body_class = get_post_meta( oceanwp_post_id(), 'ocean_add_body_class', true );
+
+			if ( ! empty( $body_class ) ) {
+				$classes[] = $body_class;
 			}
 
 			return $classes;

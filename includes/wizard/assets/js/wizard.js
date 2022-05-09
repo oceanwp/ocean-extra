@@ -55,13 +55,14 @@ var name = "";
                 e.preventDefault();
                 if ($('.owp-open-popup.active').length > 0) {
                     // Vars
-                    var $selected_demo = $('.owp-open-popup.active:first').data('demo-id'),
-                            $loading_icon = $('.preview-' + $selected_demo),
-                            $disable_preview = $('.preview-all-' + $selected_demo);
+                    var $selected_demo      = $( '.owp-open-popup.active:first' ).data( 'demo-id' ),
+                        $demo_type          = $( '.owp-open-popup.active:first' ).data( 'demo-type' ),
+                        $loading_icon       = $( '.preview-' + $selected_demo ),
+                        $disable_preview    = $( '.preview-all-' + $selected_demo );
 
                     $(".demo-import-loader").show();
 
-                    that.getDemoData($selected_demo);
+                    that.getDemoData( $selected_demo, $demo_type );
                 } else {
                     window.location.href = $(this).attr("data-next_step");
                 }
@@ -73,112 +74,148 @@ var name = "";
             $(document).on('wp-plugin-installing', this.pluginInstalling);
             $(document).on('wp-plugin-install-error', this.installError);
 
+            // Elementor
+            $( '.owp-elementor-link' ).on( 'click', function( e ) {
+                e.preventDefault();
+                $( this ).parent().addClass( 'active' );
+                $( '.owp-gutenberg-link' ).parent().removeClass( 'active' );
+
+                $( '.owp-navigation .elementor-demos' ).show();
+                $( '.owp-navigation .gutenberg-demos' ).hide();
+                $( '.owp-demo-wrap .themes.elementor-items' ).show();
+                $( '.owp-demo-wrap .themes.gutenberg-items' ).hide();
+            } );
+
+            // Gutenberg
+            $( '.owp-gutenberg-link' ).on( 'click', function( e ) {
+                e.preventDefault();
+                $( this ).parent().addClass( 'active' );
+                $( '.owp-elementor-link' ).parent().removeClass( 'active' );
+
+                $( '.owp-navigation .gutenberg-demos' ).show();
+                $( '.owp-navigation .elementor-demos' ).hide();
+                $( '.owp-demo-wrap .themes.gutenberg-items' ).show();
+                $( '.owp-demo-wrap .themes.elementor-items' ).hide();
+            } );
+
+            // Filter for Elementor demos
+            this.categoriesFilter( '.elementor-items', '.elementor-demos' );
+
+            // Filter for Gutenberg demos
+            this.categoriesFilter( '.gutenberg-items', '.gutenberg-demos' );
+
         },
         // Category filter.
-        categoriesFilter: function () {
+        categoriesFilter: function( items, link ) {
 
             // Cache selector to all items
-            var $items = $('.owp-demo-wrap .themes').find('.theme-wrap'),
-                    fadeoutClass = 'owp-is-fadeout',
-                    fadeinClass = 'owp-is-fadein',
-                    animationDuration = 200;
+            var $items              = $( '.owp-demo-wrap .themes' + items ).find( '.theme-wrap' ),
+                fadeoutClass        = 'owp-is-fadeout',
+                fadeinClass         = 'owp-is-fadein',
+                animationDuration   = 200;
 
             // Hide all items.
             var fadeOut = function () {
                 var dfd = $.Deferred();
 
-                $items.addClass(fadeoutClass);
+                $items.addClass( fadeoutClass );
 
-                setTimeout(function () {
-                    $items.removeClass(fadeoutClass).hide();
+                setTimeout( function() {
+                    $items.removeClass( fadeoutClass ).hide();
 
                     dfd.resolve();
-                }, animationDuration);
+                }, animationDuration );
 
                 return dfd.promise();
             };
 
-            var fadeIn = function (category, dfd) {
+            var fadeIn = function ( category, dfd ) {
                 var filter = category ? '[data-categories*="' + category + '"]' : 'div';
 
-                if ('all' === category) {
+                if ( 'all' === category ) {
                     filter = 'div';
                 }
 
-                $items.filter(filter).show().addClass('owp-is-fadein');
+                $items.filter( filter ).show().addClass( 'owp-is-fadein' );
 
-                setTimeout(function () {
-                    $items.removeClass(fadeinClass);
+                setTimeout( function() {
+                    $items.removeClass( fadeinClass );
 
                     dfd.resolve();
-                }, animationDuration);
+                }, animationDuration );
             };
 
-            var animate = function (category) {
+            var animate = function ( category ) {
                 var dfd = $.Deferred();
 
                 var promise = fadeOut();
 
-                promise.done(function () {
-                    fadeIn(category, dfd);
-                });
+                promise.done( function () {
+                    fadeIn( category, dfd );
+                } );
 
                 return dfd;
             };
 
-            $('.owp-navigation-link').on('click', function (event) {
+            $( link + ' .owp-navigation-link' ).on( 'click', function( event ) {
                 event.preventDefault();
 
                 // Remove 'active' class from the previous nav list items.
-                $(this).parent().siblings().removeClass('active');
+                $( this ).parent().siblings().removeClass( 'active' );
 
                 // Add the 'active' class to this nav list item.
-                $(this).parent().addClass('active');
+                $( this ).parent().addClass( 'active' );
 
                 var category = this.hash.slice(1);
 
                 // show/hide the right items, based on category selected
-                var $container = $('.owp-demo-wrap .themes');
-                $container.css('min-width', $container.outerHeight());
+                var $container = $( '.owp-demo-wrap .themes' + items );
+                $container.css( 'min-width', $container.outerHeight() );
 
-                var promise = animate(category);
+                var promise = animate( category );
 
-                promise.done(function () {
-                    $container.removeAttr('style');
-                });
-            });
+                promise.done( function () {
+                    $container.removeAttr( 'style' );
+                } );
+            } );
 
         },
+
         // Get demo data.
-        getDemoData: function (demo_name) {
+        getDemoData: function( demo_name, demo_type ) {
             var that = this;
 
             // Get import data
-            $.ajax({
+            $.ajax( {
                 url: owpDemos.ajaxurl,
                 type: 'get',
+
                 data: {
                     action: 'owp_ajax_get_import_data',
                     demo_name: demo_name,
+                    demo_type: demo_type,
                     security: owpDemos.owp_import_data_nonce
                 },
-                complete: function (data) {
+
+                complete: function( data ) {
                     $(".demo-import-loader").hide();
-                    that.importData = $.parseJSON(data.responseText);
+                    that.importData = $.parseJSON( data.responseText );
                 }
-            });
+            } );
 
             // Run the import
-            $.ajax({
+            $.ajax( {
                 url: owpDemos.ajaxurl,
                 type: 'get',
+
                 data: {
-                    action: 'owp_wizard_ajax_get_demo_data',
+                    action : 'owp_wizard_ajax_get_demo_data',
                     demo_name: demo_name,
+                    demo_type: demo_type,
                     demo_data_nonce: owpDemos.demo_data_nonce
                 },
-                complete: function (data) {
-                    console.log(data);
+
+                complete: function( data ) {
                     $(".owp-demo-wrap").html(data.responseText);
 
                     $('html,body').animate({
@@ -186,12 +223,12 @@ var name = "";
                     }, 500);
 
                     that.runPopup(data);
-
                 }
 
-            });
+            } );
 
         },
+
         // Run popup.
         runPopup: function (data) {
             var that = this
@@ -218,34 +255,35 @@ var name = "";
             });
 
             // if clicked on import data button
-            $('#owp-demo-import-form').submit(function (e) {
+            $( '#owp-demo-import-form' ).submit( function( e ) {
                 e.preventDefault();
 
                 // Vars
-                var demo = $(this).find('[name="owp_import_demo"]').val(),
-                        nonce = $(this).find('[name="owp_import_demo_data_nonce"]').val(),
-                        contentToImport = [];
+                var demo     = $( this ).find( '[name="owp_import_demo"]' ).val(),
+                    demoType = $( this ).find( '[name="owp_import_demo"]' ).data( 'demo-type' ),
+                    nonce    = $( this ).find( '[name="owp_import_demo_data_nonce"]' ).val(),
+                    contentToImport = [];
 
                 // Check what need to be imported
-                $(this).find('input[type="checkbox"]').each(function () {
-                    if ($(this).is(':checked') === true) {
-                        contentToImport.push($(this).attr('name'));
+                $( this ).find( 'input[type="checkbox"]' ).each( function() {
+                    if ( $( this ).is( ':checked' ) === true ) {
+                        contentToImport.push( $( this ).attr( 'name' ) );
                     }
-                });
+                } );
 
                 // Hide the checkboxes and show the loader
-                $(this).hide();
-                $('.owp-loader').show();
-                $('#owp-demo-import-form,#owp-demo-plugins').hide();
+                $( this ).hide();
+                $( '.owp-loader' ).show();
+
                 // Start importing the content
-                totalRequests = contentToImport.length;
-                that.importContent({
+                that.importContent( {
                     demo: demo,
+                    demoType: demoType,
                     nonce: nonce,
                     contentToImport: contentToImport,
-                    isXML: $('#owp_import_xml').is(':checked')
-                });
-            });
+                    isXML: $( '#owp_import_xml' ).is( ':checked' )
+                } );
+            } );
 
         },
         // importing the content.
@@ -256,6 +294,7 @@ var name = "";
                     timerStart = Date.now(),
                     ajaxData = {
                         owp_import_demo: importData.demo,
+                        owp_import_demo_type: importData.demoType,
                         owp_import_demo_data_nonce: importData.nonce
                     };
 
@@ -264,38 +303,31 @@ var name = "";
 
             // When all the selected content has been imported
             if (importData.contentToImport.length === 0) {
-                if (sucessRequests != totalRequests) {
+                // Show the imported screen after 1 second
+                setTimeout(function () {
                     $('.owp-loader').hide();
-                    $(".owp-error").show();
-                    $(".wizard-install-demos-buttons-wrapper.final-step").show();
+                    $('.owp-last').show();
+                    window.location.href = $(".wizard-install-demos-buttons-wrapper.final-step .skip-btn").attr("href");
+                }, 1000);
 
-                } else {
-                    // Show the imported screen after 1 second
-                    setTimeout(function () {
-                        $('.owp-loader').hide();
-                        $('.owp-last').show();
-                        window.location.href = $(".wizard-install-demos-buttons-wrapper.final-step .skip-btn").attr("href");
-                    }, 1000);
+                // Notify the server that the importing process is complete
+                $.ajax( {
+                    url: owpDemos.ajaxurl,
+                    type: 'post',
+                    data: {
+                        action: 'owp_after_import',
+                        owp_import_demo: importData.demo,
+                        owp_import_demo_type: importData.demoType,
+                        owp_import_demo_data_nonce: importData.nonce,
+                        owp_import_is_xml: importData.isXML
+                    },
+                    complete: function( data ) {}
+                } );
 
-                    // Notify the server that the importing process is complete
-                    $.ajax({
-                        url: owpDemos.ajaxurl,
-                        type: 'post',
-                        data: {
-                            action: 'owp_after_import',
-                            owp_import_demo: importData.demo,
-                            owp_import_demo_data_nonce: importData.nonce,
-                            owp_import_is_xml: importData.isXML
-                        },
-                        complete: function (data) {
-                        }
-                    });
+                this.allowPopupClosing = true;
+                $('.owp-demo-popup-close').fadeIn();
 
-                    this.allowPopupClosing = true;
-                    $('.owp-demo-popup-close').fadeIn();
-
-                    return;
-                }
+                return;
             }
 
             // Check the content that was selected to be imported.

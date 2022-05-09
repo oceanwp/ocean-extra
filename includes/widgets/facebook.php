@@ -34,8 +34,8 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				'ocean_facebook',
 				esc_html__( '&raquo; Facebook Like Box', 'ocean-extra' ),
 				array(
-					'classname'   => 'widget_facebook_likebox',
-					'description' => esc_html__( 'Display a Facebook Like Box to connect visitors to your Facebook Page.', 'ocean-extra' ),
+					'classname'                   => 'widget_facebook_likebox',
+					'description'                 => esc_html__( 'Display a Facebook Like Box to connect visitors to your Facebook Page.', 'ocean-extra' ),
 					'customize_selective_refresh' => true,
 				)
 			);
@@ -51,13 +51,23 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget( $args, $instance ) {
-
-			extract( $args );
+			$name           = isset( $args['name'] ) ? $args['name'] : '';
+			$id             = isset( $args['id'] ) ? $args['id'] : '';
+			$description    = isset( $args['description'] ) ? $args['description'] : '';
+			$class          = isset( $args['class'] ) ? $args['class'] : '';
+			$before_widget  = isset( $args['before_widget'] ) ? $args['before_widget'] : '';
+			$after_widget   = isset( $args['after_widget'] ) ? $args['after_widget'] : '';
+			$before_title   = isset( $args['before_title'] ) ? $args['before_title'] : '';
+			$after_title    = isset( $args['after_title'] ) ? $args['after_title'] : '';
+			$before_sidebar = isset( $args['before_sidebar'] ) ? $args['before_sidebar'] : '';
+			$after_sidebar  = isset( $args['after_sidebar'] ) ? $args['after_sidebar'] : '';
+			$widget_id      = isset( $args['widget_id'] ) ? $args['widget_id'] : '';
+			$widget_name    = isset( $args['widget_name'] ) ? $args['widget_name'] : '';
 
 			$like_args = $this->normalize_facebook_args( $instance['like_args'] );
 
 			if ( empty( $like_args['href'] ) || ! $this->is_valid_facebook_url( $like_args['href'] ) ) {
-				if ( current_user_can('edit_theme_options') ) {
+				if ( current_user_can( 'edit_theme_options' ) ) {
 					echo $before_widget;
 					echo '<p>' . sprintf( esc_html__( 'It looks like your Facebook URL is incorrectly configured. Please check it in your <a href="%s">widget settings</a>.', 'ocean-extra' ), esc_url( admin_url( 'widgets.php' ) ) ) . '</p>';
 					echo $after_widget;
@@ -66,20 +76,20 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				return;
 			}
 
-
 			$title    = apply_filters( 'widget_title', $instance['title'] );
 			$page_url = set_url_scheme( $like_args['href'], 'https' );
 
-			$like_args['show_faces'] = (bool) $like_args['show_faces']         ? 'true' : 'false';
-			$like_args['stream']     = (bool) $like_args['stream']             ? 'true' : 'false';
-			$like_args['force_wall'] = (bool) $like_args['force_wall']         ? 'true' : 'false';
-			$like_args['show_border']= (bool) $like_args['show_border']        ? 'true' : 'false';
-			$like_args['header']     = (bool) $like_args['header']             ? 'true' : 'false';
-			$like_bg_colour          = apply_filters( 'ocean_fb_likebox_bg', ( 'dark' == $like_args['colorscheme'] ? '#000' : '#fff' ), $like_args['colorscheme'] );
+			$like_args['show_faces']  = (bool) $like_args['show_faces'] ? 'true' : 'false';
+			$like_args['stream']      = (bool) $like_args['stream'] ? 'true' : 'false';
+			$like_args['force_wall']  = (bool) $like_args['force_wall'] ? 'true' : 'false';
+			$like_args['show_border'] = (bool) $like_args['show_border'] ? 'true' : 'false';
+			$like_args['header']      = (bool) $like_args['header'] ? 'true' : 'false';
+			$like_bg_colour           = apply_filters( 'ocean_fb_likebox_bg', ( 'dark' == $like_args['colorscheme'] ? '#000' : '#fff' ), $like_args['colorscheme'] );
 
 			$locale = $this->get_locale();
-			if ( $locale && 'en_US' != $locale )
+			if ( $locale && 'en_US' != $locale ) {
 				$like_args['locale'] = $locale;
+			}
 
 			$like_args = urlencode_deep( $like_args );
 			$like_url  = add_query_arg(
@@ -90,22 +100,23 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 			// Before widget WP hook
 			echo $args['before_widget'];
 
-				if ( ! empty( $title ) ) :
-					echo $before_title;
+			if ( ! empty( $title ) ) :
+				echo $before_title;
 
-					$likebox_widget_title = '<a href="' . esc_url( $page_url ) . '">' . esc_html( $title ) . '</a>';
+				$likebox_widget_title = '<a href="' . esc_url( $page_url ) . '">' . esc_html( $title ) . '</a>';
 
-					echo apply_filters( 'ocean_facebook_likebox_title', $likebox_widget_title, $title, $page_url );
+				echo apply_filters( 'ocean_facebook_likebox_title', $likebox_widget_title, $title, $page_url );
 
-					echo $after_title;
+				echo $after_title;
 				endif; ?>
 
-			<iframe src="<?php echo esc_url( $like_url ); ?>" scrolling="no" frameborder="0" style="border: none; overflow: hidden;<?php echo 0 != $like_args['width'] ? ' width: ' . (int) $like_args['width'] . 'px; ' : ''; ?> height: <?php echo (int) $like_args['height']; ?>px; background: <?php echo esc_attr( $like_bg_colour ); ?>"></iframe><?php
+			<iframe src="<?php echo esc_url( $like_url ); ?>" scrolling="no" frameborder="0" style="border: none; overflow: hidden;<?php echo 0 != $like_args['width'] ? ' width: ' . (int) $like_args['width'] . 'px; ' : ''; ?> height: <?php echo (int) $like_args['height']; ?>px; background: <?php echo esc_attr( $like_bg_colour ); ?>"></iframe>
+									<?php
 
-			// After widget WP hook
-			echo $args['after_widget'];
+									// After widget WP hook
+									echo $args['after_widget'];
 
-			do_action( 'ocean_stats_extra', 'widget', 'facebook-likebox' );
+									do_action( 'ocean_stats_extra', 'widget', 'facebook-likebox' );
 		}
 
 		/**
@@ -121,11 +132,15 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 		 */
 		public function update( $new_instance, $old_instance ) {
 			$instance = array(
-				'title' => '',
+				'title'     => '',
 				'like_args' => $this->get_default_args(),
 			);
 
 			$instance['title'] = trim( strip_tags( stripslashes( $new_instance['title'] ) ) );
+
+			if ( isset( $new_instance['like_args'] ) && ! empty( $new_instance['like_args'] ) ) {
+				return $new_instance;
+			}
 
 			// Set up widget values
 			$instance['like_args'] = array(
@@ -133,7 +148,7 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				'width'       => (int) $new_instance['width'],
 				'height'      => (int) $new_instance['height'],
 				'colorscheme' => $new_instance['colorscheme'],
-				'show_faces'  => (bool) $new_instance['show_faces'],
+				'show_faces'  => isset( $new_instance['show_faces'] ) ? (bool) $new_instance['show_faces'] : false,
 				'stream'      => (bool) $new_instance['stream'],
 				'show_border' => (bool) $new_instance['show_border'],
 				'header'      => false, // The header just displays "Find us on Facebook"; it's redundant with the title
@@ -154,11 +169,15 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 		 * @param array $instance Previously saved values from database.
 		 */
 		public function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array(
-				'title'     => '',
-				'like_args' => $this->get_default_args()
-			) );
-			$like_args = $this->normalize_facebook_args( $instance['like_args'] ); ?>
+			$instance  = wp_parse_args(
+				(array) $instance,
+				array(
+					'title'     => '',
+					'like_args' => $this->get_default_args(),
+				)
+			);
+			$like_args = $this->normalize_facebook_args( $instance['like_args'] );
+			?>
 
 			<p>
 				<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'ocean-extra' ); ?></label>
@@ -250,15 +269,15 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 
 			// Validate the Facebook Page URL
 			if ( $this->is_valid_facebook_url( $args['href'] ) ) {
-				$temp = explode( '?', $args['href'] );
+				$temp         = explode( '?', $args['href'] );
 				$args['href'] = str_replace( array( 'http://facebook.com', 'https://facebook.com' ), array( 'http://www.facebook.com', 'https://www.facebook.com' ), $temp[0] );
 			} else {
 				$args['href'] = '';
 			}
 
-			$args['width']       = $this->normalize_int_value(  (int) $args['width'], $this->default_width,       $this->max_width, $this->min_width );
-			$args['height']       = $this->normalize_int_value(  (int) $args['height'], $this->default_height,       $this->max_height, $this->min_height );
-			$args['colorscheme'] = $this->normalize_text_value( $args['colorscheme'], $this->default_colorscheme, $this->allowed_colorschemes        );
+			$args['width']       = $this->normalize_int_value( (int) $args['width'], $this->default_width, $this->max_width, $this->min_width );
+			$args['height']      = $this->normalize_int_value( (int) $args['height'], $this->default_height, $this->max_height, $this->min_height );
+			$args['colorscheme'] = $this->normalize_text_value( $args['colorscheme'], $this->default_colorscheme, $this->allowed_colorschemes );
 			$args['show_faces']  = (bool) $args['show_faces'];
 			$args['stream']      = (bool) $args['stream'];
 			$args['show_border'] = (bool) $args['show_border'];
@@ -268,9 +287,9 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 			// If the user changes those settings but doesn't customize the height,
 			// let's intelligently assign a new height.
 			if ( in_array( $args['height'], array( 580, 110, 432 ) ) ) {
-				if( $args['show_faces'] && $args['stream'] ) {
+				if ( $args['show_faces'] && $args['stream'] ) {
 					$args['height'] = 580;
-				} else if( ! $args['show_faces'] && ! $args['stream'] ) {
+				} elseif ( ! $args['show_faces'] && ! $args['stream'] ) {
 					$args['height'] = 110;
 				} else {
 					$args['height'] = 432;
@@ -281,14 +300,15 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 		}
 
 		public function is_valid_facebook_url( $url ) {
-			return ( FALSE !== strpos( $url, 'facebook.com' ) ) ? TRUE : FALSE;
+			return ( false !== strpos( $url, 'facebook.com' ) ) ? true : false;
 		}
 
 		public function normalize_int_value( $value, $default = 0, $max = 0, $min = 0 ) {
 			$value = (int) $value;
 
-			if ( $max < $value || $min > $value )
+			if ( $max < $value || $min > $value ) {
 				$value = $default;
+			}
 
 			return (int) $value;
 		}
@@ -296,19 +316,20 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 		public function normalize_text_value( $value, $default = '', $allowed = array() ) {
 			$allowed = (array) $allowed;
 
-			if ( empty( $value ) || ( ! empty( $allowed ) && ! in_array( $value, $allowed ) ) )
+			if ( empty( $value ) || ( ! empty( $allowed ) && ! in_array( $value, $allowed ) ) ) {
 				$value = $default;
+			}
 
 			return $value;
 		}
 
 		public function guess_locale_from_lang( $lang ) {
-			if ( 'en' == $lang || 'en_US' == $lang || !$lang ) {
+			if ( 'en' == $lang || 'en_US' == $lang || ! $lang ) {
 				return 'en_US';
 			}
 
-			if ( !class_exists( 'GP_Locales' ) ) {
-				if ( !defined( 'JETPACK__GLOTPRESS_LOCALES_PATH' ) || !file_exists( JETPACK__GLOTPRESS_LOCALES_PATH ) ) {
+			if ( ! class_exists( 'GP_Locales' ) ) {
+				if ( ! defined( 'JETPACK__GLOTPRESS_LOCALES_PATH' ) || ! file_exists( JETPACK__GLOTPRESS_LOCALES_PATH ) ) {
 					return false;
 				}
 
@@ -323,7 +344,7 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				$locale = GP_Locales::by_field( 'wp_locale', $lang );
 			}
 
-			if ( !$locale || empty( $locale->facebook_locale ) ) {
+			if ( ! $locale || empty( $locale->facebook_locale ) ) {
 				return false;
 			}
 

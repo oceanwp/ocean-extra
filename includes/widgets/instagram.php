@@ -212,7 +212,7 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 						<div class="oceanwp-display-header-options <?php if ( 'yes' != $instance['display_header'] ) echo 'hidden'; ?>">
 							<p>
-								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label> 
+								<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Image URL', 'ocean-extra' ); ?>:</label>
 								<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['avatar'] ); ?>" style="margin-bottom:10px;" />
 								<input class="oceanwp-insta-avatar button button-secondary" type="button" value="<?php esc_html_e( 'Upload Image', 'ocean-extra' ); ?>" />
 							</p>
@@ -350,7 +350,9 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 
 				if ( is_wp_error( $media_array ) ) {
 
-					$output .= wp_kses_post( $media_array->get_error_message() );
+					if( current_user_can('editor') || current_user_can('administrator') ) {
+						$output .= wp_kses_post( $media_array->get_error_message() );
+					}
 
 				} else {
 
@@ -559,4 +561,6 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		}
 	}
 }
-register_widget( 'Ocean_Extra_Instagram_Widget' );
+if( is_active_widget( false, false, 'ocean_instagram' ) ) {
+	register_widget( 'Ocean_Extra_Instagram_Widget' );
+}

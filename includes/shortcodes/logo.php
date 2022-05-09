@@ -22,26 +22,30 @@ if ( ! class_exists( 'OceanWP_Logo_Shortcode' ) ) {
 		 * @since 1.1.1
 		 */
 		public function logo_shortcode( $atts, $content = null ) {
+			$settings = shortcode_atts(
+				array(
+					'position' => 'left',
+				),
+				$atts
+			);
 
-			// Extract attributes
-			extract( shortcode_atts( array(
-				'position' 		=> 'left',
-			), $atts ) );
+			$position = $settings['position'];
 
 			// Add classes
-			$classes 		= array( 'custom-header-logo', 'clr' );
-			$classes[] 		= $position;
-			$classes 		= implode( ' ', $classes ); ?>
+			$classes   = array( 'custom-header-logo', 'clr' );
+			$classes[] = $position;
+			$classes   = implode( ' ', $classes ); ?>
 
 			<div class="<?php echo esc_attr( $classes ); ?>">
 
 				<?php
 				// Logo
-				get_template_part( 'partials/header/logo' ); ?>
+				get_template_part( 'partials/header/logo' );
+				?>
 
 			</div>
 
-		<?php
+			<?php
 		}
 
 	}
