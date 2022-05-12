@@ -35,6 +35,7 @@ class Ocean_Extra_Theme_Panel {
 
 		// Register panel settings
 		add_action( 'admin_init', array( 'Ocean_Extra_Theme_Panel', 'register_settings' ) );
+		
 
 		// Load addon files
 		self::load_addons();
@@ -51,9 +52,9 @@ class Ocean_Extra_Theme_Panel {
 		if ( class_exists( 'Ocean_Sticky_Header' ) || '1' === get_option( 'owp_dismiss_sticky_notice' ) || true == apply_filters( 'oceanwp_licence_tab_enable', false ) || ! current_user_can( 'manage_options' ) ) {
 		return;
 		}
-
 		// Display on the plugins and Theme Panel pages
 		if ( 'plugins.php' == $pagenow || ( 'admin.php' == $pagenow && 'oceanwp' == $_GET['page'] ) ) {
+			wp_enqueue_style( 'oe-admin-notice', plugins_url( '/assets/css/notice.min.css', __FILE__ ) );
 
 			$dismiss = wp_nonce_url( add_query_arg( 'owp_sticky_notice', 'dismiss_btn' ), 'dismiss_btn' );
 			?>
