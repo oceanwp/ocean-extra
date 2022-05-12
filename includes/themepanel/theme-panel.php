@@ -91,7 +91,7 @@ class Ocean_Extra_New_Theme_Panel {
 		}
 
 		// JS
-		wp_enqueue_script( 'oceanwp-scripts-themepanel', plugins_url( '/assets/js/theme-panel.js', __FILE__ ), OE_VERSION, true );
+		wp_enqueue_script( 'oceanwp-scripts-themepanel', plugins_url( '/assets/js/theme-panel.min.js', __FILE__ ), OE_VERSION, true );
 
 		wp_localize_script(
 			'oceanwp-scripts-themepanel',

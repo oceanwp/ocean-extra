@@ -128,8 +128,16 @@ jQuery(document).ready(function ($) {
         });
 
         try {
-            $('#oceanwp-textarea--get-system-report').slideDown();
-            $('#oceanwp-textarea--get-system-report textarea').val(report).focus().select();
+            if( copyToClipboard(report) ) {
+                if( window['showNotify'] !== undefined ) {
+                    window['showNotify']('success', oceanwp_cp_textdomain.copied_system_info, true, 6000);
+                } else {
+                    alert( oceanwp_cp_textdomain.copied_system_info );
+                }
+            } else {
+                $('#oceanwp-textarea--get-system-report textarea').val(report).focus().select();
+                $('#oceanwp-textarea--get-system-report').slideDown();
+            }
             return false;
         } catch (e) {
             console.log(e);
@@ -350,6 +358,30 @@ jQuery(document).ready(function ($) {
             });
         } else {
             alert("Please select a file.");
+        }
+    }
+
+    function copyToClipboard(text) {
+        if (window.clipboardData && window.clipboardData.setData) {
+            // Internet Explorer-specific code path to prevent textarea being shown while dialog is visible.
+            return window.clipboardData.setData("Text", text);
+        }
+        else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+            var textarea = document.createElement("textarea");
+            textarea.textContent = text;
+            textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in Microsoft Edge.
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+            }
+            catch (ex) {
+                console.warn("Copy to clipboard failed.", ex);
+                return prompt("Copy to clipboard: Ctrl+C, Enter", text);
+            }
+            finally {
+                document.body.removeChild(textarea);
+            }
         }
     }
 });
