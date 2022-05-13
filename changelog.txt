@@ -2,6 +2,7 @@
 
 = 2.0.0 =
 - Improved: Theme Panel.
+- Fixed: Library Shortcode: Custom Template is not rendering perfectly for custom locations.
 
 = 1.9.4 =
 - Updated: Freemius SDK.

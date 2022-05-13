@@ -35,6 +35,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 2.0.0 =
 - Improved: Theme Panel.
+- Fixed: Library Shortcode: Custom Template is not rendering perfectly for custom locations.
 
 = 1.9.4 =
 - Updated: Freemius SDK.
