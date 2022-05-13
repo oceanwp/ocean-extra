@@ -29,7 +29,7 @@ $oe_metabox_descriptions = oe_get_metabox_descriptions();
 
 		<div id="ocean-metabox-disable-bulk" class="oceanwp-tp-switcher column-wrap clr">
 			<label for="oceanwp-switch-metabox-disable-bulk" class="column-name">
-				<input type="checkbox" name="metabox-disable-bulk" value="true" <?php checked( ( $metabox_posttypes_settings === 0 ) ); ?> id="oceanwp-switch-metabox-disable-bulk" class="oe-switcher-bulk" />
+				<input type="checkbox" role="checkbox" name="metabox-disable-bulk" value="true" <?php checked( ( $metabox_posttypes_settings === 0 ) ); ?> id="oceanwp-switch-metabox-disable-bulk" class="oe-switcher-bulk" />
 				<span class="slider round"></span>
 			</label>
 		</div>
@@ -52,7 +52,7 @@ $oe_metabox_descriptions = oe_get_metabox_descriptions();
 				<div id="ocean-metabox-<?php echo $post_type; ?>" class="oceanwp-tp-small-block column-wrap clr">
 					<h3 class="title"><?php echo esc_attr( $label ); ?></h3>
 					<label for="oceanwp-metabox-switch-[<?php echo esc_attr( $post_type ); ?>]" class="oceanwp-tp-switcher column-name">
-						<input type="checkbox" name="oe_metabox_posttypes_settings[<?php echo esc_attr( $post_type ); ?>]" value="true" id="oceanwp-metabox-switch-[<?php echo esc_attr( $post_type ); ?>]" <?php checked( $checked_val ); ?>>
+						<input type="checkbox" role="checkbox" name="oe_metabox_posttypes_settings[<?php echo esc_attr( $post_type ); ?>]" value="true" id="oceanwp-metabox-switch-[<?php echo esc_attr( $post_type ); ?>]" <?php checked( $checked_val ); ?>>
 						<span class="slider round"></span>
 					</label>
 					<?php if( $description ) : ?>

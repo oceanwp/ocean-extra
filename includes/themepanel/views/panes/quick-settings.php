@@ -13,6 +13,7 @@
 			$icon  = isset( $val['icon'] ) ? $val['icon'] : '';
 			$panel = isset( $val['panel'] ) ? $val['panel'] : false;
 			$id    = $key;
+			$customizer_autofocus = isset( $val['customizer_autofocus'] ) ? $val['customizer_autofocus'] : $id;
 
 			if ( true == $panel ) {
 				$focus = 'panel';
@@ -28,7 +29,7 @@
 					<p class="desc"><?php echo esc_attr( $desc ); ?></p>
 				<?php } ?>
 				<div class="bottom-column">
-					<a class="option-link button blue" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[' . $focus . ']=' . $id . '' ) ); ?>" target="_blank"><?php esc_html_e( 'Go Now', 'ocean-wp' ); ?></a>
+					<a class="option-link button blue" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[' . $focus . ']=' . $customizer_autofocus . '' ) ); ?>" target="_blank"><?php esc_html_e( 'Go Now', 'ocean-wp' ); ?></a>
 				</div>
 
 			</div>

@@ -104,7 +104,7 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 
 		<div id="ocean-widget-disable-bulk" class="oceanwp-tp-switcher column-wrap clr">
 			<label for="oceanwp-switch-widget-disable-bulk" class="column-name">
-				<input type="checkbox" name="widget-disable-bulk" value="true" <?php checked( ( $oe_widgets_settings === 0 ) ); ?> id="oceanwp-switch-widget-disable-bulk" class="oe-switcher-bulk" />
+				<input type="checkbox" role="checkbox" name="widget-disable-bulk" value="true" <?php checked( ( $oe_widgets_settings === 0 ) ); ?> id="oceanwp-switch-widget-disable-bulk" class="oe-switcher-bulk" />
 				<span class="slider round"></span>
 			</label>
 		</div>
@@ -136,7 +136,7 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 					<div class="oceanwp-switcher-block">
 						<div class="oceanwp-switcher-item">
 							<label for="oceanwp-widget-switch-[<?php echo esc_attr( $key ); ?>]" class="oceanwp-tp-switcher column-name">
-								<input type="checkbox" name="oe_widgets_settings[<?php echo esc_attr( $key ); ?>]" value="true" id="oceanwp-widget-switch-[<?php echo esc_attr( $key ); ?>]" <?php checked( $checked_val ); ?>>
+								<input type="checkbox" role="checkbox" name="oe_widgets_settings[<?php echo esc_attr( $key ); ?>]" value="true" id="oceanwp-widget-switch-[<?php echo esc_attr( $key ); ?>]" <?php checked( $checked_val ); ?>>
 								<span class="slider round"></span>
 							</label>
 						</div>

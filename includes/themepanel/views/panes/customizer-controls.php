@@ -11,7 +11,7 @@ $theme_panels = Ocean_Extra_New_Theme_Panel::get_panels();
 
 		<div id="ocean-customizer-reset-bulk" class="oceanwp-tp-switcher column-wrap clr">
 			<label for="customizer-reset-bulk" class="column-name clr">
-				<input type="checkbox" name="customizer-reset-bulk" value="true" id="customizer-reset-bulk" class="oe-switcher-bulk" />
+				<input type="checkbox" role="checkbox" name="customizer-reset-bulk" value="true" id="customizer-reset-bulk" class="oe-switcher-bulk" />
 				<span class="slider round"></span>
 			</label>
 		</div>
@@ -32,7 +32,7 @@ $theme_panels = Ocean_Extra_New_Theme_Panel::get_panels();
 
 					<h3 class="title"><?php echo esc_attr( $label ); ?></h3>
 					<label for="oceanwp-switch-[<?php echo esc_attr( $key ); ?>]" class="oceanwp-tp-switcher column-name clr">
-						<input type="checkbox" name="oe_panels_settings[<?php echo esc_attr( $key ); ?>]" value="true" id="oceanwp-switch-[<?php echo esc_attr( $key ); ?>]" <?php checked( $settings ); ?>>
+						<input type="checkbox" role="checkbox" name="oe_panels_settings[<?php echo esc_attr( $key ); ?>]" value="true" id="oceanwp-switch-[<?php echo esc_attr( $key ); ?>]" <?php checked( $settings ); ?>>
 						<span class="slider round"></span>
 					</label>
                     <?php if ( $desc ) { ?>
