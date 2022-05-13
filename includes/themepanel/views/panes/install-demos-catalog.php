@@ -158,7 +158,7 @@ $brand = oceanwp_theme_branding();
 
 									<div class="ocean-theme-actions">
 										<a class="button button-primary owp-open-popup" href="#"><?php _e( 'Import', 'ocean-extra' ); ?></a>
-										<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+										<a class="button button-primary owp-live-preview" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
 									</div>
 
 								</div>
