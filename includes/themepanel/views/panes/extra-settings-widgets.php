@@ -125,14 +125,6 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 				}
 				?>
 				<div id="ocean-widget-<?php echo $key; ?>" class="oceanwp-tp-small-block column-wrap clr">
-					<div class="oceanwp-text-block">
-						<h3 class="title"><?php echo esc_attr( $title ); ?></h3>
-						<?php if ( ! empty( $desc ) ) : ?>
-							<div class="oceanwp-widget-description">
-								<p class="oceanwp-tp-block-description"><?php echo esc_attr( $desc ); ?></p>
-							</div>
-						<?php endif; ?>
-					</div>
 					<div class="oceanwp-switcher-block">
 						<div class="oceanwp-switcher-item">
 							<label for="oceanwp-widget-switch-[<?php echo esc_attr( $key ); ?>]" class="oceanwp-tp-switcher column-name">
@@ -140,6 +132,14 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 								<span class="slider round"></span>
 							</label>
 						</div>
+					</div>
+					<div class="oceanwp-text-block">
+						<h3 class="title"><?php echo esc_attr( $title ); ?></h3>
+						<?php if ( ! empty( $desc ) ) : ?>
+							<div class="oceanwp-widget-description">
+								<p class="oceanwp-tp-block-description"><?php echo esc_attr( $desc ); ?></p>
+							</div>
+						<?php endif; ?>
 					</div>
 				</div>
 			<?php endforeach; ?>
