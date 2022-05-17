@@ -183,8 +183,6 @@ body.breadcrumbs-position-default .page-header-title {
   font: normal normal 600 14px/1 'Font Awesome 5 Free';
   font-size: inherit;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .site-breadcrumbs ul li:last-child:after {
