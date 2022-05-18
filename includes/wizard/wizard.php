@@ -6,14 +6,17 @@
  * @category Core
  * @author OceanWP
  */
-// Exit if accessed directly
+
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
-	// Start Class
+	/**
+	 * Start Class Ocean_Extra_Theme_Wizard.
+	 */
 	class Ocean_Extra_Theme_Wizard {
 
 		/**
@@ -30,6 +33,11 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		 */
 		private $steps = array();
 
+		/**
+		 * __construct
+		 *
+		 * @return void
+		 */
 		public function __construct() {
 			$this->includes();
 			add_action( 'admin_menu', array( $this, 'add_ocean_wizard_menu' ) );
@@ -39,17 +47,22 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 			add_action( 'add_second_notice', array( $this, 'install' ) );
 		}
 
+		/**
+		 * Install.
+		 *
+		 * @return void
+		 */
 		public static function install() {
 			if ( ! get_option( 'owp_wizard' ) ) {
 				update_option( 'owp_wizard', 'un-setup' );
 				( wp_safe_redirect( admin_url( 'admin.php?page=owp_setup' ) ) );
 			} else {
-				// first run for automatic message after first 24 hour
+				// first run for automatic message after first 24 hour.
 				if ( ! get_option( 'automatic_2nd_notice' ) ) {
 					update_option( 'automatic_2nd_notice', 'second-time' );
 
 				} else {
-					// clear cronjob after second 24 hour
+					// clear cronjob after second 24 hour.
 					wp_clear_scheduled_hook( 'add_second_notice' );
 					delete_option( 'automatic_2nd_notice' );
 					delete_option( '2nd_notice' );
@@ -60,7 +73,11 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 			}
 		}
 
-		// clear cronjob when deactivate plugin
+		/**
+		 * Clear cronjob when deactivate plugin.
+		 *
+		 * @return void
+		 */
 		public static function uninstall() {
 			wp_clear_scheduled_hook( 'add_second_notice' );
 			delete_option( 'automatic_2nd_notice' );
@@ -70,9 +87,9 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 		public function remove_notice() {
 			if ( isset( $_GET['owp_wizard_hide_notice'] ) && $_GET['owp_wizard_hide_notice'] == 'install' ) { // WPCS: input var ok, CSRF ok.
-				// when finish install
+				// when finish install.
 				delete_option( 'owp_wizard' );
-				// clear cronjob when finish install
+				// clear cronjob when finish install.
 				wp_clear_scheduled_hook( 'add_second_notice' );
 				delete_option( '2nd_notice' );
 				if ( isset( $_GET['show'] ) ) {
@@ -80,7 +97,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 					exit;
 				}
 			} elseif ( isset( $_GET['owp_wizard_hide_notice'] ) && $_GET['owp_wizard_hide_notice'] == '2nd_notice' ) { // WPCS: input var ok, CSRF ok.
-				// when skip install
+				// when skip install.
 				delete_option( 'owp_wizard' );
 				if ( ! get_option( '2nd_notice' ) ) {
 					update_option( '2nd_notice', 'second-time' );
@@ -90,14 +107,14 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 					}
 					date_default_timezone_set( $timezone_string );
 
-					// set time for next day
+					// set time for next day.
 					$new_time_format = time() + ( 24 * 60 * 60 );
-					// add "add_second_notice" cronjob
+					// add "add_second_notice" cronjob.
 					if ( ! wp_next_scheduled( 'add_second_notice' ) ) {
 						wp_schedule_event( $new_time_format, 'daily', 'add_second_notice' );
 					}
 				} else {
-					// clear cronjob when skip for second time
+					// clear cronjob when skip for second time.
 					wp_clear_scheduled_hook( 'add_second_notice' );
 				}
 				if ( isset( $_GET['show'] ) ) {
@@ -109,18 +126,23 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 				}
 			}
 		}
-
+		
+		/**
+		 * Add notice.
+		 *
+		 * @return void
+		 */
 		public function add_notice() {
-			if( current_user_can( 'administrator') ) {
+			if ( current_user_can( 'administrator' ) ) {
 				if ( ( get_option( 'owp_wizard' ) == 'un-setup' ) && ( empty( $_GET['page'] ) || 'owp_setup' !== $_GET['page'] ) ) {
 					if ( ! get_option( '2nd_notice' ) && ! get_option( 'automatic_2nd_notice' ) ) {?>
 						<div class="updated notice-success owp-extra-notice">
 							<div class="notice-inner">
 								<div class="notice-content">
-									<p><?php _e( '<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?', 'ocean-extra' ); ?></p>
+									<p><?php esc_attr_e( '<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?', 'ocean-extra' ); ?></p>
 									<p class="submit">
-										<a href="<?php echo esc_url( admin_url( 'admin.php?page=owp_setup' ) ); ?>" class="btn button-primary"><?php _e( 'Run the Setup Wizard', 'ocean-extra' ); ?></a>
-										<a class="btn button-secondary" href="<?php echo esc_url( ( add_query_arg( 'owp_wizard_hide_notice', '2nd_notice' ) ) ); ?>"><?php _e( 'Skip setup', 'ocean-extra' ); ?></a>
+										<a href="<?php echo esc_url( admin_url( 'admin.php?page=owp_setup' ) ); ?>" class="btn button-primary"><?php esc_attr_e( 'Run the Setup Wizard', 'ocean-extra' ); ?></a>
+										<a class="btn button-secondary" href="<?php echo esc_url( ( add_query_arg( 'owp_wizard_hide_notice', '2nd_notice' ) ) ); ?>"><?php esc_attr_e( 'Skip setup', 'ocean-extra' ); ?></a>
 									</p>
 								</div>
 							</div>
@@ -229,15 +251,15 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 			);
 			$this->steps   = apply_filters( 'owp_setup_wizard_steps', $default_steps );
 			$this->step    = isset( $_GET['step'] ) ? sanitize_key( $_GET['step'] ) : current( array_keys( $this->steps ) ); // WPCS: CSRF ok, input var ok.
-			// CSS
+			// CSS.
 			wp_enqueue_style( 'owp-wizard-style', plugins_url( '/assets/css/style.min.css', __FILE__ ) );
 
-			// RTL
+			// RTL.
 			if ( is_RTL() ) {
 				wp_enqueue_style( 'owp-wizard-rtl', plugins_url( '/assets/css/rtl.min.css', __FILE__ ) );
 			}
 
-			// JS
+			// JS.
 			wp_enqueue_script( 'owp-wizard-js', plugins_url( '/assets/js/wizard.min.js', __FILE__ ), array( 'jquery', 'wp-util', 'updates' ) );
 
 			wp_localize_script(
@@ -290,10 +312,10 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 								isRtl = <?php echo (int) is_rtl(); ?>;
 					</script>
 			<?php
-			// include demos script
+			// include demos script.
 			wp_print_scripts( 'owp-wizard-js' );
 
-			// include custom scripts in specifiec steps
+			// include custom scripts in specifiec steps.
 			if ( $this->step == 'demo' || $this->step == 'welcome' || $this->step == 'customize' ) {
 				wp_print_styles( 'themes' );
 				wp_print_styles( 'buttons' );
@@ -308,7 +330,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 				wp_enqueue_script( 'wp-color-picker' );
 			}
 
-			// add admin styles
+			// add admin styles.
 			do_action( 'admin_print_styles' );
 
 			do_action( 'admin_head' );
@@ -436,13 +458,13 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		}
 
 			/**
-			 * Step 1 Welcome
+			 * Step 1 Welcome.
 			 */
 		public function ocean_welcome() {
-			// Image
+			// Image.
 			$img = plugins_url( '/assets/img/jack.png', __FILE__ );
 
-			// Button icon
+			// Button icon.
 			if ( is_RTL() ) {
 				$icon = 'left';
 			} else {
@@ -458,7 +480,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 				</div>
 				<p><?php esc_attr_e( "Thank you for choosing OceanWP, in this quick setup wizard we'll take you through the 2 essential steps for you to get started building your dream website. Make sure to go through it to the end, where we also included a little bonus as well.", 'ocean-extra' ); ?></p>
 				<div class="owp-wizard-setup-actions">
-					<a class="skip-btn continue" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e( 'Get started', 'ocean-extra' ); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr( $icon ); ?>-alt"></i></a>
+					<a class="skip-btn continue" href="<?php echo esc_url( $this->get_next_step_link() ); ?>"><?php esc_attr_e( 'Get started', 'ocean-extra' ); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr( $icon ); ?>-alt"></i></a>
 				</div>
 				<a class="owp-setup-footer-links" href="<?php echo esc_url( ( add_query_arg( array( 'owp_wizard_hide_notice' => '2nd_notice' ), admin_url() ) ) ); ?>"><?php esc_attr_e( 'Skip Setup Wizard', 'ocean-extra' ); ?></a>
 			</div>
@@ -466,10 +488,10 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		}
 
 		/**
-		 * Step 2 list demo
+		 * Step 2 list demo.
 		 */
 		public function ocean_demo_setup() {
-			// Button icon
+			// Button icon.
 			if ( is_RTL() ) {
 				$icon = 'left';
 			} else {
@@ -495,51 +517,58 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 					<div class="theme-browser rendered">
 
 						<?php
-						// Vars
-						$demos = OceanWP_Demos::get_demos_data();
+						// Vars.
+						$demos    = OceanWP_Demos::get_demos_data();
 						$el_demos = $demos['elementor'];
 						$gu_demos = '';
-						$el_cat = OceanWP_Demos::get_demo_all_categories( $el_demos );
+						$el_cat   = OceanWP_Demos::get_demo_all_categories( $el_demos );
 
-						// If Gutenberg
+						// If Gutenberg.
 						if ( ! empty( $demos['gutenberg'] ) ) {
 							$gu_demos = $demos['gutenberg'];
-							$gu_cat = OceanWP_Demos::get_demo_all_categories( $gu_demos );
-						} ?>
+							$gu_cat   = OceanWP_Demos::get_demo_all_categories( $gu_demos );
+						}
+						?>
 
 						<div class="owp-header-bar">
 							<nav class="owp-navigation">
 								<?php
-								if ( ! empty( $gu_demos ) ) { ?>
+								if ( ! empty( $gu_demos ) ) {
+									?>
 									<ul class="owp-demo-linked">
 										<li class="active"><a href="#" class="owp-elementor-link"><?php esc_html_e( 'Elementor', 'ocean-extra' ); ?></a></li>
 										<li><a href="#" class="owp-gutenberg-link"><?php esc_html_e( 'Gutenberg', 'ocean-extra' ); ?></a></li>
 									</ul>
-								<?php
-								} ?>
+									<?php
+								}
+								?>
 
 								<?php
-								if ( ! empty( $el_cat ) ) { ?>
+								if ( ! empty( $el_cat ) ) {
+									?>
 									<ul class="elementor-demos">
 										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
 										<?php foreach ( $el_cat as $key => $name ) { ?>
 											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
 										<?php } ?>
 									</ul>
-								<?php
-								} ?>
+									<?php
+								}
+								?>
 
 								<?php
 								if ( ! empty( $gu_demos )
-									&& ! empty( $gu_cat ) ) { ?>
+									&& ! empty( $gu_cat ) ) {
+									?>
 									<ul class="gutenberg-demos" style="display: none;">
 										<li class="active"><a href="#all" class="owp-navigation-link"><?php esc_html_e( 'All', 'ocean-extra' ); ?></a></li>
 										<?php foreach ( $gu_cat as $key => $name ) { ?>
 											<li><a href="#<?php echo esc_attr( $key ); ?>" class="owp-navigation-link"><?php echo esc_html( $name ); ?></a></li>
 										<?php } ?>
 									</ul>
-								<?php
-								} ?>
+									<?php
+								}
+								?>
 							</nav>
 
 						</div>
@@ -547,18 +576,19 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						<div class="themes wp-clearfix elementor-items">
 
 							<?php
-							// Loop through all demos
+							// Loop through all demos.
 							foreach ( $el_demos as $demo => $key ) {
 
-								// Vars
-								$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
+								// Vars.
+								$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
+								?>
 
 								<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
 									<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="elementor" >
 
 										<div class="theme-screenshot">
-											<img src="<?php echo OWP_Install_Demos::img_url( $demo ); ?>" />
+											<img src="<?php echo esc_attr( OWP_Install_Demos::img_url( $demo ) ); ?>" />
 
 											<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
 
@@ -567,10 +597,10 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 										<div class="theme-id-container">
 
-											<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
+											<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo esc_html ( ucwords( $demo ) ); ?></span></h2>
 
 											<div class="theme-actions">
-												<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+												<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php esc_attr_e( 'Live Preview', 'ocean-extra' ); ?></a>
 											</div>
 
 										</div>
@@ -579,29 +609,32 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 								</div>
 
-							<?php
-							} ?>
+								<?php
+							}
+							?>
 
 						</div>
 
 						<?php
-						if ( ! empty( $gu_demos ) ) { ?>
+						if ( ! empty( $gu_demos ) ) {
+							?>
 
 							<div class="themes wp-clearfix gutenberg-items" style="display: none;">
 
 								<?php
-								// Loop through all demos
+								// Loop through all demos.
 								foreach ( $gu_demos as $demo => $key ) {
 
-									// Vars
-									$item_categories = OceanWP_Demos::get_demo_item_categories( $key ); ?>
+									// Vars.
+									$item_categories = OceanWP_Demos::get_demo_item_categories( $key );
+									?>
 
 									<div class="theme-wrap" data-categories="<?php echo esc_attr( $item_categories ); ?>" data-name="<?php echo esc_attr( strtolower( $demo ) ); ?>">
 
 										<div class="theme owp-open-popup" data-demo-id="<?php echo esc_attr( $demo ); ?>" data-demo-type="gutenberg">
 
 											<div class="theme-screenshot">
-												<img src="<?php echo OWP_Install_Demos::img_url( $demo ); ?>" />
+												<img src="<?php echo esc_attr( OWP_Install_Demos::img_url( $demo ) ); ?>" />
 
 												<div class="demo-import-loader preview-all preview-all-<?php echo esc_attr( $demo ); ?>"></div>
 
@@ -610,10 +643,10 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 											<div class="theme-id-container">
 
-												<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
+												<h2 class="theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo esc_html( ucwords( $demo ) ); ?></span></h2>
 
 												<div class="theme-actions">
-													<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+													<a class="button button-primary" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php esc_attr_e( 'Live Preview', 'ocean-extra' ); ?></a>
 												</div>
 
 											</div>
@@ -622,32 +655,34 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 
 									</div>
 
-								<?php
-								} ?>
+									<?php
+								}
+								?>
 
 							</div>
 
-						<?php
-						} ?>
+							<?php
+						}
+						?>
 
 						</div>
 						<div class="owp-wizard-setup-actions">
-							<button class="install-demos-button disabled" disabled data-next_step="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e( 'Install Demo', 'ocean-extra' ); ?></button>
-							<a class="skip-btn" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e( 'Skip Step', 'ocean-extra' ); ?></a>
+							<button class="install-demos-button disabled" disabled data-next_step="<?php echo esc_url( $this->get_next_step_link() ); ?>"><?php esc_attr_e( 'Install Demo', 'ocean-extra' ); ?></button>
+							<a class="skip-btn" href="<?php echo esc_url( $this->get_next_step_link() ); ?>"><?php esc_attr_e( 'Skip Step', 'ocean-extra' ); ?></a>
 						</div>
 					</div>
 
 				</div>
 
 				<div class="owp-wizard-setup-actions wizard-install-demos-buttons-wrapper final-step">
-					<a class="skip-btn continue" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e( 'Next Step', 'ocean-extra' ); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr( $icon ); ?>-alt"></i></a>
+					<a class="skip-btn continue" href="<?php echo esc_url( $this->get_next_step_link() ); ?>"><?php esc_attr_e( 'Next Step', 'ocean-extra' ); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr( $icon ); ?>-alt"></i></a>
 				</div>
 			</div>
 			<?php
 		}
 
 		/**
-		 * Step 3 customize step
+		 * Step 3 customize step.
 		 */
 		public function ocean_customize_setup() {
 
@@ -655,7 +690,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 				$this->save_ocean_customize();
 			}
 
-			// Button icon
+			// Button icon.
 			if ( is_RTL() ) {
 				$icon = 'left';
 			} else {
@@ -683,11 +718,11 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						<h1><?php esc_attr_e( 'Logo', 'ocean-extra' ); ?></h1>
 						<p><?php esc_attr_e( 'Please add your logo below.', 'ocean-extra' ); ?></p>
 						<div class="upload">
-							<img  src="<?php echo $url; ?>"  width="115px" height="115px" id="ocean-logo-img" style="display:<?php echo $display; ?>;"/>
+							<img  src="<?php echo esc_attr( $url ); ?>"  width="115px" height="115px" id="ocean-logo-img" style="display:<?php echo esc_attr($display ); ?>;"/>
 							<div>
-								<input type="hidden" name="ocean-logo" id="ocean-logo" value="<?php echo $custom_logo; ?>" />
+								<input type="hidden" name="ocean-logo" id="ocean-logo" value="<?php echo esc_attr($custom_logo ); ?>" />
 								<button type="submit" data-name="ocean-logo" class="upload_image_button button"><?php esc_attr_e( 'Upload', 'ocean-extra' ); ?></button>
-								<button  style="display:<?php echo $display; ?>;" type="submit" data-name="ocean-logo" class="remove_image_button button">&times;</button>
+								<button  style="display:<?php echo esc_attr( $display ); ?>;" type="submit" data-name="ocean-logo" class="remove_image_button button">&times;</button>
 							</div>
 						</div>
 
@@ -712,11 +747,11 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						<h1><?php esc_attr_e( 'Retina Logo', 'ocean-extra' ); ?></h1>
 						<p><?php esc_attr_e( 'Please add your Retina Logo below.', 'ocean-extra' ); ?></p>
 						<div class="upload">
-							<img src="<?php echo $url; ?>" width="115px" height="115px" id="ocean-retina-logo-img" style="display:<?php echo $display; ?>;"/>
+							<img src="<?php echo esc_attr( $url ); ?>" width="115px" height="115px" id="ocean-retina-logo-img" style="display:<?php echo esc_attr( $display ); ?>;"/>
 							<div>
-								<input type="hidden" name="ocean-retina-logo" id="ocean-retina-logo" value="<?php echo $ocean_retina_logo; ?>" />
+								<input type="hidden" name="ocean-retina-logo" id="ocean-retina-logo" value="<?php echo esc_attr( $ocean_retina_logo ); ?>" />
 								<button type="submit" data-name="ocean-retina-logo" class="upload_image_button button"><?php esc_attr_e( 'Upload', 'ocean-extra' ); ?></button>
-								<button  style="display:<?php echo $display; ?>;" type="submit" data-name="ocean-retina-logo" class="remove_image_button button">&times;</button>
+								<button  style="display:<?php echo esc_attr( $display ); ?>;" type="submit" data-name="ocean-retina-logo" class="remove_image_button button">&times;</button>
 							</div>
 						</div>
 
@@ -725,13 +760,13 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 					<div class="field-group">
 						<h1><?php esc_attr_e( 'Site Title', 'ocean-extra' ); ?></h1>
 						<p><?php esc_attr_e( 'Please add your Site Title below.', 'ocean-extra' ); ?></p>
-						<input type="text" name="ocean-site-title" id="ocean-site-title" class="ocean-input" value="<?php echo get_option( 'blogname' ); ?>">
+						<input type="text" name="ocean-site-title" id="ocean-site-title" class="ocean-input" value="<?php echo esc_html( get_option( 'blogname' ) ); ?>">
 					</div>
 
 					<div class="field-group">
 						<h1><?php esc_attr_e( 'Tagline', 'ocean-extra' ); ?></h1>
 						<p><?php esc_attr_e( 'Please add your Tagline below.', 'ocean-extra' ); ?></p>
-						<input type="text" name="ocean-tagline" id="ocean-tagline" class="ocean-input" value="<?php echo get_option( 'blogdescription' ); ?>">
+						<input type="text" name="ocean-tagline" id="ocean-tagline" class="ocean-input" value="<?php echo esc_html( get_option( 'blogdescription' ) ); ?>">
 					</div>
 
 					<div class="field-group">
@@ -753,11 +788,11 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						<h1><?php esc_attr_e( 'Site Icon', 'ocean-extra' ); ?></h1>
 						<p><?php esc_attr_e( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here! Site Icons should be square and at least 512 × 512 pixels.', 'ocean-extra' ); ?></p>
 						<div class="upload">
-							<img src="<?php echo $url; ?>" width="115px" height="115px" id="ocean-favicon-img" style="display:<?php echo $display; ?>;"/>
+							<img src="<?php echo esc_attr( $url ); ?>" width="115px" height="115px" id="ocean-favicon-img" style="display:<?php echo esc_attr( $display ); ?>;"/>
 							<div>
-								<input type="hidden" name="ocean-favicon" id="ocean-favicon" value="<?php echo $favicon; ?>" />
+								<input type="hidden" name="ocean-favicon" id="ocean-favicon" value="<?php echo esc_attr( $favicon ); ?>" />
 								<button type="submit" data-name="ocean-favicon" class="upload_image_button button"><?php esc_attr_e( 'Upload', 'ocean-extra' ); ?></button>
-								<button  style="display:<?php echo $display; ?>;" type="submit" data-name="ocean-favicon" class="remove_image_button button">&times;</button>
+								<button  style="display:<?php echo esc_attr( $display ); ?>;" type="submit" data-name="ocean-favicon" class="remove_image_button button">&times;</button>
 							</div>
 						</div>
 
@@ -806,7 +841,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 					<div class="owp-wizard-setup-actions">
 						<input type="hidden" name="save_step" value="save_step"/>
 						<button class="continue" type="submit" ><?php esc_attr_e( 'Continue', 'ocean-extra' ); ?><i class="dashicons dashicons-arrow-<?php echo esc_attr( $icon ); ?>-alt"></i></button>
-						<a class="skip-btn" href="<?php echo $this->get_next_step_link(); ?>"><?php esc_attr_e( 'Skip Step', 'ocean-extra' ); ?></a>
+						<a class="skip-btn" href="<?php echo esc_html( $this->get_next_step_link() ); ?>"><?php esc_attr_e( 'Skip Step', 'ocean-extra' ); ?></a>
 					</div>
 				</form>
 			</div>
@@ -972,7 +1007,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 							) )
 						);
 						?>
-																			"><?php esc_html_e( 'View Your Website', 'ocean-extra' ); ?></a>
+																			"><?php esc_attr_e( 'View Your Website', 'ocean-extra' ); ?></a>
 					</div>
 				</div>
 				<?php
@@ -1002,28 +1037,28 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 		}
 
 		/**
-         * Remove Elementor Update Option
-         */
-        private function removeElementorUpdateOptionAction( $option_name ) {
-            $action_name = 'update_option_' . $option_name;
-            global $wp_filter;
-            if ( isset( $wp_filter[ $action_name ] ) ) {
-                foreach ( $wp_filter[ $action_name ]->callbacks as $priority => $callbacks ) {
-                    foreach ( $callbacks as $callback_key => $callback_data ) {
-                        unset ( $wp_filter[ $action_name ]->callbacks[ $priority ][ $callback_key ] );
-                    }
-                }
-            }
-        }
+		 * Remove Elementor Update Option
+		 */
+		private function removeElementorUpdateOptionAction( $option_name ) {
+			$action_name = 'update_option_' . $option_name;
+			global $wp_filter;
+			if ( isset( $wp_filter[ $action_name ] ) ) {
+				foreach ( $wp_filter[ $action_name ]->callbacks as $priority => $callbacks ) {
+					foreach ( $callbacks as $callback_key => $callback_data ) {
+						unset( $wp_filter[ $action_name ]->callbacks[ $priority ][ $callback_key ] );
+					}
+				}
+			}
+		}
 
 	}
 
 	new Ocean_Extra_Theme_Wizard();
 
 	register_activation_hook( OE_FILE_PATH, 'Ocean_Extra_Theme_Wizard::install' );
-	// when deactivate plugin
+	// when deactivate plugin.
 	register_deactivation_hook( OE_FILE_PATH, 'Ocean_Extra_Theme_Wizard::uninstall' );
-	// when activate plugin for automatic second notice
+	// when activate plugin for automatic second notice.
 	register_activation_hook( OE_FILE_PATH, array( 'Ocean_Extra_Theme_Wizard', 'cronjob_activation' ) );
 	register_deactivation_hook( OE_FILE_PATH, array( 'Ocean_Extra_Theme_Wizard', 'cronjob_deactivation' ) );
 endif;
