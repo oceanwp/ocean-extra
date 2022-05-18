@@ -34,7 +34,7 @@ if ( ! class_exists( 'Ocean_Extra_Admin_Notice' ) ) {
          */
         public static function admin_scripts() {
 
-            if ( self::get_installed_time() > strtotime( '-24 hours' )
+            if ( self::get_installed_time() > strtotime( '-240 hours' )
                 || class_exists( 'Ocean_White_Label' )
                 || '1' === get_option( 'ocean_extra_dismiss_notice' )
                 || ! current_user_can( 'manage_options' )
