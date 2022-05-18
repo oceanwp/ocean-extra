@@ -49,8 +49,11 @@ class Ocean_Extra_Theme_Panel {
 	public static function sticky_notice() {
 		global $pagenow;
 
-		if ( class_exists( 'Ocean_Sticky_Header' ) || '1' === get_option( 'owp_dismiss_sticky_notice' ) || true == apply_filters( 'oceanwp_licence_tab_enable', false ) || ! current_user_can( 'manage_options' ) ) {
-		return;
+		if ( class_exists( 'Ocean_Sticky_Header' )
+			|| '1' === get_option( 'owp_dismiss_sticky_notice' )
+			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
+			|| ! current_user_can( 'manage_options' ) ) {
+			return;
 		}
 		// Display on the plugins and Theme Panel pages
 		if ( 'plugins.php' == $pagenow || ( 'admin.php' == $pagenow && 'oceanwp' == $_GET['page'] ) ) {
@@ -63,21 +66,34 @@ class Ocean_Extra_Theme_Panel {
 				<div class="notice-inner">
 					<span class="dashicons dashicons-superhero-alt icon-side"></span>
 					<div class="notice-content">
-					<p><?php echo sprintf(
-						esc_html__( 'Lovely jubbly! Your website is starting to look fabulous!%1$sBut you know what would make your website look stunning and leave your visitors in awe? The Ocean Core Extensions Bundle features.%1$sYou\'ll get:', 'ocean-extra' ),
-						'<br/>'
-						); ?></p>
-						<ul>
-							<li> <?php echo esc_html__('access to premium website template demos,','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('sticky header,','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('royalty free images and icons with templates,','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('Elementor widgets','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('Gutenberg blocks,','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('images and icons library, *and so much more.','ocean-extra' ); ?> </li>
-							<li> <?php echo esc_html__('*and so much more.','ocean-extra' ); ?> </li>
-						</ul>
-
-						<p><a href="https://oceanwp.org/ocean-sticky-header/?utm_source=dash&utm_medium=notice&utm_campaign=sticky" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! I want the Upgrade', 'ocean-extra' ); ?></span></a></p>
+					<h2><?php echo esc_html__( 'Lovely jubbly! Your website is starting to look fabulous!','ocean-extra' ); ?></h2>
+					<h3 class="notice-subheading">
+					<?php
+					echo sprintf(
+						esc_html__( 'But you know what would make your website look stunning and leave your visitors in awe? The Ocean %1$sCore Extensions Bundle%2$s features.', 'ocean-extra' ),
+						'<a href="https://oceanwp.org/core-extensions-bundle/" target="_blank">',
+						'</a>'
+					);
+					?>
+					</h3>
+					<p><?php echo esc_html__( 'You\'ll get:', 'ocean-extra' ); ?></p>
+					<div class="owp-notice-content-inner">
+						<span class="owp-notification-icon">
+							<img src="<?php echo esc_attr (get_template_directory_uri() . '/inc/themepanel/assets/images/themepanel-icon.svg'); ?>">
+						</span>
+						<div class="owp-notification-list-content">
+							<ul>
+								<li> <?php echo esc_html__('access to premium website template demos,','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('sticky header,','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('royalty free images and icons with templates,','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('Elementor widgets','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('Gutenberg blocks,','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('images and icons library, *and so much more.','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('*and so much more.','ocean-extra' ); ?> </li>
+							</ul>
+						</div>
+					</div>
+						<p><a href="<?php echo esc_url('https://oceanwp.org/core-extensions-bundle/' ); ?>" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! I want the Upgrade', 'ocean-extra' ); ?></span></a></p>
 					</div>
 					<a href="<?php echo $dismiss; ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
 				</div>
@@ -117,11 +133,14 @@ class Ocean_Extra_Theme_Panel {
 	public static function sticky_notice_css( $hook ) {
 		global $pagenow;
 
-		if ( class_exists( 'Ocean_Sticky_Header' ) || '1' === get_option( 'owp_dismiss_sticky_notice' ) || true == apply_filters( 'oceanwp_licence_tab_enable', false ) || ! current_user_can( 'manage_options' ) ) {
-		return;
+		if ( class_exists( 'Ocean_Sticky_Header' )
+			|| '1' === get_option( 'owp_dismiss_sticky_notice' ) 
+			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
+			|| ! current_user_can( 'manage_options' ) ) {
+			return;
 		}
 
-		if ( 'toplevel_page_oceanwp-panel' != $hook && 'plugins.php' != $pagenow ) {
+		if ( 'toplevel_page_oceanwp' != $hook && 'plugins.php' != $pagenow ) {
 			return;
 		}
 
@@ -652,7 +671,7 @@ class Ocean_Extra_Theme_Panel {
 	public static function css( $hook ) {
 
 		// Only load scripts when needed
-		if ( 'toplevel_page_oceanwp-panel' != $hook ) {
+		if ( 'toplevel_page_oceanwp' != $hook ) {
 			return;
 		}
 

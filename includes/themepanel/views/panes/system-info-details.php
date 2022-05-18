@@ -3,7 +3,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
 // $sysinfo_warnings = OceanWP_Theme_Panel_System_Status::compile_system_status_warnings();
 ?>
 <a id="get-system-report-button" class="button blue oceanwp-button--get-system-report" href="#">
-    <?php esc_html_e('Get System Report', 'oceanwp'); ?>
+    <?php esc_html_e('Get System Report', 'ocean-extra'); ?>
 </a>
 
 <div id="oceanwp-textarea--get-system-report">
@@ -14,14 +14,14 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
     <thead class="thead-light">
         <tr>
             <th colspan="3" data-export-label="WordPress Environment">
-                <?php esc_html_e('WordPress Environment', 'oceanwp'); ?>
+                <?php esc_html_e('WordPress Environment', 'ocean-extra'); ?>
             </th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td data-export-label="Home URL">
-                <?php esc_html_e('Home URL', 'oceanwp'); ?>:
+                <?php esc_html_e('Home URL', 'ocean-extra'); ?>:
             </td>
 
 
@@ -29,7 +29,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="Site URL">
-                <?php esc_html_e('Site URL', 'oceanwp'); ?>:
+                <?php esc_html_e('Site URL', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -39,7 +39,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
 
         <tr>
             <td data-export-label="WP Version">
-                <?php esc_html_e('WP Version', 'oceanwp'); ?>:
+                <?php esc_html_e('WP Version', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -48,13 +48,13 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="WP Multisite">
-                <?php esc_html_e('WP Multisite', 'oceanwp'); ?>:
+                <?php esc_html_e('WP Multisite', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (false == $sysinfo['wp_multisite']) : ?>
                     <span class="status-invisible">False</span>
-                    <span><?php echo esc_html_e('No', 'oceanwp'); ?></span>
+                    <span><?php echo esc_html_e('No', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php endif; ?>
@@ -64,7 +64,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         <?php $sof = $sysinfo['front_page_display']; ?>
         <tr>
             <td data-export-label="Front Page Display">
-                <?php esc_html_e('Front Page Display', 'oceanwp'); ?>:
+                <?php esc_html_e('Front Page Display', 'ocean-extra'); ?>:
             </td>
 
             <td><?php echo esc_html($sof); ?></td>
@@ -75,7 +75,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         ?>
             <tr>
                 <td data-export-label="Front Page">
-                    <?php esc_html_e('Front Page', 'oceanwp'); ?>:
+                    <?php esc_html_e('Front Page', 'ocean-extra'); ?>:
                 </td>
 
                 <td>
@@ -84,7 +84,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </tr>
             <tr>
                 <td data-export-label="Posts Page">
-                    <?php esc_html_e('Posts Page', 'oceanwp'); ?>:
+                    <?php esc_html_e('Posts Page', 'ocean-extra'); ?>:
                 </td>
 
                 <td>
@@ -96,7 +96,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         ?>
         <tr>
             <td data-export-label="WP Memory Limit">
-                <?php esc_html_e('WP Memory Limit', 'oceanwp'); ?>:
+                <?php esc_html_e('WP Memory Limit', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -107,7 +107,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="WP Upload Limit">
-                <?php esc_html_e('WP Upload Limit', 'oceanwp'); ?>:
+                <?php esc_html_e('WP Upload Limit', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -118,13 +118,13 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="WP Debug Mode">
-                <?php esc_html_e('WP Debug Mode', 'oceanwp'); ?>:
+                <?php esc_html_e('WP Debug Mode', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if ('false' == $sysinfo['wp_debug']) : ?>
                     <span class="status-invisible">False</span>
-                    <span><?php echo esc_html_e('Disabled', 'oceanwp'); ?></span>
+                    <span><?php echo esc_html_e('Disabled', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php endif; ?>
@@ -132,76 +132,76 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="The Main WP Directory">
-                <?php esc_html_e('The Main WP Directory', 'oceanwp'); ?>:
+                <?php esc_html_e('The Main WP Directory', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (wp_is_writable($sysinfo['wp_writable'])) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
-                    <span><?php esc_html_e('Writable', 'oceanwp'); ?></span>
+                    <span><?php esc_html_e('Writable', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
-                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'oceanwp'), $sysinfo['wp_writable']); ?></span>
+                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'ocean-extra'), $sysinfo['wp_writable']); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <tr>
             <td data-export-label="The wp-content Directory">
-                <?php esc_html_e('The wp-content Directory', 'oceanwp'); ?>:
+                <?php esc_html_e('The wp-content Directory', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (wp_is_writable($sysinfo['wp_content_writable'])) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
-                    <span><?php esc_html_e('Writable', 'oceanwp'); ?></span>
+                    <span><?php esc_html_e('Writable', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
-                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'oceanwp'), $sysinfo['wp_content_writable']); ?></span>
+                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'ocean-extra'), $sysinfo['wp_content_writable']); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <tr>
             <td data-export-label="The uploads Directory">
-                <?php esc_html_e('The uploads Directory', 'oceanwp'); ?>:
+                <?php esc_html_e('The uploads Directory', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (wp_is_writable($sysinfo['wp_uploads_writable'])) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
-                    <span><?php esc_html_e('Writable', 'oceanwp'); ?></span>
+                    <span><?php esc_html_e('Writable', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
-                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'oceanwp'), $sysinfo['wp_uploads_writable']); ?></span>
+                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'ocean-extra'), $sysinfo['wp_uploads_writable']); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <tr>
             <td data-export-label="The plugins Directory">
-                <?php esc_html_e('The plugins Directory', 'oceanwp'); ?>:
+                <?php esc_html_e('The plugins Directory', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (wp_is_writable($sysinfo['wp_plugins_writable'])) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
-                    <span><?php esc_html_e('Writable', 'oceanwp'); ?></span>
+                    <span><?php esc_html_e('Writable', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
-                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'oceanwp'), $sysinfo['wp_plugins_writable']); ?></span>
+                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'ocean-extra'), $sysinfo['wp_plugins_writable']); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <tr>
             <td data-export-label="The themes Directory">
-                <?php esc_html_e('The themes Directory', 'oceanwp'); ?>:
+                <?php esc_html_e('The themes Directory', 'ocean-extra'); ?>:
             </td>
 
             <td>
                 <?php if (wp_is_writable($sysinfo['wp_themes_writable'])) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
-                    <span><?php esc_html_e('Writable', 'oceanwp'); ?></span>
+                    <span><?php esc_html_e('Writable', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
-                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'oceanwp'), $sysinfo['wp_themes_writable']); ?></span>
+                    <span><?php printf(__('Make sure <code>%s</code> directory is writable.', 'ocean-extra'), $sysinfo['wp_themes_writable']); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
@@ -211,56 +211,56 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
 <table class="table" cellspacing="0">
     <thead class="thead-light">
         <tr>
-            <th colspan="3" data-export-label="Theme"><?php esc_html_e('Theme', 'oceanwp'); ?></th>
+            <th colspan="3" data-export-label="Theme"><?php esc_html_e('Theme', 'ocean-extra'); ?></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td data-export-label="Name"><?php esc_html_e('Name', 'oceanwp'); ?>:</td>
+            <td data-export-label="Name"><?php esc_html_e('Name', 'ocean-extra'); ?>:</td>
 
             <td><?php echo esc_html($sysinfo['theme']['name']); ?></td>
         </tr>
         <tr>
-            <td data-export-label="Version"><?php esc_html_e('Version', 'oceanwp'); ?>:</td>
+            <td data-export-label="Version"><?php esc_html_e('Version', 'ocean-extra'); ?>:</td>
 
             <td>
                 <?php echo esc_html($sysinfo['theme']['version']); ?>
             </td>
         </tr>
         <tr>
-            <td data-export-label="Author URL"><?php esc_html_e('Author URL', 'oceanwp'); ?>:</td>
+            <td data-export-label="Author URL"><?php esc_html_e('Author URL', 'ocean-extra'); ?>:</td>
 
             <td><?php echo esc_url($sysinfo['theme']['author_uri']); ?></td>
         </tr>
         <tr>
-            <td data-export-label="Child Theme"><?php esc_html_e('Child Theme', 'oceanwp'); ?>:</td>
+            <td data-export-label="Child Theme"><?php esc_html_e('Child Theme', 'ocean-extra'); ?>:</td>
 
             <td>
                 <?php if (is_child_theme()) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span>
-                    <span><?php echo esc_html_e('No', 'oceanwp'); ?></span>
+                    <span><?php echo esc_html_e('No', 'ocean-extra'); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <?php if (is_child_theme()) : ?>
             <tr>
-                <td data-export-label="Parent Theme Name"><?php esc_html_e('Parent Theme Name', 'oceanwp'); ?>:
+                <td data-export-label="Parent Theme Name"><?php esc_html_e('Parent Theme Name', 'ocean-extra'); ?>:
                 </td>
 
                 <td><?php echo esc_html($sysinfo['theme']['parent_name']); ?></td>
             </tr>
             <tr>
                 <td data-export-label="Parent Theme Version">
-                    <?php esc_html_e('Parent Theme Version', 'oceanwp'); ?>:
+                    <?php esc_html_e('Parent Theme Version', 'ocean-extra'); ?>:
                 </td>
 
                 <td><?php echo esc_html($sysinfo['theme']['parent_version']); ?></td>
             </tr>
             <tr>
                 <td data-export-label="Parent Theme Author URL">
-                    <?php esc_html_e('Parent Theme Author URL', 'oceanwp'); ?>:
+                    <?php esc_html_e('Parent Theme Author URL', 'ocean-extra'); ?>:
                 </td>
 
                 <td><?php echo esc_url($sysinfo['theme']['parent_author_uri']); ?></td>
@@ -274,14 +274,14 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
     <thead class="thead-light">
         <tr>
             <th colspan="3" data-export-label="Server Environment">
-                <?php esc_html_e('Server Environment', 'oceanwp'); ?>
+                <?php esc_html_e('Server Environment', 'ocean-extra'); ?>
             </th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td data-export-label="Server Info">
-                <?php esc_html_e('Server Info', 'oceanwp'); ?>:
+                <?php esc_html_e('Server Info', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -290,7 +290,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="Localhost Environment">
-                <?php esc_html_e('Localhost Environment', 'oceanwp'); ?>:
+                <?php esc_html_e('Localhost Environment', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -298,13 +298,13 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span>
-                    <span><?php echo esc_html_e('No', 'oceanwp'); ?></span>
+                    <span><?php echo esc_html_e('No', 'ocean-extra'); ?></span>
                 <?php endif; ?>
             </td>
         </tr>
         <tr>
             <td data-export-label="PHP Version">
-                <?php esc_html_e('PHP Version', 'oceanwp'); ?>:
+                <?php esc_html_e('PHP Version', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -316,7 +316,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         if (function_exists('ini_get')) {
         ?>
             <tr class="<?php esc_attr_e(isset($sysinfo_warnings['php_mem_limit']) ? 'oceanwp-sysinfo-warning' : ''); ?>">
-                <td data-export-label="PHP Memory Limit"><?php esc_html_e('PHP Memory Limit', 'oceanwp'); ?>:</td>
+                <td data-export-label="PHP Memory Limit"><?php esc_html_e('PHP Memory Limit', 'ocean-extra'); ?>:</td>
 
                 <td>
                     <span class="oceanwp-sysinfo-value">
@@ -331,18 +331,18 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
                 </td>
             </tr>
             <tr>
-                <td data-export-label="PHP Post Max Size"><?php esc_html_e('PHP Post Max Size', 'oceanwp'); ?>:</td>
+                <td data-export-label="PHP Post Max Size"><?php esc_html_e('PHP Post Max Size', 'ocean-extra'); ?>:</td>
 
                 <td><?php echo esc_html($sysinfo['php_post_max_size']); ?></td>
             </tr>
             <tr>
-                <td data-export-label="PHP Time Limit"><?php esc_html_e('PHP Time Limit', 'oceanwp'); ?>:</td>
+                <td data-export-label="PHP Time Limit"><?php esc_html_e('PHP Time Limit', 'ocean-extra'); ?>:</td>
                 </td>
                 <td><?php echo esc_html($sysinfo['php_time_limit']); ?></td>
             </tr>
 
             <tr>
-                <td data-export-label="PHP Max Input Vars"><?php esc_html_e('PHP Max Input Vars', 'oceanwp'); ?>:</td>
+                <td data-export-label="PHP Max Input Vars"><?php esc_html_e('PHP Max Input Vars', 'ocean-extra'); ?>:</td>
                 </a>
                 </td>
                 <td><?php echo esc_html($sysinfo['php_max_input_var']); ?></td>
@@ -352,12 +352,12 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         }
         ?>
         <tr>
-            <td data-export-label="PHP Display Errors"><?php esc_html_e('PHP Display Errors', 'oceanwp'); ?>:</td>
+            <td data-export-label="PHP Display Errors"><?php esc_html_e('PHP Display Errors', 'ocean-extra'); ?>:</td>
 
             <td>
                 <?php if ('false' == $sysinfo['php_display_errors']) : ?>
                     <span class="status-invisible">False</span>
-                    <span><?php echo esc_html_e('Disabled', 'oceanwp'); ?></span>
+                    <span><?php echo esc_html_e('Disabled', 'ocean-extra'); ?></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php endif; ?>
@@ -365,18 +365,18 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
 
         <tr>
-            <td data-export-label="MySQL Version"><?php esc_html_e('MySQL Version', 'oceanwp'); ?>:</td>
+            <td data-export-label="MySQL Version"><?php esc_html_e('MySQL Version', 'ocean-extra'); ?>:</td>
 
             <td><?php echo esc_html($sysinfo['mysql_ver']); ?></td>
         </tr>
         <tr>
-            <td data-export-label="Max Upload Size"><?php esc_html_e('Max Upload Size', 'oceanwp'); ?>:</td>
+            <td data-export-label="Max Upload Size"><?php esc_html_e('Max Upload Size', 'ocean-extra'); ?>:</td>
 
             <td><?php echo esc_html($sysinfo['max_upload_size']); ?></td>
         </tr>
         <?php if (is_multisite()) : ?>
             <tr>
-                <td data-export-label="Network Upload Limit"><?php esc_html_e('Network Upload Limit', 'oceanwp'); ?>:</td>
+                <td data-export-label="Network Upload Limit"><?php esc_html_e('Network Upload Limit', 'ocean-extra'); ?>:</td>
 
                 <td><?php echo esc_html($sysinfo['network_upload_limit']); ?></td>
             </tr>
@@ -385,7 +385,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         <tr>
 
             <td data-export-label="PHP XML">
-                <?php esc_html_e('PHP XML', 'oceanwp'); ?>:
+                <?php esc_html_e('PHP XML', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -398,7 +398,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="MBString">
-                <?php esc_html_e('MBString', 'oceanwp'); ?>:
+                <?php esc_html_e('MBString', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -411,7 +411,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr>
             <td data-export-label="SimpleXML">
-                <?php esc_html_e('SimpleXML', 'oceanwp'); ?>:
+                <?php esc_html_e('SimpleXML', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -425,66 +425,66 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         <?php
         $posting = array();
 
-        $posting['fsockopen_curl']['name'] = esc_html__('Fsockopen/cURL', 'oceanwp');
-        $posting['fsockopen_curl']['help'] = esc_attr__('Used when communicating with remote services with PHP.', 'oceanwp');
+        $posting['fsockopen_curl']['name'] = esc_html__('Fsockopen/cURL', 'ocean-extra');
+        $posting['fsockopen_curl']['help'] = esc_attr__('Used when communicating with remote services with PHP.', 'ocean-extra');
 
         if ('true' == $sysinfo['fsockopen_curl']) {
             $posting['fsockopen_curl']['success'] = true;
         } else {
             $posting['fsockopen_curl']['success'] = false;
-            $posting['fsockopen_curl']['note']    = esc_html__('Your server does not have fsockopen or cURL enabled - cURL is used to communicate with other servers. Please contact your hosting provider.', 'oceanwp');
+            $posting['fsockopen_curl']['note']    = esc_html__('Your server does not have fsockopen or cURL enabled - cURL is used to communicate with other servers. Please contact your hosting provider.', 'ocean-extra');
         }
 
-        $posting['soap_client']['name'] = esc_html__('SoapClient', 'oceanwp');
-        $posting['soap_client']['help'] = esc_attr__('Some webservices like shipping use SOAP to get information from remote servers, for example, live shipping quotes from FedEx require SOAP to be installed.', 'oceanwp');
+        $posting['soap_client']['name'] = esc_html__('SoapClient', 'ocean-extra');
+        $posting['soap_client']['help'] = esc_attr__('Some webservices like shipping use SOAP to get information from remote servers, for example, live shipping quotes from FedEx require SOAP to be installed.', 'ocean-extra');
 
         if (true == $sysinfo['soap_client']) {
             $posting['soap_client']['success'] = true;
         } else {
             $posting['soap_client']['success'] = false;
-            $posting['soap_client']['note']    = sprintf(__('Your server does not have the <a href="%s">SOAP Client</a> class enabled - some gateway plugins which use SOAP may not work as expected.', 'oceanwp'), 'http://php.net/manual/en/class.soapclient.php');
+            $posting['soap_client']['note']    = sprintf(__('Your server does not have the <a href="%s">SOAP Client</a> class enabled - some gateway plugins which use SOAP may not work as expected.', 'ocean-extra'), 'http://php.net/manual/en/class.soapclient.php');
         }
 
-        $posting['dom_document']['name'] = esc_html__('DOMDocument', 'oceanwp');
-        $posting['dom_document']['help'] = esc_attr__('HTML/Multipart emails use DOMDocument to generate inline CSS in templates.', 'oceanwp');
+        $posting['dom_document']['name'] = esc_html__('DOMDocument', 'ocean-extra');
+        $posting['dom_document']['help'] = esc_attr__('HTML/Multipart emails use DOMDocument to generate inline CSS in templates.', 'ocean-extra');
 
         if (true == $sysinfo['dom_document']) {
             $posting['dom_document']['success'] = true;
         } else {
             $posting['dom_document']['success'] = false;
-            $posting['dom_document']['note']    = sprintf(__('Your server does not have the <a href="%s">DOMDocument</a> class enabled - HTML/Multipart emails, and also some extensions, will not work without DOMDocument.', 'oceanwp'), 'http://php.net/manual/en/class.domdocument.php');
+            $posting['dom_document']['note']    = sprintf(__('Your server does not have the <a href="%s">DOMDocument</a> class enabled - HTML/Multipart emails, and also some extensions, will not work without DOMDocument.', 'ocean-extra'), 'http://php.net/manual/en/class.domdocument.php');
         }
 
 
-        $posting['gzip']['name'] = esc_html__('GZip', 'oceanwp');
-        $posting['gzip']['help'] = esc_attr__('GZip (gzopen) is used to open the GEOIP database from MaxMind.', 'oceanwp');
+        $posting['gzip']['name'] = esc_html__('GZip', 'ocean-extra');
+        $posting['gzip']['help'] = esc_attr__('GZip (gzopen) is used to open the GEOIP database from MaxMind.', 'ocean-extra');
 
         if (true == $sysinfo['gzip']) {
             $posting['gzip']['success'] = true;
         } else {
             $posting['gzip']['success'] = false;
-            $posting['gzip']['note']    = sprintf(__('Your server does not support the <a href="%s">gzopen</a> function - this is required to use the GeoIP database from MaxMind. The API fallback will be used instead for geolocation.', 'oceanwp'), 'http://php.net/manual/en/zlib.installation.php');
+            $posting['gzip']['note']    = sprintf(__('Your server does not support the <a href="%s">gzopen</a> function - this is required to use the GeoIP database from MaxMind. The API fallback will be used instead for geolocation.', 'ocean-extra'), 'http://php.net/manual/en/zlib.installation.php');
         }
 
         // Zip Archive.
-        $posting['zip_archive']['name'] = esc_html__('Zip Archive', 'oceanwp');
-        $posting['zip_archive']['help'] = esc_attr__('Used to read or write ZIP compressed archives and the files inside them.', 'oceanwp');
+        $posting['zip_archive']['name'] = esc_html__('Zip Archive', 'ocean-extra');
+        $posting['zip_archive']['help'] = esc_attr__('Used to read or write ZIP compressed archives and the files inside them.', 'ocean-extra');
 
         if (class_exists('ZipArchive')) {
             $posting['zip_archive']['success'] = true;
         } else {
-            $posting['zip_archive']['note']    = esc_html__('ZipArchive library is missing. Install the Zip extension. Contact your hosting provider.', 'oceanwp');
+            $posting['zip_archive']['note']    = esc_html__('ZipArchive library is missing. Install the Zip extension. Contact your hosting provider.', 'ocean-extra');
             $posting['zip_archive']['success'] = false;
         }
 
         // Iconv.
-        $posting['iconv']['name'] = esc_html__('Iconv', 'oceanwp');
-        $posting['iconv']['help'] = esc_attr__('Used in CSS parser to handle the character set conversion.', 'oceanwp');
+        $posting['iconv']['name'] = esc_html__('Iconv', 'ocean-extra');
+        $posting['iconv']['help'] = esc_attr__('Used in CSS parser to handle the character set conversion.', 'ocean-extra');
 
         if (extension_loaded('iconv')) {
             $posting['iconv']['success'] = true;
         } else {
-            $posting['iconv']['note']    = esc_html__('Iconv library is missing. Install the iconv extension. Contact your hosting provider.', 'oceanwp');
+            $posting['iconv']['note']    = esc_html__('Iconv library is missing. Install the iconv extension. Contact your hosting provider.', 'ocean-extra');
             $posting['iconv']['success'] = false;
         }
 
@@ -507,7 +507,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         ?>
         <tr data-oceanwp-ajax="http_requests">
             <td data-export-label="HTTP Requests">
-                <?php esc_html_e('HTTP Requests', 'oceanwp'); ?>:
+                <?php esc_html_e('HTTP Requests', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -517,7 +517,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
         <tr data-oceanwp-ajax="oceanwp_server">
             <td data-export-label="Communication with oceanwp.org">
-                <?php esc_html_e('Communication with oceanwp.org', 'oceanwp'); ?>:
+                <?php esc_html_e('Communication with oceanwp.org', 'ocean-extra'); ?>:
             </td>
 
             <td>
@@ -533,7 +533,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
     <thead class="thead-light">
         <tr>
             <th colspan="3" data-export-label="Active Plugins (<?php echo esc_html(count((array) get_option('active_plugins'))); ?>)">
-                <?php esc_html_e('Active Plugins', 'oceanwp'); ?> (<?php echo esc_html(count((array) get_option('active_plugins'))); ?>)
+                <?php esc_html_e('Active Plugins', 'ocean-extra'); ?> (<?php echo esc_html(count((array) get_option('active_plugins'))); ?>)
             </th>
         </tr>
     </thead>
@@ -545,14 +545,14 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
                 $plugin_name = esc_html($plugin_data['Name']);
 
                 if (!empty($plugin_data['PluginURI'])) {
-                    $plugin_name = '<a href="' . esc_url($plugin_data['PluginURI']) . '" title="' . esc_attr__('Visit plugin homepage', 'oceanwp') . '">' . esc_html($plugin_name) . '</a>';
+                    $plugin_name = '<a href="' . esc_url($plugin_data['PluginURI']) . '" title="' . esc_attr__('Visit plugin homepage', 'ocean-extra') . '">' . esc_html($plugin_name) . '</a>';
                 }
         ?>
                 <tr>
                     <td><?php echo wp_kses_post($plugin_name); ?></td>
 
                     <td>
-                        <?php echo sprintf(_x('by %s', 'by author', 'oceanwp'), wp_kses_post($plugin_data['Author'])) . ' &ndash; ' . esc_html($plugin_data['Version']); ?>
+                        <?php echo sprintf(_x('by %s', 'by author', 'ocean-extra'), wp_kses_post($plugin_data['Author'])) . ' &ndash; ' . esc_html($plugin_data['Version']); ?>
                     </td>
                 </tr>
         <?php
