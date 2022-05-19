@@ -183,22 +183,13 @@
 	flex: 0 0 40px;
 	width: 40px;
 	height: 40px;
-	margin-right: 20px;
 }
 .ocean-extra-notice.owp-sticky-notice .owp-notification-icon img{
 	width: 40px;
 	height: 40px;
 }
 
-.ocean-extra-notice.owp-sticky-notice .owp-notice-content-inner {
-	display: flex;
-}
-
-.ocean-extra-notice.owp-sticky-notice .owp-notification-icon {
-	align-self: center;
-}
-
-.ocean-extra-notice.owp-sticky-notice span.dashicons-superhero-alt {
+.ocean-extra-notice.owp-sticky-notice span.icon-side {
 	background-color: #00234C;
 }
 
