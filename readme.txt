@@ -34,7 +34,17 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 2.0.0 =
-- Improved: Theme Panel.
+- New: Theme Status: OceanWP theme update available notification.
+- New: SVG Support for Media Library.
+- New: Customizer Reset option.
+- New: OceanWP Theme Changelog option.
+- New: System Info option.
+- New: Install default OceanWP child theme option.
+- Added: Multiple OceanWP Theme Panel functionality.
+- Added: OceanWP Theme Panel: Customizer Control: disable / enable Customizer sections created by Ocean free and pro extensions.
+- Improved: OceanWP Theme Panel styling.
+- Fixed: My Library: Shortcodes: Custom Template render issue with custom locations.
+- Removed: Outdated non-standard CSS #349
 
 = 1.9.4 =
 - Updated: Freemius SDK.

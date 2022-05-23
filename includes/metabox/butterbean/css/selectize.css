@@ -125,7 +125,6 @@
   font-family: inherit;
   font-size: 13px;
   line-height: 30px;
-  -webkit-font-smoothing: inherit;
 }
 .selectize-input,
 .selectize-control.single .selectize-input.input-active {
