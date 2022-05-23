@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 5.9.1
-Stable tag: 1.9.4
+Tested up to: 5.9.3
+Stable tag: 1.9.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,10 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 1.9.5 =
+- Fixed: Import Wizard: Code revision.
+- Fixed: Import Wizard: Potential vulnerability patch: WPScan report #5224125.
 
 = 1.9.4 =
 - Updated: Freemius SDK.

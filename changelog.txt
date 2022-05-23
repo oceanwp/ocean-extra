@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.9.5 =
+- Fixed: Import Wizard: Code revision.
+- Fixed: Import Wizard: Potential vulnerability patch: WPScan report #5224125.
+
 = 1.9.4 =
 - Updated: Freemius SDK.
 - Fixed: Import Wizard error.
