@@ -3,7 +3,7 @@ $ocean_images_settings = Ocean_Extra_New_Theme_Panel::get_ocean_images_settings(
 ?>
 
 <div id="ocean-images-control" class="column-wrap clr">
-	<form class="integration-settings" data-settings-for="ocean-images">
+	<form class="integration-settings" data-settings-for="ocean_images">
 		<table class="form-table">
 				<tbody>
 					<tr id="owp_api_images_integration_tr">
