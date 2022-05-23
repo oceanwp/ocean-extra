@@ -74,7 +74,7 @@ class Ocean_Extra_Theme_Panel {
 					<h3 class="notice-subheading">
 					<?php
 					echo sprintf(
-						esc_html__( 'But you know what would make your website look stunning and leave your visitors in awe? The Ocean %1$sCore Extensions Bundle%2$s features.', 'ocean-extra' ),
+						esc_html__( 'But you know what would make your website look stunning and leave your visitors in awe? The  %1$sOcean Core Extensions Bundle%2$s features.', 'ocean-extra' ),
 						'<a href="https://oceanwp.org/core-extensions-bundle/" target="_blank">',
 						'</a>'
 					);
@@ -88,8 +88,8 @@ class Ocean_Extra_Theme_Panel {
 								<li> <?php echo esc_html__('royalty free images and icons with templates,','ocean-extra' ); ?> </li>
 								<li> <?php echo esc_html__('Elementor widgets','ocean-extra' ); ?> </li>
 								<li> <?php echo esc_html__('Gutenberg blocks,','ocean-extra' ); ?> </li>
-								<li> <?php echo esc_html__('images and icons library, *and so much more.','ocean-extra' ); ?> </li>
-								<li> <?php echo esc_html__('*and so much more.','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('images and icons library,','ocean-extra' ); ?> </li>
+								<li> <?php echo esc_html__('and so much more.','ocean-extra' ); ?> </li>
 							</ul>
 						<p><a href="<?php echo esc_url('https://oceanwp.org/core-extensions-bundle/' ); ?>" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! I want the Upgrade', 'ocean-extra' ); ?></span></a></p>
 					</div>
