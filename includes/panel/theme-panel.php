@@ -66,7 +66,7 @@ class Ocean_Extra_Theme_Panel {
 				<div class="notice-inner">
 					<span class="icon-side">
 						<span class="owp-notification-icon">
-							<img src="<?php echo esc_attr (get_template_directory_uri() . '/inc/themepanel/assets/images/themepanel-icon.svg'); ?>">
+							<img src="<?php echo esc_attr ( OE_URL . 'includes/themepanel/assets/img/themepanel-icon.svg'); ?>">
 						</span>
 					</span>
 					<div class="notice-content">
