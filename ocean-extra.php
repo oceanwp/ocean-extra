@@ -643,15 +643,15 @@ if ( ! function_exists( 'ocean_link_rel' ) ) {
 
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
-		if ( current_user_can('install_plugins') ) {
-			$current_theme_version = OCEANWP_THEME_VERSION;
+		if ( current_user_can( 'install_plugins' ) ) {
+			$current_theme_version  = OCEANWP_THEME_VERSION;
 			$required_theme_version = '3.3.0';
 
 			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
 			?>
 			<div class="notice notice-warning is-dismissible">
-				<p><?php esc_html_e('We\'ve made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please update your Ocean Extra plugin to the latest version.', 'oceanwp'); ?></p>
-				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e('Update and get the new Theme Panel', 'oceanwp'); ?></a>
+				<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
+				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
 				<br><br>
 			</div>
 			<?php
@@ -659,7 +659,7 @@ if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 		}
 	}
 }
-add_action('admin_notices', 'ocean_theme_is_outdated_admin_notice');
+add_action( 'admin_notices', 'ocean_theme_is_outdated_admin_notice' );
 
 // --------------------------------------------------------------------------------
 // region Freemius
