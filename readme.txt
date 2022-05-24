@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 5.9.3
+Tested up to: 6.0.0
 Stable tag: 2.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
