@@ -669,7 +669,7 @@ class Ocean_Extra_Theme_Panel {
 	public static function css( $hook ) {
 
 		// Only load scripts when needed
-		if ( 'toplevel_page_oceanwp' != $hook ) {
+		if ( 'toplevel_page_oceanwp-panel' != $hook ) {
 			return;
 		}
 
