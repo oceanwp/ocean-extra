@@ -632,6 +632,20 @@ if ( ! function_exists( 'ocean_link_rel' ) ) {
 	}
 }
 
+/**
+ * Returns current theme version
+ *
+ * @since   2.0.0
+ */
+function theme_version() {
+
+	// Get theme data.
+	$theme = wp_get_theme();
+
+	// Return theme version.
+	return $theme->get( 'Version' );
+
+}
 
 /**
  * Display Notice when Ocean Extra is outdated.
@@ -644,6 +658,9 @@ if ( ! function_exists( 'ocean_link_rel' ) ) {
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
 		if ( current_user_can( 'install_plugins' ) ) {
+			if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
+				define( 'OCEANWP_THEME_VERSION', theme_version() );
+			}
 			if ( ! is_child_theme() ) {
 				$current_theme_version  = OCEANWP_THEME_VERSION;
 			} else {
