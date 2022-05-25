@@ -644,7 +644,11 @@ if ( ! function_exists( 'ocean_link_rel' ) ) {
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
 		if ( current_user_can( 'install_plugins' ) ) {
-			$current_theme_version  = OCEANWP_THEME_VERSION;
+			if ( ! is_child_theme() ) {
+				$current_theme_version  = OCEANWP_THEME_VERSION;
+			} else {
+				$current_theme_version  = '3.3.0';
+			}
 			$required_theme_version = '3.3.0';
 
 			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
