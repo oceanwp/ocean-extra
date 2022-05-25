@@ -826,7 +826,7 @@ if ( ! class_exists( 'Ocean_Extra_Theme_Wizard' ) ) :
 						<h1><?php esc_html_e( 'Links Color', 'ocean-extra' ); ?></h1>
 						<p><?php esc_html_e( 'Please add your Links Color below.', 'ocean-extra' ); ?></p>
 						<div class="upload">
-							<input name="ocean-links-color" id="ocean-links-color" class="color-picker-field" value="<?php echo es_attr( get_theme_mod( 'ocean_links_color' ) ); ?>">
+							<input name="ocean-links-color" id="ocean-links-color" class="color-picker-field" value="<?php echo esc_attr( get_theme_mod( 'ocean_links_color' ) ); ?>">
 						</div>
 					</div>
 
