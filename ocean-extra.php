@@ -126,6 +126,7 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
+
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );
 
@@ -655,26 +656,29 @@ function theme_version() {
 
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
+		$theme = wp_get_theme();
 		if ( current_user_can( 'install_plugins' ) ) {
-			if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
-				define( 'OCEANWP_THEME_VERSION', theme_version() );
-			}
-			if ( ! is_child_theme() ) {
-				$current_theme_version  = OCEANWP_THEME_VERSION;
-			} else {
-				$current_theme_version  = '3.3.0';
-			}
-			$required_theme_version = '3.3.0';
+			if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+				if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
+					define( 'OCEANWP_THEME_VERSION', theme_version() );
+				}
+				if ( ! is_child_theme() ) {
+					$current_theme_version  = OCEANWP_THEME_VERSION;
+				} else {
+					$current_theme_version  = '3.3.0';
+				}
+				$required_theme_version = '3.3.0';
 
-			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
-			?>
-			<div class="notice notice-warning is-dismissible">
-				<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
-				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
-				<br><br>
-			</div>
-			<?php
-			endif;
+				if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
+				?>
+				<div class="notice notice-warning is-dismissible">
+					<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
+					<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
+					<br><br>
+				</div>
+				<?php
+				endif;
+			}
 		}
 	}
 }
