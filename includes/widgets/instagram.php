@@ -561,4 +561,6 @@ if ( ! class_exists( 'Ocean_Extra_Instagram_Widget' ) ) {
 		}
 	}
 }
-register_widget( 'Ocean_Extra_Instagram_Widget' );
+if( is_active_widget( false, false, 'ocean_instagram' ) ) {
+	register_widget( 'Ocean_Extra_Instagram_Widget' );
+}

@@ -71,7 +71,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 					}
 
 			        // Display template content
-			        echo do_shortcode( $content );
+			        echo do_blocks( $content );
 
 			    }
 			}

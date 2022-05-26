@@ -45,7 +45,7 @@ class Ocean_Extra_My_Library {
 		$name = apply_filters( 'ocean_my_library_text', $name );
 
 		add_submenu_page(
-			'oceanwp-panel',
+			'oceanwp',
 			esc_html__( 'My Library', 'ocean-extra' ),
 			$name,
 			'manage_options',

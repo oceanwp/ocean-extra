@@ -237,7 +237,7 @@ if ( ! class_exists( 'Ocean_Extra_MailChimp_Widget' ) ) {
 					<?php
 					echo sprintf(
 						__( 'You need to set your Api Key & List Id on the %1$ssettings page%2$s', 'ocean-extra' ),
-						'<a href="' . add_query_arg( array( 'page' => 'oceanwp-panel&tab=integrations#mailchimp' ), esc_url( admin_url( 'admin.php' ) ) ) . '" target="_blank">',
+						'<a href="' . add_query_arg( array( 'page' => 'oceanwp#integration' ), esc_url( admin_url( 'admin.php' ) ) ) . '" target="_blank">',
 						'</a>'
 					);
 					?>

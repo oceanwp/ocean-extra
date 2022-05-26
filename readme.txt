@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 5.9.3
-Stable tag: 1.9.5
+Tested up to: 6.0.0
+Stable tag: 2.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,20 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 2.0.0 =
+- New: Theme Status: OceanWP theme update available notification.
+- New: SVG Support for Media Library.
+- New: Customizer Reset option.
+- New: OceanWP Theme Changelog option.
+- New: System Info option.
+- New: Install default OceanWP child theme option.
+- Added: Multiple OceanWP Theme Panel functionality.
+- Added: OceanWP Theme Panel: Customizer Control: disable / enable Customizer sections created by Ocean free and pro extensions.
+- Improved: OceanWP Theme Panel styling.
+- Fixed: My Library: Shortcodes: Custom Template render issue with custom locations.
+- Fixed: My Library: Import Wizard: Uncaught Error: Call to undefined function es_attr().
+- Removed: Outdated non-standard CSS #349
 
 = 1.9.5 =
 - Fixed: Import Wizard: Code revision.

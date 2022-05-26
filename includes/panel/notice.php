@@ -34,7 +34,7 @@ if ( ! class_exists( 'Ocean_Extra_Admin_Notice' ) ) {
          */
         public static function admin_scripts() {
 
-            if ( self::get_installed_time() > strtotime( '-24 hours' )
+            if ( self::get_installed_time() > strtotime( '-240 hours' )
                 || class_exists( 'Ocean_White_Label' )
                 || '1' === get_option( 'ocean_extra_dismiss_notice' )
                 || ! current_user_can( 'manage_options' )
@@ -70,10 +70,10 @@ if ( ! class_exists( 'Ocean_Extra_Admin_Notice' ) ) {
                     <span class="dashicons dashicons-star-filled icon-side"></span>
                     <div class="notice-content">
                         <p><?php echo sprintf(
-                            esc_html__( 'Hello! We&rsquo;re really grateful that you&rsquo;re now a part of the OceanWP family. We hope you&rsquo;re happy with everything this theme has to offer.%1$sIf you can spare a minute, please help us by leaving a 5-star rating on WordPress.org. By spreading the love, we can continue to develop new amazing features in the future, for free!', 'ocean-extra' ),
+                            esc_html__( 'Hi! We hope you enjoy being a part of the awesome OceanWP family and are savoring all the incredible features OceanWP theme has to offer.%1$sIf you have a minute, please support us by leaving a 5-star review on WordPress.org. By spreading the love, we can continue to develop new fantastic features in the future, for free!', 'ocean-extra' ),
                             '<br/>'
                             ); ?></p>
-                        <p><a href="https://wordpress.org/support/theme/oceanwp/reviews/#new-post" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Ok, you deserve it', 'ocean-extra' ); ?></span></a><a href="<?php echo $no_thanks; ?>" class="btn button-secondary" target="_blank"><span class="dashicons dashicons-calendar"></span><span><?php _e( 'Nope, maybe later', 'ocean-extra' ); ?></span></a><a href="<?php echo $no_thanks; ?>" class="btn button-secondary"><span class="dashicons dashicons-smiley"></span><span><?php _e( 'I already did', 'ocean-extra' ); ?></span></a></p>
+                        <p><a href="https://wordpress.org/support/theme/oceanwp/reviews/#new-post" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! You deserve it', 'ocean-extra' ); ?></span></a><a href="<?php echo $no_thanks; ?>" class="btn button-secondary" target="_blank"><span class="dashicons dashicons-calendar"></span><span><?php _e( 'Nah, maybe later', 'ocean-extra' ); ?></span></a><a href="<?php echo $no_thanks; ?>" class="btn button-secondary"><span class="dashicons dashicons-smiley"></span><span><?php _e( 'I already did', 'ocean-extra' ); ?></span></a></p>
                     </div>
                     <a href="<?php echo $dismiss; ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
                 </div>

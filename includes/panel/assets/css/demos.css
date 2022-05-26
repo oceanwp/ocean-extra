@@ -432,7 +432,6 @@
 .owp-loader .owp-import-status .owp-importing:before {
 	content: '\f463';
     color: #f56e28;
-    -webkit-font-smoothing: antialiased;
     -webkit-animation: spinner 2s infinite linear;
     animation: spinner 2s infinite linear;
 }

@@ -37,11 +37,11 @@ class OWP_Install_Demos {
 		}
 
 		add_submenu_page(
-			'oceanwp-panel',
+			'oceanwp',
 			esc_html__( 'Install Demos', 'ocean-extra' ),
 			$title,
 			'manage_options',
-			'oceanwp-panel-install-demos',
+			'oceanwp#install-demos',
 			array( $this, 'create_admin_page' )
 		);
 	}

@@ -3,10 +3,10 @@
 	"use strict";
 
 	$( document ).ready( function() {
-		owpDemoImport.init();
+		window['owpDemoImport'].init();
 	} );
 
-	var owpDemoImport = {
+	window['owpDemoImport'] = {
 
 		importData: {},
 		allowPopupClosing: true,
@@ -34,6 +34,10 @@
 
 			// Get demo data
 			$( '.owp-open-popup' ).click( function( e ) {
+				if( $( e.target ).hasClass( 'owp-live-preview' ) ) {
+					return;
+				}
+
 				e.preventDefault();
 
 				// Vars

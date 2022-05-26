@@ -100,8 +100,6 @@ body {
   font-size: 14px;
   line-height: 1.8;
   color: #929292;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
@@ -1385,8 +1383,6 @@ input[type=checkbox]:checked:before {
   width: 16px;
   font: 400 14px/1 'Font Awesome 5 Free';
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 input[type=checkbox]:checked:before {

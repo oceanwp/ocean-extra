@@ -17,10 +17,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Start Class
 class Ocean_Extra_Scripts_Panel {
 
+	protected $disable_panel;
+
 	/**
 	 * Start things up
 	 */
 	public function __construct() {
+
+		$theme = wp_get_theme();
+		$this->disable_panel = version_compare( $theme->get( 'Version' ), '3.0.0', '>=' );
+		if( $this->disable_panel ) {
+			$oe_scripts_settings_status = get_option( 'oe_scripts_settings_status', 'need_updated' );
+			if( $oe_scripts_settings_status == 'need_updated' ) {
+				self::activate_scripts();
+				self::generate_js();
+				self::generate_css();
+			}
+		} else {
+			delete_option( 'oe_scripts_settings_status' );
+		}
 
 		if ( is_admin() ) {
 
@@ -40,6 +55,17 @@ class Ocean_Extra_Scripts_Panel {
 			// Add body classes
 			add_filter( 'body_class', array( $this, 'body_classes' ) );
 		}
+	}
+
+	private static function activate_scripts() {
+		$scripts = self::get_scripts();
+		$option = 'oe_scripts_settings';
+		$settings = [];
+		foreach ( $scripts as $key => $val ) {
+			$settings[ $key ] = true;
+		}
+		update_option( $option, $settings );
+		update_option( 'oe_scripts_settings_status', 'updated' );
 	}
 
 	/**
@@ -387,8 +413,9 @@ class Ocean_Extra_Scripts_Panel {
 	 * @since 1.2.1
 	 */
 	public function add_page() {
+		$submenu_page_slug = $this->disable_panel ? null : 'oceanwp-panel';
 		add_submenu_page(
-			'oceanwp-panel',
+			$submenu_page_slug,
 			esc_html__( 'Scripts & Styles', 'ocean-extra' ),
 			esc_html__( 'Scripts & Styles', 'ocean-extra' ),
 			'manage_options',
@@ -586,7 +613,7 @@ class Ocean_Extra_Scripts_Panel {
 	public static function admin_scripts( $hook ) {
 
 		// Only load scripts when needed
-		if ( OE_ADMIN_PANEL_HOOK_PREFIX . '-scripts' != $hook ) {
+		if ( OE_ADMIN_PANEL_HOOK_PREFIX . '-scripts' != $hook && strpos( $hook, 'page_oceanwp-panel-scripts' ) === false ) {
 			return;
 		}
 
