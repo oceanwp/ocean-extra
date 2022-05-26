@@ -8,7 +8,6 @@
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
  * Tested up to:        6.0.0
- *
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -126,7 +125,6 @@ final class Ocean_Extra {
 			// require_once OE_PATH . '/includes/wizard/wizard.php';
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
-
 
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );

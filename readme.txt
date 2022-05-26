@@ -47,6 +47,10 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 - Fixed: My Library: Import Wizard: Uncaught Error: Call to undefined function es_attr().
 - Removed: Outdated non-standard CSS #349
 
+= 1.9.5 =
+- Fixed: Import Wizard: Code revision.
+- Fixed: Import Wizard: Potential vulnerability patch: WPScan report #5224125.
+
 = 1.9.4 =
 - Updated: Freemius SDK.
 - Fixed: Import Wizard error.
