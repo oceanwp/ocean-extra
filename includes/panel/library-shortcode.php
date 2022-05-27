@@ -72,7 +72,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 					// Display template content.
 					if ( function_exists( 'ocean_do_template_content' ) ) {
-						echo ocean_do_template_content( $get_id );
+						echo ocean_do_template_content( $atts[ 'id' ] );
 					}
 
 			    }
