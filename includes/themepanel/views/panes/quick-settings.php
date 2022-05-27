@@ -4,7 +4,7 @@
 <div class="quick-settings-block clr">
 	<div class="quick-settings clr">
 		<?php
-		$options = get_options();
+		$options = owp_get_customizer_options();
 		// Loop through options
 		foreach ( $options as $key => $val ) :
 			// Var
