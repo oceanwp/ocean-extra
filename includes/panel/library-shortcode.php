@@ -60,19 +60,9 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 			    	// Get template content
 			    	$content = $atts[ 'id' ];
 
-					if ( ! empty( $content ) ) {
-
-						$template = get_post( $content );
-
-						if ( $template && ! is_wp_error( $template ) ) {
-							$content = $template->post_content;
-						}
-
-					}
-
 					// Display template content.
 					if ( function_exists( 'ocean_do_template_content' ) ) {
-						echo ocean_do_template_content( $atts[ 'id' ] );
+						echo ocean_do_template_content( $content );
 					}
 
 			    }
