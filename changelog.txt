@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.1 =
+- Fixed: My Library: custom template render issues with custom locations with other page builders.
+
 = 2.0.0 =
 - New: Theme Status: OceanWP theme update available notification.
 - New: SVG Support for Media Library.

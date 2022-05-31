@@ -34,7 +34,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 			), $atts, 'oceanwp_library' );
 
 			ob_start();
-			
+
 			if ( $atts[ 'id' ] ) {
 
 				// Check if the template is created with Elementor
@@ -60,22 +60,14 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 			    	// Get template content
 			    	$content = $atts[ 'id' ];
 
-					if ( ! empty( $content ) ) {
-
-						$template = get_post( $content );
-
-						if ( $template && ! is_wp_error( $template ) ) {
-							$content = $template->post_content;
-						}
-
+					// Display template content.
+					if ( function_exists( 'ocean_do_template_content' ) ) {
+						echo ocean_do_template_content( $content );
 					}
-
-			        // Display template content
-			        echo do_blocks( $content );
 
 			    }
 			}
-			
+
 			return ob_get_clean();
 
 		}
