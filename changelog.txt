@@ -1,9 +1,9 @@
 == Changelog ==
 
 = 2.0.1 =
-Fixed: Custom Templates: Content display issues when templates used on Elementor pages.
-Fixed: Clicking the "Opt in to make Ocean_Plugin_Name Better" link leads to old theme panel.
-Fixed: Warning: Use of undefined constant OCEANWP_THEME_VERSION.
+- Fixed: Custom Templates: Content display issues when templates used on Elementor pages.
+- Fixed: Clicking the "Opt in to make Ocean_Plugin_Name Better" link leads to old theme panel.
+- Fixed: Warning: Use of undefined constant OCEANWP_THEME_VERSION.
 
 = 2.0.0 =
 - New: Theme Status: OceanWP theme update available notification.
