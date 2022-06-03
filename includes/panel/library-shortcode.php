@@ -60,10 +60,23 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 			    	// Get template content
 			    	$content = $atts[ 'id' ];
 
-					// Display template content.
-					if ( function_exists( 'ocean_do_template_content' ) ) {
-						echo ocean_do_template_content( $content );
+					if ( ! empty( $content ) ) {
+
+						$template = get_post( $content );
+
+						if ( $template && ! is_wp_error( $template ) ) {
+							$content = $template->post_content;
+						}
+
 					}
+
+					// If Gutenberg.
+					if ( ocean_is_block_template( $atts[ 'id' ] ) ) {
+						$content = apply_filters( 'oe_library_shortcode_template_content', do_blocks( $content ) );
+					}
+
+					// Display template content.
+					echo do_shortcode( $content );
 
 			    }
 			}

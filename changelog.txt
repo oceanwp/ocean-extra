@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.2 =
+- Fixed: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
+
 = 2.0.1 =
 - Fixed: Custom Templates: Content display issues when templates used on Elementor pages.
 - Fixed: Clicking the "Opt in to make Ocean_Plugin_Name Better" link leads to old theme panel.
