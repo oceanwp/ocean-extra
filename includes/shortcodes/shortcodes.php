@@ -23,13 +23,18 @@ if ( ! function_exists( 'oceanwp_logo_shortcode' ) ) {
 		// Add classes
 		$classes   = array( 'custom-header-logo', 'clr' );
 		$classes[] = $position;
-		$classes   = implode( ' ', $classes ); ?>
+		$classes   = implode( ' ', $classes ); 
+		
+
+		ob_start();
+		?>
 
 		<div class="<?php echo esc_attr( $classes ); ?>">
 			<?php get_template_part( 'partials/header/logo' ); ?>
 		</div>
 
 		<?php
+		return ob_get_clean();
 	}
 }
 add_shortcode( 'oceanwp_logo', 'oceanwp_logo_shortcode' );
@@ -55,6 +60,8 @@ if ( ! function_exists( 'oceanwp_nav_shortcode' ) ) {
 		$classes   = array( 'custom-header-nav', 'clr' );
 		$classes[] = $position;
 		$classes   = implode( ' ', $classes );
+
+		ob_start();
 		?>
 
 		<div class="<?php echo esc_attr( $classes ); ?>">
@@ -68,6 +75,7 @@ if ( ! function_exists( 'oceanwp_nav_shortcode' ) ) {
 		</div>
 
 		<?php
+		return ob_get_clean();
 	}
 }
 add_shortcode( 'oceanwp_nav', 'oceanwp_nav_shortcode' );
