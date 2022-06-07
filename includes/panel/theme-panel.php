@@ -48,8 +48,10 @@ class Ocean_Extra_Theme_Panel {
 	 */
 	public static function sticky_notice() {
 		global $pagenow;
+		global $owp_fs;
+		$need_to_upgrade = ! empty( $owp_fs ) ? $owp_fs->is_pricing_page_visible() : false;
 
-		if ( class_exists( 'Ocean_Sticky_Header' )
+		if ( ! $need_to_upgrade
 			|| '1' === get_option( 'owp_dismiss_sticky_notice' )
 			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
 			|| ! current_user_can( 'manage_options' ) ) {
@@ -130,8 +132,10 @@ class Ocean_Extra_Theme_Panel {
 	 */
 	public static function sticky_notice_css( $hook ) {
 		global $pagenow;
+		global $owp_fs;
+		$need_to_upgrade = ! empty( $owp_fs ) ? $owp_fs->is_pricing_page_visible() : false;
 
-		if ( class_exists( 'Ocean_Sticky_Header' )
+		if ( ! $need_to_upgrade
 			|| '1' === get_option( 'owp_dismiss_sticky_notice' ) 
 			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
 			|| ! current_user_can( 'manage_options' ) ) {
