@@ -37,7 +37,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			if ( class_exists( 'Ocean_Pro_Demos' ) ) {
 				add_filter( 'woocommerce_enable_setup_wizard', '__return_false' );
 				add_filter( 'woocommerce_show_admin_notice', '__return_false' );
-				add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_false' );
+				add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
 	        }
 
 			// Start things
