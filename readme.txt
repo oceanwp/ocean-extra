@@ -35,6 +35,8 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 2.0.2 =
 - Fixed: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
+- Fixed: Upgrade Notice Condition Fix.
+- Fixed: Shortcode output fix.
 
 = 2.0.1 =
 - Fixed: Custom Templates: Content display issues when templates used on Elementor pages.
