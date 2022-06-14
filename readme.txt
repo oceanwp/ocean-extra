@@ -34,7 +34,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 2.0.2 =
-- Fixed: My Library: Custom Template: dyanamic blocks is not rendering in custom template.
+- Fixed: My Library: Custom Template: dynamic blocks is not rendering in custom template.
 - Fixed: Upgrade Notice Condition Fix.
 - Fixed: Shortcode output fix.
 
