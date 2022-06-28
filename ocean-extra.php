@@ -358,6 +358,8 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';
 			require_once OE_PATH . '/includes/dashboard.php';
 			require_once OE_PATH . '/includes/panel/demos.php';
+			require_once OE_PATH . '/includes/admin-bar/admin-bar.php';
+			require_once OE_PATH . '/includes/admin-bar/notifications.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
