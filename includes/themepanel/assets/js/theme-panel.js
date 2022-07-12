@@ -86,6 +86,18 @@ jQuery(document).ready(function ($) {
         var optionVal = $(this).prop('checked') ? 'yes' : 'no';
         runSaveSingleOption('oe_library_active_status', optionVal);
     });
+    
+    $(document.body).on('change', '#oceanwp-switch-notification-disable', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption('oe_notification_active_status', optionVal);
+    });
+
+    $(document.body).on('change', '#oceanwp-switch-edit-post-disable', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption('oe_disable_edit_post_active_status', optionVal);
+    });
 
     $(document.body).on('change', '#oceanwp-switch-svg-support-disable', function (event) {
         event.preventDefault();
