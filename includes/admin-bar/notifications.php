@@ -8,7 +8,7 @@ class Ocean_Notifications {
 	protected static $instance = null;
 	public $option             = false;
 
-	const SOURCE_URL = 'http://marko.oceanwp.org/notifications/notifications-info.json';
+	const SOURCE_URL = 'https://notifi.oceanwp.org/notifications/notifications-info.json';
 	const OPTION_KEY = 'ocean_notifications';
 
 	public static function get_instance() {
