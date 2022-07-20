@@ -66,8 +66,10 @@ class Ocean_Admin_Bar {
 			array(
 				'main_menu',
 				'notification_menu',
-				'customizer_menu',
-				'system_info__menu',
+				'panel_menu',
+				'system_info_menu',
+				'community_menu',
+				'documentation_menu',
 			),
 			$wp_admin_bar
 		);
@@ -117,24 +119,48 @@ class Ocean_Admin_Bar {
 	}
 
 
-	public function customizer_menu( WP_Admin_Bar $wp_admin_bar ) {
+	public function panel_menu( WP_Admin_Bar $wp_admin_bar ) {
 		$wp_admin_bar->add_menu(
 			array(
 				'parent' => 'ocean-menu',
 				'id'     => 'ocean-customizer',
-				'title'  => esc_html__( 'Customizer', 'oceanwp' ),
+				'title'  => esc_html__( 'Panel', 'oceanwp' ),
 				'href'   => admin_url( 'admin.php?page=oceanwp#customizer' ),
 			)
 		);
 	}
 
-	public function system_info__menu( WP_Admin_Bar $wp_admin_bar ) {
+	public function system_info_menu( WP_Admin_Bar $wp_admin_bar ) {
 		$wp_admin_bar->add_menu(
 			array(
 				'parent' => 'ocean-menu',
 				'id'     => 'ocean-system-info',
 				'title'  => esc_html__( 'System Info', 'oceanwp' ),
 				'href'   => admin_url( 'admin.php?page=oceanwp#system-info' ),
+			)
+		);
+	}
+
+	public function community_menu( WP_Admin_Bar $wp_admin_bar ) {
+		$wp_admin_bar->add_menu(
+			array(
+				'parent' => 'ocean-menu',
+				'id'     => 'ocean-community',
+				'title'  => esc_html__( 'Community', 'oceanwp' ),
+				'href'   => 'https://www.facebook.com/groups/oceanwptheme/',
+				'meta'  => array( 'target' => '_blank' )
+			)
+		);
+	}
+
+	public function documentation_menu( WP_Admin_Bar $wp_admin_bar ) {
+		$wp_admin_bar->add_menu(
+			array(
+				'parent' => 'ocean-menu',
+				'id'     => 'ocean-documentation',
+				'title'  => esc_html__( 'Documentation', 'oceanwp' ),
+				'href'   => 'https://docs.oceanwp.org/',
+				'meta'  => array( 'target' => '_blank' )
 			)
 		);
 	}
