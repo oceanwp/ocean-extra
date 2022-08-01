@@ -941,9 +941,9 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 	    	global $pagenow;
 
 	        // Display on the demos pages
-	        if ( ( 'admin.php' == $pagenow && 'oceanwp-panel-install-demos' == $_GET['page'] )
-	            || ( 'admin.php' == $pagenow && 'oceanwp-panel-pro-demos' == $_GET['page'] )
-				|| ( 'admin.php' == $pagenow && 'oceanwp' == $_GET['page'] ) ) { ?>
+	        if ( ( 'admin.php' == $pagenow && 'oceanwp-panel-install-demos' && isset( $_GET['page'] ) == $_GET['page'] )
+	            || ( 'admin.php' == $pagenow && 'oceanwp-panel-pro-demos' && isset( $_GET['page'] )  == $_GET['page'] )
+				|| ( 'admin.php' == $pagenow && 'oceanwp' && isset( $_GET['page'] )  == $_GET['page'] ) ) { ?>
 		        
 		        <div id="owp-demo-popup-wrap">
 					<div class="owp-demo-popup-container">
