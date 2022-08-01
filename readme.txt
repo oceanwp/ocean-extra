@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.0.0
-Stable tag: 2.0.2
+Tested up to: 6.0.1
+Stable tag: 2.0.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,6 +32,9 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 3. Custom CSS.
 
 == Changelog ==
+
+= 2.0.3 =
+- NEW: OceanWP News Notification system.
 
 = 2.0.2 =
 - Fixed: My Library: Custom Template: dynamic blocks is not rendering in custom template.
