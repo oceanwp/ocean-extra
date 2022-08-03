@@ -196,19 +196,6 @@ jQuery(document).ready(function ($) {
     if($('#owp_recaptcha_version').length) {
         $('#owp_recaptcha_version').trigger('change');
     }
-
-
-    $(document.body).on('change', '#owp_api_images_integration', function () {
-            jQuery(this).val() === '0' ? jQuery('.api-ingegrations').hide() : jQuery('.api-ingegrations').show();
-    });
-
-    $(document.body).on('change', '#owp_freepik_integration', function () {
-            jQuery(this).val() === '0' ? jQuery('#owp_freepik_image_width_tr').hide() : jQuery('#owp_freepik_image_width_tr').show();
-        });
-
-    $(document.body).on('change', '#owp_freepik_image_width', function () {
-            jQuery(this).val() !== 'custom' ? jQuery('#owp_freepik_image_width_custom_tr').hide() : jQuery('#owp_freepik_image_width_custom_tr').show();
-        });
     
 
     function runSavingCustomizerSettings($form) {

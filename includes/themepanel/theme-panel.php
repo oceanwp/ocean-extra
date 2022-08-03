@@ -64,8 +64,6 @@ class Ocean_Extra_New_Theme_Panel {
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_maps', array( $this, 'integration_google_maps_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_recaptcha', array( $this, 'integration_google_recaptcha_part' ) );
 
-		add_filter( 'oceanwp_theme_panel_pane_ocean_images_settings', array( $this, 'ocean_images_part' ) );
-
 		add_filter( 'oceanwp_theme_panel_pane_system_info_details', array( $this, 'system_info_details_part' ) );
 
 		add_filter( 'ocean_main_metaboxes_post_types', array( 'Ocean_Extra_New_Theme_Panel', 'control_metaboxes' ), 9999 );
@@ -563,9 +561,6 @@ class Ocean_Extra_New_Theme_Panel {
 	function integration_google_recaptcha_part() {
 		return OE_PATH . 'includes/themepanel/views/panes/integration-google-recaptcha.php';
 	}
-	function ocean_images_part() {
-		return OE_PATH . 'includes/themepanel/views/panes/ocean-images-settings.php';
-	}
 
 
 	public static function control_metaboxes( $post_types ) {
@@ -637,13 +632,7 @@ class Ocean_Extra_New_Theme_Panel {
 	}
 
 	public static function get_ocean_images_settings() {
-		$settings = array(
-			'api_images_integration'     => get_option( 'owp_api_images_integration' ),
-			'flaticon_integration'       => get_option( 'owp_flaticon_integration' ),
-			'freepik_integration'        => get_option( 'owp_freepik_integration' ),
-			'freepik_image_width'        => get_option( 'owp_freepik_image_width' ),
-			'freepik_image_width_custom' => get_option( 'owp_freepik_image_width_custom' ),
-		);
+		$settings = array();
 
 		return apply_filters( 'ocean_integrations_settings', $settings );
 	}
