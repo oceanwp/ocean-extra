@@ -214,7 +214,6 @@ class Ocean_Extra_New_Theme_Panel {
 			}
 		}
 
-		
 		wp_send_json_success(
 			array(
 				'message' => esc_html__( 'Settings saved successfully.', 'ocean-extra' ),

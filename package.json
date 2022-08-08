@@ -28,7 +28,7 @@
         "grunt-sass": "^3.1.0",
         "grunt-wp-i18n": "^1.0.3",
         "jit-grunt": "^0.10.0",
-        "node-sass": "^6.0.0",
+        "sass": "^1.54.1",
         "time-grunt": "^2.0.0"
     },
     "dependencies": {
