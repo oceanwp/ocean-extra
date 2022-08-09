@@ -115,7 +115,7 @@ final class Ocean_Extra {
 		$theme = wp_get_theme();
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
 
-			if ( ! is_child_theme() ) {
+			if ( get_template_directory() == get_stylesheet_directory() ) {
 				$current_theme_version  = theme_version();
 			} else {
 				$parent = wp_get_theme()->parent(); 
