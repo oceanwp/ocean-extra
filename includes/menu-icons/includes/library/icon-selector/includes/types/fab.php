@@ -853,6 +853,11 @@ class OE_Icon_Picker_Type_Font_Awesome_Brand extends OE_Icon_Picker_Type_Font {
 				'id'    => 'fa-youtube-square',
 				'name'  => 'YouTube',
 			),
+			array(
+				'group' => 'brand',
+				'id'    => 'fa-discord',
+				'name'  => 'Discord',
+			),
 		);
 
 		/**
