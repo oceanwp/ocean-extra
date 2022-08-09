@@ -114,6 +114,14 @@ final class Ocean_Extra {
 		// Menu icons
 		$theme = wp_get_theme();
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+
+			if ( ! is_child_theme() ) {
+				$current_theme_version  = theme_version();
+			} else {
+				$current_theme_version  = '3.3.3';
+			}
+			$required_theme_version = '3.3.3';
+
 			require_once OE_PATH . '/includes/panel/theme-panel.php';
 			require_once OE_PATH . '/includes/panel/integrations-tab.php';
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
@@ -126,7 +134,8 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
-			if ( version_compare( theme_version(), '3.3.3' , '>' ) ) {
+
+			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '>=' ) ) {
 				require_once OE_PATH . '/includes/compatibility/ocean.php';
 			}
 
