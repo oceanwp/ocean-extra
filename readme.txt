@@ -35,6 +35,9 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 = 2.0.3 =
 - NEW: OceanWP News Notification system.
+- Added: Tyopgraphy: Host Google Fonts Locally. New option to appear in Customizer > Typography > General. Disabled by default.
+- Added: Typography: Host Elementor Fonts Locally. New option to appear in Customizer > Typography > General. Disabled by default.
+- Added: Option to install the OceanWP Child Theme. Option will appear in the OceanWP Panel.
 
 = 2.0.2 =
 - Fixed: My Library: Custom Template: dynamic blocks is not rendering in custom template.
