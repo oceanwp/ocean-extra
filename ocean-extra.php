@@ -126,7 +126,7 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
-			if ( version_compare( OCEANWP_THEME_VERSION, '3.3.3' , '>' ) ) {
+			if ( version_compare( theme_version(), '3.3.3' , '>' ) ) {
 				require_once OE_PATH . '/includes/compatibility/ocean.php';
 			}
 
