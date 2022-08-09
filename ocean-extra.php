@@ -125,7 +125,10 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
-			require_once OE_PATH . '/includes/compatibility/ocean.php';
+
+			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '>' ) ) {
+				require_once OE_PATH . '/includes/compatibility/ocean.php';
+			}
 
 
 			// Outputs custom JS to the footer
