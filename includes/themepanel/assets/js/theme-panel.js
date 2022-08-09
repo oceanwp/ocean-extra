@@ -25,6 +25,26 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    $(document.body).on('op_panel_loaded', function (event) {
+        let allCheckboxWrappers = $('.multi-checkbox-wrapper');
+        allCheckboxWrappers.each(function() {
+            let $wrapper = $(this);
+            let allCheckboxes = $wrapper.find('input[type="checkbox"]');
+            let allCheckboxesLength = allCheckboxes.length;
+            let checkedCheckboxes = 0;
+            allCheckboxes.each(function() {
+                if( $(this).prop('checked') ) {
+                    checkedCheckboxes++;
+                }
+            });
+            if( allCheckboxesLength == checkedCheckboxes ) {
+                if( $wrapper.closest('form').find('.oe-switcher-bulk') ) {
+                    $wrapper.closest('form').find('.oe-switcher-bulk').prop('checked', true);
+                }
+            }
+        });
+    });
+
     $(document.body).on('submit', '#ocean-customizer-control form', function (event) {
         event.preventDefault();
         runSavingCustomizerSettings($(this));
@@ -49,6 +69,12 @@ jQuery(document).ready(function ($) {
         });
     });
 
+    $(document.body).on('change', '.oceanwp-switch-single-option', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption($(this).attr('name'), optionVal);
+    });
+
     $(document.body).on('change', '#oceanwp-switch-customizer-search', function (event) {
         event.preventDefault();
         var $form = $('#ocean-customizer-control form');
@@ -59,6 +85,18 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         var optionVal = $(this).prop('checked') ? 'yes' : 'no';
         runSaveSingleOption('oe_library_active_status', optionVal);
+    });
+    
+    $(document.body).on('change', '#oceanwp-switch-notification-disable', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption('oe_notification_active_status', optionVal);
+    });
+
+    $(document.body).on('change', '#oceanwp-switch-edit-post-disable', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption('oe_disable_edit_post_active_status', optionVal);
     });
 
     $(document.body).on('change', '#oceanwp-switch-svg-support-disable', function (event) {
@@ -158,19 +196,6 @@ jQuery(document).ready(function ($) {
     if($('#owp_recaptcha_version').length) {
         $('#owp_recaptcha_version').trigger('change');
     }
-
-
-    $(document.body).on('change', '#owp_api_images_integration', function () {
-            jQuery(this).val() === '0' ? jQuery('.api-ingegrations').hide() : jQuery('.api-ingegrations').show();
-    });
-
-    $(document.body).on('change', '#owp_freepik_integration', function () {
-            jQuery(this).val() === '0' ? jQuery('#owp_freepik_image_width_tr').hide() : jQuery('#owp_freepik_image_width_tr').show();
-        });
-
-    $(document.body).on('change', '#owp_freepik_image_width', function () {
-            jQuery(this).val() !== 'custom' ? jQuery('#owp_freepik_image_width_custom_tr').hide() : jQuery('#owp_freepik_image_width_custom_tr').show();
-        });
     
 
     function runSavingCustomizerSettings($form) {
@@ -252,26 +277,28 @@ jQuery(document).ready(function ($) {
     }
 
     function runSaveSingleOption(optionName, value) {
-        $.ajax({
-            url: ajaxurl,
-            method: "POST",
-            data: {
-                _nonce: ExtraThemePanelOptions.ocean_save_single_option_nonce,
-                option_name: optionName,
-                value: value,
-                action: 'oceanwp_cp_save_single_option',
-            },
-            beforeSend: function () {
-                window['showNotify']('success', oceanwp_cp_textdomain.saving_settings);
-            },
-            success: function (data) {
-                window['showNotify'](data.success, data.data.message);
-            },
-            error: function (xhr, status, error) {
-            },
-            complete: function () {
-            }
-        });
+        if( optionName !== '' && optionName !== undefined ) {
+            $.ajax({
+                url: ajaxurl,
+                method: "POST",
+                data: {
+                    _nonce: ExtraThemePanelOptions.ocean_save_single_option_nonce,
+                    option_name: optionName,
+                    value: value,
+                    action: 'oceanwp_cp_save_single_option',
+                },
+                beforeSend: function () {
+                    window['showNotify']('success', oceanwp_cp_textdomain.saving_settings);
+                },
+                success: function (data) {
+                    window['showNotify'](data.success, data.data.message);
+                },
+                error: function (xhr, status, error) {
+                },
+                complete: function () {
+                }
+            });
+        }
     }
 
     function resetCustomizerSettings() {

@@ -44,6 +44,8 @@ class Ocean_Extra_New_Theme_Panel {
 		add_action( 'wp_ajax_oceanwp_cp_customizer_export', array( $this, 'customizer_export' ) );
 		add_action( 'wp_ajax_oceanwp_cp_customizer_import', array( $this, 'customizer_import' ) );
 
+		add_action( 'wp_ajax_oceanwp_cp_child_theme_install', array( $this, 'child_theme_install' ) );
+
 		add_filter( 'oceanwp_theme_panel_pane_quick_settings', array( $this, 'quick_settings_panel' ) );
 
 		add_filter( 'oceanwp_theme_panel_pane_customizer_search', array( $this, 'customizer_search_part' ) );
@@ -63,8 +65,6 @@ class Ocean_Extra_New_Theme_Panel {
 
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_maps', array( $this, 'integration_google_maps_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_recaptcha', array( $this, 'integration_google_recaptcha_part' ) );
-
-		add_filter( 'oceanwp_theme_panel_pane_ocean_images_settings', array( $this, 'ocean_images_part' ) );
 
 		add_filter( 'oceanwp_theme_panel_pane_system_info_details', array( $this, 'system_info_details_part' ) );
 
@@ -214,7 +214,6 @@ class Ocean_Extra_New_Theme_Panel {
 			}
 		}
 
-		
 		wp_send_json_success(
 			array(
 				'message' => esc_html__( 'Settings saved successfully.', 'ocean-extra' ),
@@ -309,6 +308,46 @@ class Ocean_Extra_New_Theme_Panel {
 
 		echo serialize( $data );
 		die;
+	}
+
+	/**
+	 * Check if Ocean Child theme is installed.
+	 *
+	 * @return void
+	 */
+	public function child_theme_install() {
+
+		OceanWP_Theme_Panel::check_ajax_access( $_POST['nonce'], 'oceanwp_theme_panel' );
+
+		if ( file_exists( get_theme_root() . '/oceanwp-child-theme-master' ) ) {
+			wp_send_json_error( array( 'message' => esc_html__( 'Child theme already installed', 'oceanwp' ) ) );
+		}
+
+		try {
+			$ocean_child_zip_path = WP_CONTENT_DIR . '/oceanwp-child-theme.zip';
+
+			if ( file_exists( $ocean_child_zip_path ) ) {
+				unlink( $ocean_child_zip_path );
+			}
+			file_put_contents(
+				$ocean_child_zip_path,
+				file_get_contents( 'https://downloads.oceanwp.org/oceanwp/oceanwp-child-theme.zip' )
+			);
+
+			$zip = new ZipArchive();
+			if ( $zip->open( $ocean_child_zip_path ) === true ) {
+				$zip->extractTo( get_theme_root() );
+				$zip->close();
+				if ( file_exists( $ocean_child_zip_path ) ) {
+					unlink( $ocean_child_zip_path );
+				}
+				wp_send_json_success();
+			} else {
+				wp_send_json_error();
+			}
+		} catch ( Exception $e ) {
+			wp_send_json_error();
+		}
 	}
 
 	public function customizer_import() {
@@ -563,9 +602,6 @@ class Ocean_Extra_New_Theme_Panel {
 	function integration_google_recaptcha_part() {
 		return OE_PATH . 'includes/themepanel/views/panes/integration-google-recaptcha.php';
 	}
-	function ocean_images_part() {
-		return OE_PATH . 'includes/themepanel/views/panes/ocean-images-settings.php';
-	}
 
 
 	public static function control_metaboxes( $post_types ) {
@@ -637,13 +673,7 @@ class Ocean_Extra_New_Theme_Panel {
 	}
 
 	public static function get_ocean_images_settings() {
-		$settings = array(
-			'api_images_integration'     => get_option( 'owp_api_images_integration' ),
-			'flaticon_integration'       => get_option( 'owp_flaticon_integration' ),
-			'freepik_integration'        => get_option( 'owp_freepik_integration' ),
-			'freepik_image_width'        => get_option( 'owp_freepik_image_width' ),
-			'freepik_image_width_custom' => get_option( 'owp_freepik_image_width_custom' ),
-		);
+		$settings = array();
 
 		return apply_filters( 'ocean_integrations_settings', $settings );
 	}

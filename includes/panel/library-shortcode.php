@@ -34,7 +34,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 			), $atts, 'oceanwp_library' );
 
 			ob_start();
-			
+
 			if ( $atts[ 'id' ] ) {
 
 				// Check if the template is created with Elementor
@@ -70,12 +70,17 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 					}
 
-			        // Display template content
-			        echo do_blocks( $content );
+					// If Gutenberg.
+					if ( ocean_is_block_template( $atts[ 'id' ] ) ) {
+						$content = apply_filters( 'oe_library_shortcode_template_content', do_blocks( $content ) );
+					}
+
+					// Display template content.
+					echo do_shortcode( $content );
 
 			    }
 			}
-			
+
 			return ob_get_clean();
 
 		}

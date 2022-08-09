@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:             2.0.0
+ * Version:             2.0.3
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.0.0
+ * Tested up to:        6.0.1
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -90,7 +90,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.0';
+		$this->version     = '2.0.3';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -125,6 +125,9 @@ final class Ocean_Extra {
 			// require_once OE_PATH . '/includes/wizard/wizard.php';
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
+
+			require_once OE_PATH . '/includes/compatibility/ocean.php';
+
 
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );
@@ -357,6 +360,11 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';
 			require_once OE_PATH . '/includes/dashboard.php';
 			require_once OE_PATH . '/includes/panel/demos.php';
+			$oe_notification_active_status = get_option( 'oe_notification_active_status', 'no' );
+			if( $oe_notification_active_status == 'no' ) {
+				require_once OE_PATH . '/includes/admin-bar/admin-bar.php';
+				require_once OE_PATH . '/includes/admin-bar/notifications.php';
+			}
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
@@ -655,26 +663,29 @@ function theme_version() {
 
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
+		$theme = wp_get_theme();
 		if ( current_user_can( 'install_plugins' ) ) {
-			if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
-				define( 'OCEANWP_THEME_VERSION', theme_version() );
-			}
-			if ( ! is_child_theme() ) {
-				$current_theme_version  = OCEANWP_THEME_VERSION;
-			} else {
-				$current_theme_version  = '3.3.0';
-			}
-			$required_theme_version = '3.3.0';
+			if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+				if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
+					define( 'OCEANWP_THEME_VERSION', theme_version() );
+				}
+				if ( ! is_child_theme() ) {
+					$current_theme_version  = OCEANWP_THEME_VERSION;
+				} else {
+					$current_theme_version  = '3.3.0';
+				}
+				$required_theme_version = '3.3.0';
 
-			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
-			?>
-			<div class="notice notice-warning is-dismissible">
-				<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
-				<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
-				<br><br>
-			</div>
-			<?php
-			endif;
+				if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '<' ) ) :
+				?>
+				<div class="notice notice-warning is-dismissible">
+					<p><?php esc_html_e( 'We made changes to our Theme Panel. To complete the installation and enjoy both old and new features, please make sure the OceanWP theme and all Ocean plugins are up to date.', 'oceanwp' ); ?></p>
+					<a href="<?php echo esc_url( admin_url( 'update-core.php' ) ); ?>"><?php esc_html_e( 'Update and get the new Theme Panel', 'oceanwp' ); ?></a>
+					<br><br>
+				</div>
+				<?php
+				endif;
+			}
 		}
 	}
 }

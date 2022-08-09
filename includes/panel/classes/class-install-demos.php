@@ -31,7 +31,7 @@ class OWP_Install_Demos {
 
 		// If Pro Demos activated
 		if ( class_exists( 'Ocean_Pro_Demos' ) ) {
-			$title = '<span style="color: #36c786">' . esc_html__( 'Install Demos', 'ocean-pro-demos' ) . '</span>';
+			$title = '<span style="color: #36c786">' . esc_html__( 'Install Demos', 'ocean-extra' ) . '</span>';
 		} else {
 			$title = esc_html__( 'Install Demos', 'ocean-extra' );
 		}
