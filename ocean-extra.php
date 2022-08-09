@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:             2.0.3
+ * Version:             2.0.4
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
@@ -90,7 +90,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.3';
+		$this->version     = '2.0.4';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -112,8 +112,7 @@ final class Ocean_Extra {
 		add_action( 'init', array( $this, 'setup' ) );
 
 		// Menu icons
-		$theme = wp_get_theme();
-		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+		if ( 'OceanWP' === oe_get_theme( 'theme' ) || 'oceanwp' === oe_get_theme( 'template' ) ) {
 			require_once OE_PATH . '/includes/panel/theme-panel.php';
 			require_once OE_PATH . '/includes/panel/integrations-tab.php';
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
@@ -345,9 +344,8 @@ final class Ocean_Extra {
 	 * @return void
 	 */
 	public function setup() {
-		$theme = wp_get_theme();
 
-		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+		if ( 'OceanWP' === oe_get_theme( 'theme' ) || 'oceanwp' === oe_get_theme( 'template' ) ) {
 			require_once OE_PATH . '/includes/metabox/butterbean/butterbean.php';
 			require_once OE_PATH . '/includes/metabox/metabox.php';
 			require_once OE_PATH . '/includes/metabox/shortcodes.php';
@@ -654,6 +652,30 @@ function theme_version() {
 }
 
 /**
+ * Get theme name.
+ *
+ * @var string $type  Theme type.
+ *
+ * @return string
+ */
+function oe_get_theme( $type = 'theme' ) {
+
+	$result = '';
+	$theme  = wp_get_theme();
+
+	if ( $type === 'theme' ) {
+		$result = $theme->name;
+	} else if ( $type === 'template' ) {
+		$result = $theme->template;
+	} else {
+		$result = $theme->name;
+	}
+
+	// Return result.
+	return $result;
+}
+
+/**
  * Display Notice when Ocean Extra is outdated.
  *
  *  @since 2.0.0
@@ -663,13 +685,12 @@ function theme_version() {
 
 if ( ! function_exists( 'ocean_theme_is_outdated_admin_notice' ) ) {
 	function ocean_theme_is_outdated_admin_notice() {
-		$theme = wp_get_theme();
 		if ( current_user_can( 'install_plugins' ) ) {
-			if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+			if ( 'OceanWP' === oe_get_theme( 'theme' ) || 'oceanwp' === oe_get_theme( 'template' ) ) {
 				if ( ! defined( 'OCEANWP_THEME_VERSION' ) ) {
 					define( 'OCEANWP_THEME_VERSION', theme_version() );
 				}
-				if ( ! is_child_theme() ) {
+				if ( ! ( 'oceanwp' === oe_get_theme( 'template' ) ) ) {
 					$current_theme_version  = OCEANWP_THEME_VERSION;
 				} else {
 					$current_theme_version  = '3.3.0';
