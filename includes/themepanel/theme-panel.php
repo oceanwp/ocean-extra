@@ -400,7 +400,7 @@ class Ocean_Extra_New_Theme_Panel {
 
 		// Get file contents and decode
 		$raw  = file_get_contents( $file );
-		$data = @unserialize( $raw );
+		$data = @unserialize( $raw, [ 'allowed_classes' => false ]  );
 
 		// Delete import file
 		unlink( $file );
