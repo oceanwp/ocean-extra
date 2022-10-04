@@ -34,7 +34,7 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 == Changelog ==
 
 = 2.0.5 =
-- Fixed: Vulnerability issue
+- Fixed: Customizer Styling Import: Potential vulnerability patch: WPScan report #5596728.
 
 = 2.0.4 =
 - Fixed: Fatal error: Cannot redeclare oceanwp_webfonts_enqueue()
