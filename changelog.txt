@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 2.0.5 =
+- Fixed: Vulnerability issue
+
+= 2.0.4 =
+- Fixed: Fatal error: Cannot redeclare oceanwp_webfonts_enqueue()
+
 = 2.0.3 =
 - NEW: OceanWP News Notification system.
 - Added: Tyopgraphy: Host Google Fonts Locally. New option to appear in Customizer > Typography > General. Disabled by default.

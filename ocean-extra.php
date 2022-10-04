@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
- * Version:             2.0.3
+ * Version:             2.0.5
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.0.1
+ * Tested up to:        6.0.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -90,7 +90,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.3';
+		$this->version     = '2.0.5';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -113,7 +113,20 @@ final class Ocean_Extra {
 
 		// Menu icons
 		$theme = wp_get_theme();
-		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+			if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+
+			if ( get_template_directory() == get_stylesheet_directory() ) {
+				$current_theme_version  = theme_version();
+			} else {
+				$parent = wp_get_theme()->parent();
+				// get parent version
+				if ( ! empty( $parent) ) {
+					$current_theme_version = $parent->Version;
+				}
+			}
+			$required_theme_version = '3.3.3';
+
+
 			require_once OE_PATH . '/includes/panel/theme-panel.php';
 			require_once OE_PATH . '/includes/panel/integrations-tab.php';
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
@@ -126,7 +139,10 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
-			require_once OE_PATH . '/includes/compatibility/ocean.php';
+
+			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '>' ) ) {
+				require_once OE_PATH . '/includes/compatibility/ocean.php';
+			}
 
 
 			// Outputs custom JS to the footer
