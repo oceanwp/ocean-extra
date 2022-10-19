@@ -113,13 +113,13 @@ final class Ocean_Extra {
 
 		// Menu icons
 		$theme = wp_get_theme();
-			if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
 
 			if ( get_template_directory() == get_stylesheet_directory() ) {
 				$current_theme_version  = theme_version();
 			} else {
-				$parent = wp_get_theme()->parent();
-				// get parent version
+				$parent = wp_get_theme()->parent(); 
+				// get parent version 
 				if ( ! empty( $parent) ) {
 					$current_theme_version = $parent->Version;
 				}

@@ -21,6 +21,7 @@ class Ocean_Admin_Bar {
 		}
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_css' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
 		add_action( 'admin_bar_menu', array( $this, 'register' ), 999 );
 	}
 
@@ -43,7 +44,7 @@ class Ocean_Admin_Bar {
 	 * Add "Ocean" item to new-content admin bar menu item
 	 */
 	public function admin_bar( $wp_admin_bar ) {
-		if ( ! is_admin_bar_showing() || ! wpforms_current_user_can( 'create_forms' ) ) {
+		if ( ! is_admin_bar_showing() ) {
 			return;
 		}
 

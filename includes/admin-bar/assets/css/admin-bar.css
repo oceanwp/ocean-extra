@@ -21,6 +21,7 @@
 .wp-ui-notification.ocean-menu-notification-counter,
 .wp-ui-notification.ocean-menu-notification-indicator {
   background-color: #19bbf1 !important;
+  color: #ffffff;
 }
 
 #wpadminbar .ocean-menu-notification-indicator:after {
