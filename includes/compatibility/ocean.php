@@ -261,7 +261,7 @@ if ( ! function_exists( 'oceanwp_webfonts_local_font_url' ) ) {
 add_action( 'admin_bar_init', 'ocean_save_customizer_css_in_file', 9999 );
 if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 	function ocean_save_customizer_css_in_file( $output = null ) {
-
+ 
 		// If Custom File is not selected.
 		if ( 'file' !== get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
 			return;

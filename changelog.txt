@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.0.5 =
+- Fixed: Customizer Styling Import: Potential vulnerability patch: WPScan report #5596728.
+
 = 2.0.4 =
 - Fixed: Fatal error: Cannot redeclare oceanwp_webfonts_enqueue()
 
