@@ -261,7 +261,7 @@ if ( ! function_exists( 'oceanwp_webfonts_local_font_url' ) ) {
 add_action( 'admin_bar_init', 'ocean_save_customizer_css_in_file', 9999 );
 if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 	function ocean_save_customizer_css_in_file( $output = null ) {
- 
+
 		// If Custom File is not selected.
 		if ( 'file' !== get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
 			return;
@@ -276,17 +276,16 @@ if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 		// Minified the Custom CSS.
 		$output .= oceanwp_minify_css( $output_custom_css );
 
-		// We will probably need to load this file.
-		require_once ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'file.php';
-
 		$upload_dir = wp_upload_dir(); // Grab uploads folder array.
 		$dir        = trailingslashit( $upload_dir['basedir'] ) . 'oceanwp' . DIRECTORY_SEPARATOR; // Set storage directory path.
-
-		if ( ! file_exists( untrailingslashit( $dir ) ) ) {
-			if ( mkdir( untrailingslashit( $dir ), FS_CHMOD_DIR ) ) {
-				if ( file_put_contents( $dir . 'custom-style.css', $output ) ) {
-					chmod( $filename, 0644 );
-				}
+		$untraling_dir = untrailingslashit( $dir );
+		if ( ! file_exists( $untraling_dir ) ) {
+			mkdir( $untraling_dir, FS_CHMOD_DIR );
+		}
+		if( file_exists( $untraling_dir ) ) {
+			$filename = $dir . 'custom-style.css';
+			if ( file_put_contents( $filename, $output ) ) {
+				chmod( $filename, 0644 );
 			}
 		}
 	}
