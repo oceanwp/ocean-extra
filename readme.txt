@@ -139,9 +139,17 @@ This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
 
 == Screenshots ==
 
-1. The meta boxes.
-2. Customizer panels.
-3. Custom CSS.
+1. The OceanWP meta box Settings allow you full control over every page and post.
+2. The OceanWP Panel homepage overview.
+3. The OceanWP Panel Customizer options and controls.
+4. The OceanWP Panel website template import feature overview - part I.
+5. The OceanWP Panel website template import feature overview - part II.
+6. The OceanWP Panel, Admin Settings overview.
+7. The OceanWP Panel, Integration options overview.
+8. The OceanWP Panel, Help section overview.
+9. My Library, custom template support for header, footer, etc.
+10. Various custom WordPress widgets.
+11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
 
