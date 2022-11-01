@@ -2,7 +2,7 @@
 /**
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
- * Description:         Add extra features like widgets, metaboxes, import/export and a panel to activate the premium extensions.
+ * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
  * Version:             2.0.6
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/

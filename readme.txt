@@ -10,22 +10,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Ocean Extra adds extra features and flexibility to the [OceanWP](https://oceanwp.org/) theme for a turbocharged experience. 
+Ocean Extra adds extra features and flexibility to the [OceanWP](https://oceanwp.org/) theme for a turbocharged experience.
 
-Control every aspect of your website with ease, create any type of a professional looking website without any coding knowledge, save effort and time. Things get even better. Ocean Extra also offers you full control, and allows you to disable or enable all features and options.
+Build any type of a professional looking website without any coding knowledge and by controlling every aspect of it with ease. With Ocean Extra you're in command and have full authority over available features and options.
 
 👉 [Ocean Core Extensions Bundle](https://oceanwp.org/core-extensions-bundle/)
 👉 [Ocean Full Website Templates](https://oceanwp.org/demos/)
 📘 [Documentation](https://docs.oceanwp.org/)
 🎬 [Video Tutorials](https://www.youtube.com/@OceanWP)
 
-💙 Join the official OceanWP Facebook community and always be up to speed with the latest news.
+💙 Join the [official OceanWP Facebook community](https://www.facebook.com/groups/oceanwptheme) and always be up to speed with the latest news.
 
 Check out the video when Ocean Extra's Theme Panel received a makeover to become OceanWP Panel and an overview of its capabilities [youtube https://www.youtube.com/watch?v=twUc0rHnBo0]
 
-Ocean Extra is an entirely free WordPress plugin that enriches your website building experience by adding extra features to the OceanWP free theme. Save time, effort and the need for additional plugins or custom codes.
+Ocean Extra is a 100% free WordPress plugin that enriches your website building experience by adding extra features to the OceanWP free theme. Save time and effort, and reduce the need for additional plugins or custom codes.
 
-Everyone deserves a website with professinal features, and so do you.
+Everyone deserves a polished website with expert features, and so do you.
 
 🔥 [Check out the Premium Features](https://oceanwp.org/core-extensions-bundle/) for additional power, energy and ability.
 
@@ -50,7 +50,7 @@ Features listed below are just a fraction of the most significant Ocean Extra po
 
 = HOST GOOGLE FONTS LOCALLY =
 
-1-click solution, no font upload required. Any Google font you apply from the Customizer will automatically load from your site, making your website faster and GDPR friendly in instant. This feature also supports the Elementor page builder and Google fonts applied through it.
+1-click solution, no font upload required. Any Google font you apply from the Customizer will load from your site automatically, making your website faster and GDPR friendly in an instant. This feature also supports the Elementor page builder and Google fonts applied through it.
 
 = CUSTOM TEMPLATES SUPPORT =
 
@@ -104,9 +104,9 @@ The Extra Settings panel allows you to disable or enable Ocean Extra plugin comp
 
 The Admin Settings panel offers control over additional features, like regenerating the local Google fonts CSS file, disabling the "edit" link on post archive pages which is visible to admins, and more.
 
-= PREMIUM FEATURES =
+= PREMIUM OCEAN FEATURES =
 
-Some of the most outsanding premium features controled by the Ocean Extra's OceanWP panel include:
+Some of the most outsanding premium features controled by the Ocean Extra's OceanWP Panel include:
 * Ocean Images: Import royalty free images and icons directly to your Media Library, a feature that is included in the Ocean Core Extensions Bundle and the Ocean Pro Demos plugin.
 * Full Website Templates: Import any of the 220+ full website templates (demos, site kits) to kick start your website fast.
 * Elementor Widgets: Disable or enable any of the widgets that come with the Ocean Elementor Widgets plugin.
@@ -136,6 +136,38 @@ Some of the most outsanding premium features controled by the Ocean Extra's Ocea
 = I installed the plugin but it does not work =
 
 This plugin will only function with the [OceanWP](https://oceanwp.org/) theme.
+
+= Is Ocean Extra free? =
+
+Ocean Extra is a 100% free WordPress plugin on full power mode and without any limitations on its features.
+Some of the additional and premium features are controled through the OceanWP Panel which is an Ocean Extra feature, but there is no premium version of the Ocean Extra plugin itself.
+
+= Do I need to get the premium license to import freemium demos? =
+
+Some features or content parts have been created using [Ocean premium extensions](https://oceanwp.org/core-extensions-bundle/).
+Unless you have a premium license, those features or content parts will not be displayed or enabled on your website.
+
+However, you can still import any of the freemium Ocean demos / website templates and recreate those features using any other plugin of your choice.
+
+= Do you use third-party premium plugins in your demos? =
+
+No. Both freemium and premium Ocean demos / website templates make use only of the free version of third-party plugins.
+
+= Where can I get support? =
+
+You can post your questions on the [plugin support forum](https://wordpress.org/support/plugin/ocean-extra/) or the [OceanWP support forum](https://wordpress.org/support/topic/ocean-popup-login-error/) which is mostly used by all our users.
+If you have a premium license, you can also submit a [customer support ticket](https://oceanwp.org/support/).
+
+= How do I know it's safe to update the plugin? =
+
+We do our best to test all changes before the official release. However, we will never be able to replicate all website conditions.
+No matter what plugins you are running, it's always recommended to test an update on a staging or test environment.
+
+You can also check [Support Notes and User Feedback](https://docs.oceanwp.org/article/776-known-bugs-issues) before updating your plugin.
+
+= Where can I report problems or bugs? =
+
+You can report problems on [this support forum](https://wordpress.org/support/plugin/ocean-extra/) or on [GitHub](https://github.com/oceanwp/ocean-extra/issues).
 
 == Screenshots ==
 
