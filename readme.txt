@@ -39,6 +39,7 @@ Features listed below are just a fraction of the most significant Ocean Extra po
 * WordPress widgets
 * Mega Menu
 * Menu icons
+* Various shortcodes
 * Customizer sections control
 * Customizer search
 * Customizer reset
@@ -75,6 +76,10 @@ Turn your website navigation into a mega menu with a simple setup directly throu
 = MENU ICONS =
 
 Add icons to some or all of your menu items. Several icon libraries are supported, like Font Awesome, Simple Line Icons, Dashicons and more.
+
+= VARIOUS SHORTCODES =
+
+Use [OceanWP shortcodes](https://docs.oceanwp.org/category/369-shortcodes) to display dynamic content on your website, such as: current year, current user, login / logout link, breadcrumbs, WooCommerce cart and more.
 
 = CUSTOMIZER SECTIONS CONTROL =
 
