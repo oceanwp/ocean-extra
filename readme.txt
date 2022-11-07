@@ -190,8 +190,8 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.0.6 =
-- NEW: Typography: Option to choose font format for local Google font feature (Customize > Typography > General).
+= 2.0.6 - NOV 9 2022 =
+- NEW: Typography: Option to choose font format for local Google fonts feature (Customize > Typography > General).
 - Fixed: Custom CSS: Custom Styling Location option doesn't store custom css.
 - Updated: Plugin description.
 
