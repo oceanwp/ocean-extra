@@ -171,10 +171,28 @@ if ( ! function_exists( 'ocean_get_google_font_css' ) ) {
 		if ( strpos( $url, 'https:' ) === false && strpos( $url, 'http:' ) === false ) {
 			$url = 'https:' . $url;
 		}
+
+		$font_format = get_theme_mod( 'ocean_local_google_font_format', 'ttf' );
+		switch ( $font_format ) {
+			case 'ttf':
+				$user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 6.1; et; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9';
+				break;
+			case 'woff':
+				$user_agent = 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0';
+				break;
+			case 'woff2':
+				$user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36';
+				break;
+			default:
+				$user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 6.1; et; rv:1.9.1.9) Gecko/20100315 Firefox/3.5.9';
+			break;
+		}
+
 		$request = wp_safe_remote_get(
 			$url,
 			array(
 				'sslverify' => false,
+				'user-agent' => $user_agent,
 			)
 		);
 		if ( is_wp_error( $request ) ) {
@@ -242,7 +260,6 @@ if ( ! function_exists( 'oceanwp_webfonts_local_font_url' ) ) {
 // Setup theme => Generate the custom CSS file.
 add_action( 'admin_bar_init', 'ocean_save_customizer_css_in_file', 9999 );
 if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
-
 	function ocean_save_customizer_css_in_file( $output = null ) {
 
 		// If Custom File is not selected.
@@ -259,17 +276,16 @@ if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 		// Minified the Custom CSS.
 		$output .= oceanwp_minify_css( $output_custom_css );
 
-		// We will probably need to load this file.
-		require_once ABSPATH . 'wp-admin' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'file.php';
-
 		$upload_dir = wp_upload_dir(); // Grab uploads folder array.
 		$dir        = trailingslashit( $upload_dir['basedir'] ) . 'oceanwp' . DIRECTORY_SEPARATOR; // Set storage directory path.
-
-		if ( ! file_exists( untrailingslashit( $dir ) ) ) {
-			if ( mkdir( untrailingslashit( $dir ), FS_CHMOD_DIR ) ) {
-				if ( file_put_contents( $dir . 'custom-style.css', $output ) ) {
-					chmod( $filename, 0644 );
-				}
+		$untraling_dir = untrailingslashit( $dir );
+		if ( ! file_exists( $untraling_dir ) ) {
+			mkdir( $untraling_dir, FS_CHMOD_DIR );
+		}
+		if( file_exists( $untraling_dir ) ) {
+			$filename = $dir . 'custom-style.css';
+			if ( file_put_contents( $filename, $output ) ) {
+				chmod( $filename, 0644 );
 			}
 		}
 	}

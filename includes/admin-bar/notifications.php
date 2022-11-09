@@ -124,7 +124,7 @@ class Ocean_Notifications {
 	public function get() {
 		$option = $this->get_option();
 
-		if (empty($option['update']) || time() > $option['update'] + DAY_IN_SECONDS) {
+		if ( empty( $option['update'] ) || time() > $option['update'] + DAY_IN_SECONDS ) {
 			if ( ! wp_next_scheduled( 'ocean_admin_notifications_update' ) ) {
 				wp_schedule_single_event( time() + 60, 'ocean_admin_notifications_update' );
 			}

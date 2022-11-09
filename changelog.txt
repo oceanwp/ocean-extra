@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.0.6 - NOV 9 2022 =
+- NEW: Typography: Option to choose font format for local Google fonts feature (Customize > Typography > General).
+- Fixed: Custom CSS: Custom Styling Location option doesn't store custom css.
+- Updated: Plugin description.
+
 = 2.0.5 =
 - Fixed: Customizer Styling Import: Potential vulnerability patch: WPScan report #5596728.
 
