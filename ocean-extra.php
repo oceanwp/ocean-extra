@@ -144,6 +144,7 @@ final class Ocean_Extra {
 				require_once OE_PATH . '/includes/compatibility/ocean.php';
 			}
 
+			require_once OE_PATH . '/includes/preloader/preloader.php';
 
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );
