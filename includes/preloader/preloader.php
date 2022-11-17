@@ -104,8 +104,11 @@ class Ocean_Preloader {
 			)
 		);
 
+        // Check if page is Elementor page.
+        $elementor = get_post_meta( $this->template_id, '_elementor_edit_mode', true );
+
         // Elementor css load
-        if ( true === get_theme_mod( 'ocean_preloader_elementor_fouc', true ) ) {
+        if ( true === get_theme_mod( 'ocean_preloader_elementor_fouc', true ) && $elementor ) {
             if ( ! class_exists( '\Elementor\Core\Files\CSS\Post' ) ) {
                 return;
             }
@@ -154,8 +157,8 @@ class Ocean_Preloader {
 
         $content = get_theme_mod( 'ocean_preloader_content', 'Site is Loading, Please wait...' );
 
-        // Check if page is Elementor page
-        $elementor  = get_post_meta( $this->template_id, '_elementor_edit_mode', true );
+        // Check if page is Elementor page.
+        $elementor = get_post_meta( $this->template_id, '_elementor_edit_mode', true );
 
         // Get content
         if ( ! empty( $this->template_id ) ) {
