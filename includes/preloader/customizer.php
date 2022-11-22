@@ -55,8 +55,22 @@ class Ocean_Preloader_Customizer {
         if ( $this->active ) {
             add_filter( 'ocean_head_css', array( $this, 'head_css' ), 15 );
             add_filter( 'ocean_typography_settings', array( $this, 'typography_settings' ), 15 );
+            add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
         }
     }
+
+    /**
+	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 */
+	public function customize_preview_js() {
+		wp_enqueue_script(
+			'preloader-customizer',
+			OE_URL . 'includes/preloader/assets/js/customize-preview.min.js',
+			array( 'customize-preview' ),
+			OE_VERSION,
+			true
+		);
+	}
 
     /**
 	 * Customizer options
@@ -89,26 +103,6 @@ class Ocean_Preloader_Customizer {
             'type' 					=> 'checkbox',
             'section'  				=> $section,
             'priority' 				=> 10,
-        ) ) );
-
-        /**
-         * Preloader Type
-         */
-        $wp_customize->add_setting( 'ocean_preloader_type', array(
-            'default'           	=> '0',
-            'sanitize_callback' 	=> 'oceanwp_sanitize_select',
-        ) );
-
-        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_preloader_type', array(
-            'label'	   				=> esc_html__( 'Preloader Type', 'ocean-extra' ),
-            'type' 					=> 'select',
-            'section'  				=> $section,
-            'priority' 				=> 10,
-            'active_callback' 		=> 'oe_cac_has_preloader',
-            'choices' 				=> array(
-                'default' => esc_html__( 'Default', 'ocean-extra' ),
-                'custom'  => esc_html__( 'Custom', 'ocean-extra' ),
-            ),
         ) ) );
 
         /**
@@ -219,6 +213,7 @@ class Ocean_Preloader_Customizer {
 		$wp_customize->add_setting(
 			'ocean_preloader_image_size',
 			array(
+                'transport'         => 'postMessage',
 				'default'           => '100',
 				'sanitize_callback' => false,
 			)

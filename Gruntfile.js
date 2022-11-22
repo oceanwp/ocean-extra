@@ -28,6 +28,7 @@ module.exports = function (grunt) {
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
                     "includes/shortcodes/js/shortcode.min.js": "includes/shortcodes/js/shortcode.js",
                     "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
+                    "includes/preloader/assets/js/customize-preview.min.js": "includes/preloader/assets/js/customize-preview.js",
                 },
             },
         },
