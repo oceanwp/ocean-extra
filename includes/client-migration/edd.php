@@ -100,6 +100,14 @@
             ),
         );
 
+        public static $separate_addons = array(
+            'Ocean_eCommerce'         => array(
+                'name'         => 'Ocean Treasure Box',
+                'fs_id'        => '11449',
+                'fs_shortcode' => 'oet_fs',
+            ),
+        );
+
         private $_is_valid;
         private $_is_bundle;
         private $_addon_class;
