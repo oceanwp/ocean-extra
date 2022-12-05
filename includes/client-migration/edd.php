@@ -106,6 +106,11 @@
                 'fs_id'        => '11449',
                 'fs_shortcode' => 'oet_fs',
             ),
+            'Ocean_Gutenberg_Blocks'         => array(
+                'name'         => 'Ocean Gutenberg Blocks',
+                'fs_id'        => '9081',
+                'fs_shortcode' => 'ocean_gutenberg_blocks_fs',
+            ),
         );
 
         private $_is_valid;
