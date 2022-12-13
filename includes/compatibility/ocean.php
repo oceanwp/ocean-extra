@@ -188,17 +188,25 @@ if ( ! function_exists( 'ocean_get_google_font_css' ) ) {
 			break;
 		}
 
-		$request = wp_safe_remote_get(
-			$url,
-			array(
-				'sslverify' => false,
-				'user-agent' => $user_agent,
-			)
-		);
-		if ( is_wp_error( $request ) ) {
-			return '';
+		$transient_name = 'gf_' . md5( $url ) . '_' . $font_format;
+		$cached_value = get_transient( $transient_name );
+		if( false === $cached_value ) {
+			$request = wp_safe_remote_get(
+				$url,
+				array(
+					'sslverify' => false,
+					'user-agent' => $user_agent,
+				)
+			);
+			if ( is_wp_error( $request ) ) {
+				return '';
+			}
+			$result = wp_remote_retrieve_body( $request );
+			set_transient( $transient_name, $result , HOUR_IN_SECONDS * 24 );
+		} else {
+			$result = $cached_value;
 		}
-		$result = wp_remote_retrieve_body( $request );
+
 		return $result;
 	}
 }
