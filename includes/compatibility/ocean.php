@@ -270,6 +270,10 @@ add_action( 'admin_bar_init', 'ocean_save_customizer_css_in_file', 9999 );
 if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 	function ocean_save_customizer_css_in_file( $output = null ) {
 
+		if ( ! defined( 'FS_CHMOD_DIR' ) ) {
+			define( 'FS_CHMOD_DIR', ( fileperms( ABSPATH ) & 0777 | 0755 ) );
+		}
+
 		// If Custom File is not selected.
 		if ( 'file' !== get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {
 			return;
