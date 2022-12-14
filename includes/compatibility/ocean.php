@@ -1,6 +1,24 @@
 <?php
 
-// Control Elementor google fonts
+/**
+ * Control Preload google fonts.
+ */
+add_filter( 'style_loader_tag', 'oceanwp_preload_local_webfonts', 10, 2 );
+if ( ! function_exists( 'oceanwp_preload_local_webfonts' ) ) {
+	function oceanwp_preload_local_webfonts( $html, $handle ) {
+		if ( strpos( $handle, 'oceanwp-google-font' ) === false && strpos( $handle, 'google-fonts-' ) === false ) {
+			return $html;
+		}
+		if ( true != get_theme_mod( 'ocean_preload_local_google_font', false ) ) {
+			return $html;
+		}
+		return str_replace( "rel='stylesheet'", "rel='preload' as='style' onload='this.rel=\"stylesheet\"'", $html );;
+	}
+}
+
+/**
+ * Control Elementor google fonts.
+ */
 add_filter( 'style_loader_src', 'oceanwp_local_elementor_webfonts_enqueue', 20, 2 );
 if ( ! function_exists( 'oceanwp_local_elementor_webfonts_enqueue' ) ) {
 	function oceanwp_local_elementor_webfonts_enqueue( $src, $handle ) {
