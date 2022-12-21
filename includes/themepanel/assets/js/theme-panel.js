@@ -43,6 +43,7 @@ jQuery(document).ready(function ($) {
                 }
             }
         });
+        jQuery('#owp_adobe_fonts_integration').trigger('change');
     });
 
     $(document.body).on('submit', '#ocean-customizer-control form', function (event) {
@@ -53,8 +54,7 @@ jQuery(document).ready(function ($) {
     $(document.body).on('submit', 'form.save_panel_settings', function (event) {
         event.preventDefault();
         runSavingPanelSettings($(this));
-    });
-
+    });    
 
     $(document.body).on('submit', 'form.integration-settings', function (event) {
         event.preventDefault();
@@ -85,6 +85,15 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
         var optionVal = $(this).prop('checked') ? 'yes' : 'no';
         runSaveSingleOption('oe_library_active_status', optionVal);
+    });
+    
+    $(document.body).on('change', '#owp_adobe_fonts_integration', function (event) {
+        event.preventDefault();
+        if( $(this).find('option:selected').val() === '1' ) {
+            $('[data-for="owp_adobe_fonts"]').show();
+        } else {
+            $('[data-for="owp_adobe_fonts"]').hide();
+        }
     });
     
     $(document.body).on('change', '#oceanwp-switch-notification-disable', function (event) {
@@ -254,13 +263,14 @@ jQuery(document).ready(function ($) {
     }
 
     function runSaveIntegrationSettings($form) {
+        const settingsFor = $form.data('settings-for');
         $.ajax({
             url: ajaxurl,
             method: "POST",
             data: {
                 form_fields: $form.serialize(),
                 action: 'oceanwp_cp_save_integrations_settings',
-                settings_for: $form.data('settings-for'),
+                settings_for: settingsFor,
                 nonce: ExtraThemePanelOptions.nonce
             },
             beforeSend: function () {
@@ -268,6 +278,15 @@ jQuery(document).ready(function ($) {
             },
             success: function (data) {
                 window['showNotify'](data.success, data.data.message);
+                if(settingsFor === 'adobe_fonts') {
+                    if( data.success ) {
+                        $('.adobe.adobe-ok').removeClass('hidden');
+                        $('.adobe.adobe-error').addClass('hidden');
+                    } else {
+                        $('.adobe.adobe-ok').addClass('hidden');
+                        $('.adobe.adobe-error').removeClass('hidden');
+                    }
+                }
             },
             error: function (xhr, status, error) {
             },

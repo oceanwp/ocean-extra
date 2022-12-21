@@ -53,6 +53,7 @@ class Ocean_Extra_New_Theme_Panel {
 		add_filter( 'oceanwp_theme_panel_pane_customizer_import_export', array( $this, 'customizer_import_export_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_customizer_controls', array( $this, 'customizer_controls_part' ) );
 
+		add_filter( 'oceanwp_theme_panel_pane_extra_settings_adobe_fonts', array( $this, 'extra_settings_adobe_fonts_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_extra_settings_metaboxes', array( $this, 'extra_settings_metaboxes_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_extra_settings_widgets', array( $this, 'extra_settings_widgets_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_extra_settings_my_library', array( $this, 'extra_settings_my_library_part' ) );
@@ -91,7 +92,7 @@ class Ocean_Extra_New_Theme_Panel {
 		}
 
 		// JS
-		wp_enqueue_script( 'oceanwp-scripts-themepanel', plugins_url( '/assets/js/theme-panel.min.js', __FILE__ ), OE_VERSION, true );
+		wp_enqueue_script( 'oceanwp-scripts-themepanel', plugins_url( '/assets/js/theme-panel.js', __FILE__ ), OE_VERSION, true );
 
 		wp_localize_script(
 			'oceanwp-scripts-themepanel',
@@ -211,6 +212,17 @@ class Ocean_Extra_New_Theme_Panel {
 				if ( isset( $params['owp_integrations'][ $key ] ) ) {
 					update_option( 'owp_' . $key, sanitize_text_field( wp_unslash( $params['owp_integrations'][ $key ] ) ) );
 				}
+			}
+		}
+
+		if( $_POST['settings_for'] == 'adobe_fonts' && $params['owp_integrations'][ 'adobe_fonts_integration' ] == '1' ) {
+			$check_project_id_result = OceanWP_Adobe_Font()->check_project_id();
+			if( $check_project_id_result['status'] !== 'success' ) {
+				wp_send_json_error(
+					array(
+						'message' => esc_html__( 'Project ID is wrong.', 'ocean-extra' ),
+					)
+				);	
 			}
 		}
 
@@ -572,6 +584,9 @@ class Ocean_Extra_New_Theme_Panel {
 		return OE_PATH . 'includes/themepanel/views/panes/customizer-controls.php';
 	}
 
+	function extra_settings_adobe_fonts_part() {
+		return OE_PATH . 'includes/themepanel/views/panes/extra-settings-adobe-fonts.php';
+	}
 	function extra_settings_metaboxes_part() {
 		return OE_PATH . 'includes/themepanel/views/panes/extra-settings-metaboxes.php';
 	}
@@ -647,6 +662,17 @@ class Ocean_Extra_New_Theme_Panel {
 		$settings = array(
 			'mailchimp_api_key' => get_option( 'owp_mailchimp_api_key' ),
 			'mailchimp_list_id' => get_option( 'owp_mailchimp_list_id' ),
+		);
+
+		return apply_filters( 'ocean_integrations_settings', $settings );
+	}
+
+	public static function get_adobe_fonts_settings() {
+		$settings = array(
+			'adobe_fonts_integration' => get_option( 'owp_adobe_fonts_integration' ),
+			'adobe_fonts_integration_project_id' => get_option( 'owp_adobe_fonts_integration_project_id' ),
+			'adobe_fonts_integration_enable_customizer' => get_option( 'owp_adobe_fonts_integration_enable_customizer' ),
+			'adobe_fonts_integration_enable_elementor' => get_option( 'owp_adobe_fonts_integration_enable_elementor' ),
 		);
 
 		return apply_filters( 'ocean_integrations_settings', $settings );
