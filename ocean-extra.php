@@ -329,6 +329,35 @@ final class Ocean_Extra {
 		// Move custom css setting
 		$wp_customize->get_control( 'custom_css' )->section = 'ocean_custom_code_panel';
 
+		/**
+		 * Widgets CSS
+		 */
+		$wp_customize->add_setting(
+			'ocean_performance_widgets_css',
+			array(
+				'transport'         => 'postMessage',
+				'default'           => 'enabled',
+				'sanitize_callback' => 'oceanwp_sanitize_select',
+			)
+		);
+
+		$wp_customize->add_control(
+			new OceanWP_Customizer_Buttonset_Control(
+				$wp_customize,
+				'ocean_performance_widgets_css',
+				array(
+					'label'       => esc_html__( 'Widgets CSS', 'oceanwp' ),
+					'description' => esc_html__( 'This script is responsible for the style of widgets.', 'ocean-extra' ),
+					'section'     => 'ocean_general_performance_section',
+					'priority'    => 10,
+					'choices'     => array(
+						'disabled' => esc_html__( 'Disabled', 'oceanwp' ),
+						'enabled'  => esc_html__( 'Enabled', 'oceanwp' ),
+					),
+				)
+			)
+		);
+
 	}
 
 	/**
@@ -610,6 +639,10 @@ final class Ocean_Extra {
 	 * @since   1.0.0
 	 */
 	public function scripts() {
+
+		if ( 'disabled' === get_theme_mod( 'ocean_performance_widgets_css', 'enabled' ) ) {
+			return;
+		}
 
 		// Load main stylesheet
 		wp_enqueue_style( 'oe-widgets-style', plugins_url( '/assets/css/widgets.css', __FILE__ ) );

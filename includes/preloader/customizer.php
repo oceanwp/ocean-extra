@@ -315,7 +315,7 @@ class Ocean_Preloader_Customizer {
 
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ocean_preloader_elementor_fouc', array(
             'label'	   				=> esc_html__( 'Elementor Flickers/FOUC', 'ocean-extra' ),
-            'description'	 		=> esc_html__( 'Experimental - dealing with Elementor Flickers/FOUC isue. This maybe/maybe not resolve the issue.', 'ocean-extra' ),
+            'description'	 		=> esc_html__( 'Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point.', 'ocean-extra' ),
             'type' 					=> 'checkbox',
             'section'  				=> $section,
             'priority' 				=> 10,
