@@ -273,6 +273,7 @@ class Ocean_Preloader_Customizer {
 
         $wp_customize->add_control( new OceanWP_Customizer_Slider_Control( $wp_customize, 'ocean_preloader_container_width', array(
             'label' 			=> esc_html__( 'Container Width (px)', 'ocean-extra' ),
+            'description'	    => esc_html__( 'Set "0" to unset or set your custom container width.', 'ocean-extra' ),
             'section'  			=> $section,
             'settings' => array(
                 'desktop' 	=> 'ocean_preloader_container_width',
