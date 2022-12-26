@@ -614,8 +614,10 @@ final class Ocean_Extra {
 		// Load main stylesheet
 
 		if ( get_theme_mod( 'ocean_load_widgets_stylesheet', 'enabled' ) === 'enabled' ) {
-			wp_enqueue_style( 'oe-widgets-style', plugins_url( '/assets/css/widgets.css', __FILE__ ) );
+			return;
 		}
+
+		wp_enqueue_style( 'oe-widgets-style', plugins_url( '/assets/css/widgets.css', __FILE__ ) );
 
 		// If rtl
 		if ( is_RTL() ) {
