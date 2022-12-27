@@ -25,6 +25,8 @@ module.exports = function (grunt) {
                     "includes/widgets/js/mailchimp.min.js": "includes/widgets/js/mailchimp.js",
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
                     "includes/shortcodes/js/shortcode.min.js": "includes/shortcodes/js/shortcode.js",
+                    "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
+                    "includes/preloader/assets/js/customize-preview.min.js": "includes/preloader/assets/js/customize-preview.js",
                 },
             },
         },
@@ -52,6 +54,7 @@ module.exports = function (grunt) {
                     "includes/wizard/assets/css/rtl.min.css": "includes/wizard/assets/css/rtl.css",
                     "includes/metabox/controls/assets/css/butterbean.min.css":
                         "includes/metabox/controls/assets/css/butterbean.css",
+                    "includes/preloader/assets/css/preloader.min.css": "includes/preloader/assets/css/preloader.css",
                 },
             },
         },
@@ -66,6 +69,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     "assets/css/widgets.css": "sass/widgets.scss",
+                    "includes/preloader/assets/css/preloader.css": "includes/preloader/assets/css/preloader.scss",
                 },
             },
         },
@@ -78,6 +82,7 @@ module.exports = function (grunt) {
             main: {
                 files: {
                     "assets/css/widgets.css": "assets/css/widgets.css",
+                    "includes/preloader/assets/css/preloader.css": "includes/preloader/assets/css/preloader.css",
                 },
             },
         },
