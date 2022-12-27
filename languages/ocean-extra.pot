@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.0.6\n"
+"Project-Id-Version: Ocean Extra 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-26T09:39:23+00:00\n"
+"POT-Creation-Date: 2022-12-26T09:45:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ocean-extra\n"
@@ -458,8 +458,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1724
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:611
 #: includes/menu-icons/includes/library/icon-selector/includes/types/image.php:39
-#: includes/preloader/customizer.php:144
-#: includes/preloader/customizer.php:187
 msgid "Image"
 msgstr ""
 
@@ -1406,7 +1404,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1848
 #: includes/metabox/metabox.php:1873
 #: includes/metabox/metabox.php:1886
-#: includes/preloader/customizer.php:123
 #: includes/widgets/contact-info.php:341
 #: includes/widgets/contact-info.php:382
 #: includes/widgets/custom-menu.php:366
@@ -2744,7 +2741,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:650
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:486
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:817
-#: includes/preloader/customizer.php:171
 msgid "Heart"
 msgstr ""
 
@@ -3238,7 +3234,6 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/customizer.php:166
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:189
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:789
-#: includes/preloader/customizer.php:166
 msgid "Circle"
 msgstr ""
 
@@ -6630,7 +6625,6 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
 #: build/ocean-extra/includes/preloader/customizer.php:172
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
-#: includes/preloader/customizer.php:172
 msgid "Ellipsis"
 msgstr ""
 
@@ -7235,7 +7229,6 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
 #: build/ocean-extra/includes/preloader/customizer.php:146
 #: includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
-#: includes/preloader/customizer.php:146
 msgid "SVG"
 msgstr ""
 
@@ -7249,7 +7242,6 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/helper.php:22
 #: includes/menu-icons/includes/picker.php:78
 #: includes/menu-icons/includes/settings.php:594
-#: includes/preloader/helper.php:22
 msgid "Select"
 msgstr ""
 
@@ -7817,7 +7809,6 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/customizer.php:301
 #: includes/metabox/metabox.php:801
 #: includes/metabox/metabox.php:1662
-#: includes/preloader/customizer.php:301
 msgid "Select Template"
 msgstr ""
 
@@ -7834,7 +7825,6 @@ msgstr ""
 #: build/ocean-extra/includes/wizard/wizard.php:718
 #: includes/metabox/metabox.php:817
 #: includes/metabox/metabox.php:827
-#: includes/preloader/customizer.php:145
 #: includes/wizard/wizard.php:718
 msgid "Logo"
 msgstr ""
@@ -9413,28 +9403,28 @@ msgstr ""
 #: build/ocean-extra/includes/panel/import-export.php:162
 #: build/ocean-extra/includes/themepanel/theme-panel.php:398
 #: includes/panel/import-export.php:162
-#: includes/themepanel/theme-panel.php:398
+#: includes/themepanel/theme-panel.php:410
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:206
 #: build/ocean-extra/includes/themepanel/theme-panel.php:436
 #: includes/panel/import-export.php:206
-#: includes/themepanel/theme-panel.php:436
+#: includes/themepanel/theme-panel.php:448
 msgid "Settings imported successfully."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:214
 #: build/ocean-extra/includes/themepanel/theme-panel.php:443
 #: includes/panel/import-export.php:214
-#: includes/themepanel/theme-panel.php:443
+#: includes/themepanel/theme-panel.php:455
 msgid "Invalid Import Data."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:223
 #: build/ocean-extra/includes/themepanel/theme-panel.php:450
 #: includes/panel/import-export.php:223
-#: includes/themepanel/theme-panel.php:450
+#: includes/themepanel/theme-panel.php:462
 msgid "No import data found."
 msgstr ""
 
@@ -10319,7 +10309,6 @@ msgstr ""
 #: build/ocean-extra/includes/panel/scripts.php:538
 #: build/ocean-extra/includes/preloader/customizer.php:143
 #: includes/panel/scripts.php:538
-#: includes/preloader/customizer.php:143
 msgid "CSS"
 msgstr ""
 
@@ -10386,63 +10375,63 @@ msgstr ""
 #: build/ocean-extra/includes/panel/theme-panel.php:162
 #: build/ocean-extra/includes/themepanel/theme-panel.php:484
 #: includes/panel/theme-panel.php:162
-#: includes/themepanel/theme-panel.php:484
+#: includes/themepanel/theme-panel.php:496
 msgid "General Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:165
 #: build/ocean-extra/includes/themepanel/theme-panel.php:487
 #: includes/panel/theme-panel.php:165
-#: includes/themepanel/theme-panel.php:487
+#: includes/themepanel/theme-panel.php:499
 msgid "Typography Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:168
 #: build/ocean-extra/includes/themepanel/theme-panel.php:490
 #: includes/panel/theme-panel.php:168
-#: includes/themepanel/theme-panel.php:490
+#: includes/themepanel/theme-panel.php:502
 msgid "Top Bar Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:171
 #: build/ocean-extra/includes/themepanel/theme-panel.php:493
 #: includes/panel/theme-panel.php:171
-#: includes/themepanel/theme-panel.php:493
+#: includes/themepanel/theme-panel.php:505
 msgid "Header Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:174
 #: build/ocean-extra/includes/themepanel/theme-panel.php:496
 #: includes/panel/theme-panel.php:174
-#: includes/themepanel/theme-panel.php:496
+#: includes/themepanel/theme-panel.php:508
 msgid "Blog Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:177
 #: build/ocean-extra/includes/themepanel/theme-panel.php:499
 #: includes/panel/theme-panel.php:177
-#: includes/themepanel/theme-panel.php:499
+#: includes/themepanel/theme-panel.php:511
 msgid "Sidebar Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:180
 #: build/ocean-extra/includes/themepanel/theme-panel.php:502
 #: includes/panel/theme-panel.php:180
-#: includes/themepanel/theme-panel.php:502
+#: includes/themepanel/theme-panel.php:514
 msgid "Footer Widgets Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:183
 #: build/ocean-extra/includes/themepanel/theme-panel.php:505
 #: includes/panel/theme-panel.php:183
-#: includes/themepanel/theme-panel.php:505
+#: includes/themepanel/theme-panel.php:517
 msgid "Footer Bottom Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:186
 #: build/ocean-extra/includes/themepanel/theme-panel.php:508
 #: includes/panel/theme-panel.php:186
-#: includes/themepanel/theme-panel.php:508
+#: includes/themepanel/theme-panel.php:520
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
@@ -10548,87 +10537,70 @@ msgid "Take a look in the options of the Customizer and see yourself how easy an
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:88
-#: includes/preloader/customizer.php:88
 msgid "Preloader"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:102
-#: includes/preloader/customizer.php:102
 msgid "Enable OceanWP Preloader"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:117
-#: includes/preloader/customizer.php:117
 msgid "Preloader Type"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:124
-#: includes/preloader/customizer.php:124
 msgid "Custom"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:137
-#: includes/preloader/customizer.php:137
 msgid "Icon Type"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:159
-#: includes/preloader/customizer.php:159
 msgid "Preloader Icon"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:165
-#: includes/preloader/customizer.php:165
 msgid "Roller"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:167
-#: includes/preloader/customizer.php:167
 msgid "Ring"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:168
-#: includes/preloader/customizer.php:168
 msgid "Dual Ring"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:169
-#: includes/preloader/customizer.php:169
 msgid "Ripple Plain"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:170
-#: includes/preloader/customizer.php:170
 msgid "Ripple Circle"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:173
-#: includes/preloader/customizer.php:173
 msgid "Spinner Line"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:174
-#: includes/preloader/customizer.php:174
 msgid "Spinner Dot"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:188
-#: includes/preloader/customizer.php:188
 msgid "Upload svg, gif, png, jpg."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:203
-#: includes/preloader/customizer.php:203
 msgid "Upload SVG"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:204
-#: includes/preloader/customizer.php:204
 msgid "Upload svg file here"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:227
-#: includes/preloader/customizer.php:227
 msgid "Size (px)"
 msgstr ""
 
@@ -10637,7 +10609,6 @@ msgstr ""
 #: build/ocean-extra/includes/widgets/contact-info.php:447
 #: build/ocean-extra/includes/widgets/contact-info.php:471
 #: build/ocean-extra/includes/widgets/contact-info.php:495
-#: includes/preloader/customizer.php:249
 #: includes/widgets/contact-info.php:423
 #: includes/widgets/contact-info.php:447
 #: includes/widgets/contact-info.php:471
@@ -10646,37 +10617,30 @@ msgid "Content"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:275
-#: includes/preloader/customizer.php:275
 msgid "Container Width (px)"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:276
-#: includes/preloader/customizer.php:276
 msgid "Set \"0\" to unset or set your custom container width."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:318
-#: includes/preloader/customizer.php:318
 msgid "Elementor Flickers/FOUC"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:319
-#: includes/preloader/customizer.php:319
 msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:336
-#: includes/preloader/customizer.php:336
 msgid "Overlay Color"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:352
-#: includes/preloader/customizer.php:352
 msgid "Icon Color"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:364
-#: includes/preloader/customizer.php:364
 msgid "Preloader Content"
 msgstr ""
 
@@ -10793,13 +10757,13 @@ msgstr ""
 #: build/ocean-extra/includes/themepanel/theme-panel.php:204
 #: build/ocean-extra/includes/themepanel/theme-panel.php:232
 #: build/ocean-extra/includes/themepanel/theme-panel.php:358
-#: includes/themepanel/theme-panel.php:119
-#: includes/themepanel/theme-panel.php:153
-#: includes/themepanel/theme-panel.php:183
-#: includes/themepanel/theme-panel.php:195
-#: includes/themepanel/theme-panel.php:204
-#: includes/themepanel/theme-panel.php:232
-#: includes/themepanel/theme-panel.php:358
+#: includes/themepanel/theme-panel.php:120
+#: includes/themepanel/theme-panel.php:154
+#: includes/themepanel/theme-panel.php:184
+#: includes/themepanel/theme-panel.php:196
+#: includes/themepanel/theme-panel.php:205
+#: includes/themepanel/theme-panel.php:244
+#: includes/themepanel/theme-panel.php:370
 msgid "Something went wrong"
 msgstr ""
 
@@ -10807,20 +10771,20 @@ msgstr ""
 #: build/ocean-extra/includes/themepanel/theme-panel.php:169
 #: build/ocean-extra/includes/themepanel/theme-panel.php:219
 #: build/ocean-extra/includes/themepanel/theme-panel.php:256
-#: includes/themepanel/theme-panel.php:139
-#: includes/themepanel/theme-panel.php:169
-#: includes/themepanel/theme-panel.php:219
-#: includes/themepanel/theme-panel.php:256
+#: includes/themepanel/theme-panel.php:140
+#: includes/themepanel/theme-panel.php:170
+#: includes/themepanel/theme-panel.php:231
+#: includes/themepanel/theme-panel.php:268
 msgid "Settings saved successfully."
 msgstr ""
 
 #: build/ocean-extra/includes/themepanel/theme-panel.php:275
-#: includes/themepanel/theme-panel.php:275
+#: includes/themepanel/theme-panel.php:287
 msgid "Settings successfully reset."
 msgstr ""
 
 #: build/ocean-extra/includes/themepanel/theme-panel.php:750
-#: includes/themepanel/theme-panel.php:750
+#: includes/themepanel/theme-panel.php:776
 msgid "View paid features"
 msgstr ""
 
@@ -13018,6 +12982,14 @@ msgid "View Your Website"
 msgstr ""
 
 #: build/ocean-extra/ocean-extra.php:350
-#: ocean-extra.php:350
 msgid "This script is responsible for the style of widgets."
+msgstr ""
+
+#: includes/adobe-font.php:163
+#: includes/adobe-font.php:174
+msgid "OE Adobe Fonts"
+msgstr ""
+
+#: includes/themepanel/theme-panel.php:223
+msgid "Project ID is wrong."
 msgstr ""

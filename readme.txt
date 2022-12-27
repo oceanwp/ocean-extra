@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.1
-Stable tag: 2.0.6
+Tested up to: 6.1.1
+Stable tag: 2.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -33,6 +33,7 @@ Everyone deserves a polished website with expert features, and so do you.
 
 Features listed below are just a fraction of the most significant Ocean Extra possibilities:
 * Host Google fonts Locally
+* Adobe Fonts integration
 * Custom templates support
 * Individual page / post control
 * Freemium website templates import
@@ -52,6 +53,10 @@ Features listed below are just a fraction of the most significant Ocean Extra po
 = HOST GOOGLE FONTS LOCALLY =
 
 1-click solution, no font upload required. Any Google font you apply from the Customizer will load from your site automatically, making your website faster and GDPR friendly in an instant. This feature also supports the Elementor page builder and Google fonts applied through it.
+
+= ADOBE FONTS INTEGRATION =
+
+Add Adobe Fonts (Typekit) to your OceanWP theme. The integration supports Adobe fonts usage with the OceanWP theme and plugins (Customizer), as well as Elementor.
 
 = CUSTOM TEMPLATES SUPPORT =
 
