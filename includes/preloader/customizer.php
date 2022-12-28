@@ -85,8 +85,9 @@ class Ocean_Preloader_Customizer {
 		$wp_customize->add_section(
 			$section,
 			array(
-			'title'    => esc_html__('Preloader', 'ocean-extra'),
-			'priority' => 250,
+                'title'    => esc_html__('Preloader', 'ocean-extra'),
+                'priority' => 15,
+                'panel'    => 'ocean_general_panel',
 			)
 		);
 

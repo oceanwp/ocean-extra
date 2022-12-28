@@ -88,21 +88,39 @@ class Ocean_Preloader {
             );
         }
 
-        wp_enqueue_script(
-            'owp-preloader',
-            OE_URL . 'includes/preloader/assets/js/preloader.min.js',
-            array( 'jquery' ),
-            OE_VERSION,
-            false
-        );
+        if ( is_customize_preview() ) {
+            wp_enqueue_script(
+                'owp-preloader',
+                OE_URL . 'includes/preloader/assets/js/preloader.min.js',
+                array( 'jquery' ),
+                OE_VERSION,
+                false
+            );
 
-        wp_localize_script(
-			'owp-preloader',
-			'owpPreloader',
-			array(
-				'nonce' => wp_create_nonce( 'oceanwp_preloader' ),
-			)
-		);
+            wp_localize_script(
+                'owp-preloader',
+                'owpPreloader',
+                array(
+                    'nonce' => wp_create_nonce( 'oceanwp_preloader' ),
+                )
+            );
+        } else {
+            wp_enqueue_script(
+                'owp-preloader',
+                OE_URL . 'includes/preloader/assets/js/preloader.min.js',
+                array( 'jquery' ),
+                OE_VERSION,
+                false
+            );
+
+            wp_localize_script(
+                'owp-preloader',
+                'owpPreloader',
+                array(
+                    'nonce' => wp_create_nonce( 'oceanwp_preloader' ),
+                )
+            );
+        }
 
         // Check if page is Elementor page.
         $elementor = get_post_meta( $this->template_id, '_elementor_edit_mode', true );
