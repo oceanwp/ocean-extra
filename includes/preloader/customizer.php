@@ -370,6 +370,7 @@ class Ocean_Preloader_Customizer {
                 'line-height'    => '1.8',
                 'letter-spacing' => '0.6',
             ),
+            'active_callback' => 'oe_cac_has_preloader',
         );
 
         return $settings;
