@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-12-26T09:45:56+00:00\n"
+"POT-Creation-Date: 2022-12-29T07:50:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ocean-extra\n"
@@ -458,6 +458,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1724
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:611
 #: includes/menu-icons/includes/library/icon-selector/includes/types/image.php:39
+#: includes/preloader/customizer.php:145
+#: includes/preloader/customizer.php:188
 msgid "Image"
 msgstr ""
 
@@ -1404,6 +1406,7 @@ msgstr ""
 #: includes/metabox/metabox.php:1848
 #: includes/metabox/metabox.php:1873
 #: includes/metabox/metabox.php:1886
+#: includes/preloader/customizer.php:124
 #: includes/widgets/contact-info.php:341
 #: includes/widgets/contact-info.php:382
 #: includes/widgets/custom-menu.php:366
@@ -2741,6 +2744,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:650
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:486
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:817
+#: includes/preloader/customizer.php:172
 msgid "Heart"
 msgstr ""
 
@@ -3234,6 +3238,7 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/customizer.php:166
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:189
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:789
+#: includes/preloader/customizer.php:167
 msgid "Circle"
 msgstr ""
 
@@ -6625,6 +6630,7 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
 #: build/ocean-extra/includes/preloader/customizer.php:172
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
+#: includes/preloader/customizer.php:173
 msgid "Ellipsis"
 msgstr ""
 
@@ -7229,6 +7235,7 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
 #: build/ocean-extra/includes/preloader/customizer.php:146
 #: includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
+#: includes/preloader/customizer.php:147
 msgid "SVG"
 msgstr ""
 
@@ -7242,6 +7249,7 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/helper.php:22
 #: includes/menu-icons/includes/picker.php:78
 #: includes/menu-icons/includes/settings.php:594
+#: includes/preloader/helper.php:22
 msgid "Select"
 msgstr ""
 
@@ -7809,6 +7817,7 @@ msgstr ""
 #: build/ocean-extra/includes/preloader/customizer.php:301
 #: includes/metabox/metabox.php:801
 #: includes/metabox/metabox.php:1662
+#: includes/preloader/customizer.php:302
 msgid "Select Template"
 msgstr ""
 
@@ -7825,6 +7834,7 @@ msgstr ""
 #: build/ocean-extra/includes/wizard/wizard.php:718
 #: includes/metabox/metabox.php:817
 #: includes/metabox/metabox.php:827
+#: includes/preloader/customizer.php:146
 #: includes/wizard/wizard.php:718
 msgid "Logo"
 msgstr ""
@@ -10309,6 +10319,7 @@ msgstr ""
 #: build/ocean-extra/includes/panel/scripts.php:538
 #: build/ocean-extra/includes/preloader/customizer.php:143
 #: includes/panel/scripts.php:538
+#: includes/preloader/customizer.php:144
 msgid "CSS"
 msgstr ""
 
@@ -10537,70 +10548,87 @@ msgid "Take a look in the options of the Customizer and see yourself how easy an
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:88
+#: includes/preloader/customizer.php:88
 msgid "Preloader"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:102
+#: includes/preloader/customizer.php:103
 msgid "Enable OceanWP Preloader"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:117
+#: includes/preloader/customizer.php:118
 msgid "Preloader Type"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:124
+#: includes/preloader/customizer.php:125
 msgid "Custom"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:137
+#: includes/preloader/customizer.php:138
 msgid "Icon Type"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:159
+#: includes/preloader/customizer.php:160
 msgid "Preloader Icon"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:165
+#: includes/preloader/customizer.php:166
 msgid "Roller"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:167
+#: includes/preloader/customizer.php:168
 msgid "Ring"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:168
+#: includes/preloader/customizer.php:169
 msgid "Dual Ring"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:169
+#: includes/preloader/customizer.php:170
 msgid "Ripple Plain"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:170
+#: includes/preloader/customizer.php:171
 msgid "Ripple Circle"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:173
+#: includes/preloader/customizer.php:174
 msgid "Spinner Line"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:174
+#: includes/preloader/customizer.php:175
 msgid "Spinner Dot"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:188
+#: includes/preloader/customizer.php:189
 msgid "Upload svg, gif, png, jpg."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:203
+#: includes/preloader/customizer.php:204
 msgid "Upload SVG"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:204
+#: includes/preloader/customizer.php:205
 msgid "Upload svg file here"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:227
+#: includes/preloader/customizer.php:228
 msgid "Size (px)"
 msgstr ""
 
@@ -10609,6 +10637,7 @@ msgstr ""
 #: build/ocean-extra/includes/widgets/contact-info.php:447
 #: build/ocean-extra/includes/widgets/contact-info.php:471
 #: build/ocean-extra/includes/widgets/contact-info.php:495
+#: includes/preloader/customizer.php:250
 #: includes/widgets/contact-info.php:423
 #: includes/widgets/contact-info.php:447
 #: includes/widgets/contact-info.php:471
@@ -10617,30 +10646,37 @@ msgid "Content"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:275
+#: includes/preloader/customizer.php:276
 msgid "Container Width (px)"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:276
+#: includes/preloader/customizer.php:277
 msgid "Set \"0\" to unset or set your custom container width."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:318
+#: includes/preloader/customizer.php:319
 msgid "Elementor Flickers/FOUC"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:319
+#: includes/preloader/customizer.php:320
 msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:336
+#: includes/preloader/customizer.php:337
 msgid "Overlay Color"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:352
+#: includes/preloader/customizer.php:353
 msgid "Icon Color"
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:364
+#: includes/preloader/customizer.php:365
 msgid "Preloader Content"
 msgstr ""
 
