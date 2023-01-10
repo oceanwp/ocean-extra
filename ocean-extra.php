@@ -614,7 +614,7 @@ final class Ocean_Extra {
 
 		// Load main stylesheet
 
-		if ( get_theme_mod( 'ocean_load_widgets_stylesheet', 'enabled' ) === 'enabled' ) {
+		if ( get_theme_mod( 'ocean_load_widgets_stylesheet', 'enabled' ) === 'disabled' ) {
 			return;
 		}
 
