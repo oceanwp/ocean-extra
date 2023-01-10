@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.1.1 - JAN 11 2023 =
+- Fixed: Performance: Disable Widgets Styleesheet: Misconfigured button action.
+
 = 2.1.0 - JAN 10 2023 =
 - NEW: Adobe Fonts Integration: OceanWP Panel > Integration.
 - NEW: Website Preloader: Customize > General Options.
