@@ -29,3 +29,21 @@
 #accordion-section-oceanwp_freemius_section {
     order: -99999999;
 }
+
+.adobe{
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.adobe-ok{
+    color: green;
+}
+
+.adobe-error{
+    color: red;
+}
+
+.oceanwp-notify.failure {
+    background-color: #ff0000;
+    opacity: 0.5;
+}

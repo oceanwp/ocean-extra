@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.1
-Stable tag: 2.0.6
+Tested up to: 6.1.1
+Stable tag: 2.1.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,7 +32,8 @@ Everyone deserves a polished website with expert features, and so do you.
 == Features ==
 
 Features listed below are just a fraction of the most significant Ocean Extra possibilities:
-* Host Google fonts Locally
+* Host Google fonts locally
+* Adobe Fonts integration
 * Custom templates support
 * Individual page / post control
 * Freemium website templates import
@@ -47,11 +48,16 @@ Features listed below are just a fraction of the most significant Ocean Extra po
 * Integration
 * Extra settings
 * Admin settings
+* Website preloader
 * Premium licenses panel & more
 
 = HOST GOOGLE FONTS LOCALLY =
 
-1-click solution, no font upload required. Any Google font you apply from the Customizer will load from your site automatically, making your website faster and GDPR friendly in an instant. This feature also supports the Elementor page builder and Google fonts applied through it.
+1-click solution, no font upload required. (Any Google font you apply from the Customizer)[https://docs.oceanwp.org/article/808-host-google-fonts-locally] will load from your site automatically, making your website faster and GDPR friendly in an instant. This feature also supports the Elementor page builder and Google fonts applied through it.
+
+= ADOBE FONTS INTEGRATION =
+
+Add Adobe Fonts (Typekit) to your OceanWP theme. The (integration supports Adobe fonts usage)[https://docs.oceanwp.org/article/849-how-to-add-adobe-fonts-typekit] with the OceanWP theme and plugins (Customizer), as well as Elementor.
 
 = CUSTOM TEMPLATES SUPPORT =
 
@@ -109,6 +115,10 @@ The Extra Settings panel allows you to disable or enable Ocean Extra plugin comp
 
 The Admin Settings panel offers control over additional features, like regenerating the local Google fonts CSS file, disabling the "edit" link on post archive pages which is visible to admins, and more.
 
+= WEBSITE PRELOADER =
+
+Dealing with heavy page content such as videos or slow hosting? Enable the (website preloader feature)[https://docs.oceanwp.org/article/851-oceanwp-website-preloader] on your website to reduce bounce rate, entertain visitors, brand site or more.
+
 = PREMIUM OCEAN FEATURES =
 
 Some of the most outsanding premium features controled by the Ocean Extra's OceanWP Panel include:
@@ -160,7 +170,7 @@ No. Both freemium and premium Ocean demos / website templates make use only of t
 
 = Where can I get support? =
 
-You can post your questions on the [plugin support forum](https://wordpress.org/support/plugin/ocean-extra/) or the [OceanWP support forum](https://wordpress.org/support/topic/ocean-popup-login-error/) which is mostly used by all our users.
+You can post your questions on the [plugin support forum](https://wordpress.org/support/plugin/ocean-extra/) or the [OceanWP support forum](https://wordpress.org/support/theme/oceanwp/) which is mostly used by all our users.
 If you have a premium license, you can also submit a [customer support ticket](https://oceanwp.org/support/).
 
 = How do I know it's safe to update the plugin? =
@@ -189,6 +199,23 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.1.1 - JAN 11 2023 =
+- Fixed: Performance: Disable Widgets Styleesheet: Misconfigured button action.
+
+= 2.1.0 - JAN 10 2023 =
+- NEW: Adobe Fonts Integration: OceanWP Panel > Integration.
+- NEW: Website Preloader: Customize > General Options.
+- NEW: Disable Widgets Stylesheet: Customize > General Options > Performance: Disable stylesheet for legacy WordPress widgets included only in Ocean Extra plugin if widgets not in use.
+- NEW: Disable Scroll Effect: Customize > General Options > Performance: Disable script for smooth scroll if not in use (used for anchor links).
+- NEW: Custom Offset for Scroll Effect: Customize > General Options > Performance. Add custom offset value for the smooth scroll effect.
+- Added: Typography: Preload locally-hosted Google Fonts: Customize > Typography > General.
+- Added: Codes for the upcoming plugin.
+- Updated: Language: Ocean Extra .pot file.
+- Updated: Ocean Extra readme.txt file.
+- Fixed: Ocean Gutenberg Blocks doesn't remove the Upgrade notice if it's the only premium plugin active.
+- Fixed: Compatibility: PHP 8.1+: Notices for old Theme Panel.
+- Fixed: Uncaught Error: Undefined constant "FS_CHMOD_DIR": Added additional check for default WP Constant "FS_CHMOD_DIR".
 
 = 2.0.6 - NOV 9 2022 =
 - NEW: Typography: Option to choose font format for local Google fonts feature (Customize > Typography > General).

@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.0.6
+ * Version:             2.1.1
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.1
+ * Tested up to:        6.1.1
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -90,7 +90,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.0.6';
+		$this->version     = '2.1.1';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -144,6 +144,7 @@ final class Ocean_Extra {
 				require_once OE_PATH . '/includes/compatibility/ocean.php';
 			}
 
+			require_once OE_PATH . '/includes/preloader/preloader.php';
 
 			// Outputs custom JS to the footer
 			add_action( 'wp_footer', array( $this, 'custom_js' ), 9999 );
@@ -381,6 +382,7 @@ final class Ocean_Extra {
 				require_once OE_PATH . '/includes/admin-bar/admin-bar.php';
 				require_once OE_PATH . '/includes/admin-bar/notifications.php';
 			}
+			require_once OE_PATH . '/includes/adobe-font.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
@@ -611,6 +613,11 @@ final class Ocean_Extra {
 	public function scripts() {
 
 		// Load main stylesheet
+
+		if ( get_theme_mod( 'ocean_load_widgets_stylesheet', 'enabled' ) === 'disabled' ) {
+			return;
+		}
+
 		wp_enqueue_style( 'oe-widgets-style', plugins_url( '/assets/css/widgets.css', __FILE__ ) );
 
 		// If rtl
@@ -757,6 +764,36 @@ function owp_fs_is_submenu_visible( $is_visible, $submenu_id ) {
 				}
 			}
 
+			if( property_exists( 'OceanWP_EDD_License_Key', 'separate_addons' ) && !empty( OceanWP_EDD_License_Key::$separate_addons ) ) {
+				foreach ( OceanWP_EDD_License_Key::$separate_addons as $class_name => $data ) {
+					if ( ! class_exists( $class_name ) ) {
+						continue;
+					}
+	
+					if ( ! function_exists( $data['fs_shortcode'] ) ) {
+						continue;
+					}
+	
+					/**
+					 * Initiate the Freemius instance before migrating.
+					 *
+					 * @var Freemius $addon_fs
+					 */
+					$addon_fs = call_user_func( $data['fs_shortcode'] );
+	
+					if ( $addon_fs->has_active_valid_license() ) {
+						$licenses = $addon_fs->_get_license();
+	
+						if ( is_object( $licenses ) &&
+							 FS_Plugin_License::is_valid_id( $licenses->id )
+						) {
+							$show_pricing = false;
+							break;
+						}
+					}
+				}
+			}
+			
 			// set_transient(
 			// 'oceanwp_show_pricing',
 			// $show_pricing ? 'yes' : 'no',

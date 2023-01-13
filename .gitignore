@@ -266,6 +266,9 @@ node_modules/
 # build folder
 build/
 
+# vender folder
+vendor/
+
 # Visual Studio 6 build log
 *.plg
 

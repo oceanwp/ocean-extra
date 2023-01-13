@@ -1,6 +1,24 @@
 <?php
 
-// Control Elementor google fonts
+/**
+ * Control Preload google fonts.
+ */
+add_filter( 'style_loader_tag', 'oceanwp_preload_local_webfonts', 10, 2 );
+if ( ! function_exists( 'oceanwp_preload_local_webfonts' ) ) {
+	function oceanwp_preload_local_webfonts( $html, $handle ) {
+		if ( strpos( $handle, 'oceanwp-google-font' ) === false && strpos( $handle, 'google-fonts-' ) === false ) {
+			return $html;
+		}
+		if ( true != get_theme_mod( 'ocean_preload_local_google_font', false ) ) {
+			return $html;
+		}
+		return str_replace( "rel='stylesheet'", "rel='preload' as='style' onload='this.rel=\"stylesheet\"'", $html );;
+	}
+}
+
+/**
+ * Control Elementor google fonts.
+ */
 add_filter( 'style_loader_src', 'oceanwp_local_elementor_webfonts_enqueue', 20, 2 );
 if ( ! function_exists( 'oceanwp_local_elementor_webfonts_enqueue' ) ) {
 	function oceanwp_local_elementor_webfonts_enqueue( $src, $handle ) {
@@ -188,17 +206,25 @@ if ( ! function_exists( 'ocean_get_google_font_css' ) ) {
 			break;
 		}
 
-		$request = wp_safe_remote_get(
-			$url,
-			array(
-				'sslverify' => false,
-				'user-agent' => $user_agent,
-			)
-		);
-		if ( is_wp_error( $request ) ) {
-			return '';
+		$transient_name = 'gf_' . md5( $url ) . '_' . $font_format;
+		$cached_value = get_transient( $transient_name );
+		if( false === $cached_value ) {
+			$request = wp_safe_remote_get(
+				$url,
+				array(
+					'sslverify' => false,
+					'user-agent' => $user_agent,
+				)
+			);
+			if ( is_wp_error( $request ) ) {
+				return '';
+			}
+			$result = wp_remote_retrieve_body( $request );
+			set_transient( $transient_name, $result , HOUR_IN_SECONDS * 24 );
+		} else {
+			$result = $cached_value;
 		}
-		$result = wp_remote_retrieve_body( $request );
+
 		return $result;
 	}
 }
@@ -261,6 +287,10 @@ if ( ! function_exists( 'oceanwp_webfonts_local_font_url' ) ) {
 add_action( 'admin_bar_init', 'ocean_save_customizer_css_in_file', 9999 );
 if ( ! function_exists( 'ocean_save_customizer_css_in_file' ) ) {
 	function ocean_save_customizer_css_in_file( $output = null ) {
+
+		if ( ! defined( 'FS_CHMOD_DIR' ) ) {
+			define( 'FS_CHMOD_DIR', ( fileperms( ABSPATH ) & 0777 | 0755 ) );
+		}
 
 		// If Custom File is not selected.
 		if ( 'file' !== get_theme_mod( 'ocean_customzer_styling', 'head' ) ) {

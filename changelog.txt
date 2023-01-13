@@ -1,5 +1,23 @@
 == Changelog ==
 
+= 2.1.1 - JAN 11 2023 =
+- Fixed: Performance: Disable Widgets Styleesheet: Misconfigured button action.
+
+= 2.1.0 - JAN 10 2023 =
+- NEW: Adobe Fonts Integration: OceanWP Panel > Integration.
+- NEW: Website Preloader: Customize > General Options.
+- NEW: Disable Widgets Stylesheet: Customize > General Options > Performance: Disable stylesheet for legacy WordPress widgets included only in Ocean Extra plugin if widgets not in use.
+- NEW: Disable Scroll Effect: Customize > General Options > Performance: Disable script for smooth scroll if not in use (used for anchor links).
+- NEW: Custom Offset for Scroll Effect: Customize > General Options > Performance. Add custom offset value for the smooth scroll effect.
+- Added: Typography: Preload locally-hosted Google Fonts: Customize > Typography > General.
+- Added: Codes for the upcoming plugin.
+- Updated: Language: Ocean Extra .pot file.
+- Updated: Ocean Extra readme.txt file.
+- Fixed: Ocean Gutenberg Blocks doesn't remove the Upgrade notice if it's the only premium plugin active.
+- Fixed: Compatibility: PHP 8.1+: Notices for old Theme Panel.
+- Fixed: Uncaught Error: Undefined constant "FS_CHMOD_DIR": Added additional check for default WP Constant "FS_CHMOD_DIR".
+
+
 = 2.0.6 - NOV 9 2022 =
 - NEW: Typography: Option to choose font format for local Google fonts feature (Customize > Typography > General).
 - Fixed: Custom CSS: Custom Styling Location option doesn't store custom css.
