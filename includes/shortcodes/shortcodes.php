@@ -284,7 +284,7 @@ if ( ! function_exists( 'oceanwp_current_user_shortcode' ) ) {
 
 		// If logged in
 		if ( is_user_logged_in() ) {
-			return $text . $current_user->$display;
+			return esc_html( $text ) . $current_user->$display;
 		}
 
 		// Return if not logged in
@@ -741,7 +741,7 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 
 		// Add a space for the beginning of the class attr
 		if ( ! empty( $class ) ) {
-			$class = ' ' . esc_attr( $class );
+			$class = ' ' . $class;
 		}
 
 		// Style
@@ -771,7 +771,7 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 			if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
 				$classes .= ' position-' . $breadcrumbs_position;
 			}
-			return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ). '">', '</nav>' );
+			return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ) . '">', '</nav>' );
 		}
 
 		$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
