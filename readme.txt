@@ -200,7 +200,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.1.2 - FEB 2 2023 =
+= 2.1.2 - FEB 1 2023 =
 - Fixed: Shortcodes: Breadcrumbs: Potential vulnerability patch: Patchstack report #2023-23891
 
 = 2.1.1 - JAN 11 2023 =
