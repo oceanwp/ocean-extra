@@ -128,7 +128,7 @@ final class Ocean_Extra {
 
 
 			require_once OE_PATH . '/includes/panel/theme-panel.php';
-			require_once OE_PATH . '/includes/panel/integrations-tab.php';
+
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
 			if( $oe_library_active_status == 'yes' ) {
 				require_once OE_PATH . '/includes/panel/library.php';
