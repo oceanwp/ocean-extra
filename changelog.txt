@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.1.2 - FEB 1 2023 =
+- Fixed: Shortcodes: Breadcrumbs: Potential vulnerability patch: Patchstack report #2023-23891
+
 = 2.1.1 - JAN 11 2023 =
 - Fixed: Performance: Disable Widgets Styleesheet: Misconfigured button action.
 
