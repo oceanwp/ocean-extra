@@ -62,7 +62,13 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 					if ( ! empty( $content ) ) {
 
-						$template = get_post( $content );
+						$args = array(
+							'ID'          => $content,
+							'post_type'   => 'oceanwp_library',
+							'post_status' => 'published',
+						);
+
+						$template = get_post( $content, $args );
 
 						if ( $template && ! is_wp_error( $template ) ) {
 							$content = $template->post_content;
