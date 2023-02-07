@@ -153,7 +153,7 @@ if ( ! function_exists( 'oceanwp_search_shortcode' ) ) {
 		}
 
 		$html      = '<form aria-label="' . oe_lang_strings( 'oe-string-search-form-label', false ) . '" role="search" method="get" class="oceanwp-searchform" id="searchform" action="' . esc_url( home_url( '/' ) ) . '"' . $style . '>';
-			$html .= '<input aria-label="' . oe_lang_strings( 'oe-string-search-field', false ) . '" type="text" class="field" name="s" id="s" placeholder="' . strip_tags( $placeholder ) . '">';
+			$html .= '<input aria-label="' . oe_lang_strings( 'oe-string-search-field', false ) . '" type="text" class="field" name="s" id="s" placeholder="' . esc_attr( $placeholder ) . '">';
 		if ( 'any' != $post_type ) {
 			$html .= '<input type="hidden" name="post_type" value="' . esc_attr( $post_type ) . '">';
 		}
@@ -243,12 +243,12 @@ if ( ! function_exists( 'oceanwp_login_shortcode' ) ) {
 
 		// Logged in link.
 		if ( is_user_logged_in() ) {
-			return '<a href="' . esc_url( $logout_url ) . '" class="oceanwp-logout">' . strip_tags( $logout_text ) . '</a>';
+			return '<a href="' . esc_url( $logout_url ) . '" class="oceanwp-logout">' . esc_html( $logout_text ) . '</a>';
 		}
 
 		// Logged out link.
 		else {
-			return '<a href="' . esc_url( $login_url ) . '" class="oceanwp-login" target="_' . esc_attr( $target ) . '">' . strip_tags( $login_text ) . '</a>';
+			return '<a href="' . esc_url( $login_url ) . '" class="oceanwp-login" target="_' . esc_attr( $target ) . '">' . esc_html( $login_text ) . '</a>';
 		}
 
 	}
@@ -421,21 +421,21 @@ if ( ! function_exists( 'oceanwp_woo_cart_icon_shortcode' ) ) {
 			$output = '';
 
 			if ( ! empty( $color ) ) {
-				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count {color:' . $color . '; border-color:' . $color . ';}';
-				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count:after {border-color:' . $color . ';}';
+				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count {color:' . esc_attr( $color ) . '; border-color:' . esc_attr( $color ) . ';}';
+				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count:after {border-color:' . esc_attr( $color ) . ';}';
 			}
 
 			if ( ! empty( $hover_color ) ) {
-				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count {background-color: ' . $hover_color . '; border-color:' . $hover_color . ';}';
-				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after, .show-cart .wcmenucart-cart-icon .wcmenucart-count:after {border-color:' . $hover_color . ';}';
+				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count {background-color: ' . esc_attr( $hover_color ) . '; border-color:' . esc_attr( $hover_color ) . ';}';
+				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count:after, .show-cart .wcmenucart-cart-icon .wcmenucart-count:after {border-color:' . esc_attr( $hover_color ) . ';}';
 			}
 
 			if ( ! empty( $count_color ) ) {
-				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count {color:' . $count_color . ';}';
+				$css .= '.woo-cart-shortcode .wcmenucart-cart-icon .wcmenucart-count {color:' . esc_attr( $count_color ) . ';}';
 			}
 
 			if ( ! empty( $count_hover_color ) ) {
-				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count {color:' . $count_hover_color . ';}';
+				$css .= '.woo-cart-shortcode.bag-style:hover .wcmenucart-cart-icon .wcmenucart-count, .show-cart .wcmenucart-cart-icon .wcmenucart-count {color:' . esc_attr( $count_hover_color ) . ';}';
 			}
 
 			// Add style
@@ -600,10 +600,10 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left' ) ) {
 			if ( isset( WC()->cart->cart_contents_total ) ) {
 				$total = ( WC()->cart->prices_include_tax ) ? ( WC()->cart->cart_contents_total + WC()->cart->get_cart_contents_tax() ) : WC()->cart->cart_contents_total;
 				if ( $total >= $min_free_shipping_amount ) {
-					return do_shortcode( $content_reached );
+					return do_shortcode( esc_html( $content_reached ) );
 				} else {
-					$content = str_replace( '%left_to_free%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount - $total ) * $multiply_by ) . '</span>', $content );
-					$content = str_replace( '%free_shipping_min_amount%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount ) * $multiply_by ) . '</span>', $content );
+					$content = str_replace( '%left_to_free%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount - $total ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
+					$content = str_replace( '%free_shipping_min_amount%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
 					return $content;
 				}
 			}
@@ -651,7 +651,7 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left_shortcode' ) ) {
 		$content_reached = $settings['content_reached'];
 		$multiply_by     = $settings['multiply_by'];
 
-		return oceanwp_woo_free_shipping_left( "<span class='oceanwp-woo-free-shipping' data-content='$x' data-reach='$content_reached'>" . $content . '</span>', '<span class="oceanwp-woo-free-shipping">' . $content_reached . '</span>', $multiply_by );
+		return oceanwp_woo_free_shipping_left( "<span class='oceanwp-woo-free-shipping' data-content='" . esc_attr($x ) . "' data-reach='" . esc_attr( $content_reached ) . "'>" . esc_html( $content ) . '</span>', '<span class="oceanwp-woo-free-shipping">' . esc_html( $content_reached ) . '</span>', esc_attr( $multiply_by ) );
 
 	}
 }
@@ -752,11 +752,11 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 			$output = '';
 
 			if ( ! empty( $color ) ) {
-				$css .= '.oceanwp-breadcrumb .site-breadcrumbs, .oceanwp-breadcrumb .site-breadcrumbs a {color:' . $color . ';}';
+				$css .= '.oceanwp-breadcrumb .site-breadcrumbs, .oceanwp-breadcrumb .site-breadcrumbs a {color:' . esc_attr( $color ) . ';}';
 			}
 
 			if ( ! empty( $hover_color ) ) {
-				$css .= '.oceanwp-breadcrumb .site-breadcrumbs a:hover {color:' . $hover_color . ';}';
+				$css .= '.oceanwp-breadcrumb .site-breadcrumbs a:hover {color:' . esc_attr( $hover_color ) . ';}';
 			}
 
 			// Add style
@@ -769,7 +769,7 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 		if ( function_exists( 'yoast_breadcrumb' ) && current_theme_supports( 'yoast-seo-breadcrumbs' ) ) {
 			$classes = 'site-breadcrumbs clr';
 			if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
-				$classes .= ' position-' . $breadcrumbs_position;
+				$classes .= ' position-' . esc_attr( $breadcrumbs_position );
 			}
 			return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ) . '">', '</nav>' );
 		}
