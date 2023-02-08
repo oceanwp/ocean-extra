@@ -62,13 +62,17 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 					if ( ! empty( $content ) ) {
 
-						$args = array(
-							'ID'          => $content,
-							'post_type'   => 'oceanwp_library',
-							'post_status' => 'published',
-						);
 
-						$template = get_post( $content, $args );
+						$template = get_post( intval( $content ) );
+
+						// Prevent unprivileged users from accessing private posts from others.
+                        if ( is_object( $template ) && 'publish' !== $template->post_status ) {
+							$post_type = get_post_type_object( $template->post_type );
+							$parent_post_author_id = intval( get_the_author_meta( 'ID' ) );
+							if ( ! user_can( $parent_post_author_id, $post_type->cap->read_post, $template->ID ) ) {
+								$template = null;
+							}
+						}
 
 						if ( $template && ! is_wp_error( $template ) ) {
 							$content = $template->post_content;
