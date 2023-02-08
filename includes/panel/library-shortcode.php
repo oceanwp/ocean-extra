@@ -62,7 +62,6 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 					if ( ! empty( $content ) ) {
 
-
 						$template = get_post( intval( $content ) );
 
 						// Prevent unprivileged users from accessing private posts from others.
@@ -74,7 +73,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 							}
 						}
 
-						if ( $template && ! is_wp_error( $template ) ) {
+						if ( is_object( $template ) && ! is_wp_error( $template ) && $template->post_type === 'oceanwp_library' && $template->post_status === 'publish' ) {
 							$content = $template->post_content;
 						}
 
