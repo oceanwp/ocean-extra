@@ -37,6 +37,19 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 			if ( $atts[ 'id' ] ) {
 
+				$owp_post_type = get_post_type( intval( $atts[ 'id' ] ) );
+				$owp_post_status = get_post_status( intval( $atts[ 'id' ] ) );
+				$parent_post_author_id = intval( get_the_author_meta( 'ID' ) );
+				$post_type = get_post_type_object( $owp_post_type );
+
+				if ( ! user_can( $parent_post_author_id, $post_type->cap->read_post, intval( $atts[ 'id' ] ) ) ) {
+					return;
+				}
+
+				if ( $owp_post_type !== 'oceanwp_library' &&  $owp_post_status !== 'public' ) {
+					return;
+				}
+
 				// Check if the template is created with Elementor
 				$elementor  = get_post_meta( $atts[ 'id' ], '_elementor_edit_mode', true );
 
@@ -64,16 +77,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 						$template = get_post( intval( $content ) );
 
-						// Prevent unprivileged users from accessing private posts from others.
-                        if ( is_object( $template ) && 'publish' !== $template->post_status ) {
-							$post_type = get_post_type_object( $template->post_type );
-							$parent_post_author_id = intval( get_the_author_meta( 'ID' ) );
-							if ( ! user_can( $parent_post_author_id, $post_type->cap->read_post, $template->ID ) ) {
-								$template = null;
-							}
-						}
-
-						if ( is_object( $template ) && ! is_wp_error( $template ) && $template->post_type === 'oceanwp_library' && $template->post_status === 'publish' ) {
+						if ( is_object( $template ) && ! is_wp_error( $template ) ) {
 							$content = $template->post_content;
 						}
 
