@@ -39,14 +39,14 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 				$owp_post_type = get_post_type( intval( $atts[ 'id' ] ) );
 				$owp_post_status = get_post_status( intval( $atts[ 'id' ] ) );
-				$parent_post_author_id = intval( get_the_author_meta( 'ID' ) );
-				$post_type = get_post_type_object( $owp_post_type );
+				// $parent_post_author_id = intval( get_the_author_meta( 'ID' ) );
+				// $post_type = get_post_type_object( $owp_post_type );
 
-				if ( ! user_can( $parent_post_author_id, $post_type->cap->read_post, intval( $atts[ 'id' ] ) ) ) {
-					return;
-				}
+				// if ( ! user_can( $parent_post_author_id, $post_type->cap->read_post, intval( $atts[ 'id' ] ) ) ) {
+				// 	return;
+				// }
 
-				if ( $owp_post_type !== 'oceanwp_library' &&  $owp_post_status !== 'public' ) {
+				if ( $owp_post_type !== 'oceanwp_library' &&  $owp_post_status !== 'publish' ) {
 					return;
 				}
 
