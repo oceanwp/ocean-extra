@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.1.1
-Stable tag: 2.1.2
+Stable tag: 2.1.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,13 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.1.3 - FEB 13 2023 =
+- Fixed: Shortcodes: Search: Potential vulnerability patch: WPscan report #5932906 and Patchscan report #2023-24399.
+- Fixed: Shortcodes: Woo Free Shipping Left: Potential vulnerability patch: WPscan report #5932906 and Patchscan report #2023-24399.
+- Fixed: Shortcodes: My Library templates shortcode: Potential vulnerability patch: WPscan report #5932906. A personal thanks to Erwan Le Rousseau from the WPscan team for the above and beyond assistance, patience and guidance on this matter.
+- Improved: Shortcodes: All shortcodes code revision.
+- Removed: Old theme panel files.
 
 = 2.1.2 - FEB 1 2023 =
 - Fixed: Shortcodes: Breadcrumbs: Potential vulnerability patch: Patchstack report #2023-23891
