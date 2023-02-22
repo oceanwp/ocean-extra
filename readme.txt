@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.1.1
-Stable tag: 2.1.3
+Stable tag: 2.1.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.1.4 - FEB 22 2023 =
+- Fixed: Shortcodes: [oceanwp_woo_free_shipping_left]: Shortcode displaying HTML when a user reaches the free shipping threshold.
 
 = 2.1.3 - FEB 13 2023 =
 - Fixed: Shortcodes: Search: Potential vulnerability patch: WPscan report #5932906 and Patchscan report #2023-24399.
