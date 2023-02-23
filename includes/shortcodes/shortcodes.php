@@ -600,7 +600,7 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left' ) ) {
 			if ( isset( WC()->cart->cart_contents_total ) ) {
 				$total = ( WC()->cart->prices_include_tax ) ? ( WC()->cart->cart_contents_total + WC()->cart->get_cart_contents_tax() ) : WC()->cart->cart_contents_total;
 				if ( $total >= $min_free_shipping_amount ) {
-					return do_shortcode( esc_html( $content_reached ) );
+					return do_shortcode( wp_kses_post( $content_reached ) );
 				} else {
 					$content = str_replace( '%left_to_free%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount - $total ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
 					$content = str_replace( '%free_shipping_min_amount%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
@@ -651,7 +651,7 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left_shortcode' ) ) {
 		$content_reached = $settings['content_reached'];
 		$multiply_by     = $settings['multiply_by'];
 
-		return oceanwp_woo_free_shipping_left( "<span class='oceanwp-woo-free-shipping' data-content='" . esc_attr($x ) . "' data-reach='" . esc_attr( $content_reached ) . "'>" . esc_html( $content ) . '</span>', '<span class="oceanwp-woo-free-shipping">' . esc_html( $content_reached ) . '</span>', esc_attr( $multiply_by ) );
+		return oceanwp_woo_free_shipping_left( "<span class='oceanwp-woo-free-shipping' data-content='" . esc_attr($x ) . "' data-reach='" . esc_attr( $content_reached ) . "'>" . wp_kses_post( $content ) . '</span>', '<span class="oceanwp-woo-free-shipping">' . wp_kses_post( $content_reached ) . '</span>', esc_attr( $multiply_by ) );
 
 	}
 }
