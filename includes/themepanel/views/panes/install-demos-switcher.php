@@ -24,7 +24,7 @@ $oe_install_demos_active = get_option( 'oe_install_demos_active', 'yes' );
 </p>
 <div id="ocean-install-demos-active" class="column-wrap clr">
 	<label for="oceanwp-switch-install-demos-active" class="oceanwp-tp-switcher column-name clr">
-		<input type="checkbox" role="checkbox" name="oe_install_demos_active" value="true" id="oceanwp-switch-install-demos-active" <?php checked( $oe_install_demos_active == 'yes' ); ?>>
+		<input type="checkbox" role="checkbox" name="oe_install_demos_active" value="true" id="oceanwp-switch-install-demos-active" <?php checked( $oe_install_demos_active === 'yes' ); ?>>
 		<span class="slider round"></span>
 	</label>
 </div>

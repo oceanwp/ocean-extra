@@ -124,7 +124,7 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 					$checked_val = ! empty( $oe_widgets_settings[ $key ] );
 				}
 				?>
-				<div id="ocean-widget-<?php echo $key; ?>" class="oceanwp-tp-small-block column-wrap clr">
+				<div id="ocean-widget-<?php echo esc_attr( $key ); ?>" class="oceanwp-tp-small-block column-wrap clr">
 					<div class="oceanwp-switcher-block">
 						<div class="oceanwp-switcher-item">
 							<label for="oceanwp-widget-switch-[<?php echo esc_attr( $key ); ?>]" class="oceanwp-tp-switcher column-name">
@@ -134,10 +134,10 @@ if ( empty( $oe_widgets_settings ) && $oe_widgets_settings !== 0 ) {
 						</div>
 					</div>
 					<div class="oceanwp-text-block">
-						<h3 class="title"><?php echo esc_attr( $title ); ?></h3>
+						<h3 class="title"><?php echo esc_html( $title ); ?></h3>
 						<?php if ( ! empty( $desc ) ) : ?>
 							<div class="oceanwp-widget-description">
-								<p class="oceanwp-tp-block-description"><?php echo esc_attr( $desc ); ?></p>
+								<p class="oceanwp-tp-block-description"><?php echo esc_html( $desc ); ?></p>
 							</div>
 						<?php endif; ?>
 					</div>
