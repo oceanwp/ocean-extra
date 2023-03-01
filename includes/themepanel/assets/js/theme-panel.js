@@ -37,7 +37,7 @@ jQuery(document).ready(function ($) {
                     checkedCheckboxes++;
                 }
             });
-            if( allCheckboxesLength == checkedCheckboxes ) {
+            if( allCheckboxesLength === checkedCheckboxes ) {
                 if( $wrapper.closest('form').find('.oe-switcher-bulk') ) {
                     $wrapper.closest('form').find('.oe-switcher-bulk').prop('checked', true);
                 }

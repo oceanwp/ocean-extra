@@ -25,7 +25,7 @@ class Ocean_Extra_New_Theme_Panel {
 		require_once OE_PATH . 'includes/themepanel/includes/classes/class-system-status.php';
 
 		$oe_svg_support_active_status = get_option( 'oe_svg_support_active_status', 'no' );
-		if ( $oe_svg_support_active_status == 'yes' ) {
+		if ( $oe_svg_support_active_status === 'yes' ) {
 			require_once OE_PATH . 'includes/themepanel/includes/classes/class-svg-sanitizer.php';
 		}
 
@@ -87,7 +87,7 @@ class Ocean_Extra_New_Theme_Panel {
 
 		$current_screen = get_current_screen();
 		// Only load scripts when needed
-		if ( 'toplevel_page_oceanwp' != $current_screen->id ) {
+		if ( 'toplevel_page_oceanwp' !== $current_screen->id ) {
 			return;
 		}
 
@@ -129,7 +129,7 @@ class Ocean_Extra_New_Theme_Panel {
 			if ( ! is_array( $value ) ) {
 				$value = trim( $value );
 			}
-			$value = wp_unslash( $value );
+			$value = sanitize_text_field( wp_unslash( $value ) );
 			$value = self::validate_panels( $value );
 		}
 		update_option( $option, $value );
@@ -160,7 +160,7 @@ class Ocean_Extra_New_Theme_Panel {
 		$value  = array();
 		if ( isset( $params[ $option ] ) ) {
 			$value = $params[ $option ];
-			$value = wp_unslash( $value );
+			$value = sanitize_text_field( wp_unslash( $value ) );
 		}
 		update_option( $option, $value );
 
@@ -186,7 +186,7 @@ class Ocean_Extra_New_Theme_Panel {
 			);
 		}
 
-		if ( $_POST['settings_for'] == 'white_label' ) {
+		if ( $_POST['settings_for'] === 'white_label' ) {
 			if( class_exists('Ocean_White_Label') ) {
 				$settings = Ocean_White_Label::get_white_label_settings();
 				$this->save_white_label_settings( $settings, $params );
@@ -215,7 +215,7 @@ class Ocean_Extra_New_Theme_Panel {
 			}
 		}
 
-		if( $_POST['settings_for'] == 'adobe_fonts' && $params['owp_integrations'][ 'adobe_fonts_integration' ] == '1' ) {
+		if( $_POST['settings_for'] === 'adobe_fonts' && $params['owp_integrations'][ 'adobe_fonts_integration' ] === '1' ) {
 			$check_project_id_result = OceanWP_Adobe_Font()->check_project_id();
 			if( $check_project_id_result['status'] !== 'success' ) {
 				wp_send_json_error(
@@ -250,15 +250,15 @@ class Ocean_Extra_New_Theme_Panel {
 		$value  = null;
 		if ( isset( $params['value'] ) ) {
 			$value = $params['value'];
-			if ( $value == 'true' ) {
+			if ( $value === 'true' ) {
 				$value = true;
-			} elseif ( $value == 'false' ) {
+			} elseif ( $value === 'false' ) {
 				$value = false;
 			}
 			if ( ! is_array( $value ) && ! is_bool( $value ) ) {
 				$value = trim( $value );
 			}
-			$value = wp_unslash( $value );
+			$value = sanitize_text_field( wp_unslash( $value ) );
 		}
 		update_option( $option, $value );
 
@@ -389,7 +389,7 @@ class Ocean_Extra_New_Theme_Panel {
 		// Process import file
 		$res = self::process_import_file( $file['file'] );
 
-		if ( $res['status'] == 'updated' ) {
+		if ( $res['status'] === 'updated' ) {
 			wp_send_json_success(
 				array(
 					'message' => 'Success',
@@ -437,7 +437,7 @@ class Ocean_Extra_New_Theme_Panel {
 		// Import the file
 		if ( ! empty( $file ) ) {
 
-			if ( '0' == json_last_error() ) {
+			if ( '0' === json_last_error() ) {
 
 				// Loop through mods and add them
 				foreach ( $file as $mod => $value ) {
@@ -636,7 +636,7 @@ class Ocean_Extra_New_Theme_Panel {
 
 	function control_svg_mime_type( $types ) {
 		$oe_svg_support_active_status = get_option( 'oe_svg_support_active_status', 'no' );
-		if ( $oe_svg_support_active_status == 'no' && ! empty( $types['svg'] ) ) {
+		if ( $oe_svg_support_active_status === 'no' && ! empty( $types['svg'] ) ) {
 			unset( $types['svg'] );
 		}
 		return $types;
@@ -783,7 +783,7 @@ class Ocean_Extra_New_Theme_Panel {
 	}
 
 	function deactive_plugins_controll( $plugin, $network_deactivating ) {
-		if ( $plugin == 'anywhere-elementor/anywhere-elementor.php' ) {
+		if ( $plugin === 'anywhere-elementor/anywhere-elementor.php' ) {
 			$metabox_posttypes_settings = get_option( 'oe_metabox_posttypes_settings', -1 );
 			if ( $metabox_posttypes_settings !== -1 ) {
 				if ( ! empty( $metabox_posttypes_settings['ae_global_templates'] ) ) {

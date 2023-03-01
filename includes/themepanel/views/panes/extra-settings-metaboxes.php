@@ -49,14 +49,14 @@ $oe_metabox_descriptions = oe_get_metabox_descriptions();
 				}
 				$description = ! empty( $oe_metabox_descriptions[ $post_type ] ) ? $oe_metabox_descriptions[ $post_type ] : '';
 				?>
-				<div id="ocean-metabox-<?php echo $post_type; ?>" class="oceanwp-tp-small-block column-wrap clr">
+				<div id="ocean-metabox-<?php echo esc_attr( $post_type ); ?>" class="oceanwp-tp-small-block column-wrap clr">
 					<h3 class="title"><?php echo esc_attr( $label ); ?></h3>
 					<label for="oceanwp-metabox-switch-[<?php echo esc_attr( $post_type ); ?>]" class="oceanwp-tp-switcher column-name">
 						<input type="checkbox" role="checkbox" name="oe_metabox_posttypes_settings[<?php echo esc_attr( $post_type ); ?>]" value="true" id="oceanwp-metabox-switch-[<?php echo esc_attr( $post_type ); ?>]" <?php checked( $checked_val ); ?>>
 						<span class="slider round"></span>
 					</label>
 					<?php if( $description ) : ?>
-						<span class="desc"><?php echo $description; ?></span>
+						<span class="desc"><?php echo esc_html( $description ); ?></span>
 					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>

@@ -20,7 +20,7 @@
 			$id    = $key;
 			$customizer_autofocus = isset( $val['customizer_autofocus'] ) ? $val['customizer_autofocus'] : $id;
 
-			if ( true == $panel ) {
+			if ( true === $panel ) {
 				$focus = 'panel';
 			} else {
 				$focus = 'control';
