@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Title         : Aqua Resizer
  * Description   : Resizes WordPress images on the fly
@@ -51,7 +50,7 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
          * For your custom default usage you may want to initialize an Ocean_Extra_Resize object by yourself and then have own defaults
          */
         static public function getInstance() {
-            if(self::$instance == null) {
+            if ( self::$instance == null ) {
                 self::$instance = new self;
             }
 
@@ -64,11 +63,11 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
         public function process( $url, $width = null, $height = null, $crop = null, $single = true, $upscale = false ) {
             try {
                 // Validate inputs.
-                if (!$url)
+                if ( ! $url )
                     throw new Ocean_Extra_Exception('$url parameter is required');
-                if (!$width)
+                if ( ! $width )
                     throw new Ocean_Extra_Exception('$width parameter is required');
-                if (!$height)
+                if ( ! $height )
                     throw new Ocean_Extra_Exception('$height parameter is required');
 
                 // Caipt'n, ready to hook.
@@ -85,20 +84,19 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
                 
                 /* if the $url scheme differs from $upload_url scheme, make them match 
                    if the schemes differe, images don't show up. */
-                if(!strncmp($url,$https_prefix,strlen($https_prefix))){ //if url begins with https:// make $upload_url begin with https:// as well
-                    $upload_url = str_replace($http_prefix,$https_prefix,$upload_url);
+                if ( ! strncmp( $url, $https_prefix, strlen( $https_prefix ) ) ) { //if url begins with https:// make $upload_url begin with https:// as well
+                    $upload_url = str_replace( $http_prefix, $https_prefix, $upload_url );
                 }
-                elseif(!strncmp($url,$http_prefix,strlen($http_prefix))){ //if url begins with http:// make $upload_url begin with http:// as well
-                    $upload_url = str_replace($https_prefix,$http_prefix,$upload_url);      
+                elseif ( ! strncmp( $url, $http_prefix, strlen( $http_prefix ) ) ) { //if url begins with http:// make $upload_url begin with http:// as well
+                    $upload_url = str_replace( $https_prefix, $http_prefix, $upload_url );      
                 }
-                elseif(!strncmp($url,$relative_prefix,strlen($relative_prefix))){ //if url begins with // make $upload_url begin with // as well
-                    $upload_url = str_replace(array( 0 => "$http_prefix", 1 => "$https_prefix"),$relative_prefix,$upload_url);
+                elseif ( ! strncmp( $url, $relative_prefix, strlen( $relative_prefix ) ) ){ //if url begins with // make $upload_url begin with // as well
+                    $upload_url = str_replace( array( 0 => "$http_prefix", 1 => "$https_prefix" ), $relative_prefix, $upload_url );
                 }
                 
-
                 // Check if $img_url is local.
                 if ( false === strpos( $url, $upload_url ) )
-                    throw new Ocean_Extra_Exception('Image must be local: ' . $url);
+                    throw new Ocean_Extra_Exception( 'Image must be local: ' . $url );
 
                 // Define path of image.
                 $rel_path = str_replace( $upload_url, '', $url );
@@ -106,7 +104,7 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
 
                 // Check if img path exists, and is an image indeed.
                 if ( ! file_exists( $img_path ) or ! getimagesize( $img_path ) )
-                    throw new Ocean_Extra_Exception('Image file does not exist (or is not an image): ' . $img_path);
+                    throw new Ocean_Extra_Exception( 'Image file does not exist (or is not an image): ' . $img_path );
 
                 // Get image info.
                 $info = pathinfo( $img_path );
@@ -153,7 +151,7 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
                             $resized_rel_path = str_replace( $upload_dir, '', $resized_file['path'] );
                             $img_url = $upload_url . $resized_rel_path;
                         } else {
-                            throw new Ocean_Extra_Exception('Unable to save resized image file: ' . $editor->get_error_message());
+                            throw new Ocean_Extra_Exception( 'Unable to save resized image file: ' . $editor->get_error_message() );
                         }
 
                     }
@@ -177,10 +175,10 @@ if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
 
                 return $image;
             }
-            catch (Ocean_Extra_Exception $ex) {
-                error_log('Ocean_Extra_Resize.process() error: ' . $ex->getMessage());
+            catch ( Ocean_Extra_Exception $ex ) {
+                error_log( 'Ocean_Extra_Resize.process() error: ' . $ex->getMessage() );
 
-                if ($this->throwOnError) {
+                if ( $this->throwOnError ) {
                     // Bubble up exception.
                     throw $ex;
                 }

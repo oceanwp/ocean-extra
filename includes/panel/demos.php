@@ -1370,7 +1370,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			include OE_PATH . 'includes/panel/classes/importers/class-wpforms-importer.php';
 
 			// Get the selected demo
-			$demo_type 			= $_POST['owp_import_demo'];
+			$demo_type = $_POST['owp_import_demo'];
 
 			// Get demos data
 			$demos = self::get_demos_data();
@@ -1381,7 +1381,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$demo = $demo_data[ $demo_type ];
 
 			// Widgets file
-			$form_file 			= isset( $demo['form_file'] ) ? $demo['form_file'] : '';
+			$form_file = isset( $demo['form_file'] ) ? $demo['form_file'] : '';
 
 			// Import settings.
 			$forms_importer = new OWP_WPForms_Importer();
@@ -1402,7 +1402,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 * @since 1.4.5
 		 */
 		public static function ajax_after_import() {
-			if ( !current_user_can('manage_options') ||! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
+			if ( ! current_user_can('manage_options') || ! wp_verify_nonce( $_POST['owp_import_demo_data_nonce'], 'owp_import_demo_data_nonce' ) ) {
 				die( 'This action was stopped for security purposes.' );
 			}
 
@@ -1444,17 +1444,17 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 				if ( class_exists( 'WooCommerce' ) && true == $shop_demo ) {
 
 					$woopages = array(
-						'woocommerce_shop_page_id' 				=> 'Shop',
-						'woocommerce_cart_page_id' 				=> 'Cart',
-						'woocommerce_checkout_page_id' 			=> 'Checkout',
-						'woocommerce_pay_page_id' 				=> 'Checkout &#8594; Pay',
-						'woocommerce_thanks_page_id' 			=> 'Order Received',
-						'woocommerce_myaccount_page_id' 		=> 'My Account',
-						'woocommerce_edit_address_page_id' 		=> 'Edit My Address',
-						'woocommerce_view_order_page_id' 		=> 'View Order',
-						'woocommerce_change_password_page_id' 	=> 'Change Password',
-						'woocommerce_logout_page_id' 			=> 'Logout',
-						'woocommerce_lost_password_page_id' 	=> 'Lost Password'
+						'woocommerce_shop_page_id'            => 'Shop',
+						'woocommerce_cart_page_id'            => 'Cart',
+						'woocommerce_checkout_page_id'        => 'Checkout',
+						'woocommerce_pay_page_id'             => 'Checkout &#8594; Pay',
+						'woocommerce_thanks_page_id'          => 'Order Received',
+						'woocommerce_myaccount_page_id'       => 'My Account',
+						'woocommerce_edit_address_page_id'    => 'Edit My Address',
+						'woocommerce_view_order_page_id'      => 'View Order',
+						'woocommerce_change_password_page_id' => 'Change Password',
+						'woocommerce_logout_page_id'          => 'Logout',
+						'woocommerce_lost_password_page_id'   => 'Lost Password'
 					);
 
 					foreach ( $woopages as $woo_page_name => $woo_page_title ) {
@@ -1466,11 +1466,11 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 					}
 
-					// We no longer need to install pages
+					// We no longer need to install pages.
 					delete_option( '_wc_needs_pages' );
 					delete_transient( '_wc_activation_redirect' );
 
-					// Get products image size
+					// Get products image size.
 					update_option( 'woocommerce_single_image_width', $image_size );
 					update_option( 'woocommerce_thumbnail_image_width', $thumbnail_size );
 					update_option( 'woocommerce_thumbnail_cropping', 'custom' );
@@ -1479,9 +1479,9 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 				}
 
-				// Set imported menus to registered theme locations
-				$locations 	= get_theme_mod( 'nav_menu_locations' );
-				$menus 		= wp_get_nav_menus();
+				// Set imported menus to registered theme locations.
+				$locations = get_theme_mod( 'nav_menu_locations' );
+				$menus     = wp_get_nav_menus();
 
 				if ( $menus ) {
 					
