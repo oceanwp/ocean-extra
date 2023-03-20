@@ -164,7 +164,7 @@
 				}
 
 				$.ajax({
-					url    : <?php echo Freemius::ajax_url() ?>,
+					url    : ajaxurl,
 					method : 'POST',
 					data   : data,
 					success: function (resultObj) {

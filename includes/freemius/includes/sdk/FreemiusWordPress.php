@@ -85,7 +85,10 @@
 		define( 'FS_API__SANDBOX_ADDRESS', '://sandbox-api.freemius.com' );
 	}
 
-	if ( ! class_exists( 'Freemius_Api_WordPress' ) ) {
+	if ( class_exists( 'Freemius_Api_WordPress' ) ) {
+		return;
+	}
+
 	class Freemius_Api_WordPress extends Freemius_Api_Base {
 		private static $_logger = array();
 
@@ -163,15 +166,6 @@
 		public static function SetHttp() {
 			self::$_protocol = 'http';
 		}
-
-        /**
-         * Sets API connection protocol to HTTPS.
-         *
-         * @since 2.5.4
-         */
-        public static function SetHttps() {
-            self::$_protocol = 'https';
-        }
 
 		/**
 		 * @since 1.0.4
@@ -311,11 +305,9 @@
 		 * @return mixed
 		 */
 		private static function ExecuteRequest( $pUrl, &$pWPRemoteArgs ) {
-            $bt = debug_backtrace();
-
 			$start = microtime( true );
 
-            $response = self::RemoteRequest( $pUrl, $pWPRemoteArgs );
+			$response = wp_remote_request( $pUrl, $pWPRemoteArgs );
 
 			if ( FS_API__LOGGER_ON ) {
 				$end = microtime( true );
@@ -335,34 +327,12 @@
 						$response['body'] :
 						json_encode( $response->get_error_messages() ),
 					'code'      => ! $is_http_error ? $response['response']['code'] : null,
-					'backtrace' => $bt,
+					'backtrace' => debug_backtrace(),
 				);
 			}
 
 			return $response;
 		}
-
-        /**
-         * @author Leo Fajardo (@leorw)
-         *
-         * @param string $pUrl
-         * @param array  $pWPRemoteArgs
-         *
-         * @return mixed
-         */
-        static function RemoteRequest( $pUrl, $pWPRemoteArgs ) {
-            $response = wp_remote_request( $pUrl, $pWPRemoteArgs );
-
-            if (
-                empty( $response['headers'] ) ||
-                empty( $response['headers']['x-api-server'] )
-            ) {
-                // API is considered blocked if the response doesn't include the `x-api-server` header. When there's no error but this header doesn't exist, the response is usually not in the expected form (e.g., cannot be JSON-decoded).
-                $response = new WP_Error( 'api_blocked', htmlentities( $response['body'] ) );
-            }
-
-            return $response;
-        }
 
 		/**
 		 * @return array
@@ -575,6 +545,29 @@
 		#----------------------------------------------------------------------------------
 
 		/**
+		 * If successful connectivity to the API endpoint using ping.json endpoint.
+		 *
+		 *      - OR -
+		 *
+		 * Validate if ping result object is valid.
+		 *
+		 * @param mixed $pPong
+		 *
+		 * @return bool
+		 */
+		public static function Test( $pPong = null ) {
+			$pong = is_null( $pPong ) ?
+				self::Ping() :
+				$pPong;
+
+			return (
+				is_object( $pong ) &&
+				isset( $pong->api ) &&
+				'pong' === $pong->api
+			);
+		}
+
+		/**
 		 * Ping API to test connectivity.
 		 *
 		 * @return object
@@ -720,4 +713,3 @@
 
 		#endregion
 	}
-    }

@@ -26,10 +26,6 @@
         /**
          * @var string
          */
-        public $requires_programming_language_version;
-        /**
-         * @var string
-         */
         public $tested_up_to_version;
         /**
          * @var bool

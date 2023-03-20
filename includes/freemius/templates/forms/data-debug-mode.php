@@ -140,7 +140,7 @@ HTML;
             };
 
             $.ajax( {
-                url       : <?php echo Freemius::ajax_url() ?>,
+                url       : ajaxurl,
                 method    : 'POST',
                 data      : data,
                 beforeSend: function () {

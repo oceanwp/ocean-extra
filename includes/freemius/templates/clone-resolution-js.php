@@ -29,28 +29,26 @@
             $cloneResolutionNotice.on( 'click', '.button, #fs_temporary_duplicate_license_activation_link', function( evt ) {
                 evt.preventDefault();
 
-                var $this = $( this );
+                var $this  = $( this ),
+                    $body  = $( 'body' ),
+                    cursor = $body.css( 'cursor' );
 
                 if ( $this.hasClass( 'disabled' ) ) {
                     return;
                 }
 
-                var $body             = $( 'body' ),
-                    $optionsContainer = $this.parents( '.fs-clone-resolution-options-container' ),
-                    cursor            = $body.css( 'cursor' ),
-                    beforeUnload      = function() {
-                        return '<?php fs_esc_js_echo_inline( 'Please wait', 'please-wait' ) ?>';
-                    };
+                var beforeUnload = function() {
+                    return '<?php fs_esc_js_echo_inline( 'Please wait', 'please-wait' ) ?>';
+                };
 
                 $.ajax( {
                     // Get the parent options container from the child as `$cloneResolutionNotice` can have different AJAX URLs if both the manual clone resolution options and temporary duplicate notices are shown (for different subsites in a multisite network).
-                    url       : $optionsContainer.data( 'ajax-url' ),
+                    url       : $this.parents( '.fs-clone-resolution-options-container' ).data( 'ajax-url' ),
                     method    : 'POST',
                     data      : {
                         action      : '<?php echo $VARS['ajax_action'] ?>',
                         security    : '<?php echo wp_create_nonce( $VARS['ajax_action'] ) ?>',
-                        clone_action: $this.data( 'clone-action' ),
-                        blog_id     : $optionsContainer.data( 'blog-id' )
+                        clone_action: $this.data( 'clone-action' )
                     },
                     beforeSend: function() {
                         $body.css( { cursor: 'wait' } );

@@ -11,11 +11,14 @@
     }
 
     /**
-     * 2-layer lazy options manager.
-     *      layer 2: Memory
-     *      layer 1: Database (options table). All options stored as one option record in the DB to reduce number of DB queries.
+     * 3-layer lazy options manager.
+     *      layer 3: Memory
+     *      layer 2: Cache (if there's any caching plugin and if WP_FS__DEBUG_SDK is FALSE)
+     *      layer 1: Database (options table). All options stored as one option record in the DB to reduce number of DB
+     *      queries.
      *
-     * If load() is not explicitly called, starts as empty manager. Same thing about saving the data - you have to explicitly call store().
+     * If load() is not explicitly called, starts as empty manager. Same thing about saving the data - you have to
+     * explicitly call store().
      *
      * Class Freemius_Option_Manager
      */
@@ -154,33 +157,59 @@
         function load( $flush = false ) {
             $this->_logger->entrance();
 
-            if ( ! $flush && isset( $this->_options ) ) {
-                return;
-            }
-
-            if ( isset( $this->_options ) ) {
-                // Clear prev options.
-                $this->clear();
-            }
-
             $option_name = $this->get_option_manager_name();
 
-            if ( $this->_is_network_storage ) {
-                $this->_options = get_site_option( $option_name );
-            } else if ( $this->_blog_id > 0 ) {
-                $this->_options = get_blog_option( $this->_blog_id, $option_name );
-            } else {
-                $this->_options = get_option( $option_name );
-            }
+            if ( $flush || ! isset( $this->_options ) ) {
+                if ( isset( $this->_options ) ) {
+                    // Clear prev options.
+                    $this->clear();
+                }
 
-            if ( is_string( $this->_options ) ) {
-                $this->_options = json_decode( $this->_options );
-            }
+                $cache_group = $this->get_cache_group();
+
+                if ( WP_FS__DEBUG_SDK ) {
+
+                    // Don't use cache layer in DEBUG mode.
+                    $load_options = empty( $this->_options );
+
+                } else {
+
+                    $this->_options = wp_cache_get(
+                        $option_name,
+                        $cache_group
+                    );
+
+                    $load_options = ( false === $this->_options );
+                }
+
+                $cached = true;
+
+                if ( $load_options ) {
+                    if ( $this->_is_network_storage ) {
+                        $this->_options = get_site_option( $option_name );
+                    } else if ( $this->_blog_id > 0 ) {
+                        $this->_options = get_blog_option( $this->_blog_id, $option_name );
+                    } else {
+                        $this->_options = get_option( $option_name );
+                    }
+
+                    if ( is_string( $this->_options ) ) {
+                        $this->_options = json_decode( $this->_options );
+                    }
 
 //					$this->_logger->info('get_option = ' . var_export($this->_options, true));
 
-            if ( false === $this->_options ) {
-                $this->clear();
+                    if ( false === $this->_options ) {
+                        $this->clear();
+                    }
+
+                    $cached = false;
+                }
+
+                if ( ! WP_FS__DEBUG_SDK && ! $cached ) {
+                    // Set non encoded cache.
+                    wp_cache_set( $option_name, $this->_options, $cache_group );
+                }
             }
         }
 
@@ -243,15 +272,10 @@
          * @since  1.0.6
          *
          * @param string $option
-         * @param bool   $flush
          *
          * @return bool
          */
-        function has_option( $option, $flush = false ) {
-            if ( ! $this->is_loaded() || $flush ) {
-                $this->load( $flush );
-            }
-
+        function has_option( $option ) {
             return array_key_exists( $option, $this->_options );
         }
 
@@ -261,15 +285,14 @@
          *
          * @param string $option
          * @param mixed  $default
-         * @param bool   $flush
          *
          * @return mixed
          */
-        function get_option( $option, $default = null, $flush = false ) {
+        function get_option( $option, $default = null ) {
             $this->_logger->entrance( 'option = ' . $option );
 
-            if ( ! $this->is_loaded() || $flush ) {
-                $this->load( $flush );
+            if ( ! $this->is_loaded() ) {
+                $this->load();
             }
 
             if ( is_array( $this->_options ) ) {
@@ -287,7 +310,7 @@
             /**
              * If it's an object, return a clone of the object, otherwise,
              * external changes of the object will actually change the value
-             * of the object in the option manager which may lead to an unexpected
+             * of the object in the options manager which may lead to an unexpected
              * behaviour and data integrity when a store() call is triggered.
              *
              * Example:
@@ -413,6 +436,10 @@
             } else {
                 update_option( $option_name, $this->_options, $this->_autoload );
             }
+
+            if ( ! WP_FS__DEBUG_SDK ) {
+                wp_cache_set( $option_name, $this->_options, $this->get_cache_group() );
+            }
         }
 
         /**
@@ -470,6 +497,24 @@
          */
         private function get_option_manager_name() {
             return $this->_id;
+        }
+
+        /**
+         * @author Vova Feldman (@svovaf)
+         * @since  2.0.0
+         *
+         * @return string
+         */
+        private function get_cache_group() {
+            $group = WP_FS__SLUG;
+
+            if ( $this->_is_network_storage ) {
+                $group .= '_ms';
+            } else if ( $this->_blog_id > 0 ) {
+                $group .= "_s{$this->_blog_id}";
+            }
+
+            return $group;
         }
 
         #endregion

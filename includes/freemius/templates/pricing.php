@@ -88,8 +88,7 @@
 		// Billing cycle.
 		'billing_cycle'    => fs_request_get( 'billing_cycle', WP_FS__PERIOD_ANNUALLY ),
 		'is_network_admin' => fs_is_network_admin() ? 'true' : 'false',
-        'currency'         => $fs->apply_filters( 'default_currency', 'usd' ),
-        'discounts_model'  => $fs->apply_filters( 'pricing/discounts_model', 'absolute' ),
+		'currency'         => $fs->apply_filters( 'default_currency', 'usd' ),
 	) );
 
     $use_external_pricing = $fs->should_use_external_pricing();
@@ -124,6 +123,7 @@
         <?php
         $pricing_config = array_merge( array(
             'contact_url'            => $fs->contact_url(),
+            'is_network_admin'       => fs_is_network_admin(),
             'is_production'          => ( defined( 'WP_FS__IS_PRODUCTION_MODE' ) ? WP_FS__IS_PRODUCTION_MODE : null ),
             'menu_slug'              => $fs->get_menu_slug(),
             'mode'                   => 'dashboard',

@@ -29,7 +29,8 @@
 					message_id: id
 				};
 
-				$.post( <?php echo Freemius::ajax_url() ?>, data, function( response ) {
+				// since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
+				$.post( ajaxurl, data, function( response ) {
 
 				});
 

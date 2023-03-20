@@ -13,10 +13,8 @@
     /**
      * @var array    $VARS
      * @var Freemius $fs
-     * @var string   $plugin_title
      */
-    $fs           = freemius( $VARS['id'] );
-    $plugin_title = $VARS['plugin_title'];
+    $fs = freemius( $VARS['id'] );
 
     $slug = $fs->get_slug();
 
@@ -24,6 +22,7 @@
     $affiliate       = $fs->get_affiliate();
     $affiliate_terms = $fs->get_affiliate_terms();
 
+    $plugin_title = $fs->get_plugin_title();
     $module_type  = $fs->is_plugin() ?
         WP_FS__MODULE_TYPE_PLUGIN :
         WP_FS__MODULE_TYPE_THEME;
@@ -46,7 +45,7 @@
     $promotion_method_mobile_apps  = false;
     $statistics_information        = false;
     $promotion_method_description  = false;
-    $members_dashboard_login_url   = 'https://users.freemius.com/login';
+    $members_dashboard_login_url   = 'https://members.freemius.com/login/';
 
     $affiliate_application_data = $fs->get_affiliate_application_data();
 
@@ -72,7 +71,7 @@
         $current_user  = Freemius::_get_current_wp_user();
         $full_name     = trim( $current_user->user_firstname . ' ' . $current_user->user_lastname );
         $email_address = $current_user->user_email;
-        $domain        = Freemius::get_unfiltered_site_url( null, true );
+        $domain        = fs_strip_url_protocol( get_site_url() );
     }
 
     $affiliate_tracking = 30;
@@ -366,7 +365,7 @@
                     }
 
                     $.ajax({
-                        url       : <?php echo Freemius::ajax_url() ?>,
+                        url       : ajaxurl,
                         method    : 'POST',
                         data      : {
                             action   : '<?php echo $fs->get_ajax_action( 'submit_affiliate_application' ) ?>',
@@ -507,3 +506,4 @@
         'module_version' => $fs->get_plugin_version(),
     );
     fs_require_template( 'powered-by.php', $params );
+?>
