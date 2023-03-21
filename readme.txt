@@ -200,6 +200,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.1.5 - MAR 27 2023 =
+- Updated: Freemius SDK to 2.5.5 version.
+
 = 2.1.4 - FEB 22 2023 =
 - Fixed: Shortcodes: [oceanwp_woo_free_shipping_left]: Shortcode displaying HTML when a user reaches the free shipping threshold.
 

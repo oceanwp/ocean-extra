@@ -86,7 +86,7 @@ if ( ! class_exists( 'OceanWP_Custom_Code_Customizer' ) ) :
 
 			$js = get_theme_mod( 'ocean_custom_js', false );
 			if ( $js ) {
-				$output .= esc_js( $js );
+				$output .= $js;
 			}
 			return $output;
 
