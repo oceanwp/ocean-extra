@@ -41,8 +41,13 @@ class Ocean_Extra_Theme_Panel {
 			|| ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
+
+		$page_obj = null;
+		if ( isset( $_GET['page'] ) ) {
+			$page_obj = $_GET['page'];
+		}
 		// Display on the plugins and Theme Panel pages
-		if ( 'plugins.php' == $pagenow || ( 'admin.php' == $pagenow && 'oceanwp' == $_GET['page'] ) ) {
+		if ( 'plugins.php' == $pagenow || ( 'admin.php' == $pagenow && 'oceanwp' == $page_obj ) ) {
 			wp_enqueue_style( 'oe-admin-notice', plugins_url( '/assets/css/notice.min.css', __FILE__ ) );
 
 			$dismiss = wp_nonce_url( add_query_arg( 'owp_sticky_notice', 'dismiss_btn' ), 'dismiss_btn' );

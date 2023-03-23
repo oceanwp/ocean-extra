@@ -940,11 +940,16 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 	    public static function popup() {
 	    	global $pagenow;
 
+			$page_obj = null;
+			if ( isset( $_GET['page'] ) ) {
+				$page_obj = $_GET['page'];
+			}
+
 	        // Display on the demos pages
-	        if ( ( 'admin.php' == $pagenow && 'oceanwp-panel-install-demos' && isset( $_GET['page'] ) == $_GET['page'] )
-	            || ( 'admin.php' == $pagenow && 'oceanwp-panel-pro-demos' && isset( $_GET['page'] )  == $_GET['page'] )
-				|| ( 'admin.php' == $pagenow && 'oceanwp' && isset( $_GET['page'] )  == $_GET['page'] ) ) { ?>
-		        
+	        if ( ( 'admin.php' == $pagenow && 'oceanwp-panel-install-demos' == $page_obj )
+	            || ( 'admin.php' == $pagenow && 'oceanwp-panel-pro-demos' == $page_obj )
+				|| ( 'admin.php' == $pagenow && 'oceanwp' == $page_obj ) ) { ?>
+
 		        <div id="owp-demo-popup-wrap">
 					<div class="owp-demo-popup-container">
 						<div class="owp-demo-popup-content-wrap">
