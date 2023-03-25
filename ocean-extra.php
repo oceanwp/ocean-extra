@@ -649,7 +649,7 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 				$url = get_search_link();
 			} else if ( is_front_page() ) {
 				$url = home_url();
-			} else if ( $this->is_posts_page() ) {
+			} else if ( is_home() && 'page' === get_option( 'show_on_front' ) ) {
 				$url = get_permalink( get_option( 'page_for_posts' ) );
 			} else if ( is_post_type_archive() ) {
 				$post_type = get_query_var( 'post_type' );
@@ -669,6 +669,8 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 				}
 			}
 		}
+
+		$url = apply_filters( 'ocean_seo_opengraph_tag_url', $url );
 
 		return esc_url( $url );
 	}
