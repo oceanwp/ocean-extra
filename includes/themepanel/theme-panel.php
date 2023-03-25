@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Scripts Panel
  *
@@ -8,7 +7,7 @@
  * @author OceanWP
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -129,7 +128,8 @@ class Ocean_Extra_New_Theme_Panel {
 			if ( ! is_array( $value ) ) {
 				$value = trim( $value );
 			}
-			$value = sanitize_text_field( wp_unslash( $value ) );
+			$value = isset( $value ) ? (array) $value : array();
+			$value = array_map( 'sanitize_text_field', $value );
 			$value = self::validate_panels( $value );
 		}
 		update_option( $option, $value );
@@ -160,7 +160,8 @@ class Ocean_Extra_New_Theme_Panel {
 		$value  = array();
 		if ( isset( $params[ $option ] ) ) {
 			$value = $params[ $option ];
-			$value = sanitize_text_field( wp_unslash( $value ) );
+			$value = isset( $value ) ? (array) $value : array();
+			$value = array_map( 'sanitize_text_field', $value );
 		}
 		update_option( $option, $value );
 
@@ -222,7 +223,7 @@ class Ocean_Extra_New_Theme_Panel {
 					array(
 						'message' => esc_html__( 'Project ID is wrong.', 'ocean-extra' ),
 					)
-				);	
+				);
 			}
 		}
 
