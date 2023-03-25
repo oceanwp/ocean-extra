@@ -45,7 +45,7 @@ class Ocean_Extra_Theme_Panel {
 
 		$page_obj = null;
 		if ( isset( $_GET['page'] ) ) {
-			$page_obj = $_GET['page'];
+			$page_obj = sanitize_text_field( wp_unslash( $_GET['page'] ) );
 		}
 		// Display on the plugins and Theme Panel pages
 		if ( 'plugins.php' === $pagenow || ( 'admin.php' === $pagenow && 'oceanwp' === $page_obj ) ) {
