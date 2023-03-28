@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-03-23T10:20:17+00:00\n"
+"POT-Creation-Date: 2023-03-28T07:33:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ocean-extra\n"
@@ -8689,7 +8689,7 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:157
 #: build/ocean-extra/includes/panel/theme-panel.php:187
-#: includes/panel/theme-panel.php:187
+#: includes/panel/theme-panel.php:193
 msgid "Upload your logo"
 msgstr ""
 
@@ -8710,25 +8710,25 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:162
 #: build/ocean-extra/includes/panel/theme-panel.php:191
-#: includes/panel/theme-panel.php:191
+#: includes/panel/theme-panel.php:197
 msgid "Add your favicon"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:163
 #: build/ocean-extra/includes/panel/theme-panel.php:192
-#: includes/panel/theme-panel.php:192
+#: includes/panel/theme-panel.php:198
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:167
 #: build/ocean-extra/includes/panel/theme-panel.php:195
-#: includes/panel/theme-panel.php:195
+#: includes/panel/theme-panel.php:201
 msgid "Choose your primary color"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:168
 #: build/ocean-extra/includes/panel/theme-panel.php:196
-#: includes/panel/theme-panel.php:196
+#: includes/panel/theme-panel.php:202
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
@@ -8742,49 +8742,49 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:177
 #: build/ocean-extra/includes/panel/theme-panel.php:199
-#: includes/panel/theme-panel.php:199
+#: includes/panel/theme-panel.php:205
 msgid "Choose your typography"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:178
 #: build/ocean-extra/includes/panel/theme-panel.php:200
-#: includes/panel/theme-panel.php:200
+#: includes/panel/theme-panel.php:206
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:182
 #: build/ocean-extra/includes/panel/theme-panel.php:204
-#: includes/panel/theme-panel.php:204
+#: includes/panel/theme-panel.php:210
 msgid "Top bar options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:183
 #: build/ocean-extra/includes/panel/theme-panel.php:205
-#: includes/panel/theme-panel.php:205
+#: includes/panel/theme-panel.php:211
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:187
 #: build/ocean-extra/includes/panel/theme-panel.php:208
-#: includes/panel/theme-panel.php:208
+#: includes/panel/theme-panel.php:214
 msgid "Header options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:188
 #: build/ocean-extra/includes/panel/theme-panel.php:209
-#: includes/panel/theme-panel.php:209
+#: includes/panel/theme-panel.php:215
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:192
 #: build/ocean-extra/includes/panel/theme-panel.php:216
-#: includes/panel/theme-panel.php:216
+#: includes/panel/theme-panel.php:222
 msgid "Footer bottom options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:193
 #: build/ocean-extra/includes/panel/theme-panel.php:217
-#: includes/panel/theme-panel.php:217
+#: includes/panel/theme-panel.php:223
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
@@ -8873,7 +8873,7 @@ msgstr ""
 #: build/ocean-extra/includes/panel/demos.php:1118
 #: includes/panel/assets/class-plugin-installer.php:39
 #: includes/panel/assets/class-plugin-installer.php:512
-#: includes/panel/demos.php:1118
+#: includes/panel/demos.php:1121
 msgid "Install Now"
 msgstr ""
 
@@ -8884,7 +8884,7 @@ msgstr ""
 #: includes/panel/assets/class-plugin-installer.php:69
 #: includes/panel/assets/class-plugin-installer.php:148
 #: includes/panel/assets/class-plugin-installer.php:514
-#: includes/panel/demos.php:1123
+#: includes/panel/demos.php:1125
 msgid "Activated"
 msgstr ""
 
@@ -8895,7 +8895,7 @@ msgstr ""
 #: includes/panel/assets/class-plugin-installer.php:73
 #: includes/panel/assets/class-plugin-installer.php:152
 #: includes/panel/assets/class-plugin-installer.php:513
-#: includes/panel/demos.php:1112
+#: includes/panel/demos.php:1116
 msgid "Activate"
 msgstr ""
 
@@ -9060,158 +9060,158 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1004
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:47
-#: includes/panel/demos.php:1004
+#: includes/panel/demos.php:1008
 #: includes/wizard/classes/WizardAjax.php:47
 msgid "Import the %1$s demo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1010
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:54
-#: includes/panel/demos.php:1010
+#: includes/panel/demos.php:1014
 #: includes/wizard/classes/WizardAjax.php:54
 msgid "Importing a demo template allows you to kick-start your website fast, instead of creating content from scratch. It is recommended to upload a demo template on a fresh WordPress install to prevent conflict with your current content or content loss. You can use this plugin to reset your site if needed: %1$sWordpress Database Reset%2$s."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1016
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:59
-#: includes/panel/demos.php:1016
+#: includes/panel/demos.php:1020
 #: includes/wizard/classes/WizardAjax.php:59
 msgid "Required Plugins"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1017
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:60
-#: includes/panel/demos.php:1017
+#: includes/panel/demos.php:1021
 #: includes/wizard/classes/WizardAjax.php:60
 msgid "For your site to look exactly like this demo, we recommend the plugins below to be installed and activated."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1027
-#: includes/panel/demos.php:1027
+#: includes/panel/demos.php:1031
 msgid "Go to the next step"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1037
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:80
-#: includes/panel/demos.php:1037
+#: includes/panel/demos.php:1041
 #: includes/wizard/classes/WizardAjax.php:80
 msgid "Select what you want to import:"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1043
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:86
-#: includes/panel/demos.php:1043
+#: includes/panel/demos.php:1047
 #: includes/wizard/classes/WizardAjax.php:86
 msgid "Import XML Data"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1043
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:86
-#: includes/panel/demos.php:1043
+#: includes/panel/demos.php:1047
 #: includes/wizard/classes/WizardAjax.php:86
 msgid "pages, posts, images, menus, etc..."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1050
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:93
-#: includes/panel/demos.php:1050
+#: includes/panel/demos.php:1054
 #: includes/wizard/classes/WizardAjax.php:93
 msgid "Import Customizer Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1057
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:100
-#: includes/panel/demos.php:1057
+#: includes/panel/demos.php:1061
 #: includes/wizard/classes/WizardAjax.php:100
 msgid "Import Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1064
-#: includes/panel/demos.php:1064
+#: includes/panel/demos.php:1068
 msgid "Import Contact Form"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1072
-#: includes/panel/demos.php:1072
+#: includes/panel/demos.php:1076
 msgid "Install this demo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1077
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:113
-#: includes/panel/demos.php:1077
+#: includes/panel/demos.php:1081
 #: includes/wizard/classes/WizardAjax.php:113
 msgid "The import process could take some time, please be patient"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1083
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:119
-#: includes/panel/demos.php:1083
+#: includes/panel/demos.php:1087
 #: includes/wizard/classes/WizardAjax.php:119
 msgid "Demo Imported!"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1084
-#: includes/panel/demos.php:1084
+#: includes/panel/demos.php:1088
 msgid "See the result"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1133
-#: includes/panel/demos.php:1133
+#: includes/panel/demos.php:1135
 msgid "Get This Addon"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1158
-#: includes/panel/demos.php:1158
+#: includes/panel/demos.php:1160
 msgid "No plugin specified"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1178
-#: includes/panel/demos.php:1178
+#: includes/panel/demos.php:1180
 msgid "Plugin Successfully Activated"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1201
-#: includes/panel/demos.php:1201
+#: includes/panel/demos.php:1203
 msgid "Importing XML Data"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1208
-#: includes/panel/demos.php:1208
+#: includes/panel/demos.php:1210
 msgid "Importing Customizer Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1215
-#: includes/panel/demos.php:1215
+#: includes/panel/demos.php:1217
 msgid "Importing Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1222
-#: includes/panel/demos.php:1222
+#: includes/panel/demos.php:1224
 msgid "Importing Form"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1558
-#: includes/panel/demos.php:1558
+#: includes/panel/demos.php:1560
 msgid "Can not retrieve sample data xml file. The server may be down at the moment please try again later. If you still have issues contact the theme developer for assistance."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1573
-#: includes/panel/demos.php:1573
+#: includes/panel/demos.php:1575
 msgid "The xml import file could not be accessed. Please try again or contact the theme developer."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1610
-#: includes/panel/demos.php:1610
+#: includes/panel/demos.php:1612
 msgid "Can not retrieve class-wp-importer.php"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1620
-#: includes/panel/demos.php:1620
+#: includes/panel/demos.php:1622
 msgid "Can not retrieve wordpress-importer.php"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1631
-#: includes/panel/demos.php:1631
+#: includes/panel/demos.php:1633
 msgid "Sample data file appears corrupt or can not be accessed."
 msgstr ""
 
@@ -9295,25 +9295,25 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:162
 #: build/ocean-extra/includes/themepanel/theme-panel.php:410
-#: includes/themepanel/theme-panel.php:410
+#: includes/themepanel/theme-panel.php:411
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:206
 #: build/ocean-extra/includes/themepanel/theme-panel.php:448
-#: includes/themepanel/theme-panel.php:448
+#: includes/themepanel/theme-panel.php:449
 msgid "Settings imported successfully."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:214
 #: build/ocean-extra/includes/themepanel/theme-panel.php:455
-#: includes/themepanel/theme-panel.php:455
+#: includes/themepanel/theme-panel.php:456
 msgid "Invalid Import Data."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:223
 #: build/ocean-extra/includes/themepanel/theme-panel.php:462
-#: includes/themepanel/theme-panel.php:462
+#: includes/themepanel/theme-panel.php:463
 msgid "No import data found."
 msgstr ""
 
@@ -10042,135 +10042,135 @@ msgid "Enable or Disable"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:59
-#: includes/panel/theme-panel.php:59
+#: includes/panel/theme-panel.php:65
 msgid "Lovely jubbly! Your website is starting to look fabulous!"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:63
-#: includes/panel/theme-panel.php:63
+#: includes/panel/theme-panel.php:69
 msgid "But you know what would make your website look stunning and leave your visitors in awe? The  %1$sOcean Core Extensions Bundle%2$s features."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:69
-#: includes/panel/theme-panel.php:69
+#: includes/panel/theme-panel.php:75
 msgid "You'll get:"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:72
-#: includes/panel/theme-panel.php:72
+#: includes/panel/theme-panel.php:78
 msgid "access to premium website template demos,"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:73
-#: includes/panel/theme-panel.php:73
+#: includes/panel/theme-panel.php:79
 msgid "sticky header,"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:74
-#: includes/panel/theme-panel.php:74
+#: includes/panel/theme-panel.php:80
 msgid "royalty free images and icons with templates,"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:75
-#: includes/panel/theme-panel.php:75
+#: includes/panel/theme-panel.php:81
 msgid "Elementor widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:76
-#: includes/panel/theme-panel.php:76
+#: includes/panel/theme-panel.php:82
 msgid "Gutenberg blocks,"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:77
-#: includes/panel/theme-panel.php:77
+#: includes/panel/theme-panel.php:83
 msgid "images and icons library,"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:78
-#: includes/panel/theme-panel.php:78
+#: includes/panel/theme-panel.php:84
 msgid "and so much more."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:80
-#: includes/panel/theme-panel.php:80
+#: includes/panel/theme-panel.php:86
 msgid "Yes! I want the Upgrade"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:146
 #: build/ocean-extra/includes/themepanel/theme-panel.php:496
-#: includes/panel/theme-panel.php:146
-#: includes/themepanel/theme-panel.php:496
+#: includes/panel/theme-panel.php:152
+#: includes/themepanel/theme-panel.php:497
 msgid "General Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:149
 #: build/ocean-extra/includes/themepanel/theme-panel.php:499
-#: includes/panel/theme-panel.php:149
-#: includes/themepanel/theme-panel.php:499
+#: includes/panel/theme-panel.php:155
+#: includes/themepanel/theme-panel.php:500
 msgid "Typography Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:152
 #: build/ocean-extra/includes/themepanel/theme-panel.php:502
-#: includes/panel/theme-panel.php:152
-#: includes/themepanel/theme-panel.php:502
+#: includes/panel/theme-panel.php:158
+#: includes/themepanel/theme-panel.php:503
 msgid "Top Bar Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:155
 #: build/ocean-extra/includes/themepanel/theme-panel.php:505
-#: includes/panel/theme-panel.php:155
-#: includes/themepanel/theme-panel.php:505
+#: includes/panel/theme-panel.php:161
+#: includes/themepanel/theme-panel.php:506
 msgid "Header Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:158
 #: build/ocean-extra/includes/themepanel/theme-panel.php:508
-#: includes/panel/theme-panel.php:158
-#: includes/themepanel/theme-panel.php:508
+#: includes/panel/theme-panel.php:164
+#: includes/themepanel/theme-panel.php:509
 msgid "Blog Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:161
 #: build/ocean-extra/includes/themepanel/theme-panel.php:511
-#: includes/panel/theme-panel.php:161
-#: includes/themepanel/theme-panel.php:511
+#: includes/panel/theme-panel.php:167
+#: includes/themepanel/theme-panel.php:512
 msgid "Sidebar Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:164
 #: build/ocean-extra/includes/themepanel/theme-panel.php:514
-#: includes/panel/theme-panel.php:164
-#: includes/themepanel/theme-panel.php:514
+#: includes/panel/theme-panel.php:170
+#: includes/themepanel/theme-panel.php:515
 msgid "Footer Widgets Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:167
 #: build/ocean-extra/includes/themepanel/theme-panel.php:517
-#: includes/panel/theme-panel.php:167
-#: includes/themepanel/theme-panel.php:517
+#: includes/panel/theme-panel.php:173
+#: includes/themepanel/theme-panel.php:518
 msgid "Footer Bottom Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:170
 #: build/ocean-extra/includes/themepanel/theme-panel.php:520
-#: includes/panel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:520
+#: includes/panel/theme-panel.php:176
+#: includes/themepanel/theme-panel.php:521
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:188
-#: includes/panel/theme-panel.php:188
+#: includes/panel/theme-panel.php:194
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:212
-#: includes/panel/theme-panel.php:212
+#: includes/panel/theme-panel.php:218
 msgid "Footer widgets options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/theme-panel.php:213
-#: includes/panel/theme-panel.php:213
+#: includes/panel/theme-panel.php:219
 msgid "Choose the columns number, paddings and colors for the footer widgets."
 msgstr ""
 
@@ -10420,13 +10420,13 @@ msgstr ""
 #: build/ocean-extra/includes/themepanel/theme-panel.php:205
 #: build/ocean-extra/includes/themepanel/theme-panel.php:244
 #: build/ocean-extra/includes/themepanel/theme-panel.php:370
-#: includes/themepanel/theme-panel.php:120
+#: includes/themepanel/theme-panel.php:119
 #: includes/themepanel/theme-panel.php:154
-#: includes/themepanel/theme-panel.php:184
-#: includes/themepanel/theme-panel.php:196
-#: includes/themepanel/theme-panel.php:205
-#: includes/themepanel/theme-panel.php:244
-#: includes/themepanel/theme-panel.php:370
+#: includes/themepanel/theme-panel.php:185
+#: includes/themepanel/theme-panel.php:197
+#: includes/themepanel/theme-panel.php:206
+#: includes/themepanel/theme-panel.php:245
+#: includes/themepanel/theme-panel.php:371
 msgid "Something went wrong"
 msgstr ""
 
@@ -10435,24 +10435,24 @@ msgstr ""
 #: build/ocean-extra/includes/themepanel/theme-panel.php:231
 #: build/ocean-extra/includes/themepanel/theme-panel.php:268
 #: includes/themepanel/theme-panel.php:140
-#: includes/themepanel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:231
-#: includes/themepanel/theme-panel.php:268
+#: includes/themepanel/theme-panel.php:171
+#: includes/themepanel/theme-panel.php:232
+#: includes/themepanel/theme-panel.php:269
 msgid "Settings saved successfully."
 msgstr ""
 
 #: build/ocean-extra/includes/themepanel/theme-panel.php:223
-#: includes/themepanel/theme-panel.php:223
+#: includes/themepanel/theme-panel.php:224
 msgid "Project ID is wrong."
 msgstr ""
 
 #: build/ocean-extra/includes/themepanel/theme-panel.php:287
-#: includes/themepanel/theme-panel.php:287
+#: includes/themepanel/theme-panel.php:288
 msgid "Settings successfully reset."
 msgstr ""
 
 #: build/ocean-extra/includes/themepanel/theme-panel.php:776
-#: includes/themepanel/theme-panel.php:776
+#: includes/themepanel/theme-panel.php:777
 msgid "View paid features"
 msgstr ""
 
