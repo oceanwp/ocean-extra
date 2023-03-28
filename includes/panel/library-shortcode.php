@@ -2,12 +2,12 @@
 /**
  * My Library Shortcode
  *
- * @package 	Ocean_Extra
- * @category 	Core
- * @author 		OceanWP
+ * @package   Ocean_Extra
+ * @category  Core
+ * @author    OceanWP
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -47,25 +47,25 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 				// Check if the template is created with Elementor
 				$elementor  = get_post_meta( $atts[ 'id' ], '_elementor_edit_mode', true );
 
-			    // If Elementor
-			    if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
+				// If Elementor
+				if ( class_exists( 'Elementor\Plugin' ) && $elementor ) {
 
-			        echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $atts[ 'id' ] );
+					echo Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $atts[ 'id' ] );
 
-			    }
+				}
 
-			    // If Beaver Builder
-			    else if ( class_exists( 'FLBuilder' ) && ! empty( $atts[ 'id' ] ) ) {
+				// If Beaver Builder
+				else if ( class_exists( 'FLBuilder' ) && ! empty( $atts[ 'id' ] ) ) {
 
-			        echo do_shortcode( '[fl_builder_insert_layout id="' . $atts[ 'id' ] . '"]' );
+					echo do_shortcode( '[fl_builder_insert_layout id="' . $atts[ 'id' ] . '"]' );
 
-			    }
+				}
 
-			    // Else
-			    else {
+				// Else
+				else {
 
-			    	// Get template content
-			    	$content = $atts[ 'id' ];
+					// Get template content
+					$content = $atts[ 'id' ];
 
 					if ( ! empty( $content ) ) {
 
@@ -85,7 +85,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 					// Display template content.
 					echo do_shortcode( $content );
 
-			    }
+				}
 			}
 
 			return ob_get_clean();

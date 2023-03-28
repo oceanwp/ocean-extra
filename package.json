@@ -4,7 +4,6 @@
     "description": "Ocean Extra",
     "main": "Gruntfile.js",
     "scripts": {
-        "start": "npm install && npm run build",
         "lint:php": "composer lint:php",
         "lint:summary": "composer lint:summary"
     },

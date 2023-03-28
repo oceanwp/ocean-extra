@@ -6,7 +6,8 @@
  * @category Core
  * @author OceanWP
  */
-// Exit if accessed directly
+
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -37,12 +38,17 @@ class Ocean_Extra_Theme_Panel {
 
 		if ( ! $need_to_upgrade
 			|| '1' === get_option( 'owp_dismiss_sticky_notice' )
-			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
+			|| true === apply_filters( 'oceanwp_licence_tab_enable', false )
 			|| ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
+
+		$page_obj = null;
+		if ( isset( $_GET['page'] ) ) {
+			$page_obj = $_GET['page'];
+		}
 		// Display on the plugins and Theme Panel pages
-		if ( 'plugins.php' == $pagenow || ( 'admin.php' == $pagenow && 'oceanwp' == $_GET['page'] ) ) {
+		if ( 'plugins.php' === $pagenow || ( 'admin.php' === $pagenow && 'oceanwp' === $page_obj ) ) {
 			wp_enqueue_style( 'oe-admin-notice', plugins_url( '/assets/css/notice.min.css', __FILE__ ) );
 
 			$dismiss = wp_nonce_url( add_query_arg( 'owp_sticky_notice', 'dismiss_btn' ), 'dismiss_btn' );
@@ -120,8 +126,8 @@ class Ocean_Extra_Theme_Panel {
 		$need_to_upgrade = ! empty( $owp_fs ) ? $owp_fs->is_pricing_page_visible() : false;
 
 		if ( ! $need_to_upgrade
-			|| '1' === get_option( 'owp_dismiss_sticky_notice' ) 
-			|| true == apply_filters( 'oceanwp_licence_tab_enable', false ) 
+			|| '1' === get_option( 'owp_dismiss_sticky_notice' )
+			|| true == apply_filters( 'oceanwp_licence_tab_enable', false )
 			|| ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
