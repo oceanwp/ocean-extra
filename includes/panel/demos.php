@@ -942,7 +942,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 
 			$page_obj = null;
 			if ( isset( $_GET['page'] ) ) {
-				$page_obj = $_GET['page'];
+				$page_obj = sanitize_text_field( wp_unslash( $_GET['page'] ) );
 			}
 
 			// Display on the demos pages
