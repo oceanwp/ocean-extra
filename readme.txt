@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: 2.1.5
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -200,8 +200,8 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.1.5 - MAR 27 2023 =
-- Updated: Freemius SDK to 2.5.5 version.
+= 2.1.5 - APR 3 2023 =
+- Updated: Freemius SDK to 2.5.6 version.
 
 = 2.1.4 - FEB 22 2023 =
 - Fixed: Shortcodes: [oceanwp_woo_free_shipping_left]: Shortcode displaying HTML when a user reaches the free shipping threshold.
