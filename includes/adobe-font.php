@@ -1,237 +1,298 @@
 <?php
+/**
+ * Adobe Fonts Integration
+ *
+ * @package Ocean_Extra
+ * @author  OceanWP
+ */
 
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-class OceanWP_Adobe_Font {
-
-	public $active_status;
-	private static $_instance = null;
-	private static $font_base = 'oe-adobe-fonts';
-	const REMOTE_URL_BASE     = 'https://use.typekit.net/%s.css';
-	const OE_ADOBE_FONTS_VER  = '1.0.0';
-
-	/**
-	 * Main OceanWP_Adobe_Font Instance
-	 *
-	 * @static
-	 * @see OceanWP_Adobe_Font()
-	 * @return Main OceanWP_Adobe_Font instance
-	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
-		}
-		return self::$_instance;
-	} // End instance()
+if ( ! class_exists( 'OceanWP_Adobe_Font' ) ) {
 
 	/**
-	 * Constructor
+	 * Register Adobe Fonts Class
 	 */
-	public function __construct() {
-		$enable_module = $this->get_active_status();
-		if ( empty( $enable_module ) ) {
-			return;
-		}
+	class OceanWP_Adobe_Font {
 
-		$enable_elementor_mode  = get_option( 'owp_adobe_fonts_integration_enable_elementor', 0 );
-		$enable_customizer_mode = get_option( 'owp_adobe_fonts_integration_enable_customizer', 0 );
+		/**
+		 * Active status.
+		 *
+		 * @var string
+		 */
+		public $active_status;
 
-		if ( ! empty( $enable_elementor_mode ) || ! empty( $enable_customizer_mode ) ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'adobe_font_css' ) );
-		}
+		/**
+		 * Single instance of the class.
+		 *
+		 * @var OceanWP_Adobe_Font
+		 */
+		private static $_instance = null;
 
-		if ( ! empty( $enable_elementor_mode ) ) {
-			// Elementor page builder.
-			add_filter( 'elementor/fonts/groups', array( $this, 'elementor_group' ) );
-			add_filter( 'elementor/fonts/additional_fonts', array( $this, 'add_elementor_fonts' ) );
-		}
+		/**
+		 * Adobe Fonts base instance.
+		 *
+		 * @var string
+		 */
+		private static $font_base = 'oe-adobe-fonts';
+		const REMOTE_URL_BASE     = 'https://use.typekit.net/%s.css';
+		const OE_ADOBE_FONTS_VER  = '1.0.0';
 
-		if ( ! empty( $enable_customizer_mode ) ) {
-			add_action( 'ocean_customizer_fonts', array( $this, 'render_customizer_group' ) );
-			add_action( 'enqueue_block_editor_assets', array( $this, 'adobe_font_css' ) );
-		}
-	}
+		/**
+		 * Main OceanWP_Adobe_Font Instance
+		 *
+		 * @static
+		 * @see OceanWP_Adobe_Font()
+		 * @return Main OceanWP_Adobe_Font instance
+		 */
+		public static function instance() {
+			if ( is_null( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+			return self::$_instance;
+		} // End instance().
 
-	/**
-	 * Cloning is forbidden.
-	 */
-	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
-	}
-
-	/**
-	 * Deserializing instances of this class is forbidden.
-	 */
-	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
-	}
-
-	public function get_project_id() {
-		return get_option( 'owp_adobe_fonts_integration_project_id' );
-	}
-
-	public function get_active_status() {
-		return get_option( 'owp_adobe_fonts_integration' );
-	}
-
-	public function check_project_id() {
-		try {
-			$project_id = get_option( 'owp_adobe_fonts_integration_project_id' );
-
-			if ( empty( $project_id ) ) {
-				throw new Exception( 'Project ID can not be empty.' );
+		/**
+		 * Constructor
+		 */
+		public function __construct() {
+			$enable_module = $this->get_active_status();
+			if ( empty( $enable_module ) ) {
+				return;
 			}
 
-			$adobe_uri = 'https://typekit.com/api/v1/json/kits/' . $project_id . '/published';
-			$response  = wp_remote_get(
-				$adobe_uri,
-				array(
-					'timeout' => '30',
-				)
-			);
+			$enable_elementor_mode  = get_option( 'owp_adobe_fonts_integration_enable_elementor', 0 );
+			$enable_customizer_mode = get_option( 'owp_adobe_fonts_integration_enable_customizer', 0 );
 
-			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
-				throw new Exception( 'Project ID is invalid.' );
+			if ( ! empty( $enable_elementor_mode ) || ! empty( $enable_customizer_mode ) ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'adobe_font_css' ) );
 			}
 
-			$this->save( $project_id, $response );
+			if ( ! empty( $enable_elementor_mode ) ) {
+				// Elementor page builder.
+				add_filter( 'elementor/fonts/groups', array( $this, 'elementor_group' ) );
+				add_filter( 'elementor/fonts/additional_fonts', array( $this, 'add_elementor_fonts' ) );
+			}
 
-			return array(
-				'status'  => 'success',
-				'message' => 'Project ID is valid',
-			);
-		} catch ( Exception $e ) {
-			delete_option( 'oe-adobe-fonts' );
-
-			return array(
-				'status'  => 'failed',
-				'message' => $e->getMessage(),
-			);
+			if ( ! empty( $enable_customizer_mode ) ) {
+				add_action( 'ocean_customizer_fonts', array( $this, 'render_customizer_group' ) );
+				add_action( 'enqueue_block_editor_assets', array( $this, 'adobe_font_css' ) );
+			}
 		}
-	}
 
-	public function save( $project_id, $response_data ) {
-		$project_info = array();
+		/**
+		 * Cloning is forbidden.
+		 */
+		public function __clone() {
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		}
 
-		$data     = json_decode( wp_remote_retrieve_body( $response_data ), true );
-		$families = $data['kit']['families'];
+		/**
+		 * Deserializing instances of this class is forbidden.
+		 */
+		public function __wakeup() {
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		}
 
-		foreach ( $families as $family ) {
+		/**
+		 * Return Adobe Fonts integration project ID.
+		 */
+		public function get_project_id() {
+			return get_option( 'owp_adobe_fonts_integration_project_id' );
+		}
 
-			$family_name = str_replace( ' ', '-', $family['name'] );
+		/**
+		 * Return the status of the Adobe Fonts integration option.
+		 */
+		public function get_active_status() {
+			return get_option( 'owp_adobe_fonts_integration' );
+		}
 
-			$project_info[ $family_name ] = array(
-				'family'   => $family_name,
-				'fallback' => str_replace( '"', '', $family['css_stack'] ),
-				'weights'  => array(),
-			);
+		/**
+		 * Adobe Fonts project ID validation
+		 *
+		 * @throws Exception If data missing or invalid.
+		 */
+		public function check_project_id() {
+			try {
+				$project_id = get_option( 'owp_adobe_fonts_integration_project_id' );
 
-			foreach ( $family['variations'] as $variation ) {
-
-				$variations = str_split( $variation );
-
-				switch ( $variations[0] ) {
-					case 'n':
-						$style = 'normal';
-						break;
-					default:
-						$style = 'normal';
-						break;
+				if ( empty( $project_id ) ) {
+					throw new Exception( 'Project ID can not be empty.' );
 				}
 
-				$weight = $variations[1] . '00';
+				$adobe_uri = 'https://typekit.com/api/v1/json/kits/' . $project_id . '/published';
+				$response  = wp_remote_get(
+					esc_url_raw( $adobe_uri ),
+					array(
+						'timeout' => '30',
+					)
+				);
 
-				if ( ! in_array( $weight, $project_info[ $family_name ]['weights'] ) ) {
-					$project_info[ $family_name ]['weights'][] = $weight;
+				if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) !== 200 ) {
+					throw new Exception( 'Project ID is invalid.' );
 				}
-			}
 
-			$project_info[ $family_name ]['slug']      = $family['slug'];
-			$project_info[ $family_name ]['css_names'] = $family['css_names'];
+				$this->save( $project_id, $response );
+
+				return array(
+					'status'  => 'success',
+					'message' => 'Project ID is valid',
+				);
+			} catch ( Exception $e ) {
+				delete_option( 'oe-adobe-fonts' );
+
+				return array(
+					'status'  => 'failed',
+					'message' => $e->getMessage(),
+				);
+			}
 		}
 
-		$options                        = array();
-		$options['oe-adobe-font-id']    = ! empty( $project_id ) ? sanitize_text_field( $project_id ) : '';
-		$options['oe-adobe-fonts-list'] = isset( $project_id ) ? $project_info : '';
+		/**
+		 * Save settings for Adobe Fonts
+		 *
+		 * @param string $project_id    Returns Adobe fonts project ID.
+		 * @param string $response_data Check if the project ID exists.
+		 */
+		public function save( $project_id, $response_data ) {
+			$project_info = array();
 
-		update_option( 'oe-adobe-fonts', $options );
-	}
+			$data     = json_decode( wp_remote_retrieve_body( $response_data ), true );
+			$families = $data['kit']['families'];
 
-	/**
-	 * Add Custom Font group to elementor font list.
-	 */
-	public function elementor_group( $font_groups ) {
-		$new_group[ self::$font_base ] = __( 'OE Adobe Fonts', 'ocean-extra' );
-		$font_groups                   = $new_group + $font_groups;
-		return $font_groups;
-	}
+			foreach ( $families as $family ) {
 
-	public function render_customizer_group() {
-		$fonts_list  = get_option( 'oe-adobe-fonts' );
-		$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
-		$custom_fonts = array();
-		if ( ! empty( $all_fonts ) ) {
-			?>
-			<optgroup label="<?php esc_attr_e( 'OE Adobe Fonts', 'ocean-extra' ); ?>">
-				<?php
-				foreach ( $all_fonts as $font_family_name => $fonts_url ) {
-					$font_slug = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
-					$font_css  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
-					// $custom_fonts[$font_css] = self::$font_base;
-					?>
-					<option value="<?php echo esc_attr( $font_css ); ?>"><?php echo esc_html( $font_slug ); ?></option>
+				$family_name = str_replace( ' ', '-', $family['name'] );
+
+				$project_info[ $family_name ] = array(
+					'family'   => $family_name,
+					'fallback' => str_replace( '"', '', $family['css_stack'] ),
+					'weights'  => array(),
+				);
+
+				foreach ( $family['variations'] as $variation ) {
+
+					$variations = str_split( $variation );
+
+					switch ( $variations[0] ) {
+						case 'n':
+							$style = 'normal';
+							break;
+						default:
+							$style = 'normal';
+							break;
+					}
+
+					$weight = $variations[1] . '00';
+
+					if ( ! in_array( $weight, $project_info[ $family_name ]['weights'], true ) ) {
+						$project_info[ $family_name ]['weights'][] = $weight;
+					}
+				}
+
+				$project_info[ $family_name ]['slug']      = $family['slug'];
+				$project_info[ $family_name ]['css_names'] = $family['css_names'];
+			}
+
+			$options                        = array();
+			$options['oe-adobe-font-id']    = ! empty( $project_id ) ? sanitize_text_field( $project_id ) : '';
+			$options['oe-adobe-fonts-list'] = isset( $project_id ) ? $project_info : '';
+
+			update_option( 'oe-adobe-fonts', $options );
+		}
+
+		/**
+		 * Add Custom Font group to elementor font list.
+		 *
+		 * @param array $font_groups Add new fonts to the existing group of fonts.
+		 */
+		public function elementor_group( $font_groups ) {
+			$new_group[ self::$font_base ] = __( 'OE Adobe Fonts', 'ocean-extra' );
+			$font_groups                   = $new_group + $font_groups;
+			return $font_groups;
+		}
+
+		/**
+		 * Render Adobe fonts in the Customizer.
+		 */
+		public function render_customizer_group() {
+			$fonts_list   = get_option( 'oe-adobe-fonts' );
+			$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
+			$custom_fonts = array();
+			if ( ! empty( $all_fonts ) ) {
+				?>
+				<optgroup label="<?php esc_attr_e( 'OE Adobe Fonts', 'ocean-extra' ); ?>">
 					<?php
-				}
+					foreach ( $all_fonts as $font_family_name => $fonts_url ) {
+						$font_slug = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
+						$font_css  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
+						?>
+
+						<option value="<?php echo esc_attr( $font_css ); ?>"><?php echo esc_html( $font_slug ); ?></option>
+						<?php
+					}
+					?>
+				</optgroup>
+				<?php
+			}
+
+			$google_fonts = oceanwp_google_fonts_array();
+			if ( $google_fonts ) {
 				?>
-			</optgroup>
-			<?php
-		}
 
-		if ( $google_fonts = oceanwp_google_fonts_array() ) {
-			?>
+				<?php
+				// Loop through font options and add to select.
+				foreach ( $google_fonts as $font ) {
+					?>
 
-			<?php
-			// Loop through font options and add to select.
-			foreach ( $google_fonts as $font ) {
-				?>
+				<?php } ?>
 
-			<?php } ?>
-
-			<?php
-		}
-	}
-
-	/**
-	 * Add Custom Fonts to the Elementor.
-	 */
-	public function add_elementor_fonts( $fonts ) {
-		$fonts_list  = get_option( 'oe-adobe-fonts' );
-		$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
-		$custom_fonts = array();
-		if ( ! empty( $all_fonts ) ) {
-			foreach ( $all_fonts as $font_family_name => $fonts_url ) {
-				$font_slug                 = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
-				$font_css                  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
-				$custom_fonts[ $font_css ] = self::$font_base;
+				<?php
 			}
 		}
 
-		return array_merge( $fonts, $custom_fonts );
-	}
+		/**
+		 * Add Custom Fonts to the Elementor.
+		 *
+		 * @param array $fonts Add Adobe Fonts to the list of available fonts.
+		 */
+		public function add_elementor_fonts( $fonts ) {
+			$fonts_list   = get_option( 'oe-adobe-fonts' );
+			$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
+			$custom_fonts = array();
+			if ( ! empty( $all_fonts ) ) {
+				foreach ( $all_fonts as $font_family_name => $fonts_url ) {
+					$font_slug                 = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
+					$font_css                  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
+					$custom_fonts[ $font_css ] = self::$font_base;
+				}
+			}
 
-	public function adobe_font_css() {
-		$adobe_remote_url = $this->get_adobe_url();
-		if ( false !== $adobe_remote_url ) {
-			wp_enqueue_style( 'oe-adobe-css', $adobe_remote_url, array(), self::OE_ADOBE_FONTS_VER );
+			return array_merge( $fonts, $custom_fonts );
 		}
-	}
 
-	private function get_adobe_url() {
-		$adode_fonts_info = get_option( 'oe-adobe-fonts' );
-		if ( empty( $adode_fonts_info['oe-adobe-fonts-list'] ) ) {
-			return false;
+		/**
+		 * Adobe Fonts CSS
+		 */
+		public function adobe_font_css() {
+			$adobe_remote_url = $this->get_adobe_url();
+			if ( false !== $adobe_remote_url ) {
+				wp_enqueue_style( 'oe-adobe-css', $adobe_remote_url, array(), self::OE_ADOBE_FONTS_VER );
+			}
 		}
 
-		return sprintf( self::REMOTE_URL_BASE, $adode_fonts_info['oe-adobe-font-id'] );
+		/**
+		 * Get URL of the Adobe Fonts project ID.
+		 */
+		private function get_adobe_url() {
+			$adode_fonts_info = get_option( 'oe-adobe-fonts' );
+			if ( empty( $adode_fonts_info['oe-adobe-fonts-list'] ) ) {
+				return false;
+			}
+
+			return sprintf( self::REMOTE_URL_BASE, $adode_fonts_info['oe-adobe-font-id'] );
+		}
 	}
 }
 
@@ -242,6 +303,6 @@ class OceanWP_Adobe_Font {
  */
 function OceanWP_Adobe_Font() {
 	return OceanWP_Adobe_Font::instance();
-} // End OceanWP_Adobe_Font()
+} // End OceanWP_Adobe_Font function.
 
 OceanWP_Adobe_Font();

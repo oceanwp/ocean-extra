@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.1.1
-Stable tag: 2.1.4
+Tested up to: 6.2
+Stable tag: 2.1.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,12 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.1.5 - APR 5 2023 =
+- Updated: Freemius SDK to 2.5.6 version.
+- Updated: Open Graph: Order of items returned.
+- Fixed: Undefined array key "page" in /ocean-extra/includes/panel/theme-panel.php on line 45
+- Fixed: Undefined array key "page" in /ocean-extra/includes/panel/demos.php on line 944
 
 = 2.1.4 - FEB 22 2023 =
 - Fixed: Shortcodes: [oceanwp_woo_free_shipping_left]: Shortcode displaying HTML when a user reaches the free shipping threshold.

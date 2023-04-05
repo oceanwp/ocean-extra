@@ -13,7 +13,7 @@ function img_url( $demo ) {
 $brand = oceanwp_theme_branding();
 ?>
 
-<div id="install-demos" <?php if ( $oe_install_demos_active == 'no' ) :	?> style="display:none;" <?php endif; ?>>
+<div id="install-demos" <?php if ( $oe_install_demos_active === 'no' ) :	?> style="display:none;" <?php endif; ?>>
 
 	<div class="owp-demo-wrap wrap">
 
@@ -110,8 +110,8 @@ $brand = oceanwp_theme_branding();
 								<h2 class="ocean-theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
 
 								<div class="ocean-theme-actions">
-									<a class="button button-primary" href="#"><?php _e( 'Import', 'ocean-extra' ); ?></a>
-									<a class="button button-primary owp-live-preview" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+									<a class="button button-primary" href="#"><?php esc_html_e( 'Import', 'ocean-extra' ); ?></a>
+									<a class="button button-primary owp-live-preview" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php esc_html_e( 'Live Preview', 'ocean-extra' ); ?></a>
 								</div>
 
 							</div>
@@ -157,8 +157,8 @@ $brand = oceanwp_theme_branding();
 									<h2 class="ocean-theme-name" id="<?php echo esc_attr( $demo ); ?>"><span><?php echo ucwords( $demo ); ?></span></h2>
 
 									<div class="ocean-theme-actions">
-										<a class="button button-primary" href="#"><?php _e( 'Import', 'ocean-extra' ); ?></a>
-										<a class="button button-primary owp-live-preview" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php _e( 'Live Preview', 'ocean-extra' ); ?></a>
+										<a class="button button-primary" href="#"><?php esc_html_e( 'Import', 'ocean-extra' ); ?></a>
+										<a class="button button-primary owp-live-preview" href="https://<?php echo esc_attr( $demo ); ?>.oceanwp.org/" target="_blank"><?php esc_html_e( 'Live Preview', 'ocean-extra' ); ?></a>
 									</div>
 
 								</div>

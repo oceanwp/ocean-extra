@@ -52,7 +52,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if (false == $sysinfo['wp_multisite']) : ?>
+                <?php if (false === $sysinfo['wp_multisite']) : ?>
                     <span class="status-invisible">False</span>
                     <span><?php echo esc_html_e('No', 'ocean-extra'); ?></span>
                 <?php else : ?>
@@ -71,7 +71,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         </tr>
 
         <?php
-        if ('page' == $sof) {
+        if ('page' === $sof) {
         ?>
             <tr>
                 <td data-export-label="Front Page">
@@ -122,7 +122,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if ('false' == $sysinfo['wp_debug']) : ?>
+                <?php if ('false' === $sysinfo['wp_debug']) : ?>
                     <span class="status-invisible">False</span>
                     <span><?php echo esc_html_e('Disabled', 'ocean-extra'); ?></span>
                 <?php else : ?>
@@ -294,7 +294,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if ('true' == $sysinfo['localhost']) : ?>
+                <?php if ('true' === $sysinfo['localhost']) : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
                 <?php else : ?>
                     <span class="status-invisible">False</span>
@@ -355,7 +355,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             <td data-export-label="PHP Display Errors"><?php esc_html_e('PHP Display Errors', 'ocean-extra'); ?>:</td>
 
             <td>
-                <?php if ('false' == $sysinfo['php_display_errors']) : ?>
+                <?php if ('false' === $sysinfo['php_display_errors']) : ?>
                     <span class="status-invisible">False</span>
                     <span><?php echo esc_html_e('Disabled', 'ocean-extra'); ?></span>
                 <?php else : ?>
@@ -389,7 +389,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if ('false' == $sysinfo['phpxml']) : ?>
+                <?php if ('false' === $sysinfo['phpxml']) : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
@@ -402,7 +402,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if ('false' == $sysinfo['mbstring']) : ?>
+                <?php if ('false' === $sysinfo['mbstring']) : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
@@ -415,7 +415,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
             </td>
 
             <td>
-                <?php if ('false' == $sysinfo['simplexml']) : ?>
+                <?php if ('false' === $sysinfo['simplexml']) : ?>
                     <span class="status-invisible">False</span><span class="status-state status-false"></span>
                 <?php else : ?>
                     <span class="status-invisible">True</span><span class="status-state status-true"></span>
@@ -428,7 +428,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         $posting['fsockopen_curl']['name'] = esc_html__('Fsockopen/cURL', 'ocean-extra');
         $posting['fsockopen_curl']['help'] = esc_attr__('Used when communicating with remote services with PHP.', 'ocean-extra');
 
-        if ('true' == $sysinfo['fsockopen_curl']) {
+        if ('true' === $sysinfo['fsockopen_curl']) {
             $posting['fsockopen_curl']['success'] = true;
         } else {
             $posting['fsockopen_curl']['success'] = false;
@@ -438,7 +438,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         $posting['soap_client']['name'] = esc_html__('SoapClient', 'ocean-extra');
         $posting['soap_client']['help'] = esc_attr__('Some webservices like shipping use SOAP to get information from remote servers, for example, live shipping quotes from FedEx require SOAP to be installed.', 'ocean-extra');
 
-        if (true == $sysinfo['soap_client']) {
+        if (true === $sysinfo['soap_client']) {
             $posting['soap_client']['success'] = true;
         } else {
             $posting['soap_client']['success'] = false;
@@ -448,7 +448,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         $posting['dom_document']['name'] = esc_html__('DOMDocument', 'ocean-extra');
         $posting['dom_document']['help'] = esc_attr__('HTML/Multipart emails use DOMDocument to generate inline CSS in templates.', 'ocean-extra');
 
-        if (true == $sysinfo['dom_document']) {
+        if (true === $sysinfo['dom_document']) {
             $posting['dom_document']['success'] = true;
         } else {
             $posting['dom_document']['success'] = false;
@@ -459,7 +459,7 @@ $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
         $posting['gzip']['name'] = esc_html__('GZip', 'ocean-extra');
         $posting['gzip']['help'] = esc_attr__('GZip (gzopen) is used to open the GEOIP database from MaxMind.', 'ocean-extra');
 
-        if (true == $sysinfo['gzip']) {
+        if (true === $sysinfo['gzip']) {
             $posting['gzip']['success'] = true;
         } else {
             $posting['gzip']['success'] = false;

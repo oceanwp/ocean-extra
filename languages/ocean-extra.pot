@@ -2,21 +2,20 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.1.0\n"
+"Project-Id-Version: Ocean Extra 2.1.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: OceanWP <support@oceanwp.org>\n"
 "Language-Team: OceanWP <support@oceanwp.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-09T07:27:12+00:00\n"
+"POT-Creation-Date: 2023-03-28T07:33:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: ocean-extra\n"
 
 #. Plugin Name of the plugin
 #: build/ocean-extra/includes/panel/about.php:94
-#: includes/panel/about.php:94
 msgid "Ocean Extra"
 msgstr ""
 
@@ -34,7 +33,6 @@ msgstr ""
 #: build/ocean-extra/includes/panel/about.php:64
 #: includes/admin-bar/admin-bar.php:53
 #: includes/dashboard.php:72
-#: includes/panel/about.php:64
 msgid "OceanWP"
 msgstr ""
 
@@ -67,18 +65,25 @@ msgstr ""
 msgid "Next message"
 msgstr ""
 
-#: build/ocean-extra/includes/custom-code.php:40
-#: includes/custom-code.php:40
+#: build/ocean-extra/includes/adobe-font.php:211
+#: build/ocean-extra/includes/adobe-font.php:225
+#: includes/adobe-font.php:211
+#: includes/adobe-font.php:225
+msgid "OE Adobe Fonts"
+msgstr ""
+
+#: build/ocean-extra/includes/custom-code.php:45
+#: includes/custom-code.php:45
 msgid "Custom CSS/JS"
 msgstr ""
 
-#: build/ocean-extra/includes/custom-code.php:53
-#: includes/custom-code.php:53
+#: build/ocean-extra/includes/custom-code.php:66
+#: includes/custom-code.php:66
 msgid "Custom JS"
 msgstr ""
 
-#: build/ocean-extra/includes/custom-code.php:54
-#: includes/custom-code.php:54
+#: build/ocean-extra/includes/custom-code.php:67
+#: includes/custom-code.php:67
 msgid "You need to reload to see the changes. No need to add the <script> tags."
 msgstr ""
 
@@ -201,7 +206,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:597
 #: includes/panel/classes/class-install-demos.php:107
 #: includes/panel/classes/class-install-demos.php:119
-#: includes/panel/scripts.php:536
 #: includes/themepanel/views/panes/install-demos-catalog.php:55
 #: includes/themepanel/views/panes/install-demos-catalog.php:71
 #: includes/wizard/wizard.php:550
@@ -451,8 +455,8 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1724
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:611
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/image.php:39
-#: build/ocean-extra/includes/preloader/customizer.php:144
-#: build/ocean-extra/includes/preloader/customizer.php:187
+#: build/ocean-extra/includes/preloader/customizer.php:145
+#: build/ocean-extra/includes/preloader/customizer.php:188
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:229
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:544
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1724
@@ -1142,7 +1146,7 @@ msgstr ""
 
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:764
 #: build/ocean-extra/includes/menu-icons/includes/settings.php:305
-#: build/ocean-extra/includes/widgets/about-me.php:419
+#: build/ocean-extra/includes/widgets/about-me.php:425
 #: build/ocean-extra/includes/widgets/contact-info.php:405
 #: build/ocean-extra/includes/widgets/custom-links.php:155
 #: build/ocean-extra/includes/widgets/instagram.php:124
@@ -1150,7 +1154,7 @@ msgstr ""
 #: build/ocean-extra/includes/widgets/social.php:472
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:764
 #: includes/menu-icons/includes/settings.php:305
-#: includes/widgets/about-me.php:419
+#: includes/widgets/about-me.php:425
 #: includes/widgets/contact-info.php:405
 #: includes/widgets/custom-links.php:155
 #: includes/widgets/instagram.php:124
@@ -1165,7 +1169,7 @@ msgstr ""
 #: build/ocean-extra/includes/themepanel/views/panes/system-info-details.php:57
 #: build/ocean-extra/includes/themepanel/views/panes/system-info-details.php:243
 #: build/ocean-extra/includes/themepanel/views/panes/system-info-details.php:301
-#: build/ocean-extra/includes/widgets/about-me.php:418
+#: build/ocean-extra/includes/widgets/about-me.php:424
 #: build/ocean-extra/includes/widgets/contact-info.php:404
 #: build/ocean-extra/includes/widgets/custom-links.php:121
 #: build/ocean-extra/includes/widgets/custom-links.php:154
@@ -1180,7 +1184,7 @@ msgstr ""
 #: includes/themepanel/views/panes/system-info-details.php:57
 #: includes/themepanel/views/panes/system-info-details.php:243
 #: includes/themepanel/views/panes/system-info-details.php:301
-#: includes/widgets/about-me.php:418
+#: includes/widgets/about-me.php:424
 #: includes/widgets/contact-info.php:404
 #: includes/widgets/custom-links.php:121
 #: includes/widgets/custom-links.php:154
@@ -1383,7 +1387,7 @@ msgstr ""
 #: build/ocean-extra/includes/metabox/metabox.php:1848
 #: build/ocean-extra/includes/metabox/metabox.php:1873
 #: build/ocean-extra/includes/metabox/metabox.php:1886
-#: build/ocean-extra/includes/preloader/customizer.php:123
+#: build/ocean-extra/includes/preloader/customizer.php:124
 #: build/ocean-extra/includes/widgets/contact-info.php:341
 #: build/ocean-extra/includes/widgets/contact-info.php:382
 #: build/ocean-extra/includes/widgets/custom-menu.php:366
@@ -2471,7 +2475,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:889
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:595
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:331
-#: includes/panel/scripts.php:335
 msgid "Comment"
 msgstr ""
 
@@ -2736,7 +2739,7 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:650
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:486
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:817
-#: build/ocean-extra/includes/preloader/customizer.php:171
+#: build/ocean-extra/includes/preloader/customizer.php:172
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:982
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:987
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:519
@@ -3235,7 +3238,7 @@ msgstr ""
 
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:189
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:789
-#: build/ocean-extra/includes/preloader/customizer.php:166
+#: build/ocean-extra/includes/preloader/customizer.php:167
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:189
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:789
 #: includes/preloader/customizer.php:167
@@ -4165,7 +4168,6 @@ msgstr ""
 #: build/ocean-extra/includes/panel/scripts.php:295
 #: build/ocean-extra/includes/wizard/wizard.php:940
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:419
-#: includes/panel/scripts.php:295
 #: includes/wizard/wizard.php:940
 msgid "Blog"
 msgstr ""
@@ -5778,11 +5780,7 @@ msgid "File Types"
 msgstr ""
 
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:58
-#: build/ocean-extra/includes/panel/theme-panel.php:268
-#: build/ocean-extra/includes/panel/theme-panel.php:269
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:58
-#: includes/panel/theme-panel.php:268
-#: includes/panel/theme-panel.php:269
 msgid "General"
 msgstr ""
 
@@ -6628,7 +6626,7 @@ msgid "Draggable"
 msgstr ""
 
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
-#: build/ocean-extra/includes/preloader/customizer.php:172
+#: build/ocean-extra/includes/preloader/customizer.php:173
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
 #: includes/preloader/customizer.php:173
 msgid "Ellipsis"
@@ -6988,7 +6986,6 @@ msgstr ""
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:592
 #: build/ocean-extra/includes/panel/links.php:39
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:592
-#: includes/panel/links.php:39
 msgid "Support"
 msgstr ""
 
@@ -7233,7 +7230,7 @@ msgid "Social Dropbox"
 msgstr ""
 
 #: build/ocean-extra/includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
-#: build/ocean-extra/includes/preloader/customizer.php:146
+#: build/ocean-extra/includes/preloader/customizer.php:147
 #: includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
 #: includes/preloader/customizer.php:147
 msgid "SVG"
@@ -7534,7 +7531,6 @@ msgstr ""
 #: build/ocean-extra/includes/metabox/metabox.php:448
 #: build/ocean-extra/includes/panel/scripts.php:330
 #: includes/metabox/metabox.php:448
-#: includes/panel/scripts.php:330
 msgid "Sidebar"
 msgstr ""
 
@@ -7719,7 +7715,6 @@ msgstr ""
 #: build/ocean-extra/includes/metabox/metabox.php:699
 #: build/ocean-extra/includes/panel/scripts.php:235
 #: includes/metabox/metabox.php:699
-#: includes/panel/scripts.php:235
 msgid "Header"
 msgstr ""
 
@@ -7798,7 +7793,6 @@ msgstr ""
 #: build/ocean-extra/includes/metabox/metabox.php:766
 #: build/ocean-extra/includes/panel/scripts.php:270
 #: includes/metabox/metabox.php:766
-#: includes/panel/scripts.php:270
 msgid "Custom Header"
 msgstr ""
 
@@ -7814,7 +7808,7 @@ msgstr ""
 
 #: build/ocean-extra/includes/metabox/metabox.php:801
 #: build/ocean-extra/includes/metabox/metabox.php:1662
-#: build/ocean-extra/includes/preloader/customizer.php:301
+#: build/ocean-extra/includes/preloader/customizer.php:302
 #: includes/metabox/metabox.php:801
 #: includes/metabox/metabox.php:1662
 #: includes/preloader/customizer.php:302
@@ -7830,7 +7824,7 @@ msgstr ""
 
 #: build/ocean-extra/includes/metabox/metabox.php:817
 #: build/ocean-extra/includes/metabox/metabox.php:827
-#: build/ocean-extra/includes/preloader/customizer.php:145
+#: build/ocean-extra/includes/preloader/customizer.php:146
 #: build/ocean-extra/includes/wizard/wizard.php:718
 #: includes/metabox/metabox.php:817
 #: includes/metabox/metabox.php:827
@@ -8304,10 +8298,10 @@ msgid "Enable or disable the page title breadcrumbs."
 msgstr ""
 
 #: build/ocean-extra/includes/metabox/metabox.php:1540
-#: build/ocean-extra/includes/widgets/about-me.php:401
+#: build/ocean-extra/includes/widgets/about-me.php:407
 #: build/ocean-extra/includes/widgets/social.php:505
 #: includes/metabox/metabox.php:1540
-#: includes/widgets/about-me.php:401
+#: includes/widgets/about-me.php:407
 #: includes/widgets/social.php:505
 msgid "Color"
 msgstr ""
@@ -8407,13 +8401,13 @@ msgid "Choose your target for the url. This setting is used for your link post f
 msgstr ""
 
 #: build/ocean-extra/includes/metabox/metabox.php:1774
-#: build/ocean-extra/includes/widgets/about-me.php:411
+#: build/ocean-extra/includes/widgets/about-me.php:417
 #: build/ocean-extra/includes/widgets/contact-info.php:396
 #: build/ocean-extra/includes/widgets/custom-links.php:147
 #: build/ocean-extra/includes/widgets/instagram.php:263
 #: build/ocean-extra/includes/widgets/social.php:464
 #: includes/metabox/metabox.php:1774
-#: includes/widgets/about-me.php:411
+#: includes/widgets/about-me.php:417
 #: includes/widgets/contact-info.php:396
 #: includes/widgets/custom-links.php:147
 #: includes/widgets/instagram.php:263
@@ -8422,14 +8416,14 @@ msgid "Self"
 msgstr ""
 
 #: build/ocean-extra/includes/metabox/metabox.php:1775
-#: build/ocean-extra/includes/widgets/about-me.php:410
+#: build/ocean-extra/includes/widgets/about-me.php:416
 #: build/ocean-extra/includes/widgets/contact-info.php:397
 #: build/ocean-extra/includes/widgets/custom-links.php:120
 #: build/ocean-extra/includes/widgets/custom-links.php:146
 #: build/ocean-extra/includes/widgets/instagram.php:262
 #: build/ocean-extra/includes/widgets/social.php:463
 #: includes/metabox/metabox.php:1775
-#: includes/widgets/about-me.php:410
+#: includes/widgets/about-me.php:416
 #: includes/widgets/contact-info.php:397
 #: includes/widgets/custom-links.php:120
 #: includes/widgets/custom-links.php:146
@@ -8546,48 +8540,38 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:36
 #: build/ocean-extra/includes/panel/about.php:37
-#: includes/panel/about.php:36
-#: includes/panel/about.php:37
 msgid "About OceanWP"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:67
-#: includes/panel/about.php:67
 msgid "Join us on Twitter"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:68
-#: includes/panel/about.php:68
 msgid "Join us on Facebook"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:69
-#: includes/panel/about.php:69
 msgid "Find us on GitHub"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:78
-#: includes/panel/about.php:78
 msgid "Thank you for using OceanWP"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:80
-#: includes/panel/about.php:80
 msgid "OceanWP is the perfect theme for your project. Lightweight and highly extendible, it will enable you to create almost any type of site with a beautiful & professional design. There are several options to personalise your website, multiple widget regions, a responsive design and much more. Developers will love his extensible codebase making it a joy to customise and extend."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:82
-#: includes/panel/about.php:82
 msgid "The perfect theme to use with your favorite page builder!"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:88
-#: includes/panel/about.php:88
 msgid "Extend his functionalities with our extensions"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:90
-#: includes/panel/about.php:90
 msgid "Check our free and premium extensions that extend OceanWP&rsquo;s functionality and make it more powerful."
 msgstr ""
 
@@ -8600,152 +8584,116 @@ msgstr ""
 #: build/ocean-extra/includes/panel/about.php:246
 #: build/ocean-extra/includes/panel/about.php:252
 #: build/ocean-extra/includes/panel/about.php:254
-#: includes/panel/about.php:94
-#: includes/panel/about.php:102
-#: includes/panel/about.php:118
-#: includes/panel/about.php:122
-#: includes/panel/about.php:240
-#: includes/panel/about.php:244
-#: includes/panel/about.php:246
-#: includes/panel/about.php:252
-#: includes/panel/about.php:254
 msgid "free"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:95
-#: includes/panel/about.php:95
 msgid "Add extra features like metaboxes, import/export and a panel to activate the extensions."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:98
-#: includes/panel/about.php:98
 msgid "Elementor Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:99
-#: includes/panel/about.php:99
 msgid "Add some awesome new widgets to the popular free page builder Elementor."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:102
-#: includes/panel/about.php:102
 msgid "Custom Sidebar"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:103
-#: includes/panel/about.php:103
 msgid "Generates an unlimited number of sidebars and place them on any page or post."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:106
-#: includes/panel/about.php:106
 msgid "Sticky Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:107
-#: includes/panel/about.php:107
 msgid "A simple extension to attach the header at the top of your screen with an animation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:110
-#: includes/panel/about.php:110
 msgid "Footer Callout"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:111
-#: includes/panel/about.php:111
 msgid "Add some relevant/important information about your company or product in your footer."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:114
-#: includes/panel/about.php:114
 msgid "Side Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:115
-#: includes/panel/about.php:115
 msgid "Display a panel on the right or left with your favorite widgets by clicking on an icon in the menu."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:118
-#: includes/panel/about.php:118
 msgid "Demo Import"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:119
-#: includes/panel/about.php:119
 msgid "Import the OceanWP demo content, widgets and customizer settings with one click."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:122
-#: includes/panel/about.php:122
 msgid "Social Sharing"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:123
-#: includes/panel/about.php:123
 msgid "A simple extension to add your prefered social sharing buttons to your single posts."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:128
-#: includes/panel/about.php:128
 msgid "View all OceanWP extensions"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:135
-#: includes/panel/about.php:135
 msgid "Create your WordPress site quickly with Themecloud"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:137
-#: includes/panel/about.php:137
 msgid "What is Themecloud?"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:137
-#: includes/panel/about.php:137
 msgid "It&rsquo;s a better way to build WordPress websites, instant setup, no coding required. They are removed all of the technical hurdles standing between you and your ideal site. Don’t worry about installations, configurations, migrations and maintenance. Focus on creating stellar content – and watch your business skyrocket! Not convinced yet?"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:137
-#: includes/panel/about.php:137
 msgid "Look at this great review from WPKube"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:139
-#: includes/panel/about.php:139
 msgid "From $9.90/mo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:139
-#: includes/panel/about.php:139
 msgid "( 15-day free trial, no credit card required )"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:142
-#: includes/panel/about.php:142
 msgid "Learn more about Themecloud"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:151
-#: includes/panel/about.php:151
 msgid "Getting started with OceanWP"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:153
-#: includes/panel/about.php:153
 msgid "Take a look in the options of the Customizer and see yourself how easy and quick to customize the theme as you wish."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:157
-#: build/ocean-extra/includes/panel/theme-panel.php:203
-#: includes/panel/about.php:157
-#: includes/panel/theme-panel.php:203
+#: build/ocean-extra/includes/panel/theme-panel.php:187
+#: includes/panel/theme-panel.php:193
 msgid "Upload your logo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:158
-#: includes/panel/about.php:158
 msgid "Add your own logo and retina logo used for the mobile design."
 msgstr ""
 
@@ -8757,210 +8705,166 @@ msgstr ""
 #: build/ocean-extra/includes/panel/about.php:184
 #: build/ocean-extra/includes/panel/about.php:189
 #: build/ocean-extra/includes/panel/about.php:194
-#: build/ocean-extra/includes/panel/theme-panel.php:594
-#: includes/panel/about.php:159
-#: includes/panel/about.php:164
-#: includes/panel/about.php:169
-#: includes/panel/about.php:174
-#: includes/panel/about.php:179
-#: includes/panel/about.php:184
-#: includes/panel/about.php:189
-#: includes/panel/about.php:194
-#: includes/panel/theme-panel.php:594
 msgid "Go to the option"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:162
-#: build/ocean-extra/includes/panel/theme-panel.php:207
-#: includes/panel/about.php:162
-#: includes/panel/theme-panel.php:207
+#: build/ocean-extra/includes/panel/theme-panel.php:191
+#: includes/panel/theme-panel.php:197
 msgid "Add your favicon"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:163
-#: build/ocean-extra/includes/panel/theme-panel.php:208
-#: includes/panel/about.php:163
-#: includes/panel/theme-panel.php:208
+#: build/ocean-extra/includes/panel/theme-panel.php:192
+#: includes/panel/theme-panel.php:198
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:167
-#: build/ocean-extra/includes/panel/theme-panel.php:211
-#: includes/panel/about.php:167
-#: includes/panel/theme-panel.php:211
+#: build/ocean-extra/includes/panel/theme-panel.php:195
+#: includes/panel/theme-panel.php:201
 msgid "Choose your primary color"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:168
-#: build/ocean-extra/includes/panel/theme-panel.php:212
-#: includes/panel/about.php:168
-#: includes/panel/theme-panel.php:212
+#: build/ocean-extra/includes/panel/theme-panel.php:196
+#: includes/panel/theme-panel.php:202
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:172
-#: includes/panel/about.php:172
 msgid "Change the links color"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:173
-#: includes/panel/about.php:173
 msgid "Choose the color and hover color of your links for the entire site."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:177
-#: build/ocean-extra/includes/panel/theme-panel.php:215
-#: includes/panel/about.php:177
-#: includes/panel/theme-panel.php:215
+#: build/ocean-extra/includes/panel/theme-panel.php:199
+#: includes/panel/theme-panel.php:205
 msgid "Choose your typography"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:178
-#: build/ocean-extra/includes/panel/theme-panel.php:216
-#: includes/panel/about.php:178
-#: includes/panel/theme-panel.php:216
+#: build/ocean-extra/includes/panel/theme-panel.php:200
+#: includes/panel/theme-panel.php:206
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:182
-#: build/ocean-extra/includes/panel/theme-panel.php:220
-#: includes/panel/about.php:182
-#: includes/panel/theme-panel.php:220
+#: build/ocean-extra/includes/panel/theme-panel.php:204
+#: includes/panel/theme-panel.php:210
 msgid "Top bar options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:183
-#: build/ocean-extra/includes/panel/theme-panel.php:221
-#: includes/panel/about.php:183
-#: includes/panel/theme-panel.php:221
+#: build/ocean-extra/includes/panel/theme-panel.php:205
+#: includes/panel/theme-panel.php:211
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:187
-#: build/ocean-extra/includes/panel/theme-panel.php:224
-#: includes/panel/about.php:187
-#: includes/panel/theme-panel.php:224
+#: build/ocean-extra/includes/panel/theme-panel.php:208
+#: includes/panel/theme-panel.php:214
 msgid "Header options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:188
-#: build/ocean-extra/includes/panel/theme-panel.php:225
-#: includes/panel/about.php:188
-#: includes/panel/theme-panel.php:225
+#: build/ocean-extra/includes/panel/theme-panel.php:209
+#: includes/panel/theme-panel.php:215
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:192
-#: build/ocean-extra/includes/panel/theme-panel.php:232
-#: includes/panel/about.php:192
-#: includes/panel/theme-panel.php:232
+#: build/ocean-extra/includes/panel/theme-panel.php:216
+#: includes/panel/theme-panel.php:222
 msgid "Footer bottom options"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:193
-#: build/ocean-extra/includes/panel/theme-panel.php:233
-#: includes/panel/about.php:193
-#: includes/panel/theme-panel.php:233
+#: build/ocean-extra/includes/panel/theme-panel.php:217
+#: includes/panel/theme-panel.php:223
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:209
-#: includes/panel/about.php:209
 msgid "Customize Your Site"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:218
-#: includes/panel/about.php:218
 msgid "Contribute to OceanWP"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:220
-#: includes/panel/about.php:220
 msgid "You&rsquo;ve found a bug? Want to contribute a patch, create a new feature or extension?"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:221
-#: includes/panel/about.php:221
 msgid "GitHub is the place to go!"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:227
-#: includes/panel/about.php:227
 msgid "Get support"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:229
-#: includes/panel/about.php:229
 msgid "You can find a wide range of information on how to use and customise OceanWP in our"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:229
-#: includes/panel/about.php:229
 msgid "documentation"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:229
-#: includes/panel/about.php:229
 msgid "If you need help?"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:229
-#: includes/panel/about.php:229
 msgid "open a support ticket"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:235
-#: includes/panel/about.php:235
 msgid "Recommended plugins"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:237
-#: includes/panel/about.php:237
 msgid "Below you will find links to plugins I personally like and recommend. None of these plugins are required for your theme to work, they simply add additional functionality."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:241
-#: includes/panel/about.php:241
 msgid "Manage multiple contact forms and customize the form and the mail contents with markups."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:243
-#: includes/panel/about.php:243
 msgid "Gravity Forms is the easiest tool to create advanced forms for your WordPress powered website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:245
-#: includes/panel/about.php:245
 msgid "The most advanced frontend drag & drop page builder. Create high-end, pixel perfect websites."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:247
-#: includes/panel/about.php:247
 msgid "A drag and drop WordPress Page Builder. Create with ease beautiful & professional pages."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:249
-#: includes/panel/about.php:249
 msgid "Visual Composer is the ultimate plugin for building every WordPress site without coding."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:251
-#: includes/panel/about.php:251
 msgid "It&rsquo;s not just a slider, build modern & mobile friendly presentations for your website in no time."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:253
-#: includes/panel/about.php:253
 msgid "A powerful and flexible plugin that makes it a breeze for users to sign-up and become members."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:255
-#: includes/panel/about.php:255
 msgid "WooCommerce is a free eCommerce plugin that allows you to sell anything, beautifully."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/about.php:259
-#: includes/panel/about.php:259
 msgid "More Recommended Plugins"
 msgstr ""
 
@@ -8969,7 +8873,7 @@ msgstr ""
 #: build/ocean-extra/includes/panel/demos.php:1118
 #: includes/panel/assets/class-plugin-installer.php:39
 #: includes/panel/assets/class-plugin-installer.php:512
-#: includes/panel/demos.php:1118
+#: includes/panel/demos.php:1121
 msgid "Install Now"
 msgstr ""
 
@@ -8980,7 +8884,7 @@ msgstr ""
 #: includes/panel/assets/class-plugin-installer.php:69
 #: includes/panel/assets/class-plugin-installer.php:148
 #: includes/panel/assets/class-plugin-installer.php:514
-#: includes/panel/demos.php:1123
+#: includes/panel/demos.php:1125
 msgid "Activated"
 msgstr ""
 
@@ -8991,7 +8895,7 @@ msgstr ""
 #: includes/panel/assets/class-plugin-installer.php:73
 #: includes/panel/assets/class-plugin-installer.php:152
 #: includes/panel/assets/class-plugin-installer.php:513
-#: includes/panel/demos.php:1112
+#: includes/panel/demos.php:1116
 msgid "Activate"
 msgstr ""
 
@@ -9156,348 +9060,310 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1004
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:47
-#: includes/panel/demos.php:1004
+#: includes/panel/demos.php:1008
 #: includes/wizard/classes/WizardAjax.php:47
 msgid "Import the %1$s demo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1010
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:54
-#: includes/panel/demos.php:1010
+#: includes/panel/demos.php:1014
 #: includes/wizard/classes/WizardAjax.php:54
 msgid "Importing a demo template allows you to kick-start your website fast, instead of creating content from scratch. It is recommended to upload a demo template on a fresh WordPress install to prevent conflict with your current content or content loss. You can use this plugin to reset your site if needed: %1$sWordpress Database Reset%2$s."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1016
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:59
-#: includes/panel/demos.php:1016
+#: includes/panel/demos.php:1020
 #: includes/wizard/classes/WizardAjax.php:59
 msgid "Required Plugins"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1017
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:60
-#: includes/panel/demos.php:1017
+#: includes/panel/demos.php:1021
 #: includes/wizard/classes/WizardAjax.php:60
 msgid "For your site to look exactly like this demo, we recommend the plugins below to be installed and activated."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1027
-#: includes/panel/demos.php:1027
+#: includes/panel/demos.php:1031
 msgid "Go to the next step"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1037
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:80
-#: includes/panel/demos.php:1037
+#: includes/panel/demos.php:1041
 #: includes/wizard/classes/WizardAjax.php:80
 msgid "Select what you want to import:"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1043
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:86
-#: includes/panel/demos.php:1043
+#: includes/panel/demos.php:1047
 #: includes/wizard/classes/WizardAjax.php:86
 msgid "Import XML Data"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1043
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:86
-#: includes/panel/demos.php:1043
+#: includes/panel/demos.php:1047
 #: includes/wizard/classes/WizardAjax.php:86
 msgid "pages, posts, images, menus, etc..."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1050
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:93
-#: includes/panel/demos.php:1050
+#: includes/panel/demos.php:1054
 #: includes/wizard/classes/WizardAjax.php:93
 msgid "Import Customizer Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1057
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:100
-#: includes/panel/demos.php:1057
+#: includes/panel/demos.php:1061
 #: includes/wizard/classes/WizardAjax.php:100
 msgid "Import Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1064
-#: includes/panel/demos.php:1064
+#: includes/panel/demos.php:1068
 msgid "Import Contact Form"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1072
-#: includes/panel/demos.php:1072
+#: includes/panel/demos.php:1076
 msgid "Install this demo"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1077
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:113
-#: includes/panel/demos.php:1077
+#: includes/panel/demos.php:1081
 #: includes/wizard/classes/WizardAjax.php:113
 msgid "The import process could take some time, please be patient"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1083
 #: build/ocean-extra/includes/wizard/classes/WizardAjax.php:119
-#: includes/panel/demos.php:1083
+#: includes/panel/demos.php:1087
 #: includes/wizard/classes/WizardAjax.php:119
 msgid "Demo Imported!"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1084
-#: includes/panel/demos.php:1084
+#: includes/panel/demos.php:1088
 msgid "See the result"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1133
-#: includes/panel/demos.php:1133
+#: includes/panel/demos.php:1135
 msgid "Get This Addon"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1158
-#: includes/panel/demos.php:1158
+#: includes/panel/demos.php:1160
 msgid "No plugin specified"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1178
-#: includes/panel/demos.php:1178
+#: includes/panel/demos.php:1180
 msgid "Plugin Successfully Activated"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1201
-#: includes/panel/demos.php:1201
+#: includes/panel/demos.php:1203
 msgid "Importing XML Data"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1208
-#: includes/panel/demos.php:1208
+#: includes/panel/demos.php:1210
 msgid "Importing Customizer Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1215
-#: includes/panel/demos.php:1215
+#: includes/panel/demos.php:1217
 msgid "Importing Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1222
-#: includes/panel/demos.php:1222
+#: includes/panel/demos.php:1224
 msgid "Importing Form"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1558
-#: includes/panel/demos.php:1558
+#: includes/panel/demos.php:1560
 msgid "Can not retrieve sample data xml file. The server may be down at the moment please try again later. If you still have issues contact the theme developer for assistance."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1573
-#: includes/panel/demos.php:1573
+#: includes/panel/demos.php:1575
 msgid "The xml import file could not be accessed. Please try again or contact the theme developer."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1610
-#: includes/panel/demos.php:1610
+#: includes/panel/demos.php:1612
 msgid "Can not retrieve class-wp-importer.php"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1620
-#: includes/panel/demos.php:1620
+#: includes/panel/demos.php:1622
 msgid "Can not retrieve wordpress-importer.php"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/demos.php:1631
-#: includes/panel/demos.php:1631
+#: includes/panel/demos.php:1633
 msgid "Sample data file appears corrupt or can not be accessed."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:42
 #: build/ocean-extra/includes/panel/extensions.php:43
-#: includes/panel/extensions.php:42
-#: includes/panel/extensions.php:43
 msgid "Extensions"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:60
-#: includes/panel/extensions.php:60
 msgid "A must-have plugin, attach your header at the top of your screen with style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:63
-#: includes/panel/extensions.php:63
 msgid "Add many extra widgets to the popular free page builder Elementor."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:66
-#: includes/panel/extensions.php:66
 msgid "Inform users that you are using cookies to comply with the EU cookie law GDPR regulations."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:69
-#: includes/panel/extensions.php:69
 msgid "Add some relevant information about your company or product in your footer."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:72
-#: includes/panel/extensions.php:72
 msgid "A simple and easy way to create a fullscreen scrolling website."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:75
-#: includes/panel/extensions.php:75
 msgid "A plugin to add a popup login, register and lost password form where you want."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:78
-#: includes/panel/extensions.php:78
 msgid "Fetch and customize your Instagram feed to display in a beautiful way."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:81
-#: includes/panel/extensions.php:81
 msgid "A complete extension to display your portfolio and work in a beautiful way."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:84
-#: includes/panel/extensions.php:84
 msgid "Add a responsive side panel with your preferred widgets inside."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:87
-#: includes/panel/extensions.php:87
 msgid "Add content throughout various areas of OceanWP without using child theme."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:90
-#: includes/panel/extensions.php:90
 msgid "A simple extension to attach the footer at the bottom of your screen."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:93
-#: includes/panel/extensions.php:93
 msgid "Display a popup when a product is added to the cart, perfect to increase conversion."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:96
-#: includes/panel/extensions.php:96
 msgid "A plugin that allows you to replace the theme name by your own brand name."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:113
-#: includes/panel/extensions.php:113
 msgid "Take your website to the next level with our premium extensions"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:115
-#: includes/panel/extensions.php:115
 msgid "From blog to eCommerce site, there is no limit to what you can do with OceanWP."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:136
-#: includes/panel/extensions.php:136
 msgid "Ocean"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/extensions.php:143
-#: includes/panel/extensions.php:143
 msgid "More Details >"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:38
 #: build/ocean-extra/includes/panel/import-export.php:39
-#: includes/panel/import-export.php:38
-#: includes/panel/import-export.php:39
 msgid "Import/Export"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:162
-#: build/ocean-extra/includes/themepanel/theme-panel.php:398
-#: includes/panel/import-export.php:162
-#: includes/themepanel/theme-panel.php:410
+#: build/ocean-extra/includes/themepanel/theme-panel.php:410
+#: includes/themepanel/theme-panel.php:411
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:206
-#: build/ocean-extra/includes/themepanel/theme-panel.php:436
-#: includes/panel/import-export.php:206
-#: includes/themepanel/theme-panel.php:448
+#: build/ocean-extra/includes/themepanel/theme-panel.php:448
+#: includes/themepanel/theme-panel.php:449
 msgid "Settings imported successfully."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:214
-#: build/ocean-extra/includes/themepanel/theme-panel.php:443
-#: includes/panel/import-export.php:214
-#: includes/themepanel/theme-panel.php:455
+#: build/ocean-extra/includes/themepanel/theme-panel.php:455
+#: includes/themepanel/theme-panel.php:456
 msgid "Invalid Import Data."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:223
-#: build/ocean-extra/includes/themepanel/theme-panel.php:450
-#: includes/panel/import-export.php:223
-#: includes/themepanel/theme-panel.php:462
+#: build/ocean-extra/includes/themepanel/theme-panel.php:462
+#: includes/themepanel/theme-panel.php:463
 msgid "No import data found."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:251
-#: includes/panel/import-export.php:251
 msgid "Importer & Exporter"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:261
 #: build/ocean-extra/includes/panel/import-export.php:273
-#: includes/panel/import-export.php:261
-#: includes/panel/import-export.php:273
 msgid "Import Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:264
-#: includes/panel/import-export.php:264
 msgid "Please select a <b>.dat</b> file generated by the export button."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:284
 #: build/ocean-extra/includes/panel/import-export.php:292
-#: includes/panel/import-export.php:284
-#: includes/panel/import-export.php:292
 msgid "Export Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:287
-#: includes/panel/import-export.php:287
 msgid "This will export all theme_mods that means if other plugins are adding settings in the customizer it will export those as well."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/import-export.php:289
-#: includes/panel/import-export.php:289
 msgid "Click below to generate a <b>.dat</b> file for all settings."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/integrations-tab.php:44
-#: includes/panel/integrations-tab.php:44
 msgid "Integrations"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/integrations-tab.php:96
-#: includes/panel/integrations-tab.php:96
 msgid "MailChimp"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/integrations-tab.php:101
-#: includes/panel/integrations-tab.php:101
 msgid "Used for the MailChimp widget and the Newsletter widget of the Ocean Elementor Widgets extension. %1$sFollow this article%2$s to get your API Key and List ID."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/integrations-tab.php:110
 #: build/ocean-extra/includes/themepanel/views/panes/integration-google-maps.php:11
 #: build/ocean-extra/includes/themepanel/views/panes/integration-mailchimp.php:21
-#: includes/panel/integrations-tab.php:110
 #: includes/themepanel/views/panes/integration-google-maps.php:11
 #: includes/themepanel/views/panes/integration-mailchimp.php:21
 msgid "API Key"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/integrations-tab.php:118
-#: includes/panel/integrations-tab.php:118
 msgid "List ID"
 msgstr ""
 
@@ -9563,30 +9429,22 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/licenses.php:39
 #: build/ocean-extra/includes/panel/licenses.php:40
-#: includes/panel/licenses.php:39
-#: includes/panel/licenses.php:40
 msgid "Licenses"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/licenses.php:56
-#: includes/panel/licenses.php:56
 msgid "Licenses Settings"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/licenses.php:59
-#: includes/panel/licenses.php:59
 msgid "Enter your extension license keys here to receive updates for purchased extensions. If your license key has expired, please %1$srenew your license%2$s."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/licenses.php:75
-#: includes/panel/licenses.php:75
 msgid "Save Changes"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/links.php:38
-#: build/ocean-extra/includes/panel/theme-panel.php:434
-#: includes/panel/links.php:38
-#: includes/panel/theme-panel.php:434
 msgid "Documentation"
 msgstr ""
 
@@ -9612,939 +9470,708 @@ msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:34
 #: build/ocean-extra/includes/panel/rec-plugins.php:35
-#: includes/panel/rec-plugins.php:34
-#: includes/panel/rec-plugins.php:35
 msgid "Rec. Plugins"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:104
 #: build/ocean-extra/includes/panel/rec-plugins.php:107
-#: includes/panel/rec-plugins.php:104
-#: includes/panel/rec-plugins.php:107
 msgid "WP Rocket"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:105
-#: includes/panel/rec-plugins.php:105
 msgid "Caching creates an ultra-fast load time, essential for improving Search Engine Optimization. When you turn on WP Rocket, page caching is immediately activated."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:113
-#: includes/panel/rec-plugins.php:113
 msgid "AffiliateWP"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:114
-#: includes/panel/rec-plugins.php:114
 msgid "This plugin provides a complete affiliate management system for your WordPress website that seamlessly integrates with all major WordPress e-commerce and membership platforms."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:116
-#: includes/panel/rec-plugins.php:116
 msgid "AffiliateWP, LLC"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:122
-#: includes/panel/rec-plugins.php:122
 msgid "Gravity Forms"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:123
-#: includes/panel/rec-plugins.php:123
 msgid "Build and publish your forms in just minutes. Select your fields, configure your options and easily embed forms on your WordPress powered site using the built-in tools."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:125
-#: includes/panel/rec-plugins.php:125
 msgid "rocketgenius"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:132
-#: includes/panel/rec-plugins.php:132
 msgid "Recommended Plugins"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:135
-#: includes/panel/rec-plugins.php:135
 msgid "Below you will find plugins I personally like and recommend. None of these plugins are required for the theme to work, they simply add additional functionality."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:147
-#: includes/panel/rec-plugins.php:147
 msgid "Disclosure:"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/rec-plugins.php:147
-#: includes/panel/rec-plugins.php:147
 msgid "This page contains external affiliate links that may result in I receive a commission if you choose to purchase said product. I receive no payment for speaking well of plugins or list them on this page."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:80
-#: includes/panel/scripts.php:80
 msgid "Custom Select"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:81
-#: includes/panel/scripts.php:81
 msgid "This script uses the native select box and add overlays a stylable <span> element in order to acheive the desired look."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:85
-#: includes/panel/scripts.php:85
 msgid "Drop Down Search"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:86
-#: includes/panel/scripts.php:86
 msgid "This script is for the drop down search style in your navigation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:90
-#: includes/panel/scripts.php:90
 msgid "Header Replace Search"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:91
-#: includes/panel/scripts.php:91
 msgid "This script is for the header replace search style in your navigation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:95
-#: includes/panel/scripts.php:95
 msgid "Overlay Search"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:96
-#: includes/panel/scripts.php:96
 msgid "This script is for the overlay search style in your navigation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:100
-#: includes/panel/scripts.php:100
 msgid "FitVids"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:101
-#: includes/panel/scripts.php:101
 msgid "This script is to achieve fluid width videos in your responsive web design, your videos looks good on all devices."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:105
-#: includes/panel/scripts.php:105
 msgid "Fixed Footer"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:106
-#: includes/panel/scripts.php:106
 msgid "This script adds a height to your content to keep your footer at the bottom of your page, the Fixed Footer option need to be activated in the customizer&rsquo;s Footer Widgets section."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:110
-#: includes/panel/scripts.php:110
 msgid "Parallax Footer"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:111
-#: includes/panel/scripts.php:111
 msgid "This script is used for the parallax footer effect."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:115
-#: includes/panel/scripts.php:115
 msgid "Full Screen Menu"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:116
-#: includes/panel/scripts.php:116
 msgid "This script is to open your menu in overlay for the full screen header style, you can disable this function if you do not use this header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:120
-#: includes/panel/scripts.php:120
 msgid "Header Search Form"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:121
-#: includes/panel/scripts.php:121
 msgid "This script is to add a class to the search form to make the label disappear when text is inserted, used on some header style like medium or full screen and the full screen mobile menu style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:125
-#: includes/panel/scripts.php:125
 msgid "Infinite Scroll"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:126
-#: includes/panel/scripts.php:126
 msgid "This script create an infinite scrolling effect, used for the blog archives page if Infinite Scroll is selected as pagination style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:130
-#: includes/panel/scripts.php:130
 msgid "Isotope"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:131
-#: includes/panel/scripts.php:131
 msgid "This script is to filter & sort layouts, used for the masonry grid style of your blog and will be used in some extensions."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:135
-#: includes/panel/scripts.php:135
 msgid "Lightbox"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:136
-#: includes/panel/scripts.php:136
 msgid "This script enables you to overlay your images on the current page, used for the gallerie, single product and content images."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:140
-#: includes/panel/scripts.php:140
 msgid "Match Height"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:141
-#: includes/panel/scripts.php:141
 msgid "This script is a responsive equal heights script makes the height of all selected elements exactly equal, used for the grid blog style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:145
-#: includes/panel/scripts.php:145
 msgid "Mega Menu"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:146
-#: includes/panel/scripts.php:146
 msgid "This script is to create the mega menus, so if you don&rsquo;t use mega menus at all on your website, you can disable this script."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:150
-#: includes/panel/scripts.php:150
 msgid "Nav No Click"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:151
-#: includes/panel/scripts.php:151
 msgid "This script is to prevent clicking on your links, used for the \"Disable link\" field of your menu items."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:155
-#: includes/panel/scripts.php:155
 msgid "Scroll Effect"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:156
-#: includes/panel/scripts.php:156
 msgid "This script create an animation to your anchor links, mainly used for a one page site but also for some links like the comment link on your single posts."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:160
-#: includes/panel/scripts.php:160
 msgid "Scroll Top"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:161
-#: includes/panel/scripts.php:161
 msgid "This script is to displays the scroll up button and brings you back to the top of your page when you click on it."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:165
-#: includes/panel/scripts.php:165
 msgid "Sidr"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:166
-#: includes/panel/scripts.php:166
 msgid "This script is for easily creating responsive side menus, used for the Sidebar mobile menu style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:170
-#: includes/panel/scripts.php:170
 msgid "Drop Down Mobile"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:171
-#: includes/panel/scripts.php:171
 msgid "This script is used for the Drop Down mobile menu style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:175
-#: includes/panel/scripts.php:175
 msgid "Full Screen Mobile"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:176
-#: includes/panel/scripts.php:176
 msgid "This script is used for the Full Screen mobile menu style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:180
-#: includes/panel/scripts.php:180
 msgid "Slick"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:181
-#: includes/panel/scripts.php:181
 msgid "This script is used for all the carousel of your site, gallerie images, WooCommerce single product images and thumbnails."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:185
-#: includes/panel/scripts.php:185
 msgid "SmoothScroll"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:186
-#: includes/panel/scripts.php:186
 msgid "This script adds a smooth scrolling to the browser."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:190
-#: includes/panel/scripts.php:190
 msgid "Superfish"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:191
-#: includes/panel/scripts.php:191
 msgid "This script adds usability enhancements to existing multi-level drop-down menus."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:195
-#: includes/panel/scripts.php:195
 msgid "WooCommerce Account Links"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:196
-#: includes/panel/scripts.php:196
 msgid "This script is to switch between login/register in your account page."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:201
-#: includes/panel/scripts.php:201
 msgid "WooCommerce Grid/List Buttons"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:202
-#: includes/panel/scripts.php:202
 msgid "This script is to switch between grid and list view on your WooCommerce catalog products."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:207
-#: includes/panel/scripts.php:207
 msgid "WooCommerce Quantity Buttons"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:208
-#: includes/panel/scripts.php:208
 msgid "This script is to add a up and down button for the quantity input number on your WooCommerce single products and cart pages."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:213
-#: includes/panel/scripts.php:213
 msgid "WooCommerce Reviews Scroll"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:214
-#: includes/panel/scripts.php:214
 msgid "This script is to show and scroll down to your review tab to your WooCommerce single products when you click on the review link."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:220
-#: includes/panel/scripts.php:220
 msgid "Font Awesome Icons"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:221
-#: includes/panel/scripts.php:221
 msgid "This style is all the css for the font awesome icons."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:225
-#: includes/panel/scripts.php:225
 msgid "Simple Line Icons"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:226
-#: includes/panel/scripts.php:226
 msgid "This style is all the css for the simple line icons."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:230
-#: includes/panel/scripts.php:230
 msgid "Top Bar"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:231
-#: includes/panel/scripts.php:231
 msgid "This style is all the css for the top bar."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:236
-#: includes/panel/scripts.php:236
 msgid "This style is all the css for the header."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:240
-#: includes/panel/scripts.php:240
 msgid "Transparent Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:241
-#: includes/panel/scripts.php:241
 msgid "This style is all the css for the transparent header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:245
-#: includes/panel/scripts.php:245
 msgid "Top Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:246
-#: includes/panel/scripts.php:246
 msgid "This style is all the css for the top header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:250
-#: includes/panel/scripts.php:250
 msgid "Full Screen Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:251
-#: includes/panel/scripts.php:251
 msgid "This style is all the css for the full screen header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:255
-#: includes/panel/scripts.php:255
 msgid "Center Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:256
-#: includes/panel/scripts.php:256
 msgid "This style is all the css for the center header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:260
-#: includes/panel/scripts.php:260
 msgid "Medium Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:261
-#: includes/panel/scripts.php:261
 msgid "This style is all the css for the medium header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:265
-#: includes/panel/scripts.php:265
 msgid "Vertical Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:266
-#: includes/panel/scripts.php:266
 msgid "This style is all the css for the vertical header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:271
-#: includes/panel/scripts.php:271
 msgid "This style is all the css for the custom header style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:275
-#: includes/panel/scripts.php:275
 msgid "Navigation"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:276
-#: includes/panel/scripts.php:276
 msgid "This style is all the css for the navigation of the principal menu."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:280
-#: includes/panel/scripts.php:280
 msgid "Links Effect"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:281
-#: includes/panel/scripts.php:281
 msgid "This style is all the css for the links effect of the principal menu."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:285
-#: includes/panel/scripts.php:285
 msgid "Social Icons Menu"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:286
-#: includes/panel/scripts.php:286
 msgid "This style is all the css for the social icons in the navigation of the header."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:290
-#: includes/panel/scripts.php:290
 msgid "Page Header"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:291
-#: includes/panel/scripts.php:291
 msgid "This style is all the css for the page header (title)."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:296
-#: includes/panel/scripts.php:296
 msgid "This style is all the css for the blog and post formats."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:300
-#: includes/panel/scripts.php:300
 msgid "Blog Large Style"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:301
-#: includes/panel/scripts.php:301
 msgid "This style is all the css for the blog large style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:305
-#: includes/panel/scripts.php:305
 msgid "Blog Grid Style"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:306
-#: includes/panel/scripts.php:306
 msgid "This style is all the css for the blog grid style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:310
-#: includes/panel/scripts.php:310
 msgid "Blog Thumbnail Style"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:311
-#: includes/panel/scripts.php:311
 msgid "This style is all the css for the blog thumbnail style."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:315
-#: includes/panel/scripts.php:315
 msgid "Single Post Next/Prev Pagination"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:316
-#: includes/panel/scripts.php:316
 msgid "This style is all the css for the next/previous pagination on single post."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:320
-#: includes/panel/scripts.php:320
 msgid "Single Post Author Box"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:321
-#: includes/panel/scripts.php:321
 msgid "This style is all the css for the author box on single post."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:325
-#: includes/panel/scripts.php:325
 msgid "Single Post Related Posts"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:326
-#: includes/panel/scripts.php:326
 msgid "This style is all the css for the related posts on single post."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:331
-#: includes/panel/scripts.php:331
 msgid "This style is all the css for the sidebar."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:336
-#: includes/panel/scripts.php:336
 msgid "This style is all the css for the comments."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:340
-#: includes/panel/scripts.php:340
 msgid "Pagination"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:341
-#: includes/panel/scripts.php:341
 msgid "This style is all the css for the pagination."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:345
-#: includes/panel/scripts.php:345
 msgid "Footer Widgets"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:346
-#: includes/panel/scripts.php:346
 msgid "This style is all the css for the footer widgets area."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:350
-#: includes/panel/scripts.php:350
 msgid "Footer Bottom"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:351
-#: includes/panel/scripts.php:351
 msgid "This style is all the css for the footer bottom area."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:355
-#: includes/panel/scripts.php:355
 msgid "Search Results"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:356
-#: includes/panel/scripts.php:356
 msgid "This style is all the css for the search results page."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:360
-#: includes/panel/scripts.php:360
 msgid "Scroll Top Button"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:361
-#: includes/panel/scripts.php:361
 msgid "This style is all the css for the scroll top button."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:365
-#: includes/panel/scripts.php:365
 msgid "404 Page"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:366
-#: includes/panel/scripts.php:366
 msgid "This style is all the css for the 404 error page."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:370
-#: includes/panel/scripts.php:370
 msgid "Responsive"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:371
-#: includes/panel/scripts.php:371
 msgid "This style is all the css for the responsive view."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:375
-#: includes/panel/scripts.php:375
 msgid "WooCommerce Menu Cart"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:376
-#: includes/panel/scripts.php:376
 msgid "This style is to display and hide your WooCommerce cart drop down in the navigation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:381
-#: includes/panel/scripts.php:381
 msgid "WooCommerce Navigation"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:382
-#: includes/panel/scripts.php:382
 msgid "This style is for the single product navigation."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:387
-#: includes/panel/scripts.php:387
 msgid "WooCommerce Off Canvas Filter"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:388
-#: includes/panel/scripts.php:388
 msgid "This style is for the off canvas filter."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:393
-#: includes/panel/scripts.php:393
 msgid "WooCommerce Mobile Cart Sidebar"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:394
-#: includes/panel/scripts.php:394
 msgid "This style is for the mini cart sidebar on mobile."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:399
-#: includes/panel/scripts.php:399
 msgid "WooCommerce Categories Widget"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:400
-#: includes/panel/scripts.php:400
 msgid "This style is for the WooCommerce categories widget."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:419
 #: build/ocean-extra/includes/panel/scripts.php:420
-#: includes/panel/scripts.php:419
-#: includes/panel/scripts.php:420
 msgid "Scripts & Styles"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:511
-#: includes/panel/scripts.php:511
 msgid "Scripts & Styles Panel"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:514
-#: includes/panel/scripts.php:514
 msgid "With OceanWP 3+, please leave all scripts enabled so it doesn't conflict with the new JavaScript, This feature will be deprecated and fully automatized."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:515
-#: includes/panel/scripts.php:515
 msgid "Please check: Customize > General Options > Performance for scripts you can disable."
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:528
-#: includes/panel/scripts.php:528
 msgid "Switch to check or un-check every scripts:"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:537
-#: includes/panel/scripts.php:537
 msgid "JS"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:538
-#: build/ocean-extra/includes/preloader/customizer.php:143
-#: includes/panel/scripts.php:538
+#: build/ocean-extra/includes/preloader/customizer.php:144
 #: includes/preloader/customizer.php:144
 msgid "CSS"
 msgstr ""
 
 #: build/ocean-extra/includes/panel/scripts.php:582
-#: includes/panel/scripts.php:582
 msgid "Enable or Disable"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:75
-#: includes/panel/theme-panel.php:75
+#: build/ocean-extra/includes/panel/theme-panel.php:59
+#: includes/panel/theme-panel.php:65
 msgid "Lovely jubbly! Your website is starting to look fabulous!"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:79
-#: includes/panel/theme-panel.php:79
+#: build/ocean-extra/includes/panel/theme-panel.php:63
+#: includes/panel/theme-panel.php:69
 msgid "But you know what would make your website look stunning and leave your visitors in awe? The  %1$sOcean Core Extensions Bundle%2$s features."
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:85
-#: includes/panel/theme-panel.php:85
+#: build/ocean-extra/includes/panel/theme-panel.php:69
+#: includes/panel/theme-panel.php:75
 msgid "You'll get:"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:88
-#: includes/panel/theme-panel.php:88
+#: build/ocean-extra/includes/panel/theme-panel.php:72
+#: includes/panel/theme-panel.php:78
 msgid "access to premium website template demos,"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:89
-#: includes/panel/theme-panel.php:89
+#: build/ocean-extra/includes/panel/theme-panel.php:73
+#: includes/panel/theme-panel.php:79
 msgid "sticky header,"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:90
-#: includes/panel/theme-panel.php:90
+#: build/ocean-extra/includes/panel/theme-panel.php:74
+#: includes/panel/theme-panel.php:80
 msgid "royalty free images and icons with templates,"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:91
-#: includes/panel/theme-panel.php:91
+#: build/ocean-extra/includes/panel/theme-panel.php:75
+#: includes/panel/theme-panel.php:81
 msgid "Elementor widgets"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:92
-#: includes/panel/theme-panel.php:92
+#: build/ocean-extra/includes/panel/theme-panel.php:76
+#: includes/panel/theme-panel.php:82
 msgid "Gutenberg blocks,"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:93
-#: includes/panel/theme-panel.php:93
+#: build/ocean-extra/includes/panel/theme-panel.php:77
+#: includes/panel/theme-panel.php:83
 msgid "images and icons library,"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:94
-#: includes/panel/theme-panel.php:94
+#: build/ocean-extra/includes/panel/theme-panel.php:78
+#: includes/panel/theme-panel.php:84
 msgid "and so much more."
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:96
-#: includes/panel/theme-panel.php:96
+#: build/ocean-extra/includes/panel/theme-panel.php:80
+#: includes/panel/theme-panel.php:86
 msgid "Yes! I want the Upgrade"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:162
-#: build/ocean-extra/includes/themepanel/theme-panel.php:484
-#: includes/panel/theme-panel.php:162
-#: includes/themepanel/theme-panel.php:496
+#: build/ocean-extra/includes/panel/theme-panel.php:146
+#: build/ocean-extra/includes/themepanel/theme-panel.php:496
+#: includes/panel/theme-panel.php:152
+#: includes/themepanel/theme-panel.php:497
 msgid "General Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:165
-#: build/ocean-extra/includes/themepanel/theme-panel.php:487
-#: includes/panel/theme-panel.php:165
-#: includes/themepanel/theme-panel.php:499
+#: build/ocean-extra/includes/panel/theme-panel.php:149
+#: build/ocean-extra/includes/themepanel/theme-panel.php:499
+#: includes/panel/theme-panel.php:155
+#: includes/themepanel/theme-panel.php:500
 msgid "Typography Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:168
-#: build/ocean-extra/includes/themepanel/theme-panel.php:490
-#: includes/panel/theme-panel.php:168
-#: includes/themepanel/theme-panel.php:502
+#: build/ocean-extra/includes/panel/theme-panel.php:152
+#: build/ocean-extra/includes/themepanel/theme-panel.php:502
+#: includes/panel/theme-panel.php:158
+#: includes/themepanel/theme-panel.php:503
 msgid "Top Bar Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:171
-#: build/ocean-extra/includes/themepanel/theme-panel.php:493
-#: includes/panel/theme-panel.php:171
-#: includes/themepanel/theme-panel.php:505
+#: build/ocean-extra/includes/panel/theme-panel.php:155
+#: build/ocean-extra/includes/themepanel/theme-panel.php:505
+#: includes/panel/theme-panel.php:161
+#: includes/themepanel/theme-panel.php:506
 msgid "Header Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:174
-#: build/ocean-extra/includes/themepanel/theme-panel.php:496
-#: includes/panel/theme-panel.php:174
-#: includes/themepanel/theme-panel.php:508
+#: build/ocean-extra/includes/panel/theme-panel.php:158
+#: build/ocean-extra/includes/themepanel/theme-panel.php:508
+#: includes/panel/theme-panel.php:164
+#: includes/themepanel/theme-panel.php:509
 msgid "Blog Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:177
-#: build/ocean-extra/includes/themepanel/theme-panel.php:499
-#: includes/panel/theme-panel.php:177
-#: includes/themepanel/theme-panel.php:511
+#: build/ocean-extra/includes/panel/theme-panel.php:161
+#: build/ocean-extra/includes/themepanel/theme-panel.php:511
+#: includes/panel/theme-panel.php:167
+#: includes/themepanel/theme-panel.php:512
 msgid "Sidebar Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:180
-#: build/ocean-extra/includes/themepanel/theme-panel.php:502
-#: includes/panel/theme-panel.php:180
-#: includes/themepanel/theme-panel.php:514
+#: build/ocean-extra/includes/panel/theme-panel.php:164
+#: build/ocean-extra/includes/themepanel/theme-panel.php:514
+#: includes/panel/theme-panel.php:170
+#: includes/themepanel/theme-panel.php:515
 msgid "Footer Widgets Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:183
-#: build/ocean-extra/includes/themepanel/theme-panel.php:505
-#: includes/panel/theme-panel.php:183
-#: includes/themepanel/theme-panel.php:517
+#: build/ocean-extra/includes/panel/theme-panel.php:167
+#: build/ocean-extra/includes/themepanel/theme-panel.php:517
+#: includes/panel/theme-panel.php:173
+#: includes/themepanel/theme-panel.php:518
 msgid "Footer Bottom Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:186
-#: build/ocean-extra/includes/themepanel/theme-panel.php:508
-#: includes/panel/theme-panel.php:186
-#: includes/themepanel/theme-panel.php:520
+#: build/ocean-extra/includes/panel/theme-panel.php:170
+#: build/ocean-extra/includes/themepanel/theme-panel.php:520
+#: includes/panel/theme-panel.php:176
+#: includes/themepanel/theme-panel.php:521
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:204
-#: includes/panel/theme-panel.php:204
+#: build/ocean-extra/includes/panel/theme-panel.php:188
+#: includes/panel/theme-panel.php:194
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:228
-#: includes/panel/theme-panel.php:228
+#: build/ocean-extra/includes/panel/theme-panel.php:212
+#: includes/panel/theme-panel.php:218
 msgid "Footer widgets options"
 msgstr ""
 
-#: build/ocean-extra/includes/panel/theme-panel.php:229
-#: includes/panel/theme-panel.php:229
+#: build/ocean-extra/includes/panel/theme-panel.php:213
+#: includes/panel/theme-panel.php:219
 msgid "Choose the columns number, paddings and colors for the footer widgets."
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:248
-#: build/ocean-extra/includes/panel/theme-panel.php:457
-#: includes/panel/theme-panel.php:248
-#: includes/panel/theme-panel.php:457
-msgid "Theme Panel"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:389
-#: build/ocean-extra/includes/wizard/wizard.php:144
-#: includes/panel/theme-panel.php:389
-#: includes/wizard/wizard.php:144
-msgid "Run the Setup Wizard"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:406
-#: includes/panel/theme-panel.php:406
-msgid "Take your website to the next level.%1$sGain access to all premium extensions with a single purchase. %2$sClick here%3$s for more information."
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:409
-#: includes/panel/theme-panel.php:409
-msgid "Read More"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:419
-#: includes/panel/theme-panel.php:419
-msgid "VIP"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:426
-#: includes/panel/theme-panel.php:426
-msgid "Become part of the OceanWP VIP Community on Facebook. You will get access to the latest beta releases, get help with issues or simply meet like-minded people."
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:427
-#: includes/panel/theme-panel.php:427
-msgid "Join the Group"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:433
-#: includes/panel/theme-panel.php:433
-msgid "How-to Videos"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:435
-#: includes/panel/theme-panel.php:435
-msgid "Open a Support Ticket"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:476
-#: includes/panel/theme-panel.php:476
-msgid "Features"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:505
-#: build/ocean-extra/includes/panel/theme-panel.php:510
-#: includes/panel/theme-panel.php:505
-#: includes/panel/theme-panel.php:510
-msgid "Customizer Search"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:507
-#: includes/panel/theme-panel.php:507
-msgid "Disable or Enable the Customizer Search. "
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:519
-#: includes/panel/theme-panel.php:519
-msgid "Customizer Sections"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:521
-#: includes/panel/theme-panel.php:521
-msgid "Disable the Customizer panels that you do not have or need anymore to load it quickly. Your settings are saved, so do not worry."
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:561
-#: includes/panel/theme-panel.php:561
-msgid "Getting started"
-msgstr ""
-
-#: build/ocean-extra/includes/panel/theme-panel.php:563
-#: includes/panel/theme-panel.php:563
-msgid "Take a look in the options of the Customizer and see yourself how easy and quick to customize your website as you wish."
 msgstr ""
 
 #: build/ocean-extra/includes/preloader/customizer.php:88
@@ -10552,87 +10179,87 @@ msgstr ""
 msgid "Preloader"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:102
+#: build/ocean-extra/includes/preloader/customizer.php:103
 #: includes/preloader/customizer.php:103
 msgid "Enable OceanWP Preloader"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:117
+#: build/ocean-extra/includes/preloader/customizer.php:118
 #: includes/preloader/customizer.php:118
 msgid "Preloader Type"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:124
+#: build/ocean-extra/includes/preloader/customizer.php:125
 #: includes/preloader/customizer.php:125
 msgid "Custom"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:137
+#: build/ocean-extra/includes/preloader/customizer.php:138
 #: includes/preloader/customizer.php:138
 msgid "Icon Type"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:159
+#: build/ocean-extra/includes/preloader/customizer.php:160
 #: includes/preloader/customizer.php:160
 msgid "Preloader Icon"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:165
+#: build/ocean-extra/includes/preloader/customizer.php:166
 #: includes/preloader/customizer.php:166
 msgid "Roller"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:167
+#: build/ocean-extra/includes/preloader/customizer.php:168
 #: includes/preloader/customizer.php:168
 msgid "Ring"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:168
+#: build/ocean-extra/includes/preloader/customizer.php:169
 #: includes/preloader/customizer.php:169
 msgid "Dual Ring"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:169
+#: build/ocean-extra/includes/preloader/customizer.php:170
 #: includes/preloader/customizer.php:170
 msgid "Ripple Plain"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:170
+#: build/ocean-extra/includes/preloader/customizer.php:171
 #: includes/preloader/customizer.php:171
 msgid "Ripple Circle"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:173
+#: build/ocean-extra/includes/preloader/customizer.php:174
 #: includes/preloader/customizer.php:174
 msgid "Spinner Line"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:174
+#: build/ocean-extra/includes/preloader/customizer.php:175
 #: includes/preloader/customizer.php:175
 msgid "Spinner Dot"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:188
+#: build/ocean-extra/includes/preloader/customizer.php:189
 #: includes/preloader/customizer.php:189
 msgid "Upload svg, gif, png, jpg."
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:203
+#: build/ocean-extra/includes/preloader/customizer.php:204
 #: includes/preloader/customizer.php:204
 msgid "Upload SVG"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:204
+#: build/ocean-extra/includes/preloader/customizer.php:205
 #: includes/preloader/customizer.php:205
 msgid "Upload svg file here"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:227
+#: build/ocean-extra/includes/preloader/customizer.php:228
 #: includes/preloader/customizer.php:228
 msgid "Size (px)"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:249
+#: build/ocean-extra/includes/preloader/customizer.php:250
 #: build/ocean-extra/includes/widgets/contact-info.php:423
 #: build/ocean-extra/includes/widgets/contact-info.php:447
 #: build/ocean-extra/includes/widgets/contact-info.php:471
@@ -10645,37 +10272,37 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:275
+#: build/ocean-extra/includes/preloader/customizer.php:276
 #: includes/preloader/customizer.php:276
 msgid "Container Width (px)"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:276
+#: build/ocean-extra/includes/preloader/customizer.php:277
 #: includes/preloader/customizer.php:277
 msgid "Set \"0\" to unset or set your custom container width."
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:318
+#: build/ocean-extra/includes/preloader/customizer.php:319
 #: includes/preloader/customizer.php:319
 msgid "Elementor Flickers/FOUC"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:319
+#: build/ocean-extra/includes/preloader/customizer.php:320
 #: includes/preloader/customizer.php:320
 msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:336
+#: build/ocean-extra/includes/preloader/customizer.php:337
 #: includes/preloader/customizer.php:337
 msgid "Overlay Color"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:352
+#: build/ocean-extra/includes/preloader/customizer.php:353
 #: includes/preloader/customizer.php:353
 msgid "Icon Color"
 msgstr ""
 
-#: build/ocean-extra/includes/preloader/customizer.php:364
+#: build/ocean-extra/includes/preloader/customizer.php:365
 #: includes/preloader/customizer.php:365
 msgid "Preloader Content"
 msgstr ""
@@ -10731,23 +10358,23 @@ msgstr ""
 msgid "Sorry, this file couldn't be sanitized so for security reasons wasn't uploaded"
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:42
-#: includes/themepanel/includes/classes/class-system-status.php:42
+#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:40
+#: includes/themepanel/includes/classes/class-system-status.php:40
 msgid "Type param is missing."
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:48
-#: includes/themepanel/includes/classes/class-system-status.php:48
+#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:46
+#: includes/themepanel/includes/classes/class-system-status.php:46
 msgid "Type param (%s) is not valid."
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:158
-#: includes/themepanel/includes/classes/class-system-status.php:158
+#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:71
+#: includes/themepanel/includes/classes/class-system-status.php:71
 msgid "HTTP requests have been blocked by the WP_HTTP_BLOCK_EXTERNAL constant, with no allowed hosts."
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:164
-#: includes/themepanel/includes/classes/class-system-status.php:164
+#: build/ocean-extra/includes/themepanel/includes/classes/class-system-status.php:77
+#: includes/themepanel/includes/classes/class-system-status.php:77
 msgid "HTTP requests have been blocked by the WP_HTTP_BLOCK_EXTERNAL constant, with some hosts whitelisted: %s."
 msgstr ""
 
@@ -10786,41 +10413,46 @@ msgstr ""
 msgid "Single Ocean Portfolio item"
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/theme-panel.php:119
-#: build/ocean-extra/includes/themepanel/theme-panel.php:153
-#: build/ocean-extra/includes/themepanel/theme-panel.php:183
-#: build/ocean-extra/includes/themepanel/theme-panel.php:195
-#: build/ocean-extra/includes/themepanel/theme-panel.php:204
-#: build/ocean-extra/includes/themepanel/theme-panel.php:232
-#: build/ocean-extra/includes/themepanel/theme-panel.php:358
-#: includes/themepanel/theme-panel.php:120
+#: build/ocean-extra/includes/themepanel/theme-panel.php:120
+#: build/ocean-extra/includes/themepanel/theme-panel.php:154
+#: build/ocean-extra/includes/themepanel/theme-panel.php:184
+#: build/ocean-extra/includes/themepanel/theme-panel.php:196
+#: build/ocean-extra/includes/themepanel/theme-panel.php:205
+#: build/ocean-extra/includes/themepanel/theme-panel.php:244
+#: build/ocean-extra/includes/themepanel/theme-panel.php:370
+#: includes/themepanel/theme-panel.php:119
 #: includes/themepanel/theme-panel.php:154
-#: includes/themepanel/theme-panel.php:184
-#: includes/themepanel/theme-panel.php:196
-#: includes/themepanel/theme-panel.php:205
-#: includes/themepanel/theme-panel.php:244
-#: includes/themepanel/theme-panel.php:370
+#: includes/themepanel/theme-panel.php:185
+#: includes/themepanel/theme-panel.php:197
+#: includes/themepanel/theme-panel.php:206
+#: includes/themepanel/theme-panel.php:245
+#: includes/themepanel/theme-panel.php:371
 msgid "Something went wrong"
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/theme-panel.php:139
-#: build/ocean-extra/includes/themepanel/theme-panel.php:169
-#: build/ocean-extra/includes/themepanel/theme-panel.php:219
-#: build/ocean-extra/includes/themepanel/theme-panel.php:256
+#: build/ocean-extra/includes/themepanel/theme-panel.php:140
+#: build/ocean-extra/includes/themepanel/theme-panel.php:170
+#: build/ocean-extra/includes/themepanel/theme-panel.php:231
+#: build/ocean-extra/includes/themepanel/theme-panel.php:268
 #: includes/themepanel/theme-panel.php:140
-#: includes/themepanel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:231
-#: includes/themepanel/theme-panel.php:268
+#: includes/themepanel/theme-panel.php:171
+#: includes/themepanel/theme-panel.php:232
+#: includes/themepanel/theme-panel.php:269
 msgid "Settings saved successfully."
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/theme-panel.php:275
-#: includes/themepanel/theme-panel.php:287
+#: build/ocean-extra/includes/themepanel/theme-panel.php:223
+#: includes/themepanel/theme-panel.php:224
+msgid "Project ID is wrong."
+msgstr ""
+
+#: build/ocean-extra/includes/themepanel/theme-panel.php:287
+#: includes/themepanel/theme-panel.php:288
 msgid "Settings successfully reset."
 msgstr ""
 
-#: build/ocean-extra/includes/themepanel/theme-panel.php:750
-#: includes/themepanel/theme-panel.php:776
+#: build/ocean-extra/includes/themepanel/theme-panel.php:776
+#: includes/themepanel/theme-panel.php:777
 msgid "View paid features"
 msgstr ""
 
@@ -11313,21 +10945,21 @@ msgctxt "by author"
 msgid "by %s"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:118
-#: includes/widgets/about-me.php:118
+#: build/ocean-extra/includes/widgets/about-me.php:123
+#: includes/widgets/about-me.php:123
 msgid "&raquo; About Me"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:121
-#: includes/widgets/about-me.php:121
+#: build/ocean-extra/includes/widgets/about-me.php:126
+#: includes/widgets/about-me.php:126
 msgid "Adds an About Me widget."
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:274
+#: build/ocean-extra/includes/widgets/about-me.php:279
 #: build/ocean-extra/includes/widgets/contact-info.php:114
 #: build/ocean-extra/includes/widgets/custom-links.php:59
 #: build/ocean-extra/includes/widgets/social.php:300
-#: includes/widgets/about-me.php:274
+#: includes/widgets/about-me.php:279
 #: includes/widgets/contact-info.php:114
 #: includes/widgets/custom-links.php:59
 #: includes/widgets/social.php:300
@@ -11370,17 +11002,17 @@ msgstr ""
 msgid "Description:"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:398
-#: includes/widgets/about-me.php:398
+#: build/ocean-extra/includes/widgets/about-me.php:404
+#: includes/widgets/about-me.php:404
 msgid "Social Style:"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:402
+#: build/ocean-extra/includes/widgets/about-me.php:408
 #: build/ocean-extra/includes/widgets/facebook.php:207
 #: build/ocean-extra/includes/widgets/social.php:417
 #: build/ocean-extra/includes/widgets/social.php:443
 #: build/ocean-extra/includes/widgets/twitter.php:235
-#: includes/widgets/about-me.php:402
+#: includes/widgets/about-me.php:408
 #: includes/widgets/facebook.php:207
 #: includes/widgets/social.php:417
 #: includes/widgets/social.php:443
@@ -11388,12 +11020,12 @@ msgstr ""
 msgid "Light"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:403
+#: build/ocean-extra/includes/widgets/about-me.php:409
 #: build/ocean-extra/includes/widgets/facebook.php:208
 #: build/ocean-extra/includes/widgets/social-share.php:376
 #: build/ocean-extra/includes/widgets/social.php:444
 #: build/ocean-extra/includes/widgets/twitter.php:236
-#: includes/widgets/about-me.php:403
+#: includes/widgets/about-me.php:409
 #: includes/widgets/facebook.php:208
 #: includes/widgets/social-share.php:376
 #: includes/widgets/social.php:444
@@ -11401,25 +11033,25 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:408
-#: includes/widgets/about-me.php:408
+#: build/ocean-extra/includes/widgets/about-me.php:414
+#: includes/widgets/about-me.php:414
 msgid "Social Link Target:"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:416
+#: build/ocean-extra/includes/widgets/about-me.php:422
 #: build/ocean-extra/includes/widgets/contact-info.php:402
 #: build/ocean-extra/includes/widgets/custom-links.php:152
 #: build/ocean-extra/includes/widgets/social.php:469
-#: includes/widgets/about-me.php:416
+#: includes/widgets/about-me.php:422
 #: includes/widgets/contact-info.php:402
 #: includes/widgets/custom-links.php:152
 #: includes/widgets/social.php:469
 msgid "Add Nofollow Link Rel:"
 msgstr ""
 
-#: build/ocean-extra/includes/widgets/about-me.php:428
+#: build/ocean-extra/includes/widgets/about-me.php:434
 #: build/ocean-extra/includes/widgets/social.php:529
-#: includes/widgets/about-me.php:428
+#: includes/widgets/about-me.php:434
 #: includes/widgets/social.php:529
 msgid "Social Links"
 msgstr ""
@@ -12780,6 +12412,11 @@ msgstr ""
 msgid "<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?"
 msgstr ""
 
+#: build/ocean-extra/includes/wizard/wizard.php:144
+#: includes/wizard/wizard.php:144
+msgid "Run the Setup Wizard"
+msgstr ""
+
 #: build/ocean-extra/includes/wizard/wizard.php:145
 #: includes/wizard/wizard.php:145
 msgid "Skip setup"
@@ -13015,17 +12652,4 @@ msgstr ""
 #: build/ocean-extra/includes/wizard/wizard.php:1010
 #: includes/wizard/wizard.php:1010
 msgid "View Your Website"
-msgstr ""
-
-#: build/ocean-extra/ocean-extra.php:350
-msgid "This script is responsible for the style of widgets."
-msgstr ""
-
-#: includes/adobe-font.php:163
-#: includes/adobe-font.php:174
-msgid "OE Adobe Fonts"
-msgstr ""
-
-#: includes/themepanel/theme-panel.php:223
-msgid "Project ID is wrong."
 msgstr ""

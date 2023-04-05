@@ -1,10 +1,18 @@
 <?php
 /**
  * Dynamic date shortcode
+ *
+ * @package Ocean_Extra
+ * @author OceanWP
  */
+
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 if ( ! class_exists( 'OceanWP_Date_Shortcode' ) ) {
 
+	/**
+	 * Register OceanWP Date Shortcode Class.
+	 */
 	class OceanWP_Date_Shortcode {
 
 		/**
@@ -20,6 +28,9 @@ if ( ! class_exists( 'OceanWP_Date_Shortcode' ) ) {
 		 * Registers the function as a shortcode
 		 *
 		 * @since 1.1.8
+		 * @param  array  $atts    Date shortcode attributes.
+		 * @param  string $content Date shortcode content.
+		 * @return string
 		 */
 		public function date_shortcode( $atts, $content = null ) {
 			$settings = shortcode_atts(
@@ -31,10 +42,10 @@ if ( ! class_exists( 'OceanWP_Date_Shortcode' ) ) {
 
 			$year = $settings['year'];
 
-			// Var
+			// Var.
 			$date = '';
 
-			if ( '' != $year ) {
+			if ( '' !== $year ) {
 				$date .= $year . ' - ';
 			}
 
@@ -46,4 +57,5 @@ if ( ! class_exists( 'OceanWP_Date_Shortcode' ) ) {
 	}
 
 }
+
 new OceanWP_Date_Shortcode();
