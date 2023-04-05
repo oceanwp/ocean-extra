@@ -2,6 +2,9 @@
 
 = 2.1.5 - APR 5 2023 =
 - Updated: Freemius SDK to 2.5.6 version.
+- Updated: Open Graph: Order of items returned.
+- Fixed: Undefined array key "page" in /ocean-extra/includes/panel/theme-panel.php on line 45
+- Fixed: Undefined array key "page" in /ocean-extra/includes/panel/demos.php on line 944
 
 = 2.1.4 - FEB 22 2023 =
 - Fixed: Shortcodes: [oceanwp_woo_free_shipping_left]: Shortcode displaying HTML when a user reaches the free shipping threshold.
