@@ -200,7 +200,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.1.5 - APR 3 2023 =
+= 2.1.5 - APR 5 2023 =
 - Updated: Freemius SDK to 2.5.6 version.
 
 = 2.1.4 - FEB 22 2023 =
