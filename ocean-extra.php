@@ -660,7 +660,7 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 			} else if ( is_archive() ) {
 				if ( is_date() ) {
 					if ( is_day() ) {
-						$canurlonical = get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) );
+						$url = get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) );
 					} elseif ( is_month() ) {
 						$url = get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) );
 					} elseif ( is_year() ) {
