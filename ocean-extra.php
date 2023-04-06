@@ -383,6 +383,7 @@ final class Ocean_Extra {
 				require_once OE_PATH . '/includes/admin-bar/notifications.php';
 			}
 			require_once OE_PATH . '/includes/adobe-font.php';
+			require_once OE_PATH . '/includes/preloader/customizer.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
