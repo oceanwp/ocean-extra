@@ -293,7 +293,7 @@ final class Ocean_Extra {
 			<script type="text/javascript">
 
 				/* OceanWP JS */
-				<?php echo Ocean_Extra_JSMin::minify( $output ); ?>
+				<?php echo \OceanWP\Minifier::minify( $output, array('flaggedComments' => false) ); ?>
 
 			</script>
 
@@ -371,7 +371,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
 			require_once OE_PATH . '/includes/shortcodes/shortcodes.php';
 			require_once OE_PATH . '/includes/image-resizer.php';
-			require_once OE_PATH . '/includes/jsmin.php';
+			require_once OE_PATH . '/includes/jshrink.php';
 			require_once OE_PATH . '/includes/panel/notice.php';
 			require_once OE_PATH . '/includes/walker.php';
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';
