@@ -293,7 +293,7 @@ final class Ocean_Extra {
 			<script type="text/javascript">
 
 				/* OceanWP JS */
-				<?php echo \OceanWP\Minifier::minify( $output, array('flaggedComments' => false) ); ?>
+				<?php echo \OceanWP\Minifier::minify( $output ); ?>
 
 			</script>
 
