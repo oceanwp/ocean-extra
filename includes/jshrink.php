@@ -18,6 +18,11 @@
 
 namespace OceanWP;
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Minifier
  *
