@@ -23,8 +23,7 @@ if ( ! function_exists( 'oceanwp_logo_shortcode' ) ) {
 		// Add classes
 		$classes   = array( 'custom-header-logo', 'clr' );
 		$classes[] = $position;
-		$classes   = implode( ' ', $classes ); 
-		
+		$classes   = implode( ' ', $classes );
 
 		ob_start();
 		?>
