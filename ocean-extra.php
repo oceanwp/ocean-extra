@@ -288,12 +288,16 @@ final class Ocean_Extra {
 		$output = apply_filters( 'ocean_footer_js', $output );
 
 		// Minify and output JS in the wp_footer
-		if ( ! empty( $output ) ) { ?>
+		if ( ! empty( $output ) ) {
+
+			$minified_js = \OceanWP\Minifier::minify( $output );
+
+			?>
 
 			<script type="text/javascript">
 
 				/* OceanWP JS */
-				<?php echo \OceanWP\Minifier::minify( $output ); ?>
+				<?php echo esc_js( $minified_js ); ?>
 
 			</script>
 
