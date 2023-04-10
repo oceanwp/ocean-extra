@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.2
-Stable tag: 2.1.5
+Stable tag: 2.1.6
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.1.6 - APR 10 2023 =
+Updated: Widgets: MailChimp: widget rewritten, CURL method replaced with wp_remote_get.
+Fixed: OceanWP Panel: Customizer: Styling import doesn't function.
+Fixed: Fatal error: Uncaught Error: Class 'OceanWP_Customizer_Range_Control' not found in /plugins/ocean-extra/includes/preloader/customizer.php:224.
 
 = 2.1.5 - APR 5 2023 =
 - Updated: Freemius SDK to 2.5.6 version.
