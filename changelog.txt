@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.1.6 - APR 10 2023 =
+- Updated: Widgets: MailChimp: widget rewritten, CURL method replaced with wp_remote_get.
+- Fixed: OceanWP Panel: Customizer: Styling import doesn't function.
+- Fixed: Fatal error: Uncaught Error: Class 'OceanWP_Customizer_Range_Control' not found in /plugins/ocean-extra/includes/preloader/customizer.php:224.
+
 = 2.1.5 - APR 5 2023 =
 - Updated: Freemius SDK to 2.5.6 version.
 - Updated: Open Graph: Order of items returned.

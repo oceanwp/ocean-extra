@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.1.5
+ * Version:             2.1.6
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
@@ -90,7 +90,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.1.5';
+		$this->version     = '2.1.6';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -383,6 +383,7 @@ final class Ocean_Extra {
 				require_once OE_PATH . '/includes/admin-bar/notifications.php';
 			}
 			require_once OE_PATH . '/includes/adobe-font.php';
+			require_once OE_PATH . '/includes/preloader/customizer.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
@@ -660,7 +661,7 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 			} else if ( is_archive() ) {
 				if ( is_date() ) {
 					if ( is_day() ) {
-						$canurlonical = get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) );
+						$url = get_day_link( get_query_var( 'year' ), get_query_var( 'monthnum' ), get_query_var( 'day' ) );
 					} elseif ( is_month() ) {
 						$url = get_month_link( get_query_var( 'year' ), get_query_var( 'monthnum' ) );
 					} elseif ( is_year() ) {

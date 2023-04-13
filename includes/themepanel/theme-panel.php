@@ -438,7 +438,7 @@ class Ocean_Extra_New_Theme_Panel {
 		// Import the file
 		if ( ! empty( $file ) ) {
 
-			if ( '0' === json_last_error() ) {
+			if ( '0' == json_last_error() ) {
 
 				// Loop through mods and add them
 				foreach ( $file as $mod => $value ) {
