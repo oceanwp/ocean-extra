@@ -54,10 +54,17 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 				}
 
-				// If Beaver Builder
+				// If Beaver Builder.
 				else if ( class_exists( 'FLBuilder' ) && ! empty( $atts[ 'id' ] ) ) {
 
 					echo do_shortcode( '[fl_builder_insert_layout id="' . $atts[ 'id' ] . '"]' );
+
+				}
+
+				// if SiteOrigin.
+				else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $atts[ 'id' ], 'panels_data', true ) ) {
+
+					echo SiteOrigin_Panels::renderer()->render( $atts[ 'id' ] );
 
 				}
 
