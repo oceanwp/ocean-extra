@@ -38,6 +38,8 @@ if ( ! class_exists( 'Ocean_Extra_MailChimp_Widget' ) ) {
 
 		public function oceanwp_mailchimp_request_callback() {
 
+			check_ajax_referer( 'oe_mc_nonce' );
+
 			$apikey  = get_option( 'owp_mailchimp_api_key' );
 			$list_id = get_option( 'owp_mailchimp_list_id' );
 			$email   = ( isset( $_POST['email'] ) ) ? $_POST['email'] : '';
@@ -253,12 +255,12 @@ if ( ! class_exists( 'Ocean_Extra_MailChimp_Widget' ) ) {
 				<label for="<?php echo esc_attr( $this->get_field_id( 'subscribe_text' ) ); ?>">
 					<?php esc_html_e( 'Text', 'ocean-extra' ); ?></label>
 				<textarea rows="15" id="<?php echo esc_attr( $this->get_field_id( 'subscribe_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'subscribe_text' ) ); ?>" class="widefat" style="height: 100px;">
-												   <?php
-													if ( ! empty( $instance['subscribe_text'] ) ) {
-														echo esc_textarea( $instance['subscribe_text'] );
-													}
-													?>
-					</textarea>
+					<?php
+					if ( ! empty( $instance['subscribe_text'] ) ) {
+						echo esc_textarea( $instance['subscribe_text'] );
+					}
+					?>
+				</textarea>
 			</p>
 
 			<p>
@@ -302,6 +304,7 @@ if ( ! class_exists( 'Ocean_Extra_MailChimp_Widget' ) ) {
 		 */
 		public function localize_array( $array ) {
 			$array['ajax_url'] = admin_url( 'admin-ajax.php' );
+			$array['oe_mc_wpnonce'] = wp_create_nonce( 'oe_mc_nonce' );
 			return $array;
 		}
 
