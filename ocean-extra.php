@@ -33,6 +33,8 @@ function Ocean_Extra() {
 
 Ocean_Extra();
 
+#[AllowDynamicProperties]
+
 /**
  * Main Ocean_Extra Class
  *
