@@ -33,8 +33,6 @@ function Ocean_Extra() {
 
 Ocean_Extra();
 
-#[AllowDynamicProperties]
-
 /**
  * Main Ocean_Extra Class
  *
@@ -70,6 +68,24 @@ final class Ocean_Extra {
 	 * @since   1.0.0
 	 */
 	public $version;
+
+	/**
+	 * The plugin url.
+	 *
+	 * @var     string
+	 * @access  public
+	 * @since   2.1.7
+	 */
+	public $plugin_url;
+
+	/**
+	 * The plugin path.
+	 *
+	 * @var     string
+	 * @access  public
+	 * @since   2.1.7
+	 */
+	public $plugin_path;
 
 	// Admin - Start
 	/**
