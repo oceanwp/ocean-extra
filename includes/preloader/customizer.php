@@ -46,6 +46,7 @@ class Ocean_Preloader_Customizer {
 	public function __construct() {
 
 		add_action( 'customize_register', array( $this, 'customizer_options' ) );
+		add_action( 'customize_register', array( $this, 'preloader_setup' ) );
 
 		$this->active    = get_theme_mod( 'ocean_preloader_enable', false );
 		$this->type      = get_theme_mod( 'ocean_preloader_type', 'default' );
