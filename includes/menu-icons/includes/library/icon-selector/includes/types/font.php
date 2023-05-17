@@ -65,7 +65,7 @@ abstract class OE_Icon_Picker_Type_Font extends OE_Icon_Picker_Type {
 			}
 
 			if ( 'simple-line-icons' == $this->stylesheet_id ) {
-				$stylesheet_uri = OCEANWP_CSS_DIR_URI .'third/simple-line-icons.min.css';
+				$stylesheet_uri = OCEANWP_THEME_URI .'/assets/css/third/simple-line-icons.min.css';
 			}
 		}
 
