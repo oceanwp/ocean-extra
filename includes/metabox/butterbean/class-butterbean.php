@@ -47,6 +47,15 @@ if ( ! class_exists( 'ButterBean' ) ) {
 		public $tmpl_path = '';
 
 		/**
+		 * Post id.
+		 *
+		 * @since  1.0.0
+		 * @access public
+		 * @var    int
+		 */
+		public $post_id = '';
+
+		/**
 		 * Array of managers.
 		 *
 		 * @since  1.0.0

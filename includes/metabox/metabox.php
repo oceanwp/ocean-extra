@@ -2438,7 +2438,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		 * @since  1.2.10
 		 */
 		public function page_header_title( $title ) {
-			
+
 			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title', true ) ) {
 				$title = $meta;
 			}

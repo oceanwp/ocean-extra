@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.1.6
+ * Version:             2.1.7
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.2
+ * Tested up to:        6.2.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -69,6 +69,24 @@ final class Ocean_Extra {
 	 */
 	public $version;
 
+	/**
+	 * The plugin url.
+	 *
+	 * @var     string
+	 * @access  public
+	 * @since   2.1.7
+	 */
+	public $plugin_url;
+
+	/**
+	 * The plugin path.
+	 *
+	 * @var     string
+	 * @access  public
+	 * @since   2.1.7
+	 */
+	public $plugin_path;
+
 	// Admin - Start
 	/**
 	 * The admin object.
@@ -90,7 +108,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.1.6';
+		$this->version     = '2.1.7';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -293,7 +311,7 @@ final class Ocean_Extra {
 			<script type="text/javascript">
 
 				/* OceanWP JS */
-				<?php echo Ocean_Extra_JSMin::minify( $output ); ?>
+				<?php echo \OceanWP\Minifier::minify( $output ); ?>
 
 			</script>
 
@@ -371,7 +389,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
 			require_once OE_PATH . '/includes/shortcodes/shortcodes.php';
 			require_once OE_PATH . '/includes/image-resizer.php';
-			require_once OE_PATH . '/includes/jsmin.php';
+			require_once OE_PATH . '/includes/jshrink.php';
 			require_once OE_PATH . '/includes/panel/notice.php';
 			require_once OE_PATH . '/includes/walker.php';
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';

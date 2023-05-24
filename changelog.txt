@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 2.1.7 - MAY 23 2023 =
+- Added: Compatibility: SiteOrigin: Custom templates support.
+- Added: Compatibility: PHP 8.2.6: Creation of dynamic property Ocean_Extra::$plugin_path, Ocean_Extra::$plugin_url and ButterBean::$post_id is deprecated.
+- Tweak: JS Minify library replaced with JS Shrink for outputting custom JS from the Customizer.
+- Fixed: Uncaught Error: Undefined constant "OCEANWP_CSS_DIR_URI".
+- Removed: Redundant files for deprecated features such as Push Monkey notifications etc.
+
 = 2.1.6 - APR 10 2023 =
 - Updated: Widgets: MailChimp: widget rewritten, CURL method replaced with wp_remote_get.
 - Fixed: OceanWP Panel: Customizer: Styling import doesn't function.

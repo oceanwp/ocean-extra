@@ -239,10 +239,17 @@ class Ocean_Preloader {
 
 			}
 
-			// If Beaver Builder
+			// If Beaver Builder.
 			else if ( class_exists( 'FLBuilder' ) && ! empty( $this->template_id ) ) {
 
 				echo do_shortcode( '[fl_builder_insert_layout id="' . $this->template_id . '"]' );
+
+			}
+
+			// if SiteOrigin.
+			else if ( class_exists( 'SiteOrigin_Panels' ) && get_post_meta( $this->template_id, 'panels_data', true ) ) {
+
+				echo SiteOrigin_Panels::renderer()->render( $this->template_id );
 
 			}
 
