@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.2.1
+Tested up to: 6.2.2
 Stable tag: 2.1.7
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -200,7 +200,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.1.7 - MAY 22 2023 =
+= 2.1.7 - MAY 23 2023 =
 - Added: Compatibility: SiteOrigin: Custom templates support.
 - Added: Compatibility: PHP 8.2.6: Creation of dynamic property Ocean_Extra::$plugin_path, Ocean_Extra::$plugin_url and ButterBean::$post_id is deprecated.
 - Tweak: JS Minify library replaced with JS Shrink for outputting custom JS from the Customizer.
