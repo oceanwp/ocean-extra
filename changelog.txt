@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.1.8 - XXXX XX 2023 =
+- Fixed: PHP Fatal error: Uncaught Error: Call to undefined function wpforms() during importing a demo.
+
 = 2.1.7 - MAY 23 2023 =
 - Added: Compatibility: SiteOrigin: Custom templates support.
 - Added: Compatibility: PHP 8.2.6: Creation of dynamic property Ocean_Extra::$plugin_path, Ocean_Extra::$plugin_url and ButterBean::$post_id is deprecated.

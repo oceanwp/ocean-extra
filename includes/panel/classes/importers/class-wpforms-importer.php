@@ -5,7 +5,7 @@
  * Thank you very much to SiteGround for the code.
  */
 
-if ( ! class_exists( 'WPForms' ) ) {
+if ( ! function_exists( 'wpforms' ) || ! class_exists( 'WPForms' ) ) {
 	return;
 }
 
@@ -37,26 +37,26 @@ class OWP_WPForms_Importer {
 
 	public function import_json( $forms ) {
 
-        foreach ( $forms as $form ) {
+		foreach ( $forms as $form ) {
 
-            // Create empty form so we have an ID to work with.
-            $form_id = wp_insert_post(
-                array(
-                    'post_status' => 'publish',
-                    'post_type'   => 'wpforms',
-                )
-            );
+			// Create empty form so we have an ID to work with.
+			$form_id = wp_insert_post(
+				array(
+					'post_status' => 'publish',
+					'post_type'   => 'wpforms',
+				)
+			);
 
-            // Bail if post creation has failed.
-            if ( empty( $form_id )
-                || is_wp_error( $form_id ) ) {
-                continue;
-            }
+			// Bail if post creation has failed.
+			if ( empty( $form_id )
+				|| is_wp_error( $form_id ) ) {
+				continue;
+			}
 
-            $form['id'] = $form_id;
+			$form['id'] = $form_id;
 
-            // Update the form with all our compiled data.
-            wpforms()->form->update( $form['id'], $form );
-        }
-    }
+			// Update the form with all our compiled data.
+			wpforms()->form->update( $form['id'], $form );
+		}
+	}
 }
