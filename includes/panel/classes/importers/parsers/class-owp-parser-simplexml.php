@@ -13,17 +13,31 @@ class OWP_Parser_SimpleXML {
 	function parse( $file ) {
 		$authors = $posts = $categories = $tags = $terms = array();
 
-		$internal_errors = libxml_use_internal_errors(true);
-
 		$dom = new DOMDocument;
 		$old_value = null;
-		if ( function_exists( 'libxml_disable_entity_loader' ) ) {
-			$old_value = libxml_disable_entity_loader( true );
+
+		// If the server's PHP version is 8 or up, make sure to Disable the ability to load external entities
+		$php_version_check = version_compare( PHP_VERSION, '8.0.0', '<' );
+
+		if ( $php_version_check ) {
+			if ( function_exists( 'libxml_disable_entity_loader' ) ) {
+				$old_value = libxml_disable_entity_loader( true );
+			}
 		}
+
+		// Suppress the errors.
+		$internal_errors = libxml_use_internal_errors(true);
+
 		$success = $dom->loadXML( file_get_contents( $file ) );
+
+		// Restore defaults.
 		if ( ! is_null( $old_value ) ) {
-			libxml_disable_entity_loader( $old_value );
+			if ( $php_version_check ) {
+				libxml_disable_entity_loader( $old_value );
+			}
 		}
+
+		libxml_use_internal_errors( $internal_errors );
 
 		if ( ! $success || isset( $dom->doctype ) ) {
 			return new WP_Error( 'SimpleXML_parse_error', __( 'There was an error when reading this WXR file', 'ocean-extra' ), libxml_get_errors() );

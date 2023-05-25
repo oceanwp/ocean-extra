@@ -5,7 +5,7 @@
  * Thank you very much to SiteGround for the code.
  */
 
-if ( ! function_exists( 'wpforms' ) || ! class_exists( 'WPForms' ) ) {
+if ( ! class_exists( 'WPForms' ) ) {
 	return;
 }
 
@@ -28,14 +28,18 @@ class OWP_WPForms_Importer {
 		}
 
 		// Decode file contents.
-	    $data = json_decode( $data, true );
+		$data = json_decode( $data, true );
 
 		// Import the widget data
-    	return $this->import_json( $data );
+		return $this->import_json( $data );
 
 	}
 
 	public function import_json( $forms ) {
+
+		if ( ! function_exists( 'wpforms' ) ) {
+			return;
+		}
 
 		foreach ( $forms as $form ) {
 
