@@ -383,6 +383,7 @@ final class Ocean_Extra {
 		$theme = wp_get_theme();
 
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
+			require_once OE_PATH . '/includes/post-settings/post-settings.php';
 			require_once OE_PATH . '/includes/metabox/butterbean/butterbean.php';
 			require_once OE_PATH . '/includes/metabox/metabox.php';
 			require_once OE_PATH . '/includes/metabox/shortcodes.php';

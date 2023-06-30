@@ -1,0 +1,1074 @@
+<?php
+/**
+ * OceanWP Post Settings Output
+ *
+ * @package Ocean_Extra
+ * @category Core
+ * @author OceanWP
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// The Metabox class
+if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
+
+	/**
+	 * Main Post Settings class.
+	 *
+	 * @since  2.1.8
+	 * @access public
+	 */
+	final class OceanWP_Post_Settings_Output {
+
+		/**
+		 * Ocean_Extra The single instance of Ocean_Extra.
+		 *
+		 * @var     object
+		 * @access  private
+		 */
+		private static $_instance = null;
+
+		/**
+		 * Main OceanWP_Post_Settings_Output Instance
+		 *
+		 * @static
+		 * @see OceanWP_Post_Settings_Output()
+		 * @return Main OceanWP_Post_Settings_Output instance
+		 */
+		public static function instance() {
+			if ( is_null( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+			return self::$_instance;
+		}
+
+		/**
+		 * Constructor
+		 */
+		public function __construct() {
+
+
+			// Load fonts.
+			add_action( 'wp_enqueue_scripts', array( $this, 'load_fonts' ) );
+
+			// Body classes.
+			add_filter( 'body_class', array( $this, 'body_class' ) );
+
+			// Default sidebar.
+			add_filter( 'ocean_get_sidebar', array( $this, 'get_sidebar' ) );
+
+			// Left sidebar.
+			add_filter( 'ocean_get_second_sidebar', array( $this, 'get_second_sidebar' ) );
+
+			// Custom CSS.
+			add_filter( 'ocean_head_css', array( $this, 'head_css' ) );
+
+			// Display top bar.
+			add_filter( 'ocean_display_top_bar', array( $this, 'display_top_bar' ) );
+
+			// Display header.
+			add_filter( 'ocean_display_header', array( $this, 'display_header' ) );
+
+			// Custom menu.
+			add_filter( 'ocean_custom_menu', array( $this, 'custom_menu' ) );
+
+			// Header style.
+			add_filter( 'ocean_header_style', array( $this, 'header_style' ) );
+
+			// Left custom menu for center geader style.
+			add_filter( 'ocean_center_header_left_menu', array( $this, 'left_custom_menu' ) );
+
+			// Custom header template.
+			add_filter( 'ocean_custom_header_template', array( $this, 'custom_header_template' ) );
+
+			// Custom logo.
+			add_filter( 'get_custom_logo', array( $this, 'custom_logo' ) );
+
+			// getustom logo ID for the retina function.
+			add_filter( 'ocean_custom_logo', array( $this, 'custom_logo_id' ) );
+
+			// Custom retina logo.
+			add_filter( 'ocean_retina_logo', array( $this, 'custom_retina_logo' ) );
+
+			// Custom logo max width.
+			add_filter( 'ocean_logo_max_width', array( $this, 'custom_logo_max_width' ) );
+
+			// Custom logo max width tablet.
+			add_filter( 'ocean_logo_max_width_tablet', array( $this, 'custom_logo_max_width_tablet' ) );
+
+			// Custom logo max width mobile.
+			add_filter( 'ocean_logo_max_width_mobile', array( $this, 'custom_logo_max_width_mobile' ) );
+
+			// Custom logo max height.
+			add_filter( 'ocean_logo_max_height', array( $this, 'custom_logo_max_height' ) );
+
+			// Custom logo max height tablet.
+			add_filter( 'ocean_logo_max_height_tablet', array( $this, 'custom_logo_max_height_tablet' ) );
+
+			// Custom logo max height mobile.
+			add_filter( 'ocean_logo_max_height_mobile', array( $this, 'custom_logo_max_height_mobile' ) );
+
+			// Menu colors.
+			add_filter( 'ocean_menu_link_color', array( $this, 'menu_link_color' ) );
+			add_filter( 'ocean_menu_link_color_hover', array( $this, 'menu_link_color_hover' ) );
+			add_filter( 'ocean_menu_link_color_active', array( $this, 'menu_link_color_active' ) );
+			add_filter( 'ocean_menu_link_background', array( $this, 'menu_link_background' ) );
+			add_filter( 'ocean_menu_link_hover_background', array( $this, 'menu_link_hover_background' ) );
+			add_filter( 'ocean_menu_link_active_background', array( $this, 'menu_link_active_background' ) );
+			add_filter( 'ocean_menu_social_links_bg', array( $this, 'menu_social_links_bg' ) );
+			add_filter( 'ocean_menu_social_hover_links_bg', array( $this, 'menu_social_hover_links_bg' ) );
+			add_filter( 'ocean_menu_social_links_color', array( $this, 'menu_social_links_color' ) );
+			add_filter( 'ocean_menu_social_hover_links_color', array( $this, 'menu_social_hover_links_color' ) );
+
+			// Display page header.
+			add_filter( 'ocean_display_page_header', array( $this, 'display_page_header' ) );
+
+			// Display page header heading.
+			add_filter( 'ocean_display_page_header_heading', array( $this, 'display_page_header_heading' ) );
+
+			// Page header style.
+			add_filter( 'ocean_page_header_style', array( $this, 'page_header_style' ) );
+
+			// Page header title.
+			add_filter( 'ocean_title', array( $this, 'page_header_title' ) );
+
+			// Page header subheading.
+			add_filter( 'ocean_post_subheading', array( $this, 'page_header_subheading' ) );
+
+			// Page header background image.
+			add_filter( 'ocean_page_header_background_image', array( $this, 'page_header_bg_image' ) );
+
+			// Page header background color.
+			add_filter( 'ocean_post_title_background_color', array( $this, 'page_header_bg_color' ) );
+
+			// Page header background image position.
+			add_filter( 'ocean_post_title_bg_image_position', array( $this, 'page_header_bg_image_position' ) );
+			add_filter( 'ocean_post_title_bg_image_attachment', array( $this, 'page_header_bg_image_attachment' ) );
+			add_filter( 'ocean_post_title_bg_image_repeat', array( $this, 'page_header_bg_image_repeat' ) );
+			add_filter( 'ocean_post_title_bg_image_size', array( $this, 'page_header_bg_image_size' ) );
+
+			// Page header height.
+			add_filter( 'ocean_post_title_height', array( $this, 'page_header_height' ) );
+
+			// Page header background opacity.
+			add_filter( 'ocean_post_title_bg_overlay', array( $this, 'page_header_bg_opacity' ) );
+
+			// Page header background overlay color.
+			add_filter( 'ocean_post_title_bg_overlay_color', array( $this, 'page_header_bg_overlay_color' ) );
+
+			// Display breadcrumbs.
+			add_filter( 'ocean_display_breadcrumbs', array( $this, 'display_breadcrumbs' ) );
+
+			// Display footer widgets.
+			add_filter( 'ocean_display_footer_widgets', array( $this, 'display_footer_widgets' ) );
+
+			// Display footer bottom.
+			add_filter( 'ocean_display_footer_bottom', array( $this, 'display_footer_bottom' ) );
+
+			// Custom footer template.
+			add_filter( 'ocean_custom_footer_template', array( $this, 'custom_footer_template' ) );
+
+		}
+
+		/**
+		 * Load google fonts.
+		 */
+		public function load_fonts() {
+
+			$fonts = array();
+
+			// Menu font.
+			$menu_typo_font = oe_get_meta( '_ocean_meta_menu_typo_font_family' );
+
+			if ( $menu_typo_font ) {
+				$fonts[] = $menu_typo_font;
+			}
+
+			// Loop through and enqueue fonts
+			if ( ! empty( $fonts ) && is_array( $fonts ) ) {
+				foreach ( $fonts as $font ) {
+					oceanwp_enqueue_google_font( $font );
+				}
+			}
+		}
+
+		/**
+		 * Body classes
+		 */
+		public function body_class( $classes ) {
+
+			// Disabled margins.
+			if ( 'on' == oe_get_meta( '_ocean_meta_disable_margins' ) && ! is_search() ) {
+				$classes[] = 'no-margins';
+			}
+
+			// Add aditional body class.
+			$body_class = oe_get_meta( '_ocean_meta_add_body_class' );
+
+			if ( ! empty( $body_class ) ) {
+				$classes[] = $body_class;
+			}
+
+			return $classes;
+
+		}
+
+		/**
+		 * Returns the correct sidebar ID
+		 */
+		public function get_sidebar( $sidebar ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_sidebar' ) ) {
+				$sidebar = $meta;
+			}
+
+			return $sidebar;
+
+		}
+
+		/**
+		 * Returns the correct second sidebar ID
+		 */
+		public function get_second_sidebar( $sidebar ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_second_sidebar' ) ) {
+				$sidebar = $meta;
+			}
+
+			return $sidebar;
+
+		}
+
+		/**
+		 * Display top bar
+		 */
+		public function display_top_bar( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_display_top_bar' );
+
+			// Check if disabled
+			if ( $meta ) {
+				if ( 'on' == $meta ) {
+					$return = true;
+				} elseif ( 'off' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Display header
+		 */
+		public function display_header( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_display_header' );
+
+			// Check if disabled
+			if ( $meta ) {
+				if ( 'on' == $meta ) {
+					$return = true;
+				} elseif ( 'off' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Custom menu
+		 */
+		public function custom_menu( $menu ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_header_custom_menu' ) ) {
+				$menu = $meta;
+			}
+
+			return $menu;
+
+		}
+
+		/**
+		 * Header style
+		 */
+		public function header_style( $style ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_header_style' ) ) {
+				$style = $meta;
+			}
+
+			return $style;
+
+		}
+
+		/**
+		 * Left custom menu for center geader style
+		 */
+		public function left_custom_menu( $menu ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_center_header_left_menu' ) ) {
+				$menu = $meta;
+			}
+
+			return $menu;
+
+		}
+
+		/**
+		 * Custom header template
+		 */
+		public function custom_header_template( $template ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_header_template' ) ) {
+				$template = $meta;
+			}
+
+			return $template;
+
+		}
+
+		/**
+		 * Custom logo
+		 */
+		public function custom_logo( $html ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo' ) ) {
+
+				$html = '';
+
+				// We have a logo. Logo is go.
+				if ( $meta ) {
+
+					$custom_logo_attr = array(
+						'class'    => 'custom-logo',
+						'itemprop' => 'logo',
+					);
+
+					/*
+					 * If the logo alt attribute is empty, get the site title and explicitly
+					 * pass it to the attributes used by wp_get_attachment_image().
+					 */
+					$image_alt = get_post_meta( $meta, '_wp_attachment_image_alt', true );
+					if ( empty( $image_alt ) ) {
+						$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+					}
+
+					/*
+					 * If the alt attribute is not empty, there's no need to explicitly pass
+					 * it because wp_get_attachment_image() already adds the alt attribute.
+					 */
+					$html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+						esc_url( home_url( '/' ) ),
+						wp_get_attachment_image( $meta, 'full', false, $custom_logo_attr )
+					);
+
+				}
+
+			}
+
+			return $html;
+
+		}
+
+		/**
+		 * Custom logo ID
+		 */
+		public function custom_logo_id( $logo_url ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo' ) ) {
+				$logo_url = $meta;
+			}
+
+			return $logo_url;
+
+		}
+
+		/**
+		 * Custom retina logo
+		 */
+		public function custom_retina_logo( $logo_url ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_retina_logo' ) ) {
+				$logo_url = $meta;
+
+				// Generate image URL if using ID
+				if ( is_numeric( $logo_url ) ) {
+					$logo_url = wp_get_attachment_image_src( $logo_url, 'full' );
+					$logo_url = $logo_url[0];
+				}
+			}
+
+			return $logo_url;
+
+		}
+
+		/**
+		 * Custom logo max width
+		 */
+		public function custom_logo_max_width( $width ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_max_width' ) ) {
+				$width = $meta;
+			}
+
+			return $width;
+
+		}
+
+		/**
+		 * Custom logo max width tablet
+		 */
+		public function custom_logo_max_width_tablet( $width ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_tablet_max_width' ) ) {
+				$width = $meta;
+			}
+
+			return $width;
+
+		}
+
+		/**
+		 * Custom logo max width mobile
+		 */
+		public function custom_logo_max_width_mobile( $width ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_mobile_max_width' ) ) {
+				$width = $meta;
+			}
+
+			return $width;
+
+		}
+
+		/**
+		 * Custom logo max height
+		 */
+		public function custom_logo_max_height( $height ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_max_height' ) ) {
+				$height = $meta;
+			}
+
+			return $height;
+
+		}
+
+		/**
+		 * Custom logo max height tablet
+		 */
+		public function custom_logo_max_height_tablet( $height ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_tablet_max_height' ) ) {
+				$height = $meta;
+			}
+
+			return $height;
+
+		}
+
+		/**
+		 * Custom logo max height mobile
+		 */
+		public function custom_logo_max_height_mobile( $height ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_logo_mobile_max_height' ) ) {
+				$height = $meta;
+			}
+
+			return $height;
+
+		}
+
+		/**
+		 * Menu links color
+		 */
+		public function menu_link_color( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_color' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Menu links color: hover
+		 */
+		public function menu_link_color_hover( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_color_hover' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Menu links color: current menu item
+		 */
+		public function menu_link_color_active( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_color_active' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Menu links background
+		 */
+		public function menu_link_background( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_background' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Menu links background: hover
+		 */
+		public function menu_link_hover_background( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_hover_background' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Menu links background: current menu item
+		 */
+		public function menu_link_active_background( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_link_active_background' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Social menu links background color
+		 */
+		public function menu_social_links_bg( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_social_links_bg' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Social menu hover links background color
+		 */
+		public function menu_social_hover_links_bg( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_social_hover_links_bg' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Social menu links color
+		 */
+		public function menu_social_links_color( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_social_links_color' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Social menu hover links color
+		 */
+		public function menu_social_hover_links_color( $color ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_menu_social_hover_links_color' ) ) {
+				$color = $meta;
+			}
+
+			return $color;
+
+		}
+
+		/**
+		 * Display page header
+		 */
+		public function display_page_header( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_disable_title' );
+
+			// Check if enabled or disabled
+			if ( $meta ) {
+				if ( 'enable' == $meta ) {
+					$return = true;
+				} elseif ( 'on' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Display page header heading
+		 */
+		public function display_page_header_heading( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_disable_heading' );
+
+			// Check if enabled or disabled
+			if ( $meta ) {
+				if ( 'enable' == $meta ) {
+					$return = true;
+				} elseif ( 'on' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Page header style
+		 */
+		public function page_header_style( $style ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				$style = $meta;
+			}
+
+			return $style;
+
+		}
+
+		/**
+		 * Page header title
+		 */
+		public function page_header_title( $title ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_post_title' ) ) {
+				$title = $meta;
+			}
+
+			return $title;
+
+		}
+
+		/**
+		 * Page header subheading
+		 */
+		public function page_header_subheading( $subheading ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_post_subheading' ) ) {
+				$subheading = $meta;
+			}
+
+			return $subheading;
+
+		}
+
+		/**
+		 * Title background color
+		 */
+		public function page_header_bg_color( $bg_color ) {
+
+			if ( 'solid-color' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_background_color' ) ) {
+					$bg_color = $meta;
+				}
+			}
+
+			return $bg_color;
+
+		}
+
+		/**
+		 * Title background image
+		 */
+		public function page_header_bg_image( $bg_img ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_background' ) ) {
+					$bg_img = $meta;
+				}
+			}
+
+			return $bg_img;
+
+		}
+
+		/**
+		 * Title background image position
+		 */
+		public function page_header_bg_image_position( $bg_img_position ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_image_position' ) ) {
+					$bg_img_position = $meta;
+				}
+			}
+
+			return $bg_img_position;
+
+		}
+
+		/**
+		 * Title background image attachment
+		 */
+		public function page_header_bg_image_attachment( $bg_img_attachment ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_image_attachment' ) ) {
+					$bg_img_attachment = $meta;
+				}
+			}
+
+			return $bg_img_attachment;
+
+		}
+
+		/**
+		 * Title background image repeat
+		 */
+		public function page_header_bg_image_repeat( $bg_img_repeat ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_image_repeat' )  ) {
+					$bg_img_repeat = $meta;
+				}
+			}
+
+			return $bg_img_repeat;
+
+		}
+
+		/**
+		 * Title background image size
+		 */
+		public function page_header_bg_image_size( $bg_img_size ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_image_size' ) ) {
+					$bg_img_size = $meta;
+				}
+			}
+
+			return $bg_img_size;
+
+		}
+
+		/**
+		 * Title height
+		 */
+		public function page_header_height( $title_height ) {
+
+			if ( 'background-image' == oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_height' ) ) {
+					$title_height = $meta;
+				}
+			}
+
+			return $title_height;
+
+		}
+
+		/**
+		 * Title background opacity
+		 */
+		public function page_header_bg_opacity( $opacity ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_overlay' ) ) {
+					$opacity = $meta;
+				}
+			}
+
+			return $opacity;
+
+		}
+
+		/**
+		 * Title background overlay color
+		 */
+		public function page_header_bg_overlay_color( $overlay_color ) {
+
+			if ( 'background-image' === oe_get_meta( '_ocean_meta_post_title_style' ) ) {
+				if ( $meta = oe_get_meta( '_ocean_meta_post_title_bg_overlay_color' ) ) {
+					$overlay_color = $meta;
+				}
+			}
+
+			return $overlay_color;
+
+		}
+
+		/**
+		 * Display breadcrumbs
+		 */
+		public function display_breadcrumbs( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_disable_breadcrumbs' );
+
+			// Check if enabled or disabled
+			if ( $meta ) {
+				if ( 'on' == $meta ) {
+					$return = true;
+				} elseif ( 'off' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Display footer widgets
+		 */
+		public function display_footer_widgets( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_display_footer_widgets' );
+
+			// Check if disabled
+			if ( $meta ) {
+				if ( 'on' == $meta ) {
+					$return = true;
+				} elseif ( 'off' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Display footer bottom
+		 */
+		public function display_footer_bottom( $return ) {
+
+			// Check meta
+			$meta = oe_get_meta( '_ocean_meta_display_footer_bottom' );
+
+			// Check if disabled
+			if ( $meta ) {
+				if ( 'on' == $meta ) {
+					$return = true;
+				} elseif ( 'off' == $meta ) {
+					$return = false;
+				}
+			}
+
+			return $return;
+
+		}
+
+		/**
+		 * Custom footer template
+		 */
+		public function custom_footer_template( $template ) {
+
+			if ( $meta = oe_get_meta( '_ocean_meta_custom_footer_template' ) ) {
+				$template = $meta;
+			}
+
+			return $template;
+
+		}
+
+		/**
+		 * Get CSS
+		 */
+		public static function head_css( $output ) {
+
+			$layout                     = oe_get_meta( '_ocean_meta_post_layout' );
+			$content_width              = oe_get_meta( '_ocean_meta_both_sidebars_content_width' );
+			$sidebars_width             = oe_get_meta( '_ocean_meta_both_sidebars_sidebars_width' );
+			$menu_font_family           = oe_get_meta( '_ocean_meta_menu_typo_font_family' );
+			$menu_font_size             = oe_get_meta( '_ocean_meta_menu_typo_font_size' );
+			$menu_font_size_tablet      = oe_get_meta( '_ocean_meta_menu_typo_font_size_tablet' );
+			$menu_font_size_mobile      = oe_get_meta( '_ocean_meta_menu_typo_font_size_mobile' );
+			$menu_font_size_unit        = oe_get_meta( '_ocean_meta_menu_typo_font_size_unit' );
+			$menu_font_weight           = oe_get_meta( '_ocean_meta_menu_typo_font_weight' );
+			$menu_font_weight_tablet    = oe_get_meta( '_ocean_meta_menu_typo_font_weight_tablet' );
+			$menu_font_weight_mobile    = oe_get_meta( '_ocean_meta_menu_typo_font_weight_mobile' );
+			$menu_text_transform        = oe_get_meta( '_ocean_meta_menu_typo_transform' );
+			$menu_text_transform_tablet = oe_get_meta( '_ocean_meta_menu_typo_transform_tablet' );
+			$menu_text_transform_mobile = oe_get_meta( '_ocean_meta_menu_typo_transform_mobile' );
+			$menu_line_height           = oe_get_meta( '_ocean_meta_menu_typo_line_height' );
+			$menu_line_height_tablet    = oe_get_meta( '_ocean_meta_menu_typo_line_height_tablet' );
+			$menu_line_height_mobile    = oe_get_meta( '_ocean_meta_menu_typo_line_height_mobile' );
+			$menu_line_height_unit      = oe_get_meta( '_ocean_meta_menu_typo_line_height_unit' );
+			$menu_letter_spacing        = oe_get_meta( '_ocean_meta_menu_typo_spacing' );
+			$menu_letter_spacing_tablet = oe_get_meta( '_ocean_meta_menu_typo_spacing_tablet' );
+			$menu_letter_spacing_mobile = oe_get_meta( '_ocean_meta_menu_typo_spacing_mobile' );
+			$menu_letter_spacing_unit   = oe_get_meta( '_ocean_meta_menu_typo_spacing_unit' );
+
+			$menu_font_size_unit      = $menu_font_size_unit ? $menu_font_size_unit : 'px';
+			$menu_line_height_unit    = $menu_line_height_unit ? $menu_line_height_unit : 'px';
+			$menu_letter_spacing_unit = $menu_letter_spacing_unit ? $menu_letter_spacing_unit : 'px';
+
+			// Define css var
+			$css = '';
+			$menu_typo_css = '';
+			$menu_typo_tablet_css = '';
+			$menu_typo_mobile_css = '';
+
+			// If Both Sidebars layout
+			if ( 'both-sidebars' == $layout ) {
+
+				// Both Sidebars layout content width
+				if ( ! empty( $content_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							.content-both-sidebars .content-area {width: '. $content_width .'%;}
+							.content-both-sidebars.scs-style .widget-area.sidebar-secondary,
+							.content-both-sidebars.ssc-style .widget-area {left: -'. $content_width .'%;}
+						}';
+				}
+
+				// Both Sidebars layout sidebars width
+				if ( ! empty( $sidebars_width ) ) {
+					$css .=
+						'@media only screen and (min-width: 960px){
+							.content-both-sidebars .widget-area{width:'. $sidebars_width .'%;}
+							.content-both-sidebars.scs-style .content-area{left:'. $sidebars_width .'%;}
+							.content-both-sidebars.ssc-style .content-area{left:'. $sidebars_width * 2 .'%;}
+						}';
+				}
+
+			}
+
+			// Add menu font family
+			if ( ! empty( $menu_font_family ) ) {
+				$menu_typo_css .= 'font-family:' . $menu_font_family . ';';
+			}
+
+			// Add menu font size
+			if ( ! empty( $menu_font_size ) ) {
+				$menu_typo_css .= 'font-size:' . $menu_font_size . '' . $menu_font_size_unit . ';';
+			}
+			if ( ! empty( $menu_font_size_tablet ) ) {
+				$menu_typo_tablet_css .= 'font-size:' . $menu_font_size_tablet . '' . $menu_font_size_unit . ';';
+			}
+			if ( ! empty( $menu_font_size_mobile ) ) {
+				$menu_typo_mobile_css .= 'font-size:' . $menu_font_size_mobile . '' . $menu_font_size_unit . ';';
+			}
+
+			// Add menu font weight
+			if ( ! empty( $menu_font_weight ) ) {
+				$menu_typo_css .= 'font-weight:' . $menu_font_weight . ';';
+			}
+			if ( ! empty( $menu_font_weight_tablet ) ) {
+				$menu_typo_tablet_css .= 'font-weight:' . $menu_font_weight_tablet . ';';
+			}
+			if ( ! empty( $menu_font_weight_mobile ) ) {
+				$menu_typo_mobile_css .= 'font-weight:' . $menu_font_weight_mobile . ';';
+			}
+
+			// Add menu text transform
+			if ( ! empty( $menu_text_transform ) ) {
+				$menu_typo_css .= 'text-transform:'. $menu_text_transform .';';
+			}
+			if ( ! empty( $menu_text_transform_tablet ) ) {
+				$menu_typo_tablet_css .= 'text-transform:' . $menu_text_transform_tablet . ';';
+			}
+			if ( ! empty( $menu_text_transform_mobile ) ) {
+				$menu_typo_mobile_css .= 'text-transform:' . $menu_text_transform_mobile . ';';
+			}
+
+			// Add menu line height
+			if ( ! empty( $menu_line_height ) ) {
+				$menu_typo_css .= 'line-height:' . $menu_line_height . '' . $menu_line_height_unit . ';';
+			}
+			if ( ! empty( $menu_line_height_tablet ) ) {
+				$menu_typo_tablet_css .= 'line-height:' . $menu_line_height_tablet . '' . $menu_line_height_unit . ';';
+			}
+			if ( ! empty( $menu_line_height_mobile ) ) {
+				$menu_typo_mobile_css .= 'line-height:' . $menu_line_height_mobile . '' . $menu_line_height_unit . ';';
+			}
+
+			// Add menu letter spacing
+			if ( ! empty( $menu_letter_spacing ) ) {
+				$menu_typo_css .= 'letter-spacing:' . $menu_letter_spacing . '' . $menu_letter_spacing_unit . ';';
+			}
+			if ( ! empty( $menu_letter_spacing_tablet ) ) {
+				$menu_typo_tablet_css .= 'letter-spacing:' . $menu_letter_spacing_tablet . '' . $menu_letter_spacing_unit . ';';
+			}
+			if ( ! empty( $menu_letter_spacing_mobile ) ) {
+				$menu_typo_mobile_css .= 'letter-spacing:' . $menu_letter_spacing_mobile . '' . $menu_letter_spacing_unit . ';';
+			}
+
+			// Menu typography css
+			if ( ! empty( $menu_typo_css ) ) {
+				$css .= '#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a {'. $menu_typo_css .'}';
+			}
+			if ( ! empty( $menu_typo_tablet_css ) ) {
+				$css .= '@media only screen and (max-width: 768x){
+					#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a {'. $menu_typo_tablet_css .'}
+				}';
+			}
+			if ( ! empty( $menu_typo_mobile_css ) ) {
+				$css .= '@media only screen and (max-width: 480x){
+					#site-navigation-wrap .dropdown-menu > li > a, .oceanwp-mobile-menu-icon a {'. $menu_typo_mobile_css .'}
+				}';
+			}
+
+			// Return CSS
+			if ( ! empty( $css ) ) {
+				$output .= $css;
+			}
+
+			// Return output css
+			return $output;
+
+		}
+
+	}
+}
+
+/**
+ * Returns the main instance of OceanWP_Post_Settings_Output to prevent the need to use globals.
+ *
+ * @return object OceanWP_Post_Settings_Output
+ */
+function OceanWP_Post_Settings_Output() {
+	return OceanWP_Post_Settings_Output::instance();
+}
+
+OceanWP_Post_Settings_Output();
