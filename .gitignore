@@ -266,6 +266,8 @@ node_modules/
 # build folder
 build/
 
+includes/post-settings/
+
 # vender folder
 vendor/
 

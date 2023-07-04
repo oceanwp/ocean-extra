@@ -304,7 +304,7 @@ class Ocean_Preloader_Customizer {
 			'section'  				=> $section,
 			'priority' 				=> 10,
 			'active_callback' 		=> 'oe_cac_has_preloader_custom',
-			'choices' 				=> oe_library_template_selector( 'library' ),
+			'choices' 				=> oceanwp_customizer_helpers( 'library' ),
 		) ) );
 
 		/**

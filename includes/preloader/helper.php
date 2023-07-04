@@ -13,26 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Helper function
+ * Preloader Icon list
  */
-function oe_library_template_selector( $return = NULL ) {
-
-	// Return library templates array
-	if ( 'library' == $return ) {
-		$templates 		= array( '&mdash; '. esc_html__( 'Select', 'ocean-extra' ) .' &mdash;' );
-		$get_templates 	= get_posts( array( 'post_type' => 'oceanwp_library', 'numberposts' => -1, 'post_status' => 'publish' ) );
-
-	    if ( ! empty ( $get_templates ) ) {
-	    	foreach ( $get_templates as $template ) {
-				$templates[ $template->ID ] = $template->post_title;
-		    }
-		}
-
-		return $templates;
-	}
-
-}
-
 function oe_preloader_icon_list() {
 
     $icon_array = array(
@@ -55,6 +37,9 @@ function oe_preloader_icon_list() {
 
 }
 
+/**
+ * Preloader icon
+ */
 function oe_preloader_icon( $icon = '' ) {
 
     if ( empty( $icon ) ) {
