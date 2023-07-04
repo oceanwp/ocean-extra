@@ -387,7 +387,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/metabox/butterbean/butterbean.php';
 			require_once OE_PATH . '/includes/metabox/metabox.php';
 			require_once OE_PATH . '/includes/metabox/shortcodes.php';
-			require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
+			//require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
 			require_once OE_PATH . '/includes/shortcodes/shortcodes.php';
 			require_once OE_PATH . '/includes/image-resizer.php';
 			require_once OE_PATH . '/includes/jshrink.php';

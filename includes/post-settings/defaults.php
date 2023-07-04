@@ -683,6 +683,29 @@ function oe_post_meta_args( $defaults ) {
 		'value'  => 'post'
 	);
 
+	$defaults['_ocean_meta_gallery_link_images'] = array(
+		'map'    => 'ocean_gallery_link_images',
+		'type'   => 'string',
+		'single' => true,
+		'rest'   => true,
+		'value'  => 'on'
+	);
+
+	$defaults['_ocean_meta_gallery_id'] = array(
+		'map'    => 'ocean_gallery_id',
+		'type'   => 'array',
+		'single' => true,
+		'rest'   => array(
+			'schema' => array(
+				'type'  => 'array',
+				'items' => array(
+					'type' => 'integer'
+				)
+			)
+		),
+		'value'  => ''
+	);
+
 	return apply_filters( 'ocean_post_meta_args', $defaults );
 
 }
