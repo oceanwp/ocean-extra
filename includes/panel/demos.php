@@ -1001,7 +1001,7 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 			$free = $plugins[ 'free' ];
 
 			// Get premium plugins
-			$premium = $plugins[ 'premium' ]; ?>
+			$premium = isset( $plugins['premium'] ) ? $plugins[ 'premium' ] : '' ?>
 
 			<div id="owp-demo-plugins">
 
@@ -1022,7 +1022,10 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 						<div class="owp-required-plugins oe-plugin-installer">
 							<?php
 							self::required_plugins( $free, 'free' );
-							self::required_plugins( $premium, 'premium' ); ?>
+							if ( ! empty( $premium ) ) {
+								self::required_plugins( $premium, 'premium' );
+							}
+							?>
 						</div>
 					</div>
 
@@ -1099,51 +1102,53 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 */
 		public static function required_plugins( $plugins, $return ) {
 
-			foreach ( $plugins as $key => $plugin ) {
+			if ( $plugins ) {
 
-				$api = array(
-					'slug' => isset( $plugin['slug'] ) ? $plugin['slug'] : '',
-					'init' => isset( $plugin['init'] ) ? $plugin['init'] : '',
-					'name' => isset( $plugin['name'] ) ? $plugin['name'] : '',
-				);
+				foreach ( $plugins as $key => $plugin ) {
 
-				if ( ! is_wp_error( $api ) ) { // confirm error free
+					$api = array(
+						'slug' => isset( $plugin['slug'] ) ? $plugin['slug'] : '',
+						'init' => isset( $plugin['init'] ) ? $plugin['init'] : '',
+						'name' => isset( $plugin['name'] ) ? $plugin['name'] : '',
+					);
 
-					// Installed but Inactive.
-					if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) && is_plugin_inactive( $plugin['init'] ) ) {
+					if ( ! is_wp_error( $api ) ) { // confirm error free
 
-						$button_classes = 'button activate-now button-primary';
-						$button_text    = esc_html__( 'Activate', 'ocean-extra' );
-						// Not Installed.
-					} elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) ) {
+						// Installed but Inactive.
+						if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) && is_plugin_inactive( $plugin['init'] ) ) {
 
-						$button_classes = 'button install-now';
-						$button_text    = esc_html__( 'Install Now', 'ocean-extra' );
-						// Active.
-					} else {
-						$button_classes = 'button disabled';
-						$button_text    = esc_html__( 'Activated', 'ocean-extra' );
-					} ?>
+							$button_classes = 'button activate-now button-primary';
+							$button_text    = esc_html__( 'Activate', 'ocean-extra' );
+							// Not Installed.
+						} elseif ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) ) {
 
-					<div class="owp-plugin owp-clr owp-plugin-<?php echo $api['slug']; ?>" data-slug="<?php echo $api['slug']; ?>" data-init="<?php echo $api['init']; ?>">
-						<h2><?php echo $api['name']; ?></h2>
+							$button_classes = 'button install-now';
+							$button_text    = esc_html__( 'Install Now', 'ocean-extra' );
+							// Active.
+						} else {
+							$button_classes = 'button disabled';
+							$button_text    = esc_html__( 'Activated', 'ocean-extra' );
+						} ?>
+
+						<div class="owp-plugin owp-clr owp-plugin-<?php echo $api['slug']; ?>" data-slug="<?php echo $api['slug']; ?>" data-init="<?php echo $api['init']; ?>">
+							<h2><?php echo $api['name']; ?></h2>
+
+							<?php
+							// If premium plugins and not installed
+							if ( 'premium' == $return
+								&& ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) ) { ?>
+								<a class="button" href="https://oceanwp.org/extension/<?php echo $api['slug']; ?>/" target="_blank"><?php esc_html_e( 'Get This Addon', 'ocean-extra' ); ?></a>
+								<?php
+							} else { ?>
+								<button class="<?php echo $button_classes; ?>" data-init="<?php echo $api['init']; ?>" data-slug="<?php echo $api['slug']; ?>" data-name="<?php echo $api['name']; ?>"><?php echo $button_text; ?></button>
+								<?php
+							} ?>
+						</div>
 
 						<?php
-						// If premium plugins and not installed
-						if ( 'premium' == $return
-							&& ! file_exists( WP_PLUGIN_DIR . '/' . $plugin['init'] ) ) { ?>
-							<a class="button" href="https://oceanwp.org/extension/<?php echo $api['slug']; ?>/" target="_blank"><?php esc_html_e( 'Get This Addon', 'ocean-extra' ); ?></a>
-							<?php
-						} else { ?>
-							<button class="<?php echo $button_classes; ?>" data-init="<?php echo $api['init']; ?>" data-slug="<?php echo $api['slug']; ?>" data-name="<?php echo $api['name']; ?>"><?php echo $button_text; ?></button>
-							<?php
-						} ?>
-					</div>
-
-					<?php
+					}
 				}
 			}
-
 		}
 
 		/**
