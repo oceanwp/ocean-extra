@@ -120,6 +120,7 @@ module.exports = function (grunt) {
                     "**",
                     "!node_modules/**",
                     "!build/**",
+                    "!includes/post-settings/**",
                     "!.git/**",
                     "!vendor/**",
                     "!composer.json",

@@ -28,35 +28,39 @@ class OWP_WPForms_Importer {
 		}
 
 		// Decode file contents.
-	    $data = json_decode( $data, true );
+		$data = json_decode( $data, true );
 
 		// Import the widget data
-    	return $this->import_json( $data );
+		return $this->import_json( $data );
 
 	}
 
 	public function import_json( $forms ) {
 
-        foreach ( $forms as $form ) {
+		if ( ! function_exists( 'wpforms' ) ) {
+			return;
+		}
 
-            // Create empty form so we have an ID to work with.
-            $form_id = wp_insert_post(
-                array(
-                    'post_status' => 'publish',
-                    'post_type'   => 'wpforms',
-                )
-            );
+		foreach ( $forms as $form ) {
 
-            // Bail if post creation has failed.
-            if ( empty( $form_id )
-                || is_wp_error( $form_id ) ) {
-                continue;
-            }
+			// Create empty form so we have an ID to work with.
+			$form_id = wp_insert_post(
+				array(
+					'post_status' => 'publish',
+					'post_type'   => 'wpforms',
+				)
+			);
 
-            $form['id'] = $form_id;
+			// Bail if post creation has failed.
+			if ( empty( $form_id )
+				|| is_wp_error( $form_id ) ) {
+				continue;
+			}
 
-            // Update the form with all our compiled data.
-            wpforms()->form->update( $form['id'], $form );
-        }
-    }
+			$form['id'] = $form_id;
+
+			// Update the form with all our compiled data.
+			wpforms()->form->update( $form['id'], $form );
+		}
+	}
 }

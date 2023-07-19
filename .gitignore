@@ -262,9 +262,13 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
+**/node_modules/
 
 # build folder
 build/
+
+# src folder
+includes/post-settings/
 
 # vender folder
 vendor/
