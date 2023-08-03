@@ -1,0 +1,226 @@
+<?php
+/**
+ * OceanWP Post Metabox
+ *
+ * @package Ocean_Extra
+ * @category Core
+ * @author OceanWP
+ */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+// The Metabox class
+if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
+
+	/**
+	 * Main Post Settings class.
+	 *
+	 * @since  2.2.0
+	 * @access public
+	 */
+	final class OceanWP_Post_Settings {
+
+		/**
+		 * Ocean_Extra The single instance of Ocean_Extra.
+		 *
+		 * @var     object
+		 * @access  private
+		 */
+		private static $_instance = null;
+
+		/**
+		 * Main OceanWP_Post_Settings Instance
+		 *
+		 * @static
+		 * @see OceanWP_Post_Settings()
+		 * @return Main OceanWP_Post_Settings instance
+		 */
+		public static function instance() {
+			if ( is_null( self::$_instance ) ) {
+				self::$_instance = new self();
+			}
+			return self::$_instance;
+		}
+
+		/**
+		 * Constructor
+		 */
+		public function __construct() {
+
+			$this->includes();
+
+			$capabilities = apply_filters('ocean_main_metaboxes_capabilities', 'manage_options');
+
+			if ( current_user_can($capabilities) ) {
+
+				add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
+				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ) );
+				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
+			}
+
+			add_action( 'current_screen',  array( $this, 'remove_butterbean_metabox' ), 20 );
+
+		}
+
+		/**
+		 * Load required files
+		 */
+		public function includes() {
+			require_once OE_PATH . 'includes/post-settings/defaults.php';
+			require_once OE_PATH . 'includes/post-settings/functions.php';
+		}
+
+		/**
+		 * Register Post Meta options.
+		 *
+		 * @return void
+		 */
+		public function register_meta_settings() {
+
+			$settings = ocean_post_setting_data();
+
+			foreach ( $settings as $key => $value ) {
+
+				$args = array(
+					'object_subtype' => $value['subType'],
+					'single'         => $value['single'],
+					'type'           => $value['type'],
+					'default'        => $value['value'],
+					'show_in_rest'   => $value['rest'],
+					'auth_callback'  => '__return_true',
+				);
+
+				// Register meta.
+				register_meta( 'post', $key, $args );
+			}
+		}
+
+		/**
+		 * Filter callback to fix the WP REST API meta error when sending updated encoded JSON with no change.
+		 *
+		 * @param mixed  $value       The new value of the user metadata to be updated.
+		 * @param int    $object_id   The ID of the user object whose metadata is being updated.
+		 * @param mixed  $meta_value  The new meta value to be stored.
+		 * @param mixed  $prev_value  The previous meta value before the update.
+		 * @param string $meta_key    Optional. The meta key for which the value is being updated. Defaults to false.
+		 *
+		 * @return mixed The filtered value. If the function returns true, it prevents the update from occurring.
+		 */
+		public function handle_updating_post_meta( $value, $object_id, $meta_key, $meta_value, $prev_value ) {
+
+			$meta_type = 'post';
+			$serialized_meta_keys = get_all_meta_key();
+
+			// Check if it's a REST API request and the meta key is in the serialized meta keys array.
+			if ( defined( 'REST_REQUEST' ) && REST_REQUEST && in_array( $meta_key, $serialized_meta_keys ) ) {
+
+				// Get the meta cache for the user.
+				$meta_cache = wp_cache_get( $object_id, $meta_type . '_meta' );
+
+				// If meta cache doesn't exist, update the meta cache for the user.
+				if ( ! $meta_cache ) {
+					$meta_cache = update_meta_cache( $meta_type, array( $object_id ) );
+					$meta_cache = $meta_cache[$object_id];
+				}
+
+				// Check if the meta key exists in the meta cache.
+				if ( isset( $meta_cache[$meta_key] ) ) {
+					// If the new meta value is the same as the one in the meta cache, return true to prevent update.
+					if ( $meta_value === $meta_cache[$meta_key][0] ) {
+						return true;
+					}
+				}
+			}
+
+			// If not a REST API request or the meta key is not in the serialized meta keys array, proceed with the update.
+			return $value;
+		}
+
+		/**
+		 * Enqueque Editor Scripts
+		 */
+		public function editor_enqueue_script() {
+
+			if ( false === oe_check_post_types_settings() ) {
+				return;
+			}
+
+			$uri   = OE_URL . 'includes/post-settings/assets/';
+			$asset = require OE_PATH . 'includes/post-settings/assets/index.asset.php';
+			$deps  = $asset['dependencies'];
+			array_push( $deps, 'updates' );
+
+			wp_register_script(
+				'owp-post-settings',
+				$uri . 'index.js',
+				$deps,
+				filemtime( OE_PATH . 'includes/post-settings/assets/index.js' ),
+				true
+			);
+
+			wp_enqueue_style(
+				'owp-post-settings',
+				$uri . 'style-index.css',
+				array(),
+				filemtime( OE_PATH . 'includes/post-settings/assets/style-index.css' )
+			);
+
+			wp_enqueue_script( 'owp-post-settings' );
+
+			if ( function_exists( 'wp_set_script_translations' ) ) {
+				wp_set_script_translations( 'owp-post-settings', 'ocean-extra' );
+			}
+
+			$editor_loc_data = $this->localize_editor_script();
+			if ( is_array( $editor_loc_data ) ) {
+				wp_localize_script(
+					'owp-post-settings',
+					'owpPostSettings',
+					$editor_loc_data
+				);
+			}
+		}
+
+		/**
+		 * Localize Script.
+		 *
+		 * @return mixed|void
+		 */
+		public function localize_editor_script() {
+
+			return apply_filters(
+				'ocean_post_settings_localize',
+				array(
+					'choices'   => oe_get_choices(),
+					'postTypes' => oe_metabox_support_post_types(),
+					'isMigrate' => get_option( 'ocean_metabox_migration_status' ),
+					'metaExist' => function_exists( 'oe_check_old_meta' ) ? oe_check_old_meta() : false
+				)
+			);
+		}
+
+		/**
+		 * Remove Butterbean metabox when block editor.
+		 */
+		public function remove_butterbean_metabox() {
+
+			if ( true === oe_is_block_editor() ) {
+				remove_all_actions( 'butterbean_register' );
+			}
+		}
+	}
+}
+
+/**
+ * Returns the main instance of OceanWP_Post_Settings to prevent the need to use globals.
+ *
+ * @return object OceanWP_Post_Settings
+ */
+function OceanWP_Post_Settings() {
+	return OceanWP_Post_Settings::instance();
+}
+
+OceanWP_Post_Settings();

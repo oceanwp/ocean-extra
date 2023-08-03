@@ -268,7 +268,7 @@ node_modules/
 build/
 
 # src folder
-includes/post-settings/
+includes/post-settings/src/
 
 # vender folder
 vendor/
