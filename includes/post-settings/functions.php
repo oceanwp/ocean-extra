@@ -65,37 +65,6 @@ function get_all_meta_key() {
 }
 
 /**
- * Check if old meta fields exist
- *
- * @return boolean
- */
-function oe_check_old_meta() {
-	global $wpdb;
-
-	// Get all new meta data keys and store them in an array for faster lookup
-	$newMetaDataKeys = array_column(ocean_post_setting_data(), 'map');
-
-	// Construct the placeholders for the SQL query
-	$placeholders = array_fill(0, count($newMetaDataKeys), '%s');
-	$placeholders_str = implode(',', $placeholders);
-
-	// Construct the SQL query to check for the existence of meta keys in the post meta
-	$query = $wpdb->prepare("
-		SELECT COUNT(*)
-		FROM $wpdb->postmeta
-		WHERE meta_key IN ($placeholders_str)
-	", $newMetaDataKeys);
-
-	// Execute the query and get the count of matching rows
-	$count = $wpdb->get_var($query);
-
-	// Check if any meta data keys are found
-	$status = $count > 0;
-
-	return apply_filters( 'oe_check_old_meta', $status );
-}
-
-/**
  * Helpers
  *
  * @since 1.0.0

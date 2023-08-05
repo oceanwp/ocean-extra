@@ -24,6 +24,20 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 	final class OceanWP_Post_Settings {
 
 		/**
+		 * Namespace.
+		 *
+		 * @var string
+		 */
+		protected $namespace = 'oceanwp/v';
+
+		/**
+		 * Version.
+		 *
+		 * @var string
+		 */
+		protected $version = '1';
+
+		/**
 		 * Ocean_Extra The single instance of Ocean_Extra.
 		 *
 		 * @var     object
@@ -59,6 +73,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
 				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ) );
 				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
+				add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 			}
 
 			add_action( 'current_screen',  array( $this, 'remove_butterbean_metabox' ), 20 );
@@ -195,9 +210,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				'ocean_post_settings_localize',
 				array(
 					'choices'   => oe_get_choices(),
-					'postTypes' => oe_metabox_support_post_types(),
-					'isMigrate' => get_option( 'ocean_metabox_migration_status' ),
-					'metaExist' => function_exists( 'oe_check_old_meta' ) ? oe_check_old_meta() : false
+					'postTypes' => oe_metabox_support_post_types()
 				)
 			);
 		}
@@ -210,6 +223,77 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 			if ( true === oe_is_block_editor() ) {
 				remove_all_actions( 'butterbean_register' );
 			}
+		}
+
+		/**
+		 * Register rest routes.
+		 */
+		public function register_routes() {
+
+			register_rest_route(
+				$this->namespace . $this->version,
+				'/option-reset-current/(?P<post_id>\d+)',
+				array(
+					'methods'             => WP_REST_Server::EDITABLE,
+					'callback'            => array( $this, 'current_reset_options_callback' ),
+					'permission_callback' => array( $this, 'settings_permission' ),
+				)
+			);
+		}
+
+		/**
+		 * Ocean Migration metabox for current page/post only.
+		 *
+		 * @param WP_REST_Request $request  Request object.
+		 *
+		 * @return mixed
+		 */
+		public function current_reset_options_callback( WP_REST_Request $request ) {
+
+			$newMetaData = ocean_post_setting_data();
+
+			$post_id = $request->get_param('post_id');
+
+			if ( $post_id > 0 ) {
+				$post = get_post( $post_id );
+
+				if ( $post && in_array( $post->post_type, get_post_types() ) ) {
+					$oldMetaData = get_post_custom( $post_id );
+
+					foreach ( $newMetaData as $key => $value ) {
+						if ( isset( $oldMetaData[ $key ][0] ) && $oldMetaData[ $key ][0] !== $value['value'] ) {
+							update_post_meta( $post_id, $key, $value['value'] );
+						}
+					}
+
+					return $this->success( '<span class="dashicons dashicons-yes"></span>' );
+				}
+			}
+		}
+
+		/**
+		 * Get edit options permissions.
+		 *
+		 * @return bool
+		 */
+		public function settings_permission() {
+			return current_user_can( 'manage_options' );
+		}
+
+		/**
+		 * Success
+		 *
+		 * @param mixed $response response data.
+		 * @return mixed
+		 */
+		public function success( $response ) {
+			return new WP_REST_Response(
+				array(
+					'success'  => true,
+					'response' => $response,
+				),
+				200
+			);
 		}
 	}
 }
