@@ -16,7 +16,7 @@
 
 // For each version release, the priority needs to decrement by 1. This is so that
 // we can load newer versions earlier than older versions when there's a conflict.
-add_action( 'init', 'butterbean_loader_100', 9999 );
+// add_action( 'init', 'butterbean_loader_100', 9999 );
 
 if ( ! function_exists( 'butterbean_loader_100' ) ) {
 
@@ -31,8 +31,9 @@ if ( ! function_exists( 'butterbean_loader_100' ) ) {
 	function butterbean_loader_100() {
 
 		// If not in the admin, bail.
-		if ( ! is_admin() )
+		if ( ! is_admin() ) {
 			return;
+		}
 
 		// If ButterBean hasn't been loaded, let's load it.
 		if ( ! defined( 'BUTTERBEAN_LOADED' ) ) {

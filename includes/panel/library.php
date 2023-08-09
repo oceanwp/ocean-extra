@@ -90,7 +90,7 @@ class Ocean_Extra_My_Library {
 			'exclude_from_search'   	=> true,
 			'capability_type' 			=> 'post',
 			'rewrite' 					=> false,
-			'supports' 					=> array( 'title', 'editor', 'thumbnail', 'author', 'elementor' ),
+			'supports' 					=> array( 'title', 'editor', 'thumbnail', 'author', 'elementor', 'custom-fields' ),
 		) ) );
 
 	}
@@ -117,15 +117,14 @@ class Ocean_Extra_My_Library {
 				$is_php         = get_post_meta( $post_id, 'oh_hook_php', true );
 			}
 
-			if ( ! $is_php ) {
-				return $args;
+			if ( class_exists( 'Ocean_Hooks' ) ) {
+				if ( 'enable' === $is_php && 'enable' === $is_hook_active ) {
+					$args['show_in_rest'] = false;
+				} else {
+					$args['show_in_rest'] = true;
+				}
 			}
 
-			if ( 'enable' === $is_php && 'enable' === $is_hook_active ) {
-				$args['show_in_rest'] = false;
-			} else {
-				$args['show_in_rest'] = true;
-			}
 		}
 
 		return $args;

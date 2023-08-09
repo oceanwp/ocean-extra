@@ -42,6 +42,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 				'post',
 				'page',
 				'product',
+				'oceanwp_library',
 				'elementor_library',
 				'ae_global_templates',
 			) );
@@ -214,14 +215,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 
 			// Register managers, sections, controls, and settings here.
 			$butterbean->register_manager(
-		        'oceanwp_mb_settings',
-		        array(
-		            'label'     => $brand . ' ' . esc_html__( 'Settings', 'ocean-extra' ),
-		            'post_type' => $post_types,
-		            'context'   => 'normal',
-		            'priority'  => 'high'
-		        )
-		    );
+				'oceanwp_mb_settings',
+				array(
+					'label'     => $brand . ' ' . esc_html__( 'Settings', 'ocean-extra' ),
+					'post_type' => $post_types,
+					'context'   => 'normal',
+					'priority'  => 'high'
+				)
+			);
 
 			$manager = $butterbean->get_manager( 'oceanwp_mb_settings' );
 			

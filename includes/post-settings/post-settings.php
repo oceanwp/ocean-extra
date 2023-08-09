@@ -71,13 +71,12 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 			if ( current_user_can($capabilities) ) {
 
 				add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
-				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ) );
+				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ), 21 );
 				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
 				add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 			}
 
-			add_action( 'current_screen',  array( $this, 'remove_butterbean_metabox' ), 20 );
-
+			add_action( 'current_screen', array( $this, 'butterbean_loader' ), 20 );
 		}
 
 		/**
@@ -218,10 +217,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 		/**
 		 * Remove Butterbean metabox when block editor.
 		 */
-		public function remove_butterbean_metabox() {
+		public function butterbean_loader() {
 
-			if ( true === oe_is_block_editor() ) {
-				remove_all_actions( 'butterbean_register' );
+			if ( false === oe_is_block_editor() ) {
+				add_action( 'current_screen', 'butterbean_loader_100', 9999 );
 			}
 		}
 
@@ -304,7 +303,12 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
  * @return object OceanWP_Post_Settings
  */
 function OceanWP_Post_Settings() {
-	return OceanWP_Post_Settings::instance();
+
+	if ( ! defined( 'OCEAN_METABOX_LOADER' ) ) {
+		define( 'OCEAN_METABOX_LOADER', true );
+
+		return OceanWP_Post_Settings::instance();
+	}
 }
 
 OceanWP_Post_Settings();
