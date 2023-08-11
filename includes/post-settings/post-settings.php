@@ -209,7 +209,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				'ocean_post_settings_localize',
 				array(
 					'choices'   => oe_get_choices(),
-					'postTypes' => oe_metabox_support_post_types()
+					'postTypes' => oe_metabox_support_post_types(),
+					'isPremium' => ocean_check_pro_license()
 				)
 			);
 		}

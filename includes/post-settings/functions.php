@@ -372,3 +372,21 @@ function oe_get_woocommerce_page_list() {
 
 	return $pg_templates;
 }
+
+
+/**
+ * Check if user need to upgrade.
+ *
+ * @return bool
+ */
+function ocean_check_pro_license() {
+	global $owp_fs;
+	$status = false;
+	if ( ! empty( $owp_fs ) ) {
+		$status = $owp_fs->is_pricing_page_visible();
+	} else {
+		$status = false;
+	}
+
+	return $status;
+}
