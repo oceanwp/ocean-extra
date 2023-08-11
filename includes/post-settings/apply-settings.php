@@ -168,7 +168,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 			add_filter( 'ocean_custom_footer_template', array( $this, 'custom_footer_template' ) );
 
 			// Custom CSS
-			add_filter( 'ocean_head_css', array( $this, 'head_css' ), 20 );
+			add_filter( 'ocean_head_css', array( $this, 'head_css' ), 99 );
 
 		}
 
