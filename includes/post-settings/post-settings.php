@@ -74,6 +74,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ), 21 );
 				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
 				add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+				add_filter('register_post_type_args', array( $this, 'post_args' ), 10, 2 );
 			}
 
 			add_action( 'current_screen', array( $this, 'butterbean_loader' ), 20 );
@@ -110,6 +111,35 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				// Register meta.
 				register_meta( 'post', $key, $args );
 			}
+		}
+
+		/**
+		 * Modify post type arguments to add 'custom-fields' support for specific post types.
+		 *
+		 * This function hooks into the 'register_post_type_args' filter to check if the current
+		 * post type is in the list of post types that should receive 'custom-fields' support. If
+		 * the support is not already present, it's added to the post type's arguments.
+		 *
+		 * @param array  $args      The original post type arguments.
+		 * @param string $post_type The slug of the current post type.
+		 *
+		 * @return array Modified post type arguments.
+		 */
+		public function post_args( $args, $post_type ) {
+
+			// Array of post types to check for 'custom-fields' support.
+			$post_types_to_check = oe_metabox_support_post_types();
+
+			// Check if the current post type is in the list to check.
+			if ( in_array( $post_type, $post_types_to_check ) ) {
+
+				// Check if 'custom-fields' support already exists.
+				if ( ! isset( $args['supports'] ) || ! in_array( 'custom-fields', $args['supports'] ) ) {
+					$args['supports'][] = 'custom-fields';
+				}
+			}
+
+			return $args;
 		}
 
 		/**

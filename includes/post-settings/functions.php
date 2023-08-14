@@ -226,7 +226,6 @@ function oe_metabox_support_post_types() {
 		'post',
 		'page',
 		'product',
-		'oceanwp_library',
 		'elementor_library',
 		'ae_global_templates',
 	) );
