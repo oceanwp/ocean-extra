@@ -200,6 +200,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.2.0 - AUG XX 2023 =
+- New: Metabox Settings new framework.
+
 = 2.1.8 - JUL 19 2023 =
 - Updated: Freemius SDK 2.5.10 version.
 

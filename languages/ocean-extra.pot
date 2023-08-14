@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-09T13:13:02+00:00\n"
+"POT-Creation-Date: 2023-08-14T05:21:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: ocean-extra\n"
@@ -1869,7 +1869,7 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:372
 #: includes/widgets/social.php:483
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:172
+#: includes/post-settings/src/controls/typography/font-format.js:170
 msgid "Font Size"
 msgstr ""
 
@@ -6873,48 +6873,48 @@ msgstr ""
 msgid "Sample data file appears corrupt or can not be accessed."
 msgstr ""
 
-#: includes/panel/library.php:44
-#: includes/panel/library.php:49
-#: includes/panel/library.php:65
-#: includes/panel/library.php:81
+#: includes/panel/library.php:43
+#: includes/panel/library.php:48
+#: includes/panel/library.php:64
+#: includes/panel/library.php:80
 msgid "My Library"
 msgstr ""
 
-#: includes/panel/library.php:72
+#: includes/panel/library.php:71
 msgid "Template"
 msgstr ""
 
-#: includes/panel/library.php:73
+#: includes/panel/library.php:72
 msgid "Add New"
 msgstr ""
 
-#: includes/panel/library.php:74
-#: includes/panel/library.php:76
+#: includes/panel/library.php:73
+#: includes/panel/library.php:75
 msgid "Add New Template"
 msgstr ""
 
-#: includes/panel/library.php:75
+#: includes/panel/library.php:74
 msgid "Edit Template"
 msgstr ""
 
-#: includes/panel/library.php:77
+#: includes/panel/library.php:76
 msgid "View Template"
 msgstr ""
 
-#: includes/panel/library.php:78
+#: includes/panel/library.php:77
 msgid "Search Template"
 msgstr ""
 
-#: includes/panel/library.php:79
+#: includes/panel/library.php:78
 msgid "No Templates Found"
 msgstr ""
 
-#: includes/panel/library.php:80
+#: includes/panel/library.php:79
 msgid "No Templates Found In Trash"
 msgstr ""
 
-#: includes/panel/library.php:201
-#: includes/panel/library.php:228
+#: includes/panel/library.php:163
+#: includes/panel/library.php:190
 msgid "Shortcode"
 msgstr ""
 
@@ -7087,35 +7087,35 @@ msgstr ""
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
-#: includes/post-settings/functions.php:287
+#: includes/post-settings/functions.php:286
 msgid "All Pages"
 msgstr ""
 
-#: includes/post-settings/functions.php:288
+#: includes/post-settings/functions.php:287
 msgid "Home Page ( is_home() )"
 msgstr ""
 
-#: includes/post-settings/functions.php:289
+#: includes/post-settings/functions.php:288
 msgid "Front Page ( is_front_page() )"
 msgstr ""
 
-#: includes/post-settings/functions.php:300
+#: includes/post-settings/functions.php:299
 msgid "Single Post"
 msgstr ""
 
-#: includes/post-settings/functions.php:301
+#: includes/post-settings/functions.php:300
 msgid "Category Page"
 msgstr ""
 
-#: includes/post-settings/functions.php:302
+#: includes/post-settings/functions.php:301
 msgid "Archive Page"
 msgstr ""
 
-#: includes/post-settings/functions.php:303
+#: includes/post-settings/functions.php:302
 msgid "Logged In User"
 msgstr ""
 
-#: includes/post-settings/functions.php:304
+#: includes/post-settings/functions.php:303
 msgid "Logged Out User"
 msgstr ""
 
@@ -9135,7 +9135,7 @@ msgstr ""
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 #: includes/post-settings/src/sidebar/panel-page-option/index.js:12
-#: includes/post-settings/src/sidebar/registerSidebar.js:38
+#: includes/post-settings/src/sidebar/registerSidebar.js:44
 msgid "Page Settings & Styling"
 msgstr ""
 
@@ -9214,12 +9214,12 @@ msgstr ""
 
 #: includes/post-settings/assets/index.js:2
 #: includes/post-settings/src/sidebar/settings/logo.js:96
-msgid "Logo Width"
+msgid "Logo Width (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
 #: includes/post-settings/src/sidebar/settings/logo.js:117
-msgid "Logo Height"
+msgid "Logo Height (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
@@ -9239,33 +9239,33 @@ msgid "Font Family"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:162
+#: includes/post-settings/src/controls/typography/font-family.js:164
 msgid "Font Weight"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:183
+#: includes/post-settings/src/controls/typography/font-family.js:185
 msgid "Font Subset"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:189
+#: includes/post-settings/src/controls/typography/font-format.js:187
 msgid "Text Transform"
 msgstr ""
 
 #. translators: option name
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:196
+#: includes/post-settings/src/controls/typography/font-format.js:194
 msgid "%s"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:223
+#: includes/post-settings/src/controls/typography/font-format.js:221
 msgid "Line Height"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:239
+#: includes/post-settings/src/controls/typography/font-format.js:237
 msgid "Letter Spacing"
 msgstr ""
 
@@ -9416,20 +9416,8 @@ msgid "learn more"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:188
-#: includes/post-settings/src/sidebar/settings/post.js:189
-msgid "Learn how to use the Post settings."
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
 #: includes/post-settings/src/sidebar/settings/gallery.js:69
 msgid "Add Gallery Images"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/gallery.js:87
-#: includes/post-settings/src/sidebar/settings/gallery.js:88
-msgid "Learn how to use the Gallery settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
