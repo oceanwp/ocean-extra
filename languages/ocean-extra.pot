@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-08-14T05:21:42+00:00\n"
+"POT-Creation-Date: 2023-09-01T06:07:18+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: ocean-extra\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "This widget requires JavaScript."
 msgstr ""
 
-#: includes/menu-icons/includes/library/form-fields.php:119
+#: includes/menu-icons/includes/library/form-fields.php:125
 msgid "%1$s: Type %2$s is not supported, reverting to text."
 msgstr ""
 
@@ -1869,7 +1869,7 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:372
 #: includes/widgets/social.php:483
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:170
+#: includes/post-settings/src/controls/typography/font-format.js:176
 msgid "Font Size"
 msgstr ""
 
@@ -9152,7 +9152,7 @@ msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/src/sidebar/settings/shortcode.js:34
-msgid "Topbar"
+msgid "Top Bar"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
@@ -9249,23 +9249,23 @@ msgid "Font Subset"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:187
+#: includes/post-settings/src/controls/typography/font-format.js:193
 msgid "Text Transform"
 msgstr ""
 
 #. translators: option name
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:194
+#: includes/post-settings/src/controls/typography/font-format.js:200
 msgid "%s"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:221
+#: includes/post-settings/src/controls/typography/font-format.js:227
 msgid "Line Height"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:237
+#: includes/post-settings/src/controls/typography/font-format.js:243
 msgid "Letter Spacing"
 msgstr ""
 
