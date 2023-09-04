@@ -200,7 +200,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.2.0 - SEP 5 2023 =
+= 2.2.0 - SEP 6 2023 =
 - NEW: Metabox Settings Interface: https://docs.oceanwp.org/category/826-oceanwp-settings
 - Added: Compatibility: PHP8.2+: Menu icons.
 - Updated: Compatibility: WordPress version number.
