@@ -201,7 +201,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 == Changelog ==
 
 = 2.2.0 - SEP 5 2023 =
-- New: Metabox Settings new framework.
+- NEW: Metabox Settings Interface: https://docs.oceanwp.org/category/826-oceanwp-settings
+- Added: Compatibility: PHP8.2+: Menu icons.
+- Updated: Compatibility: WordPress version number.
 
 = 2.1.8 - JUL 19 2023 =
 - Updated: Freemius SDK 2.5.10 version.
