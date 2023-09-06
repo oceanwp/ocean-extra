@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.2.2
-Stable tag: 2.1.8
+Tested up to: 6.3.1
+Stable tag: 2.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.2.0 - SEP 6 2023 =
+- NEW: Metabox Settings Interface: https://docs.oceanwp.org/category/826-oceanwp-settings
+- Added: Compatibility: PHP8.2+: Menu icons.
+- Updated: Compatibility: WordPress version number.
 
 = 2.1.8 - JUL 19 2023 =
 - Updated: Freemius SDK 2.5.10 version.

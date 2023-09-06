@@ -27,7 +27,6 @@ class Ocean_Extra_My_Library {
 			add_action( 'add_meta_boxes_oceanwp_library', array( $this, 'shortcode_metabox' ) );
 			add_filter( 'manage_edit-oceanwp_library_columns', array( $this, 'edit_columns' ) );
 			add_action( 'manage_oceanwp_library_posts_custom_column', array( $this, 'custom_columns' ), 10, 2 );
-			add_filter( 'register_post_type_args', array( $this, 'oe_post_type_args' ), 10, 2 );
 		}
 
 		add_action( 'template_redirect', array( $this, 'block_template_frontend' ) );
@@ -90,46 +89,8 @@ class Ocean_Extra_My_Library {
 			'exclude_from_search'   	=> true,
 			'capability_type' 			=> 'post',
 			'rewrite' 					=> false,
-			'supports' 					=> array( 'title', 'editor', 'thumbnail', 'author', 'elementor' ),
+			'supports' 					=> array( 'title', 'editor', 'thumbnail', 'author', 'elementor', 'custom-fields' ),
 		) ) );
-
-	}
-
-	/**
-	 * post type args
-	 *
-	 * @param array  $args       Arguments.
-	 * @param string $post_type  Post type.
-	 */
-	public function oe_post_type_args( $args, $post_type ) {
-
-		if ( 'oceanwp_library' === $post_type ) {
-
-			$post_id = false;
-			$is_php  = false;
-
-			if ( isset( $_GET['post'] ) ) {
-				$post_id = absint( $_GET['post'] );
-			}
-
-			if ( $post_id ) {
-				$is_hook_active = get_post_meta( $post_id, 'oh_enable_hook', true );
-				$is_php         = get_post_meta( $post_id, 'oh_hook_php', true );
-			}
-
-			if ( ! $is_php ) {
-				return $args;
-			}
-
-			if ( 'enable' === $is_php && 'enable' === $is_hook_active ) {
-				$args['show_in_rest'] = false;
-			} else {
-				$args['show_in_rest'] = true;
-			}
-		}
-
-		return $args;
-
 	}
 
 	/**

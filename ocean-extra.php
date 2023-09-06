@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.1.8
+ * Version:             2.2.0
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.2.2
+ * Tested up to:        6.3.1
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -108,7 +108,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.1.8';
+		$this->version     = '2.2.0';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -385,8 +385,9 @@ final class Ocean_Extra {
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
 			require_once OE_PATH . '/includes/metabox/butterbean/butterbean.php';
 			require_once OE_PATH . '/includes/metabox/metabox.php';
-			require_once OE_PATH . '/includes/metabox/shortcodes.php';
-			require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
+			require_once OE_PATH . '/includes/post-settings/post-settings.php';
+			require_once OE_PATH . '/includes/post-settings/apply-settings.php';
+			require_once OE_PATH . '/includes/post-settings/apply-shortcode.php';
 			require_once OE_PATH . '/includes/shortcodes/shortcodes.php';
 			require_once OE_PATH . '/includes/image-resizer.php';
 			require_once OE_PATH . '/includes/jshrink.php';

@@ -81,6 +81,12 @@ abstract class OE_Form_Field {
 	protected $field;
 
 	/**
+	 * Holds args
+	 *
+	 */
+	protected $args;
+
+	/**
 	 * Holds field attributes
 	 *
 	 */
