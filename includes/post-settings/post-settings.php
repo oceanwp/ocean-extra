@@ -192,6 +192,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				return;
 			}
 
+			if ( get_current_screen()->base === 'widgets' ) {
+				return;
+			}
+
 			$uri   = OE_URL . 'includes/post-settings/assets/';
 			$asset = require OE_PATH . 'includes/post-settings/assets/index.asset.php';
 			$deps  = $asset['dependencies'];

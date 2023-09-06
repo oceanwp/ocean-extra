@@ -540,7 +540,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
 					$url  = ! empty( $display_services[$key]['url'] ) ? $display_services[$key]['url'] : null;
-					$name = $social_services_array[$key]['name'];
+					$name = ! empty( $social_services_array[$key]['name'] ) ? $social_services_array[$key]['name'] : null;
 					?>
 
 					<li id="<?php echo esc_attr( $field_id_services ); ?>_0<?php echo esc_attr( $key ); ?>">
