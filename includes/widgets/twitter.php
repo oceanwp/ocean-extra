@@ -70,7 +70,7 @@ if ( ! class_exists( 'Ocean_Extra_Twitter_Widget' ) ) {
 				echo ' data-chrome="' . esc_attr( join( ' ', $instance['chrome'] ) ) . '"';
 			}
 
-			if ( $instance['username'] ) {
+			if ( isset( $instance['username'] ) && $instance['username'] ) {
 				echo ' href="https://twitter.com/' . esc_attr( $instance['username'] ) . '"';
 			}
 
