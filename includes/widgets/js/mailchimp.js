@@ -35,7 +35,7 @@ jQuery(document).ready(function ($) {
 
             var data = {
                 action: "oceanwp_mailchimp_request",
-                _ajax_nonce: oceanwpLocalize.oe_mc_wpnonce,
+               _ajax_nonce: oceanwpLocalize.oe_mc_wpnonce,
                 email: email,
             };
 

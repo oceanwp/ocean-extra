@@ -40,55 +40,55 @@ if ( ! class_exists( 'Ocean_Extra_MailChimp_Widget' ) ) {
 
 			check_ajax_referer( 'oe_mc_nonce' );
 
-			$apikey  = get_option( 'owp_mailchimp_api_key' );
+			$api_key = get_option( 'owp_mailchimp_api_key', '' );
 			$list_id = get_option( 'owp_mailchimp_list_id' );
-			$email   = ( isset( $_POST['email'] ) ) ? $_POST['email'] : '';
+			$email   = ( isset( $_POST['email'] ) && is_email( $_POST['email'] ) ) ? sanitize_email( $_POST['email'] ) : '';
 			$status  = false;
 
-			if ( $email && $apikey && $list_id ) {
 
-				$root = 'https://api.mailchimp.com/3.0';
+			if ( $email && $api_key && $list_id ) {
 
-				if ( strstr( $apikey, '-' ) ) {
-					list( $key, $dc ) = explode( '-', $apikey, 2 );
-				}
-
-				$root = str_replace( 'https://api', 'https://' . $dc . '.api', $root );
-				$root = rtrim( $root, '/' ) . '/';
+				$apikey     = trim( $api_key );
+				$dc         = explode( '-', $apikey );
+				$datacenter = empty( $dc[1] ) ? 'us1' : $dc[1];
+				$api_url    = esc_url( 'https://' . $datacenter . '.api.mailchimp.com/3.0/' );
 
 				$params = array(
 					'apikey'            => $apikey,
 					'id'                => $list_id,
 					'email_address'     => $email,
 					'status'            => 'subscribed',
-					'double_optin'      => false,
-					'send_welcome'      => false,
-					'replace_interests' => false,
-					'update_existing'   => true,
 				);
 
-				$ch     = curl_init();
-				$params = json_encode( $params );
+				$url = esc_url( $api_url . 'lists/' . $list_id . '/members/' . md5(strtolower($email)) );
 
-				curl_setopt( $ch, CURLOPT_URL, $root . '/lists/' . $list_id . '/members/' . $email );
-				curl_setopt( $ch, CURLOPT_USERPWD, 'user:' . $apikey );
-				curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
-				curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-				curl_setopt( $ch, CURLOPT_CUSTOMREQUEST, 'PUT' );
-				curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-				curl_setopt( $ch, CURLOPT_POSTFIELDS, $params );
+				$args = array(
+					'method'      => 'PUT',
+					'timeout'     => 30,
+					'httpversion' => '1.1',
+					'user-agent'  => 'OceanWP MailChimp Widget/' . esc_url( get_bloginfo( 'url' ) ),
+					'headers'     => array(
+						'Authorization' => 'Basic ' . base64_encode( 'user:'. $apikey ),
+						'Content-Type'  => 'application/json'
+					),
+					'sslverify'   => apply_filters( 'ocean_oemc_ssl_verify', false),
+					'body'        => wp_json_encode( $params )
+				);
 
-				$response_body = curl_exec( $ch );
-				$httpCode      = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+				$args = apply_filters( 'ocean_mailchimp_api_args', $args );
 
-				curl_close( $ch );
+				$request = wp_remote_post( $url, $args );
 
-				if ( $httpCode == 200 ) {
+				$request_code = ( is_array( $request ) ) ? $request['response']['code'] : '';
+
+				if ( 200 === $request_code ) {
 					$status = true;
 				}
 			}
 
-			wp_send_json( array( 'status' => $status ) );
+			wp_send_json( array(
+				'status' => $status
+			) );
 		}
 
 		/**

@@ -203,6 +203,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 = 2.2.1 - SEP XX 2023 =
 - Fixed: Facebook Widget: PHP Notice: Undefined index: like_args, stream and force_wall.
 - Fixed: Twitter Widget: PHP Notice: Undefined index: username.
+- Fixed: Mailchimp Widget: Not working.
 
 = 2.2.0 - SEP 6 2023 =
 - NEW: Metabox Settings Interface: https://docs.oceanwp.org/category/826-oceanwp-settings
