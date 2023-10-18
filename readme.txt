@@ -203,7 +203,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 = 2.2.1 - OCT 18 2023 =
 - Fixed: Facebook Widget: PHP Notice: Undefined index: like_args, stream and force_wall.
 - Fixed: Twitter Widget: PHP Notice: Undefined index: username.
-- Fixed: Mailchimp Widget: Not working.
+- Fixed: Mailchimp Widget: Updated API.
 - Fixed: LearnDash: Compatibility with new sidebar metabox.
 - Fixed: LifterLMS: Compatibility with new sidebar metabox.
 
