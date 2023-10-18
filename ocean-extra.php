@@ -129,6 +129,8 @@ final class Ocean_Extra {
 		// Setup all the things
 		add_action( 'init', array( $this, 'setup' ) );
 
+		add_filter('register_post_type_args', array( $this, 'oe_custom_field_support_metabox' ), 10, 2 );
+
 		// Menu icons
 		$theme = wp_get_theme();
 		if ( 'OceanWP' == $theme->name || 'oceanwp' == $theme->template ) {
@@ -293,6 +295,22 @@ final class Ocean_Extra {
 			return;
 
 		}
+	}
+
+	/**
+	 * LearnDash compatibility with OceanWP Metabox.
+	 */
+	public function oe_custom_field_support_metabox( $args, $post_type ) {
+
+		if ( 'sfwd-quiz' === $post_type
+			|| 'sfwd-courses' === $post_type
+			|| 'sfwd-lessons' === $post_type
+			|| 'sfwd-topic' === $post_type
+			|| 'ld-exam' === $post_type ) {
+			$args['supports'][] = 'custom-fields';
+		}
+
+		return $args;
 	}
 
 	/**
