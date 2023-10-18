@@ -136,6 +136,12 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				// Check if 'custom-fields' support already exists.
 				if ( ! isset( $args['supports'] ) || ! in_array( 'custom-fields', $args['supports'] ) ) {
 					$args['supports'][] = 'custom-fields';
+				} else if ( 'sfwd-quiz' === $post_type
+					|| 'sfwd-courses' === $post_type
+					|| 'sfwd-lessons' === $post_type
+					|| 'sfwd-topic' === $post_type
+					|| 'ld-exam' === $post_type ) {
+					$args['supports'][] = 'custom-fields';
 				}
 			}
 
