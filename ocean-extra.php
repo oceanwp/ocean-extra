@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.2.0
+ * Version:             2.2.1
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.3.1
+ * Tested up to:        6.3.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -108,7 +108,7 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.2.0';
+		$this->version     = '2.2.1';
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );
@@ -128,6 +128,8 @@ final class Ocean_Extra {
 
 		// Setup all the things
 		add_action( 'init', array( $this, 'setup' ) );
+
+		add_filter('register_post_type_args', array( $this, 'oe_custom_field_support_metabox' ), 10, 2 );
 
 		// Menu icons
 		$theme = wp_get_theme();
@@ -293,6 +295,22 @@ final class Ocean_Extra {
 			return;
 
 		}
+	}
+
+	/**
+	 * LearnDash compatibility with OceanWP Metabox.
+	 */
+	public function oe_custom_field_support_metabox( $args, $post_type ) {
+
+		if ( 'sfwd-quiz' === $post_type
+			|| 'sfwd-courses' === $post_type
+			|| 'sfwd-lessons' === $post_type
+			|| 'sfwd-topic' === $post_type
+			|| 'ld-exam' === $post_type ) {
+			$args['supports'][] = 'custom-fields';
+		}
+
+		return $args;
 	}
 
 	/**

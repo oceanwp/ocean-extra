@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.2.0\n"
+"Project-Id-Version: Ocean Extra 2.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-09-06T06:15:39+00:00\n"
+"POT-Creation-Date: 2023-10-18T05:10:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: ocean-extra\n"
@@ -6156,7 +6156,7 @@ msgstr ""
 #: includes/widgets/contact-info.php:533
 #: includes/widgets/custom-links.php:139
 #: includes/widgets/custom-menu.php:290
-#: includes/widgets/facebook.php:183
+#: includes/widgets/facebook.php:185
 #: includes/widgets/flickr.php:112
 #: includes/widgets/instagram.php:135
 #: includes/widgets/mailchimp.php:250
@@ -7789,7 +7789,7 @@ msgid "Social Style:"
 msgstr ""
 
 #: includes/widgets/about-me.php:408
-#: includes/widgets/facebook.php:207
+#: includes/widgets/facebook.php:209
 #: includes/widgets/social.php:417
 #: includes/widgets/social.php:443
 #: includes/widgets/twitter.php:235
@@ -7797,7 +7797,7 @@ msgid "Light"
 msgstr ""
 
 #: includes/widgets/about-me.php:409
-#: includes/widgets/facebook.php:208
+#: includes/widgets/facebook.php:210
 #: includes/widgets/social-share.php:376
 #: includes/widgets/social.php:444
 #: includes/widgets/twitter.php:236
@@ -8160,63 +8160,63 @@ msgstr ""
 msgid "Display a Facebook Like Box to connect visitors to your Facebook Page."
 msgstr ""
 
-#: includes/widgets/facebook.php:72
+#: includes/widgets/facebook.php:74
 msgid "It looks like your Facebook URL is incorrectly configured. Please check it in your <a href=\"%s\">widget settings</a>."
 msgstr ""
 
-#: includes/widgets/facebook.php:188
+#: includes/widgets/facebook.php:190
 msgid "Facebook Page URL"
 msgstr ""
 
-#: includes/widgets/facebook.php:191
+#: includes/widgets/facebook.php:193
 msgid "The Like Box only works with "
 msgstr ""
 
-#: includes/widgets/facebook.php:191
+#: includes/widgets/facebook.php:193
 msgid "Facebook Pages"
 msgstr ""
 
-#: includes/widgets/facebook.php:195
+#: includes/widgets/facebook.php:197
 msgid "Width"
 msgstr ""
 
-#: includes/widgets/facebook.php:200
+#: includes/widgets/facebook.php:202
 msgid "Height"
 msgstr ""
 
-#: includes/widgets/facebook.php:205
+#: includes/widgets/facebook.php:207
 msgid "Color Scheme"
 msgstr ""
 
-#: includes/widgets/facebook.php:215
+#: includes/widgets/facebook.php:217
 msgid "Show Faces"
 msgstr ""
 
-#: includes/widgets/facebook.php:217
+#: includes/widgets/facebook.php:219
 msgid "Show profile photos in the plugin."
 msgstr ""
 
-#: includes/widgets/facebook.php:224
+#: includes/widgets/facebook.php:226
 msgid "Show Stream"
 msgstr ""
 
-#: includes/widgets/facebook.php:226
+#: includes/widgets/facebook.php:228
 msgid "Show the profile stream for the public profile."
 msgstr ""
 
-#: includes/widgets/facebook.php:233
+#: includes/widgets/facebook.php:235
 msgid "Show Border"
 msgstr ""
 
-#: includes/widgets/facebook.php:235
+#: includes/widgets/facebook.php:237
 msgid "Show a border around the plugin."
 msgstr ""
 
-#: includes/widgets/facebook.php:242
+#: includes/widgets/facebook.php:244
 msgid "Show Wall"
 msgstr ""
 
-#: includes/widgets/facebook.php:244
+#: includes/widgets/facebook.php:246
 msgid "Show the wall for a Places page rather than friend activity."
 msgstr ""
 

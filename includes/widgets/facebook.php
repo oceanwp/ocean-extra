@@ -7,7 +7,7 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -64,7 +64,9 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 			$widget_id      = isset( $args['widget_id'] ) ? $args['widget_id'] : '';
 			$widget_name    = isset( $args['widget_name'] ) ? $args['widget_name'] : '';
 
-			$like_args = $this->normalize_facebook_args( $instance['like_args'] );
+
+			$link_args_instance = $instance['like_args'] ? $instance['like_args'] : '';
+			$like_args = $this->normalize_facebook_args( $link_args_instance );
 
 			if ( empty( $like_args['href'] ) || ! $this->is_valid_facebook_url( $like_args['href'] ) ) {
 				if ( current_user_can( 'edit_theme_options' ) ) {
@@ -147,12 +149,12 @@ if ( ! class_exists( 'Ocean_Extra_Facebook_Widget' ) ) {
 				'href'        => trim( strip_tags( stripslashes( $new_instance['href'] ) ) ),
 				'width'       => (int) $new_instance['width'],
 				'height'      => (int) $new_instance['height'],
-				'colorscheme' => $new_instance['colorscheme'],
+				'colorscheme' => $new_instance['colorscheme'] ? $new_instance['colorscheme'] : '',
 				'show_faces'  => isset( $new_instance['show_faces'] ) ? (bool) $new_instance['show_faces'] : false,
-				'stream'      => (bool) $new_instance['stream'],
-				'show_border' => (bool) $new_instance['show_border'],
+				'stream'      => $new_instance['stream'] ? (bool) $new_instance['stream'] : '',
+				'show_border' => $new_instance['show_border'] ? (bool) $new_instance['show_border'] : null,
 				'header'      => false, // The header just displays "Find us on Facebook"; it's redundant with the title
-				'force_wall'  => (bool) $new_instance['force_wall'],
+				'force_wall'  => $new_instance['force_wall'] ? (bool) $new_instance['force_wall'] : null,
 			);
 
 			$instance['like_args'] = $this->normalize_facebook_args( $instance['like_args'] );

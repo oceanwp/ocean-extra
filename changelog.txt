@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 2.2.1 - OCT 18 2023 =
+- Fixed: Facebook Widget: PHP Notice: Undefined index: like_args, stream and force_wall.
+- Fixed: Twitter Widget: PHP Notice: Undefined index: username.
+- Fixed: Mailchimp Widget: Updated API.
+- Fixed: LearnDash: Compatibility with new sidebar metabox.
+- Fixed: LifterLMS: Compatibility with new sidebar metabox.
+
 = 2.2.0 - SEP 6 2023 =
 - NEW: Metabox Settings Interface: https://docs.oceanwp.org/category/826-oceanwp-settings
 - Added: Compatibility: PHP8.2+: Menu icons.
