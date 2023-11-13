@@ -256,6 +256,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			if ( false === oe_is_block_editor() ) {
 				add_action( 'current_screen', 'butterbean_loader_100', 9999 );
+				require_once OE_PATH . '/includes/metabox/gallery-metabox/gallery-metabox.php';
 			}
 		}
 
