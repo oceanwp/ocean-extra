@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.3.2
-Stable tag: 2.2.1
+Tested up to: 6.4.1
+Stable tag: 2.2.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -199,6 +199,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.2.2 - NOV 14 2023 =
+- Added: Metabox Settings: Image Gallery support when Classic Editor plugin is in use.
 
 = 2.2.1 - OCT 18 2023 =
 - Fixed: Facebook Widget: PHP Notice: Undefined index: like_args, stream and force_wall.
