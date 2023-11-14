@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.2.2 - NOV 14 2023 =
+- Added: Metabox Settings: Image Gallery support when Classic Editor plugin is in use.
+
 = 2.2.1 - OCT 18 2023 =
 - Fixed: Facebook Widget: PHP Notice: Undefined index: like_args, stream and force_wall.
 - Fixed: Twitter Widget: PHP Notice: Undefined index: username.
