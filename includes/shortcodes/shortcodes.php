@@ -303,10 +303,10 @@ add_shortcode( 'oceanwp_current_user', 'oceanwp_current_user_shortcode' );
 if ( ! function_exists( 'oceanwp_woo_fragments' ) ) {
 
 	function oceanwp_woo_fragments( $fragments ) {
-		$fragments['.wcmenucart-shortcode .wcmenucart-total'] = '<span class="wcmenucart-total">' . WC()->cart->get_total() . '</span>';
-		$fragments['.wcmenucart-shortcode .wcmenucart-count'] = '<span class="wcmenucart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
-		$fragments['.oceanwp-woo-total']                      = '<span class="oceanwp-woo-total">' . WC()->cart->get_total() . '</span>';
-		$fragments['.oceanwp-woo-cart-count']                 = '<span class="oceanwp-woo-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
+		$fragments['.wcmenucart-shortcode .wcmenucart-total'] = '<span class="wcmenucart-total">' . is_object( WC()->cart ) ? WC()->cart->get_total() : '' . '</span>';
+		$fragments['.wcmenucart-shortcode .wcmenucart-count'] = '<span class="wcmenucart-count">' . is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' . '</span>';
+		$fragments['.oceanwp-woo-total']                      = '<span class="oceanwp-woo-total">' . is_object( WC()->cart ) ? WC()->cart->get_total() : '' . '</span>';
+		$fragments['.oceanwp-woo-cart-count']                 = '<span class="oceanwp-woo-cart-count">' . is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' . '</span>';
 		return $fragments;
 	}
 }
@@ -451,10 +451,22 @@ if ( ! function_exists( 'oceanwp_woo_cart_icon_shortcode' ) ) {
 				<?php
 				if ( true == $total ) {
 					?>
-					<span class="wcmenucart-total"><?php WC()->cart->get_total(); ?></span>
+					<span class="wcmenucart-total">
+						<?php
+						if ( is_object( WC()->cart ) ) {
+							WC()->cart->get_total();
+						}
+						?>
+					</span>
 				<?php } ?>
 				<span class="wcmenucart-cart-icon">
-					<span class="wcmenucart-count"><?php WC()->cart->get_cart_contents_count(); ?></span>
+					<span class="wcmenucart-count">
+						<?php
+						if ( is_object( WC()->cart ) ) {
+							WC()->cart->get_cart_contents_count();
+						}
+						?>
+					</span>
 				</span>
 			</a>
 			<?php
@@ -499,7 +511,7 @@ if ( ! function_exists( 'oceanwp_woo_total_cart_shortcode' ) ) {
 		}
 
 		$html  = '<span class="oceanwp-woo-total">';
-		$html .= WC()->cart->get_total();
+		$html .= is_object( WC()->cart ) ? WC()->cart->get_total() : '';
 		$html .= '</span>';
 
 		return $html;
@@ -530,7 +542,7 @@ if ( ! function_exists( 'oceanwp_woo_cart_items_shortcode' ) ) {
 		}
 
 		$html  = '<span class="oceanwp-woo-cart-count">';
-		$html .= WC()->cart->get_cart_contents_count();
+		$html .= is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '';
 		$html .= '</span>';
 
 		return $html;
