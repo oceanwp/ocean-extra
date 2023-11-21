@@ -25,7 +25,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 			$this->social_services_array = apply_filters( 'ocean_social_widget_profiles',
 				array(
 					'twitter' => array(
-						'name' => 'Twitter',
+						'name' => 'X',
 						'url'  => '',
 					),
 					'facebook' => array(

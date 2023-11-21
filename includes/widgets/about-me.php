@@ -47,7 +47,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'url'  => '',
 					),
 					'twitter'     => array(
-						'name' => 'Twitter',
+						'name' => 'X',
 						'url'  => '',
 					),
 					'telegram'    => array(
