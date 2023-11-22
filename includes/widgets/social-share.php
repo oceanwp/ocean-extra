@@ -90,7 +90,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 				'googleplus' => array(
 					'name' 	=> 'Google+',
 					'title' => esc_html__( 'Share on Google+', 'ocean-extra' ),
-					'icon'  => '<svg class="owpss-icon" aria-labelledby="owpss-googleplus-icon" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+					'icon'  => '<svg class="owpss-icon" aria-labelledby="owpss-googleplus-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 								<path d="M7.636,10.929V13.5h4.331c-0.175,1.104-1.309,3.236-4.331,3.236c-2.607,0-4.735-2.121-4.735-4.736
 								s2.127-4.736,4.735-4.736c1.484,0,2.476,0.621,3.044,1.157l2.073-1.961C11.422,5.239,9.698,4.5,7.636,4.5C3.415,4.5,0,7.854,0,12
 								s3.415,7.5,7.636,7.5c4.407,0,7.331-3.043,7.331-7.329c0-0.493-0.055-0.868-0.12-1.243H7.636z"/>
@@ -389,7 +389,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo esc_attr( $this->get_field_id( 'twitter_username' ) ); ?>"><?php esc_html_e( 'Twitter Username', 'ocean-extra' ); ?>:</label>
+				<label for="<?php echo esc_attr( $this->get_field_id( 'twitter_username' ) ); ?>"><?php esc_html_e( 'X Username', 'ocean-extra' ); ?>:</label>
 				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter_username' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter_username' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['twitter_username'] ); ?>" />
 			</p>
 
