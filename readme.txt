@@ -8,6 +8,18 @@ Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+== Copyright ==
+
+Ocean Extra uses the following third-party resources:
+
+Font Awesome Fonts, Copyright Dave Gandy
+License: SIL OFL 1.1 License - https://scripts.sil.org/OFL
+Source: https://fontawesome.com/
+
+Font Awesome Icons, Copyright Dave Gandy
+License: CC BY 4.0 License - https://creativecommons.org/licenses/by/4.0/
+Source: https://fontawesome.com/
+
 == Description ==
 
 Ocean Extra adds extra features and flexibility to the [OceanWP](https://oceanwp.org/) theme for a turbocharged experience.
