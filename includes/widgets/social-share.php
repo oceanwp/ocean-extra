@@ -87,18 +87,6 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 							</svg>',
 					'url'  	=> 'https://www.facebook.com/sharer.php?u='. rawurlencode( esc_url( $post_url ) ),
 				),
-				'googleplus' => array(
-					'name' 	=> 'Google+',
-					'title' => esc_html__( 'Share on Google+', 'ocean-extra' ),
-					'icon'  => '<svg class="owpss-icon" aria-labelledby="owpss-googleplus-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-								<path d="M7.636,10.929V13.5h4.331c-0.175,1.104-1.309,3.236-4.331,3.236c-2.607,0-4.735-2.121-4.735-4.736
-								s2.127-4.736,4.735-4.736c1.484,0,2.476,0.621,3.044,1.157l2.073-1.961C11.422,5.239,9.698,4.5,7.636,4.5C3.415,4.5,0,7.854,0,12
-								s3.415,7.5,7.636,7.5c4.407,0,7.331-3.043,7.331-7.329c0-0.493-0.055-0.868-0.12-1.243H7.636z"/>
-								<path d="M21.818,10.929V8.786h-2.182v2.143h-2.182v2.143h2.182v2.143h2.182v-2.143H24c0,0.022,0-2.143,0-2.143
-								H21.818z"/>
-							</svg>',
-					'url'  	=> 'https://plus.google.com/share?url='. rawurlencode( esc_url( $post_url ) ),
-				),
 				'pinterest' => array(
 					'name' 	=> 'Pinterest',
 					'title' => esc_html__( 'Share on Pinterest', 'ocean-extra' ),
@@ -269,6 +257,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 
 					// Loop through each item in the array
 					foreach( $social_share as $social_key ) {
+						if ( $social_key === 'googleplus' ) {
+							continue;
+						}
 						$name    = $social_array[$social_key]['name'];
 						$title   = $social_array[$social_key]['title'];
 						$url     = $social_array[$social_key]['url'];
@@ -350,7 +341,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 				'color'   	         => '',
 				'twitter_username'   => '',
 				'social_name'        => '',
-				'social_share' 	 	 => array('twitter', 'facebook', 'googleplus', 'pinterest', 'linkedin', 'viber', 'vk', 'reddit', 'tumblr', 'viadeo', 'whatsapp'),
+				'social_share' 	 	 => array('twitter', 'facebook', 'pinterest', 'linkedin', 'viber', 'vk', 'reddit', 'tumblr', 'viadeo', 'whatsapp'),
 			) ); ?>
 
 			<p>

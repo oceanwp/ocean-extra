@@ -539,6 +539,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
+					if ( $key === 'google-plus' ) {
+						continue;
+					}
 					$url  = ! empty( $display_services[$key]['url'] ) ? $display_services[$key]['url'] : null;
 					$name = ! empty( $social_services_array[$key]['name'] ) ? $social_services_array[$key]['name'] : null;
 					?>

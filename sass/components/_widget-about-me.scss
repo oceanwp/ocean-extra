@@ -220,6 +220,14 @@
 				    background-color: #1d3042;
 				}
 			}
+
+			&.tiktok a {
+			    background-color: #000000;
+
+			    &:hover {
+				    background-color: #141414;
+				}
+			}
 		}
 
 		&.style-light li a {
@@ -412,6 +420,14 @@
 
 				.owp-icon use {
 					stroke: #2C4762;
+				}
+			}
+
+			&.tiktok a:hover {
+			    background-color: #000000;
+
+			    .owp-icon use {
+				    stroke: #000000;
 				}
 			}
 		}
