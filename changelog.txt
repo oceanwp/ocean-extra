@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.2.3 - NOV 27 2023 =
+- Fixed: Potential vulnerability patched. Report by Patchstack from Nov 23rd 2023.
+
 = 2.2.2 - NOV 14 2023 =
 - Added: Metabox Settings: Image Gallery support when Classic Editor plugin is in use.
 

@@ -493,6 +493,7 @@
 				type: 'POST',
 				data: {
 					action : 'owp_ajax_required_plugins_activate',
+					_wpnonce: owpDemos.demo_plugins_activate_nonce,
 					init   : $init,
 				},
 			} ).done( function( result ) {
@@ -530,6 +531,7 @@
 					type: 'POST',
 					data: {
 						action : 'owp_ajax_required_plugins_activate',
+						_wpnonce: owpDemos.demo_plugins_activate_nonce,
 						init   : $init,
 					},
 				} ).done( function( result ) {

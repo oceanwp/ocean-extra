@@ -101,12 +101,13 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 				wp_enqueue_script( 'owp-demos-js', plugins_url( '/assets/js/demos.min.js', __FILE__ ), array( 'jquery', 'wp-util', 'updates' ), '1.1', true );
 
 				wp_localize_script( 'owp-demos-js', 'owpDemos', array(
-					'ajaxurl'                 => admin_url( 'admin-ajax.php' ),
-					'demo_data_nonce'         => wp_create_nonce( 'get-demo-data' ),
-					'owp_import_data_nonce'   => wp_create_nonce( 'owp_import_data_nonce' ),
-					'content_importing_error' => esc_html__( 'There was a problem during the importing process resulting in the following error from your server:', 'ocean-extra' ),
-					'button_activating'       => esc_html__( 'Activating', 'ocean-extra' ) . '&hellip;',
-					'button_active'           => esc_html__( 'Active', 'ocean-extra' ),
+					'ajaxurl'                     => admin_url( 'admin-ajax.php' ),
+					'demo_data_nonce'             => wp_create_nonce( 'get-demo-data' ),
+					'owp_import_data_nonce'       => wp_create_nonce( 'owp_import_data_nonce' ),
+					'demo_plugins_activate_nonce' => wp_create_nonce( 'demo_plugins_activate_nonce' ),
+					'content_importing_error'     => esc_html__( 'There was a problem during the importing process resulting in the following error from your server:', 'ocean-extra' ),
+					'button_activating'           => esc_html__( 'Activating', 'ocean-extra' ) . '&hellip;',
+					'button_active'               => esc_html__( 'Active', 'ocean-extra' ),
 				) );
 
 			}
@@ -1157,6 +1158,10 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 		 * @since 1.4.5
 		 */
 		public function ajax_required_plugins_activate() {
+
+			if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( $_POST['_wpnonce'], 'demo_plugins_activate_nonce' ) ) {
+				die( 'Permission check failed' );
+			}
 
 			if ( ! current_user_can( 'install_plugins' ) || ! isset( $_POST['init'] ) || ! $_POST['init'] ) {
 				wp_send_json_error(
