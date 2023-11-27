@@ -112,10 +112,6 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 						'name'      => 'Line',
 						'url'       => ''
 					),
-					'tripadvisor'       => array(
-						'name'      => 'Tripadvisor',
-						'url'       => ''
-					),
 					'medium'       => array(
 						'name'      => 'Medium',
 						'url'       => ''
@@ -539,7 +535,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Widget' ) ) {
 
 				// Loop through social services to display inputs.
 				foreach( $display_services as $key => $val ) {
-					if ( $key === 'google-plus' ) {
+					if ( ! isset( $social_services_array[ $key ] ) ) {
 						continue;
 					}
 					$url  = ! empty( $display_services[$key]['url'] ) ? $display_services[$key]['url'] : null;

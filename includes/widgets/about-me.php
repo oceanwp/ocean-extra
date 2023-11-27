@@ -86,10 +86,6 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'name' => 'Yelp',
 						'url'  => '',
 					),
-					'tripadvisor' => array(
-						'name' => 'Tripadvisor',
-						'url'  => '',
-					),
 					'rss'         => array(
 						'name' => 'RSS',
 						'url'  => '',

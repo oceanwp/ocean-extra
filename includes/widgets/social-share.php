@@ -223,9 +223,9 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 			}
 
 			// Define vars
-			$title         	  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$style   		  = isset( $instance['style'] ) ? $instance['style'] : '';
-			$border_radius 	  = isset( $instance['border_radius'] ) ? $instance['border_radius'] : '';
+			$title            = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+			$style            = isset( $instance['style'] ) ? $instance['style'] : '';
+			$border_radius    = isset( $instance['border_radius'] ) ? $instance['border_radius'] : '';
 			$twitter_username = isset( $instance['twitter_username'] ) ? $instance['twitter_username'] : '';
 			$social_name      = isset( $instance['social_name'] ) ? $instance['social_name'] : 0;
 
@@ -257,14 +257,13 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 
 					// Loop through each item in the array
 					foreach( $social_share as $social_key ) {
-						if ( $social_key === 'googleplus' ) {
+						if ( ! isset( $social_array[ $social_key ] ) ) {
 							continue;
 						}
 						$name    = $social_array[$social_key]['name'];
 						$title   = $social_array[$social_key]['title'];
 						$url     = $social_array[$social_key]['url'];
 						$icon    = $social_array[$social_key]['icon'];
-
 
 						if ( $social_key == 'twitter' && !empty( $twitter_username ) ) {
 							$url = $url . '&amp;via='.$twitter_username;

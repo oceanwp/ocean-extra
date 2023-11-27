@@ -185,6 +185,15 @@
 				fill: #ff7452;
 			}
 		}
+
+		&.whatsapp a:hover {
+			color: #128c7e;
+			border-color: #128c7e;
+
+			.owpss-icon {
+				fill: #128c7e;
+			}
+		}
 	}
 }
 
