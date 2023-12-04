@@ -303,10 +303,10 @@ add_shortcode( 'oceanwp_current_user', 'oceanwp_current_user_shortcode' );
 if ( ! function_exists( 'oceanwp_woo_fragments' ) ) {
 
 	function oceanwp_woo_fragments( $fragments ) {
-		$fragments['.wcmenucart-shortcode .wcmenucart-total'] = '<span class="wcmenucart-total">' . is_object( WC()->cart ) ? WC()->cart->get_total() : '' . '</span>';
-		$fragments['.wcmenucart-shortcode .wcmenucart-count'] = '<span class="wcmenucart-count">' . is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' . '</span>';
-		$fragments['.oceanwp-woo-total']                      = '<span class="oceanwp-woo-total">' . is_object( WC()->cart ) ? WC()->cart->get_total() : '' . '</span>';
-		$fragments['.oceanwp-woo-cart-count']                 = '<span class="oceanwp-woo-cart-count">' . is_object( WC()->cart ) ? WC()->cart->get_cart_contents_count() : '' . '</span>';
+		$fragments['.wcmenucart-shortcode .wcmenucart-total'] = '<span class="wcmenucart-total">' . WC()->cart->get_total() . '</span>';
+		$fragments['.wcmenucart-shortcode .count-item']       = '<span class="count-item">' . WC()->cart->get_cart_contents_count() . '</span>';
+		$fragments['.oceanwp-woo-total']                      = '<span class="oceanwp-woo-total">' . WC()->cart->get_total() . '</span>';
+		$fragments['.oceanwp-woo-cart-count']                 = '<span class="oceanwp-woo-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
 		return $fragments;
 	}
 }
@@ -456,18 +456,20 @@ if ( ! function_exists( 'oceanwp_woo_cart_icon_shortcode' ) ) {
 					<span class="wcmenucart-total">
 						<?php
 						if ( is_object( WC()->cart ) ) {
-							WC()->cart->get_total();
+							echo WC()->cart->get_total();
 						}
 						?>
 					</span>
 				<?php } ?>
 				<span class="wcmenucart-cart-icon">
 					<span class="wcmenucart-count">
-						<?php
-						if ( is_object( WC()->cart ) ) {
-							WC()->cart->get_cart_contents_count();
-						}
-						?>
+						<span class="count-item">
+							<?php
+							if ( is_object( WC()->cart ) ) {
+								echo WC()->cart->get_cart_contents_count();
+							}
+							?>
+						</span>
 					</span>
 				</span>
 			</a>
