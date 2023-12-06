@@ -47,7 +47,7 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 						'url'  => '',
 					),
 					'twitter'     => array(
-						'name' => 'Twitter',
+						'name' => 'X',
 						'url'  => '',
 					),
 					'telegram'    => array(
@@ -84,10 +84,6 @@ if ( ! class_exists( 'Ocean_Extra_About_Me_Widget' ) ) {
 					),
 					'yelp'        => array(
 						'name' => 'Yelp',
-						'url'  => '',
-					),
-					'tripadvisor' => array(
-						'name' => 'Tripadvisor',
 						'url'  => '',
 					),
 					'rss'         => array(

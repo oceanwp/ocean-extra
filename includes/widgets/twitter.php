@@ -18,10 +18,10 @@ if ( ! class_exists( 'Ocean_Extra_Twitter_Widget' ) ) {
 		public function __construct() {
 			parent::__construct(
 				'ocean_twitter',
-				esc_html__( '&raquo; Twitter', 'ocean-extra' ),
+				esc_html__( '&raquo; X', 'ocean-extra' ),
 				array(
 					'classname'   => 'widget-oceanwp-twitter twitter-widget',
-					'description' => esc_html__( 'Pulls in tweets from your twitter account.', 'ocean-extra' ),
+					'description' => esc_html__( 'Pulls in tweets from your X account.', 'ocean-extra' ),
 					'customize_selective_refresh' => true,
 				)
 			);
@@ -171,7 +171,7 @@ if ( ! class_exists( 'Ocean_Extra_Twitter_Widget' ) ) {
 		 */
 		public function form( $instance ) {
 			$defaults = array(
-				'title'        => esc_html__( 'Follow me on Twitter', 'ocean-extra' ),
+				'title'        => esc_html__( 'Follow me on X', 'ocean-extra' ),
 				'width'        => '',
 				'height'       => '400',
 				'username'     => '',

@@ -220,6 +220,14 @@
 				    background-color: #1d3042;
 				}
 			}
+
+			&.tiktok a {
+			    background-color: #000000;
+
+			    &:hover {
+				    background-color: #141414;
+				}
+			}
 		}
 
 		&.style-light li a {
@@ -296,7 +304,8 @@
 			}
 
 			&.telegram a:hover {
-			    background-color: #0088cc;
+			    color: #0088cc;
+				border-color: #0088cc;
 
 				.owp-icon use {
 					stroke: #0088cc;
@@ -304,7 +313,8 @@
 			}
 
 			&.twitch a:hover {
-			    background-color: #6441a5;
+				color: #6441a5;
+				border-color: #6441a5;
 
 				.owp-icon use {
 					stroke: #6441a5;
@@ -312,7 +322,8 @@
 			}
 
 			&.line a:hover{
-			    background-color: #00c300;
+			    color: #00c300;
+				border-color: #00c300;
 
 				.owp-icon use {
 					stroke: #00c300;
@@ -320,7 +331,8 @@
 			}
 
 			&.xing a:hover {
-			    background-color: #006464;
+			    color: #006464;
+				border-color: #006464;
 
 				.owp-icon use {
 					stroke: #006464;
@@ -328,7 +340,8 @@
 			}
 
 			&.vine a:hover {
-			    background-color: #00bf8f;
+			    color: #00bf8f;
+				border-color: #00bf8f;
 
 				.owp-icon use {
 					stroke: #00bf8f;
@@ -336,7 +349,8 @@
 			}
 
 			&.vimeo a:hover {
-			    background-color: #1ab7ea;
+			    color: #1ab7ea;
+				border-color: #1ab7ea;
 
 				.owp-icon use {
 					stroke: #1ab7ea;
@@ -344,7 +358,8 @@
 			}
 
 			&.github a:hover {
-			    background-color: #60b044;
+			    color: #60b044;
+				border-color: #60b044;
 
 			    .owp-icon use {
 					stroke: #60b044;
@@ -352,7 +367,8 @@
 			}
 
 			&.flickr a:hover {
-			    background-color: #fa4086;
+			    color: #fa4086;
+				border-color: #fa4086;
 
 				.owp-icon use {
 					stroke: #fa4086;
@@ -360,7 +376,8 @@
 			}
 
 			&.yelp a:hover {
-			    background-color: #C41200;
+			    color: #C41200;
+				border-color: #C41200;
 
 				.owp-icon use {
 					stroke: #C41200;
@@ -368,7 +385,8 @@
 			}
 
 			&.tripadvisor a:hover {
-			    background-color: #589442;
+			    color: #589442;
+				border-color: #589442;
 
 				.owp-icon use {
 					stroke: #589442;
@@ -376,7 +394,8 @@
 			}
 
 			&.rss a:hover {
-			    background-color: #ff7900;
+			    color: #ff7900;
+				border-color: #ff7900;
 
 			    .owp-icon use {
 					stroke: #ff7900;
@@ -384,7 +403,8 @@
 			}
 
 			&.medium a:hover {
-			    background-color: #00ab6c;
+			    color: #00ab6c;
+				border-color: #00ab6c;
 
 				.owp-icon use {
 					stroke: #00ab6c;
@@ -392,7 +412,8 @@
 			}
 
 			&.vk a:hover {
-			    background-color: #597BA5;
+			    color: #597BA5;
+				border-color: #597BA5;
 
 			    .owp-icon use {
 					stroke: #597BA5;
@@ -400,7 +421,8 @@
 			}
 
 			&.dribbble a:hover {
-			    background-color: #ea4c89;
+			    color: #ea4c89;
+				border-color: #ea4c89;
 
 				.owp-icon use {
 					stroke: #ea4c89;
@@ -408,10 +430,20 @@
 			}
 
 			&.tumblr a:hover {
-			    background-color: #2C4762;
+			    color: #2C4762;
+				border-color: #2C4762;
 
 				.owp-icon use {
 					stroke: #2C4762;
+				}
+			}
+
+			&.tiktok a:hover {
+			    color: #000000;
+				border-color: #000000;
+
+			    .owp-icon use {
+				    stroke: #000000;
 				}
 			}
 		}

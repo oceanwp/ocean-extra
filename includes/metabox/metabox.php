@@ -122,6 +122,16 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 
 			$min = ( SCRIPT_DEBUG ) ? '' : '.min';
 
+			global $current_screen;
+
+			if ( isset( $current_screen ) ) {
+				if ( property_exists( $current_screen, 'is_block_editor') ) {
+					if( true === $current_screen->is_block_editor ) {
+						return;
+					}
+				}
+			}
+
 			// Default style
 			wp_enqueue_style( 'oceanwp-butterbean', plugins_url( '/controls/assets/css/butterbean'. $min .'.css', __FILE__ ) );
 
