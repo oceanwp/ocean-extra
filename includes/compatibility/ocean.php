@@ -113,7 +113,7 @@ if ( ! function_exists( 'oceanwp_local_elementor_webfonts_enqueue' ) ) {
 add_filter( 'oceanwp_enqueue_google_font_url', 'oceanwp_webfonts_enqueue', 20, 2 );
 if ( ! function_exists( 'oceanwp_webfonts_enqueue' ) ) {
 	function oceanwp_webfonts_enqueue( $src, $font_name ) {
-		if ( true != get_theme_mod( 'ocean_local_google_font', true ) ) {
+		if ( true !== get_theme_mod( 'ocean_local_google_font', false ) ) {
 			return $src;
 		}
 
