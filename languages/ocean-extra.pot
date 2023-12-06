@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-27T07:09:16+00:00\n"
+"POT-Creation-Date: 2023-12-06T06:02:23+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: ocean-extra\n"
@@ -103,7 +103,7 @@ msgid "Thumbnail"
 msgstr ""
 
 #: includes/menu-icons/includes/library/functions.php:67
-#: includes/metabox/metabox.php:648
+#: includes/metabox/metabox.php:658
 #: includes/post-settings/assets/index.js:1
 msgid "Medium"
 msgstr ""
@@ -190,8 +190,8 @@ msgid "Text Editor"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:75
-#: includes/metabox/metabox.php:1579
-#: includes/metabox/metabox.php:1698
+#: includes/metabox/metabox.php:1589
+#: includes/metabox/metabox.php:1708
 #: includes/widgets/recent-posts.php:236
 #: includes/post-settings/assets/index.js:3
 msgid "Post"
@@ -285,7 +285,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:174
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:501
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:177
-#: includes/metabox/metabox.php:869
+#: includes/metabox/metabox.php:879
 msgid "Menu"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:199
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:887
-#: includes/metabox/metabox.php:220
+#: includes/metabox/metabox.php:230
 msgid "Settings"
 msgstr ""
 
@@ -371,7 +371,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:369
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:525
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:631
-#: includes/metabox/metabox.php:1677
+#: includes/metabox/metabox.php:1687
 #: includes/post-settings/assets/index.js:3
 msgid "Quote"
 msgstr ""
@@ -404,8 +404,8 @@ msgid "Edit page"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:284
-#: includes/metabox/metabox.php:1590
-#: includes/metabox/metabox.php:1607
+#: includes/metabox/metabox.php:1600
+#: includes/metabox/metabox.php:1617
 #: includes/widgets/video.php:122
 msgid "Learn More"
 msgstr ""
@@ -430,8 +430,8 @@ msgid "Crop"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:314
-#: includes/widgets/social.php:418
-#: includes/widgets/social.php:455
+#: includes/widgets/social.php:414
+#: includes/widgets/social.php:451
 msgid "Rotate"
 msgstr ""
 
@@ -818,12 +818,12 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:764
 #: includes/menu-icons/includes/settings.php:305
-#: includes/widgets/about-me.php:425
+#: includes/widgets/about-me.php:421
 #: includes/widgets/contact-info.php:405
 #: includes/widgets/custom-links.php:155
 #: includes/widgets/instagram.php:124
 #: includes/widgets/instagram.php:209
-#: includes/widgets/social.php:472
+#: includes/widgets/social.php:468
 msgid "Yes"
 msgstr ""
 
@@ -833,15 +833,15 @@ msgstr ""
 #: includes/themepanel/views/panes/system-info-details.php:57
 #: includes/themepanel/views/panes/system-info-details.php:243
 #: includes/themepanel/views/panes/system-info-details.php:301
-#: includes/widgets/about-me.php:424
+#: includes/widgets/about-me.php:420
 #: includes/widgets/contact-info.php:404
 #: includes/widgets/custom-links.php:121
 #: includes/widgets/custom-links.php:154
 #: includes/widgets/instagram.php:116
 #: includes/widgets/instagram.php:208
 #: includes/widgets/recent-posts.php:264
-#: includes/widgets/social.php:428
-#: includes/widgets/social.php:471
+#: includes/widgets/social.php:424
+#: includes/widgets/social.php:467
 msgid "No"
 msgstr ""
 
@@ -935,8 +935,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:849
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:452
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:457
-#: includes/metabox/metabox.php:1286
-#: includes/metabox/metabox.php:1291
+#: includes/metabox/metabox.php:1296
+#: includes/metabox/metabox.php:1301
 #: includes/post-settings/assets/index.js:3
 msgid "Repeat"
 msgstr ""
@@ -962,23 +962,23 @@ msgid "Code"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:879
-#: includes/metabox/metabox.php:245
-#: includes/metabox/metabox.php:270
-#: includes/metabox/metabox.php:596
-#: includes/metabox/metabox.php:619
-#: includes/metabox/metabox.php:642
-#: includes/metabox/metabox.php:1106
-#: includes/metabox/metabox.php:1129
-#: includes/metabox/metabox.php:1238
-#: includes/metabox/metabox.php:1267
-#: includes/metabox/metabox.php:1289
-#: includes/metabox/metabox.php:1313
-#: includes/metabox/metabox.php:1404
-#: includes/metabox/metabox.php:1503
-#: includes/metabox/metabox.php:1526
-#: includes/metabox/metabox.php:1732
-#: includes/metabox/metabox.php:1757
-#: includes/metabox/metabox.php:1770
+#: includes/metabox/metabox.php:255
+#: includes/metabox/metabox.php:280
+#: includes/metabox/metabox.php:606
+#: includes/metabox/metabox.php:629
+#: includes/metabox/metabox.php:652
+#: includes/metabox/metabox.php:1116
+#: includes/metabox/metabox.php:1139
+#: includes/metabox/metabox.php:1248
+#: includes/metabox/metabox.php:1277
+#: includes/metabox/metabox.php:1299
+#: includes/metabox/metabox.php:1323
+#: includes/metabox/metabox.php:1414
+#: includes/metabox/metabox.php:1513
+#: includes/metabox/metabox.php:1536
+#: includes/metabox/metabox.php:1742
+#: includes/metabox/metabox.php:1767
+#: includes/metabox/metabox.php:1780
 #: includes/preloader/customizer.php:124
 #: includes/widgets/contact-info.php:341
 #: includes/widgets/contact-info.php:382
@@ -1352,7 +1352,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:515
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:636
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:832
-#: includes/metabox/metabox.php:1638
+#: includes/metabox/metabox.php:1648
 #: includes/widgets/custom-menu.php:327
 #: includes/post-settings/assets/index.js:3
 msgid "Link"
@@ -1610,7 +1610,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:597
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:860
-#: includes/widgets/social.php:456
+#: includes/widgets/social.php:452
 msgid "Zoom Out"
 msgstr ""
 
@@ -1838,7 +1838,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:892
 #: includes/menu-icons/includes/settings.php:372
-#: includes/widgets/social.php:483
+#: includes/widgets/social.php:479
 #: includes/post-settings/assets/index.js:2
 msgid "Font Size"
 msgstr ""
@@ -4378,7 +4378,7 @@ msgid "Price Tag: Multiple"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:380
-#: includes/widgets/social.php:495
+#: includes/widgets/social.php:491
 msgid "Background Color"
 msgstr ""
 
@@ -4941,7 +4941,7 @@ msgid "404"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:656
-#: includes/metabox/metabox.php:1264
+#: includes/metabox/metabox.php:1274
 #: includes/post-settings/assets/index.js:3
 msgid "Attachment"
 msgstr ""
@@ -5415,7 +5415,7 @@ msgid "Hide Text"
 msgstr ""
 
 #: includes/menu-icons/includes/settings.php:312
-#: includes/metabox/metabox.php:1235
+#: includes/metabox/metabox.php:1245
 #: includes/post-settings/assets/index.js:3
 msgid "Position"
 msgstr ""
@@ -5549,294 +5549,294 @@ msgstr ""
 msgid "Enable lightbox for this gallery?"
 msgstr ""
 
-#: includes/metabox/metabox.php:232
+#: includes/metabox/metabox.php:242
 msgid "Main"
 msgstr ""
 
-#: includes/metabox/metabox.php:242
+#: includes/metabox/metabox.php:252
 #: includes/post-settings/assets/index.js:1
 msgid "Content Layout"
 msgstr ""
 
-#: includes/metabox/metabox.php:243
+#: includes/metabox/metabox.php:253
 msgid "Select your custom layout."
 msgstr ""
 
-#: includes/metabox/metabox.php:246
+#: includes/metabox/metabox.php:256
 #: includes/post-settings/assets/index.js:1
 msgid "Right Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:247
+#: includes/metabox/metabox.php:257
 #: includes/post-settings/assets/index.js:1
 msgid "Left Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:248
+#: includes/metabox/metabox.php:258
 #: includes/post-settings/assets/index.js:1
 msgid "Full Width"
 msgstr ""
 
-#: includes/metabox/metabox.php:249
+#: includes/metabox/metabox.php:259
 #: includes/post-settings/assets/index.js:1
 msgid "100% Full Width"
 msgstr ""
 
-#: includes/metabox/metabox.php:250
+#: includes/metabox/metabox.php:260
 #: includes/post-settings/assets/index.js:1
 msgid "Both Sidebars"
 msgstr ""
 
-#: includes/metabox/metabox.php:267
+#: includes/metabox/metabox.php:277
 #: includes/post-settings/assets/index.js:1
 msgid "Both Sidebars: Style"
 msgstr ""
 
-#: includes/metabox/metabox.php:268
+#: includes/metabox/metabox.php:278
 msgid "Select your both sidebars style."
 msgstr ""
 
-#: includes/metabox/metabox.php:271
+#: includes/metabox/metabox.php:281
 #: includes/post-settings/assets/index.js:1
 msgid "Sidebar / Sidebar / Content"
 msgstr ""
 
-#: includes/metabox/metabox.php:272
+#: includes/metabox/metabox.php:282
 #: includes/post-settings/assets/index.js:1
 msgid "Sidebar / Content / Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:273
+#: includes/metabox/metabox.php:283
 #: includes/post-settings/assets/index.js:1
 msgid "Content / Sidebar / Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:290
+#: includes/metabox/metabox.php:300
 #: includes/post-settings/assets/index.js:1
 msgid "Both Sidebars: Content Width (%)"
 msgstr ""
 
-#: includes/metabox/metabox.php:291
+#: includes/metabox/metabox.php:301
 msgid "Enter for custom content width."
 msgstr ""
 
-#: includes/metabox/metabox.php:311
+#: includes/metabox/metabox.php:321
 #: includes/post-settings/assets/index.js:1
 msgid "Both Sidebars: Sidebars Width (%)"
 msgstr ""
 
-#: includes/metabox/metabox.php:312
+#: includes/metabox/metabox.php:322
 msgid "Enter for custom sidebars width."
 msgstr ""
 
-#: includes/metabox/metabox.php:332
+#: includes/metabox/metabox.php:342
 #: includes/post-settings/assets/index.js:1
 msgid "Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:333
+#: includes/metabox/metabox.php:343
 msgid "Select your custom sidebar."
 msgstr ""
 
-#: includes/metabox/metabox.php:350
+#: includes/metabox/metabox.php:360
 #: includes/post-settings/assets/index.js:1
 msgid "Second Sidebar"
 msgstr ""
 
-#: includes/metabox/metabox.php:351
+#: includes/metabox/metabox.php:361
 msgid "Select your custom second sidebar."
 msgstr ""
 
-#: includes/metabox/metabox.php:368
+#: includes/metabox/metabox.php:378
 msgid "Paddings"
 msgstr ""
 
-#: includes/metabox/metabox.php:369
+#: includes/metabox/metabox.php:379
 msgid "Enable or disable the padding top and bottom."
 msgstr ""
 
-#: includes/metabox/metabox.php:371
-#: includes/metabox/metabox.php:597
-#: includes/metabox/metabox.php:620
-#: includes/metabox/metabox.php:1107
-#: includes/metabox/metabox.php:1130
-#: includes/metabox/metabox.php:1405
-#: includes/metabox/metabox.php:1504
-#: includes/metabox/metabox.php:1527
+#: includes/metabox/metabox.php:381
+#: includes/metabox/metabox.php:607
+#: includes/metabox/metabox.php:630
+#: includes/metabox/metabox.php:1117
+#: includes/metabox/metabox.php:1140
+#: includes/metabox/metabox.php:1415
+#: includes/metabox/metabox.php:1514
+#: includes/metabox/metabox.php:1537
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 msgid "Enable"
 msgstr ""
 
-#: includes/metabox/metabox.php:372
-#: includes/metabox/metabox.php:598
-#: includes/metabox/metabox.php:621
-#: includes/metabox/metabox.php:1108
-#: includes/metabox/metabox.php:1131
-#: includes/metabox/metabox.php:1406
-#: includes/metabox/metabox.php:1505
-#: includes/metabox/metabox.php:1528
+#: includes/metabox/metabox.php:382
+#: includes/metabox/metabox.php:608
+#: includes/metabox/metabox.php:631
+#: includes/metabox/metabox.php:1118
+#: includes/metabox/metabox.php:1141
+#: includes/metabox/metabox.php:1416
+#: includes/metabox/metabox.php:1515
+#: includes/metabox/metabox.php:1538
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 msgid "Disable"
 msgstr ""
 
-#: includes/metabox/metabox.php:390
+#: includes/metabox/metabox.php:400
 #: includes/post-settings/assets/index.js:1
 msgid "Custom Body Class"
 msgstr ""
 
-#: includes/metabox/metabox.php:391
+#: includes/metabox/metabox.php:401
 msgid "Use space (space tab) to separate multiple classes. Do not use dots (.) or commas (,) to separate classes. Correct example: class-1 class-2 new-class-3"
 msgstr ""
 
-#: includes/metabox/metabox.php:405
+#: includes/metabox/metabox.php:415
 msgid "Shortcodes"
 msgstr ""
 
-#: includes/metabox/metabox.php:415
+#: includes/metabox/metabox.php:425
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode Before Top Bar"
 msgstr ""
 
-#: includes/metabox/metabox.php:416
+#: includes/metabox/metabox.php:426
 msgid "Add your shortcode to be displayed before the top bar."
 msgstr ""
 
-#: includes/metabox/metabox.php:432
+#: includes/metabox/metabox.php:442
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode After Top Bar"
 msgstr ""
 
-#: includes/metabox/metabox.php:433
+#: includes/metabox/metabox.php:443
 msgid "Add your shortcode to be displayed after the top bar."
 msgstr ""
 
-#: includes/metabox/metabox.php:449
+#: includes/metabox/metabox.php:459
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode Before Header"
 msgstr ""
 
-#: includes/metabox/metabox.php:450
+#: includes/metabox/metabox.php:460
 msgid "Add your shortcode to be displayed before the header."
 msgstr ""
 
-#: includes/metabox/metabox.php:466
+#: includes/metabox/metabox.php:476
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode After Header"
 msgstr ""
 
-#: includes/metabox/metabox.php:467
+#: includes/metabox/metabox.php:477
 msgid "Add your shortcode to be displayed after the header."
 msgstr ""
 
-#: includes/metabox/metabox.php:483
+#: includes/metabox/metabox.php:493
 msgid "Shortcode Before Title"
 msgstr ""
 
-#: includes/metabox/metabox.php:484
+#: includes/metabox/metabox.php:494
 msgid "Add your shortcode to be displayed before the page title."
 msgstr ""
 
-#: includes/metabox/metabox.php:500
+#: includes/metabox/metabox.php:510
 msgid "Shortcode After Title"
 msgstr ""
 
-#: includes/metabox/metabox.php:501
+#: includes/metabox/metabox.php:511
 msgid "Add your shortcode to be displayed after the page title."
 msgstr ""
 
-#: includes/metabox/metabox.php:517
+#: includes/metabox/metabox.php:527
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode Before Footer Widgets"
 msgstr ""
 
-#: includes/metabox/metabox.php:518
+#: includes/metabox/metabox.php:528
 msgid "Add your shortcode to be displayed before the footer widgets."
 msgstr ""
 
-#: includes/metabox/metabox.php:534
+#: includes/metabox/metabox.php:544
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode After Footer Widgets"
 msgstr ""
 
-#: includes/metabox/metabox.php:535
+#: includes/metabox/metabox.php:545
 msgid "Add your shortcode to be displayed after the footer widgets."
 msgstr ""
 
-#: includes/metabox/metabox.php:551
+#: includes/metabox/metabox.php:561
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode Before Footer Bottom"
 msgstr ""
 
-#: includes/metabox/metabox.php:552
+#: includes/metabox/metabox.php:562
 msgid "Add your shortcode to be displayed before the footer bottom."
 msgstr ""
 
-#: includes/metabox/metabox.php:568
+#: includes/metabox/metabox.php:578
 #: includes/post-settings/assets/index.js:1
 msgid "Shortcode After Footer Bottom"
 msgstr ""
 
-#: includes/metabox/metabox.php:569
+#: includes/metabox/metabox.php:579
 msgid "Add your shortcode to be displayed after the footer bottom."
-msgstr ""
-
-#: includes/metabox/metabox.php:583
-#: includes/post-settings/assets/index.js:1
-msgid "Header"
 msgstr ""
 
 #: includes/metabox/metabox.php:593
 #: includes/post-settings/assets/index.js:1
+msgid "Header"
+msgstr ""
+
+#: includes/metabox/metabox.php:603
+#: includes/post-settings/assets/index.js:1
 msgid "Display Top Bar"
 msgstr ""
 
-#: includes/metabox/metabox.php:594
+#: includes/metabox/metabox.php:604
 msgid "Enable or disable the top bar."
 msgstr ""
 
-#: includes/metabox/metabox.php:616
+#: includes/metabox/metabox.php:626
 #: includes/post-settings/assets/index.js:1
 msgid "Display Header"
 msgstr ""
 
-#: includes/metabox/metabox.php:617
+#: includes/metabox/metabox.php:627
 msgid "Enable or disable the header."
 msgstr ""
 
-#: includes/metabox/metabox.php:639
+#: includes/metabox/metabox.php:649
 #: includes/post-settings/assets/index.js:1
 msgid "Header Style"
 msgstr ""
 
-#: includes/metabox/metabox.php:640
+#: includes/metabox/metabox.php:650
 msgid "Choose which header style to display on this page."
 msgstr ""
 
-#: includes/metabox/metabox.php:643
-#: includes/widgets/social-share.php:356
-#: includes/widgets/social-share.php:374
+#: includes/metabox/metabox.php:653
+#: includes/widgets/social-share.php:336
+#: includes/widgets/social-share.php:354
 #: includes/post-settings/assets/index.js:1
 msgid "Minimal"
 msgstr ""
 
-#: includes/metabox/metabox.php:644
+#: includes/metabox/metabox.php:654
 #: includes/post-settings/assets/index.js:1
 msgid "Transparent"
 msgstr ""
 
-#: includes/metabox/metabox.php:645
+#: includes/metabox/metabox.php:655
 #: includes/post-settings/assets/index.js:1
 msgid "Top Menu"
 msgstr ""
 
-#: includes/metabox/metabox.php:646
+#: includes/metabox/metabox.php:656
 #: includes/post-settings/assets/index.js:1
 msgid "Full Screen"
 msgstr ""
 
-#: includes/metabox/metabox.php:647
+#: includes/metabox/metabox.php:657
 #: includes/widgets/custom-header-logo.php:110
 #: includes/widgets/custom-header-nav.php:116
 #: includes/widgets/custom-menu.php:311
@@ -5845,210 +5845,210 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
-#: includes/metabox/metabox.php:649
+#: includes/metabox/metabox.php:659
 #: includes/post-settings/assets/index.js:1
 msgid "Vertical"
 msgstr ""
 
-#: includes/metabox/metabox.php:650
+#: includes/metabox/metabox.php:660
 #: includes/post-settings/assets/index.js:1
 msgid "Custom Header"
 msgstr ""
 
-#: includes/metabox/metabox.php:667
+#: includes/metabox/metabox.php:677
 #: includes/post-settings/assets/index.js:1
 msgid "Left Menu"
 msgstr ""
 
-#: includes/metabox/metabox.php:668
+#: includes/metabox/metabox.php:678
 msgid "Choose which left menu to display on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:685
-#: includes/metabox/metabox.php:1546
+#: includes/metabox/metabox.php:695
+#: includes/metabox/metabox.php:1556
 #: includes/preloader/customizer.php:302
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 msgid "Select Template"
 msgstr ""
 
-#: includes/metabox/metabox.php:686
-#: includes/metabox/metabox.php:1547
+#: includes/metabox/metabox.php:696
+#: includes/metabox/metabox.php:1557
 msgid "Choose a template created in Theme Panel > My Library."
 msgstr ""
 
-#: includes/metabox/metabox.php:701
 #: includes/metabox/metabox.php:711
+#: includes/metabox/metabox.php:721
 #: includes/preloader/customizer.php:146
 #: includes/wizard/wizard.php:718
 #: includes/post-settings/assets/index.js:2
 msgid "Logo"
 msgstr ""
 
-#: includes/metabox/metabox.php:712
+#: includes/metabox/metabox.php:722
 msgid "Select a custom logo on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:728
+#: includes/metabox/metabox.php:738
 #: includes/wizard/wizard.php:747
 #: includes/post-settings/assets/index.js:2
 msgid "Retina Logo"
 msgstr ""
 
-#: includes/metabox/metabox.php:729
+#: includes/metabox/metabox.php:739
 msgid "Select a custom retina logo on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:745
+#: includes/metabox/metabox.php:755
 msgid "Max Width (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:746
+#: includes/metabox/metabox.php:756
 msgid "Enter a custom max width for this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:766
+#: includes/metabox/metabox.php:776
 msgid "Tablet: Max Width (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:767
+#: includes/metabox/metabox.php:777
 msgid "Enter a custom max width for tablet view on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:787
+#: includes/metabox/metabox.php:797
 msgid "Mobile: Max Width (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:788
+#: includes/metabox/metabox.php:798
 msgid "Enter a custom max width for mobile view on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:808
+#: includes/metabox/metabox.php:818
 msgid "Max Height (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:809
+#: includes/metabox/metabox.php:819
 msgid "Enter a custom max height for this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:829
+#: includes/metabox/metabox.php:839
 msgid "Tablet: Max Height (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:830
+#: includes/metabox/metabox.php:840
 msgid "Enter a custom max height for tablet view on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:850
+#: includes/metabox/metabox.php:860
 msgid "Mobile: Max Height (px)"
 msgstr ""
 
-#: includes/metabox/metabox.php:851
+#: includes/metabox/metabox.php:861
 msgid "Enter a custom max height for mobile view on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:879
+#: includes/metabox/metabox.php:889
 #: includes/post-settings/assets/index.js:3
 msgid "Main Navigation Menu"
 msgstr ""
 
-#: includes/metabox/metabox.php:880
+#: includes/metabox/metabox.php:890
 msgid "Choose which menu to display on this page/post."
 msgstr ""
 
-#: includes/metabox/metabox.php:897
+#: includes/metabox/metabox.php:907
 #: includes/post-settings/assets/index.js:3
 msgid "Typography"
 msgstr ""
 
-#: includes/metabox/metabox.php:898
+#: includes/metabox/metabox.php:908
 msgid "Typography for the menu."
 msgstr ""
 
-#: includes/metabox/metabox.php:925
+#: includes/metabox/metabox.php:935
 #: includes/post-settings/assets/index.js:3
 msgid "Link Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:926
-#: includes/metabox/metabox.php:960
+#: includes/metabox/metabox.php:936
+#: includes/metabox/metabox.php:970
 msgid "Select a color. Hex code, ex: #555"
 msgstr ""
 
-#: includes/metabox/metabox.php:942
+#: includes/metabox/metabox.php:952
 #: includes/post-settings/assets/index.js:3
 msgid "Link Color: Hover"
 msgstr ""
 
-#: includes/metabox/metabox.php:943
-#: includes/metabox/metabox.php:1011
+#: includes/metabox/metabox.php:953
+#: includes/metabox/metabox.php:1021
 msgid "Select a color. Hex code, ex: #13aff0"
 msgstr ""
 
-#: includes/metabox/metabox.php:959
+#: includes/metabox/metabox.php:969
 msgid "Link Color: Current Menu Item"
 msgstr ""
 
-#: includes/metabox/metabox.php:976
+#: includes/metabox/metabox.php:986
 #: includes/post-settings/assets/index.js:3
 msgid "Link Background"
 msgstr ""
 
-#: includes/metabox/metabox.php:977
-#: includes/metabox/metabox.php:1425
-#: includes/metabox/metabox.php:1442
-#: includes/metabox/metabox.php:1459
+#: includes/metabox/metabox.php:987
+#: includes/metabox/metabox.php:1435
+#: includes/metabox/metabox.php:1452
+#: includes/metabox/metabox.php:1469
 msgid "Select a color. Hex code, ex: #fff"
 msgstr ""
 
-#: includes/metabox/metabox.php:993
+#: includes/metabox/metabox.php:1003
 #: includes/post-settings/assets/index.js:3
 msgid "Link Background: Hover"
 msgstr ""
 
-#: includes/metabox/metabox.php:994
-#: includes/metabox/metabox.php:1377
+#: includes/metabox/metabox.php:1004
+#: includes/metabox/metabox.php:1387
 msgid "Select a color. Hex code, ex: #333"
 msgstr ""
 
-#: includes/metabox/metabox.php:1010
+#: includes/metabox/metabox.php:1020
 msgid "Link Background: Current Menu Item"
 msgstr ""
 
-#: includes/metabox/metabox.php:1027
+#: includes/metabox/metabox.php:1037
 msgid "Simple Social: Background Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1028
+#: includes/metabox/metabox.php:1038
 msgid "Select a background color for the simple social style. Hex code, ex: #fff"
 msgstr ""
 
-#: includes/metabox/metabox.php:1044
+#: includes/metabox/metabox.php:1054
 msgid "Simple Social: Hover Background Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1045
+#: includes/metabox/metabox.php:1055
 msgid "Select a background color for the simple social style. Hex code, ex: #333"
 msgstr ""
 
-#: includes/metabox/metabox.php:1061
+#: includes/metabox/metabox.php:1071
 msgid "Simple Social: Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1062
+#: includes/metabox/metabox.php:1072
 msgid "Select a color for the simple social style. Hex code, ex: #fff"
 msgstr ""
 
-#: includes/metabox/metabox.php:1078
+#: includes/metabox/metabox.php:1088
 msgid "Simple Social: Hover Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1079
+#: includes/metabox/metabox.php:1089
 msgid "Select a color for the simple social style. Hex code, ex: #13aff0"
 msgstr ""
 
-#: includes/metabox/metabox.php:1093
-#: includes/widgets/about-me.php:377
+#: includes/metabox/metabox.php:1103
+#: includes/widgets/about-me.php:373
 #: includes/widgets/contact-info.php:375
 #: includes/widgets/contact-info.php:418
 #: includes/widgets/contact-info.php:442
@@ -6064,375 +6064,375 @@ msgstr ""
 #: includes/widgets/mailchimp.php:250
 #: includes/widgets/recent-posts.php:223
 #: includes/widgets/recent-posts.php:304
-#: includes/widgets/social-share.php:367
-#: includes/widgets/social.php:436
+#: includes/widgets/social-share.php:347
+#: includes/widgets/social.php:432
 #: includes/widgets/tags.php:263
 #: includes/widgets/video.php:114
 msgid "Title"
 msgstr ""
 
-#: includes/metabox/metabox.php:1103
+#: includes/metabox/metabox.php:1113
 #: includes/post-settings/assets/index.js:3
 msgid "Display Page Title"
 msgstr ""
 
-#: includes/metabox/metabox.php:1104
+#: includes/metabox/metabox.php:1114
 msgid "Enable or disable the page title."
 msgstr ""
 
-#: includes/metabox/metabox.php:1126
+#: includes/metabox/metabox.php:1136
 #: includes/post-settings/assets/index.js:3
 msgid "Display Heading"
 msgstr ""
 
-#: includes/metabox/metabox.php:1127
+#: includes/metabox/metabox.php:1137
 msgid "Enable or disable the page title heading."
 msgstr ""
 
-#: includes/metabox/metabox.php:1149
+#: includes/metabox/metabox.php:1159
 msgid "Custom Title"
 msgstr ""
 
-#: includes/metabox/metabox.php:1150
+#: includes/metabox/metabox.php:1160
 msgid "Alter the main title display."
 msgstr ""
 
-#: includes/metabox/metabox.php:1166
+#: includes/metabox/metabox.php:1176
 #: includes/post-settings/assets/index.js:3
 msgid "Subheading"
 msgstr ""
 
-#: includes/metabox/metabox.php:1167
+#: includes/metabox/metabox.php:1177
 msgid "Enter your page subheading. Shortcodes & HTML is allowed."
 msgstr ""
 
-#: includes/metabox/metabox.php:1183
+#: includes/metabox/metabox.php:1193
 #: includes/post-settings/assets/index.js:3
 msgid "Title Style"
 msgstr ""
 
-#: includes/metabox/metabox.php:1184
+#: includes/metabox/metabox.php:1194
 msgid "Select a custom title style."
 msgstr ""
 
-#: includes/metabox/metabox.php:1201
+#: includes/metabox/metabox.php:1211
 #: includes/post-settings/assets/index.js:3
 msgid "Title: Background Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1202
+#: includes/metabox/metabox.php:1212
 msgid "Select a hex color code, ex: #333"
 msgstr ""
 
-#: includes/metabox/metabox.php:1218
+#: includes/metabox/metabox.php:1228
 #: includes/post-settings/assets/index.js:3
 msgid "Title: Background Image"
 msgstr ""
 
-#: includes/metabox/metabox.php:1219
+#: includes/metabox/metabox.php:1229
 msgid "Select a custom image for your main title."
 msgstr ""
 
-#: includes/metabox/metabox.php:1236
+#: includes/metabox/metabox.php:1246
 msgid "Select your background image position."
 msgstr ""
 
-#: includes/metabox/metabox.php:1239
+#: includes/metabox/metabox.php:1249
 #: includes/post-settings/assets/index.js:3
 msgid "Top Left"
 msgstr ""
 
-#: includes/metabox/metabox.php:1240
+#: includes/metabox/metabox.php:1250
 #: includes/post-settings/assets/index.js:3
 msgid "Top Center"
 msgstr ""
 
-#: includes/metabox/metabox.php:1241
+#: includes/metabox/metabox.php:1251
 #: includes/post-settings/assets/index.js:3
 msgid "Top Right"
 msgstr ""
 
-#: includes/metabox/metabox.php:1242
+#: includes/metabox/metabox.php:1252
 #: includes/post-settings/assets/index.js:3
 msgid "Center Left"
 msgstr ""
 
-#: includes/metabox/metabox.php:1243
+#: includes/metabox/metabox.php:1253
 #: includes/post-settings/assets/index.js:3
 msgid "Center Center"
 msgstr ""
 
-#: includes/metabox/metabox.php:1244
+#: includes/metabox/metabox.php:1254
 #: includes/post-settings/assets/index.js:3
 msgid "Center Right"
 msgstr ""
 
-#: includes/metabox/metabox.php:1245
+#: includes/metabox/metabox.php:1255
 #: includes/post-settings/assets/index.js:3
 msgid "Bottom Left"
 msgstr ""
 
-#: includes/metabox/metabox.php:1246
+#: includes/metabox/metabox.php:1256
 #: includes/post-settings/assets/index.js:3
 msgid "Bottom Center"
 msgstr ""
 
-#: includes/metabox/metabox.php:1247
+#: includes/metabox/metabox.php:1257
 #: includes/post-settings/assets/index.js:3
 msgid "Bottom Right"
 msgstr ""
 
-#: includes/metabox/metabox.php:1265
+#: includes/metabox/metabox.php:1275
 msgid "Select your background image attachment."
 msgstr ""
 
-#: includes/metabox/metabox.php:1268
+#: includes/metabox/metabox.php:1278
 #: includes/post-settings/assets/index.js:3
 msgid "Scroll"
 msgstr ""
 
-#: includes/metabox/metabox.php:1269
+#: includes/metabox/metabox.php:1279
 #: includes/post-settings/assets/index.js:3
 msgid "Fixed"
 msgstr ""
 
-#: includes/metabox/metabox.php:1287
+#: includes/metabox/metabox.php:1297
 msgid "Select your background image repeat."
 msgstr ""
 
-#: includes/metabox/metabox.php:1290
+#: includes/metabox/metabox.php:1300
 msgid "No-repeat"
 msgstr ""
 
-#: includes/metabox/metabox.php:1292
+#: includes/metabox/metabox.php:1302
 msgid "Repeat-x"
 msgstr ""
 
-#: includes/metabox/metabox.php:1293
+#: includes/metabox/metabox.php:1303
 msgid "Repeat-y"
 msgstr ""
 
-#: includes/metabox/metabox.php:1310
+#: includes/metabox/metabox.php:1320
 #: includes/post-settings/assets/index.js:3
 msgid "Size"
 msgstr ""
 
-#: includes/metabox/metabox.php:1311
+#: includes/metabox/metabox.php:1321
 msgid "Select your background image size."
 msgstr ""
 
-#: includes/metabox/metabox.php:1314
+#: includes/metabox/metabox.php:1324
 #: includes/post-settings/assets/index.js:3
 msgid "Auto"
 msgstr ""
 
-#: includes/metabox/metabox.php:1315
+#: includes/metabox/metabox.php:1325
 #: includes/post-settings/assets/index.js:3
 msgid "Cover"
 msgstr ""
 
-#: includes/metabox/metabox.php:1316
+#: includes/metabox/metabox.php:1326
 #: includes/post-settings/assets/index.js:3
 msgid "Contain"
 msgstr ""
 
-#: includes/metabox/metabox.php:1333
+#: includes/metabox/metabox.php:1343
 msgid "Title: Background Height"
 msgstr ""
 
-#: includes/metabox/metabox.php:1334
+#: includes/metabox/metabox.php:1344
 msgid "Select your custom height for your title background. Default is 400px."
 msgstr ""
 
-#: includes/metabox/metabox.php:1354
+#: includes/metabox/metabox.php:1364
 #: includes/post-settings/assets/index.js:3
 msgid "Title: Background Overlay Opacity"
 msgstr ""
 
-#: includes/metabox/metabox.php:1355
+#: includes/metabox/metabox.php:1365
 msgid "Enter a number between 0.1 to 1. Default is 0.5."
 msgstr ""
 
-#: includes/metabox/metabox.php:1376
+#: includes/metabox/metabox.php:1386
 #: includes/post-settings/assets/index.js:3
 msgid "Title: Background Overlay Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1391
+#: includes/metabox/metabox.php:1401
 msgid "Breadcrumbs"
 msgstr ""
 
-#: includes/metabox/metabox.php:1401
+#: includes/metabox/metabox.php:1411
 #: includes/post-settings/assets/index.js:3
 msgid "Display Breadcrumbs"
 msgstr ""
 
-#: includes/metabox/metabox.php:1402
+#: includes/metabox/metabox.php:1412
 msgid "Enable or disable the page title breadcrumbs."
 msgstr ""
 
-#: includes/metabox/metabox.php:1424
-#: includes/widgets/about-me.php:407
-#: includes/widgets/social.php:505
+#: includes/metabox/metabox.php:1434
+#: includes/widgets/about-me.php:403
+#: includes/widgets/social.php:501
 #: includes/post-settings/assets/index.js:3
 msgid "Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1441
+#: includes/metabox/metabox.php:1451
 #: includes/post-settings/assets/index.js:3
 msgid "Separator Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1458
+#: includes/metabox/metabox.php:1468
 #: includes/wizard/wizard.php:826
 #: includes/post-settings/assets/index.js:3
 msgid "Links Color"
 msgstr ""
 
-#: includes/metabox/metabox.php:1475
+#: includes/metabox/metabox.php:1485
 #: includes/post-settings/assets/index.js:3
 msgid "Links Color: Hover"
 msgstr ""
 
-#: includes/metabox/metabox.php:1476
+#: includes/metabox/metabox.php:1486
 msgid "Select a color. Hex code, ex: #ddd"
 msgstr ""
 
-#: includes/metabox/metabox.php:1490
+#: includes/metabox/metabox.php:1500
 #: includes/post-settings/assets/index.js:1
 msgid "Footer"
 msgstr ""
 
-#: includes/metabox/metabox.php:1500
+#: includes/metabox/metabox.php:1510
 #: includes/post-settings/assets/index.js:3
 msgid "Display Footer Widgets Area"
 msgstr ""
 
-#: includes/metabox/metabox.php:1501
+#: includes/metabox/metabox.php:1511
 msgid "Enable or disable the footer widgets area."
 msgstr ""
 
-#: includes/metabox/metabox.php:1523
+#: includes/metabox/metabox.php:1533
 #: includes/post-settings/assets/index.js:3
 msgid "Display Copyright Area"
 msgstr ""
 
-#: includes/metabox/metabox.php:1524
+#: includes/metabox/metabox.php:1534
 msgid "Enable or disable the copyright area."
 msgstr ""
 
-#: includes/metabox/metabox.php:1589
+#: includes/metabox/metabox.php:1599
 #: includes/post-settings/assets/index.js:3
 msgid "oEmbed URL"
 msgstr ""
 
-#: includes/metabox/metabox.php:1590
+#: includes/metabox/metabox.php:1600
 msgid "Enter a URL that is compatible with WP's built-in oEmbed feature. This setting is used for your video and audio post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1606
+#: includes/metabox/metabox.php:1616
 #: includes/post-settings/assets/index.js:3
 msgid "Self Hosted"
 msgstr ""
 
-#: includes/metabox/metabox.php:1607
+#: includes/metabox/metabox.php:1617
 #: includes/post-settings/assets/index.js:3
 msgid "Insert your self hosted video or audio url here."
 msgstr ""
 
-#: includes/metabox/metabox.php:1623
+#: includes/metabox/metabox.php:1633
 #: includes/post-settings/assets/index.js:3
 msgid "Embed Code"
 msgstr ""
 
-#: includes/metabox/metabox.php:1624
+#: includes/metabox/metabox.php:1634
 #: includes/post-settings/assets/index.js:3
 msgid "Insert your embed/iframe code. This setting is used for your video and audio post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1639
+#: includes/metabox/metabox.php:1649
 #: includes/post-settings/assets/index.js:3
 msgid "Enter your external url. This setting is used for your link post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1655
-#: includes/widgets/social.php:461
+#: includes/metabox/metabox.php:1665
+#: includes/widgets/social.php:457
 #: includes/post-settings/assets/index.js:3
 msgid "Link Target"
 msgstr ""
 
-#: includes/metabox/metabox.php:1656
+#: includes/metabox/metabox.php:1666
 msgid "Choose your target for the url. This setting is used for your link post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1658
-#: includes/widgets/about-me.php:417
+#: includes/metabox/metabox.php:1668
+#: includes/widgets/about-me.php:413
 #: includes/widgets/contact-info.php:396
 #: includes/widgets/custom-links.php:147
 #: includes/widgets/instagram.php:263
-#: includes/widgets/social.php:464
+#: includes/widgets/social.php:460
 #: includes/post-settings/assets/index.js:3
 msgid "Self"
 msgstr ""
 
-#: includes/metabox/metabox.php:1659
-#: includes/widgets/about-me.php:416
+#: includes/metabox/metabox.php:1669
+#: includes/widgets/about-me.php:412
 #: includes/widgets/contact-info.php:397
 #: includes/widgets/custom-links.php:120
 #: includes/widgets/custom-links.php:146
 #: includes/widgets/instagram.php:262
-#: includes/widgets/social.php:463
+#: includes/widgets/social.php:459
 #: includes/post-settings/assets/index.js:3
 msgid "Blank"
 msgstr ""
 
-#: includes/metabox/metabox.php:1678
+#: includes/metabox/metabox.php:1688
 #: includes/post-settings/assets/index.js:3
 msgid "Enter your quote. This setting is used for your quote post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1695
+#: includes/metabox/metabox.php:1705
 #: includes/post-settings/assets/index.js:3
 msgid "Quote Link"
 msgstr ""
 
-#: includes/metabox/metabox.php:1696
+#: includes/metabox/metabox.php:1706
 msgid "Choose your quote link. This setting is used for your quote post formats."
 msgstr ""
 
-#: includes/metabox/metabox.php:1699
-#: includes/widgets/social.php:453
+#: includes/metabox/metabox.php:1709
+#: includes/widgets/social.php:449
 #: includes/widgets/tags.php:363
 #: includes/post-settings/assets/index.js:3
 msgid "None"
 msgstr ""
 
-#: includes/metabox/metabox.php:1742
+#: includes/metabox/metabox.php:1752
 msgid "Select a Template"
 msgstr ""
 
-#: includes/metabox/metabox.php:1758
+#: includes/metabox/metabox.php:1768
 #: includes/post-settings/assets/index.js:3
 msgid "Default Style"
 msgstr ""
 
-#: includes/metabox/metabox.php:1759
-#: includes/metabox/metabox.php:1760
+#: includes/metabox/metabox.php:1769
+#: includes/metabox/metabox.php:1770
 #: includes/post-settings/assets/index.js:3
 msgid "Centered"
 msgstr ""
 
-#: includes/metabox/metabox.php:1761
+#: includes/metabox/metabox.php:1771
 #: includes/post-settings/assets/index.js:3
 msgid "Centered Minimal"
 msgstr ""
 
-#: includes/metabox/metabox.php:1762
+#: includes/metabox/metabox.php:1772
 #: includes/post-settings/assets/index.js:3
 msgid "Background Image"
 msgstr ""
 
-#: includes/metabox/metabox.php:1763
+#: includes/metabox/metabox.php:1773
 #: includes/post-settings/assets/index.js:3
 msgid "Solid Color and White Text"
 msgstr ""
@@ -7090,23 +7090,23 @@ msgid "Welcome back"
 msgstr ""
 
 #: includes/shortcodes/shortcodes.php:333
-#: includes/shortcodes/shortcodes.php:498
-#: includes/shortcodes/shortcodes.php:529
-#: includes/shortcodes/shortcodes.php:713
+#: includes/shortcodes/shortcodes.php:514
+#: includes/shortcodes/shortcodes.php:545
+#: includes/shortcodes/shortcodes.php:729
 msgid "This shortcode only works in front end"
 msgstr ""
 
-#: includes/shortcodes/shortcodes.php:563
-#: includes/shortcodes/shortcodes.php:642
+#: includes/shortcodes/shortcodes.php:579
+#: includes/shortcodes/shortcodes.php:658
 msgid "Buy for %left_to_free% more and get free shipping"
 msgstr ""
 
-#: includes/shortcodes/shortcodes.php:567
-#: includes/shortcodes/shortcodes.php:643
+#: includes/shortcodes/shortcodes.php:583
+#: includes/shortcodes/shortcodes.php:659
 msgid "You have Free delivery!"
 msgstr ""
 
-#: includes/shortcodes/shortcodes.php:797
+#: includes/shortcodes/shortcodes.php:814
 msgid "Last Updated on:"
 msgstr ""
 
@@ -7596,81 +7596,81 @@ msgctxt "by author"
 msgid "by %s"
 msgstr ""
 
-#: includes/widgets/about-me.php:123
+#: includes/widgets/about-me.php:119
 msgid "&raquo; About Me"
 msgstr ""
 
-#: includes/widgets/about-me.php:126
+#: includes/widgets/about-me.php:122
 msgid "Adds an About Me widget."
 msgstr ""
 
-#: includes/widgets/about-me.php:279
+#: includes/widgets/about-me.php:275
 #: includes/widgets/contact-info.php:114
 #: includes/widgets/custom-links.php:59
-#: includes/widgets/social.php:300
+#: includes/widgets/social.php:296
 msgid "Opens in a new tab"
 msgstr ""
 
-#: includes/widgets/about-me.php:364
+#: includes/widgets/about-me.php:360
 msgid "About Me"
 msgstr ""
 
-#: includes/widgets/about-me.php:366
+#: includes/widgets/about-me.php:362
 msgid "John Doe"
 msgstr ""
 
-#: includes/widgets/about-me.php:382
+#: includes/widgets/about-me.php:378
 #: includes/widgets/instagram.php:215
 msgid "Image URL"
 msgstr ""
 
-#: includes/widgets/about-me.php:384
+#: includes/widgets/about-me.php:380
 #: includes/widgets/instagram.php:217
 msgid "Upload Image"
 msgstr ""
 
-#: includes/widgets/about-me.php:388
+#: includes/widgets/about-me.php:384
 msgid "Name:"
 msgstr ""
 
-#: includes/widgets/about-me.php:393
+#: includes/widgets/about-me.php:389
 #: includes/widgets/instagram.php:235
 msgid "Description:"
 msgstr ""
 
-#: includes/widgets/about-me.php:404
+#: includes/widgets/about-me.php:400
 msgid "Social Style:"
 msgstr ""
 
-#: includes/widgets/about-me.php:408
+#: includes/widgets/about-me.php:404
 #: includes/widgets/facebook.php:209
-#: includes/widgets/social.php:417
-#: includes/widgets/social.php:443
+#: includes/widgets/social.php:413
+#: includes/widgets/social.php:439
 #: includes/widgets/twitter.php:235
 msgid "Light"
 msgstr ""
 
-#: includes/widgets/about-me.php:409
+#: includes/widgets/about-me.php:405
 #: includes/widgets/facebook.php:210
-#: includes/widgets/social-share.php:376
-#: includes/widgets/social.php:444
+#: includes/widgets/social-share.php:356
+#: includes/widgets/social.php:440
 #: includes/widgets/twitter.php:236
 msgid "Dark"
 msgstr ""
 
-#: includes/widgets/about-me.php:414
+#: includes/widgets/about-me.php:410
 msgid "Social Link Target:"
 msgstr ""
 
-#: includes/widgets/about-me.php:422
+#: includes/widgets/about-me.php:418
 #: includes/widgets/contact-info.php:402
 #: includes/widgets/custom-links.php:152
-#: includes/widgets/social.php:469
+#: includes/widgets/social.php:465
 msgid "Add Nofollow Link Rel:"
 msgstr ""
 
-#: includes/widgets/about-me.php:434
-#: includes/widgets/social.php:529
+#: includes/widgets/about-me.php:430
+#: includes/widgets/social.php:525
 msgid "Social Links"
 msgstr ""
 
@@ -7683,7 +7683,7 @@ msgid "Adds support for Contact Info."
 msgstr ""
 
 #: includes/widgets/contact-info.php:122
-#: includes/widgets/social.php:340
+#: includes/widgets/social.php:336
 msgid "Opens in your application"
 msgstr ""
 
@@ -8128,7 +8128,7 @@ msgid "Rounded"
 msgstr ""
 
 #: includes/widgets/instagram.php:129
-#: includes/widgets/social.php:416
+#: includes/widgets/social.php:412
 msgid "Follow Us"
 msgstr ""
 
@@ -8456,132 +8456,132 @@ msgid "Display social sharing buttons on your sidebar."
 msgstr ""
 
 #: includes/widgets/social-share.php:74
-msgid "Share on Twitter"
+msgid "Share on X"
 msgstr ""
 
 #: includes/widgets/social-share.php:82
 msgid "Share on Facebook"
 msgstr ""
 
-#: includes/widgets/social-share.php:91
-msgid "Share on Google+"
-msgstr ""
-
-#: includes/widgets/social-share.php:103
+#: includes/widgets/social-share.php:92
 msgid "Share on Pinterest"
 msgstr ""
 
-#: includes/widgets/social-share.php:118
+#: includes/widgets/social-share.php:105
 msgid "Share on LinkedIn"
 msgstr ""
 
-#: includes/widgets/social-share.php:129
+#: includes/widgets/social-share.php:115
 msgid "Share on Viber"
 msgstr ""
 
-#: includes/widgets/social-share.php:158
+#: includes/widgets/social-share.php:132
 msgid "Share on VK"
 msgstr ""
 
-#: includes/widgets/social-share.php:166
+#: includes/widgets/social-share.php:146
 msgid "Share on Reddit"
 msgstr ""
 
-#: includes/widgets/social-share.php:187
+#: includes/widgets/social-share.php:160
 msgid "Share on Tumblr"
 msgstr ""
 
-#: includes/widgets/social-share.php:200
+#: includes/widgets/social-share.php:170
 msgid "Share on Viadeo"
 msgstr ""
 
-#: includes/widgets/social-share.php:355
+#: includes/widgets/social-share.php:183
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: includes/widgets/social-share.php:335
 msgid "Please share this"
 msgstr ""
 
-#: includes/widgets/social-share.php:372
-#: includes/widgets/social.php:441
+#: includes/widgets/social-share.php:352
+#: includes/widgets/social.php:437
 msgid "Style:"
 msgstr ""
 
-#: includes/widgets/social-share.php:375
-#: includes/widgets/social.php:445
+#: includes/widgets/social-share.php:355
+#: includes/widgets/social.php:441
 msgid "Colored"
 msgstr ""
 
-#: includes/widgets/social-share.php:381
-#: includes/widgets/social.php:489
+#: includes/widgets/social-share.php:361
+#: includes/widgets/social.php:485
 msgid "Border Radius"
 msgstr ""
 
-#: includes/widgets/social-share.php:383
-#: includes/widgets/social.php:479
-#: includes/widgets/social.php:485
-#: includes/widgets/social.php:491
+#: includes/widgets/social-share.php:363
+#: includes/widgets/social.php:475
+#: includes/widgets/social.php:481
+#: includes/widgets/social.php:487
 msgid "Example:"
 msgstr ""
 
-#: includes/widgets/social-share.php:387
+#: includes/widgets/social-share.php:367
 msgid "Minimal Style: Border Color"
 msgstr ""
 
-#: includes/widgets/social-share.php:392
+#: includes/widgets/social-share.php:372
 msgid "Minimal Style: Background Color"
 msgstr ""
 
-#: includes/widgets/social-share.php:397
+#: includes/widgets/social-share.php:377
 msgid "Minimal Style: Color"
 msgstr ""
 
-#: includes/widgets/social-share.php:402
-msgid "Twitter Username"
+#: includes/widgets/social-share.php:382
+msgid "X Username"
 msgstr ""
 
-#: includes/widgets/social-share.php:408
+#: includes/widgets/social-share.php:388
 msgid "Show Social Name"
 msgstr ""
 
-#: includes/widgets/social-share.php:411
+#: includes/widgets/social-share.php:391
 msgid "Social Share"
 msgstr ""
 
-#: includes/widgets/social.php:134
+#: includes/widgets/social.php:130
 msgid "&raquo; Social Icons"
 msgstr ""
 
-#: includes/widgets/social.php:137
+#: includes/widgets/social.php:133
 msgid "Display your social media icons."
 msgstr ""
 
-#: includes/widgets/social.php:446
+#: includes/widgets/social.php:442
 msgid "Simple"
 msgstr ""
 
-#: includes/widgets/social.php:451
+#: includes/widgets/social.php:447
 msgid "Transition:"
 msgstr ""
 
-#: includes/widgets/social.php:454
+#: includes/widgets/social.php:450
 msgid "Float"
 msgstr ""
 
-#: includes/widgets/social.php:477
+#: includes/widgets/social.php:473
 msgid "Dimensions"
 msgstr ""
 
-#: includes/widgets/social.php:500
+#: includes/widgets/social.php:496
 msgid "Background Color Hover"
 msgstr ""
 
-#: includes/widgets/social.php:510
+#: includes/widgets/social.php:506
 msgid "Color Hover"
 msgstr ""
 
-#: includes/widgets/social.php:515
+#: includes/widgets/social.php:511
 msgid "Border Color"
 msgstr ""
 
-#: includes/widgets/social.php:520
+#: includes/widgets/social.php:516
 msgid "Border Color Hover"
 msgstr ""
 
@@ -8630,11 +8630,11 @@ msgid "Border Hover Color:"
 msgstr ""
 
 #: includes/widgets/twitter.php:21
-msgid "&raquo; Twitter"
+msgid "&raquo; X"
 msgstr ""
 
 #: includes/widgets/twitter.php:24
-msgid "Pulls in tweets from your twitter account."
+msgid "Pulls in tweets from your X account."
 msgstr ""
 
 #: includes/widgets/twitter.php:78
@@ -8642,7 +8642,7 @@ msgid "My Tweets"
 msgstr ""
 
 #: includes/widgets/twitter.php:174
-msgid "Follow me on Twitter"
+msgid "Follow me on X"
 msgstr ""
 
 #: includes/widgets/twitter.php:189

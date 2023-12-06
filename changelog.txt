@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.2.4 - DEC 06 2023 =
+- Updated: FontAwesome update to 6.5.1.
+
 = 2.2.3 - NOV 27 2023 =
 - Fixed: Potential vulnerability patched. Report by Patchstack from Nov 23rd 2023.
 
