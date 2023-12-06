@@ -217,7 +217,13 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 == Changelog ==
 
 = 2.2.4 - DEC 06 2023 =
-- Updated: FontAwesome update to 6.5.1.
+- Updated: Font Awesome Library to 6.5.1 version.
+- Updated: Woo Fragments function: Check Woo Cart Total and Woo Cart Items Count.
+- Fixed: Missing Dependencies: oceanwp-butterbean script.
+- Fixed: Load Google Fonts Locally: incorrect check on default state.
+- Fixed: Shortcode: oceanwp_breadcrumbs: JSON error on saving when shortcode in use.
+- Fixed: Shortcode: oceanwp_woo_cart: JSON error on saving when shortcode in use.
+- Deprecated: Google+ social option from related custom OceanWP legacy WordPress widgets.
 
 = 2.2.3 - NOV 27 2023 =
 - Fixed: Potential vulnerability patched. Report by Patchstack from Nov 23rd 2023.
