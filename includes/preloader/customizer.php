@@ -208,35 +208,38 @@ class Ocean_Preloader_Customizer {
 			'active_callback' 		=> 'oe_cac_has_preloader_icon_svg',
 		) ) );
 
-		/**
-		 * Image size
-		 */
-		$wp_customize->add_setting(
-			'ocean_preloader_image_size',
-			array(
-				'transport'         => 'postMessage',
-				'default'           => '100',
-				'sanitize_callback' => false,
-			)
-		);
+		if ( class_exists( 'OceanWP_Customizer_Range_Control' ) ) {
 
-		$wp_customize->add_control(
-			new OceanWP_Customizer_Range_Control(
-				$wp_customize, 'ocean_preloader_image_size',
+			/**
+			 * Image size
+			 */
+			$wp_customize->add_setting(
+				'ocean_preloader_image_size',
 				array(
-					'label'           => esc_html__( 'Size (px)', 'ocean-extra' ),
-					'section'         => $section,
-					'settings'        => 'ocean_preloader_image_size',
-					'priority'        => 10,
-					'active_callback' => 'oe_cac_has_not_preloader_icon_css',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 500,
-						'step' => 1,
-					),
+					'transport'         => 'postMessage',
+					'default'           => '100',
+					'sanitize_callback' => false,
 				)
-			)
-		);
+			);
+
+			$wp_customize->add_control(
+				new OceanWP_Customizer_Range_Control(
+					$wp_customize, 'ocean_preloader_image_size',
+					array(
+						'label'           => esc_html__( 'Size (px)', 'ocean-extra' ),
+						'section'         => $section,
+						'settings'        => 'ocean_preloader_image_size',
+						'priority'        => 10,
+						'active_callback' => 'oe_cac_has_not_preloader_icon_css',
+						'input_attrs' => array(
+							'min'  => 0,
+							'max'  => 500,
+							'step' => 1,
+						),
+					)
+				)
+			);
+		}
 
 		/**
 		 * Custom content.
