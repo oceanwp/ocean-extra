@@ -1,6 +1,6 @@
 == Changelog ==
 
-= 2.2.4 - DEC 06 2023 =
+= 2.2.4 - DEC 11 2023 =
 - Updated: Font Awesome Library to 6.5.1 version.
 - Updated: Woo Fragments function: Check Woo Cart Total and Woo Cart Items Count.
 - Fixed: Missing Dependencies: oceanwp-butterbean script.

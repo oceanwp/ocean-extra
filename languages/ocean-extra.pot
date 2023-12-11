@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.2.3\n"
+"Project-Id-Version: Ocean Extra 2.2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-12-06T06:02:23+00:00\n"
+"POT-Creation-Date: 2023-12-11T03:46:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: ocean-extra\n"
@@ -5866,7 +5866,7 @@ msgstr ""
 
 #: includes/metabox/metabox.php:695
 #: includes/metabox/metabox.php:1556
-#: includes/preloader/customizer.php:302
+#: includes/preloader/customizer.php:305
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 msgid "Select Template"
@@ -7041,11 +7041,11 @@ msgstr ""
 msgid "Upload svg file here"
 msgstr ""
 
-#: includes/preloader/customizer.php:227
+#: includes/preloader/customizer.php:229
 msgid "Size (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:250
+#: includes/preloader/customizer.php:253
 #: includes/widgets/contact-info.php:423
 #: includes/widgets/contact-info.php:447
 #: includes/widgets/contact-info.php:471
@@ -7053,31 +7053,31 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/preloader/customizer.php:276
+#: includes/preloader/customizer.php:279
 msgid "Container Width (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:277
+#: includes/preloader/customizer.php:280
 msgid "Set \"0\" to unset or set your custom container width."
 msgstr ""
 
-#: includes/preloader/customizer.php:319
+#: includes/preloader/customizer.php:322
 msgid "Elementor Flickers/FOUC"
 msgstr ""
 
-#: includes/preloader/customizer.php:320
+#: includes/preloader/customizer.php:323
 msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
 msgstr ""
 
-#: includes/preloader/customizer.php:337
+#: includes/preloader/customizer.php:340
 msgid "Overlay Color"
 msgstr ""
 
-#: includes/preloader/customizer.php:354
+#: includes/preloader/customizer.php:357
 msgid "Icon Color"
 msgstr ""
 
-#: includes/preloader/customizer.php:367
+#: includes/preloader/customizer.php:370
 msgid "Preloader Content"
 msgstr ""
 

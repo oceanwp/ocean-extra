@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.4.1
+Tested up to: 6.4.2
 Stable tag: 2.2.4
 Requires PHP: 7.2
 License: GPLv2 or later
@@ -216,7 +216,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.2.4 - DEC 06 2023 =
+= 2.2.4 - DEC 11 2023 =
 - Updated: Font Awesome Library to 6.5.1 version.
 - Updated: Woo Fragments function: Check Woo Cart Total and Woo Cart Items Count.
 - Fixed: Missing Dependencies: oceanwp-butterbean script.
