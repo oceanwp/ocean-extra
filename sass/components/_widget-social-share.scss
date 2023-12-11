@@ -185,6 +185,15 @@
 				fill: #ff7452;
 			}
 		}
+
+		&.whatsapp a:hover {
+			color: #128c7e;
+			border-color: #128c7e;
+
+			.owpss-icon {
+				fill: #128c7e;
+			}
+		}
 	}
 }
 
@@ -241,6 +250,10 @@
 
 		&.viadeo a {
 			background-color: #ff7452;
+		}
+
+		&.whatsapp a {
+			background-color: #128c7e;
 		}
 	}
 }
@@ -364,6 +377,10 @@
 
 		&.viadeo a:hover .owp-icon-wrap {
 			background-color: #ff7452;
+		}
+
+		&.whatsapp a:hover .owp-icon-wrap {
+			background-color: #128c7e;
 		}
 	}
 }

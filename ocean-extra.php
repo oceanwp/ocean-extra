@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.2.3
+ * Version:             2.2.4
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.4.1
+ * Tested up to:        6.4.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -87,6 +87,14 @@ final class Ocean_Extra {
 	 */
 	public $plugin_path;
 
+	/**
+	 * The plugin data.
+	 *
+	 * @var     array
+	 * @access  public
+	 */
+	public $plugin_data;
+
 	// Admin - Start
 	/**
 	 * The admin object.
@@ -108,7 +116,8 @@ final class Ocean_Extra {
 		$this->token       = 'ocean-extra';
 		$this->plugin_url  = plugin_dir_url( __FILE__ );
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->version     = '2.2.3';
+		$this->plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ), false );
+		$this->version     = $this->plugin_data['Version'];
 
 		define( 'OE_URL', $this->plugin_url );
 		define( 'OE_PATH', $this->plugin_path );

@@ -2,11 +2,27 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.4.1
-Stable tag: 2.2.3
+Tested up to: 6.4.2
+Stable tag: 2.2.4
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Copyright ==
+
+Ocean Extra uses the following third-party resources:
+
+Font Awesome Fonts, Copyright Fonticons, Inc.
+License: SIL OFL 1.1 License - https://scripts.sil.org/OFL
+Source: https://fontawesome.com/
+
+Font Awesome Icons, Copyright Fonticons, Inc.
+License: CC BY 4.0 License - https://creativecommons.org/licenses/by/4.0/
+Source: https://fontawesome.com/
+
+Font Awesome Code, Copyright Fonticons, Inc.
+License: MIT License - https://opensource.org/licenses/MIT
+Source: https://fontawesome.com/
 
 == Description ==
 
@@ -199,6 +215,15 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.2.4 - DEC 11 2023 =
+- Updated: Font Awesome Library to 6.5.1 version.
+- Updated: Woo Fragments function: Check Woo Cart Total and Woo Cart Items Count.
+- Fixed: Missing Dependencies: oceanwp-butterbean script.
+- Fixed: Load Google Fonts Locally: incorrect check on default state.
+- Fixed: Shortcode: oceanwp_breadcrumbs: JSON error on saving when shortcode in use.
+- Fixed: Shortcode: oceanwp_woo_cart: JSON error on saving when shortcode in use.
+- Deprecated: Google+ social option from related custom OceanWP legacy WordPress widgets.
 
 = 2.2.3 - NOV 27 2023 =
 - Fixed: Potential vulnerability patched. Report by Patchstack from Nov 23rd 2023.
