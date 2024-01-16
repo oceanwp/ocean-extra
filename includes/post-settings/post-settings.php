@@ -130,6 +130,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 			// Array of post types to check for 'custom-fields' support.
 			$post_types_to_check = oe_metabox_support_post_types();
 
+			if ( ! is_array( $post_types_to_check ) ) {
+				$post_types_to_check = [];
+			}
+
 			// Check if the current post type is in the list to check.
 			if ( in_array( $post_type, $post_types_to_check ) ) {
 
