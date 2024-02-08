@@ -86,6 +86,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 		public function includes() {
 			require_once OE_PATH . 'includes/post-settings/defaults.php';
 			require_once OE_PATH . 'includes/post-settings/functions.php';
+			require_once OE_PATH . 'includes/post-settings/sanitize.php';
 		}
 
 		/**
@@ -99,12 +100,15 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			foreach ( $settings as $key => $value ) {
 
+				$sanitize_callback = isset($value['sanitize']) ? $value['sanitize'] : null;
+
 				$args = array(
 					'object_subtype' => $value['subType'],
 					'single'         => $value['single'],
 					'type'           => $value['type'],
 					'default'        => $value['value'],
 					'show_in_rest'   => $value['rest'],
+					'sanitize_callback' => $sanitize_callback,
 					'auth_callback'  => '__return_true',
 				);
 
