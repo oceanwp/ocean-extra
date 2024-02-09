@@ -68,9 +68,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			$capabilities = apply_filters('ocean_main_metaboxes_capabilities', 'manage_options');
 
+			add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
+
 			if ( current_user_can($capabilities) ) {
 
-				add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
 				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ), 21 );
 				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
 				add_action( 'rest_api_init', array( $this, 'register_routes' ) );

@@ -126,9 +126,13 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 
 			$mb_script = apply_filters( 'oceanwp_butterbean_metabox_assets', false );
 
+			var_dump($mb_script);
+
 			if ( isset( $current_screen ) ) {
-				if ( true === $current_screen->is_block_editor && false === $mb_script ) {
-					return;
+				if ( property_exists( $current_screen, 'is_block_editor') ) {
+					if ( true === $current_screen->is_block_editor && false === $mb_script ) {
+						return;
+					}
 				}
 			}
 
