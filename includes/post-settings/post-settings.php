@@ -68,9 +68,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			$capabilities = apply_filters('ocean_main_metaboxes_capabilities', 'manage_options');
 
+			add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
+
 			if ( current_user_can($capabilities) ) {
 
-				add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
 				add_action( 'enqueue_block_editor_assets', array( $this, 'editor_enqueue_script' ), 21 );
 				add_filter('update_post_metadata', array( $this, 'handle_updating_post_meta' ), 20, 5);
 				add_action( 'rest_api_init', array( $this, 'register_routes' ) );
@@ -86,6 +87,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 		public function includes() {
 			require_once OE_PATH . 'includes/post-settings/defaults.php';
 			require_once OE_PATH . 'includes/post-settings/functions.php';
+			require_once OE_PATH . 'includes/post-settings/sanitize.php';
 		}
 
 		/**
@@ -99,12 +101,15 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			foreach ( $settings as $key => $value ) {
 
+				$sanitize_callback = isset($value['sanitize']) ? $value['sanitize'] : null;
+
 				$args = array(
 					'object_subtype' => $value['subType'],
 					'single'         => $value['single'],
 					'type'           => $value['type'],
 					'default'        => $value['value'],
 					'show_in_rest'   => $value['rest'],
+					'sanitize_callback' => $sanitize_callback,
 					'auth_callback'  => '__return_true',
 				);
 
@@ -129,6 +134,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 
 			// Array of post types to check for 'custom-fields' support.
 			$post_types_to_check = oe_metabox_support_post_types();
+
+			if ( ! is_array( $post_types_to_check ) ) {
+				$post_types_to_check = [];
+			}
 
 			// Check if the current post type is in the list to check.
 			if ( in_array( $post_type, $post_types_to_check ) ) {

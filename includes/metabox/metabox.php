@@ -124,9 +124,11 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 
 			global $current_screen;
 
+			$mb_script = apply_filters( 'oceanwp_butterbean_metabox_assets', false );
+
 			if ( isset( $current_screen ) ) {
 				if ( property_exists( $current_screen, 'is_block_editor') ) {
-					if( true === $current_screen->is_block_editor ) {
+					if ( true === $current_screen->is_block_editor && false === $mb_script ) {
 						return;
 					}
 				}
@@ -235,7 +237,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 			);
 
 			$manager = $butterbean->get_manager( 'oceanwp_mb_settings' );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_main',
 		        array(
@@ -261,7 +263,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_layout', // Same as control name.
 		        array(
@@ -305,7 +307,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_both_sidebars_content_width', // Same as control name.
 		        array(
@@ -326,14 +328,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_both_sidebars_sidebars_width', // Same as control name.
 		        array(
 		            'sanitize_callback' => array( $this, 'sanitize_absint' ),
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_sidebar', // Same as setting name.
 		        array(
@@ -344,14 +346,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'widget_areas' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_sidebar', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_second_sidebar', // Same as setting name.
 		        array(
@@ -362,14 +364,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'widget_areas' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_second_sidebar', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_disable_margins', // Same as setting name.
 		        array(
@@ -416,7 +418,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-editor-code'
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_before_top_bar', // Same as setting name.
 		        array(
@@ -426,14 +428,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed before the top bar.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_before_top_bar', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_after_top_bar', // Same as setting name.
 		        array(
@@ -443,14 +445,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed after the top bar.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_after_top_bar', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_before_header', // Same as setting name.
 		        array(
@@ -460,14 +462,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed before the header.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_before_header', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_after_header', // Same as setting name.
 		        array(
@@ -477,14 +479,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed after the header.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_after_header', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_has_shortcode', // Same as setting name.
 		        array(
@@ -494,14 +496,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed before the page title.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_has_shortcode', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_after_title', // Same as setting name.
 		        array(
@@ -511,14 +513,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed after the page title.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_after_title', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_before_footer_widgets', // Same as setting name.
 		        array(
@@ -528,14 +530,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed before the footer widgets.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_before_footer_widgets', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_after_footer_widgets', // Same as setting name.
 		        array(
@@ -545,14 +547,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed after the footer widgets.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_after_footer_widgets', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_before_footer_bottom', // Same as setting name.
 		        array(
@@ -562,14 +564,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed before the footer bottom.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_before_footer_bottom', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_shortcode_after_footer_bottom', // Same as setting name.
 		        array(
@@ -579,14 +581,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Add your shortcode to be displayed after the footer bottom.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_shortcode_after_footer_bottom', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_header',
 		        array(
@@ -594,7 +596,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-sticky'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_display_top_bar', // Same as setting name.
 		        array(
@@ -609,7 +611,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_display_top_bar', // Same as control name.
 		        array(
@@ -617,7 +619,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_display_header', // Same as setting name.
 		        array(
@@ -632,7 +634,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_display_header', // Same as control name.
 		        array(
@@ -640,7 +642,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_header_style', // Same as setting name.
 		        array(
@@ -661,14 +663,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_header_style', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_center_header_left_menu', // Same as setting name.
 		        array(
@@ -679,14 +681,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'menus' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_center_header_left_menu', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_custom_header_template', // Same as setting name.
 		        array(
@@ -697,14 +699,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'library' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_header_template', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_logo',
 		        array(
@@ -712,7 +714,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-format-image'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_custom_logo', // Same as setting name.
 		        array(
@@ -722,14 +724,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a custom logo on this page/post.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo', // Same as control name.
 		        array(
 		        	'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_custom_retina_logo', // Same as setting name.
 		        array(
@@ -739,7 +741,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a custom retina logo on this page/post.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_retina_logo', // Same as control name.
 		        array(
@@ -760,7 +762,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_max_width', // Same as control name.
 		        array(
@@ -781,7 +783,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_tablet_max_width', // Same as control name.
 		        array(
@@ -802,7 +804,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_mobile_max_width', // Same as control name.
 		        array(
@@ -823,7 +825,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_max_height', // Same as control name.
 		        array(
@@ -844,7 +846,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_tablet_max_height', // Same as control name.
 		        array(
@@ -865,14 +867,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_logo_mobile_max_height', // Same as control name.
 		        array(
 		            'sanitize_callback' => array( $this, 'sanitize_absint' ),
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_menu',
 		        array(
@@ -880,7 +882,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-menu'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_header_custom_menu', // Same as setting name.
 		        array(
@@ -891,7 +893,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'menus' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_header_custom_menu', // Same as control name.
 		        array(
@@ -918,7 +920,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'l10n'        	=> array(),
 		        )
 		    );
-				
+
 			$manager->register_setting( 'ocean_menu_typo_font_family', 	array( 'sanitize_callback' => 'sanitize_text_field', ) );
 			$manager->register_setting( 'ocean_menu_typo_font_size',   	array( 'sanitize_callback' => 'sanitize_text_field', ) );
 			$manager->register_setting( 'ocean_menu_typo_font_weight', 	array( 'sanitize_callback' => 'sanitize_key', ) );
@@ -926,7 +928,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 			$manager->register_setting( 'ocean_menu_typo_transform', 	array( 'sanitize_callback' => 'sanitize_key', ) );
 			$manager->register_setting( 'ocean_menu_typo_line_height', 	array( 'sanitize_callback' => 'sanitize_text_field', ) );
 			$manager->register_setting( 'ocean_menu_typo_spacing', 		array( 'sanitize_callback' => 'sanitize_text_field', ) );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_color', // Same as setting name.
 		        array(
@@ -936,14 +938,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #555', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_color_hover', // Same as setting name.
 		        array(
@@ -953,14 +955,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #13aff0', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_color_hover', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_color_active', // Same as setting name.
 		        array(
@@ -970,14 +972,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #555', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_color_active', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_background', // Same as setting name.
 		        array(
@@ -987,14 +989,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_background', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_hover_background', // Same as setting name.
 		        array(
@@ -1004,14 +1006,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #333', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_hover_background', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_link_active_background', // Same as setting name.
 		        array(
@@ -1021,14 +1023,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #13aff0', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_link_active_background', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_social_links_bg', // Same as setting name.
 		        array(
@@ -1038,14 +1040,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a background color for the simple social style. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_social_links_bg', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_social_hover_links_bg', // Same as setting name.
 		        array(
@@ -1055,14 +1057,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a background color for the simple social style. Hex code, ex: #333', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_social_hover_links_bg', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_social_links_color', // Same as setting name.
 		        array(
@@ -1072,14 +1074,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color for the simple social style. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_social_links_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_menu_social_hover_links_color', // Same as setting name.
 		        array(
@@ -1089,14 +1091,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color for the simple social style. Hex code, ex: #13aff0', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_menu_social_hover_links_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_title',
 		        array(
@@ -1104,7 +1106,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-admin-tools'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_disable_title', // Same as setting name.
 		        array(
@@ -1119,7 +1121,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_disable_title', // Same as control name.
 		        array(
@@ -1127,7 +1129,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_disable_heading', // Same as setting name.
 		        array(
@@ -1142,7 +1144,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_disable_heading', // Same as control name.
 		        array(
@@ -1150,7 +1152,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_post_title', // Same as setting name.
 		        array(
@@ -1160,14 +1162,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Alter the main title display.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'wp_kses_post',
 		        )
 		    );
-		
+
 			$manager->register_control(
 		        'ocean_post_subheading', // Same as setting name.
 		        array(
@@ -1177,14 +1179,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Enter your page subheading. Shortcodes & HTML is allowed.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_subheading', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'wp_kses_post',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_title_style', // Same as setting name.
 		        array(
@@ -1195,14 +1197,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'title_styles' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_style', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_key',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_title_background_color', // Same as setting name.
 		        array(
@@ -1212,14 +1214,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a hex color code, ex: #333', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_background_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_title_background', // Same as setting name.
 		        array(
@@ -1229,7 +1231,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a custom image for your main title.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_background', // Same as control name.
 		        array(
@@ -1258,7 +1260,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_image_position', // Same as control name.
 		        array(
@@ -1280,7 +1282,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_image_attachment', // Same as control name.
 		        array(
@@ -1304,7 +1306,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_image_repeat', // Same as control name.
 		        array(
@@ -1327,7 +1329,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_image_size', // Same as control name.
 		        array(
@@ -1348,7 +1350,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_height', // Same as control name.
 		        array(
@@ -1370,14 +1372,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_overlay', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_title_bg_overlay_color', // Same as setting name.
 		        array(
@@ -1387,14 +1389,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #333', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_title_bg_overlay_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_breadcrumbs',
 		        array(
@@ -1402,7 +1404,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-admin-home'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_disable_breadcrumbs', // Same as setting name.
 		        array(
@@ -1417,7 +1419,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_disable_breadcrumbs', // Same as control name.
 		        array(
@@ -1425,7 +1427,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_breadcrumbs_color', // Same as setting name.
 		        array(
@@ -1435,14 +1437,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_breadcrumbs_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_breadcrumbs_separator_color', // Same as setting name.
 		        array(
@@ -1452,14 +1454,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_breadcrumbs_separator_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_breadcrumbs_links_color', // Same as setting name.
 		        array(
@@ -1469,14 +1471,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #fff', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_breadcrumbs_links_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_breadcrumbs_links_hover_color', // Same as setting name.
 		        array(
@@ -1486,14 +1488,14 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Select a color. Hex code, ex: #ddd', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_breadcrumbs_links_hover_color', // Same as control name.
 		        array(
 		            'sanitize_callback' => 'butterbean_maybe_hash_hex_color',
 		        )
 		    );
-			
+
 			$manager->register_section(
 		        'oceanwp_mb_footer',
 		        array(
@@ -1501,7 +1503,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'icon'  => 'dashicons-hammer'
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_display_footer_widgets', // Same as setting name.
 		        array(
@@ -1516,7 +1518,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_display_footer_widgets', // Same as control name.
 		        array(
@@ -1524,7 +1526,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_display_footer_bottom', // Same as setting name.
 		        array(
@@ -1539,7 +1541,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_display_footer_bottom', // Same as control name.
 		        array(
@@ -1547,7 +1549,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'default',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_custom_footer_template', // Same as setting name.
 		        array(
@@ -1558,7 +1560,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'choices' 		=> $this->helpers( 'library' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_custom_footer_template', // Same as control name.
 		        array(
@@ -1582,7 +1584,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 
 			// Gets the manager object we want to add sections to.
 			$manager = $butterbean->get_manager( 'oceanwp_mb_settings' );
-						
+
 			$manager->register_section(
 		        'oceanwp_mb_post',
 		        array(
@@ -1624,7 +1626,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'sanitize_callback' => 'sanitize_text_field',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_post_video_embed', // Same as setting name.
 		        array(
@@ -1635,7 +1637,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'attr'    		=> array( 'row' => '2', 'cols' => '1' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_post_video_embed' // Same as control name.
 		    );
@@ -1649,7 +1651,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'description'   => esc_html__( 'Enter your external url. This setting is used for your link post formats.', 'ocean-extra' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_link_format', // Same as control name.
 		        array(
@@ -1670,7 +1672,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_link_format_target', // Same as control name.
 		        array(
@@ -1678,7 +1680,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 		            'default' 			=> 'self',
 		        )
 		    );
-			
+
 			$manager->register_control(
 		        'ocean_quote_format', // Same as setting name.
 		        array(
@@ -1689,7 +1691,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					'attr'    		=> array( 'row' => '2', 'cols' => '1' ),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_quote_format', // Same as control name.
 		        array(
@@ -1710,7 +1712,7 @@ if ( ! class_exists( 'OceanWP_Post_Metabox' ) ) {
 					),
 		        )
 		    );
-			
+
 			$manager->register_setting(
 		        'ocean_quote_format_link', // Same as control name.
 		        array(
