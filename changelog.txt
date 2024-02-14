@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.2.5 - FEB 14 2024 =
+- Improved: Metabox Settings: Conditional logic for backend asset loading.
+- Fixed: PHP Warning: in_array() expects parameter 2 to be array, null given in .../ocean-extra/includes/post-settings/post-settings.php on line 134
+- Fixed: Potential vulnerability patched. Report by Wordfence from Feb 6th 2024.
+
 = 2.2.4 - DEC 11 2023 =
 - Updated: Font Awesome Library to 6.5.1 version.
 - Updated: Woo Fragments function: Check Woo Cart Total and Woo Cart Items Count.

@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.4.2
-Stable tag: 2.2.4
+Tested up to: 6.4.3
+Stable tag: 2.2.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -215,6 +215,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.2.5 - FEB 14 2024 =
+- Improved: Metabox Settings: Conditional logic for backend asset loading.
+- Fixed: PHP Warning: in_array() expects parameter 2 to be array, null given in .../ocean-extra/includes/post-settings/post-settings.php on line 134
+- Fixed: Potential vulnerability patched. Report by Wordfence from Feb 6th 2024.
 
 = 2.2.4 - DEC 11 2023 =
 - Updated: Font Awesome Library to 6.5.1 version.
