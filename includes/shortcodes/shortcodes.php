@@ -847,6 +847,7 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 	function oceanwp_svg_icon_shortcode( $atts, $content = null ) {
 
 		$owp_icon = '';
+		$location = true;
 
 		// Extract attributes.
 		$attr = shortcode_atts(
@@ -854,6 +855,7 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 				'icon'        => 'Add an icon class',
 				'class'       => '',
 				'title'       => '',
+				'location'    => $location,
 				'desc'        => '',
 				'area_hidden' => true,
 				'fallback'    => false,
@@ -861,8 +863,19 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 			$atts
 		);
 
-		if ( function_exists( 'ocean_svg' ) ) {
-			$owp_icon = ocean_svg( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
+		if ( isset($attr['location']) && $attr['location'] === "true" ) {
+			$location = true;
+
+			if ( function_exists( 'ocean_svg' ) ) {
+				$owp_icon = ocean_svg( $attr['icon'], $location, false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
+			}
+
+		} else if ( isset($attr['location']) && $attr['location'] === "false" ) {
+			$location = false;
+
+			if ( function_exists( 'oceanwp_icon' ) ) {
+				$owp_icon = oceanwp_icon( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback']);
+			}
 		}
 
 		return $owp_icon;
