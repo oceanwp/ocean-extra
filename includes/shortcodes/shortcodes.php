@@ -865,14 +865,15 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 
 		if ( isset($attr['location']) && $attr['location'] === "true" ) {
 			$location = true;
+		} else if ( isset($attr['location']) && $attr['location'] === "false" ) {
+			$location = false;
+		}
 
+		if ( true === $location ) {
 			if ( function_exists( 'ocean_svg' ) ) {
 				$owp_icon = ocean_svg( $attr['icon'], $location, false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback'] );
 			}
-
-		} else if ( isset($attr['location']) && $attr['location'] === "false" ) {
-			$location = false;
-
+		} else {
 			if ( function_exists( 'oceanwp_icon' ) ) {
 				$owp_icon = oceanwp_icon( $attr['icon'], false, $attr['class'], $attr['title'], $attr['desc'], $attr['area_hidden'], $attr['fallback']);
 			}
