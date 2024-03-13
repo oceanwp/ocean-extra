@@ -288,7 +288,10 @@ if ( ! function_exists( 'oceanwp_gallery_is_lightbox_enabled' ) ) {
 
 	function oceanwp_gallery_is_lightbox_enabled() {
 
-		if ( 'on' == get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true ) ) {
+		$perf_lightbox = get_theme_mod( 'ocean_performance_lightbox', 'enabled' );
+
+		if ( 'on' == get_post_meta( get_the_ID(), 'ocean_gallery_link_images', true )
+			&& $perf_lightbox === 'enabled' ) {
 			return true;
 		}
 
