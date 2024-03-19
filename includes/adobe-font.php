@@ -257,11 +257,14 @@ if ( ! class_exists( 'OceanWP_Adobe_Font' ) ) {
 		 *
 		 * @param array $fonts Add Adobe Fonts to the list of available fonts.
 		 */
+
 		public function add_elementor_fonts( $fonts ) {
 			$fonts_list   = get_option( 'oe-adobe-fonts' );
-			$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
 			$custom_fonts = array();
-			if ( ! empty( $all_fonts ) ) {
+
+			// Check if $fonts_list is an array and if 'oe-adobe-fonts-list' key exists.
+			if ( is_array( $fonts_list ) && ! empty( $fonts_list['oe-adobe-fonts-list'] ) ) {
+				$all_fonts = $fonts_list['oe-adobe-fonts-list'];
 				foreach ( $all_fonts as $font_family_name => $fonts_url ) {
 					$font_slug                 = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
 					$font_css                  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
