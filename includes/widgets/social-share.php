@@ -260,18 +260,18 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 						if ( ! isset( $social_array[ $social_key ] ) ) {
 							continue;
 						}
-						$name    = $social_array[$social_key]['name'];
-						$title   = $social_array[$social_key]['title'];
-						$url     = $social_array[$social_key]['url'];
+						$name    = esc_html($social_array[$social_key]['name']);
+						$title   = esc_attr($social_array[$social_key]['title']);
+						$url     = esc_url($social_array[$social_key]['url']);
 						$icon    = $social_array[$social_key]['icon'];
 
 						if ( $social_key == 'twitter' && !empty( $twitter_username ) ) {
-							$url = $url . '&amp;via='.$twitter_username;
+							$url = esc_url($url . '&amp;via=' . $twitter_username);
 						}
 
 						echo '<li class="'. esc_attr( $social_key ) .'">';
 
-							echo '<a href="'. $url .'" title="'. esc_attr( $title ) .'" '. wp_kses_post( $add_style ) . ' onclick="owpShareOnClick( this.href );return false;">';
+							echo '<a href="'. esc_url($url) .'" title="'. esc_attr( $title ) .'" '. wp_kses_post( $add_style ) . ' onclick="owpShareOnClick( this.href );return false;">';
 
 								echo '<span class="owp-icon-wrap">';
 									echo $icon;
