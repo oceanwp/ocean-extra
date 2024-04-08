@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.2.7 - APR 08 2024 =
+- Fixed: Potential vulnerability patched: Wordfence report from Apr 3rd 2024. A special thanks goes towards the Wordfence team for doublechecking everything as always.
+
 = 2.2.6 - MAR 12 2024 =
 - Added: Shortcode: [oceanwp_icon]: New shortcode parameter "location" to differentiate the use of specific icon libraries.  https://docs.oceanwp.org/article/779-oceanwp-icon-shortcode
 - Fixed: Theme: Lightbox feature remains enabled on Gutenberg Gallery block even if disabled via Customize > General Options > Performance. Requires the latest version of the OceanWP theme.
