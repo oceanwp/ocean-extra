@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_before_top_bar' ) ) {
 	function oceanwp_shortcode_before_top_bar() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_before_top_bar', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_before_top_bar', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -28,7 +28,7 @@ if ( ! function_exists( 'oceanwp_shortcode_before_top_bar' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_after_top_bar' ) ) {
 	function oceanwp_shortcode_after_top_bar() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_after_top_bar', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_after_top_bar', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -40,7 +40,7 @@ if ( ! function_exists( 'oceanwp_shortcode_after_top_bar' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_before_header' ) ) {
 	function oceanwp_shortcode_before_header() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_before_header', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_before_header', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -52,7 +52,7 @@ if ( ! function_exists( 'oceanwp_shortcode_before_header' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_after_header' ) ) {
 	function oceanwp_shortcode_after_header() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_after_header', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_after_header', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -64,7 +64,7 @@ if ( ! function_exists( 'oceanwp_shortcode_after_header' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_before_title' ) ) {
 	function oceanwp_shortcode_before_title() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_has_shortcode', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_has_shortcode', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -76,7 +76,7 @@ if ( ! function_exists( 'oceanwp_shortcode_before_title' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_after_title' ) ) {
 	function oceanwp_shortcode_after_title() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_after_title', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_after_title', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -88,7 +88,7 @@ if ( ! function_exists( 'oceanwp_shortcode_after_title' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_before_footer_widgets' ) ) {
 	function oceanwp_shortcode_before_footer_widgets() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_before_footer_widgets', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_before_footer_widgets', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -100,7 +100,7 @@ if ( ! function_exists( 'oceanwp_shortcode_before_footer_widgets' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_after_footer_widgets' ) ) {
 	function oceanwp_shortcode_after_footer_widgets() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_after_footer_widgets', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_after_footer_widgets', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -112,7 +112,7 @@ if ( ! function_exists( 'oceanwp_shortcode_after_footer_widgets' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_before_footer_bottom' ) ) {
 	function oceanwp_shortcode_before_footer_bottom() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_before_footer_bottom', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_before_footer_bottom', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
@@ -124,7 +124,7 @@ if ( ! function_exists( 'oceanwp_shortcode_before_footer_bottom' ) ) {
 if ( ! function_exists( 'oceanwp_shortcode_after_footer_bottom' ) ) {
 	function oceanwp_shortcode_after_footer_bottom() {
 
-		if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_shortcode_after_footer_bottom', true ) ) {
+		if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_shortcode_after_footer_bottom', true ) ) {
 			echo do_shortcode( $meta );
 		}
 
