@@ -28,7 +28,7 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
 
         public function assets() {
 
-            $uri   = OE_URL . 'includes/customizer/assets/';
+            $uri = OE_URL . 'includes/customizer/assets/';
 
             wp_enqueue_script(
                 'oe-customize-script',

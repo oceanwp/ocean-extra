@@ -1,5 +1,5 @@
 #customize-preview {
-    .wp-full-overlay-main {
+    &.wp-full-overlay-main {
         &::before {
             position: absolute;
             left: 0;
