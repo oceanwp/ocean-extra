@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.2.7
+ * Version:             2.2.8
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.5
+ * Tested up to:        6.5.3
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -307,6 +307,50 @@ final class Ocean_Extra {
 	}
 
 	/**
+	 * Return post id
+	 *
+	 * @since 2.2.8
+	 * @return string Post id.
+	 */
+	public static function oe_post_id() {
+
+		if ( function_exists( 'oceanwp_post_id' ) ) {
+			return oceanwp_post_id();
+		} else {
+			// Default value.
+			$id = '';
+
+			// If singular get_the_ID.
+			if ( is_singular() ) {
+				$id = get_the_ID();
+			}
+
+			// Get ID of WooCommerce product archive.
+			elseif ( OCEANWP_WOOCOMMERCE_ACTIVE && is_shop() ) {
+				$shop_id = wc_get_page_id( 'shop' );
+				if ( isset( $shop_id ) ) {
+					$id = $shop_id;
+				}
+			}
+
+			// Posts page.
+			elseif ( is_home() && $page_for_posts = get_option( 'page_for_posts' ) ) {
+				$id = $page_for_posts;
+			}
+
+			// Apply filters.
+			$id = apply_filters( 'ocean_post_id', $id );
+
+			// Sanitize.
+			$id = $id ? $id : '';
+
+			// Return ID.
+			return $id;
+		}
+
+	}
+
+	/**
 	 * LearnDash compatibility with OceanWP Metabox.
 	 */
 	public function oe_custom_field_support_metabox( $args, $post_type ) {
@@ -576,7 +620,7 @@ final class Ocean_Extra {
 			$output .= self::opengraph_tag( 'property', 'og:description', trim( $description ) );
 		}
 
-		if ( has_post_thumbnail( oceanwp_post_id() ) && true == $has_img ) {
+		if ( has_post_thumbnail( self::oe_post_id() ) && true == $has_img ) {
 			$output .= self::opengraph_tag( 'property', 'og:image', trim( $image ) );
 			$output .= self::opengraph_tag( 'property', 'og:image:width', absint( $get_image[1] ) );
 			$output .= self::opengraph_tag( 'property', 'og:image:height', absint( $get_image[2] ) );

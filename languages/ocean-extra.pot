@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.2.7\n"
+"Project-Id-Version: Ocean Extra 2.2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-08T05:29:46+00:00\n"
+"POT-Creation-Date: 2024-05-22T07:02:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: ocean-extra\n"
@@ -7087,35 +7087,55 @@ msgstr ""
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
-#: includes/post-settings/functions.php:286
+#: includes/post-settings/functions.php:150
+msgid "Pages"
+msgstr ""
+
+#: includes/post-settings/functions.php:167
+msgid "Categories"
+msgstr ""
+
+#: includes/post-settings/functions.php:184
+msgid "Shop"
+msgstr ""
+
+#: includes/post-settings/functions.php:201
+msgid "Product Categories"
+msgstr ""
+
+#: includes/post-settings/functions.php:218
+msgid "others"
+msgstr ""
+
+#: includes/post-settings/functions.php:320
 msgid "All Pages"
 msgstr ""
 
-#: includes/post-settings/functions.php:287
+#: includes/post-settings/functions.php:321
 msgid "Home Page ( is_home() )"
 msgstr ""
 
-#: includes/post-settings/functions.php:288
+#: includes/post-settings/functions.php:322
 msgid "Front Page ( is_front_page() )"
 msgstr ""
 
-#: includes/post-settings/functions.php:299
+#: includes/post-settings/functions.php:345
 msgid "Single Post"
 msgstr ""
 
-#: includes/post-settings/functions.php:300
+#: includes/post-settings/functions.php:346
 msgid "Category Page"
 msgstr ""
 
-#: includes/post-settings/functions.php:301
+#: includes/post-settings/functions.php:347
 msgid "Archive Page"
 msgstr ""
 
-#: includes/post-settings/functions.php:302
+#: includes/post-settings/functions.php:348
 msgid "Logged In User"
 msgstr ""
 
-#: includes/post-settings/functions.php:303
+#: includes/post-settings/functions.php:349
 msgid "Logged Out User"
 msgstr ""
 

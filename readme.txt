@@ -2,9 +2,9 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.5
-Stable tag: 2.2.7
-Requires PHP: 7.2
+Tested up to: 6.5.3
+Stable tag: 2.2.8
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -215,6 +215,12 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.2.8 - MAY 22 2024 =
+- Added: Additional support for the oceanwp_post_id() function.
+- Added: Support for new functionality for Ocean Hooks 2.1.1 version.
+- Updated: Freemius SDK to 2.7.2 version.
+- Updated: Compatibility: WordPress version.
 
 = 2.2.7 - APR 08 2024 =
 - Fixed: Potential vulnerability patched: Wordfence report from Apr 3rd 2024. A special thanks goes towards the Wordfence team for doublechecking everything as always.
