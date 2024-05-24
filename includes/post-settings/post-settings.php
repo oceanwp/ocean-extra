@@ -201,6 +201,10 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 				return;
 			}
 
+			if ( is_customize_preview() ) {
+				return;
+			}
+
 			if ( get_current_screen()->base === 'widgets' ) {
 				return;
 			}
