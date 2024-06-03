@@ -28,6 +28,8 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 					'customize_selective_refresh' => true,
 				)
 			);
+
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		/**
@@ -40,29 +42,23 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			$title  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : 0;
-			$id     = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
+			$id = isset( $instance['id'] ) ? $instance['id'] : '';
 
-			// Before widget WP hook
 			echo $args['before_widget'];
-
-				// Show widget title
-			if ( $title ) {
-				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+			if ( ! empty( $instance['title'] ) ) {
+				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 			}
 
-			// Display flickr feed if ID is defined
 			if ( $id ) : ?>
 				<div class="oceanwp-flickr-wrap">
-					<script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=<?php echo esc_attr( $number ); ?>&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=<?php echo esc_attr( $id ); ?>"></script>
-					<p class="flickr_stream_wrap"><a class="follow_btn" href="https://www.flickr.com/photos/<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
+					<div id="oceanwp-flickr-photos"></div>
+					<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo strip_tags( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
 				</div>
 				<?php
 			endif;
 
-			// After widget WP hook
 			echo $args['after_widget'];
+
 
 		}
 
@@ -127,6 +123,18 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 
 			<?php
 
+		}
+
+		public function enqueue_scripts() {
+			wp_enqueue_script( 'flickr-widget-script', OE_URL . 'includes/widgets/js/flickr.min.js', array( 'jquery' ), false, true );
+
+			$instance = $this->get_settings();
+			$user_id = ! empty( $instance[ $this->number ]['id'] ) ? sanitize_text_field( $instance[ $this->number ]['id'] ) : '';
+			$maxPhotos = ! empty( $instance[ $this->number ]['number'] ) ? intval( $instance[ $this->number ]['number'] ) : '';
+			wp_localize_script( 'flickr-widget-script', 'flickrWidgetParams', array(
+				'userId' => $user_id,
+				'maxPhotos'  => $maxPhotos,
+			) );
 		}
 
 	}
