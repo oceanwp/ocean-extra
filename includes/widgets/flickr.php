@@ -41,25 +41,25 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		public function widget( $args, $instance ) {
 
 			$title  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$number = isset( $instance['number'] ) ? $instance['number'] : '';
-			$id     = isset( $instance['id'] ) ? $instance['id'] : '';
+			$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : 0;
+			$id     = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
 
 			// Before widget WP hook
 			echo $args['before_widget'];
 
 				// Show widget title
 			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			}
 
-				// Display flickr feed if ID is defined
+			// Display flickr feed if ID is defined
 			if ( $id ) : ?>
-					<div class="oceanwp-flickr-wrap">
-						<script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=<?php echo intval( $number ); ?>&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=<?php echo strip_tags( $id ); ?>"></script>
-						<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo strip_tags( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
-					</div>
+				<div class="oceanwp-flickr-wrap">
+					<script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=<?php echo esc_attr( $number ); ?>&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=<?php echo esc_attr( $id ); ?>"></script>
+					<p class="flickr_stream_wrap"><a class="follow_btn" href="https://www.flickr.com/photos/<?php echo esc_attr( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
+				</div>
 				<?php
-				endif;
+			endif;
 
 			// After widget WP hook
 			echo $args['after_widget'];
@@ -79,9 +79,9 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 */
 		public function update( $new_instance, $old_instance ) {
 			$instance           = $old_instance;
-			$instance['title']  = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
+			$instance['title']  = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 			$instance['number'] = ! empty( $new_instance['number'] ) ? intval( $new_instance['number'] ) : '';
-			$instance['id']     = ! empty( $new_instance['id'] ) ? strip_tags( $new_instance['id'] ) : '';
+			$instance['id']     = ! empty( $new_instance['id'] ) ? sanitize_text_field( $new_instance['id'] ) : '';
 			return $instance;
 		}
 
@@ -103,9 +103,9 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 				)
 			);
 
-			$title  = $settings['title'];
-			$id     = $settings['id'];
-			$number = $settings['number'];
+			$title  = esc_attr( $settings['title'] );
+			$id     = esc_attr( $settings['id'] );
+			$number = intval( $settings['number'] );
 
 			?>
 			<p>
@@ -114,14 +114,14 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'id' ); ?>"><?php esc_html_e( 'Flickr ID', 'ocean-extra' ); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'id' ); ?>" name="<?php echo $this->get_field_name( 'id' ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php esc_html_e( 'Flickr ID', 'ocean-extra' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>" />
 				<small><?php esc_html_e( 'Enter the url of your Flickr page on this site: idgettr.com.', 'ocean-extra' ); ?></small>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number:', 'ocean-extra' ); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number:', 'ocean-extra' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" value="<?php echo esc_attr( $number ); ?>" />
 				<small><?php esc_html_e( 'The maximum is 10 images.', 'ocean-extra' ); ?></small>
 			</p>
 
