@@ -42,7 +42,7 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			$id = isset( $instance['id'] ) ? $instance['id'] : '';
+			$id = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
 
 			echo $args['before_widget'];
 			if ( ! empty( $instance['title'] ) ) {
