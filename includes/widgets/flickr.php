@@ -5,7 +5,7 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -42,16 +42,22 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 */
 		public function widget( $args, $instance ) {
 
-			$id = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
+			$title  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
+			$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : '';
+			$id     = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
+
 
 			echo $args['before_widget'];
+
 			if ( ! empty( $instance['title'] ) ) {
-				echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			}
+
+			$unique_id = 'oceanwp_flickr_photos_' . esc_attr( $this->number );
 
 			if ( $id ) : ?>
 				<div class="oceanwp-flickr-wrap">
-					<div id="oceanwp-flickr-photos"></div>
+					<div id="<?php echo $unique_id; ?>" class="oceanwp-flickr-container" data-user-id="<?php echo esc_attr( $id ); ?>" data-max-photos="<?php echo intval( $number ); ?>"></div>
 					<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo strip_tags( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
 				</div>
 				<?php
@@ -125,16 +131,26 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 
 		}
 
+		/**
+		 * Scripts
+		 */
 		public function enqueue_scripts() {
 			wp_enqueue_script( 'flickr-widget-script', OE_URL . 'includes/widgets/js/flickr.min.js', array( 'jquery' ), false, true );
 
-			$instance = $this->get_settings();
-			$user_id = ! empty( $instance[ $this->number ]['id'] ) ? sanitize_text_field( $instance[ $this->number ]['id'] ) : '';
-			$maxPhotos = ! empty( $instance[ $this->number ]['number'] ) ? intval( $instance[ $this->number ]['number'] ) : '';
+			$widgets_settings = $this->get_settings();
+			$localized_data = array();
+
+			foreach ( $widgets_settings as $number => $instance ) {
+				$localized_data[] = array(
+					'userId' => ! empty( $instance['id'] ) ? esc_attr( $instance['id'] ) : '',
+					'maxPhotos' => ! empty( $instance['number'] ) ? intval( $instance['number'] ) : 6,
+					'containerId' => 'oceanwp-flickr-photos-' . esc_attr( $number ),
+				);
+			}
+
 			wp_localize_script( 'flickr-widget-script', 'flickrWidgetParams', array(
-				'userId' => $user_id,
-				'maxPhotos'  => $maxPhotos,
-			) );
+				'widgets' => $localized_data,
+			));
 		}
 
 	}

@@ -1,30 +1,30 @@
 jQuery(document).ready(function($) {
-    var userId = flickrWidgetParams.userId;
-    var maxPhotos = flickrWidgetParams.maxPhotos;
-    var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?id=' + userId + '&format=json';
 
-    function getPhotoUrl(photo) {
-        return photo.media.m.replace('_m.jpg', '_q.jpg');
-    }
+    $('.oceanwp-flickr-container').each(function() {
+        var $container = $(this);
+        var userId = $container.data('user-id');
+        var maxPhotos = $container.data('max-photos');
+        var containerId = $container.attr('id');
+        var callbackName = 'jsonFlickrFeed_' + containerId;
+        var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?id=' + userId + '&format=json&jsoncallback=' + callbackName;
 
-    $.ajax({
-        url: feedUrl,
-        dataType: 'jsonp',
-        jsonpCallback: 'jsonFlickrFeed',
-        success: function(data) {
+        function getPhotoUrl(photo) {
+            return photo.media.m.replace('_m.jpg', '_q.jpg');
+        }
+
+        window[callbackName] = function(data) {
             var counter = 0;
             $.each(data.items, function(i, item) {
                 if (counter < maxPhotos) {
                     var photoUrl = getPhotoUrl(item);
-                    $('#oceanwp-flickr-photos').append('<img src="' + photoUrl + '" alt="' + item.title + '">');
+                    $container.append('<img src="' + photoUrl + '" alt="' + item.title + '">');
                     counter++;
-                } else {
-                    return false;
                 }
             });
-        },
-        error: function(xhr, status, error) {
-            console.error('Error fetching Flickr feed:', error);
-        }
+        };
+
+        var script = document.createElement('script');
+        script.src = feedUrl;
+        document.head.appendChild(script);
     });
 });
