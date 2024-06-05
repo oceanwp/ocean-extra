@@ -53,7 +53,7 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			}
 
-			$unique_id = 'oceanwp_flickr_photos_' . esc_attr( $this->number );
+			$unique_id = 'oceanwp_flickr_photos_' . uniqid() . '_' . md5(rand());
 
 			if ( $id ) : ?>
 				<div class="oceanwp-flickr-wrap">
