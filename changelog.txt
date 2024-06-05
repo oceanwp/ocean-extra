@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.2.9 - JUN 05 2024 =
+- Fixed: Potential vulnerability patched: Wordfence report from Jun 3rd 2024. A special thanks goes towards the Wordfence team for doublechecking everything as always.
+- Fixed: WordPress Widgets: Flickr: if widget in use more than once on a page, images display with a single widget only.
+- Fixed: Customizer: Console error while Customizer in use: Store "core / interface" is already registered.
+
 = 2.2.8 - MAY 22 2024 =
 - Added: Additional support for the oceanwp_post_id() function.
 - Added: Support for new functionality for Ocean Hooks 2.1.1 version.

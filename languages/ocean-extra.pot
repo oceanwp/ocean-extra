@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.2.8\n"
+"Project-Id-Version: Ocean Extra 2.2.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-22T07:02:04+00:00\n"
+"POT-Creation-Date: 2024-06-05T07:21:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: ocean-extra\n"
@@ -6157,7 +6157,7 @@ msgstr ""
 #: includes/widgets/custom-links.php:139
 #: includes/widgets/custom-menu.php:290
 #: includes/widgets/facebook.php:185
-#: includes/widgets/flickr.php:112
+#: includes/widgets/flickr.php:114
 #: includes/widgets/instagram.php:135
 #: includes/widgets/mailchimp.php:250
 #: includes/widgets/recent-posts.php:223
@@ -8248,27 +8248,27 @@ msgstr ""
 msgid "Pulls in images from your flickr account."
 msgstr ""
 
-#: includes/widgets/flickr.php:59
+#: includes/widgets/flickr.php:61
 msgid "View stream on flickr"
 msgstr ""
 
-#: includes/widgets/flickr.php:100
+#: includes/widgets/flickr.php:102
 msgid "Flickr Photos"
 msgstr ""
 
-#: includes/widgets/flickr.php:117
+#: includes/widgets/flickr.php:119
 msgid "Flickr ID"
 msgstr ""
 
-#: includes/widgets/flickr.php:119
+#: includes/widgets/flickr.php:121
 msgid "Enter the url of your Flickr page on this site: idgettr.com."
 msgstr ""
 
-#: includes/widgets/flickr.php:123
+#: includes/widgets/flickr.php:125
 msgid "Number:"
 msgstr ""
 
-#: includes/widgets/flickr.php:125
+#: includes/widgets/flickr.php:127
 msgid "The maximum is 10 images."
 msgstr ""
 

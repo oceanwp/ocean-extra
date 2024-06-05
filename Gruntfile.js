@@ -23,6 +23,7 @@ module.exports = function (grunt) {
                     "includes/metabox/controls/assets/js/butterbean.min.js": "includes/metabox/controls/assets/js/butterbean.js",
                     "includes/widgets/js/insta-admin.min.js": "includes/widgets/js/insta-admin.js",
                     "includes/widgets/js/mailchimp.min.js": "includes/widgets/js/mailchimp.js",
+                    "includes/widgets/js/flickr.min.js": "includes/widgets/js/flickr.js",
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
                     "includes/shortcodes/js/shortcode.min.js": "includes/shortcodes/js/shortcode.js",
                     "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
