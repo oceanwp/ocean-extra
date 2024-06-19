@@ -28,6 +28,7 @@ module.exports = function (grunt) {
                     "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
                     "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.js",
                     "includes/preloader/assets/js/customize-preview.min.js": "includes/preloader/assets/js/customize-preview.js",
+                    "includes/themepanel/assets/js/theme-panel.min.js": "includes/themepanel/assets/js/theme-panel.js",
                 },
             },
         },

@@ -28,9 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     addIconToCustomizerSection('ocean_colors', oceanSectionCustomize.sectionIcons.color);
     addIconToCustomizerSection('ocean_styles_and_settings', oceanSectionCustomize.sectionIcons.siteSetting);
     addIconToCustomizerSection('ocean_site_page_settings', oceanSectionCustomize.sectionIcons.pageSetting);
-    addIconToCustomizerSection('ocean_topbar_settings', oceanSectionCustomize.sectionIcons.topbar);
-    addIconToCustomizerSection('ocean_header_settings', oceanSectionCustomize.sectionIcons.header);
-    addIconToCustomizerSection('ocean_blog_settings', oceanSectionCustomize.sectionIcons.blog);
+    addIconToCustomizerSection('ocean_topbar', oceanSectionCustomize.sectionIcons.topbar);
+    addIconToCustomizerSection('ocean_header', oceanSectionCustomize.sectionIcons.header);
+    addIconToCustomizerSection('ocean_blog', oceanSectionCustomize.sectionIcons.blog);
+    addIconToCustomizerSection('ocean_sidebar', oceanSectionCustomize.sectionIcons.sidebar);
     addIconToCustomizerSection('ocean_site_layout_section', oceanSectionCustomize.sectionIcons.siteLayout);
     addIconToCustomizerSection('ocean_site_icon_section', oceanSectionCustomize.sectionIcons.siteIcon);
     addIconToCustomizerSection('ocean_site_button_section', oceanSectionCustomize.sectionIcons.siteButton);
@@ -39,6 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     addIconToCustomizerSection('ocean_site_pagination_section', oceanSectionCustomize.sectionIcons.sitePagination);
     addIconToCustomizerSection('ocean_section_page_search_result', oceanSectionCustomize.sectionIcons.sitePageSearchResult);
     addIconToCustomizerSection('ocean_section_page_404_error', oceanSectionCustomize.sectionIcons.sitePage404);
-    addIconToCustomizerSection('ocean_footer_widget_settings', oceanSectionCustomize.sectionIcons.footerWidget);
-    addIconToCustomizerSection('ocean_footer_copyright_settings', oceanSectionCustomize.sectionIcons.footerCopyright);
+    addIconToCustomizerSection('ocean_footer_widgets', oceanSectionCustomize.sectionIcons.footerWidget);
+    addIconToCustomizerSection('ocean_footer_bottom', oceanSectionCustomize.sectionIcons.footerCopyright);
 });

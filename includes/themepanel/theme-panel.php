@@ -132,6 +132,12 @@ class Ocean_Extra_New_Theme_Panel {
 			$value = array_map( 'sanitize_text_field', $value );
 			$value = self::validate_panels( $value );
 		}
+
+		// Ensure $value is an array and hold default settings even if all settings are false.
+		if ($value === null || !is_array($value)) {
+			$value = array_fill_keys(array_keys(self::get_panels()), false);
+		}
+
 		update_option( $option, $value );
 
 		wp_send_json_success(
@@ -493,8 +499,14 @@ class Ocean_Extra_New_Theme_Panel {
 	 */
 	public static function get_panels() {
 		$panels = array(
-			'oe_general_panel'        => array(
-				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
+			'oe_colors_panel'        => array(
+				'label' => esc_html__( 'Colors Panel', 'ocean-extra' ),
+			),
+			'oe_styles_and_settings_panel'        => array(
+				'label' => esc_html__( 'Site Style & Settings Panel', 'ocean-extra' ),
+			),
+			'oe_site_page_settings_panel'        => array(
+				'label' => esc_html__( 'Site Page Settings Panel', 'ocean-extra' ),
 			),
 			'oe_typography_panel'     => array(
 				'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
