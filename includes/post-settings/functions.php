@@ -372,7 +372,6 @@ function oe_get_woocommerce_page_list() {
 	return $pg_templates;
 }
 
-
 /**
  * Check if user need to upgrade.
  *
