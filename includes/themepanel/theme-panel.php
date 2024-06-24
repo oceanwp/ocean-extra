@@ -520,7 +520,7 @@ class Ocean_Extra_New_Theme_Panel {
 			'oe_site_performance_panel'        => array(
 				'label' => esc_html__( 'Site Performance Panel', 'ocean-extra' ),
 			),
-			'oe_seo_panel'        => array(
+			'oe_seo_settings_panel'        => array(
 				'label' => esc_html__( 'SEO Panel', 'ocean-extra' ),
 			),
 			'oe_blog_panel'           => array(
