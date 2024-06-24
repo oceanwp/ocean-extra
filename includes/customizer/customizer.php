@@ -24,6 +24,7 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'customize_controls_enqueue_scripts', array( $this, 'assets' ) );
+            add_action( 'customize_preview_init', array( $this, 'assets_preloader' ) );
 		}
 
         public function assets() {
@@ -41,7 +42,19 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
             wp_enqueue_style(
                 'oe-customize-preloader',
                 $uri . 'style.min.css',
-                array(),
+                [],
+                OE_VERSION
+            );
+        }
+
+        public function assets_preloader() {
+
+            $uri = OE_URL . 'includes/customizer/assets/';
+
+            wp_enqueue_style(
+                'oe-customize-preloader',
+                $uri . 'style.min.css',
+                [],
                 OE_VERSION
             );
         }
