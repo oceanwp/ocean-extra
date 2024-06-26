@@ -58,7 +58,7 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 			if ( $id ) : ?>
 				<div class="oceanwp-flickr-wrap">
 					<div id="<?php echo $unique_id; ?>" class="oceanwp-flickr-container" data-user-id="<?php echo esc_attr( $id ); ?>" data-max-photos="<?php echo intval( $number ); ?>"></div>
-					<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo strip_tags( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
+					<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo esc_attr(strip_tags($id)); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
 				</div>
 				<?php
 			endif;
