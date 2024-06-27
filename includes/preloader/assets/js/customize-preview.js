@@ -4,7 +4,7 @@
  * Contains handlers to make Preloader Customizer preview reload changes asynchronously.
  */
 
-let api = wp.customize;
+var api = wp.customize;
 
 api( 'ocean_preloader_content', function( value ) {
     value.bind( function( newval ) {
