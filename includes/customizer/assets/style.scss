@@ -69,3 +69,36 @@ body.wp-customizer-unloading::after {
         transform: rotateY(360deg);
     }
 }
+
+#customize-control {
+    &-ocean_info_content {
+        .ocean-customize-control__custom-content .control__custom-content-wrap.description {
+            background-color: unset;
+            border: none;
+        }
+
+        .ocean-info-container {
+            .info-heading {
+                color: var(--ocean-customize-color-primary, #2271b1);
+            }
+
+            p {
+                line-height: 1.6;
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        border-bottom: 2px solid var(--ocean-customize-color-primary, #2271b1);;
+                    }
+                }
+            }
+        }
+
+        .info-divider {
+            border-bottom: 1px solid #dadada;
+            display: block;
+            margin: 20px 0;
+        }
+    }
+}

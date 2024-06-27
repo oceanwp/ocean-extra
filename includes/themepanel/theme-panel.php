@@ -748,7 +748,7 @@ class Ocean_Extra_New_Theme_Panel {
 				} else {
 					update_option( 'oceanwp_hide_theme_panel_sidebar', false );
 				}*/
-			} elseif ( in_array( $key, array( 'hide_themes_customizer', 'hide_box', 'hide_changelog', 'whitelabel_oceanwp_panel', 'hide_small_nav_menu', 'hide_help_section', 'hide_download_section', 'hide_love_corner_section' ) ) ) {
+			} elseif ( in_array( $key, array( 'hide_themes_customizer', 'hide_info_customizer', 'hide_box', 'hide_changelog', 'whitelabel_oceanwp_panel', 'hide_small_nav_menu', 'hide_help_section', 'hide_download_section', 'hide_love_corner_section' ) ) ) {
 				if ( isset( $params['oceanwp_branding'][ $key ] ) ) {
 					update_option( 'oceanwp_' . $key, true );
 				} else {
