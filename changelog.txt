@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.3.0 - JUL 03 2024 =
+- Fixed: Potential vulnerability patched: Report by Patchstack from June 25th 2024.
+Updated: WordPress version for compatibility.
+
 = 2.2.9 - JUN 05 2024 =
 - Fixed: Potential vulnerability patched: Wordfence report from Jun 3rd 2024. A special thanks goes towards the Wordfence team for doublechecking everything as always.
 - Fixed: WordPress Widgets: Flickr: if widget in use more than once on a page, images display with a single widget only.
