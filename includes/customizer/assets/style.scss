@@ -102,3 +102,23 @@ body.wp-customizer-unloading::after {
         }
     }
 }
+
+body.is-customizer-style {
+    #customize-theme-controls {
+        .ocean-customizer-section {
+            &.last-item {
+                margin-bottom: 10px;
+            }
+            &.is-free {
+                .accordion-section-title {
+                    background-color: #fff4dc;
+                }
+            }
+            &.is-pro {
+                .accordion-section-title {
+                    background-color: #e4f5fc;
+                }
+            }
+        }
+    }
+}

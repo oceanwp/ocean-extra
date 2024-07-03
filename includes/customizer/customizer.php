@@ -35,7 +35,7 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
 
             $options['ocean_info'] = [
                 'title' => esc_html__('OceanWP Info', 'ocean-extra'),
-                'priority' => 16,
+                'priority' => 19,
                 'options' => [
                     'ocean_info_content' => [
                         'type' => 'ocean-content',

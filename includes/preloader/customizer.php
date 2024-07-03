@@ -77,8 +77,8 @@ class Ocean_Preloader_Customizer {
 	public function register_customize_options($options) {
 
 		$options['ocean_preloader'] = [
-			'title' => esc_html__('Preloader', 'ocean-extra'),
-			'priority' => 3,
+			'title' => esc_html__('Site Preloader', 'ocean-extra'),
+			'priority' => 12,
 			'options' => [
 				'ocean_preloader_enable' => [
 					'type' => 'ocean-switch',

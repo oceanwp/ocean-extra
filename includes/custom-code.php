@@ -43,7 +43,7 @@ if ( ! class_exists( 'OceanWP_Custom_Code_Customizer' ) ) :
 				$section,
 				array(
 					'title'    => esc_html__( 'Custom CSS/JS', 'ocean-extra' ),
-					'priority' => 15,
+					'priority' => 18,
 				)
 			);
 
