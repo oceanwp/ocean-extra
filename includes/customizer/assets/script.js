@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ocean_learndash_settings: { className: 'ocean-customizer-section section-lms-group' },
         ocean_lifterlms_settings: { className: 'ocean-customizer-section section-lms-group' },
         ocean_custom_code_panel: { iconClass: oceanSectionCustomize.sectionIcons.customCode, className: 'ocean-customizer-section section-extra-group' },
-        ocean_info: { className: 'ocean-customizer-section section-extra-group' }
+        ocean_info: { iconClass: oceanSectionCustomize.sectionIcons.themeInfo, className: 'ocean-customizer-section section-extra-group' }
     };
 
     // Function to add an icon and/or class to an existing section

@@ -106,7 +106,7 @@ class Ocean_Preloader_Customizer {
 					'label' => esc_html__( 'Preloader Type', 'ocean-extra' ),
 					'section' => 'ocean_preloader',
 					'default'  => 'default',
-					'transport' => 'postMessage',
+					'transport' => 'refresh',
 					'priority' => 10,
 					'hideLabel' => false,
 					'wrap'    => false,
@@ -211,7 +211,7 @@ class Ocean_Preloader_Customizer {
 					'priority' => 10,
 					'top' => 10,
 					'bottom' => 10,
-					'active_callback' => 'oe_cac_has_preloader',
+					'active_callback' => 'oe_cac_has_preloader_icon_svg',
 				],
 
 				'ocean_preloader_image_size' => [
@@ -321,16 +321,6 @@ class Ocean_Preloader_Customizer {
 					'css' => [
 						'.ocean-preloader--active .preloader-inner' => ['width']
 					]
-				],
-
-				'oe_divider_after_preloader_container_width' => [
-					'type' => 'ocean-divider',
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 10,
-					'bottom' => 10,
-					'active_callback' => 'oe_cac_has_preloader_custom',
 				],
 
 				'ocean_preloader_template' => [
