@@ -166,5 +166,14 @@ document.addEventListener("DOMContentLoaded", function () {
     wp.customize.bind('ready', function () {
         checkAndAddLastItemClass();
     });
+
+
+    var element = document.querySelector("#customize-preview.wp-full-overlay-main:not(.iframe-ready)");
+    if (element) {
+        var textNode = document.createElement("div");
+        textNode.classList.add('customizer-loader-text');
+        textNode.textContent = "Working your magic";
+        element.insertBefore(textNode, element.firstChild);
+    }
 });
 

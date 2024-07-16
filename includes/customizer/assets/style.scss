@@ -1,5 +1,22 @@
 #customize-preview {
     &.wp-full-overlay-main {
+
+        .customizer-loader-text {
+            display: none;
+            position: absolute;
+            margin-top: 70px;
+            top: 50%;
+            left: 46%;
+            transform: translate(-46%, 0);
+            text-align: center;
+            z-index: 10;
+
+            @media screen and (min-width: 600px) {
+                left: 49%;
+                transform: translate(-49%, 0);
+            }
+        }
+
         &:not(.iframe-ready) {
             &::before {
                 position: absolute;
@@ -14,7 +31,11 @@
                 background-size: 10%;
                 background-repeat: no-repeat;
                 background-position: center;
-                animation: flip 2s infinite;
+                //animation: flip 2s infinite;
+            }
+
+            .customizer-loader-text {
+                display: block;
             }
         }
     }
@@ -55,20 +76,20 @@ body.wp-customizer-unloading::after {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    animation: flip 2s infinite;
+    //animation: flip 2s infinite;
     left: 43%;
     top: 43%;
     transform: translate(-43%, -43%);
 }
 
-@keyframes flip {
-    0% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(360deg);
-    }
-}
+// @keyframes flip {
+//     0% {
+//         transform: rotateY(0deg);
+//     }
+//     100% {
+//         transform: rotateY(360deg);
+//     }
+// }
 
 #customize-control {
     &-ocean_info_content {
