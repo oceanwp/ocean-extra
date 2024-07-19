@@ -1,22 +1,5 @@
 #customize-preview {
     &.wp-full-overlay-main {
-
-        .customizer-loader-text {
-            display: none;
-            position: absolute;
-            margin-top: 70px;
-            top: 50%;
-            left: 46%;
-            transform: translate(-46%, 0);
-            text-align: center;
-            z-index: 10;
-
-            @media screen and (min-width: 600px) {
-                left: 49%;
-                transform: translate(-49%, 0);
-            }
-        }
-
         &:not(.iframe-ready) {
             &::before {
                 position: absolute;
@@ -32,10 +15,6 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 //animation: flip 2s infinite;
-            }
-
-            .customizer-loader-text {
-                display: block;
             }
         }
     }

@@ -10,6 +10,25 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
+        browserify: {
+            prod: {
+              files: {
+                "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.js",
+              },
+              options: {
+                transform: [["babelify", { presets: ["@babel/preset-env"] }]],
+              },
+            },
+            dev: {
+              files: {
+                "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.js",
+              },
+              options: {
+                transform: [["babelify", { presets: ["@babel/preset-env"] }]],
+              },
+            },
+        },
+
         // Concat and Minify our js.
         uglify: {
             dev: {
@@ -26,7 +45,7 @@ module.exports = function (grunt) {
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
                     "includes/shortcodes/js/shortcode.min.js": "includes/shortcodes/js/shortcode.js",
                     "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
-                    "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.js",
+                    "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.min.js",
                     "includes/preloader/assets/js/customize-preview.min.js": "includes/preloader/assets/js/customize-preview.js",
                     "includes/themepanel/assets/js/theme-panel.min.js": "includes/themepanel/assets/js/theme-panel.js",
                 },
@@ -168,7 +187,7 @@ module.exports = function (grunt) {
     });
 
     // Dev task
-    grunt.registerTask("default", ["uglify:dev", "sass:dist", "autoprefixer:main", "cssmin:prod"]);
+    grunt.registerTask("default", [ "browserify:prod", "browserify:dev", "uglify:dev", "sass:dist", "autoprefixer:main", "cssmin:prod"]);
 
     // Production task
     grunt.registerTask("build", ["copy"]);
