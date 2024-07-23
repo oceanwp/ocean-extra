@@ -50,8 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (typeof wp === 'undefined' || !wp.customize || !oceanSectionCustomize.isOE) {
     return;
-  } // Configuration object to specify which sections get icons and/or classes
-
+  }
 
   var sectionConfig = {
     ocean_typography: {
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_popup_login_settings: {
       iconClass: _svg.popupLogin,
-      className: 'ocean-customizer-section section-header-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_topbar: {
       iconClass: _svg.topbar,
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_sticky_header_settings: {
       iconClass: _svg.stickyHeader,
-      className: 'ocean-customizer-section section-header-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_blog: {
       iconClass: _svg.blog,
@@ -92,11 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_portfolio_settings: {
       iconClass: _svg.portfolio,
-      className: 'ocean-customizer-section section-blog-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_social_sharing_settings: {
       iconClass: _svg.socialSharing,
-      className: 'ocean-customizer-section section-blog-group is-free'
+      className: 'ocean-customizer-section section-free-group is-free'
     },
     ocean_sidebar: {
       iconClass: _svg.sidebar,
@@ -104,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_side_panel_settings: {
       iconClass: _svg.sidePanel,
-      className: 'ocean-customizer-section section-sidebar-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_site_layout_section: {
       iconClass: _svg.siteLayout,
@@ -148,15 +147,15 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_sticky_footer_settings: {
       iconClass: _svg.stickyFooter,
-      className: 'ocean-customizer-section section-footer-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_footer_callout_settings: {
       iconClass: _svg.footerCallout,
-      className: 'ocean-customizer-section section-footer-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_cookie_notice_settings: {
       iconClass: _svg.cookieNotice,
-      className: 'ocean-customizer-section section-footer-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_seo_settings: {
       iconClass: _svg.seo,
@@ -180,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_woo_popup_settings: {
       iconClass: _svg.wooPopup,
-      className: 'ocean-customizer-section section-ecom-group is-pro'
+      className: 'ocean-customizer-section section-pro-group is-pro'
     },
     ocean_edd_settings: {
       iconClass: _svg.ecommerce,
@@ -188,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ocean_product_sharing_settings: {
       iconClass: _svg.productSharing,
-      className: 'ocean-customizer-section section-ecom-group is-free'
+      className: 'ocean-customizer-section section-free-group is-free'
     },
     ocean_learndash_settings: {
       className: 'ocean-customizer-section section-lms-group'
