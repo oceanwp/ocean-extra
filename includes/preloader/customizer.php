@@ -267,6 +267,7 @@ class Ocean_Preloader_Customizer {
 					'priority' => 10,
 					'hideLabel' => false,
 					'mediaType' => 'image',
+					'savetype' => 'url',
 					'active_callback' => 'oe_cac_has_preloader_icon_image'
 				],
 
@@ -279,6 +280,7 @@ class Ocean_Preloader_Customizer {
 					'priority' => 10,
 					'hideLabel' => false,
 					'mediaType' => 'image',
+					'savetype' => 'url',
 					'active_callback' => 'oe_cac_has_preloader_icon_svg'
 				],
 
