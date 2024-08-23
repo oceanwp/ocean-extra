@@ -27,6 +27,7 @@ class OceanWP_Plugins_Tab {
 		add_action( 'install_plugins_oceanwp_plugins_tab', array( $this, 'display_oceanwp_plugins_tab_content' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'wp_ajax_oceanwp_install_plugin', array( $this, 'ajax_install_plugin' ) );
+		add_action( 'wp_ajax_oceanwp_activate_plugin', array( $this, 'ajax_activate_plugin' ) );
 	}
 
 	/**
@@ -35,7 +36,7 @@ class OceanWP_Plugins_Tab {
 	public function enqueue_scripts() {
 		wp_enqueue_script( 'plugin-install' );
 		wp_enqueue_script( 'updates' );
-		wp_enqueue_script( 'oceanwp-plugin-install', plugin_dir_url(__FILE__) . '../assets/js/oceanwp-plugin-install.js', array( 'jquery' ), OE_VERSION, true );
+		wp_enqueue_script( 'oceanwp-plugin-install', plugin_dir_url( __FILE__ ) . '../assets/js/oceanwp-plugin-install.js', array( 'jquery' ), OE_VERSION, true );
 
 		wp_localize_script(
 			'oceanwp-plugin-install',
@@ -150,7 +151,50 @@ class OceanWP_Plugins_Tab {
 			wp_send_json_error( $result->get_error_message() );
 		}
 
-		wp_send_json_success( __( 'Plugin installed successfully.', 'ocean-extra' ) );
+		wp_send_json_success();
+	}
+	/**
+	 * Handles the AJAX request to activate a plugin.
+	 */
+	public function ajax_activate_plugin() {
+		check_ajax_referer( 'plugin_install_nonce', '_ajax_nonce' );
+
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			wp_send_json_error( __( 'You do not have sufficient permissions to activate plugins.', 'ocean-extra' ) );
+		}
+
+		$slug        = sanitize_text_field( $_POST['slug'] );
+		$plugin_file = $this->get_plugin_file_path( $slug );
+
+		if ( ! $plugin_file || ! file_exists( WP_PLUGIN_DIR . '/' . $plugin_file ) ) {
+			wp_send_json_error( __( 'Plugin file does not exist.', 'ocean-extra' ) );
+		}
+
+		$result = activate_plugin( $plugin_file );
+
+		if ( is_wp_error( $result ) ) {
+			wp_send_json_error( $result->get_error_message() );
+		}
+
+		wp_send_json_success();
+	}
+
+	/**
+	 * Get the plugin file path based on the plugin slug.
+	 *
+	 * @param string $slug The plugin slug.
+	 * @return string|false The plugin file path or false if not found.
+	 */
+	private function get_plugin_file_path( $slug ) {
+		$plugins = get_plugins();
+
+		foreach ( $plugins as $plugin_file => $plugin_data ) {
+			if ( strpos( $plugin_file, $slug . '/' ) !== false || strpos( $plugin_file, $slug . '.php' ) !== false ) {
+				return $plugin_file;
+			}
+		}
+
+		return false;
 	}
 }
 
