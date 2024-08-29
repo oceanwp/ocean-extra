@@ -388,3 +388,22 @@ function ocean_check_pro_license() {
 
 	return $status;
 }
+
+/**
+ * Check if user requires upgrading
+ * 
+ * @return bool
+ */
+if ( ! function_exists( 'oe_pro_license_check' ) ) {
+
+	function oe_pro_license_check() {
+		global $owp_fs;
+		$need_to_upgrade = ! empty( $owp_fs ) ? $owp_fs->is_pricing_page_visible() : false;
+
+		if ( ! $need_to_upgrade ) {
+			return false;
+		}
+
+		return true;
+	}
+}

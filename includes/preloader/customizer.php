@@ -45,7 +45,7 @@ class Ocean_Preloader_Customizer {
 	 */
 	public function __construct() {
 
-		add_filter( 'ocean_customize_options_data', array( $this, 'register_customize_options') );
+		add_filter( 'ocean_customize_options_data', array( $this, 'register_customize_options' ) );
 
 		$this->active    = get_theme_mod( 'ocean_preloader_enable', false );
 		$this->type      = get_theme_mod( 'ocean_preloader_type', 'default' );
@@ -77,7 +77,7 @@ class Ocean_Preloader_Customizer {
 	public function register_customize_options($options) {
 
 		$options['ocean_preloader'] = [
-			'title' => esc_html__('Site Preloader', 'ocean-extra'),
+			'title' => esc_html__( 'Site Preloader', 'ocean-extra' ),
 			'priority' => 7,
 			'options' => [
 				'ocean_preloader_enable' => [
@@ -115,13 +115,13 @@ class Ocean_Preloader_Customizer {
 					'choices' => [
 						'default' => [
 							'id'     => 'default',
-							'label'   => esc_html__('Default', 'ocean-extra'),
-							'content' => esc_html__('Default', 'ocean-extra'),
+							'label'   => esc_html__( 'Default', 'ocean-extra' ),
+							'content' => esc_html__( 'Default', 'ocean-extra' ),
 						],
 						'custom'  => [
 							'id'     => 'custom',
-							'label'   => esc_html__('Custom', 'ocean-extra'),
-							'content' => esc_html__('Custom', 'ocean-extra'),
+							'label'   => esc_html__( 'Custom', 'ocean-extra' ),
+							'content' => esc_html__( 'Custom', 'ocean-extra' ),
 						]
 					]
 				],
@@ -137,7 +137,7 @@ class Ocean_Preloader_Customizer {
 
 				'ocean_preloader_custom_settings' => [
 					'type' => 'section',
-					'title' => esc_html__('Custom Preloader Settings ', 'ocean-extra'),
+					'title' => esc_html__( 'Custom Preloader Settings ', 'ocean-extra' ),
 					'section' => 'ocean_preloader',
 					'after' => 'oe_divider_after_preloader_type',
 					'class' => 'section-site-layout',
@@ -145,7 +145,7 @@ class Ocean_Preloader_Customizer {
 					'options' => [
 						'ocean_desc_for_preloader_custom_settings' => [
 							'type' => 'ocean-content',
-							'isContent' => esc_html__('If the Preloader Type you selected supports additional settings, it will appear here. The custom settings is supported by the Custom preloader type.', 'ocean-extra'),
+							'isContent' => esc_html__( 'Custom preloader settings are available for the Custom Preloader type.', 'ocean-extra' ),
 							'section' => 'ocean_preloader_custom_settings',
 							'class' => 'description',
 							'transport' => 'postMessage',
@@ -155,7 +155,7 @@ class Ocean_Preloader_Customizer {
 
 						'ocean_preloader_template' => [
 							'type' => 'ocean-select',
-							'label' => esc_html__('Select Template', 'ocean-extra' ),
+							'label' => esc_html__( 'Select Template', 'ocean-extra' ),
 							'desc' => esc_html__( 'Choose a template you created in OceanWP > My Library', 'ocean-extra' ),
 							'section' => 'ocean_preloader_custom_settings',
 							'transport' => 'refresh',
@@ -192,40 +192,40 @@ class Ocean_Preloader_Customizer {
 						],
 
 						'ocean_preloader_custom_settings_need_help' => [
-							'type' => 'ocean-content',
-							'isContent' => ocean_render_content_need_help(),
-							'class' => 'need-help',
-							'section' => 'ocean_preloader_custom_settings',
-							'transport' => 'postMessage',
-							'priority' => 10,
+							'type'            => 'ocean-content',
+							'isContent'       => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/908-customizer-site-preloader#Custom-Prealoder-Settings-xf0dI/" target="_blank">', '</a>' ),
+							'class'           => 'need-help',
+							'section'         => 'ocean_preloader_custom_settings',
+							'transport'       => 'postMessage',
+							'priority'        => 10,
 							'active_callback' => 'oe_cac_has_preloader',
 						]
 					]
 				],
 
 				'oe_title_for_preloader_default_settings' => [
-					'type' => 'ocean-title',
-					'label' => esc_html__( 'Defualt Preloader Settings', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 20,
-					'padding' => 20,
+					'type'            => 'ocean-title',
+					'label'           => esc_html__( 'Defualt Preloader Settings', 'ocean-extra' ),
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'top'             => 20,
+					'padding'         => 20,
 					'active_callback' => 'oe_cac_has_preloader_default',
 				],
 
 				'ocean_preloader_icon_type' => [
-					'type' => 'ocean-select',
-					'label' => esc_html__('Icon Type', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'refresh',
-					'default' => 'css',
-					'priority' => 10,
-					'hideLabel' => false,
-					'multiple' => false,
-					'active_callback' => 'oe_cac_has_preloader_default',
+					'type'              => 'ocean-select',
+					'label'             => esc_html__( 'Icon Type', 'ocean-extra' ),
+					'section'           => 'ocean_preloader',
+					'transport'         => 'refresh',
+					'default'           => 'css',
+					'priority'          => 10,
+					'hideLabel'         => false,
+					'multiple'          => false,
+					'active_callback'   => 'oe_cac_has_preloader_default',
 					'sanitize_callback' => 'sanitize_key',
-					'choices' => [
+					'choices'           => [
 						'css'   => esc_html__( 'CSS', 'ocean-extra' ),
 						'image' => esc_html__( 'Image', 'ocean-extra' ),
 						'logo'  => esc_html__( 'Logo', 'ocean-extra' ),
@@ -235,7 +235,7 @@ class Ocean_Preloader_Customizer {
 
 				'ocean_preloader_default_icon' => [
 					'type' => 'ocean-select',
-					'label' => esc_html__('Preloader Icon', 'ocean-extra' ),
+					'label' => esc_html__( 'Preloader Icon', 'ocean-extra' ),
 					'section' => 'ocean_preloader',
 					'transport' => 'refresh',
 					'default' => 'roller',
@@ -327,252 +327,252 @@ class Ocean_Preloader_Customizer {
 				],
 
 				'oe_divider_after_preloader_image_size' => [
-					'type' => 'ocean-divider',
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 10,
-					'bottom' => 10,
+					'type'            => 'ocean-divider',
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'top'             => 10,
+					'bottom'          => 10,
 					'active_callback' => 'oe_cac_has_preloader_default',
 				],
 
 				'ocean_preloader_content' => [
-					'type'     => 'ocean-textarea',
-					'label'    => esc_html__( 'Content', 'ocean-extra' ),
-					'section'  => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'default' => esc_html__( 'Site is Loading, Please wait...', 'ocean-extra' ),
-					'priority' => 10,
-					'hideLabel'    => false,
+					'type'              => 'ocean-textarea',
+					'label'             => esc_html__( 'Content', 'ocean-extra' ),
+					'section'           => 'ocean_preloader',
+					'transport'         => 'postMessage',
+					'default'           => esc_html__( 'Site is Loading, Please wait...', 'ocean-extra' ),
+					'priority'          => 10,
+					'hideLabel'         => false,
 					'sanitize_callback' => 'wp_kses_post',
-					'active_callback' => 'oe_cac_has_preloader_default',
+					'active_callback'   => 'oe_cac_has_preloader_default',
 				],
 
 				'oe_divider_after_preloader_content' => [
-					'type' => 'ocean-divider',
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 10,
-					'bottom' => 10,
+					'type'            => 'ocean-divider',
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'top'             => 10,
+					'bottom'          => 10,
 					'active_callback' => 'oe_cac_has_preloader_default',
 				],
 
 				'ocean_preloader_container_width' => [
-					'id'  => 'ocean_preloader_container_width',
-					'label' => esc_html__( 'Container Width (px)', 'ocean-extra' ),
-					'desc' => esc_html__( 'Set "0" to unset or set your custom container width.', 'ocean-extra' ),
-					'type'     => 'ocean-range-slider',
-					'section'  => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'hideLabel'    => false,
-					'isUnit'       => false,
-					'isResponsive' => true,
-					'min'          => 0,
-					'max'          => 2000,
-					'step'         => 1,
-					'active_callback' => 'oe_cac_has_preloader_default',
+					'id'                => 'ocean_preloader_container_width',
+					'label'             => esc_html__( 'Container Width (px)', 'ocean-extra' ),
+					'desc'              => esc_html__( 'Enter a value "0" to unset Container Width, or add custom Container Width value.', 'ocean-extra' ),
+					'type'              => 'ocean-range-slider',
+					'section'           => 'ocean_preloader',
+					'transport'         => 'postMessage',
+					'priority'          => 10,
+					'hideLabel'         => false,
+					'isUnit'            => false,
+					'isResponsive'      => true,
+					'min'               => 0,
+					'max'               => 2000,
+					'step'              => 1,
+					'active_callback'   => 'oe_cac_has_preloader_default',
 					'sanitize_callback' => 'oceanwp_sanitize_number_blank',
-					'setting_args' => [
+					'setting_args'      => [
 						'desktop' => [
-							'id' => 'ocean_preloader_container_width',
+							'id'    => 'ocean_preloader_container_width',
 							'label' => esc_html__( 'Desktop', 'ocean-extra' ),
-							'attr' => [
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'tablet' => [
-							'id' => 'ocean_preloader_container_width_tablet',
+							'id'    => 'ocean_preloader_container_width_tablet',
 							'label' => esc_html__( 'Tablet', 'ocean-extra' ),
-							'attr' => [
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'mobile' => [
-							'id' => 'ocean_preloader_container_width_mobile',
+							'id'    => 'ocean_preloader_container_width_mobile',
 							'label' => esc_html__( 'Mobile', 'ocean-extra' ),
-							'attr' => [
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						]
 					],
 					'preview' => 'queryWithType',
-					'css' => [
+					'css'     => [
 						'.ocean-preloader--active .preloader-inner' => ['width']
 					]
 				],
 
 				'oe_title_for_preloader_typography_and_colors_settings' => [
-					'type' => 'ocean-title',
-					'label' => esc_html__( 'Typography and Colors ', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 20,
-					'padding' => 20,
+					'type'            => 'ocean-title',
+					'label'           => esc_html__( 'Typography and Colors ', 'ocean-extra' ),
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'top'             => 20,
+					'padding'         => 20,
 					'active_callback' => 'oe_cac_has_preloader',
 				],
 
 				'ocean_preloader_after_content_typography' => [
-					'id' => 'ocean_preloader_after_content_typography',
-					'type' => 'ocean-typography',
-					'label' => esc_html__( 'Content Text ', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'hideLabel' => false,
-					'selector' => '.ocean-preloader--active .preloader-after-content',
+					'id'              => 'ocean_preloader_after_content_typography',
+					'type'            => 'ocean-typography',
+					'label'           => esc_html__( 'Content Text', 'ocean-extra' ),
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'hideLabel'       => false,
+					'selector'        => '.ocean-preloader--active .preloader-after-content',
 					'active_callback' => 'oe_cac_has_preloader',
-					'setting_args' => [
+					'setting_args'    => [
 						'fontFamily' => [
-							'id' => 'preloader_after_content_typography[font-family]',
-							'label' => esc_html__(esc_html__('Font Family', 'ocean-extra'), 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[font-family]',
+							'label' => esc_html__(esc_html__( 'Font Family', 'ocean-extra' ), 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontWeight' => [
-							'id' => 'preloader_after_content_typography[font-weight]',
-							'label' => esc_html__('Font Weight', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[font-weight]',
+							'label' => esc_html__( 'Font Weight', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontWeightTablet' => [
-							'id' => 'preloader_after_content_tablet_typography[font-weight]',
-							'label' => esc_html__('Font Weight', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_tablet_typography[font-weight]',
+							'label' => esc_html__( 'Font Weight', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontWeightMobile' => [
-							'id' => 'preloader_after_content_mobile_typography[font-weight]',
-							'label' => esc_html__('Font Weight', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_mobile_typography[font-weight]',
+							'label' => esc_html__( 'Font Weight', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontSubset' => [
-							'id' => 'preloader_after_content_typography[font-subset]',
-							'label' => esc_html__('Font Subset', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[font-subset]',
+							'label' => esc_html__( 'Font Subset', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontSize' => [
-							'id' => 'preloader_after_content_typography[font-size]',
-							'label' => esc_html__('Font Size', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[font-size]',
+							'label' => esc_html__( 'Font Size', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 								'default' => 20,
 							],
 						],
 						'fontSizeTablet' => [
-							'id' => 'preloader_after_content_tablet_typography[font-size]',
-							'label' => esc_html__('Font Size', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_tablet_typography[font-size]',
+							'label' => esc_html__( 'Font Size', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontSizeMobile' => [
-							'id' => 'preloader_after_content_mobile_typography[font-size]',
-							'label' => esc_html__('Font Size', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_mobile_typography[font-size]',
+							'label' => esc_html__( 'Font Size', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'fontSizeUnit' => [
-							'id' => 'preloader_after_content_typography[font-size-unit]',
-							'label' => esc_html__('Unit', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[font-size-unit]',
+							'label' => esc_html__( 'Unit', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 								'default' => 'px',
 							],
 						],
 						'letterSpacing' => [
-							'id' => 'preloader_after_content_typography[letter-spacing]',
-							'label' => esc_html__('Letter Spacing', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[letter-spacing]',
+							'label' => esc_html__( 'Letter Spacing', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 								'default' => 0.6,
 							],
 						],
 						'letterSpacingTablet' => [
-							'id' => 'preloader_after_content_tablet_typography[letter-spacing]',
-							'label' => esc_html__('Letter Spacing', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_tablet_typography[letter-spacing]',
+							'label' => esc_html__( 'Letter Spacing', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'letterSpacingMobile' => [
-							'id' => 'preloader_after_content_mobile_typography[letter-spacing]',
-							'label' => esc_html__('Letter Spacing', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_mobile_typography[letter-spacing]',
+							'label' => esc_html__( 'Letter Spacing', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'letterSpacingUnit' => [
-							'id' => 'preloader_after_content_typography[letter-spacing-unit]',
-							'label' => esc_html__('Unit', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[letter-spacing-unit]',
+							'label' => esc_html__( 'Unit', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'lineHeight' => [
-							'id' => 'preloader_after_content_typography[line-height]',
-							'label' => esc_html__('Line Height', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[line-height]',
+							'label' => esc_html__( 'Line Height', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 								'default' => 1.8,
 							],
 						],
 						'lineHeightTablet' => [
-							'id' => 'preloader_after_content_tablet_typography[line-height]',
-							'label' => esc_html__('Line Height', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_tablet_typography[line-height]',
+							'label' => esc_html__( 'Line Height', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'lineHeightMobile' => [
-							'id' => 'preloader_after_content_mobile_typography[line-height]',
-							'label' => esc_html__('Line Height', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_mobile_typography[line-height]',
+							'label' => esc_html__( 'Line Height', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'lineHeightUnit' => [
-							'id' => 'preloader_after_content_typography[line-height-unit]',
-							'label' => esc_html__('Unit', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[line-height-unit]',
+							'label' => esc_html__( 'Unit', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'textTransform' => [
-							'id' => 'preloader_after_content_typography[text-transform]',
-							'label' => esc_html__('Text Transform', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[text-transform]',
+							'label' => esc_html__( 'Text Transform', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'textTransformTablet' => [
-							'id' => 'preloader_after_content_tablet_typography[text-transform]',
-							'label' => esc_html__('Text Transform', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_tablet_typography[text-transform]',
+							'label' => esc_html__( 'Text Transform', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'textTransformMobile' => [
-							'id' => 'preloader_after_content_mobile_typography[text-transform]',
-							'label' => esc_html__('Text Transform', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_mobile_typography[text-transform]',
+							'label' => esc_html__( 'Text Transform', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
 						'textDecoration' => [
-							'id' => 'preloader_after_content_typography[text-decoration]',
-							'label' => esc_html__('Text Decoration', 'ocean-extra'),
-							'attr' => [
+							'id'    => 'preloader_after_content_typography[text-decoration]',
+							'label' => esc_html__( 'Text Decoration', 'ocean-extra' ),
+							'attr'  => [
 								'transport' => 'postMessage',
 							],
 						],
@@ -580,78 +580,78 @@ class Ocean_Preloader_Customizer {
 				],
 
 				'oe_divider_after_preloader_typography_setting' => [
-					'type' => 'ocean-divider',
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'top' => 1,
-					'bottom' => 10,
+					'type'            => 'ocean-divider',
+					'section'         => 'ocean_preloader',
+					'transport'       => 'postMessage',
+					'priority'        => 10,
+					'top'             => 1,
+					'bottom'          => 10,
 					'active_callback' => 'oe_cac_has_preloader',
 				],
 
 				'preloader_after_content_typography_color' => [
-					'type' => 'ocean-color',
-					'label' => esc_html__( 'Content Text Color', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'hideLabel' => false,
-					'showAlpha' => true,
+					'type'              => 'ocean-color',
+					'label'             => esc_html__( 'Content Text', 'ocean-extra' ),
+					'section'           => 'ocean_preloader',
+					'transport'         => 'postMessage',
+					'priority'          => 10,
+					'hideLabel'         => false,
+					'showAlpha'         => true,
 					'sanitize_callback' => 'wp_kses_post',
-					'active_callback' => 'oe_cac_has_preloader',
-					'setting_args' => [
+					'active_callback'   => 'oe_cac_has_preloader',
+					'setting_args'      => [
 						'normal' => [
-							'id' => 'preloader_after_content_typography[color]',
-							'key' => 'normal',
-							'label' => esc_html__( 'Select Color', 'ocean-extra' ),
+							'id'       => 'preloader_after_content_typography[color]',
+							'key'      => 'normal',
+							'label'    => esc_html__( 'Select Color', 'ocean-extra' ),
 							'selector' => [
 								'.ocean-preloader--active .preloader-after-content' => 'color'
 							],
-							'attr' => [
+							'attr'     => [
 								'transport' => 'postMessage',
-								'default' => '#333333',
+								'default'   => '#333333',
 							],
 						]
 					]
 				],
 
 				'ocean_preloader_overlay_color' => [
-					'type' => 'ocean-color',
-					'label' => esc_html__( 'Overlay Color', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'hideLabel' => false,
-					'showAlpha' => true,
+					'type'              => 'ocean-color',
+					'label'             => esc_html__( 'Overlay', 'ocean-extra' ),
+					'section'           => 'ocean_preloader',
+					'transport'         => 'postMessage',
+					'priority'          => 10,
+					'hideLabel'         => false,
+					'showAlpha'         => true,
 					'sanitize_callback' => 'wp_kses_post',
-					'active_callback' => 'oe_cac_has_preloader',
-					'setting_args' => [
+					'active_callback'   => 'oe_cac_has_preloader',
+					'setting_args'      => [
 						'normal' => [
-							'id' => 'ocean_preloader_overlay_color',
-							'key' => 'normal',
-							'label' => esc_html__( 'Select Color', 'ocean-extra' ),
+							'id'       => 'ocean_preloader_overlay_color',
+							'key'      => 'normal',
+							'label'    => esc_html__( 'Select Color', 'ocean-extra' ),
 							'selector' => [
 								'.sidebar-box .widget-title' => 'color'
 							],
-							'attr' => [
+							'attr'     => [
 								'transport' => 'postMessage',
-								'default' => '#000000',
+								'default'   => '#000000',
 							],
 						]
 					]
 				],
 
 				'ocean_preloader_icon_color' => [
-					'type' => 'ocean-color',
-					'label' => esc_html__( 'Icon Color', 'ocean-extra' ),
-					'section' => 'ocean_preloader',
-					'transport' => 'postMessage',
-					'priority' => 10,
-					'hideLabel' => false,
-					'showAlpha' => true,
+					'type'              => 'ocean-color',
+					'label'             => esc_html__( 'Icon', 'ocean-extra' ),
+					'section'           => 'ocean_preloader',
+					'transport'         => 'postMessage',
+					'priority'          => 10,
+					'hideLabel'         => false,
+					'showAlpha'         => true,
 					'sanitize_callback' => 'wp_kses_post',
-					'active_callback' => 'oe_cac_has_preloader_icon_css',
-					'setting_args' => [
+					'active_callback'   => 'oe_cac_has_preloader_icon_css',
+					'setting_args'      => [
 						'normal' => [
 							'id' => 'ocean_preloader_icon_color',
 							'key' => 'normal',
@@ -678,12 +678,12 @@ class Ocean_Preloader_Customizer {
 				],
 
 				'ocean_preloader_section_need_help' => [
-					'type' => 'ocean-content',
-					'isContent' => ocean_render_content_need_help(),
-					'class' => 'need-help',
-					'section' => 'ocean_preloader',
+					'type'      => 'ocean-content',
+					'isContent' => sprintf( esc_html__( '%1$s Need Help? %2$s', 'oceanwp' ), '<a href="https://docs.oceanwp.org/article/908-customizer-site-preloader/" target="_blank">', '</a>' ),
+					'class'     => 'need-help',
+					'section'   => 'ocean_preloader',
 					'transport' => 'postMessage',
-					'priority' => 10,
+					'priority'  => 10,
 				]
 			]
 		];
@@ -705,7 +705,7 @@ class Ocean_Preloader_Customizer {
 		$icon_color               = get_theme_mod( 'ocean_preloader_icon_color', '#fff' );
 		$image_size               = get_theme_mod( 'ocean_preloader_image_size', 100 );
 
-		$content_typography       = get_theme_mod('preloader_after_content_typography');
+		$content_typography       = get_theme_mod( 'preloader_after_content_typography' );
 		$content_typography       = isset($content_typography['color']) ? $content_typography['color'] : '#333333';
 
 
