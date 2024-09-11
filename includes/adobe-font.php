@@ -217,39 +217,31 @@ if ( ! class_exists( 'OceanWP_Adobe_Font' ) ) {
 		 * Render Adobe fonts in the Customizer.
 		 */
 		public function render_customizer_group() {
-			$fonts_list   = get_option( 'oe-adobe-fonts' );
-			$all_fonts    = $fonts_list['oe-adobe-fonts-list'];
-			$custom_fonts = array();
-			if ( ! empty( $all_fonts ) ) {
-				?>
-				<optgroup label="<?php esc_attr_e( 'OE Adobe Fonts', 'ocean-extra' ); ?>">
-					<?php
-					foreach ( $all_fonts as $font_family_name => $fonts_url ) {
-						$font_slug = isset( $fonts_url['slug'] ) ? $fonts_url['slug'] : '';
-						$font_css  = isset( $fonts_url['css_names'][0] ) ? $fonts_url['css_names'][0] : $font_slug;
-						?>
+			$fonts_list  = get_option( 'oe-adobe-fonts' );
+			$all_fonts   = isset( $fonts_list['oe-adobe-fonts-list'] ) ? $fonts_list['oe-adobe-fonts-list'] : array();
+			$fonts_array = array();
 
-						<option value="<?php echo esc_attr( $font_css ); ?>"><?php echo esc_html( $font_slug ); ?></option>
-						<?php
-					}
-					?>
-				</optgroup>
-				<?php
+			if ( ! empty($all_fonts) ) {
+				$adobeFonts = [];
+				foreach ($all_fonts as $font_family_name => $fonts_url) {
+					$font_slug = isset($fonts_url['slug']) ? $fonts_url['slug'] : '';
+					$font_css = isset($fonts_url['css_names'][0]) ? $fonts_url['css_names'][0] : $font_slug;
+					$font_weights = isset($fonts_url['weights']) ? $fonts_url['weights'] : [];
+					$adobeFonts[] = [
+						'value' => esc_attr($font_css),
+						'label' => esc_html($font_slug),
+						'variants' => $font_weights
+					];
+				}
+				$fonts_array[] = [
+					'label' => esc_attr__('OE Adobe Fonts', 'ocean-extra'),
+					'options' => $adobeFonts,
+				];
 			}
 
-			$google_fonts = oceanwp_google_fonts_array();
-			if ( $google_fonts ) {
-				?>
+			$html = wp_json_encode($fonts_array);
 
-				<?php
-				// Loop through font options and add to select.
-				foreach ( $google_fonts as $font ) {
-					?>
-
-				<?php } ?>
-
-				<?php
-			}
+			echo $html;
 		}
 
 		/**

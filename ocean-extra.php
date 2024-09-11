@@ -474,6 +474,8 @@ final class Ocean_Extra {
 			}
 			require_once OE_PATH . '/includes/adobe-font.php';
 			require_once OE_PATH . '/includes/preloader/customizer.php';
+			require_once OE_PATH . '/includes/customizer/customizer.php';
+			//require_once OE_PATH . '/includes/update-message.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}

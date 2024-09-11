@@ -72,7 +72,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 			add_filter( 'ocean_custom_menu', array( $this, 'custom_menu' ) );
 
 			// Header style.
-			add_filter( 'ocean_header_style', array( $this, 'header_style' ) );
+			add_filter( 'ocean_header_style', array( $this, 'header_style' ), 15 );
 
 			// Left custom menu for center geader style.
 			add_filter( 'ocean_center_header_left_menu', array( $this, 'left_custom_menu' ) );
@@ -81,7 +81,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 			add_filter( 'ocean_custom_header_template', array( $this, 'custom_header_template' ) );
 
 			// Custom logo.
-			add_filter( 'get_custom_logo', array( $this, 'custom_logo' ) );
+			//add_filter( 'get_custom_logo', array( $this, 'custom_logo' ) );
 
 			// getustom logo ID for the retina function.
 			add_filter( 'ocean_custom_logo', array( $this, 'custom_logo_id' ) );

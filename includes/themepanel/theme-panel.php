@@ -132,6 +132,12 @@ class Ocean_Extra_New_Theme_Panel {
 			$value = array_map( 'sanitize_text_field', $value );
 			$value = self::validate_panels( $value );
 		}
+
+		// Ensure $value is an array and hold default settings even if all settings are false.
+		if ($value === null || !is_array($value)) {
+			$value = array_fill_keys(array_keys(self::get_panels()), false);
+		}
+
 		update_option( $option, $value );
 
 		wp_send_json_success(
@@ -493,8 +499,14 @@ class Ocean_Extra_New_Theme_Panel {
 	 */
 	public static function get_panels() {
 		$panels = array(
-			'oe_general_panel'        => array(
-				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
+			'oe_styles_and_settings_panel'        => array(
+				'label' => esc_html__( 'Site Style & Settings Panel', 'ocean-extra' ),
+			),
+			'oe_colors_panel'        => array(
+				'label' => esc_html__( 'Colors Panel', 'ocean-extra' ),
+			),
+			'oe_site_page_settings_panel'        => array(
+				'label' => esc_html__( 'Site Page Settings Panel', 'ocean-extra' ),
 			),
 			'oe_typography_panel'     => array(
 				'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
@@ -504,6 +516,12 @@ class Ocean_Extra_New_Theme_Panel {
 			),
 			'oe_header_panel'         => array(
 				'label' => esc_html__( 'Header Panel', 'ocean-extra' ),
+			),
+			'oe_site_performance_panel'        => array(
+				'label' => esc_html__( 'Site Performance Panel', 'ocean-extra' ),
+			),
+			'oe_seo_settings_panel'        => array(
+				'label' => esc_html__( 'SEO Panel', 'ocean-extra' ),
 			),
 			'oe_blog_panel'           => array(
 				'label' => esc_html__( 'Blog Panel', 'ocean-extra' ),
@@ -730,7 +748,7 @@ class Ocean_Extra_New_Theme_Panel {
 				} else {
 					update_option( 'oceanwp_hide_theme_panel_sidebar', false );
 				}*/
-			} elseif ( in_array( $key, array( 'hide_themes_customizer', 'hide_box', 'hide_changelog', 'whitelabel_oceanwp_panel', 'hide_small_nav_menu', 'hide_help_section', 'hide_download_section', 'hide_love_corner_section' ) ) ) {
+			} elseif ( in_array( $key, array( 'hide_themes_customizer', 'hide_info_customizer', 'hide_box', 'hide_changelog', 'whitelabel_oceanwp_panel', 'hide_small_nav_menu', 'hide_help_section', 'hide_download_section', 'hide_love_corner_section' ) ) ) {
 				if ( isset( $params['oceanwp_branding'][ $key ] ) ) {
 					update_option( 'oceanwp_' . $key, true );
 				} else {
