@@ -147,7 +147,24 @@ function oe_get_choices() {
 			}
 
 			$added_page_list[] = array(
-				'label' => 'Pages',
+				'label' => esc_html__( 'Pages', 'ocean-extra' ),
+				'options' => $temp_page_list
+			);
+		}
+
+		$temp_page_list = array();
+
+		if ( isset( $get_page_list['categories'] ) && ! empty( $get_page_list['categories'] ) ) {
+			foreach ( $get_page_list['categories'] as $pg_funcs => $pg_template ) {
+
+				$temp_page_list[] = array(
+					'label' => $pg_template,
+					'value' => $pg_funcs
+				);
+			}
+
+			$added_page_list[] = array(
+				'label' => esc_html__( 'Categories', 'ocean-extra' ),
 				'options' => $temp_page_list
 			);
 		}
@@ -164,7 +181,24 @@ function oe_get_choices() {
 			}
 
 			$added_page_list[] = array(
-				'label' => 'Shop',
+				'label' => esc_html__( 'Shop', 'ocean-extra' ),
+				'options' => $temp_page_list
+			);
+		}
+
+		$temp_page_list = array();
+
+		if ( isset( $get_page_list['shop_categories'] ) && ! empty( $get_page_list['shop_categories'] ) ) {
+			foreach ( $get_page_list['shop_categories'] as $pg_funcs => $pg_template ) {
+
+				$temp_page_list[] = array(
+					'label' => $pg_template,
+					'value' => $pg_funcs
+				);
+			}
+
+			$added_page_list[] = array(
+				'label'   => esc_html__( 'Product Categories', 'ocean-extra' ),
 				'options' => $temp_page_list
 			);
 		}
@@ -181,7 +215,7 @@ function oe_get_choices() {
 			}
 
 			$added_page_list[] = array(
-				'label' => 'Others',
+				'label'   => esc_html__( 'others', 'ocean-extra' ),
 				'options' => $temp_page_list
 			);
 		}
@@ -295,6 +329,18 @@ function oe_get_page_template_list() {
 			$pg_templates['pages'][ 'is_page(' . $page->ID . ')' ] = $page->post_title;
 		}
 	}
+
+	// Add WordPress categories
+	$categories = get_categories();
+	$category_options = array();
+	if (!empty($categories)) {
+		foreach ($categories as $category) {
+			$category_options['is_category(' . $category->term_id . ')'] = $category->name;
+		}
+	}
+
+	$pg_templates['categories'] = $category_options;
+
 	$pg_templates['others'] = array(
 		'is_single()'          => esc_html__( 'Single Post', 'ocean-extra' ),
 		'is_category()'        => esc_html__( 'Category Page', 'ocean-extra' ),
@@ -306,6 +352,22 @@ function oe_get_page_template_list() {
 	// Getting Wocommerce specidic pages
 	if ( class_exists( 'WooCommerce' ) ) {
 		$pg_templates['shop'] = oe_get_woocommerce_page_list();
+
+		// Add WooCommerce product categories
+		$product_categories = get_terms( array(
+			'taxonomy'   => 'product_cat',
+			'hide_empty' => false,
+		) );
+
+		$category_options = array();
+
+		if ( !empty( $product_categories ) ) {
+			foreach ( $product_categories as $category ) {
+				$category_options[ 'is_product_category(' . $category->term_id . ')' ] = $category->name;
+			}
+		}
+
+		$pg_templates['shop_categories'] = $category_options;
 	}
 
 	return $pg_templates;

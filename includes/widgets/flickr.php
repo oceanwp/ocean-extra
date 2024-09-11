@@ -5,7 +5,7 @@
  * @package OceanWP WordPress theme
  */
 
-// Exit if accessed directly
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -28,6 +28,8 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 					'customize_selective_refresh' => true,
 				)
 			);
+
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		/**
@@ -41,28 +43,28 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		public function widget( $args, $instance ) {
 
 			$title  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
-			$number = isset( $instance['number'] ) ? $instance['number'] : '';
-			$id     = isset( $instance['id'] ) ? $instance['id'] : '';
+			$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : '';
+			$id     = isset( $instance['id'] ) ? sanitize_text_field( $instance['id'] ) : '';
 
-			// Before widget WP hook
+
 			echo $args['before_widget'];
 
-				// Show widget title
-			if ( $title ) {
-				echo $args['before_title'] . $title . $args['after_title'];
+			if ( ! empty( $instance['title'] ) ) {
+				echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 			}
 
-				// Display flickr feed if ID is defined
-			if ( $id ) : ?>
-					<div class="oceanwp-flickr-wrap">
-						<script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=<?php echo intval( $number ); ?>&amp;display=latest&amp;size=s&amp;layout=x&amp;source=user&amp;user=<?php echo strip_tags( $id ); ?>"></script>
-						<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo strip_tags( $id ); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
-					</div>
-				<?php
-				endif;
+			$unique_id = 'oceanwp_flickr_photos_' . uniqid() . '_' . md5(rand());
 
-			// After widget WP hook
+			if ( $id ) : ?>
+				<div class="oceanwp-flickr-wrap">
+					<div id="<?php echo $unique_id; ?>" class="oceanwp-flickr-container" data-user-id="<?php echo esc_attr( $id ); ?>" data-max-photos="<?php echo intval( $number ); ?>"></div>
+					<p class="flickr_stream_wrap"><a class="follow_btn" href="http://www.flickr.com/photos/<?php echo esc_attr(strip_tags($id)); ?>"><?php esc_html_e( 'View stream on flickr', 'ocean-extra' ); ?></a></p>
+				</div>
+				<?php
+			endif;
+
 			echo $args['after_widget'];
+
 
 		}
 
@@ -79,9 +81,9 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 */
 		public function update( $new_instance, $old_instance ) {
 			$instance           = $old_instance;
-			$instance['title']  = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : '';
+			$instance['title']  = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : '';
 			$instance['number'] = ! empty( $new_instance['number'] ) ? intval( $new_instance['number'] ) : '';
-			$instance['id']     = ! empty( $new_instance['id'] ) ? strip_tags( $new_instance['id'] ) : '';
+			$instance['id']     = ! empty( $new_instance['id'] ) ? sanitize_text_field( $new_instance['id'] ) : '';
 			return $instance;
 		}
 
@@ -103,9 +105,9 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 				)
 			);
 
-			$title  = $settings['title'];
-			$id     = $settings['id'];
-			$number = $settings['number'];
+			$title  = esc_attr( $settings['title'] );
+			$id     = esc_attr( $settings['id'] );
+			$number = intval( $settings['number'] );
 
 			?>
 			<p>
@@ -114,19 +116,41 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'id' ); ?>"><?php esc_html_e( 'Flickr ID', 'ocean-extra' ); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'id' ); ?>" name="<?php echo $this->get_field_name( 'id' ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>"><?php esc_html_e( 'Flickr ID', 'ocean-extra' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'id' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'id' ) ); ?>" type="text" value="<?php echo esc_attr( $id ); ?>" />
 				<small><?php esc_html_e( 'Enter the url of your Flickr page on this site: idgettr.com.', 'ocean-extra' ); ?></small>
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number:', 'ocean-extra' ); ?></label>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
+				<label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number:', 'ocean-extra' ); ?></label>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" value="<?php echo esc_attr( $number ); ?>" />
 				<small><?php esc_html_e( 'The maximum is 10 images.', 'ocean-extra' ); ?></small>
 			</p>
 
 			<?php
 
+		}
+
+		/**
+		 * Scripts
+		 */
+		public function enqueue_scripts() {
+			wp_enqueue_script( 'flickr-widget-script', OE_URL . 'includes/widgets/js/flickr.min.js', array( 'jquery' ), false, true );
+
+			$widgets_settings = $this->get_settings();
+			$localized_data = array();
+
+			foreach ( $widgets_settings as $number => $instance ) {
+				$localized_data[] = array(
+					'userId' => ! empty( $instance['id'] ) ? esc_attr( $instance['id'] ) : '',
+					'maxPhotos' => ! empty( $instance['number'] ) ? intval( $instance['number'] ) : 6,
+					'containerId' => 'oceanwp-flickr-photos-' . esc_attr( $number ),
+				);
+			}
+
+			wp_localize_script( 'flickr-widget-script', 'flickrWidgetParams', array(
+				'widgets' => $localized_data,
+			));
 		}
 
 	}

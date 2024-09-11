@@ -180,7 +180,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 			$fonts = array();
 
 			// Menu font.
-			$menu_typo_font = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_menu_typo_font_family', true ) : '';
+			$menu_typo_font = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_typo_font_family', true ) : '';
 
 			if ( $menu_typo_font ) {
 				$fonts[] = $menu_typo_font;
@@ -202,12 +202,12 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function body_class( $classes ) {
 
 			// Disabled margins
-			if ( 'on' == get_post_meta( oceanwp_post_id(), 'ocean_disable_margins', true )
+			if ( 'on' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_disable_margins', true )
 				&& ! is_search() ) {
 				$classes[] = 'no-margins';
 			}
 
-			$body_class = get_post_meta( oceanwp_post_id(), 'ocean_add_body_class', true );
+			$body_class = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_add_body_class', true );
 
 			if ( ! empty( $body_class ) ) {
 				$classes[] = wp_kses_post( $body_class );
@@ -224,7 +224,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function get_second_sidebar( $sidebar ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_second_sidebar', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_second_sidebar', true ) ) {
 				$sidebar = $meta;
 			}
 
@@ -239,7 +239,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function get_sidebar( $sidebar ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_sidebar', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_sidebar', true ) ) {
 				$sidebar = $meta;
 			}
 
@@ -255,7 +255,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_top_bar( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_top_bar', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_display_top_bar', true ) : '';
 
 			// Check if disabled
 			if ( 'on' == $meta ) {
@@ -276,7 +276,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_header( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_header', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_display_header', true ) : '';
 
 			// Check if disabled
 			if ( 'on' == $meta ) {
@@ -296,7 +296,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_menu( $menu ) {
 
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_header_custom_menu', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_header_custom_menu', true ) : '';
 
 			if ( $meta ) {
 				$menu = $meta;
@@ -313,7 +313,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function header_style( $style ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_header_style', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_header_style', true ) ) {
 				$style = $meta;
 			}
 
@@ -328,7 +328,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function left_custom_menu( $menu ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_center_header_left_menu', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_center_header_left_menu', true ) ) {
 				$menu = $meta;
 			}
 
@@ -343,7 +343,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_header_template( $template ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_header_template', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_header_template', true ) ) {
 				$template = $meta;
 			}
 
@@ -358,7 +358,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo( $html ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo', true ) ) {
 
 				$html = '';
 
@@ -403,7 +403,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_id( $logo_url ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo', true ) ) {
 				$logo_url = $meta;
 			}
 
@@ -418,7 +418,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_retina_logo( $logo_url ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_retina_logo', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_retina_logo', true ) ) {
 				$logo_url = $meta;
 
 				// Generate image URL if using ID
@@ -439,7 +439,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_width( $width ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_max_width', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_max_width', true ) ) {
 				$width = $meta;
 			}
 
@@ -454,7 +454,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_width_tablet( $width ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_tablet_max_width', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_tablet_max_width', true ) ) {
 				$width = $meta;
 			}
 
@@ -469,7 +469,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_width_mobile( $width ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_mobile_max_width', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_mobile_max_width', true ) ) {
 				$width = $meta;
 			}
 
@@ -484,7 +484,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_height( $height ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_max_height', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_max_height', true ) ) {
 				$height = $meta;
 			}
 
@@ -499,7 +499,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_height_tablet( $height ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_tablet_max_height', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_tablet_max_height', true ) ) {
 				$height = $meta;
 			}
 
@@ -514,7 +514,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_logo_max_height_mobile( $height ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_logo_mobile_max_height', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_logo_mobile_max_height', true ) ) {
 				$height = $meta;
 			}
 
@@ -529,7 +529,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_color( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_color', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_color', true ) ) {
 				$color = $meta;
 			}
 
@@ -544,7 +544,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_color_hover( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_color_hover', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_color_hover', true ) ) {
 				$color = $meta;
 			}
 
@@ -559,7 +559,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_color_active( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_color_active', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_color_active', true ) ) {
 				$color = $meta;
 			}
 
@@ -574,7 +574,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_background( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_background', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_background', true ) ) {
 				$color = $meta;
 			}
 
@@ -589,7 +589,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_hover_background( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_hover_background', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_hover_background', true ) ) {
 				$color = $meta;
 			}
 
@@ -604,7 +604,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_link_active_background( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_link_active_background', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_link_active_background', true ) ) {
 				$color = $meta;
 			}
 
@@ -619,7 +619,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_social_links_bg( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_social_links_bg', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_social_links_bg', true ) ) {
 				$color = $meta;
 			}
 
@@ -634,7 +634,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_social_hover_links_bg( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_social_hover_links_bg', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_social_hover_links_bg', true ) ) {
 				$color = $meta;
 			}
 
@@ -649,7 +649,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_social_links_color( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_social_links_color', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_social_links_color', true ) ) {
 				$color = $meta;
 			}
 
@@ -664,7 +664,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function menu_social_hover_links_color( $color ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_menu_social_hover_links_color', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_menu_social_hover_links_color', true ) ) {
 				$color = $meta;
 			}
 
@@ -680,7 +680,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_page_header( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_disable_title', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_disable_title', true ) : '';
 
 			// Check if enabled or disabled
 			if ( 'enable' == $meta ) {
@@ -701,7 +701,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_page_header_heading( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_disable_heading', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_disable_heading', true ) : '';
 
 			// Check if enabled or disabled
 			if ( 'enable' == $meta ) {
@@ -721,7 +721,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_style( $style ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
 				$style = $meta;
 			}
 
@@ -736,7 +736,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_title( $title ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title', true ) ) {
 				$title = wp_kses_post( $meta );
 			}
 
@@ -751,7 +751,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_subheading( $subheading ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_subheading', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_subheading', true ) ) {
 				$subheading = wp_kses_post( $meta );
 			}
 
@@ -767,7 +767,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_breadcrumbs( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_disable_breadcrumbs', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_disable_breadcrumbs', true ) : '';
 
 			// Check if enabled or disabled
 			if ( 'on' == $meta ) {
@@ -787,8 +787,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_color( $bg_color ) {
 
-			if ( 'solid-color' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background_color', true ) ) {
+			if ( 'solid-color' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_background_color', true ) ) {
 					$bg_color = $meta;
 				}
 			}
@@ -804,8 +804,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_image( $bg_img ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_background', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_background', true ) ) {
 					$bg_img = $meta;
 				}
 			}
@@ -821,8 +821,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_image_position( $bg_img_position ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_position', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_image_position', true ) ) {
 					$bg_img_position = $meta;
 				}
 			}
@@ -838,8 +838,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_image_attachment( $bg_img_attachment ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_attachment', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_image_attachment', true ) ) {
 					$bg_img_attachment = $meta;
 				}
 			}
@@ -855,8 +855,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_image_repeat( $bg_img_repeat ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_repeat', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_image_repeat', true ) ) {
 					$bg_img_repeat = $meta;
 				}
 			}
@@ -872,8 +872,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_image_size( $bg_img_size ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_image_size', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_image_size', true ) ) {
 					$bg_img_size = $meta;
 				}
 			}
@@ -889,8 +889,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_height( $title_height ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_height', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_height', true ) ) {
 					$title_height = $meta;
 				}
 			}
@@ -906,8 +906,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_opacity( $opacity ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_overlay', true ) ) {
 					$opacity = $meta;
 				}
 			}
@@ -923,8 +923,8 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function page_header_bg_overlay_color( $overlay_color ) {
 
-			if ( 'background-image' == get_post_meta( oceanwp_post_id(), 'ocean_post_title_style', true ) ) {
-				if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
+			if ( 'background-image' == get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_style', true ) ) {
+				if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_post_title_bg_overlay_color', true ) ) {
 					$overlay_color = $meta;
 				}
 			}
@@ -941,7 +941,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_footer_widgets( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_footer_widgets', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_display_footer_widgets', true ) : '';
 
 			// Check if disabled
 			if ( 'on' == $meta ) {
@@ -962,7 +962,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		public function display_footer_bottom( $return ) {
 
 			// Check meta
-			$meta = oceanwp_post_id() ? get_post_meta( oceanwp_post_id(), 'ocean_display_footer_bottom', true ) : '';
+			$meta = Ocean_Extra::oe_post_id() ? get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_display_footer_bottom', true ) : '';
 
 			// Check if disabled
 			if ( 'on' == $meta ) {
@@ -982,7 +982,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public function custom_footer_template( $template ) {
 
-			if ( $meta = get_post_meta( oceanwp_post_id(), 'ocean_custom_footer_template', true ) ) {
+			if ( $meta = get_post_meta( Ocean_Extra::oe_post_id(), 'ocean_custom_footer_template', true ) ) {
 				$template = $meta;
 			}
 
@@ -995,7 +995,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 		 */
 		public static function head_css( $output ) {
 
-			$id = oceanwp_post_id();
+			$id = Ocean_Extra::oe_post_id();
 
 			// Layout.
 			$layout                     = get_post_meta( $id, 'ocean_post_layout', true );
