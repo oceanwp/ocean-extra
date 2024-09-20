@@ -712,8 +712,8 @@ class Ocean_Preloader_Customizer {
 		$css = '';
 
 		if ( ! empty( $content_typography ) ) {
-            $css .= '.ocean-preloader--active .preloader-after-content{color:'. $content_typography .';}';
-        }
+			$css .= '.ocean-preloader--active .preloader-after-content{color:'. $content_typography .';}';
+		}
 
 		if ( ! empty( $overlay_color ) && '#000000' !== $overlay_color ) {
 			$css .= '.ocean-preloader--active #ocean-preloader{background-color:' . $overlay_color . ';}';
@@ -802,101 +802,101 @@ new Ocean_Preloader_Customizer();
  * Callback function
  */
 function oe_cac_has_preloader() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false ) ) {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false ) ) {
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_preloader_default() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false ) && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' ) ) {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false ) && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_preloader_custom() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false ) && 'custom' === get_theme_mod( 'ocean_preloader_type', 'default' ) ) {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false ) && 'custom' === get_theme_mod( 'ocean_preloader_type', 'default' ) ) {
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_preloader_icon_css() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false )
-        && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
-        && 'css' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
-    {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false )
+		&& 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
+		&& 'css' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
+	{
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_preloader_icon_image() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false )
-        && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
-        && 'image' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
-    {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false )
+		&& 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
+		&& 'image' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
+	{
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_not_preloader_icon_css() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false )
-        && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
-        && 'css' !== get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
-    {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false )
+		&& 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
+		&& 'css' !== get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
+	{
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }
 
 /**
  * Callback function
  */
 function oe_cac_has_preloader_icon_svg() {
-    if ( true === get_theme_mod( 'ocean_preloader_enable', false )
-        && 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
-        && 'svg' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
-    {
-        return true;
-    } else {
-        return false;
-    }
+	if ( true === get_theme_mod( 'ocean_preloader_enable', false )
+		&& 'default' === get_theme_mod( 'ocean_preloader_type', 'default' )
+		&& 'svg' === get_theme_mod( 'ocean_preloader_icon_type', 'css' ) )
+	{
+		return true;
+	} else {
+		return false;
+	}
 
-    return false;
+	return false;
 }

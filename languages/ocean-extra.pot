@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.3.0\n"
+"Project-Id-Version: Ocean Extra 2.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-03T05:42:19+00:00\n"
+"POT-Creation-Date: 2024-09-20T01:30:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -6977,6 +6977,27 @@ msgstr ""
 
 #: includes/panel/theme-panel.php:235
 msgid "Add your copyright, paddings and colors for the footer bottom."
+msgstr ""
+
+#: includes/plugins-tab.php:60
+#: includes/plugins-tab.php:75
+msgid "OceanWP Plugins"
+msgstr ""
+
+#: includes/plugins-tab.php:70
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/plugins-tab.php:125
+msgid "You do not have sufficient permissions to install plugins."
+msgstr ""
+
+#: includes/plugins-tab.php:163
+msgid "You do not have sufficient permissions to activate plugins."
+msgstr ""
+
+#: includes/plugins-tab.php:170
+msgid "Plugin file does not exist."
 msgstr ""
 
 #: includes/post-settings/functions.php:150
