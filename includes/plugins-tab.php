@@ -33,19 +33,22 @@ class OceanWP_Plugins_Tab {
 	/**
 	 * Enqueues the necessary scripts for handling AJAX plugin installation.
 	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( 'plugin-install' );
-		wp_enqueue_script( 'updates' );
-		wp_enqueue_script( 'oceanwp-plugin-install', plugin_dir_url( __FILE__ ) . '../assets/js/oceanwp-plugin-install.js', array( 'jquery' ), OE_VERSION, true );
+	public function enqueue_scripts( $hook_suffix ) {
+		// Only enqueue the scripts on the plugin installation page.
+		if ( $hook_suffix === 'plugin-install.php' || $hook_suffix === 'plugin-information' ) {
+			wp_enqueue_script( 'plugin-install' );
+			wp_enqueue_script( 'updates' );
+			wp_enqueue_script( 'oceanwp-plugin-install', plugin_dir_url( __FILE__ ) . '../assets/js/oceanwp-plugin-install.js', array( 'jquery' ), OE_VERSION, true );
 
-		wp_localize_script(
-			'oceanwp-plugin-install',
-			'oceanwpPluginInstall',
-			array(
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'nonce'    => wp_create_nonce( 'plugin_install_nonce' ),
-			)
-		);
+			wp_localize_script(
+				'oceanwp-plugin-install',
+				'oceanwpPluginInstall',
+				array(
+					'ajax_url' => admin_url( 'admin-ajax.php' ),
+					'nonce'    => wp_create_nonce( 'plugin_install_nonce' ),
+				)
+			);
+		}
 	}
 
 	/**
