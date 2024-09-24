@@ -268,7 +268,8 @@ class Ocean_Preloader_Customizer {
 					'hideLabel' => false,
 					'mediaType' => 'image',
 					'savetype' => 'url',
-					'active_callback' => 'oe_cac_has_preloader_icon_image'
+					'active_callback' => 'oe_cac_has_preloader_icon_image',
+					'sanitize_callback' => 'ocean_sanitize_image_control'
 				],
 
 				'ocean_preloader_icon_svg' => [
@@ -281,7 +282,8 @@ class Ocean_Preloader_Customizer {
 					'hideLabel' => false,
 					'mediaType' => 'image',
 					'savetype' => 'url',
-					'active_callback' => 'oe_cac_has_preloader_icon_svg'
+					'active_callback' => 'oe_cac_has_preloader_icon_svg',
+					'sanitize_callback' => 'ocean_sanitize_image_control'
 				],
 
 				'oe_divider_after_preloader_icon_svg' => [
