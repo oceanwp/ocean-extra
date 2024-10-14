@@ -2,37 +2,43 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.3.0\n"
+"Project-Id-Version: Ocean Extra 2.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-03T05:42:19+00:00\n"
+"POT-Creation-Date: 2024-10-11T06:56:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
 
 #. Plugin Name of the plugin
+#: ocean-extra.php
 msgid "Ocean Extra"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: ocean-extra.php
 msgid "https://oceanwp.org/extension/ocean-extra/"
 msgstr ""
 
 #. Description of the plugin
+#: ocean-extra.php
 msgid "Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website."
 msgstr ""
 
 #. Author of the plugin
+#: ocean-extra.php
 #: includes/admin-bar/admin-bar.php:53
 #: includes/dashboard.php:72
+#: includes/update-message.php:84
 msgid "OceanWP"
 msgstr ""
 
 #. Author URI of the plugin
+#: ocean-extra.php
 msgid "https://oceanwp.org/"
 msgstr ""
 
@@ -105,7 +111,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/functions.php:67
 #: includes/metabox/metabox.php:660
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:149
 msgid "Medium"
 msgstr ""
 
@@ -130,9 +135,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:595
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/image-picker/index.js:69
-#: includes/post-settings/src/controls/media-url-picker/index.js:78
-#: includes/post-settings/src/controls/multi-image-picker/index.js:78
 msgid "Remove"
 msgstr ""
 
@@ -198,7 +200,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1710
 #: includes/widgets/recent-posts.php:236
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:154
 msgid "Post"
 msgstr ""
 
@@ -378,7 +379,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:631
 #: includes/metabox/metabox.php:1689
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:126
 msgid "Quote"
 msgstr ""
 
@@ -472,7 +472,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:355
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:671
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:65
 msgid "Bold"
 msgstr ""
 
@@ -580,7 +579,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:459
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:126
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/help/index.js:13
 msgid "Help"
 msgstr ""
 
@@ -645,7 +643,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1074
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:661
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/multi-image-picker/index.js:68
 msgid "Edit"
 msgstr ""
 
@@ -947,8 +944,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1298
 #: includes/metabox/metabox.php:1303
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:247
-#: includes/post-settings/src/sidebar/settings/title.js:259
 msgid "Repeat"
 msgstr ""
 
@@ -998,23 +993,6 @@ msgstr ""
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:2
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-family.js:40
-#: includes/post-settings/src/controls/typography/font-family.js:63
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:48
-#: includes/post-settings/src/sidebar/settings/footer.js:50
-#: includes/post-settings/src/sidebar/settings/footer.js:98
-#: includes/post-settings/src/sidebar/settings/general.js:48
-#: includes/post-settings/src/sidebar/settings/general.js:71
-#: includes/post-settings/src/sidebar/settings/header.js:50
-#: includes/post-settings/src/sidebar/settings/header.js:98
-#: includes/post-settings/src/sidebar/settings/header.js:143
-#: includes/post-settings/src/sidebar/settings/title.js:51
-#: includes/post-settings/src/sidebar/settings/title.js:101
-#: includes/post-settings/src/sidebar/settings/title.js:175
-#: includes/post-settings/src/sidebar/settings/title.js:214
-#: includes/post-settings/src/sidebar/settings/title.js:239
-#: includes/post-settings/src/sidebar/settings/title.js:257
-#: includes/post-settings/src/sidebar/settings/title.js:277
 msgid "Default"
 msgstr ""
 
@@ -1383,7 +1361,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1650
 #: includes/widgets/custom-menu.php:327
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:78
 msgid "Link"
 msgstr ""
 
@@ -1869,7 +1846,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:372
 #: includes/widgets/social.php:479
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:176
 msgid "Font Size"
 msgstr ""
 
@@ -4973,7 +4949,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:656
 #: includes/metabox/metabox.php:1276
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:229
 msgid "Attachment"
 msgstr ""
 
@@ -5448,7 +5423,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:312
 #: includes/metabox/metabox.php:1247
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:204
 msgid "Position"
 msgstr ""
 
@@ -5531,7 +5505,6 @@ msgstr ""
 
 #: includes/menu-icons/includes/settings.php:544
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:131
 msgid "Reset"
 msgstr ""
 
@@ -5558,7 +5531,6 @@ msgstr ""
 #: includes/metabox/butterbean/inc/controls/class-control-media.php:54
 #: includes/metabox/controls/media/class-control-media.php:53
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/media-url-picker/index.js:69
 msgid "Browse"
 msgstr ""
 
@@ -5580,7 +5552,6 @@ msgstr ""
 
 #: includes/metabox/gallery-metabox/gallery-metabox.php:150
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/gallery.js:35
 msgid "Enable lightbox for this gallery?"
 msgstr ""
 
@@ -5590,7 +5561,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:254
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:38
 msgid "Content Layout"
 msgstr ""
 
@@ -5600,37 +5570,31 @@ msgstr ""
 
 #: includes/metabox/metabox.php:258
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:49
 msgid "Right Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:259
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:50
 msgid "Left Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:260
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:51
 msgid "Full Width"
 msgstr ""
 
 #: includes/metabox/metabox.php:261
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:52
 msgid "100% Full Width"
 msgstr ""
 
 #: includes/metabox/metabox.php:262
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:53
 msgid "Both Sidebars"
 msgstr ""
 
 #: includes/metabox/metabox.php:279
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:61
 msgid "Both Sidebars: Style"
 msgstr ""
 
@@ -5640,25 +5604,21 @@ msgstr ""
 
 #: includes/metabox/metabox.php:283
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:72
 msgid "Sidebar / Sidebar / Content"
 msgstr ""
 
 #: includes/metabox/metabox.php:284
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:73
 msgid "Sidebar / Content / Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:285
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:74
 msgid "Content / Sidebar / Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:302
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:80
 msgid "Both Sidebars: Content Width (%)"
 msgstr ""
 
@@ -5668,7 +5628,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:323
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:96
 msgid "Both Sidebars: Sidebars Width (%)"
 msgstr ""
 
@@ -5678,7 +5637,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:344
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:114
 msgid "Sidebar"
 msgstr ""
 
@@ -5688,7 +5646,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:362
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:130
 msgid "Second Sidebar"
 msgstr ""
 
@@ -5714,15 +5671,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1539
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:61
-#: includes/post-settings/src/sidebar/settings/footer.js:63
-#: includes/post-settings/src/sidebar/settings/footer.js:111
-#: includes/post-settings/src/sidebar/settings/gallery.js:48
-#: includes/post-settings/src/sidebar/settings/general.js:160
-#: includes/post-settings/src/sidebar/settings/header.js:63
-#: includes/post-settings/src/sidebar/settings/header.js:111
-#: includes/post-settings/src/sidebar/settings/title.js:64
-#: includes/post-settings/src/sidebar/settings/title.js:114
 msgid "Enable"
 msgstr ""
 
@@ -5736,21 +5684,11 @@ msgstr ""
 #: includes/metabox/metabox.php:1540
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:74
-#: includes/post-settings/src/sidebar/settings/footer.js:76
-#: includes/post-settings/src/sidebar/settings/footer.js:124
-#: includes/post-settings/src/sidebar/settings/gallery.js:61
-#: includes/post-settings/src/sidebar/settings/general.js:173
-#: includes/post-settings/src/sidebar/settings/header.js:76
-#: includes/post-settings/src/sidebar/settings/header.js:124
-#: includes/post-settings/src/sidebar/settings/title.js:77
-#: includes/post-settings/src/sidebar/settings/title.js:127
 msgid "Disable"
 msgstr ""
 
 #: includes/metabox/metabox.php:402
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:181
 msgid "Custom Body Class"
 msgstr ""
 
@@ -5764,7 +5702,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:427
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:38
 msgid "Shortcode Before Top Bar"
 msgstr ""
 
@@ -5774,7 +5711,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:444
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:51
 msgid "Shortcode After Top Bar"
 msgstr ""
 
@@ -5784,7 +5720,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:461
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:69
 msgid "Shortcode Before Header"
 msgstr ""
 
@@ -5794,7 +5729,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:478
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:82
 msgid "Shortcode After Header"
 msgstr ""
 
@@ -5820,7 +5754,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:529
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:131
 msgid "Shortcode Before Footer Widgets"
 msgstr ""
 
@@ -5830,7 +5763,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:546
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:144
 msgid "Shortcode After Footer Widgets"
 msgstr ""
 
@@ -5840,7 +5772,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:563
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:162
 msgid "Shortcode Before Footer Bottom"
 msgstr ""
 
@@ -5850,7 +5781,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:580
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:175
 msgid "Shortcode After Footer Bottom"
 msgstr ""
 
@@ -5860,13 +5790,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:595
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:65
 msgid "Header"
 msgstr ""
 
 #: includes/metabox/metabox.php:605
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:37
 msgid "Display Top Bar"
 msgstr ""
 
@@ -5876,7 +5804,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:628
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:85
 msgid "Display Header"
 msgstr ""
 
@@ -5886,7 +5813,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:651
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:133
 msgid "Header Style"
 msgstr ""
 
@@ -5898,25 +5824,21 @@ msgstr ""
 #: includes/widgets/social-share.php:336
 #: includes/widgets/social-share.php:354
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:144
 msgid "Minimal"
 msgstr ""
 
 #: includes/metabox/metabox.php:656
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:145
 msgid "Transparent"
 msgstr ""
 
 #: includes/metabox/metabox.php:657
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:146
 msgid "Top Menu"
 msgstr ""
 
 #: includes/metabox/metabox.php:658
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:147
 msgid "Full Screen"
 msgstr ""
 
@@ -5926,25 +5848,21 @@ msgstr ""
 #: includes/widgets/custom-menu.php:311
 #: includes/widgets/instagram.php:252
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:148
 msgid "Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:661
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:150
 msgid "Vertical"
 msgstr ""
 
 #: includes/metabox/metabox.php:662
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:151
 msgid "Custom Header"
 msgstr ""
 
 #: includes/metabox/metabox.php:679
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:159
 msgid "Left Menu"
 msgstr ""
 
@@ -5957,8 +5875,6 @@ msgstr ""
 #: includes/preloader/customizer.php:305
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/footer.js:133
-#: includes/post-settings/src/sidebar/settings/header.js:175
 msgid "Select Template"
 msgstr ""
 
@@ -5972,7 +5888,6 @@ msgstr ""
 #: includes/preloader/customizer.php:146
 #: includes/wizard/wizard.php:718
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/sidebar/settings/logo.js:83
 msgid "Logo"
 msgstr ""
 
@@ -5983,7 +5898,6 @@ msgstr ""
 #: includes/metabox/metabox.php:740
 #: includes/wizard/wizard.php:747
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/sidebar/settings/logo.js:88
 msgid "Retina Logo"
 msgstr ""
 
@@ -6041,7 +5955,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:891
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:44
 msgid "Main Navigation Menu"
 msgstr ""
 
@@ -6051,7 +5964,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:909
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:57
 msgid "Typography"
 msgstr ""
 
@@ -6061,7 +5973,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:937
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:82
 msgid "Link Color"
 msgstr ""
 
@@ -6072,7 +5983,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:954
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:90
 msgid "Link Color: Hover"
 msgstr ""
 
@@ -6087,7 +5997,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:988
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:106
 msgid "Link Background"
 msgstr ""
 
@@ -6100,7 +6009,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1005
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:114
 msgid "Link Background: Hover"
 msgstr ""
 
@@ -6171,7 +6079,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1115
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:38
 msgid "Display Page Title"
 msgstr ""
 
@@ -6181,7 +6088,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1138
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:88
 msgid "Display Heading"
 msgstr ""
 
@@ -6199,7 +6105,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1178
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:151
 msgid "Subheading"
 msgstr ""
 
@@ -6209,7 +6114,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1195
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:165
 msgid "Title Style"
 msgstr ""
 
@@ -6219,7 +6123,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1213
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:186
 msgid "Title: Background Color"
 msgstr ""
 
@@ -6229,7 +6132,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1230
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:199
 msgid "Title: Background Image"
 msgstr ""
 
@@ -6243,55 +6145,46 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1251
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:215
 msgid "Top Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1252
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:216
 msgid "Top Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1253
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:217
 msgid "Top Right"
 msgstr ""
 
 #: includes/metabox/metabox.php:1254
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:218
 msgid "Center Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1255
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:219
 msgid "Center Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1256
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:220
 msgid "Center Right"
 msgstr ""
 
 #: includes/metabox/metabox.php:1257
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:221
 msgid "Bottom Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1258
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:222
 msgid "Bottom Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1259
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:223
 msgid "Bottom Right"
 msgstr ""
 
@@ -6301,13 +6194,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1280
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:240
 msgid "Scroll"
 msgstr ""
 
 #: includes/metabox/metabox.php:1281
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:241
 msgid "Fixed"
 msgstr ""
 
@@ -6329,7 +6220,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1322
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:267
 msgid "Size"
 msgstr ""
 
@@ -6339,19 +6229,16 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1326
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:278
 msgid "Auto"
 msgstr ""
 
 #: includes/metabox/metabox.php:1327
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:279
 msgid "Cover"
 msgstr ""
 
 #: includes/metabox/metabox.php:1328
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:280
 msgid "Contain"
 msgstr ""
 
@@ -6365,7 +6252,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1366
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:302
 msgid "Title: Background Overlay Opacity"
 msgstr ""
 
@@ -6375,7 +6261,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1388
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:317
 msgid "Title: Background Overlay Color"
 msgstr ""
 
@@ -6385,7 +6270,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1413
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:35
 msgid "Display Breadcrumbs"
 msgstr ""
 
@@ -6397,26 +6281,22 @@ msgstr ""
 #: includes/widgets/about-me.php:403
 #: includes/widgets/social.php:501
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:83
 msgid "Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1453
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:91
 msgid "Separator Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1470
 #: includes/wizard/wizard.php:826
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:99
 msgid "Links Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1487
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:107
 msgid "Links Color: Hover"
 msgstr ""
 
@@ -6426,13 +6306,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1502
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:127
 msgid "Footer"
 msgstr ""
 
 #: includes/metabox/metabox.php:1512
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/footer.js:37
 msgid "Display Footer Widgets Area"
 msgstr ""
 
@@ -6442,7 +6320,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1535
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/footer.js:85
 msgid "Display Copyright Area"
 msgstr ""
 
@@ -6452,7 +6329,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1601
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:45
 msgid "oEmbed URL"
 msgstr ""
 
@@ -6462,38 +6338,32 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1618
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:59
 msgid "Self Hosted"
 msgstr ""
 
 #: includes/metabox/metabox.php:1619
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:60
 msgid "Insert your self hosted video or audio url here."
 msgstr ""
 
 #: includes/metabox/metabox.php:1635
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:64
 msgid "Embed Code"
 msgstr ""
 
 #: includes/metabox/metabox.php:1636
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:65
 msgid "Insert your embed/iframe code. This setting is used for your video and audio post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1651
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:79
 msgid "Enter your external url. This setting is used for your link post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1667
 #: includes/widgets/social.php:457
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:93
 msgid "Link Target"
 msgstr ""
 
@@ -6508,7 +6378,6 @@ msgstr ""
 #: includes/widgets/instagram.php:263
 #: includes/widgets/social.php:460
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:106
 msgid "Self"
 msgstr ""
 
@@ -6520,19 +6389,16 @@ msgstr ""
 #: includes/widgets/instagram.php:262
 #: includes/widgets/social.php:459
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:119
 msgid "Blank"
 msgstr ""
 
 #: includes/metabox/metabox.php:1690
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:127
 msgid "Enter your quote. This setting is used for your quote post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1707
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:141
 msgid "Quote Link"
 msgstr ""
 
@@ -6544,7 +6410,6 @@ msgstr ""
 #: includes/widgets/social.php:449
 #: includes/widgets/tags.php:363
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:167
 msgid "None"
 msgstr ""
 
@@ -6554,32 +6419,27 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1770
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:176
 msgid "Default Style"
 msgstr ""
 
 #: includes/metabox/metabox.php:1771
 #: includes/metabox/metabox.php:1772
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:177
 msgid "Centered"
 msgstr ""
 
 #: includes/metabox/metabox.php:1773
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:178
 msgid "Centered Minimal"
 msgstr ""
 
 #: includes/metabox/metabox.php:1774
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:179
 msgid "Background Image"
 msgstr ""
 
 #: includes/metabox/metabox.php:1775
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:180
 msgid "Solid Color and White Text"
 msgstr ""
 
@@ -7760,6 +7620,36 @@ msgstr ""
 #: includes/themepanel/views/panes/system-info-details.php:555
 msgctxt "by author"
 msgid "by %s"
+msgstr ""
+
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
 msgstr ""
 
 #: includes/widgets/about-me.php:119
@@ -9093,364 +8983,276 @@ msgid "View Your Website"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/help/index.js:19
 msgid "Learn how to take full advantage and control of each page on your website - "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/help/index.js:21
 msgid "Read more about sidebar settings"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:83
 msgid "More Options"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:93
 msgid "Reset Options to default"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:100
 msgid "Reset Options"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:104
 msgid "Reset this page options to default"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:111
 msgid "Reset Page Settings & Styling"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/reset-options/reset.js:139
 msgid "Cancel"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/upsell/index.js:14
 msgid "Extra Power"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/upsell/index.js:22
 msgid "Enjoying the free OceanWP features? Imagine what additional power options you can add to your website with OceanWP premium plans."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/upsell/index.js:31
 msgid "OceanWP Pro Bundle"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/upsell/index.js:38
 msgid "Ocean eCommerce"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/panel-page-option/index.js:12
-#: includes/post-settings/src/sidebar/registerSidebar.js:44
 msgid "Page Settings & Styling"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:147
 msgid "Padding"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/general.js:207
-#: includes/post-settings/src/sidebar/settings/general.js:208
 msgid "Learn how to use the General settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:34
 msgid "Top Bar"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:96
 msgid "Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:100
 msgid "Shortcode Before Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:113
 msgid "Shortcode After Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:158
 msgid "Footer Bottom"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/shortcode.js:205
-#: includes/post-settings/src/sidebar/settings/shortcode.js:206
 msgid "Learn how to use the Shortcode settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/sidebar/settings/header.js:203
-#: includes/post-settings/src/sidebar/settings/header.js:204
 msgid "Learn how to use the Header settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/image-picker/index.js:59
-#: includes/post-settings/src/controls/media-url-picker/index.js:68
 msgid "Replace"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/image-picker/index.js:60
-#: includes/post-settings/src/controls/multi-image-picker/index.js:69
 msgid "Add Image"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/src/controls/device-type/index.js:52
 msgid "Device"
 msgstr ""
 
-#. translators: Unit type
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/device-type/index.js:58
 msgid "%s settings"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/sidebar/settings/logo.js:96
 msgid "Logo Width (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/sidebar/settings/logo.js:117
 msgid "Logo Height (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/sidebar/settings/logo.js:148
-#: includes/post-settings/src/sidebar/settings/logo.js:149
 msgid "Learn how to use the Logo settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:64
 msgid "Normal"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:136
 msgid "Font Family"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:164
 msgid "Font Weight"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-family.js:185
 msgid "Font Subset"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/src/controls/typography/font-format.js:193
 msgid "Text Transform"
 msgstr ""
 
-#. translators: option name
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:200
 msgid "%s"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:227
 msgid "Line Height"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/font-format.js:243
 msgid "Letter Spacing"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/reset.js:17
 msgid "Reset typography settings"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/color-picker/index.js:218
-#: includes/post-settings/src/controls/typography/reset.js:48
 msgid "Reset color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/index.js:50
-#: includes/post-settings/src/controls/typography/index.js:63
 msgid "Typograhpy"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/typography/index.js:55
-#: includes/post-settings/src/controls/typography/index.js:68
 msgid "Typograhpy Settings"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/color-picker/index.js:57
-#: includes/post-settings/src/controls/color-picker/index.js:73
 msgid "Select Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/color-picker/index.js:63
-#: includes/post-settings/src/controls/color-picker/index.js:79
 msgid "Color picker"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/color-picker/index.js:166
-#: includes/post-settings/src/controls/color-picker/index.js:170
 msgid "Opacity"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/controls/color-picker/index.js:194
-#: includes/post-settings/src/controls/color-picker/index.js:197
 msgid "Reset Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:98
 msgid "Link Color: Active"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:122
 msgid "Link Background: Active"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:130
 msgid "Simple Social Background"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:138
 msgid "Simple Social Background: Hover"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:146
 msgid "Simple Social Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:154
 msgid "Simple Social Color: Hover"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/menu.js:176
-#: includes/post-settings/src/sidebar/settings/menu.js:177
 msgid "Learn how to use the Menu settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:136
 msgid "Custom Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:137
 msgid "Add page title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:152
 msgid "Add subheading"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:258
 msgid "No Repeat"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:260
 msgid "Repeat-X"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:261
 msgid "Repeat-Y"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:286
 msgid "Title: Background Height (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/title.js:345
-#: includes/post-settings/src/sidebar/settings/title.js:346
 msgid "Learn how to use the Title settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:131
-#: includes/post-settings/src/sidebar/settings/breadcrumbs.js:132
 msgid "Learn how to use the Breadcrumb settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/footer.js:161
-#: includes/post-settings/src/sidebar/settings/footer.js:162
 msgid "Learn how to use the Footer settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:31
 msgid "Enter a URL that is compatible with WP's built-in oEmbed feature. This setting is used for your video and audio post formats - "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/post.js:33
 msgid "learn more"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/settings/gallery.js:69
 msgid "Add Gallery Images"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/panel-page-option/index.js:16
 msgid "Page Metabox Settings are now available in the main Editor Toolbar."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/panel-page-option/index.js:22
 msgid "Click the "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/src/sidebar/panel-page-option/index.js:24
 msgid " icon in the upper corner for countless settings, customization and styling Options."
 msgstr ""
