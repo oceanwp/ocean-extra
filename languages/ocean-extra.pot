@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-20T01:30:03+00:00\n"
+"POT-Creation-Date: 2024-10-14T08:30:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -1085,8 +1085,8 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:979
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1004
-#: includes/preloader/customizer.php:315
-#: includes/preloader/customizer.php:380
+#: includes/preloader/customizer.php:317
+#: includes/preloader/customizer.php:382
 msgid "Desktop"
 msgstr ""
 
@@ -1238,7 +1238,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:1134
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:551
-#: includes/preloader/customizer.php:387
+#: includes/preloader/customizer.php:389
 msgid "Tablet"
 msgstr ""
 
@@ -1851,9 +1851,9 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:892
 #: includes/menu-icons/includes/settings.php:372
-#: includes/preloader/customizer.php:465
-#: includes/preloader/customizer.php:473
-#: includes/preloader/customizer.php:480
+#: includes/preloader/customizer.php:467
+#: includes/preloader/customizer.php:475
+#: includes/preloader/customizer.php:482
 #: includes/widgets/social.php:479
 #: includes/post-settings/assets/index.js:2
 msgid "Font Size"
@@ -4321,7 +4321,7 @@ msgid "Megaphone"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:235
-#: includes/preloader/customizer.php:394
+#: includes/preloader/customizer.php:396
 msgid "Mobile"
 msgstr ""
 
@@ -5411,7 +5411,7 @@ msgid "Select"
 msgstr ""
 
 #: includes/menu-icons/includes/picker.php:112
-#: includes/preloader/customizer.php:646
+#: includes/preloader/customizer.php:648
 #: includes/widgets/custom-menu.php:326
 msgid "Icon"
 msgstr ""
@@ -6979,24 +6979,24 @@ msgstr ""
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
-#: includes/plugins-tab.php:60
-#: includes/plugins-tab.php:75
-msgid "OceanWP Plugins"
+#: includes/plugins-tab.php:63
+#: includes/plugins-tab.php:78
+msgid "For OceanWP"
 msgstr ""
 
-#: includes/plugins-tab.php:70
+#: includes/plugins-tab.php:73
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: includes/plugins-tab.php:125
+#: includes/plugins-tab.php:128
 msgid "You do not have sufficient permissions to install plugins."
 msgstr ""
 
-#: includes/plugins-tab.php:163
+#: includes/plugins-tab.php:166
 msgid "You do not have sufficient permissions to activate plugins."
 msgstr ""
 
-#: includes/plugins-tab.php:170
+#: includes/plugins-tab.php:173
 msgid "Plugin file does not exist."
 msgstr ""
 
@@ -7137,19 +7137,19 @@ msgstr ""
 msgid "Upload svg, gif, png, jpg."
 msgstr ""
 
-#: includes/preloader/customizer.php:275
+#: includes/preloader/customizer.php:276
 msgid "Upload SVG"
 msgstr ""
 
-#: includes/preloader/customizer.php:276
+#: includes/preloader/customizer.php:277
 msgid "Upload svg file here."
 msgstr ""
 
-#: includes/preloader/customizer.php:299
+#: includes/preloader/customizer.php:301
 msgid "Size (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:341
+#: includes/preloader/customizer.php:343
 #: includes/widgets/contact-info.php:423
 #: includes/widgets/contact-info.php:447
 #: includes/widgets/contact-info.php:471
@@ -7157,83 +7157,83 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/preloader/customizer.php:344
+#: includes/preloader/customizer.php:346
 msgid "Site is Loading, Please wait..."
 msgstr ""
 
-#: includes/preloader/customizer.php:363
+#: includes/preloader/customizer.php:365
 msgid "Container Width (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:364
+#: includes/preloader/customizer.php:366
 msgid "Enter a value \"0\" to unset Container Width, or add custom Container Width value."
 msgstr ""
 
-#: includes/preloader/customizer.php:408
+#: includes/preloader/customizer.php:410
 msgid "Typography and Colors "
 msgstr ""
 
-#: includes/preloader/customizer.php:420
-#: includes/preloader/customizer.php:594
+#: includes/preloader/customizer.php:422
+#: includes/preloader/customizer.php:596
 msgid "Content Text"
 msgstr ""
 
-#: includes/preloader/customizer.php:430
+#: includes/preloader/customizer.php:432
 #: includes/post-settings/assets/index.js:2
 msgid "Font Family"
 msgstr ""
 
-#: includes/preloader/customizer.php:437
-#: includes/preloader/customizer.php:444
-#: includes/preloader/customizer.php:451
+#: includes/preloader/customizer.php:439
+#: includes/preloader/customizer.php:446
+#: includes/preloader/customizer.php:453
 #: includes/post-settings/assets/index.js:2
 msgid "Font Weight"
 msgstr ""
 
-#: includes/preloader/customizer.php:458
+#: includes/preloader/customizer.php:460
 #: includes/post-settings/assets/index.js:2
 msgid "Font Subset"
 msgstr ""
 
-#: includes/preloader/customizer.php:487
-#: includes/preloader/customizer.php:517
-#: includes/preloader/customizer.php:546
+#: includes/preloader/customizer.php:489
+#: includes/preloader/customizer.php:519
+#: includes/preloader/customizer.php:548
 msgid "Unit"
 msgstr ""
 
-#: includes/preloader/customizer.php:495
-#: includes/preloader/customizer.php:503
-#: includes/preloader/customizer.php:510
+#: includes/preloader/customizer.php:497
+#: includes/preloader/customizer.php:505
+#: includes/preloader/customizer.php:512
 #: includes/post-settings/assets/index.js:3
 msgid "Letter Spacing"
 msgstr ""
 
-#: includes/preloader/customizer.php:524
-#: includes/preloader/customizer.php:532
-#: includes/preloader/customizer.php:539
+#: includes/preloader/customizer.php:526
+#: includes/preloader/customizer.php:534
+#: includes/preloader/customizer.php:541
 #: includes/post-settings/assets/index.js:3
 msgid "Line Height"
 msgstr ""
 
-#: includes/preloader/customizer.php:553
-#: includes/preloader/customizer.php:560
-#: includes/preloader/customizer.php:567
+#: includes/preloader/customizer.php:555
+#: includes/preloader/customizer.php:562
+#: includes/preloader/customizer.php:569
 #: includes/post-settings/assets/index.js:2
 msgid "Text Transform"
 msgstr ""
 
-#: includes/preloader/customizer.php:574
+#: includes/preloader/customizer.php:576
 msgid "Text Decoration"
 msgstr ""
 
-#: includes/preloader/customizer.php:606
-#: includes/preloader/customizer.php:632
-#: includes/preloader/customizer.php:658
+#: includes/preloader/customizer.php:608
+#: includes/preloader/customizer.php:634
+#: includes/preloader/customizer.php:660
 #: includes/post-settings/assets/index.js:3
 msgid "Select Color"
 msgstr ""
 
-#: includes/preloader/customizer.php:620
+#: includes/preloader/customizer.php:622
 msgid "Overlay"
 msgstr ""
 
@@ -7750,24 +7750,6 @@ msgstr ""
 #: includes/themepanel/views/panes/system-info-details.php:555
 msgctxt "by author"
 msgid "by %s"
-msgstr ""
-
-#: includes/update-message.php:46
-msgid "Backup recommended before plugin update."
-msgstr ""
-
-#. translators: %1$s Link open tag, %2$s: Link close tag.
-#: includes/update-message.php:52
-msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
-msgstr ""
-
-#: includes/update-message.php:68
-msgid "What's new?"
-msgstr ""
-
-#. translators: %1$s Link open tag, %2$s: Link close tag.
-#: includes/update-message.php:74
-msgid "Revamped Customizer for enhanced experience! This update delivers a %1$s completely redesigned Customizer %2$s with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn more about the OceanWP Customizer Upgrade."
 msgstr ""
 
 #: includes/widgets/about-me.php:119

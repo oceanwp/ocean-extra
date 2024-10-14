@@ -60,7 +60,7 @@ class OceanWP_Plugins_Tab {
 	public function add_oceanwp_plugin_tab( $tabs ) {
 		// Check if the current user has the capability to install plugins.
 		if ( apply_filters( 'oceanwp_show_plugin_tab', current_user_can( 'install_plugins' ) ) ) {
-			$tabs['oceanwp_plugins_tab'] = __( 'OceanWP Plugins', 'ocean-extra' ); // Add new tab.
+			$tabs['oceanwp_plugins_tab'] = __( 'For OceanWP', 'ocean-extra' ); // Add new tab.
 		}
 		return $tabs;
 	}
@@ -75,7 +75,7 @@ class OceanWP_Plugins_Tab {
 
 		?>
 		<div class="wrap">
-			<h2><?php _e( 'OceanWP Plugins', 'ocean-extra' ); ?></h2>
+			<h2><?php _e( 'For OceanWP', 'ocean-extra' ); ?></h2>
 			<?php
 			// Query Plugins by Author.
 			$api = plugins_api(
