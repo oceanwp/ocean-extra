@@ -30,7 +30,7 @@ class OceanWP_Freemius_Upsell_Section extends OceanWP_Freemius_Custom_Section
     protected function render()
     {
 ?>
-        <li id="accordion-section-<?php echo ow_esc_attr($this->id); ?>" class="skyrocket_upsell_section accordion-section control-section control-section-<?php echo ow_esc_attr($this->id); ?> cannot-expand">
+        <li id="accordion-section-<?php echo esc_attr($this->id); ?>" class="skyrocket_upsell_section accordion-section control-section control-section-<?php echo esc_attr($this->id); ?> cannot-expand">
             <h3 class="upsell-section-title">
                 <a href="<?php echo esc_url($this->url); ?>" target="_blank"><?php echo esc_html($this->title); ?></a>
             </h3>

@@ -148,8 +148,14 @@ class Ocean_Extra_Theme_Panel {
 	private static function get_panels() {
 
 		$panels = array(
-			'oe_general_panel'        => array(
-				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
+			'oe_styles_and_settings_panel'        => array(
+				'label' => esc_html__( 'Site Style & Settings Panel', 'ocean-extra' ),
+			),
+			'oe_colors_panel'        => array(
+				'label' => esc_html__( 'Colors Panel', 'ocean-extra' ),
+			),
+			'oe_site_page_settings_panel'        => array(
+				'label' => esc_html__( 'Site Page Settings Panel', 'ocean-extra' ),
 			),
 			'oe_typography_panel'     => array(
 				'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
@@ -159,6 +165,12 @@ class Ocean_Extra_Theme_Panel {
 			),
 			'oe_header_panel'         => array(
 				'label' => esc_html__( 'Header Panel', 'ocean-extra' ),
+			),
+			'oe_site_performance_panel'        => array(
+				'label' => esc_html__( 'Site Performance Panel', 'ocean-extra' ),
+			),
+			'oe_seo_settings_panel'        => array(
+				'label' => esc_html__( 'SEO Panel', 'ocean-extra' ),
 			),
 			'oe_blog_panel'           => array(
 				'label' => esc_html__( 'Blog Panel', 'ocean-extra' ),
