@@ -155,6 +155,9 @@ final class Ocean_Extra {
 			}
 			$required_theme_version = '3.3.3';
 
+			if ( ! empty( $current_theme_version ) && version_compare( $current_theme_version, '3.6.1', '<=' ) ) {
+				include_once $this->plugin_path . '/includes/update-message.php';
+			}
 
 			require_once OE_PATH . '/includes/panel/theme-panel.php';
 

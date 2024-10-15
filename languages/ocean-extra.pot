@@ -33,6 +33,7 @@ msgstr ""
 #: ocean-extra.php
 #: includes/admin-bar/admin-bar.php:53
 #: includes/dashboard.php:72
+#: includes/update-message.php:84
 msgid "OceanWP"
 msgstr ""
 
@@ -7752,6 +7753,36 @@ msgctxt "by author"
 msgid "by %s"
 msgstr ""
 
+#: includes/update-message.php:40
+msgid "Backup recommended before plugin update."
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:46
+msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
+msgstr ""
+
+#: includes/update-message.php:62
+msgid "What's new?"
+msgstr ""
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: includes/update-message.php:68
+msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
+msgstr ""
+
+#: includes/update-message.php:80
+msgid "Items"
+msgstr ""
+
+#: includes/update-message.php:81
+msgid "Required Version"
+msgstr ""
+
+#: includes/update-message.php:85
+msgid "4.0.0"
+msgstr ""
+
 #: includes/widgets/about-me.php:119
 msgid "&raquo; About Me"
 msgstr ""
@@ -9205,8 +9236,32 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
+#: includes/post-settings/assets/index.js:2
+msgid "Font Family"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:2
+msgid "Font Weight"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:2
+msgid "Font Subset"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:2
+msgid "Text Transform"
+msgstr ""
+
 #: includes/post-settings/assets/index.js:3
 msgid "%s"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:3
+msgid "Line Height"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:3
+msgid "Letter Spacing"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
@@ -9223,6 +9278,10 @@ msgstr ""
 
 #: includes/post-settings/assets/index.js:3
 msgid "Typograhpy Settings"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:3
+msgid "Select Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3

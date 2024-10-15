@@ -216,6 +216,10 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.3.1 - OCT 11 2024 =
+- Added: Conditional checks for future updates.
+- Updated: Compatibility: WordPress version number.
+
 = 2.3.0 - JUL 03 2024 =
 - Fixed: Potential vulnerability patched: Report by Patchstack from June 25th 2024.
 Updated: WordPress version for compatibility.
