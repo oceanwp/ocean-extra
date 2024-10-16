@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 2.4.0 - OCT 16 2024 =
+- NEW: Customizer: Library upgraded to default WordPress ReactJS.
+- NEW: Customizer: User Interface.
+- Added: Customizer: Main panel icons for improved visual navigation and user experience.
+- Added: Customizer: Panel grouping based website role for improved visual navigation and user experience.
+- Added: OceanWP Panel: Customizer: New panels users can disable / enable per need for faster loading and visual navigation.
+- Removed: Customizer: Legacy PHP Controls.
+- Removed: OceanWP Panel: Customizer: Panels: Legacy panels.
+
 = 2.3.1 - OCT 11 2024 =
 - Added: Conditional checks for future updates.
 - Updated: Compatibility: WordPress version number.

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-14T08:30:36+00:00\n"
+"POT-Creation-Date: 2024-10-16T09:41:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -81,6 +81,38 @@ msgstr ""
 
 #: includes/customizer/customizer.php:37
 msgid "OceanWP Info"
+msgstr ""
+
+#: includes/customizer/customizer.php:92
+msgid "Documentation"
+msgstr ""
+
+#: includes/customizer/customizer.php:93
+msgid "OceanWP has detailed documentation and comprehensive user guides available to help you get results fast. %1$s View documentation. %2$s"
+msgstr ""
+
+#: includes/customizer/customizer.php:99
+msgid "Website Templates"
+msgstr ""
+
+#: includes/customizer/customizer.php:100
+msgid "OceanWP provides a collection of pre-designed website templates (demos) to help jumpstart your project. %1$s View all available website templates. %2$s"
+msgstr ""
+
+#: includes/customizer/customizer.php:111
+msgid "Dedicated Premium Support"
+msgstr ""
+
+#: includes/customizer/customizer.php:112
+msgid "Elevate your experience with faster, expert and personalized email support available exclusively to %1$s OceanWP Pro Bundle %2$s and %3$s Ocean eCommerce Pro %2$s users. Upgrade today and get the best for your website."
+msgstr ""
+
+#: includes/customizer/customizer.php:122
+msgid "Free User Support"
+msgstr ""
+
+#: includes/customizer/customizer.php:123
+msgid "Receive free support for your website via  %1$s WordPress community forum  %2$s or  %3$s OceanWP official community on Facebook.  %2$s"
 msgstr ""
 
 #: includes/dashboard.php:43
@@ -9236,32 +9268,8 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: includes/post-settings/assets/index.js:2
-msgid "Font Family"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Font Weight"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Font Subset"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Text Transform"
-msgstr ""
-
 #: includes/post-settings/assets/index.js:3
 msgid "%s"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Line Height"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Letter Spacing"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
@@ -9278,10 +9286,6 @@ msgstr ""
 
 #: includes/post-settings/assets/index.js:3
 msgid "Typograhpy Settings"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Select Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
