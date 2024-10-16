@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.3.1\n"
+"Project-Id-Version: Ocean Extra 2.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-11T06:56:43+00:00\n"
+"POT-Creation-Date: 2024-10-16T09:41:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -63,7 +63,7 @@ msgid "Next message"
 msgstr ""
 
 #: includes/adobe-font.php:211
-#: includes/adobe-font.php:225
+#: includes/adobe-font.php:237
 msgid "OE Adobe Fonts"
 msgstr ""
 
@@ -77,6 +77,42 @@ msgstr ""
 
 #: includes/custom-code.php:67
 msgid "You need to reload to see the changes. No need to add the <script> tags."
+msgstr ""
+
+#: includes/customizer/customizer.php:37
+msgid "OceanWP Info"
+msgstr ""
+
+#: includes/customizer/customizer.php:92
+msgid "Documentation"
+msgstr ""
+
+#: includes/customizer/customizer.php:93
+msgid "OceanWP has detailed documentation and comprehensive user guides available to help you get results fast. %1$s View documentation. %2$s"
+msgstr ""
+
+#: includes/customizer/customizer.php:99
+msgid "Website Templates"
+msgstr ""
+
+#: includes/customizer/customizer.php:100
+msgid "OceanWP provides a collection of pre-designed website templates (demos) to help jumpstart your project. %1$s View all available website templates. %2$s"
+msgstr ""
+
+#: includes/customizer/customizer.php:111
+msgid "Dedicated Premium Support"
+msgstr ""
+
+#: includes/customizer/customizer.php:112
+msgid "Elevate your experience with faster, expert and personalized email support available exclusively to %1$s OceanWP Pro Bundle %2$s and %3$s Ocean eCommerce Pro %2$s users. Upgrade today and get the best for your website."
+msgstr ""
+
+#: includes/customizer/customizer.php:122
+msgid "Free User Support"
+msgstr ""
+
+#: includes/customizer/customizer.php:123
+msgid "Receive free support for your website via  %1$s WordPress community forum  %2$s or  %3$s OceanWP official community on Facebook.  %2$s"
 msgstr ""
 
 #: includes/dashboard.php:43
@@ -347,8 +383,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1724
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:611
 #: includes/menu-icons/includes/library/icon-selector/includes/types/image.php:39
-#: includes/preloader/customizer.php:145
-#: includes/preloader/customizer.php:188
+#: includes/preloader/customizer.php:230
+#: includes/preloader/customizer.php:262
 msgid "Image"
 msgstr ""
 
@@ -985,7 +1021,8 @@ msgstr ""
 #: includes/metabox/metabox.php:1744
 #: includes/metabox/metabox.php:1769
 #: includes/metabox/metabox.php:1782
-#: includes/preloader/customizer.php:124
+#: includes/preloader/customizer.php:118
+#: includes/preloader/customizer.php:119
 #: includes/widgets/contact-info.php:341
 #: includes/widgets/contact-info.php:382
 #: includes/widgets/custom-menu.php:366
@@ -1081,6 +1118,8 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:979
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1004
+#: includes/preloader/customizer.php:317
+#: includes/preloader/customizer.php:382
 msgid "Desktop"
 msgstr ""
 
@@ -1232,6 +1271,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:1134
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:551
+#: includes/preloader/customizer.php:389
 msgid "Tablet"
 msgstr ""
 
@@ -1844,6 +1884,9 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:892
 #: includes/menu-icons/includes/settings.php:372
+#: includes/preloader/customizer.php:467
+#: includes/preloader/customizer.php:475
+#: includes/preloader/customizer.php:482
 #: includes/widgets/social.php:479
 #: includes/post-settings/assets/index.js:2
 msgid "Font Size"
@@ -1924,7 +1967,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:650
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:486
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:817
-#: includes/preloader/customizer.php:172
+#: includes/preloader/customizer.php:254
 msgid "Heart"
 msgstr ""
 
@@ -2270,7 +2313,7 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:189
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:789
-#: includes/preloader/customizer.php:167
+#: includes/preloader/customizer.php:249
 msgid "Circle"
 msgstr ""
 
@@ -4311,6 +4354,7 @@ msgid "Megaphone"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:235
+#: includes/preloader/customizer.php:396
 msgid "Mobile"
 msgstr ""
 
@@ -4905,7 +4949,7 @@ msgid "Draggable"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:456
-#: includes/preloader/customizer.php:173
+#: includes/preloader/customizer.php:255
 msgid "Ellipsis"
 msgstr ""
 
@@ -5386,7 +5430,7 @@ msgid "Social Dropbox"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/svg.php:38
-#: includes/preloader/customizer.php:147
+#: includes/preloader/customizer.php:232
 msgid "SVG"
 msgstr ""
 
@@ -5400,6 +5444,7 @@ msgid "Select"
 msgstr ""
 
 #: includes/menu-icons/includes/picker.php:112
+#: includes/preloader/customizer.php:648
 #: includes/widgets/custom-menu.php:326
 msgid "Icon"
 msgstr ""
@@ -5872,7 +5917,7 @@ msgstr ""
 
 #: includes/metabox/metabox.php:697
 #: includes/metabox/metabox.php:1558
-#: includes/preloader/customizer.php:305
+#: includes/preloader/customizer.php:158
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
 msgid "Select Template"
@@ -5885,7 +5930,7 @@ msgstr ""
 
 #: includes/metabox/metabox.php:713
 #: includes/metabox/metabox.php:723
-#: includes/preloader/customizer.php:146
+#: includes/preloader/customizer.php:231
 #: includes/wizard/wizard.php:718
 #: includes/post-settings/assets/index.js:2
 msgid "Logo"
@@ -6839,112 +6884,153 @@ msgid "Yes! I want the Upgrade"
 msgstr ""
 
 #: includes/panel/theme-panel.php:152
-#: includes/themepanel/theme-panel.php:497
-msgid "General Panel"
+#: includes/themepanel/theme-panel.php:503
+msgid "Site Style & Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:155
-#: includes/themepanel/theme-panel.php:500
-msgid "Typography Panel"
+#: includes/themepanel/theme-panel.php:506
+msgid "Colors Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:158
-#: includes/themepanel/theme-panel.php:503
-msgid "Top Bar Panel"
+#: includes/themepanel/theme-panel.php:509
+msgid "Site Page Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:161
-#: includes/themepanel/theme-panel.php:506
-msgid "Header Panel"
+#: includes/themepanel/theme-panel.php:512
+msgid "Typography Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:164
-#: includes/themepanel/theme-panel.php:509
-msgid "Blog Panel"
+#: includes/themepanel/theme-panel.php:515
+msgid "Top Bar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:167
-#: includes/themepanel/theme-panel.php:512
-msgid "Sidebar Panel"
+#: includes/themepanel/theme-panel.php:518
+msgid "Header Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:515
-msgid "Footer Widgets Panel"
+#: includes/themepanel/theme-panel.php:521
+msgid "Site Performance Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:173
-#: includes/themepanel/theme-panel.php:518
-msgid "Footer Bottom Panel"
+#: includes/themepanel/theme-panel.php:524
+msgid "SEO Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:176
-#: includes/themepanel/theme-panel.php:521
+#: includes/themepanel/theme-panel.php:527
+msgid "Blog Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:179
+#: includes/themepanel/theme-panel.php:530
+msgid "Sidebar Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:182
+#: includes/themepanel/theme-panel.php:533
+msgid "Footer Widgets Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:185
+#: includes/themepanel/theme-panel.php:536
+msgid "Footer Bottom Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:188
+#: includes/themepanel/theme-panel.php:539
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:193
+#: includes/panel/theme-panel.php:205
 msgid "Upload your logo"
 msgstr ""
 
-#: includes/panel/theme-panel.php:194
+#: includes/panel/theme-panel.php:206
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
-#: includes/panel/theme-panel.php:197
+#: includes/panel/theme-panel.php:209
 msgid "Add your favicon"
 msgstr ""
 
-#: includes/panel/theme-panel.php:198
+#: includes/panel/theme-panel.php:210
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:201
+#: includes/panel/theme-panel.php:213
 msgid "Choose your primary color"
 msgstr ""
 
-#: includes/panel/theme-panel.php:202
+#: includes/panel/theme-panel.php:214
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:205
+#: includes/panel/theme-panel.php:217
 msgid "Choose your typography"
 msgstr ""
 
-#: includes/panel/theme-panel.php:206
+#: includes/panel/theme-panel.php:218
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:210
+#: includes/panel/theme-panel.php:222
 msgid "Top bar options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:211
+#: includes/panel/theme-panel.php:223
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:214
+#: includes/panel/theme-panel.php:226
 msgid "Header options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:215
+#: includes/panel/theme-panel.php:227
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
-#: includes/panel/theme-panel.php:218
+#: includes/panel/theme-panel.php:230
 msgid "Footer widgets options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:219
+#: includes/panel/theme-panel.php:231
 msgid "Choose the columns number, paddings and colors for the footer widgets."
 msgstr ""
 
-#: includes/panel/theme-panel.php:222
+#: includes/panel/theme-panel.php:234
 msgid "Footer bottom options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:223
+#: includes/panel/theme-panel.php:235
 msgid "Add your copyright, paddings and colors for the footer bottom."
+msgstr ""
+
+#: includes/plugins-tab.php:63
+#: includes/plugins-tab.php:78
+msgid "For OceanWP"
+msgstr ""
+
+#: includes/plugins-tab.php:73
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/plugins-tab.php:128
+msgid "You do not have sufficient permissions to install plugins."
+msgstr ""
+
+#: includes/plugins-tab.php:166
+msgid "You do not have sufficient permissions to activate plugins."
+msgstr ""
+
+#: includes/plugins-tab.php:173
+msgid "Plugin file does not exist."
 msgstr ""
 
 #: includes/post-settings/functions.php:150
@@ -6999,79 +7085,104 @@ msgstr ""
 msgid "Logged Out User"
 msgstr ""
 
-#: includes/preloader/customizer.php:88
-msgid "Preloader"
+#: includes/preloader/customizer.php:80
+msgid "Site Preloader"
 msgstr ""
 
-#: includes/preloader/customizer.php:103
-msgid "Enable OceanWP Preloader"
+#: includes/preloader/customizer.php:85
+msgid "Enable Site Preloader"
 msgstr ""
 
-#: includes/preloader/customizer.php:118
+#: includes/preloader/customizer.php:106
 msgid "Preloader Type"
 msgstr ""
 
-#: includes/preloader/customizer.php:125
+#: includes/preloader/customizer.php:123
+#: includes/preloader/customizer.php:124
 msgid "Custom"
 msgstr ""
 
-#: includes/preloader/customizer.php:138
+#: includes/preloader/customizer.php:140
+msgid "Custom Preloader Settings "
+msgstr ""
+
+#: includes/preloader/customizer.php:148
+msgid "Custom preloader settings are available for the Custom Preloader type."
+msgstr ""
+
+#: includes/preloader/customizer.php:159
+msgid "Choose a template you created in OceanWP > My Library"
+msgstr ""
+
+#: includes/preloader/customizer.php:183
+msgid "Elementor Flickers/FOUC"
+msgstr ""
+
+#: includes/preloader/customizer.php:184
+msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
+msgstr ""
+
+#: includes/preloader/customizer.php:208
+msgid "Defualt Preloader Settings"
+msgstr ""
+
+#: includes/preloader/customizer.php:219
 msgid "Icon Type"
 msgstr ""
 
-#: includes/preloader/customizer.php:144
+#: includes/preloader/customizer.php:229
 msgid "CSS"
 msgstr ""
 
-#: includes/preloader/customizer.php:160
+#: includes/preloader/customizer.php:238
 msgid "Preloader Icon"
 msgstr ""
 
-#: includes/preloader/customizer.php:166
+#: includes/preloader/customizer.php:248
 msgid "Roller"
 msgstr ""
 
-#: includes/preloader/customizer.php:168
+#: includes/preloader/customizer.php:250
 msgid "Ring"
 msgstr ""
 
-#: includes/preloader/customizer.php:169
+#: includes/preloader/customizer.php:251
 msgid "Dual Ring"
 msgstr ""
 
-#: includes/preloader/customizer.php:170
+#: includes/preloader/customizer.php:252
 msgid "Ripple Plain"
 msgstr ""
 
-#: includes/preloader/customizer.php:171
+#: includes/preloader/customizer.php:253
 msgid "Ripple Circle"
 msgstr ""
 
-#: includes/preloader/customizer.php:174
+#: includes/preloader/customizer.php:256
 msgid "Spinner Line"
 msgstr ""
 
-#: includes/preloader/customizer.php:175
+#: includes/preloader/customizer.php:257
 msgid "Spinner Dot"
 msgstr ""
 
-#: includes/preloader/customizer.php:189
+#: includes/preloader/customizer.php:263
 msgid "Upload svg, gif, png, jpg."
 msgstr ""
 
-#: includes/preloader/customizer.php:204
+#: includes/preloader/customizer.php:276
 msgid "Upload SVG"
 msgstr ""
 
-#: includes/preloader/customizer.php:205
-msgid "Upload svg file here"
+#: includes/preloader/customizer.php:277
+msgid "Upload svg file here."
 msgstr ""
 
-#: includes/preloader/customizer.php:229
+#: includes/preloader/customizer.php:301
 msgid "Size (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:253
+#: includes/preloader/customizer.php:343
 #: includes/widgets/contact-info.php:423
 #: includes/widgets/contact-info.php:447
 #: includes/widgets/contact-info.php:471
@@ -7079,32 +7190,84 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/preloader/customizer.php:279
+#: includes/preloader/customizer.php:346
+msgid "Site is Loading, Please wait..."
+msgstr ""
+
+#: includes/preloader/customizer.php:365
 msgid "Container Width (px)"
 msgstr ""
 
-#: includes/preloader/customizer.php:280
-msgid "Set \"0\" to unset or set your custom container width."
+#: includes/preloader/customizer.php:366
+msgid "Enter a value \"0\" to unset Container Width, or add custom Container Width value."
 msgstr ""
 
-#: includes/preloader/customizer.php:322
-msgid "Elementor Flickers/FOUC"
+#: includes/preloader/customizer.php:410
+msgid "Typography and Colors "
 msgstr ""
 
-#: includes/preloader/customizer.php:323
-msgid "Experimental (beta) feature which could potentially help resolve Elementor flicker / FOUC issues. No guarantee on resolution at this point."
+#: includes/preloader/customizer.php:422
+#: includes/preloader/customizer.php:596
+msgid "Content Text"
 msgstr ""
 
-#: includes/preloader/customizer.php:340
-msgid "Overlay Color"
+#: includes/preloader/customizer.php:432
+#: includes/post-settings/assets/index.js:2
+msgid "Font Family"
 msgstr ""
 
-#: includes/preloader/customizer.php:357
-msgid "Icon Color"
+#: includes/preloader/customizer.php:439
+#: includes/preloader/customizer.php:446
+#: includes/preloader/customizer.php:453
+#: includes/post-settings/assets/index.js:2
+msgid "Font Weight"
 msgstr ""
 
-#: includes/preloader/customizer.php:370
-msgid "Preloader Content"
+#: includes/preloader/customizer.php:460
+#: includes/post-settings/assets/index.js:2
+msgid "Font Subset"
+msgstr ""
+
+#: includes/preloader/customizer.php:489
+#: includes/preloader/customizer.php:519
+#: includes/preloader/customizer.php:548
+msgid "Unit"
+msgstr ""
+
+#: includes/preloader/customizer.php:497
+#: includes/preloader/customizer.php:505
+#: includes/preloader/customizer.php:512
+#: includes/post-settings/assets/index.js:3
+msgid "Letter Spacing"
+msgstr ""
+
+#: includes/preloader/customizer.php:526
+#: includes/preloader/customizer.php:534
+#: includes/preloader/customizer.php:541
+#: includes/post-settings/assets/index.js:3
+msgid "Line Height"
+msgstr ""
+
+#: includes/preloader/customizer.php:555
+#: includes/preloader/customizer.php:562
+#: includes/preloader/customizer.php:569
+#: includes/post-settings/assets/index.js:2
+msgid "Text Transform"
+msgstr ""
+
+#: includes/preloader/customizer.php:576
+msgid "Text Decoration"
+msgstr ""
+
+#: includes/preloader/customizer.php:608
+#: includes/preloader/customizer.php:634
+#: includes/preloader/customizer.php:660
+#: includes/post-settings/assets/index.js:3
+msgid "Select Color"
+msgstr ""
+
+#: includes/preloader/customizer.php:622
+msgid "Overlay"
 msgstr ""
 
 #: includes/shortcodes/shortcodes.php:207
@@ -7190,47 +7353,47 @@ msgid "Single Ocean Portfolio item"
 msgstr ""
 
 #: includes/themepanel/theme-panel.php:119
-#: includes/themepanel/theme-panel.php:154
-#: includes/themepanel/theme-panel.php:185
-#: includes/themepanel/theme-panel.php:197
-#: includes/themepanel/theme-panel.php:206
-#: includes/themepanel/theme-panel.php:245
-#: includes/themepanel/theme-panel.php:371
+#: includes/themepanel/theme-panel.php:160
+#: includes/themepanel/theme-panel.php:191
+#: includes/themepanel/theme-panel.php:203
+#: includes/themepanel/theme-panel.php:212
+#: includes/themepanel/theme-panel.php:251
+#: includes/themepanel/theme-panel.php:377
 msgid "Something went wrong"
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:140
-#: includes/themepanel/theme-panel.php:171
-#: includes/themepanel/theme-panel.php:232
-#: includes/themepanel/theme-panel.php:269
+#: includes/themepanel/theme-panel.php:146
+#: includes/themepanel/theme-panel.php:177
+#: includes/themepanel/theme-panel.php:238
+#: includes/themepanel/theme-panel.php:275
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:224
+#: includes/themepanel/theme-panel.php:230
 msgid "Project ID is wrong."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:288
+#: includes/themepanel/theme-panel.php:294
 msgid "Settings successfully reset."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:411
+#: includes/themepanel/theme-panel.php:417
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:449
+#: includes/themepanel/theme-panel.php:455
 msgid "Settings imported successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:456
+#: includes/themepanel/theme-panel.php:462
 msgid "Invalid Import Data."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:463
+#: includes/themepanel/theme-panel.php:469
 msgid "No import data found."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:777
+#: includes/themepanel/theme-panel.php:795
 msgid "View paid features"
 msgstr ""
 
@@ -9105,32 +9268,8 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: includes/post-settings/assets/index.js:2
-msgid "Font Family"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Font Weight"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Font Subset"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-msgid "Text Transform"
-msgstr ""
-
 #: includes/post-settings/assets/index.js:3
 msgid "%s"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Line Height"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Letter Spacing"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
@@ -9147,10 +9286,6 @@ msgstr ""
 
 #: includes/post-settings/assets/index.js:3
 msgid "Typograhpy Settings"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-msgid "Select Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3

@@ -17,11 +17,14 @@
 			$desc  = isset( $val['desc'] ) ? $val['desc'] : '';
 			$icon  = isset( $val['icon'] ) ? $val['icon'] : '';
 			$panel = isset( $val['panel'] ) ? $val['panel'] : false;
+			$section = isset( $val['section'] ) ? $val['section'] : false;
 			$id    = $key;
 			$customizer_autofocus = isset( $val['customizer_autofocus'] ) ? $val['customizer_autofocus'] : $id;
 
 			if ( true === $panel ) {
 				$focus = 'panel';
+			} else if ( true === $section ) {
+				$focus = 'section';
 			} else {
 				$focus = 'control';
 			}
