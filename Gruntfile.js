@@ -63,7 +63,6 @@ module.exports = function (grunt) {
             prod: {
                 files: {
                     "assets/css/admin.min.css": "assets/css/admin.css",
-                    "assets/css/pluginUpdateMessage.min.css": "assets/css/pluginUpdateMessage.css",
                     "includes/menu-icons/css/admin.min.css": "includes/menu-icons/css/admin.css",
                     "includes/panel/assets/css/import-export.min.css": "includes/panel/assets/css/import-export.css",
                     "includes/panel/assets/css/demos.min.css": "includes/panel/assets/css/demos.css",
