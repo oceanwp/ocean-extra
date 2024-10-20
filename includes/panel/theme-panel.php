@@ -267,6 +267,8 @@ class Ocean_Extra_Theme_Panel {
 		// Add array
 		$default = array();
 
+		$default['oe_general_panel'] = 1;
+
 		foreach ( $panels as $key => $val ) {
 			$default[ $key ] = 1;
 		}
@@ -274,7 +276,6 @@ class Ocean_Extra_Theme_Panel {
 		// Return
 		return apply_filters( 'oe_default_panels', $default );
 	}
-
 
 }
 
