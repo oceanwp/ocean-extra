@@ -219,6 +219,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 = 2.4.1 - OCT 21 2024 =
 - Fixed: OceanWP Metabox Settings: Logo: Customizer logo doesn't get overridden on individual level (main Customizer logo always displayed).
 - Fixed: OceanWP Customizer: General Options tab not displayed with version 3.6.1 and lower.
+- Fixed: Plugin Update Notice: Breaking layout display in the plugins area on multisite.
 
 = 2.4.0 - OCT 16 2024 =
 - NEW: Customizer: Library upgraded to default WordPress ReactJS.

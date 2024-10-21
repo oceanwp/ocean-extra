@@ -5,7 +5,7 @@
  * @package OceanWP WordPress theme
  */
 
- if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
