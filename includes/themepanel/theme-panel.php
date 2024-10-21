@@ -484,10 +484,6 @@ class Ocean_Extra_New_Theme_Panel {
 		// Get panels array
 		$panels = self::get_panels();
 
-		if ( ! isset( $panels['oe_general_panel'] ) ) {
-			$settings['oe_general_panel'] = ! empty( $settings['oe_general_panel'] ) ? true : false;
-		}
-
 		foreach ( $panels as $key => $val ) {
 
 			$settings[ $key ] = ! empty( $settings[ $key ] ) ? true : false;
@@ -522,6 +518,12 @@ class Ocean_Extra_New_Theme_Panel {
 			);
 			$panels['oe_seo_settings_panel'] = array(
 				'label' => esc_html__( 'SEO Panel', 'ocean-extra' ),
+			);
+		}
+
+		if ( version_compare( $version, '4.0.0', '<' ) ) {
+			$panels['oe_general_panel'] = array(
+				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
 			);
 		}
 
@@ -577,8 +579,6 @@ class Ocean_Extra_New_Theme_Panel {
 
 		// Add array
 		$default = array();
-
-		$default['oe_general_panel'] = 1;
 
 		foreach ( $panels as $key => $val ) {
 			$default[ $key ] = 1;

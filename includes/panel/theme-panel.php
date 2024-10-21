@@ -170,6 +170,12 @@ class Ocean_Extra_Theme_Panel {
 			);
 		}
 
+		if ( version_compare( $version, '4.0.0', '<' ) ) {
+			$panels['oe_general_panel'] = array(
+				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
+			);
+		}
+
 		// Panels that are included regardless of the theme version
 		$panels['oe_typography_panel'] = array(
 			'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
@@ -273,8 +279,6 @@ class Ocean_Extra_Theme_Panel {
 
 		// Add array
 		$default = array();
-
-		$default['oe_general_panel'] = 1;
 
 		foreach ( $panels as $key => $val ) {
 			$default[ $key ] = 1;

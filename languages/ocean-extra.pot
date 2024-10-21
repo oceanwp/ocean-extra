@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-21T06:07:27+00:00\n"
+"POT-Creation-Date: 2024-10-21T09:08:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -6884,131 +6884,136 @@ msgid "Yes! I want the Upgrade"
 msgstr ""
 
 #: includes/panel/theme-panel.php:157
-#: includes/themepanel/theme-panel.php:512
+#: includes/themepanel/theme-panel.php:508
 msgid "Site Style & Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:160
-#: includes/themepanel/theme-panel.php:515
+#: includes/themepanel/theme-panel.php:511
 msgid "Colors Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:163
-#: includes/themepanel/theme-panel.php:518
+#: includes/themepanel/theme-panel.php:514
 msgid "Site Page Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:166
-#: includes/themepanel/theme-panel.php:521
+#: includes/themepanel/theme-panel.php:517
 msgid "Site Performance Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:169
-#: includes/themepanel/theme-panel.php:524
+#: includes/themepanel/theme-panel.php:520
 msgid "SEO Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:175
-#: includes/themepanel/theme-panel.php:530
-msgid "Typography Panel"
-msgstr ""
-
-#: includes/panel/theme-panel.php:178
-#: includes/themepanel/theme-panel.php:533
-msgid "Top Bar Panel"
+#: includes/themepanel/theme-panel.php:526
+msgid "General Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:181
-#: includes/themepanel/theme-panel.php:536
-msgid "Header Panel"
+#: includes/themepanel/theme-panel.php:532
+msgid "Typography Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:184
-#: includes/themepanel/theme-panel.php:539
-msgid "Blog Panel"
+#: includes/themepanel/theme-panel.php:535
+msgid "Top Bar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:187
-#: includes/themepanel/theme-panel.php:542
-msgid "Sidebar Panel"
+#: includes/themepanel/theme-panel.php:538
+msgid "Header Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:190
-#: includes/themepanel/theme-panel.php:545
-msgid "Footer Widgets Panel"
+#: includes/themepanel/theme-panel.php:541
+msgid "Blog Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:193
-#: includes/themepanel/theme-panel.php:548
-msgid "Footer Bottom Panel"
+#: includes/themepanel/theme-panel.php:544
+msgid "Sidebar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:196
-#: includes/themepanel/theme-panel.php:551
+#: includes/themepanel/theme-panel.php:547
+msgid "Footer Widgets Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:199
+#: includes/themepanel/theme-panel.php:550
+msgid "Footer Bottom Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:202
+#: includes/themepanel/theme-panel.php:553
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:212
+#: includes/panel/theme-panel.php:218
 msgid "Upload your logo"
 msgstr ""
 
-#: includes/panel/theme-panel.php:213
+#: includes/panel/theme-panel.php:219
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
-#: includes/panel/theme-panel.php:216
+#: includes/panel/theme-panel.php:222
 msgid "Add your favicon"
 msgstr ""
 
-#: includes/panel/theme-panel.php:217
+#: includes/panel/theme-panel.php:223
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:220
+#: includes/panel/theme-panel.php:226
 msgid "Choose your primary color"
 msgstr ""
 
-#: includes/panel/theme-panel.php:221
+#: includes/panel/theme-panel.php:227
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:224
+#: includes/panel/theme-panel.php:230
 msgid "Choose your typography"
 msgstr ""
 
-#: includes/panel/theme-panel.php:225
+#: includes/panel/theme-panel.php:231
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:229
+#: includes/panel/theme-panel.php:235
 msgid "Top bar options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:230
+#: includes/panel/theme-panel.php:236
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:233
+#: includes/panel/theme-panel.php:239
 msgid "Header options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:234
+#: includes/panel/theme-panel.php:240
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
-#: includes/panel/theme-panel.php:237
+#: includes/panel/theme-panel.php:243
 msgid "Footer widgets options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:238
+#: includes/panel/theme-panel.php:244
 msgid "Choose the columns number, paddings and colors for the footer widgets."
 msgstr ""
 
-#: includes/panel/theme-panel.php:241
+#: includes/panel/theme-panel.php:247
 msgid "Footer bottom options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:242
+#: includes/panel/theme-panel.php:248
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
