@@ -136,7 +136,7 @@ if ( ! class_exists( 'OE_Plugin_Update_Message' ) ) :
 
 			if ( 'plugins' === $screen->id || 'plugins-network' === $screen->id ) {
 				wp_enqueue_style(
-					'oss-plugin-update',
+					'oe-plugin-update',
 					plugins_url( '/assets/css/pluginUpdateMessage.min.css', __DIR__ ),
 					array(),
 					false
