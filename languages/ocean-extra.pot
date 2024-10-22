@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.4.0\n"
+"Project-Id-Version: Ocean Extra 2.4.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-10-16T09:41:41+00:00\n"
+"POT-Creation-Date: 2024-10-21T09:08:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: ocean-extra.php
 #: includes/admin-bar/admin-bar.php:53
 #: includes/dashboard.php:72
-#: includes/update-message.php:84
+#: includes/update-message.php:83
 msgid "OceanWP"
 msgstr ""
 
@@ -6883,132 +6883,137 @@ msgstr ""
 msgid "Yes! I want the Upgrade"
 msgstr ""
 
-#: includes/panel/theme-panel.php:152
-#: includes/themepanel/theme-panel.php:503
+#: includes/panel/theme-panel.php:157
+#: includes/themepanel/theme-panel.php:508
 msgid "Site Style & Settings Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:155
-#: includes/themepanel/theme-panel.php:506
+#: includes/panel/theme-panel.php:160
+#: includes/themepanel/theme-panel.php:511
 msgid "Colors Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:158
-#: includes/themepanel/theme-panel.php:509
+#: includes/panel/theme-panel.php:163
+#: includes/themepanel/theme-panel.php:514
 msgid "Site Page Settings Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:161
-#: includes/themepanel/theme-panel.php:512
-msgid "Typography Panel"
-msgstr ""
-
-#: includes/panel/theme-panel.php:164
-#: includes/themepanel/theme-panel.php:515
-msgid "Top Bar Panel"
-msgstr ""
-
-#: includes/panel/theme-panel.php:167
-#: includes/themepanel/theme-panel.php:518
-msgid "Header Panel"
-msgstr ""
-
-#: includes/panel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:521
+#: includes/panel/theme-panel.php:166
+#: includes/themepanel/theme-panel.php:517
 msgid "Site Performance Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:173
-#: includes/themepanel/theme-panel.php:524
+#: includes/panel/theme-panel.php:169
+#: includes/themepanel/theme-panel.php:520
 msgid "SEO Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:176
-#: includes/themepanel/theme-panel.php:527
+#: includes/panel/theme-panel.php:175
+#: includes/themepanel/theme-panel.php:526
+msgid "General Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:181
+#: includes/themepanel/theme-panel.php:532
+msgid "Typography Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:184
+#: includes/themepanel/theme-panel.php:535
+msgid "Top Bar Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:187
+#: includes/themepanel/theme-panel.php:538
+msgid "Header Panel"
+msgstr ""
+
+#: includes/panel/theme-panel.php:190
+#: includes/themepanel/theme-panel.php:541
 msgid "Blog Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:179
-#: includes/themepanel/theme-panel.php:530
+#: includes/panel/theme-panel.php:193
+#: includes/themepanel/theme-panel.php:544
 msgid "Sidebar Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:182
-#: includes/themepanel/theme-panel.php:533
+#: includes/panel/theme-panel.php:196
+#: includes/themepanel/theme-panel.php:547
 msgid "Footer Widgets Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:185
-#: includes/themepanel/theme-panel.php:536
+#: includes/panel/theme-panel.php:199
+#: includes/themepanel/theme-panel.php:550
 msgid "Footer Bottom Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:188
-#: includes/themepanel/theme-panel.php:539
+#: includes/panel/theme-panel.php:202
+#: includes/themepanel/theme-panel.php:553
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:205
+#: includes/panel/theme-panel.php:218
 msgid "Upload your logo"
 msgstr ""
 
-#: includes/panel/theme-panel.php:206
+#: includes/panel/theme-panel.php:219
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
-#: includes/panel/theme-panel.php:209
+#: includes/panel/theme-panel.php:222
 msgid "Add your favicon"
 msgstr ""
 
-#: includes/panel/theme-panel.php:210
+#: includes/panel/theme-panel.php:223
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:213
+#: includes/panel/theme-panel.php:226
 msgid "Choose your primary color"
 msgstr ""
 
-#: includes/panel/theme-panel.php:214
+#: includes/panel/theme-panel.php:227
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:217
+#: includes/panel/theme-panel.php:230
 msgid "Choose your typography"
 msgstr ""
 
-#: includes/panel/theme-panel.php:218
+#: includes/panel/theme-panel.php:231
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:222
+#: includes/panel/theme-panel.php:235
 msgid "Top bar options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:223
+#: includes/panel/theme-panel.php:236
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:226
+#: includes/panel/theme-panel.php:239
 msgid "Header options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:227
+#: includes/panel/theme-panel.php:240
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
-#: includes/panel/theme-panel.php:230
+#: includes/panel/theme-panel.php:243
 msgid "Footer widgets options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:231
+#: includes/panel/theme-panel.php:244
 msgid "Choose the columns number, paddings and colors for the footer widgets."
 msgstr ""
 
-#: includes/panel/theme-panel.php:234
+#: includes/panel/theme-panel.php:247
 msgid "Footer bottom options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:235
+#: includes/panel/theme-panel.php:248
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
@@ -7393,7 +7398,7 @@ msgstr ""
 msgid "No import data found."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:795
+#: includes/themepanel/theme-panel.php:808
 msgid "View paid features"
 msgstr ""
 
@@ -7785,33 +7790,33 @@ msgctxt "by author"
 msgid "by %s"
 msgstr ""
 
-#: includes/update-message.php:40
+#: includes/update-message.php:39
 msgid "Backup recommended before plugin update."
 msgstr ""
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: includes/update-message.php:46
+#: includes/update-message.php:45
 msgid "The latest update introduces significant improvements and changes to various plugin features.  For a smooth update process, it's crucial to %1$s backup your website beforehand  %2$s and test the update in a staging or test environment if available."
 msgstr ""
 
-#: includes/update-message.php:62
+#: includes/update-message.php:61
 msgid "What's new?"
 msgstr ""
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: includes/update-message.php:68
+#: includes/update-message.php:67
 msgid "Revamped Customizer for enhanced experience! This update delivers a completely redesigned Customizer with a focus on improved user interface (UI), user experience (UX), and performance. Enjoy a faster and more intuitive way to personalize your website with a wider range of options at your fingertips. Learn %1$s how to properly update your websites and transition to OceanWP 4 %4$s, view %2$s OceanWP 4 New Customizer details %4$s or check out the %3$s OceanWP 4 Customizer documentation %4$s."
 msgstr ""
 
-#: includes/update-message.php:80
+#: includes/update-message.php:79
 msgid "Items"
 msgstr ""
 
-#: includes/update-message.php:81
+#: includes/update-message.php:80
 msgid "Required Version"
 msgstr ""
 
-#: includes/update-message.php:85
+#: includes/update-message.php:84
 msgid "4.0.0"
 msgstr ""
 

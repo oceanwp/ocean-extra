@@ -1,4 +1,13 @@
 <?php
+/**
+ * OceanWP theme local Google fonts functionality
+ *
+ * @package OceanWP WordPress theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Control Preload google fonts.
@@ -106,7 +115,6 @@ if ( ! function_exists( 'oceanwp_local_elementor_webfonts_enqueue' ) ) {
 	}
 }
 
-
 /**
  * Enqueues Local Google Font
  */
@@ -179,7 +187,6 @@ if ( ! function_exists( 'oceanwp_webfonts_enqueue' ) ) {
 		return $src;
 	}
 }
-
 
 /**
  * Get Google Font CSS

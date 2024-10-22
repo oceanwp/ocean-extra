@@ -81,7 +81,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings_Output' ) ) {
 			add_filter( 'ocean_custom_header_template', array( $this, 'custom_header_template' ) );
 
 			// Custom logo.
-			//add_filter( 'get_custom_logo', array( $this, 'custom_logo' ) );
+			add_filter( 'get_custom_logo', array( $this, 'custom_logo' ) );
 
 			// getustom logo ID for the retina function.
 			add_filter( 'ocean_custom_logo', array( $this, 'custom_logo_id' ) );

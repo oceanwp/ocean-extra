@@ -21,7 +21,6 @@ if ( ! class_exists( 'OE_Plugin_Update_Message' ) ) :
 		public function __construct() {
 
 			add_action( 'in_plugin_update_message-ocean-extra/ocean-extra.php', array( $this, 'plugin_update_message' ), 10, 2 );
-			add_action( 'after_plugin_row_ocean-extra/ocean-extra.php', array( $this, 'ms_plugin_update_message' ), 10, 2 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'plugin_update_asset' ) );
 		}
 
@@ -135,9 +134,9 @@ if ( ! class_exists( 'OE_Plugin_Update_Message' ) ) :
 		public function plugin_update_asset() {
 			$screen = get_current_screen();
 
-			if ( 'plugins' === $screen->id ) {
+			if ( 'plugins' === $screen->id || 'plugins-network' === $screen->id ) {
 				wp_enqueue_style(
-					'oss-plugin-update',
+					'oe-plugin-update',
 					plugins_url( '/assets/css/pluginUpdateMessage.min.css', __DIR__ ),
 					array(),
 					false

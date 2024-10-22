@@ -498,46 +498,59 @@ class Ocean_Extra_New_Theme_Panel {
 	 * Return customizer panels
 	 */
 	public static function get_panels() {
-		$panels = array(
-			'oe_styles_and_settings_panel'        => array(
+		$theme = wp_get_theme();
+		$version = $theme->get( 'Version' );
+
+		$panels = array();
+
+		if ( version_compare( $version, '4.0.0', '>' ) ) {
+			$panels['oe_styles_and_settings_panel'] = array(
 				'label' => esc_html__( 'Site Style & Settings Panel', 'ocean-extra' ),
-			),
-			'oe_colors_panel'        => array(
+			);
+			$panels['oe_colors_panel'] = array(
 				'label' => esc_html__( 'Colors Panel', 'ocean-extra' ),
-			),
-			'oe_site_page_settings_panel'        => array(
+			);
+			$panels['oe_site_page_settings_panel'] = array(
 				'label' => esc_html__( 'Site Page Settings Panel', 'ocean-extra' ),
-			),
-			'oe_typography_panel'     => array(
-				'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
-			),
-			'oe_topbar_panel'         => array(
-				'label' => esc_html__( 'Top Bar Panel', 'ocean-extra' ),
-			),
-			'oe_header_panel'         => array(
-				'label' => esc_html__( 'Header Panel', 'ocean-extra' ),
-			),
-			'oe_site_performance_panel'        => array(
+			);
+			$panels['oe_site_performance_panel'] = array(
 				'label' => esc_html__( 'Site Performance Panel', 'ocean-extra' ),
-			),
-			'oe_seo_settings_panel'        => array(
+			);
+			$panels['oe_seo_settings_panel'] = array(
 				'label' => esc_html__( 'SEO Panel', 'ocean-extra' ),
-			),
-			'oe_blog_panel'           => array(
-				'label' => esc_html__( 'Blog Panel', 'ocean-extra' ),
-			),
-			'oe_sidebar_panel'        => array(
-				'label' => esc_html__( 'Sidebar Panel', 'ocean-extra' ),
-			),
-			'oe_footer_widgets_panel' => array(
-				'label' => esc_html__( 'Footer Widgets Panel', 'ocean-extra' ),
-			),
-			'oe_footer_bottom_panel'  => array(
-				'label' => esc_html__( 'Footer Bottom Panel', 'ocean-extra' ),
-			),
-			'oe_custom_code_panel'    => array(
-				'label' => esc_html__( 'Custom CSS/JS Panel', 'ocean-extra' ),
-			),
+			);
+		}
+
+		if ( version_compare( $version, '4.0.0', '<' ) ) {
+			$panels['oe_general_panel'] = array(
+				'label' => esc_html__( 'General Panel', 'ocean-extra' ),
+			);
+		}
+
+		// Panels that are included regardless of the theme version
+		$panels['oe_typography_panel'] = array(
+			'label' => esc_html__( 'Typography Panel', 'ocean-extra' ),
+		);
+		$panels['oe_topbar_panel'] = array(
+			'label' => esc_html__( 'Top Bar Panel', 'ocean-extra' ),
+		);
+		$panels['oe_header_panel'] = array(
+			'label' => esc_html__( 'Header Panel', 'ocean-extra' ),
+		);
+		$panels['oe_blog_panel'] = array(
+			'label' => esc_html__( 'Blog Panel', 'ocean-extra' ),
+		);
+		$panels['oe_sidebar_panel'] = array(
+			'label' => esc_html__( 'Sidebar Panel', 'ocean-extra' ),
+		);
+		$panels['oe_footer_widgets_panel'] = array(
+			'label' => esc_html__( 'Footer Widgets Panel', 'ocean-extra' ),
+		);
+		$panels['oe_footer_bottom_panel'] = array(
+			'label' => esc_html__( 'Footer Bottom Panel', 'ocean-extra' ),
+		);
+		$panels['oe_custom_code_panel'] = array(
+			'label' => esc_html__( 'Custom CSS/JS Panel', 'ocean-extra' ),
 		);
 
 		// Apply filters and return
