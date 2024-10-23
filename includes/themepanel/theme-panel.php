@@ -501,6 +501,16 @@ class Ocean_Extra_New_Theme_Panel {
 		$theme = wp_get_theme();
 		$version = $theme->get( 'Version' );
 
+		if ( get_template_directory() == get_stylesheet_directory() ) {
+			$version  = $theme->get( 'Version' );
+		} else {
+			$parent = wp_get_theme()->parent();
+			// get parent version.
+			if ( ! empty( $parent) ) {
+				$version = $parent->Version;
+			}
+		}
+
 		$panels = array();
 
 		if ( version_compare( $version, '4.0.0', '>' ) ) {
