@@ -513,7 +513,7 @@ class Ocean_Extra_New_Theme_Panel {
 
 		$panels = array();
 
-		if ( version_compare( $version, '4.0.0', '>' ) ) {
+		if ( version_compare( $version, '4.0.0', '>=' ) ) {
 			$panels['oe_styles_and_settings_panel'] = array(
 				'label' => esc_html__( 'Site Style & Settings Panel', 'ocean-extra' ),
 			);
