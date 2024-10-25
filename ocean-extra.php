@@ -159,7 +159,9 @@ final class Ocean_Extra {
 				include_once $this->plugin_path . '/includes/update-message.php';
 			}
 
-			require_once OE_PATH . '/includes/panel/theme-panel.php';
+			if ( file_exists( OE_PATH . '/includes/panel/theme-panel.php' ) ) {
+				require_once OE_PATH . '/includes/panel/theme-panel.php';
+			}
 
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
 			if( $oe_library_active_status == 'yes' ) {
