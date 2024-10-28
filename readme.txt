@@ -219,7 +219,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 = 2.4.2 - OCT 28 2024 =
 - Updated: Freemius SDK: version 2.9.0
 - Updated: Compatibility: WordPress: version number.
-- Fixed: Customizer: New Customizer panels: not displayed on some istances utilizing a child theme.
+- Fixed: Customizer: New Customizer panels: not displayed on some instances utilizing a child theme.
 
 = 2.4.1 - OCT 21 2024 =
 - Fixed: OceanWP Metabox Settings: Logo: Customizer logo doesn't get overridden on individual level (main Customizer logo always displayed).
