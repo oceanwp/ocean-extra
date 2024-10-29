@@ -216,7 +216,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.4.2 - OCT 28 2024 =
+= 2.4.2 - OCT 29 2024 =
 - Updated: Freemius SDK: version 2.9.0
 - Updated: Compatibility: WordPress: version number.
 - Fixed: Customizer: New Customizer panels: not displayed on some instances utilizing a child theme.
