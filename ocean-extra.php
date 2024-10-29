@@ -3,11 +3,11 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.4.1
+ * Version:             2.4.2
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
- * Tested up to:        6.6
+ * Tested up to:        6.7
  * Text Domain: ocean-extra
  * Domain Path: /languages
  *
@@ -159,7 +159,9 @@ final class Ocean_Extra {
 				include_once $this->plugin_path . '/includes/update-message.php';
 			}
 
-			require_once OE_PATH . '/includes/panel/theme-panel.php';
+			if ( file_exists( OE_PATH . '/includes/panel/theme-panel.php' ) ) {
+				require_once OE_PATH . '/includes/panel/theme-panel.php';
+			}
 
 			$oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
 			if( $oe_library_active_status == 'yes' ) {
