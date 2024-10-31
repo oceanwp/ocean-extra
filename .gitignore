@@ -269,6 +269,7 @@ build/
 
 # src folder
 includes/post-settings/src/
+includes/post-settings/oe-ps-src/
 
 # vender folder
 vendor/

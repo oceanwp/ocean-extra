@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "OceanWP Post Settings",
     "scripts": {
-        "build": "wp-scripts build src/index.js --output-path=assets",
-        "start": "wp-scripts start src/index.js --output-path=assets",
+        "build": "wp-scripts build oe-ps-src/index.js --output-path=assets",
+        "start": "wp-scripts start oe-ps-src/index.js --output-path=assets",
         "lint:js": "wp-scripts lint-js",
         "lint:pkg-json": "wp-scripts lint-pkg-json"
     },

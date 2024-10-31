@@ -145,6 +145,7 @@ module.exports = function (grunt) {
                     "!node_modules/**",
                     "!includes/post-settings/node_modules/**",
                     "!includes/post-settings/src/**",
+                    "!includes/post-settings/oe-ps-src/**",
                     "!build/**",
                     "!src/**",
                     "!.git/**",
