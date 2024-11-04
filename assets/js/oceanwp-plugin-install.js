@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
-    $(document).on('click', '.install-now', function(e) {
+    // Target only the plugin list in your custom tab
+    $('#oceanwp-plugin-list').on('click', '.install-now', function(e) {
         e.preventDefault();
 
         var button = $(this);
@@ -31,7 +32,7 @@ jQuery(document).ready(function($) {
         });
     });
 
-    $(document).on('click', '.activate-now', function(e) {
+    $('#oceanwp-plugin-list').on('click', '.activate-now', function(e) {
         e.preventDefault();
 
         var button = $(this);
@@ -60,6 +61,5 @@ jQuery(document).ready(function($) {
                 alert('An error occurred. Please try again.');
             }
         });
-        
     });
 });

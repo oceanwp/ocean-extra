@@ -34,8 +34,8 @@ class OceanWP_Plugins_Tab {
 	 * Enqueues the necessary scripts for handling AJAX plugin installation.
 	 */
 	public function enqueue_scripts( $hook_suffix ) {
-		// Only enqueue the scripts on the plugin installation page.
-		if ( $hook_suffix === 'plugin-install.php' || $hook_suffix === 'plugin-information' ) {
+		// Only enqueue the scripts on the plugin installation page and our custom tab.
+		if ( 'plugin-install.php' === $hook_suffix && isset( $_GET['tab'] ) && 'oceanwp_plugins_tab' === $_GET['tab'] ) {
 			wp_enqueue_script( 'plugin-install' );
 			wp_enqueue_script( 'updates' );
 			wp_enqueue_script( 'oceanwp-plugin-install', plugin_dir_url( __FILE__ ) . '../assets/js/oceanwp-plugin-install.js', array( 'jquery' ), OE_VERSION, true );
@@ -72,29 +72,32 @@ class OceanWP_Plugins_Tab {
 		if ( ! current_user_can( 'install_plugins' ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'ocean-extra' ) );
 		}
-
+	
 		?>
 		<div class="wrap">
 			<h2><?php _e( 'For OceanWP', 'ocean-extra' ); ?></h2>
-			<?php
-			// Query Plugins by Author.
-			$api = plugins_api(
-				'query_plugins',
-				array(
-					'author'   => 'oceanwp',
-					'per_page' => 20,
-				)
-			);
-
-			if ( is_wp_error( $api ) ) {
-				echo '<div class="error"><p>' . $api->get_error_message() . '</p></div>';
-			} else {
-				$this->ocean_display_plugins_table( $api->plugins );
-			}
-			?>
+			<div id="oceanwp-plugin-list">
+				<?php
+				// Query Plugins by Author.
+				$api = plugins_api(
+					'query_plugins',
+					array(
+						'author'   => 'oceanwp',
+						'per_page' => 20,
+					)
+				);
+	
+				if ( is_wp_error( $api ) ) {
+					echo '<div class="error"><p>' . $api->get_error_message() . '</p></div>';
+				} else {
+					$this->ocean_display_plugins_table( $api->plugins );
+				}
+				?>
+			</div>
 		</div>
 		<?php
 	}
+	
 
 	/**
 	 * Displays the plugins using the default WordPress layout.
