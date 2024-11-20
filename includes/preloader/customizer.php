@@ -205,7 +205,7 @@ class Ocean_Preloader_Customizer {
 
 				'oe_title_for_preloader_default_settings' => [
 					'type'            => 'ocean-title',
-					'label'           => esc_html__( 'Defualt Preloader Settings', 'ocean-extra' ),
+					'label'           => esc_html__( 'Default Preloader Settings', 'ocean-extra' ),
 					'section'         => 'ocean_preloader',
 					'transport'       => 'postMessage',
 					'priority'        => 10,
