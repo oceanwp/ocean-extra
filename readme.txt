@@ -216,6 +216,10 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.4.3 - NOV 26 2024 =
+- Updated: Page level settings - remove deprecated function as per the new wp 6.7 which will be removed in wp7 (10755)
+- Updated: CUstomizer - fixed typo error with customizer control for 'Default'.
+
 = 2.4.2 - OCT 29 2024 =
 - Updated: Freemius SDK: version 2.9.0
 - Updated: Compatibility: WordPress: version number.
