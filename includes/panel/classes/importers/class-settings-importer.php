@@ -21,8 +21,7 @@ class OWP_Settings_Importer {
 		}
 
 		// Get file contents and decode
-		$raw  = file_get_contents( $file );
-		$data = @unserialize( $raw, [ 'allowed_classes' => false ]  );
+		$data = @unserialize( $data, [ 'allowed_classes' => false ]  );
 
 		// Delete import file
 		//unlink( $file );
