@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.7
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -215,6 +215,13 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.4.3 - NOV 27 2024 =
+- Added: Compatibility: WordPress: Bottom margin styles for wp.components.SelectControl is deprecated since version 6.7 and will be removed in version 7.0.
+- Added: Compatibility: WordPress: Bottom margin styles for wp.components.BaseControl is deprecated since version 6.7 and will be removed in version 7.0.
+- Added: Compatibility: WordPress: Bottom margin styles for wp.components.TextControl is deprecated since version 6.7 and will be removed in version 7.0.
+- Fixed: Plugin installation error on some instances "Installation failed; Destination folder already exists.".
+- Fixed: Customizer: Site Preloader: Typo error for "Default Text".
 
 = 2.4.2 - OCT 29 2024 =
 - Updated: Freemius SDK: version 2.9.0
