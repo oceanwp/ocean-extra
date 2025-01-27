@@ -6,112 +6,117 @@
      * @since       1.0.3
      */
 
-    if ( ! defined( 'ABSPATH' ) ) {
-        exit;
-    }
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
 
-    if ( ! class_exists( 'FS_Client_License_Abstract_v2' ) ) {
-        require_once dirname( __FILE__ ) . '/class-fs-client-license-abstract.php';
-    }
+	if ( ! class_exists( 'FS_Client_License_Abstract_v2' ) ) {
+		require_once dirname( __FILE__ ) . '/class-fs-client-license-abstract.php';
+	}
 
-    if ( ! class_exists( 'FS_EDD_Client_Migration_v2' ) ) {
-        require_once dirname( __FILE__ ) . '/class-fs-edd-client-migration.php';
-    }
+	if ( ! class_exists( 'FS_EDD_Client_Migration_v2' ) ) {
+		require_once dirname( __FILE__ ) . '/class-fs-edd-client-migration.php';
+	}
 
-    /**
-     * You should use your own unique CLASS name, and be sure to replace it
-     * throughout this file. For example, if your product's name is "Awesome Product"
-     * then you can rename it to "Awesome_Product_EDD_License_Key".
-     */
-    class OceanWP_EDD_License_Key extends FS_Client_License_Abstract_v2 {
-        /**
-         * @var array<string,string>
-         */
-        public static $paid_addons = array(
-            'Ocean_Cookie_Notice'     => array(
-                'name'         => 'Cookie Notice',
-                'fs_id'        => '3765',
-                'fs_shortcode' => 'ocean_cookie_notice_fs',
-            ),
-            'Ocean_Elementor_Widgets' => array(
-                'name'         => 'Elementor Widgets',
-                'fs_id'        => '3757',
-                'fs_shortcode' => 'ocean_elementor_widgets_fs',
-            ),
-            'Ocean_Footer_Callout'    => array(
-                'name'         => 'Footer Callout',
-                'fs_id'        => '3754',
-                'fs_shortcode' => 'ocean_footer_callout_fs',
-            ),
-            'Ocean_Full_Screen'       => array(
-                'name'         => 'Full Screen',
-                'fs_id'        => '3766',
-                'fs_shortcode' => 'ocean_full_screen_fs',
-            ),
-            'Ocean_Hooks'             => array(
-                'name'         => 'Ocean Hooks',
-                'fs_id'        => '3758',
-                'fs_shortcode' => 'oh_fs',
-            ),
-            /*'Ocean_Instagram'         => array(
-                'name'         => 'Instagram',
-                'fs_id'        => '3763',
-                'fs_shortcode' => 'ocean_instagram_fs',
-            ),*/
-            'Ocean_Popup_Login'       => array(
-                'name'         => 'Popup Login',
-                'fs_id'        => '3764',
-                'fs_shortcode' => 'ocean_popup_login_fs',
-            ),
-            'Ocean_Portfolio'         => array(
-                'name'         => 'Portfolio',
-                'fs_id'        => '3761',
-                'fs_shortcode' => 'ocean_portfolio_fs',
-            ),
-            'Ocean_Pro_Demos'         => array(
-                'name'         => 'Pro Demos',
-                'fs_id'        => '3797',
-                'fs_shortcode' => 'ocean_pro_demos_fs',
-            ),
-            'Ocean_Side_Panel'        => array(
-                'name'         => 'Side Panel',
-                'fs_id'        => '3756',
-                'fs_shortcode' => 'ocean_side_panel_fs',
-            ),
-            'Ocean_Sticky_Footer'     => array(
-                'name'         => 'Sticky Footer',
-                'fs_id'        => '3759',
-                'fs_shortcode' => 'ocean_sticky_footer_fs',
-            ),
-            'Ocean_Sticky_Header'     => array(
-                'name'         => 'Sticky Header',
-                'fs_id'        => '3755',
-                'fs_shortcode' => 'ocean_sticky_header_fs',
-            ),
-            'Ocean_White_Label'       => array(
-                'name'         => 'White Label',
-                'fs_id'        => '3762',
-                'fs_shortcode' => 'ocean_white_label_fs',
-            ),
-            'Ocean_Woo_Popup'         => array(
-                'name'         => 'Woo Popup',
-                'fs_id'        => '3760',
-                'fs_shortcode' => 'ocean_woo_popup_fs',
-            ),
-        );
+	/**
+	 * You should use your own unique CLASS name, and be sure to replace it
+	 * throughout this file. For example, if your product's name is "Awesome Product"
+	 * then you can rename it to "Awesome_Product_EDD_License_Key".
+	 */
+	class OceanWP_EDD_License_Key extends FS_Client_License_Abstract_v2 {
+		/**
+		 * @var array<string,string>
+		 */
+		public static $paid_addons = array(
+			'Ocean_Cookie_Notice'     => array(
+				'name'         => 'Cookie Notice',
+				'fs_id'        => '3765',
+				'fs_shortcode' => 'ocean_cookie_notice_fs',
+			),
+			'Ocean_Elementor_Widgets' => array(
+				'name'         => 'Elementor Widgets',
+				'fs_id'        => '3757',
+				'fs_shortcode' => 'ocean_elementor_widgets_fs',
+			),
+			'Ocean_Footer_Callout'    => array(
+				'name'         => 'Footer Callout',
+				'fs_id'        => '3754',
+				'fs_shortcode' => 'ocean_footer_callout_fs',
+			),
+			'Ocean_Full_Screen'       => array(
+				'name'         => 'Full Screen',
+				'fs_id'        => '3766',
+				'fs_shortcode' => 'ocean_full_screen_fs',
+			),
+			'Ocean_Hooks'             => array(
+				'name'         => 'Ocean Hooks',
+				'fs_id'        => '3758',
+				'fs_shortcode' => 'oh_fs',
+			),
+			/*'Ocean_Instagram'         => array(
+				'name'         => 'Instagram',
+				'fs_id'        => '3763',
+				'fs_shortcode' => 'ocean_instagram_fs',
+			),*/
+			'Ocean_Popup_Login'       => array(
+				'name'         => 'Popup Login',
+				'fs_id'        => '3764',
+				'fs_shortcode' => 'ocean_popup_login_fs',
+			),
+			'Ocean_Portfolio'         => array(
+				'name'         => 'Portfolio',
+				'fs_id'        => '3761',
+				'fs_shortcode' => 'ocean_portfolio_fs',
+			),
+			'Ocean_Pro_Demos'         => array(
+				'name'         => 'Pro Demos',
+				'fs_id'        => '3797',
+				'fs_shortcode' => 'ocean_pro_demos_fs',
+			),
+			'Ocean_Side_Panel'        => array(
+				'name'         => 'Side Panel',
+				'fs_id'        => '3756',
+				'fs_shortcode' => 'ocean_side_panel_fs',
+			),
+			'Ocean_Sticky_Footer'     => array(
+				'name'         => 'Sticky Footer',
+				'fs_id'        => '3759',
+				'fs_shortcode' => 'ocean_sticky_footer_fs',
+			),
+			'Ocean_Sticky_Header'     => array(
+				'name'         => 'Sticky Header',
+				'fs_id'        => '3755',
+				'fs_shortcode' => 'ocean_sticky_header_fs',
+			),
+			'Ocean_White_Label'       => array(
+				'name'         => 'White Label',
+				'fs_id'        => '3762',
+				'fs_shortcode' => 'ocean_white_label_fs',
+			),
+			'Ocean_Woo_Popup'         => array(
+				'name'         => 'Woo Popup',
+				'fs_id'        => '3760',
+				'fs_shortcode' => 'ocean_woo_popup_fs',
+			),
+		);
 
-        public static $separate_addons = array(
-            'Ocean_eCommerce'         => array(
-                'name'         => 'Ocean Treasure Box',
-                'fs_id'        => '11449',
-                'fs_shortcode' => 'oet_fs',
-            ),
-            'Ocean_Gutenberg_Blocks'         => array(
-                'name'         => 'Ocean Gutenberg Blocks',
-                'fs_id'        => '9081',
-                'fs_shortcode' => 'ocean_gutenberg_blocks_fs',
-            ),
-        );
+	public static $separate_addons = array(
+		'Ocean_eCommerce'         => array(
+			'name'         => 'Ocean Treasure Box',
+			'fs_id'        => '11449',
+			'fs_shortcode' => 'oet_fs',
+		),
+		'Ocean_Gutenberg_Blocks'         => array(
+			'name'         => 'Ocean Gutenberg Blocks',
+			'fs_id'        => '9081',
+			'fs_shortcode' => 'ocean_gutenberg_blocks_fs',
+		),
+        'Ocean_Site_Booster'         => array(
+			'name'         => 'Ocean Site Booster',
+			'fs_id'        => '17389',
+			'fs_shortcode' => 'osb_fs',
+		),
+	);
 
         private $_is_valid;
         private $_is_bundle;

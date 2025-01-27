@@ -92,18 +92,93 @@ if ( ! class_exists( 'OE_Plugin_Update_Message' ) ) :
 		}
 
 		/**
+		 * Tested up to.
+		 */
+		public function plugin_tested_up_to_content() {
+
+			$current_theme_version = oe_get_theme_version();
+			$requires_at_least     = $this->oe_get_plugin_header_data( 'ocean-extra/ocean-extra.php', 'RequiresOWP' );
+
+			?>
+
+			<hr class="owp-update-warning__separator">
+			<div class="owp-update-warning">
+				<div class="warning-info-icon">
+					<span class="dashicons dashicons-info"></span>
+				</div>
+				<div>
+					<div class="warning__title">
+						<?php echo esc_html__( 'Compatibility Alert.', 'ocean-extra' ); ?>
+					</div>
+					<div class="warning__message">
+						<?php
+						printf(
+							esc_html__(
+								'This plugin update requires compatibility with specific OceanWP theme versions. Please ensure your theme meets the following requirements before proceeding:',
+								'ocean-extra'
+							),
+
+						);
+						?>
+					</div>
+					<div class="owp-required-products">
+						<table class="owp-required-version-table">
+							<tbody>
+								<tr>
+									<th><?php echo esc_html__( 'Items', 'ocean-extra' ); ?></th>
+									<th><?php echo esc_html__( 'Requires at Least', 'ocean-extra' ); ?></th>
+								</tr>
+								<tr>
+									<td><?php echo esc_html__( 'OceanWP', 'ocean-extra' ); ?></td>
+									<td><?php echo esc_attr( $requires_at_least ); ?></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+			<?php
+		}
+
+		/**
 		 * Enqueue scripts
 		 *
 		 * @since   2.2.9
 		 */
 		public function plugin_update_message( $plugin_data, $new_data ) {
 
-			if ( isset( $plugin_data['update'] ) && $plugin_data['update']  ) {
+			$current_theme_version = oe_get_theme_version();
 
-				$this->plugin_update_content();
-
+			if ( ! empty( $current_theme_version ) && version_compare( $current_theme_version, '3.6.1', '<=' ) ) {
+				if ( isset( $plugin_data['update'] ) && $plugin_data['update']  ) {
+					$this->plugin_update_content();
+				}
 			}
 
+			$requires_at_least = $this->oe_get_plugin_header_data( 'ocean-extra/ocean-extra.php', 'RequiresOWP' );
+			if ( ! empty( $current_theme_version ) && version_compare( $current_theme_version, $requires_at_least, '<=' ) ) {
+				if ( isset( $plugin_data['update'] ) && $plugin_data['update']  ) {
+					$this->plugin_tested_up_to_content();
+				}
+			}
+
+		}
+
+		public function oe_get_plugin_header_data( $plugin_slug, $key_name ) {
+
+			$plugin_file = WP_PLUGIN_DIR . '/' . $plugin_slug;
+
+			$headers = array(
+				'RequiresOWP' => 'OceanWP requires at least',
+			);
+
+			$plugin_data = get_file_data( $plugin_file, $headers );
+
+			$get_data = isset( $plugin_data[$key_name] ) ? $plugin_data[$key_name] : false;
+
+			return $get_data;
 		}
 
 		/**

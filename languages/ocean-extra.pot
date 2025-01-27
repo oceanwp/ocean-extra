@@ -1,15 +1,15 @@
-# Copyright (C) 2024 OceanWP
+# Copyright (C) 2025 OceanWP
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.4.3\n"
+"Project-Id-Version: Ocean Extra 2.4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-27T04:43:44+00:00\n"
+"POT-Creation-Date: 2025-01-27T08:45:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -34,6 +34,7 @@ msgstr ""
 #: includes/admin-bar/admin-bar.php:53
 #: includes/dashboard.php:72
 #: includes/update-message.php:83
+#: includes/update-message.php:132
 msgid "OceanWP"
 msgstr ""
 
@@ -7963,6 +7964,7 @@ msgid "Revamped Customizer for enhanced experience! This update delivers a compl
 msgstr ""
 
 #: includes/update-message.php:79
+#: includes/update-message.php:128
 msgid "Items"
 msgstr ""
 
@@ -7972,6 +7974,18 @@ msgstr ""
 
 #: includes/update-message.php:84
 msgid "4.0.0"
+msgstr ""
+
+#: includes/update-message.php:111
+msgid "Compatibility Alert."
+msgstr ""
+
+#: includes/update-message.php:116
+msgid "This plugin update requires compatibility with specific OceanWP theme versions. Please ensure your theme meets the following requirements before proceeding:"
+msgstr ""
+
+#: includes/update-message.php:129
+msgid "Requires at Least"
 msgstr ""
 
 #: includes/widgets/about-me.php:119

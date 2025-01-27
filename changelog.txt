@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.4.4 - JAN 27 2025 =
+- Added: Notice for OceanWP compatibility and min requirements for future releases.
+- Updated: Compatibility: Freemius SDK to version 2.11.0
+- Updated: Compatibility: WordPress version.
+
 = 2.4.3 - NOV 27 2024 =
 - Added: Compatibility: WordPress: Bottom margin styles for wp.components.SelectControl is deprecated since version 6.7 and will be removed in version 7.0.
 - Added: Compatibility: WordPress: Bottom margin styles for wp.components.BaseControl is deprecated since version 6.7 and will be removed in version 7.0.
