@@ -740,6 +740,15 @@ class Ocean_Extra_New_Theme_Panel {
 		return apply_filters( 'ocean_integrations_settings', $settings );
 	}
 
+	public static function get_cloudlfare_turnstile_settings() {
+		$settings = array(
+			'turnstile_site_key'   => get_option( 'owp_turnstile_site_key' ),
+			'turnstile_secret_key' => get_option( 'owp_turnstile_secret_key' ),
+		);
+
+		return apply_filters( 'ocean_integrations_settings', $settings );
+	}
+
 	public static function get_ocean_images_settings() {
 		$settings = array();
 
