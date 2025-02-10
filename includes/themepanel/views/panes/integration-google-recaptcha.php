@@ -30,7 +30,7 @@ $google_recaptcha_settings = Ocean_Extra_New_Theme_Panel::get_google_recaptcha_s
 							<option <?php selected( $google_recaptcha_settings['recaptcha_version'], 'v3', true ); ?> value="v3">
 								<?php esc_html_e( 'Use reCAPTCHA v3', 'ocean-extra' ); ?>
 							</option>
-						</select>				
+						</select>
 					</td>
 				</tr>
 			</tbody>

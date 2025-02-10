@@ -66,6 +66,8 @@ class Ocean_Extra_New_Theme_Panel {
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_maps', array( $this, 'integration_google_maps_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_recaptcha', array( $this, 'integration_google_recaptcha_part' ) );
 
+		add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
+
 		add_filter( 'oceanwp_theme_panel_pane_system_info_details', array( $this, 'system_info_details_part' ) );
 
 		add_filter( 'ocean_main_metaboxes_post_types', array( 'Ocean_Extra_New_Theme_Panel', 'control_metaboxes' ), 9999 );
@@ -659,6 +661,9 @@ class Ocean_Extra_New_Theme_Panel {
 	function integration_google_recaptcha_part() {
 		return OE_PATH . 'includes/themepanel/views/panes/integration-google-recaptcha.php';
 	}
+	function integration_cloudflare_turnstile_part() {
+		return OE_PATH . 'includes/themepanel/views/panes/integration-cloudflare-turnstile.php';
+	}
 
 
 	public static function control_metaboxes( $post_types ) {
@@ -742,8 +747,10 @@ class Ocean_Extra_New_Theme_Panel {
 
 	public static function get_cloudlfare_turnstile_settings() {
 		$settings = array(
-			'turnstile_site_key'   => get_option( 'owp_turnstile_site_key' ),
-			'turnstile_secret_key' => get_option( 'owp_turnstile_secret_key' ),
+			'turnstile_site_key'      => get_option( 'owp_turnstile_site_key' ),
+			'turnstile_secret_key'    => get_option( 'owp_turnstile_secret_key' ),
+			'turnstile_render_method' => get_option( 'owp_turnstile_render_method' ),
+			'turnstile_theme'         => get_option( 'owp_turnstile_theme' ),
 		);
 
 		return apply_filters( 'ocean_integrations_settings', $settings );
