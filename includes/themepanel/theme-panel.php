@@ -66,7 +66,10 @@ class Ocean_Extra_New_Theme_Panel {
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_maps', array( $this, 'integration_google_maps_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_recaptcha', array( $this, 'integration_google_recaptcha_part' ) );
 
-		add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
+		$opl_log_version = get_option( 'ocean-popup-login-version' );
+		if ( class_exists( 'Ocean_Popup_Login' ) && version_compare( $opl_log_version, '2.2.1', '>=' ) ) {
+			add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
+		}
 
 		add_filter( 'oceanwp_theme_panel_pane_system_info_details', array( $this, 'system_info_details_part' ) );
 
