@@ -67,7 +67,7 @@ class Ocean_Extra_Theme_Panel {
 					<?php
 					echo sprintf(
 						esc_html__( 'But you know what would make your website look stunning and leave your visitors in awe? The  %1$sOcean Core Extensions Bundle%2$s features.', 'ocean-extra' ),
-						'<a href="https://oceanwp.org/core-extensions-bundle/" target="_blank">',
+						'<a href="https://see.oceanwp.org/tnotice-oceanwp-upgrade" target="_blank">',
 						'</a>'
 					);
 					?>
@@ -83,7 +83,7 @@ class Ocean_Extra_Theme_Panel {
 								<li> <?php echo esc_html__('images and icons library,','ocean-extra' ); ?> </li>
 								<li> <?php echo esc_html__('and so much more.','ocean-extra' ); ?> </li>
 							</ul>
-						<p><a href="<?php echo esc_url('https://oceanwp.org/core-extensions-bundle/' ); ?>" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! I want the Upgrade', 'ocean-extra' ); ?></span></a></p>
+						<p><a href="<?php echo esc_url('https://see.oceanwp.org/tnotice-oceanwp-upgrade' ); ?>" class="btn button-primary" target="_blank"><span class="dashicons dashicons-external"></span><span><?php _e( 'Yes! I want the Upgrade', 'ocean-extra' ); ?></span></a></p>
 					</div>
 					<a href="<?php echo $dismiss; ?>" class="dismiss"><span class="dashicons dashicons-dismiss"></span></a>
 				</div>

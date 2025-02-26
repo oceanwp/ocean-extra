@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-02-24T09:11:05+00:00\n"
+"POT-Creation-Date: 2025-02-26T08:16:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -7032,72 +7032,72 @@ msgid "Yes! I want the Upgrade"
 msgstr ""
 
 #: includes/panel/theme-panel.php:167
-#: includes/themepanel/theme-panel.php:523
+#: includes/themepanel/theme-panel.php:530
 msgid "Site Style & Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:526
+#: includes/themepanel/theme-panel.php:533
 msgid "Colors Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:173
-#: includes/themepanel/theme-panel.php:529
+#: includes/themepanel/theme-panel.php:536
 msgid "Site Page Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:176
-#: includes/themepanel/theme-panel.php:532
+#: includes/themepanel/theme-panel.php:539
 msgid "Site Performance Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:179
-#: includes/themepanel/theme-panel.php:535
+#: includes/themepanel/theme-panel.php:542
 msgid "SEO Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:185
-#: includes/themepanel/theme-panel.php:541
+#: includes/themepanel/theme-panel.php:548
 msgid "General Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:191
-#: includes/themepanel/theme-panel.php:547
+#: includes/themepanel/theme-panel.php:554
 msgid "Typography Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:194
-#: includes/themepanel/theme-panel.php:550
+#: includes/themepanel/theme-panel.php:557
 msgid "Top Bar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:197
-#: includes/themepanel/theme-panel.php:553
+#: includes/themepanel/theme-panel.php:560
 msgid "Header Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:200
-#: includes/themepanel/theme-panel.php:556
+#: includes/themepanel/theme-panel.php:563
 msgid "Blog Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:203
-#: includes/themepanel/theme-panel.php:559
+#: includes/themepanel/theme-panel.php:566
 msgid "Sidebar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:206
-#: includes/themepanel/theme-panel.php:562
+#: includes/themepanel/theme-panel.php:569
 msgid "Footer Widgets Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:209
-#: includes/themepanel/theme-panel.php:565
+#: includes/themepanel/theme-panel.php:572
 msgid "Footer Bottom Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:212
-#: includes/themepanel/theme-panel.php:568
+#: includes/themepanel/theme-panel.php:575
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
@@ -7513,48 +7513,48 @@ msgstr ""
 msgid "Single Ocean Portfolio item"
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:124
-#: includes/themepanel/theme-panel.php:165
-#: includes/themepanel/theme-panel.php:196
-#: includes/themepanel/theme-panel.php:208
-#: includes/themepanel/theme-panel.php:217
-#: includes/themepanel/theme-panel.php:256
-#: includes/themepanel/theme-panel.php:382
+#: includes/themepanel/theme-panel.php:131
+#: includes/themepanel/theme-panel.php:172
+#: includes/themepanel/theme-panel.php:203
+#: includes/themepanel/theme-panel.php:215
+#: includes/themepanel/theme-panel.php:224
+#: includes/themepanel/theme-panel.php:263
+#: includes/themepanel/theme-panel.php:389
 msgid "Something went wrong"
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:151
-#: includes/themepanel/theme-panel.php:182
-#: includes/themepanel/theme-panel.php:243
-#: includes/themepanel/theme-panel.php:280
+#: includes/themepanel/theme-panel.php:158
+#: includes/themepanel/theme-panel.php:189
+#: includes/themepanel/theme-panel.php:250
+#: includes/themepanel/theme-panel.php:287
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:235
+#: includes/themepanel/theme-panel.php:242
 msgid "Project ID is wrong."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:299
+#: includes/themepanel/theme-panel.php:306
 msgid "Settings successfully reset."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:422
+#: includes/themepanel/theme-panel.php:429
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:460
+#: includes/themepanel/theme-panel.php:467
 msgid "Settings imported successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:467
+#: includes/themepanel/theme-panel.php:474
 msgid "Invalid Import Data."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:474
+#: includes/themepanel/theme-panel.php:481
 msgid "No import data found."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:837
+#: includes/themepanel/theme-panel.php:844
 msgid "View paid features"
 msgstr ""
 

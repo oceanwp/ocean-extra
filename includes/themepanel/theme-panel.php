@@ -66,11 +66,6 @@ class Ocean_Extra_New_Theme_Panel {
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_maps', array( $this, 'integration_google_maps_part' ) );
 		add_filter( 'oceanwp_theme_panel_pane_integration_google_recaptcha', array( $this, 'integration_google_recaptcha_part' ) );
 
-		$opl_log_version = get_option( 'ocean-popup-login-version' );
-		if ( class_exists( 'Ocean_Popup_Login' ) && version_compare( $opl_log_version, '2.2.1', '>=' ) ) {
-			add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
-		}
-
 		add_filter( 'oceanwp_theme_panel_pane_system_info_details', array( $this, 'system_info_details_part' ) );
 
 		add_filter( 'ocean_main_metaboxes_post_types', array( 'Ocean_Extra_New_Theme_Panel', 'control_metaboxes' ), 9999 );
@@ -80,6 +75,18 @@ class Ocean_Extra_New_Theme_Panel {
 		add_action( 'customize_register', array( $this, 'customizer_controll' ), 100 );
 
 		add_action( 'deactivated_plugin', array( $this, 'deactive_plugins_controll' ), 10, 2 );
+
+		add_action( 'plugin_loaded', array( $this, 'oe_pane_cloudflare_turnstile' ) );
+	}
+
+	/**
+	 * Cloudflare turnstile pane.
+	 */
+	public function oe_pane_cloudflare_turnstile() {
+		$opl_log_version = get_option( 'ocean-popup-login-version' );
+		if ( class_exists( 'Ocean_Popup_Login' ) && version_compare( $opl_log_version, '2.2.1', '>=' ) ) {
+			add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
+		}
 	}
 
 	/**

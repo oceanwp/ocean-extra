@@ -216,6 +216,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.4.5 - FEB 26 2025 =
+- Added: Validation: Cloudflare turnstile.
+
 = 2.4.4 - JAN 27 2025 =
 - Added: Notice for OceanWP compatibility and min requirements for future releases.
 - Updated: Compatibility: Freemius SDK to version 2.11.0
