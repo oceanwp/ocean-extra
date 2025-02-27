@@ -216,8 +216,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.4.5 - FEB 26 2025 =
-- Added: Validation: Cloudflare turnstile.
+= 2.4.5 - FEB 27 2025 =
+- Added: Codes for the upcoming plugin.
+- Added: Turnstile integration for Popup Login and Elementor Widgets.
+- Fixed: Freemius SDK: PHP 8+ Warning: strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated.
+- Fixed: Freemius SDK: PHP 8+ Warning: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated.
 
 = 2.4.4 - JAN 27 2025 =
 - Added: Notice for OceanWP compatibility and min requirements for future releases.

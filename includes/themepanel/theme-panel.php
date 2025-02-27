@@ -83,7 +83,6 @@ class Ocean_Extra_New_Theme_Panel {
 	 * Cloudflare turnstile pane.
 	 */
 	public function oe_pane_cloudflare_turnstile() {
-		$opl_log_version = get_option( 'ocean-popup-login-version' );
 		if ( class_exists( 'Ocean_Popup_Login' ) && defined( 'OPL_PLUGIN_VERSION' ) && version_compare( OPL_PLUGIN_VERSION, '2.2.1', '>=' )
 		|| class_exists( 'Ocean_Elementor_Widgets' ) && defined( 'OWP_ELEMENTOR_VERSION' ) && version_compare( OWP_ELEMENTOR_VERSION, '2.4.7', '>=' ) ) {
 			add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
