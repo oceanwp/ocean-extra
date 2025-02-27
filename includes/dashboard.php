@@ -104,7 +104,7 @@ if ( ! class_exists( 'OceanWP_Dashboard_News' ) ) :
 					if ( true != apply_filters( 'oceanwp_licence_tab_enable', false ) ) {
 						printf(
 							'<a href="%1$s" class="owp-post-link" target="_blank"><span style="color: #fe5252;">%2$s <span class="screen-reader-text">%3$s</span><span aria-hidden="true" class="dashicons dashicons-external"></span></span></a>',
-							'https://oceanwp.org/extensions/?utm_source=extensions&utm_medium=wp-dash&utm_campaign=news-feed',
+							'https://see.oceanwp.org/bundle-features',
 							__( 'Extensions' ),
 							/* translators: accessibility text */
 							__( '(opens in a new window)' )

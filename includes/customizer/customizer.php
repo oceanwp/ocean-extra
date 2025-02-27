@@ -90,14 +90,14 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
 
 			<div class="ocean-info-container">
 				<h3 class="info-heading"><?php echo esc_html__( 'Documentation', 'ocean-extra' ); ?></h3>
-				<p><?php echo sprintf( esc_html__( 'OceanWP has detailed documentation and comprehensive user guides available to help you get results fast. %1$s View documentation. %2$s', 'ocean-extra' ), '<a href="https://docs.oceanwp.org/" target="_blank">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( 'OceanWP has detailed documentation and comprehensive user guides available to help you get results fast. %1$s View documentation. %2$s', 'ocean-extra' ), '<a href="https://see.oceanwp.org/tcinfo-preview-demos" target="_blank">', '</a>' ); ?></p>
 			</div>
 
 			<span class="info-divider"></span>
 
 			<div class="ocean-info-container">
 				<h3 class="info-heading"><?php echo esc_html__( 'Website Templates', 'ocean-extra' ); ?></h3>
-				<p><?php echo sprintf( esc_html__( 'OceanWP provides a collection of pre-designed website templates (demos) to help jumpstart your project. %1$s View all available website templates. %2$s', 'ocean-extra' ), '<a href="https://oceanwp.org/demos/" target="_blank">', '</a>' ); ?></p>
+				<p><?php echo sprintf( esc_html__( 'OceanWP provides a collection of pre-designed website templates (demos) to help jumpstart your project. %1$s View all available website templates. %2$s', 'ocean-extra' ), '<a href="https://see.oceanwp.org/tcinfo-preview-demos" target="_blank">', '</a>' ); ?></p>
 			</div>
 
 			<?php
@@ -109,7 +109,7 @@ if ( ! class_exists( 'OE_Customizer_Init' ) ) :
 
 					<div class="ocean-info-container">
 						<h3 class="info-heading"><?php echo esc_html__( 'Dedicated Premium Support', 'ocean-extra' ); ?></h3>
-						<p><?php echo sprintf( esc_html__( 'Elevate your experience with faster, expert and personalized email support available exclusively to %1$s OceanWP Pro Bundle %2$s and %3$s Ocean eCommerce Pro %2$s users. Upgrade today and get the best for your website.', 'ocean-extra' ), '<a href="https://oceanwp.org/core-extensions-bundle/" target="_blank">', '</a>', '<a href="https://oceanwp.org/ocean-custom-ecommerce-website-premium-plans/" target="_blank">' ); ?></p>
+						<p><?php echo sprintf( esc_html__( 'Elevate your experience with faster, expert and personalized email support available exclusively to %1$s OceanWP Pro Bundle %2$s and %3$s Ocean eCommerce Pro %2$s users. Upgrade today and get the best for your website.', 'ocean-extra' ), '<a href="https://see.oceanwp.org/tcinfo-bundle-upgrade" target="_blank">', '</a>', '<a href="https://see.oceanwp.org/tcinfo-ecommerce-upgrade" target="_blank">' ); ?></p>
 					</div>
 				<?php
 

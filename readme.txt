@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.7
-Stable tag: 2.4.4
+Stable tag: 2.4.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -215,6 +215,12 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.4.5 - FEB 27 2025 =
+- Added: Codes for the upcoming plugin.
+- Added: Turnstile integration for Popup Login and Elementor Widgets.
+- Fixed: Freemius SDK: PHP 8+ Warning: strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated.
+- Fixed: Freemius SDK: PHP 8+ Warning: str_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated.
 
 = 2.4.4 - JAN 27 2025 =
 - Added: Notice for OceanWP compatibility and min requirements for future releases.

@@ -164,7 +164,7 @@
 
         public static function add_migration_debug() {
             $hook = FS_Admin_Menu_Manager::add_subpage(
-                null,
+                '',
                 'Freemius Migration Debug',
                 'Freemius Migration Debug',
                 'manage_options',

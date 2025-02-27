@@ -111,7 +111,7 @@
 			'fs_id'        => '9081',
 			'fs_shortcode' => 'ocean_gutenberg_blocks_fs',
 		),
-        'Ocean_Site_Booster'         => array(
+        'Ocean_SiteBooster'         => array(
 			'name'         => 'Ocean Site Booster',
 			'fs_id'        => '17389',
 			'fs_shortcode' => 'osb_fs',

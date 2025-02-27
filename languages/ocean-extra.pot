@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.4.4\n"
+"Project-Id-Version: Ocean Extra 2.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-27T08:45:51+00:00\n"
+"POT-Creation-Date: 2025-02-27T05:41:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -6390,6 +6390,7 @@ msgid "Select your background image size."
 msgstr ""
 
 #: includes/metabox/metabox.php:1326
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:62
 #: includes/post-settings/assets/index.js:3
 #: includes/post-settings/oe-ps-src/sidebar/settings/title.js:285
 msgid "Auto"
@@ -7031,72 +7032,72 @@ msgid "Yes! I want the Upgrade"
 msgstr ""
 
 #: includes/panel/theme-panel.php:167
-#: includes/themepanel/theme-panel.php:518
+#: includes/themepanel/theme-panel.php:530
 msgid "Site Style & Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:170
-#: includes/themepanel/theme-panel.php:521
+#: includes/themepanel/theme-panel.php:533
 msgid "Colors Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:173
-#: includes/themepanel/theme-panel.php:524
+#: includes/themepanel/theme-panel.php:536
 msgid "Site Page Settings Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:176
-#: includes/themepanel/theme-panel.php:527
+#: includes/themepanel/theme-panel.php:539
 msgid "Site Performance Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:179
-#: includes/themepanel/theme-panel.php:530
+#: includes/themepanel/theme-panel.php:542
 msgid "SEO Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:185
-#: includes/themepanel/theme-panel.php:536
+#: includes/themepanel/theme-panel.php:548
 msgid "General Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:191
-#: includes/themepanel/theme-panel.php:542
+#: includes/themepanel/theme-panel.php:554
 msgid "Typography Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:194
-#: includes/themepanel/theme-panel.php:545
+#: includes/themepanel/theme-panel.php:557
 msgid "Top Bar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:197
-#: includes/themepanel/theme-panel.php:548
+#: includes/themepanel/theme-panel.php:560
 msgid "Header Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:200
-#: includes/themepanel/theme-panel.php:551
+#: includes/themepanel/theme-panel.php:563
 msgid "Blog Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:203
-#: includes/themepanel/theme-panel.php:554
+#: includes/themepanel/theme-panel.php:566
 msgid "Sidebar Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:206
-#: includes/themepanel/theme-panel.php:557
+#: includes/themepanel/theme-panel.php:569
 msgid "Footer Widgets Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:209
-#: includes/themepanel/theme-panel.php:560
+#: includes/themepanel/theme-panel.php:572
 msgid "Footer Bottom Panel"
 msgstr ""
 
 #: includes/panel/theme-panel.php:212
-#: includes/themepanel/theme-panel.php:563
+#: includes/themepanel/theme-panel.php:575
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
@@ -7512,48 +7513,48 @@ msgstr ""
 msgid "Single Ocean Portfolio item"
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:119
-#: includes/themepanel/theme-panel.php:160
-#: includes/themepanel/theme-panel.php:191
+#: includes/themepanel/theme-panel.php:131
+#: includes/themepanel/theme-panel.php:172
 #: includes/themepanel/theme-panel.php:203
-#: includes/themepanel/theme-panel.php:212
-#: includes/themepanel/theme-panel.php:251
-#: includes/themepanel/theme-panel.php:377
+#: includes/themepanel/theme-panel.php:215
+#: includes/themepanel/theme-panel.php:224
+#: includes/themepanel/theme-panel.php:263
+#: includes/themepanel/theme-panel.php:389
 msgid "Something went wrong"
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:146
-#: includes/themepanel/theme-panel.php:177
-#: includes/themepanel/theme-panel.php:238
-#: includes/themepanel/theme-panel.php:275
+#: includes/themepanel/theme-panel.php:158
+#: includes/themepanel/theme-panel.php:189
+#: includes/themepanel/theme-panel.php:250
+#: includes/themepanel/theme-panel.php:287
 msgid "Settings saved successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:230
+#: includes/themepanel/theme-panel.php:242
 msgid "Project ID is wrong."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:294
+#: includes/themepanel/theme-panel.php:306
 msgid "Settings successfully reset."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:417
+#: includes/themepanel/theme-panel.php:429
 msgid "Import file could not be found. Please try again."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:455
+#: includes/themepanel/theme-panel.php:467
 msgid "Settings imported successfully."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:462
+#: includes/themepanel/theme-panel.php:474
 msgid "Invalid Import Data."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:469
+#: includes/themepanel/theme-panel.php:481
 msgid "No import data found."
 msgstr ""
 
-#: includes/themepanel/theme-panel.php:818
+#: includes/themepanel/theme-panel.php:844
 msgid "View paid features"
 msgstr ""
 
@@ -7612,6 +7613,57 @@ msgstr ""
 msgid "Check out %1$sour documentation and full video guide%2$s on how easy it is to import website template demos, both free and pro."
 msgstr ""
 
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:8
+msgid "%1$sTurnstile%2$s is a free service by Cloudflare that protects your website from spam and abuse. It does this while letting your valid users pass through with ease."
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:24
+#: includes/themepanel/views/panes/integration-google-recaptcha.php:45
+#: includes/themepanel/views/panes/integration-google-recaptcha.php:69
+msgid "Site Key"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:32
+#: includes/themepanel/views/panes/integration-google-recaptcha.php:53
+#: includes/themepanel/views/panes/integration-google-recaptcha.php:83
+msgid "Secret Key"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:41
+msgid "Render Method"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:46
+msgid "Implicit"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:49
+msgid "Explicit"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:57
+#: includes/themepanel/views/panes/system-info-details.php:214
+msgid "Theme"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:65
+#: includes/widgets/about-me.php:404
+#: includes/widgets/facebook.php:209
+#: includes/widgets/social.php:413
+#: includes/widgets/social.php:439
+#: includes/widgets/twitter.php:235
+msgid "Light"
+msgstr ""
+
+#: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:68
+#: includes/widgets/about-me.php:405
+#: includes/widgets/facebook.php:210
+#: includes/widgets/social-share.php:356
+#: includes/widgets/social.php:440
+#: includes/widgets/twitter.php:236
+msgid "Dark"
+msgstr ""
+
 #: includes/themepanel/views/panes/integration-google-maps.php:11
 #: includes/themepanel/views/panes/integration-mailchimp.php:21
 msgid "API Key"
@@ -7639,16 +7691,6 @@ msgstr ""
 
 #: includes/themepanel/views/panes/integration-google-recaptcha.php:40
 msgid "v2"
-msgstr ""
-
-#: includes/themepanel/views/panes/integration-google-recaptcha.php:45
-#: includes/themepanel/views/panes/integration-google-recaptcha.php:69
-msgid "Site Key"
-msgstr ""
-
-#: includes/themepanel/views/panes/integration-google-recaptcha.php:53
-#: includes/themepanel/views/panes/integration-google-recaptcha.php:83
-msgid "Secret Key"
 msgstr ""
 
 #: includes/themepanel/views/panes/integration-google-recaptcha.php:64
@@ -7758,10 +7800,6 @@ msgstr ""
 
 #: includes/themepanel/views/panes/system-info-details.php:195
 msgid "The themes Directory"
-msgstr ""
-
-#: includes/themepanel/views/panes/system-info-details.php:214
-msgid "Theme"
 msgstr ""
 
 #: includes/themepanel/views/panes/system-info-details.php:219
@@ -8032,22 +8070,6 @@ msgstr ""
 
 #: includes/widgets/about-me.php:400
 msgid "Social Style:"
-msgstr ""
-
-#: includes/widgets/about-me.php:404
-#: includes/widgets/facebook.php:209
-#: includes/widgets/social.php:413
-#: includes/widgets/social.php:439
-#: includes/widgets/twitter.php:235
-msgid "Light"
-msgstr ""
-
-#: includes/widgets/about-me.php:405
-#: includes/widgets/facebook.php:210
-#: includes/widgets/social-share.php:356
-#: includes/widgets/social.php:440
-#: includes/widgets/twitter.php:236
-msgid "Dark"
 msgstr ""
 
 #: includes/widgets/about-me.php:410

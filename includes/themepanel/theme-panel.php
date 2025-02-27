@@ -75,6 +75,18 @@ class Ocean_Extra_New_Theme_Panel {
 		add_action( 'customize_register', array( $this, 'customizer_controll' ), 100 );
 
 		add_action( 'deactivated_plugin', array( $this, 'deactive_plugins_controll' ), 10, 2 );
+
+		add_action( 'plugin_loaded', array( $this, 'oe_pane_cloudflare_turnstile' ) );
+	}
+
+	/**
+	 * Cloudflare turnstile pane.
+	 */
+	public function oe_pane_cloudflare_turnstile() {
+		if ( class_exists( 'Ocean_Popup_Login' ) && defined( 'OPL_PLUGIN_VERSION' ) && version_compare( OPL_PLUGIN_VERSION, '2.2.1', '>=' )
+		|| class_exists( 'Ocean_Elementor_Widgets' ) && defined( 'OWP_ELEMENTOR_VERSION' ) && version_compare( OWP_ELEMENTOR_VERSION, '2.4.7', '>=' ) ) {
+			add_filter( 'oceanwp_theme_panel_pane_integration_cloudflare_turnstile', array( $this, 'integration_cloudflare_turnstile_part' ) );
+		}
 	}
 
 	/**
@@ -659,6 +671,9 @@ class Ocean_Extra_New_Theme_Panel {
 	function integration_google_recaptcha_part() {
 		return OE_PATH . 'includes/themepanel/views/panes/integration-google-recaptcha.php';
 	}
+	function integration_cloudflare_turnstile_part() {
+		return OE_PATH . 'includes/themepanel/views/panes/integration-cloudflare-turnstile.php';
+	}
 
 
 	public static function control_metaboxes( $post_types ) {
@@ -735,6 +750,17 @@ class Ocean_Extra_New_Theme_Panel {
 			'recaptcha_version'     => get_option( 'owp_recaptcha_version' ),
 			'recaptcha3_site_key'   => get_option( 'owp_recaptcha3_site_key' ),
 			'recaptcha3_secret_key' => get_option( 'owp_recaptcha3_secret_key' ),
+		);
+
+		return apply_filters( 'ocean_integrations_settings', $settings );
+	}
+
+	public static function get_cloudlfare_turnstile_settings() {
+		$settings = array(
+			'turnstile_site_key'      => get_option( 'owp_turnstile_site_key' ),
+			'turnstile_secret_key'    => get_option( 'owp_turnstile_secret_key' ),
+			'turnstile_render_method' => get_option( 'owp_turnstile_render_method' ),
+			'turnstile_theme'         => get_option( 'owp_turnstile_theme' ),
 		);
 
 		return apply_filters( 'ocean_integrations_settings', $settings );
