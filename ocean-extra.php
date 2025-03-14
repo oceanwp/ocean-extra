@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.4.5
+ * Version:             2.4.6
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
@@ -139,6 +139,9 @@ final class Ocean_Extra {
 		// Setup all the things
 		add_action( 'init', array( $this, 'setup' ) );
 
+		// Log version when plugin loaded.
+		add_action( 'plugins_loaded',array( $this, 'oe_log_options' ) );
+
 		add_filter('register_post_type_args', array( $this, 'oe_custom_field_support_metabox' ), 10, 2 );
 
 		// Menu icons
@@ -261,6 +264,18 @@ final class Ocean_Extra {
 	 */
 	public function install() {
 		$this->_log_version_number();
+		$this->_log_installed_version_number();
+	}
+
+	/**
+	 * Log Installed version.
+	 *
+	 * @access  public
+	 * @since   2.4.7
+	 * @return  void
+	 */
+	public function oe_log_options() {
+		$this->_log_installed_version_number();
 	}
 
 	/**
@@ -273,6 +288,22 @@ final class Ocean_Extra {
 	private function _log_version_number() {
 		// Log the version number.
 		update_option( $this->token . '-version', $this->version );
+	}
+
+	/**
+	 * Log the plugin version number.
+	 *
+	 * @access  private
+	 * @since   2.4.7
+	 * @return  void
+	 */
+	private function _log_installed_version_number() {
+
+		$option_name = $this->token . '-installed-version';
+
+		if ( false === get_option( $option_name ) ) {
+			$this->_log_installed_version_number();
+		}
 	}
 
 	/**
