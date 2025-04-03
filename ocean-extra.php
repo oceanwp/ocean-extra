@@ -302,7 +302,7 @@ final class Ocean_Extra {
 
 		$option_name = $this->token . '-installed-version';
 
-		if ( false === get_option( $option_name ) ) {
+		if (! get_option( $option_name ) ) {
 			update_option( $option_name, $this->version );
 		}
 	}
