@@ -1,7 +1,8 @@
 == Changelog ==
 
-= 2.4.6 - XXX XX 2025 =
-- Added: Log the initially installed version.
+= 2.4.6 - APR 03 2025 =
+- Added: Ocean Extra version constant for future updates.
+- Updated: Ocean Extra Copyright information.
 
 = 2.4.5 - FEB 27 2025 =
 - Added: Codes for the upcoming plugin.

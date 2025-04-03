@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Copyright ==
 
+Ocean Extra, Copyright 2016-2025 OceanWP LLC
+Ocean Extra is distributed under the terms of the GNU GPL.
+
 Ocean Extra uses the following third-party resources:
 
 Font Awesome Fonts, Copyright Fonticons, Inc.
@@ -215,6 +218,10 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.4.6 - APR 03 2025 =
+- Added: Ocean Extra version constant for future updates.
+- Updated: Ocean Extra Copyright information.
 
 = 2.4.5 - FEB 27 2025 =
 - Added: Codes for the upcoming plugin.

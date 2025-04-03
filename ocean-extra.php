@@ -13,6 +13,7 @@
  * Domain Path: /languages
  *
  * @package Ocean_Extra
+ * @copyright Copyright (C) 2016-2025, Ocean Extra by OceanWP LLC - https://oceanwp.org
  * @category Core
  * @author OceanWP
  */
