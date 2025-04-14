@@ -615,7 +615,7 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left' ) ) {
 			if ( isset( WC()->cart->cart_contents_total ) ) {
 				$total = ( WC()->cart->prices_include_tax ) ? ( WC()->cart->cart_contents_total + WC()->cart->get_cart_contents_tax() ) : WC()->cart->cart_contents_total;
 				if ( $total >= $min_free_shipping_amount ) {
-					return do_shortcode( wp_kses_post( $content_reached ) );
+					return strip_shortcodes( wp_kses_post( $content_reached ) );
 				} else {
 					$content = str_replace( '%left_to_free%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount - $total ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
 					$content = str_replace( '%free_shipping_min_amount%', '<span class="oceanwp-woo-left-to-free">' . wc_price( ( $min_free_shipping_amount ) * $multiply_by ) . '</span>', wp_kses_post( $content ) );
@@ -623,7 +623,6 @@ if ( ! function_exists( 'oceanwp_woo_free_shipping_left' ) ) {
 				}
 			}
 		}
-
 	}
 }
 
@@ -862,6 +861,14 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 			),
 			$atts
 		);
+
+		$attr['icon']        = sanitize_html_class( $attr['icon'] );
+		$attr['class']       = sanitize_html_class( $attr['class'] );
+		$attr['title']       = sanitize_text_field( $attr['title'] );
+		$attr['desc']        = sanitize_text_field( $attr['desc'] );
+		$attr['location']    = filter_var( $attr['location'], FILTER_VALIDATE_BOOLEAN );
+		$attr['area_hidden'] = filter_var( $attr['area_hidden'], FILTER_VALIDATE_BOOLEAN );
+		$attr['fallback']    = filter_var( $attr['fallback'], FILTER_VALIDATE_BOOLEAN );
 
 		if ( isset($attr['location']) && $attr['location'] === "true" ) {
 			$location = true;
