@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.4.6\n"
+"Project-Id-Version: Ocean Extra 2.4.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-03T09:48:58+00:00\n"
+"POT-Creation-Date: 2025-04-21T08:18:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -5622,15 +5622,15 @@ msgstr ""
 msgid "Add Image(s)"
 msgstr ""
 
-#: includes/metabox/gallery-metabox/gallery-metabox.php:135
+#: includes/metabox/gallery-metabox/gallery-metabox.php:137
 msgid "Change image"
 msgstr ""
 
-#: includes/metabox/gallery-metabox/gallery-metabox.php:136
+#: includes/metabox/gallery-metabox/gallery-metabox.php:138
 msgid "Remove image"
 msgstr ""
 
-#: includes/metabox/gallery-metabox/gallery-metabox.php:150
+#: includes/metabox/gallery-metabox/gallery-metabox.php:152
 #: includes/post-settings/assets/index.js:3
 #: includes/post-settings/oe-ps-src/sidebar/settings/gallery.js:35
 msgid "Enable lightbox for this gallery?"
@@ -7442,21 +7442,21 @@ msgstr ""
 #: includes/shortcodes/shortcodes.php:333
 #: includes/shortcodes/shortcodes.php:514
 #: includes/shortcodes/shortcodes.php:545
-#: includes/shortcodes/shortcodes.php:729
+#: includes/shortcodes/shortcodes.php:728
 msgid "This shortcode only works in front end"
 msgstr ""
 
 #: includes/shortcodes/shortcodes.php:579
-#: includes/shortcodes/shortcodes.php:658
+#: includes/shortcodes/shortcodes.php:657
 msgid "Buy for %left_to_free% more and get free shipping"
 msgstr ""
 
 #: includes/shortcodes/shortcodes.php:583
-#: includes/shortcodes/shortcodes.php:659
+#: includes/shortcodes/shortcodes.php:658
 msgid "You have Free delivery!"
 msgstr ""
 
-#: includes/shortcodes/shortcodes.php:814
+#: includes/shortcodes/shortcodes.php:813
 msgid "Last Updated on:"
 msgstr ""
 

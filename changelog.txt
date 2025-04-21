@@ -1,5 +1,11 @@
 == Changelog ==
 
+= 2.4.7 - APR 21 2025 =
+- Updated: Compatibility: WordPress version number.
+- Fixed: Potential vulnerability patched: Report by Wordfence from APR 11th 2025 (1/3).
+- Fixed: Potential vulnerability patched: Report by Wordfence from APR 11th 2025 (2/3).
+- Fixed: Potential vulnerability patched: Report by Wordfence from APR 11th 2025 (3/3).
+
 = 2.4.6 - APR 03 2025 =
 - Added: Ocean Extra version constant for future updates.
 - Updated: Ocean Extra Copyright information.

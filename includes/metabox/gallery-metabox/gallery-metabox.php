@@ -130,8 +130,10 @@ if ( ! class_exists( 'OceanWP_Gallery_Metabox' ) ) {
 
 						<li class="image">
 							<div class="attachment-preview">
-								<input type="hidden" name="ocean_gallery_id[<?php echo $key; ?>]" value="<?php echo $value; ?>">
-								<div class="thumb"><img class="image-preview" src="<?php echo $image[0]; ?>"></div>
+								<input type="hidden" name="ocean_gallery_id[<?php echo esc_attr( $key ); ?>]" value="<?php echo esc_attr( $value ); ?>">
+								<?php if ( ! empty( $image[0] ) ) : ?>
+									<div class="thumb"><img class="image-preview" src="<?php echo esc_url( $image[0] ); ?>"></div>
+								<?php endif; ?>
 								<a class="change-image button" href="#"><?php esc_html_e( 'Change image', 'ocean-extra' ); ?></a>
 								<a class="remove-image" href="#" title="<?php esc_html_e( 'Remove image', 'ocean-extra' ); ?>"><i class="dashicons dashicons-no-alt"></i></a>
 							</div>
@@ -177,7 +179,8 @@ if ( ! class_exists( 'OceanWP_Gallery_Metabox' ) ) {
 				return;
 			}
 
-			if ( isset( $_POST[ 'ocean_gallery_id' ] ) ) {
+			if ( isset( $_POST[ 'ocean_gallery_id' ] ) && is_array( $_POST['ocean_gallery_id'] ) ) {
+				$gallery_ids = array_map( 'absint', $_POST['ocean_gallery_id'] );
 				update_post_meta( $post_id, 'ocean_gallery_id', $_POST[ 'ocean_gallery_id' ] );
 			} else {
 				delete_post_meta ( $post_id, 'ocean_gallery_id' );
