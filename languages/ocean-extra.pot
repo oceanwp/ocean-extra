@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-29T08:11:47+00:00\n"
+"POT-Creation-Date: 2025-04-30T11:14:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -278,6 +278,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:169
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:42
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:52
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:278
 msgid "Media"
 msgstr ""
 
@@ -4652,10 +4654,10 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:910
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:166
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:422
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:436
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:104
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:535
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:579
 msgid "Next"
 msgstr ""
 
@@ -6757,7 +6759,7 @@ msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:236
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1080
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1097
 msgid "Get This Plugin"
 msgstr ""
 
@@ -9343,13 +9345,14 @@ msgstr ""
 
 #: includes/wizard/wizard.php:843
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1113
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1130
 #: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:217
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:38
 msgid "Continue"
 msgstr ""
 
@@ -9387,7 +9390,7 @@ msgstr ""
 
 #: includes/wizard/wizard.php:941
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1011
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1028
 msgid "Other"
 msgstr ""
 
@@ -9420,30 +9423,45 @@ msgid "Delete"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1095
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1112
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:303
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:399
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:413
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:207
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
 #: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:385
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:513
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:557
 msgid "Go back"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1105
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:411
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1122
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:425
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:93
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:524
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:568
 msgid "Skip this Step"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1123
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1140
 msgid "Install & Activate"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:186
+msgid "Install Child Theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:190
+msgid "Activate Child Theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:192
+msgid "Child Theme Active"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9512,6 +9530,16 @@ msgid "Select additional you want to remove (optional)"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:277
+msgid "Posts"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:288
+msgid "This option will install and activate the child theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:315
 msgid "Skip this step"
 msgstr ""
@@ -9529,6 +9557,12 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:352
 #: includes/post-settings/assets/index.js:1
 msgid "Cancel"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:101
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:362
+msgid "Proceed with Clean Install"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9682,9 +9716,9 @@ msgid "Upload mobile logo"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:392
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:406
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:89
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:506
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:550
 msgid "*You can always change this at any point, directly from the Customizer"
 msgstr ""
 
@@ -9744,43 +9778,43 @@ msgid "Nebula Ultra"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:352
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:366
 msgid "Choose a palette and add color to your world*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:358
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:372
 msgid "Custom Presets"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:381
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:495
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:395
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:539
 msgid "Or"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:387
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:401
 msgid "Use default website demo template colors"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:464
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:508
 msgid "Time to add the Typography ingredient*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:470
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:514
 msgid "Custom Typography"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:473
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:517
 msgid "Select a Typography"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:501
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:545
 msgid "Use default website demo template typography"
 msgstr ""
 
@@ -9843,6 +9877,16 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/optional-plugins.jsx:48
 #: includes/onboarding/oe-sw-src/app/modal/modules/suggested-plugins.jsx:38
 msgid "Add more functionality to your website."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:21
+msgid "Upgrade to Pro!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:30
+msgid "Upgrade to pro. Get unlimited access to all full site templates with the OceanWP Pro Bundle."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -10098,7 +10142,7 @@ msgid "Open a Ticket "
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/header.jsx:120
+#: includes/onboarding/oe-sw-src/app/modal/header.jsx:147
 msgid "Select Builder"
 msgstr ""
 
@@ -10164,10 +10208,6 @@ msgstr ""
 
 #: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:47
 msgid "Disable All plugins except the necessary ones"
-msgstr ""
-
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:101
-msgid "Proceed with Clean Install"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
