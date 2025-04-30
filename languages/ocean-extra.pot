@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30T11:14:22+00:00\n"
+"POT-Creation-Date: 2025-04-30T15:05:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -9349,7 +9349,7 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
-#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:217
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:216
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
 #: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:38
@@ -9427,7 +9427,7 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:303
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:413
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
-#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:207
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:206
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
 #: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:385
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
@@ -9613,15 +9613,15 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:113
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:66
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:65
 msgid "No templates found"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:117
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:122
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:70
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:75
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:69
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:74
 msgid "Error fetching templates"
 msgstr ""
 
@@ -10017,12 +10017,12 @@ msgid "Form sample for the WPForms Lite plugin."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:168
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:167
 msgid "Website Content"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:172
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:171
 msgid "Choose which content you would like to import"
 msgstr ""
 
