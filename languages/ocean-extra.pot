@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30T15:05:02+00:00\n"
+"POT-Creation-Date: 2025-05-01T12:21:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -4656,7 +4656,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:436
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:104
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:102
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:579
 msgid "Next"
 msgstr ""
@@ -6156,7 +6156,7 @@ msgstr ""
 #: includes/widgets/tags.php:263
 #: includes/widgets/video.php:114
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:56
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:54
 msgid "Title"
 msgstr ""
 
@@ -9291,7 +9291,7 @@ msgstr ""
 
 #: includes/wizard/wizard.php:767
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:64
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:62
 msgid "Tagline"
 msgstr ""
 
@@ -9439,7 +9439,7 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1122
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:425
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:93
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:91
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:568
 msgid "Skip this Step"
 msgstr ""
@@ -9676,17 +9676,17 @@ msgid "Error fetching plugins"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:50
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:48
 msgid "Add your website details*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:73
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:71
 msgid "Site icon"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:74
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:72
 msgid "Upload site icon"
 msgstr ""
 
@@ -10092,22 +10092,22 @@ msgid "Working the magic..."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:224
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:223
 msgid "Demo imported successfully"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:227
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:226
 msgid "An error occurred during the import process."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:240
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:239
 msgid "Working the Magic"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:253
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:252
 msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
 msgstr ""
 

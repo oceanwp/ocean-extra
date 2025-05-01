@@ -256,56 +256,56 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
 
         if (is_array($new_options)) {
 
-            if (isset($new_options['siteTitle'])) {
+            if (isset($new_options['siteTitle']) && !empty($new_options['siteTitle'])) {
                 update_option('blogname', $new_options['siteTitle'] );
             }
 
-            if (isset($new_options['siteTagline'])) {
+            if (isset($new_options['siteTagline']) && !empty($new_options['siteTagline'])) {
                 update_option('blogdescription', $new_options['siteTagline'] );
             }
 
-            if (isset($new_options['siteIcon'])) {
+            if (isset($new_options['siteIcon']) && !empty($new_options['siteIcon'])) {
                 update_option('site_icon', $new_options['siteIcon'] );
             }
 
-            if (isset($new_options['siteLogo'])) {
+            if (isset($new_options['siteLogo']) && !empty($new_options['siteLogo'])) {
                 update_option('site_logo', $new_options['siteLogo'] );
             }
 
-            if (isset($new_options['siteRetinaLogo'])) {
+            if (isset($new_options['siteRetinaLogo']) && !empty($new_options['siteRetinaLogo'])) {
                 set_theme_mod('ocean_retina_logo', $new_options['siteRetinaLogo'] );
             }
 
-            if (isset($new_options['siteMobileLogo'])) {
+            if (isset($new_options['siteMobileLogo']) && !empty($new_options['siteMobileLogo'])) {
                 set_theme_mod('ocean_responsive_logo', $new_options['siteMobileLogo'] );
             }
 
             // Colors.
-            if (isset($new_options['backgroundColor'])) {
+            if (isset($new_options['backgroundColor']) && !empty($new_options['backgroundColor'])) {
                 set_theme_mod('ocean_background_color', sanitize_hex_color($new_options['backgroundColor']) );
             }
 
-            if (isset($new_options['primaryColor']) ) {
+            if (isset($new_options['primaryColor']) && !empty($new_options['primaryColor'])) {
                 set_theme_mod('ocean_primary_color', sanitize_hex_color($new_options['primaryColor']) );
             }
 
-            if (isset($new_options['primaryHoverColor'])) {
+            if (isset($new_options['primaryHoverColor']) && !empty($new_options['primaryHoverColor'])) {
                 set_theme_mod('ocean_hover_primary_color', sanitize_hex_color($new_options['primaryHoverColor']) );
             }
 
-            if (isset($new_options['borderColor'])) {
+            if (isset($new_options['borderColor']) && !empty($new_options['borderColor'])) {
                 set_theme_mod('ocean_main_border_color', sanitize_hex_color($new_options['borderColor']) );
             }
 
-            if (isset($new_options['linkColor'])) {
+            if (isset($new_options['linkColor']) && !empty($new_options['linkColor'])) {
                 set_theme_mod('ocean_links_color', sanitize_hex_color($new_options['linkHoverColor']) );
             }
 
-            if (isset($new_options['linkHoverColor'])) {
+            if (isset($new_options['linkHoverColor']) && !empty($new_options['linkHoverColor'])) {
                 set_theme_mod('ocean_links_color_hover', sanitize_hex_color($new_options['linkHoverColor']) );
             }
 
-            if (isset($new_options['headingsFont'])) {
+            if (isset($new_options['headingsFont']) && !empty($new_options['headingsFont'])) {
 
                 $typography_headings = get_theme_mod('headings_typography', []);
 
@@ -317,7 +317,7 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
                 set_theme_mod('headings_typography', $typography_headings);
             }
 
-            if (isset($new_options['bodyFont'])) {
+            if (isset($new_options['bodyFont']) && !empty($new_options['bodyFont'])) {
 
                 $typography_body = get_theme_mod('body_typography', []);
 
