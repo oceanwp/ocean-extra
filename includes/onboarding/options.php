@@ -12,6 +12,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Get the options for the onboarding wizard.
+ *
+ * @since 2.4.8
+ * @return array
+ */
 function oe_onboarding_wizard_options() {
 
     $headings_typo         = get_theme_mod('headings_typography');

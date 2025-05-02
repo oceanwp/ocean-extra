@@ -56,7 +56,7 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      */
     public function __construct() {
 
-        add_action('rest_api_init', array($this, 'rest_api_init'));
+        add_action('rest_api_init', [$this, 'rest_api_init']);
     }
 
     /**
@@ -70,146 +70,112 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
         register_rest_route(
             $namespace,
             '/onboarding/options',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'update_options'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'update_options'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/reset-site',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'reset_existing_site'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
-        );
-
-        register_rest_route(
-            $namespace,
-            '/onboarding/reset-progress',
-            array(
-                'methods'  => 'GET',
-                'callback' => array($this, 'get_progress'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'reset_existing_site'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/install-plugin',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'install_plugin_callback'),
-                'permission_callback' => array($this, 'plugin_install_permission'),
-            )
+                'callback'            => [$this, 'install_plugin_callback'],
+                'permission_callback' => [$this, 'plugin_install_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/activate-plugin',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'activate_plugin_callback'),
-                'permission_callback' => array($this, 'plugin_install_permission'),
-            )
+                'callback'            => [$this, 'activate_plugin_callback'],
+                'permission_callback' => [$this, 'plugin_install_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/plugin-status',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'get_plugin_status_callback'),
-                'permission_callback' => array($this, 'plugin_install_permission'),
-            )
+                'callback'            => [$this, 'get_plugin_status_callback'],
+                'permission_callback' => [$this, 'plugin_install_permission'],
+            ]
         );
-
-        // register_rest_route(
-        //     $namespace,
-        //     '/onboarding/subscribe',
-        //     array(
-        //         'methods'             => WP_REST_Server::EDITABLE,
-        //         'callback'            => array($this, 'get_newsletter_subscribe'),
-        //         'permission_callback' => '__return_true',
-        //     )
-        // );
 
         register_rest_route(
             $namespace,
             '/onboarding/get-templates',
-            array(
+            [
                 'methods'             => 'GET',
-                'callback'            => array($this, 'get_ocean_templates'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'get_ocean_templates'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/sync-templates',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'sync_ocean_templates'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'sync_ocean_templates'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/select-template',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'select_ocean_template'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'select_ocean_template'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
 
         register_rest_route(
             $namespace,
             '/onboarding/get-plugins',
-            array(
+            [
                 'methods'             => 'GET',
-                'callback'            => array($this, 'get_ocean_plugins'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'get_ocean_plugins'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
-
-        // register_rest_route(
-        //     $namespace,
-        //     '/onboarding/template-data',
-        //     array(
-        //         'methods'             => WP_REST_Server::EDITABLE,
-        //         'callback'            => array($this, 'get_template_data'),
-        //         'permission_callback' => array($this, 'update_permission'),
-        //     )
-        // );
-
-        // register_rest_route(
-        //     $namespace,
-        //     '/onboarding/import-content',
-        //     array(
-        //         'methods'             => WP_REST_Server::EDITABLE,
-        //         'callback'            => array($this, 'process_import_content'),
-        //         'permission_callback' => array($this, 'update_permission'),
-        //     )
-        // );
 
         register_rest_route(
             $namespace,
             '/onboarding/finish-setup/',
-            array(
+            [
                 'methods'             => WP_REST_Server::EDITABLE,
-                'callback'            => array($this, 'update_finish_setup_flag'),
-                'permission_callback' => array($this, 'update_permission'),
-            )
+                'callback'            => [$this, 'update_finish_setup_flag'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
         );
-    }
 
-    public function get_progress() {
-        return new WP_REST_Response(['progress' => get_option('onboarding_wizard_cleanup_progress', 0)], 200);
+        register_rest_route(
+            $namespace,
+            '/onboarding/color-mode/',
+            [
+                'methods'             => WP_REST_Server::EDITABLE,
+                'callback'            => [$this, 'onboarding_color_mode'],
+                'permission_callback' => [$this, 'update_permission'],
+            ]
+        );
     }
 
     /**
@@ -345,74 +311,50 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
         $params = $request->get_json_params();
         $cleanup_options = isset($params['resetOptions']) ? $params['resetOptions'] : [];
 
-        $total_tasks = count($cleanup_options);
-        $completed_tasks = 0;
-
         if (in_array('pages', $cleanup_options)) {
             $this->delete_pages();
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('menus', $cleanup_options)) {
             $this->delete_menus();
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('customizer-settings', $cleanup_options)) {
             $this->reset_customizer_settings();
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('disable-plugins', $cleanup_options)) {
             $this->deactivate_plugins();
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('posts', $cleanup_options)) {
             $this->delete_posts();
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('media', $cleanup_options)) {
             $this->delete_media();
             delete_option('site_icon');
-            $completed_tasks++;
-            $this->send_progress_update($completed_tasks, $total_tasks);
         }
 
         if (in_array('child-theme', $cleanup_options)) {
             if (class_exists('OE_Onboarding_Child_Theme')) {
                 OE_Onboarding_Child_Theme::instance()->child_theme_manager();
-
-                $completed_tasks++;
-                $this->send_progress_update($completed_tasks, $total_tasks);
             }
         }
 
-        return new WP_REST_Response(['success' => true, 'message' =>  'Cleanup Completed!'], 200);
-    }
-
-    /**
-     * Send progress update
-     */
-    public function send_progress_update($completed, $total) {
-        $progress = (int) (($completed / $total) * 100);
-        update_option('onboarding_wizard_cleanup_progress', $progress);
+        return new WP_REST_Response(['success' => true, 'message' =>  __( 'Cleanup Completed!', 'ocean-extra' )], 200);
     }
 
     /**
      * Delete pages
      */
     public function delete_pages() {
-        $pages = get_posts(array(
-            'post_type' => 'page',
-            'numberposts' => -1
-        ));
+        $pages = get_posts(
+            [
+                'post_type' => 'page',
+                'numberposts' => -1
+            ]
+        );
 
         foreach ($pages as $page) {
             wp_delete_post($page->ID, true);
@@ -454,10 +396,12 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      * Delete posts
      */
     public function delete_posts() {
-        $posts = get_posts(array(
-            'post_type' => 'post',
-            'numberposts' => -1
-        ));
+        $posts = get_posts(
+            [
+                'post_type' => 'post',
+                'numberposts' => -1
+            ]
+        );
 
         foreach ($posts as $post) {
             wp_delete_post($post->ID, true);
@@ -468,10 +412,12 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      * Delete media
      */
     public function delete_media() {
-        $media_files = get_posts(array(
-            'post_type' => 'attachment',
-            'numberposts' => -1
-        ));
+        $media_files = get_posts(
+            [
+                'post_type' => 'attachment',
+                'numberposts' => -1
+            ]
+        );
 
         foreach ($media_files as $media) {
             wp_delete_attachment($media->ID, true);
@@ -508,14 +454,6 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
     }
 
     /**
-     * Newsletter subscribe
-     */
-    // public function get_newsletter_subscribe(WP_REST_Request $request) {
-    //     $newsletter = OE_Onboarding_NewsLetter::instance();
-    //     return $newsletter->onboarding_mailerlite_subscribe($request);
-    // }
-
-    /**
      * Select template
      */
     public function select_ocean_template(WP_REST_Request $request) {
@@ -524,33 +462,26 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
     }
 
     /**
-     * Get template data
-     */
-    // public function get_template_data(WP_REST_Request $request) {
-    //     $install_template = OE_Onboarding_Site_Templates_Install::instance();
-    //     return $install_template->get_selected_template_data($request);
-    // }
-
-    /**
-     * Get template data
-     */
-    // public function process_import_content(WP_REST_Request $request) {
-    //     $install_template = OE_Onboarding_Site_Templates_Install::instance();
-    //     return $install_template->import_content($request);
-    // }
-
-    /**
      * Finish setup flag
      */
     public function update_finish_setup_flag(WP_REST_Request $request) {
         update_option('owp_onboarding_completed', true);
 
-        return rest_ensure_response(array(
-            'success' => true,
-            'message' => __('Setup completed successfully.', 'ocean-extra'),
-        ));
+        return rest_ensure_response(
+            [
+                'success' => true,
+                'message' => __('Setup completed successfully.', 'ocean-extra'),
+            ]
+        );
     }
 
+    /**
+     * Get OceanWP templates.
+     *
+     * @param WP_REST_Request $request Request object.
+     *
+     * @return WP_REST_Response
+     */
     public function get_ocean_templates(WP_REST_Request $request) {
         $site_templates = OE_Onboarding_Site_Templates::instance();
 
@@ -562,7 +493,13 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
         ], 200);
     }
 
-
+    /**
+     * Sync OceanWP templates.
+     *
+     * @param WP_REST_Request $request Request object.
+     *
+     * @return WP_REST_Response
+     */
     public function sync_ocean_templates(WP_REST_Request $request) {
 
         $data = OE_Onboarding_Site_Templates::instance()->fetch_ocean_template_data(true);
@@ -573,6 +510,13 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
         ], 200);
     }
 
+    /**
+     * Get OceanWP plugins.
+     *
+     * @param WP_REST_Request $request Request object.
+     *
+     * @return WP_REST_Response
+     */
     public function get_ocean_plugins(WP_REST_Request $request) {
         $site_templates = OE_Onboarding_Site_Templates::instance();
 
@@ -584,6 +528,20 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
         ], 200);
     }
 
+    public function onboarding_color_mode(WP_REST_Request $request) {
+
+        $params = $request->get_json_params();
+        $color_mode = isset($params['colorMode']) ? $params['colorMode'] : '';
+
+        if ($color_mode) {
+            set_transient('oe_onboarding_color_mode', $color_mode, 30 * DAY_IN_SECONDS);
+
+            return new WP_REST_Response(['success' => true, 'message' => ucfirst($color_mode) . ' ' . __( 'Mode Applied', 'ocean-extra' )], 200);
+        }
+
+        return new WP_REST_Response(['error' => __( 'No color mode applied', 'ocean-extra' )], 400);
+    }
+
 
     /**
      * Success rest.
@@ -591,12 +549,12 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      * @param mixed $response response data.
      * @return mixed
      */
-    public function success($response = array()) {
+    public function success($response = []) {
         return new WP_REST_Response(
-            array(
+            [
                 'success'  => true,
                 'response' => $response,
-            ),
+            ],
             200
         );
     }
@@ -610,12 +568,12 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      */
     public function error($code, $response) {
         return new WP_REST_Response(
-            array(
+            [
                 'error'      => true,
                 'success'    => false,
                 'error_code' => $code,
                 'response'   => $response,
-            ),
+            ],
             401
         );
     }

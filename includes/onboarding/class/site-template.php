@@ -8,17 +8,17 @@
  */
 
 // Exit if accessed directly.
-if (!defined('ABSPATH')) {
+if ( ! defined('ABSPATH') ) {
     exit;
 }
 
 // The Setup Wizard site templates class
-if (!class_exists('OE_Onboarding_Site_Templates')) {
+if ( ! class_exists('OE_Onboarding_Site_Templates') ) {
 
     /**
      * OE_Onboarding_Site_Templates.
      *
-     * @since  2.4.6
+     * @since  2.4.8
      * @access public
      */
     final class OE_Onboarding_Site_Templates {
@@ -44,6 +44,12 @@ if (!class_exists('OE_Onboarding_Site_Templates')) {
             return self::$_instance;
         }
 
+        /**
+         * Fetch OceanWP template data.
+         *
+         * @param bool $force_update Force update the transient.
+         * @return string|WP_Error JSON encoded template data or WP_Error on failure.
+         */
         public function fetch_ocean_template_data($force_update = false) {
 
             $cached_demos = get_transient('ocean_onboarding_template_data');
@@ -82,6 +88,11 @@ if (!class_exists('OE_Onboarding_Site_Templates')) {
             return $cached_demos;
         }
 
+        /**
+         * Fetch OceanWP plugin data.
+         *
+         * @return string|WP_Error JSON encoded plugin data or WP_Error on failure.
+         */
         public function fetch_ocean_plugin_data() {
             $transient_key = 'ocean_onboarding_plugin_data';
             $cached_plugins = get_transient($transient_key);
