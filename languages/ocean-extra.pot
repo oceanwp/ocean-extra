@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-01T12:21:44+00:00\n"
+"POT-Creation-Date: 2025-05-05T06:11:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -4656,7 +4656,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:436
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:102
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:106
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:579
 msgid "Next"
 msgstr ""
@@ -6581,7 +6581,6 @@ msgstr ""
 
 #: includes/onboarding/class/import-data.php:194
 #: includes/onboarding/class/import-data.php:461
-#: includes/onboarding/start.php:235
 msgid "Nonce verification failed."
 msgstr ""
 
@@ -6693,37 +6692,29 @@ msgstr ""
 msgid "Invalid form data format."
 msgstr ""
 
-#: includes/onboarding/class/rest.php:335
+#: includes/onboarding/class/rest.php:301
 msgid "Settings updated successfully"
 msgstr ""
 
-#: includes/onboarding/class/rest.php:550
+#: includes/onboarding/class/rest.php:345
+msgid "Cleanup Completed!"
+msgstr ""
+
+#: includes/onboarding/class/rest.php:473
 msgid "Setup completed successfully."
 msgstr ""
 
-#: includes/onboarding/start.php:107
+#: includes/onboarding/class/rest.php:539
+msgid "Mode Applied"
+msgstr ""
+
+#: includes/onboarding/class/rest.php:542
+msgid "No color mode applied"
+msgstr ""
+
+#: includes/onboarding/start.php:105
 #: includes/wizard/wizard.php:476
 msgid "Setup Wizard"
-msgstr ""
-
-#: includes/onboarding/start.php:197
-msgid "Woohoo! Your website is nearly there — let's make it perfect!"
-msgstr ""
-
-#: includes/onboarding/start.php:199
-msgid "From Blank Page to Stunning Website—Follow Simple Steps to Create Something Amazing!"
-msgstr ""
-
-#: includes/onboarding/start.php:204
-msgid "The Onboarding Wizard is designed to make your website setup quick, easy, and hassle-free. With intuitive steps and smart suggestions tailored to your needs, this guide ensures you can create a stunning, fully-functional site in no time. Whether you're starting from scratch or fine-tuning an existing design, we've got you covered. With clear instructions and helpful tips along the way, you'll be able to focus on what matters most—building a site that's perfect for you, without the stress! - %1$sLearn more%2$s"
-msgstr ""
-
-#: includes/onboarding/start.php:213
-msgid "Launch Onboarding Wizard"
-msgstr ""
-
-#: includes/onboarding/start.php:268
-msgid "Notice dismissed successfully."
 msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:39
@@ -6759,7 +6750,7 @@ msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:236
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1097
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1117
 msgid "Get This Plugin"
 msgstr ""
 
@@ -9291,7 +9282,7 @@ msgstr ""
 
 #: includes/wizard/wizard.php:767
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:62
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:64
 msgid "Tagline"
 msgstr ""
 
@@ -9345,7 +9336,7 @@ msgstr ""
 
 #: includes/wizard/wizard.php:843
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1130
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1150
 #: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
@@ -9390,7 +9381,7 @@ msgstr ""
 
 #: includes/wizard/wizard.php:941
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1028
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1048
 msgid "Other"
 msgstr ""
 
@@ -9423,7 +9414,7 @@ msgid "Delete"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1112
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1132
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:303
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:413
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
@@ -9436,16 +9427,16 @@ msgid "Go back"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1122
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1142
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:425
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:91
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:95
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:568
 msgid "Skip this Step"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1140
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1160
 msgid "Install & Activate"
 msgstr ""
 
@@ -9681,12 +9672,12 @@ msgid "Add your website details*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:71
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:75
 msgid "Site icon"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:72
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:76
 msgid "Upload site icon"
 msgstr ""
 
@@ -10142,7 +10133,7 @@ msgid "Open a Ticket "
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/header.jsx:147
+#: includes/onboarding/oe-sw-src/app/modal/header.jsx:160
 msgid "Select Builder"
 msgstr ""
 
