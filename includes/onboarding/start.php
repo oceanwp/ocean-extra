@@ -240,8 +240,9 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 				[
 					'options' => oe_onboarding_wizard_options(),
 					'childThemeStatus' => $child_theme_status,
-					'siteUrl' => site_url(),
-					'adminUrl' => admin_url(),
+					'siteUrl' => esc_url(site_url()),
+					'homeUrl' => esc_url(get_home_url()),
+					'adminUrl' => esc_url(admin_url()),
 					'nonce' => wp_create_nonce( 'owp-onboarding' ),
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 					'isPremium' => $this->validate_license(),
