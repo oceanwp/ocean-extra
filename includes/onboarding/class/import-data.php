@@ -52,7 +52,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             //add_action('wp_ajax_prepare_template_data', array( $this, 'prepare_selected_template_data' ) );
             add_action('wp_ajax_download_template_data', array( $this, 'download_selected_template_data' ) );
             add_action( 'wp_ajax_oceanwp_onboarding_import_data', array( $this, 'onboarding_import_data' ) );
-            add_action( 'wp_ajax_owp_after_import', array( $this, 'ajax_after_import' ) );
+            add_action( 'wp_ajax_oceanwp_onboaring_after_import', array( $this, 'ajax_after_import' ) );
 
 		}
 
@@ -256,7 +256,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 }
             }
 
-           wp_send_json_success(array(
+            wp_send_json_success(array(
                 'success' => true,
                 'content' => __('Imported successfully.', 'ocean-extra'),
             ));
@@ -560,6 +560,10 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 				// Disable Elementor default settings
 				update_option( 'elementor_disable_color_schemes', 'yes' );
 				update_option( 'elementor_disable_typography_schemes', 'yes' );
+
+                // Disable Elementor Local Google Fonts download.
+                update_option( 'elementor_experiment-e_local_google_fonts', 'inactive' );
+
 				if ( ! empty( $elementor_width ) ) {
 					update_option( 'elementor_container_width', $elementor_width );
 				}
