@@ -178,6 +178,7 @@ class Ocean_Preloader {
 		$elementor = get_post_meta( $this->template_id, '_elementor_edit_mode', true );
 
 		// Get content
+		$get_content = '';
 		if ( ! empty( $this->template_id ) ) {
 
 			$post_data = get_post( $this->template_id );
