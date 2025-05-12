@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-05T10:26:08+00:00\n"
+"POT-Creation-Date: 2025-05-12T08:43:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -779,7 +779,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:654
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:659
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:341
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:364
 msgid "Email"
 msgstr ""
 
@@ -6953,23 +6953,23 @@ msgstr ""
 msgid "Importing Form"
 msgstr ""
 
-#: includes/panel/demos.php:1570
+#: includes/panel/demos.php:1574
 msgid "Can not retrieve sample data xml file. The server may be down at the moment please try again later. If you still have issues contact the theme developer for assistance."
 msgstr ""
 
-#: includes/panel/demos.php:1585
+#: includes/panel/demos.php:1589
 msgid "The xml import file could not be accessed. Please try again or contact the theme developer."
 msgstr ""
 
-#: includes/panel/demos.php:1622
+#: includes/panel/demos.php:1626
 msgid "Can not retrieve class-wp-importer.php"
 msgstr ""
 
-#: includes/panel/demos.php:1632
+#: includes/panel/demos.php:1636
 msgid "Can not retrieve wordpress-importer.php"
 msgstr ""
 
-#: includes/panel/demos.php:1643
+#: includes/panel/demos.php:1647
 msgid "Sample data file appears corrupt or can not be accessed."
 msgstr ""
 
@@ -9343,7 +9343,6 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:216
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
-#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:38
 msgid "Continue"
 msgstr ""
 
@@ -9420,7 +9419,7 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:206
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:385
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:408
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:584
 msgid "Go back"
@@ -9623,7 +9622,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:42
-msgid " Build pages based on a pre-made design of your own or following a tutorial."
+msgid "Build pages based on a pre-made design of your own or following a tutorial."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9638,7 +9637,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:52
-msgid "Kick-start your website using one of our pre-designed site demo templates, then customize in full per need."
+msgid "Save time on design — start with a professionally pre-designed full site template and easily customize and personalize every detail to fit your unique needs."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9781,6 +9780,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:426
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:566
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:47
 msgid "Or"
 msgstr ""
 
@@ -9810,52 +9810,52 @@ msgid "Use default website demo template typography"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:316
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:339
 msgid "You're Almost There! One Last Step"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:321
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:344
 msgid "Subscribe for a chance to win"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:323
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:346
 msgid "Subscribe to unlock more rewards"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:330
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:353
 msgid "Subscribe to our newsletter for a chance to win a free product license, get exclusive discounts, exciting freebies, and stay in the loop with insightful content you don't want to miss. No spam, just the good stuff."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:332
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:355
 msgid "Subscribe to our newsletter and unlock even more perks - exclusive discounts, exciting freebies, insider updates on new products and product tips, plus insightful content. No spam, only the good stuff."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:379
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:402
 msgid "Finish and Launch My Website"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:45
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:23
 msgid "Congratulations!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:49
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:27
 msgid "Your website is ready!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:61
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:39
 msgid "View My Website"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:72
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:50
 msgid "Go to WordPress dashboard"
 msgstr ""
 
@@ -9871,13 +9871,28 @@ msgid "Add more functionality to your website."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:21
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:25
 msgid "Upgrade to Pro!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:30
-msgid "Upgrade to pro. Get unlimited access to all full site templates with the OceanWP Pro Bundle."
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:36
+msgid "Unlock your VIP reward"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:40
+msgid "As a special welcome, we've prepared an exclusive one-time surprise offer to help you elevate and equip your new website with luxurious premium options."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:44
+msgid "Unwrap My Surprise"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:53
+msgid "Continue Without Surprise"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9911,14 +9926,19 @@ msgid "Import Template"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:545
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:547
 msgid "Get unlimited access to all full site templates with the OceanWP Pro Bundle"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:550
+msgid "You are currently using the free version"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:188
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:228
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:549
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:555
 msgid "Get OceanWP Pro Bundle"
 msgstr ""
 
@@ -9934,7 +9954,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:184
-msgid "You have chosen a premium website template. You can access this and all other templates with the OceanWP Pro Bundle license plan."
+msgid "You've selected a premium website template — great choice! Unlock this design and gain access to all premium templates and features by upgrading to the OceanWP Pro Bundle."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9949,7 +9969,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:207
-msgid "Excellent choice! Click the button below to start importing this demo and launch your website in minutes."
+msgid "Great choice! Just click the button below to instantly import this template and have your website up and running in minutes."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -10063,7 +10083,7 @@ msgid "Preparing your website for import"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:217
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:239
 msgid "Importing content"
 msgstr ""
 
@@ -10078,27 +10098,27 @@ msgid "Finalization error occurred."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:220
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:244
 msgid "Working the magic..."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:223
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:247
 msgid "Demo imported successfully"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:226
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:252
 msgid "An error occurred during the import process."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:239
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:265
 msgid "Working the Magic"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:252
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:278
 msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
 msgstr ""
 
@@ -10109,7 +10129,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:35
-msgid "Your template has been successfully imported. Now you can add a few personal touches and sprinkle some magic dust"
+msgid "Your website template was imported successfully and everything is ready to go. It's time for you to start adding personal touches and sprinkle some of your magic dust."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1

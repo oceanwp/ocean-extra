@@ -247,7 +247,8 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 					'isPremium' => $this->validate_license(),
 					'admin_email' => wp_get_current_user()->user_email,
-					'colorMode' => $colorMode
+					'colorMode' => $colorMode,
+					'upgradeImage' => esc_url(OE_URL . 'includes/onboarding/assets/img/onboarding-upgrade-banner.jpg'),
 				]
 			);
 		}
