@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-12T13:52:25+00:00\n"
+"POT-Creation-Date: 2025-05-13T08:54:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -208,12 +208,18 @@ msgstr ""
 #: includes/wizard/wizard.php:550
 #: includes/wizard/wizard.php:564
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:309
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:412
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:431
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:434
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:443
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:446
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:232
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:311
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:330
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:333
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:342
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:345
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:309
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:412
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:431
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:434
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:443
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:446
 msgid "All"
 msgstr ""
 
@@ -871,7 +877,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:759
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:336
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:360
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:259
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:360
 msgid "Category"
 msgstr ""
 
@@ -2371,7 +2378,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:244
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:954
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:436
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:335
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:436
 msgid "Copyright"
 msgstr ""
 
@@ -4656,7 +4664,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:467
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:106
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:110
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:606
 msgid "Next"
 msgstr ""
@@ -5592,8 +5600,10 @@ msgstr ""
 
 #: includes/menu-icons/includes/settings.php:598
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:506
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:511
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:405
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:410
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:506
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:511
 msgid "Preview"
 msgstr ""
 
@@ -6760,7 +6770,8 @@ msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:257
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:448
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:347
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:448
 msgid "Premium"
 msgstr ""
 
@@ -9429,7 +9440,7 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1154
 #: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:456
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:95
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:99
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:595
 msgid "Skip this Step"
 msgstr ""
@@ -9596,20 +9607,24 @@ msgid "Exit to WP Dashboard"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:100
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:126
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:100
 #: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:54
 msgid "Error parsing the JSON data"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:113
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:139
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:113
 #: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:65
 msgid "No templates found"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:117
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:122
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:143
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:148
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:117
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:122
 #: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:69
 #: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:74
 msgid "Error fetching templates"
@@ -9681,6 +9696,14 @@ msgid "Upload site icon"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:437
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:89
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:87
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:577
+msgid "*You can always change this at any point, directly from the Customizer"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:44
 msgid "Add your branding*"
 msgstr ""
@@ -9703,13 +9726,6 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:78
 msgid "Upload mobile logo"
-msgstr ""
-
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:437
-#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:89
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:577
-msgid "*You can always change this at any point, directly from the Customizer"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9841,6 +9857,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:23
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:36
 msgid "Congratulations!"
 msgstr ""
 
@@ -9872,11 +9889,6 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:25
-msgid "Upgrade to Pro!"
-msgstr ""
-
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:36
 msgid "Unlock your VIP reward"
 msgstr ""
 
@@ -9896,49 +9908,58 @@ msgid "Continue Without Surprise"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:280
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:203
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:280
 msgid "What type of website are you building?"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:287
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:210
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:287
 msgid "Search for Starter Templates"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:435
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:334
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:435
 msgid "Royalty-Free"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:447
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:346
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:447
 msgid "Free"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:484
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:383
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:484
 msgid "Pro"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:528
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:427
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:528
 msgid "Import Template"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:547
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:446
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:547
 msgid "Get unlimited access to all full site templates with the OceanWP Pro Bundle"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:550
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:449
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:550
 msgid "You are currently using the free version"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:188
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:228
-#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:555
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:454
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:555
 msgid "Get OceanWP Pro Bundle"
 msgstr ""
 
@@ -10124,7 +10145,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:26
-msgid "Hooray! Everything went well"
+msgid "Hooray! This was awesome!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
