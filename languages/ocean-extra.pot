@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-13T09:54:21+00:00\n"
+"POT-Creation-Date: 2025-05-14T04:26:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -205,8 +205,6 @@ msgstr ""
 #: includes/panel/classes/class-install-demos.php:119
 #: includes/themepanel/views/panes/install-demos-catalog.php:55
 #: includes/themepanel/views/panes/install-demos-catalog.php:71
-#: includes/wizard/wizard.php:550
-#: includes/wizard/wizard.php:564
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:232
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:311
@@ -1215,9 +1213,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:562
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:2699
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:695
-#: includes/wizard/wizard.php:724
-#: includes/wizard/wizard.php:753
-#: includes/wizard/wizard.php:794
 msgid "Upload"
 msgstr ""
 
@@ -3040,7 +3035,6 @@ msgid "Blender"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:419
-#: includes/wizard/wizard.php:940
 msgid "Blog"
 msgstr ""
 
@@ -5973,7 +5967,6 @@ msgstr ""
 #: includes/metabox/metabox.php:713
 #: includes/metabox/metabox.php:723
 #: includes/preloader/customizer.php:231
-#: includes/wizard/wizard.php:718
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:51
 #: includes/post-settings/assets/index.js:2
@@ -5985,7 +5978,6 @@ msgid "Select a custom logo on this page/post."
 msgstr ""
 
 #: includes/metabox/metabox.php:740
-#: includes/wizard/wizard.php:747
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:64
 #: includes/post-settings/assets/index.js:2
@@ -6384,7 +6376,6 @@ msgid "Separator Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1470
-#: includes/wizard/wizard.php:826
 #: includes/post-settings/assets/index.js:3
 msgid "Links Color"
 msgstr ""
@@ -6589,54 +6580,61 @@ msgstr ""
 msgid "All files downloaded successfully."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:194
-#: includes/onboarding/class/import-data.php:461
+#: includes/onboarding/class/import-data.php:269
+#: includes/onboarding/class/import-data.php:511
 msgid "Nonce verification failed."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:202
-#: includes/onboarding/class/import-data.php:469
-msgid "no template selected."
+#: includes/onboarding/class/import-data.php:276
+msgid "No template selected."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:219
-msgid "No import type selected."
+#: includes/onboarding/class/import-data.php:282
+msgid "No import type specified."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:261
-msgid "Imported successfully."
+#: includes/onboarding/class/import-data.php:301
+msgid "Invalid import type."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:279
+#: includes/onboarding/class/import-data.php:311
+msgid "Successfully imported %s."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:329
 msgid "Failed to download the XML file."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:332
+#: includes/onboarding/class/import-data.php:382
 msgid "Import failed: "
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:346
+#: includes/onboarding/class/import-data.php:396
 msgid "Failed to download theme settings."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:356
+#: includes/onboarding/class/import-data.php:406
 msgid "Failed to import theme settings: "
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:376
+#: includes/onboarding/class/import-data.php:426
 msgid "Failed to download widgets."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:386
+#: includes/onboarding/class/import-data.php:436
 msgid "Failed to import widgets: "
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:406
+#: includes/onboarding/class/import-data.php:456
 msgid "Failed to download wpForms."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:416
+#: includes/onboarding/class/import-data.php:466
 msgid "Failed to import wpForms: "
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:519
+msgid "no template selected."
 msgstr ""
 
 #: includes/onboarding/class/importer/theme-settings.php:28
@@ -6723,7 +6721,6 @@ msgid "No color mode applied"
 msgstr ""
 
 #: includes/onboarding/start.php:105
-#: includes/wizard/wizard.php:476
 msgid "Setup Wizard"
 msgstr ""
 
@@ -6803,13 +6800,11 @@ msgstr ""
 
 #: includes/panel/classes/class-install-demos.php:98
 #: includes/themepanel/views/panes/install-demos-catalog.php:44
-#: includes/wizard/wizard.php:539
 msgid "Elementor"
 msgstr ""
 
 #: includes/panel/classes/class-install-demos.php:99
 #: includes/themepanel/views/panes/install-demos-catalog.php:45
-#: includes/wizard/wizard.php:540
 msgid "Gutenberg"
 msgstr ""
 
@@ -6822,8 +6817,6 @@ msgstr ""
 #: includes/panel/classes/class-install-demos.php:202
 #: includes/themepanel/views/panes/install-demos-catalog.php:114
 #: includes/themepanel/views/panes/install-demos-catalog.php:161
-#: includes/wizard/wizard.php:603
-#: includes/wizard/wizard.php:649
 msgid "Live Preview"
 msgstr ""
 
@@ -6849,39 +6842,32 @@ msgid "Details are shown above. The importer will now try again with a different
 msgstr ""
 
 #: includes/panel/demos.php:108
-#: includes/wizard/wizard.php:272
 msgid "There was a problem during the importing process resulting in the following error from your server:"
 msgstr ""
 
 #: includes/panel/demos.php:109
-#: includes/wizard/wizard.php:273
 msgid "Activating"
 msgstr ""
 
 #: includes/panel/demos.php:110
-#: includes/wizard/wizard.php:274
 msgid "Active"
 msgstr ""
 
 #: includes/panel/demos.php:1009
-#: includes/wizard/classes/WizardAjax.php:47
 msgid "Import the %1$s demo"
 msgstr ""
 
 #: includes/panel/demos.php:1015
-#: includes/wizard/classes/WizardAjax.php:54
 msgid "Importing a demo template allows you to kick-start your website fast, instead of creating content from scratch. It is recommended to upload a demo template on a fresh WordPress install to prevent conflict with your current content or content loss. You can use this plugin to reset your site if needed: %1$sWordpress Database Reset%2$s."
 msgstr ""
 
 #: includes/panel/demos.php:1021
-#: includes/wizard/classes/WizardAjax.php:59
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:43
 msgid "Required Plugins"
 msgstr ""
 
 #: includes/panel/demos.php:1022
-#: includes/wizard/classes/WizardAjax.php:60
 msgid "For your site to look exactly like this demo, we recommend the plugins below to be installed and activated."
 msgstr ""
 
@@ -6890,27 +6876,22 @@ msgid "Go to the next step"
 msgstr ""
 
 #: includes/panel/demos.php:1045
-#: includes/wizard/classes/WizardAjax.php:80
 msgid "Select what you want to import:"
 msgstr ""
 
 #: includes/panel/demos.php:1051
-#: includes/wizard/classes/WizardAjax.php:86
 msgid "Import XML Data"
 msgstr ""
 
 #: includes/panel/demos.php:1051
-#: includes/wizard/classes/WizardAjax.php:86
 msgid "pages, posts, images, menus, etc..."
 msgstr ""
 
 #: includes/panel/demos.php:1058
-#: includes/wizard/classes/WizardAjax.php:93
 msgid "Import Customizer Settings"
 msgstr ""
 
 #: includes/panel/demos.php:1065
-#: includes/wizard/classes/WizardAjax.php:100
 msgid "Import Widgets"
 msgstr ""
 
@@ -6923,12 +6904,10 @@ msgid "Install this demo"
 msgstr ""
 
 #: includes/panel/demos.php:1085
-#: includes/wizard/classes/WizardAjax.php:113
 msgid "The import process could take some time, please be patient"
 msgstr ""
 
 #: includes/panel/demos.php:1091
-#: includes/wizard/classes/WizardAjax.php:119
 msgid "Demo Imported!"
 msgstr ""
 
@@ -7636,7 +7615,6 @@ msgstr ""
 #: includes/themepanel/views/panes/customizer-import-export.php:13
 #: includes/themepanel/views/panes/install-demos-catalog.php:113
 #: includes/themepanel/views/panes/install-demos-catalog.php:160
-#: includes/wizard/classes/WizardAjax.php:108
 msgid "Import"
 msgstr ""
 
@@ -9202,215 +9180,6 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: includes/wizard/classes/WizardAjax.php:122
-msgid "The import didn't import well please contact the support."
-msgstr ""
-
-#: includes/wizard/wizard.php:142
-msgid "<strong>Welcome to OceanWP</strong> - Are you ready to create an amazing website?"
-msgstr ""
-
-#: includes/wizard/wizard.php:144
-msgid "Run the Setup Wizard"
-msgstr ""
-
-#: includes/wizard/wizard.php:145
-msgid "Skip setup"
-msgstr ""
-
-#: includes/wizard/wizard.php:236
-msgid "Welcome"
-msgstr ""
-
-#: includes/wizard/wizard.php:240
-msgid "Choosing Demo"
-msgstr ""
-
-#: includes/wizard/wizard.php:244
-msgid "Customize"
-msgstr ""
-
-#: includes/wizard/wizard.php:248
-msgid "Ready"
-msgstr ""
-
-#: includes/wizard/wizard.php:291
-msgid "OceanWP &rsaquo; Setup Wizard"
-msgstr ""
-
-#: includes/wizard/wizard.php:477
-msgid "Welcome!"
-msgstr ""
-
-#: includes/wizard/wizard.php:481
-msgid "Thank you for choosing OceanWP, in this quick setup wizard we'll take you through the 2 essential steps for you to get started building your dream website. Make sure to go through it to the end, where we also included a little bonus as well."
-msgstr ""
-
-#: includes/wizard/wizard.php:483
-msgid "Get started"
-msgstr ""
-
-#: includes/wizard/wizard.php:485
-msgid "Skip Setup Wizard"
-msgstr ""
-
-#: includes/wizard/wizard.php:507
-msgid "Selecting your demo template"
-msgstr ""
-
-#: includes/wizard/wizard.php:511
-msgid "Clicking %1$sLive Preview%2$s will open the demo in a new window for you to decide which template to use. Then %1$sSelect%2$s the demo you want and click %1$sInstall Demo%2$s in the bottom."
-msgstr ""
-
-#: includes/wizard/wizard.php:670
-msgid "Install Demo"
-msgstr ""
-
-#: includes/wizard/wizard.php:671
-#: includes/wizard/wizard.php:844
-msgid "Skip Step"
-msgstr ""
-
-#: includes/wizard/wizard.php:678
-msgid "Next Step"
-msgstr ""
-
-#: includes/wizard/wizard.php:719
-msgid "Please add your logo below."
-msgstr ""
-
-#: includes/wizard/wizard.php:748
-msgid "Please add your Retina Logo below."
-msgstr ""
-
-#: includes/wizard/wizard.php:761
-msgid "Site Title"
-msgstr ""
-
-#: includes/wizard/wizard.php:762
-msgid "Please add your Site Title below."
-msgstr ""
-
-#: includes/wizard/wizard.php:767
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:64
-msgid "Tagline"
-msgstr ""
-
-#: includes/wizard/wizard.php:768
-msgid "Please add your Tagline below."
-msgstr ""
-
-#: includes/wizard/wizard.php:788
-msgid "Site Icon"
-msgstr ""
-
-#: includes/wizard/wizard.php:789
-msgid "Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here! Site Icons should be square and at least 512 × 512 pixels."
-msgstr ""
-
-#: includes/wizard/wizard.php:802
-msgid "Primary Color"
-msgstr ""
-
-#: includes/wizard/wizard.php:803
-msgid "Please add your Primary Color below."
-msgstr ""
-
-#: includes/wizard/wizard.php:810
-msgid "Hover Primary Color"
-msgstr ""
-
-#: includes/wizard/wizard.php:811
-msgid "Please add your Hover Primary Color below."
-msgstr ""
-
-#: includes/wizard/wizard.php:818
-msgid "Main Border Color"
-msgstr ""
-
-#: includes/wizard/wizard.php:819
-msgid "Please add your Main Border Color below."
-msgstr ""
-
-#: includes/wizard/wizard.php:827
-msgid "Please add your Links Color below."
-msgstr ""
-
-#: includes/wizard/wizard.php:834
-msgid "Links Hover Color"
-msgstr ""
-
-#: includes/wizard/wizard.php:835
-msgid "Please add your Links Hover Color below."
-msgstr ""
-
-#: includes/wizard/wizard.php:843
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1162
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
-#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
-#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
-#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:216
-#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
-#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
-msgid "Continue"
-msgstr ""
-
-#: includes/wizard/wizard.php:922
-msgid "Your website is ready"
-msgstr ""
-
-#: includes/wizard/wizard.php:923
-msgid "Get the extension bundle for free!"
-msgstr ""
-
-#: includes/wizard/wizard.php:924
-msgid "Win the Core Extension Bundle by entering our giveaway. Every month we randomly draw 5 people that get the full suite of pro extensions for free. Enter with your email below."
-msgstr ""
-
-#: includes/wizard/wizard.php:926
-msgid "Input your email below to get the chance to win."
-msgstr ""
-
-#: includes/wizard/wizard.php:933
-msgid "Email address"
-msgstr ""
-
-#: includes/wizard/wizard.php:936
-msgid "What&rsquo;s your intended use of OceanWP?"
-msgstr ""
-
-#: includes/wizard/wizard.php:938
-msgid "E-Commerce"
-msgstr ""
-
-#: includes/wizard/wizard.php:939
-msgid "Agency"
-msgstr ""
-
-#: includes/wizard/wizard.php:941
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1060
-msgid "Other"
-msgstr ""
-
-#: includes/wizard/wizard.php:946
-msgid "Enter Now"
-msgstr ""
-
-#: includes/wizard/wizard.php:951
-msgid "By entering your email, you agree to our %1$sTerms of Services%2$s and %3$sPrivacy Policy%4$s."
-msgstr ""
-
-#: includes/wizard/wizard.php:962
-msgid "Thank you for participating!"
-msgstr ""
-
-#: includes/wizard/wizard.php:1010
-msgid "View Your Website"
-msgstr ""
-
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/components/media-upload/index.js:49
 #: includes/post-settings/assets/index.js:1
@@ -9421,6 +9190,11 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/components/media-upload/index.js:55
 msgid "Delete"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1060
+msgid "Other"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9443,6 +9217,17 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:99
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:595
 msgid "Skip this Step"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1162
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:216
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
+msgid "Continue"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -9683,6 +9468,11 @@ msgstr ""
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:48
 msgid "Add your website details*"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:64
+msgid "Tagline"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
@@ -10100,46 +9890,55 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:14
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:14
 msgid "Preparing your website for import"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:239
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:151
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:239
 msgid "Importing content"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:110
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:55
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:110
 msgid "Finalization failed!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:113
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:58
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:113
 msgid "Finalization error occurred."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:244
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:154
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:244
 msgid "Working the magic..."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:247
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:157
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:247
 msgid "Demo imported successfully"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:252
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:162
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:252
 msgid "An error occurred during the import process."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:265
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:175
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:265
 msgid "Working the Magic"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:278
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:188
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:278
 msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
 msgstr ""
 

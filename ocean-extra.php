@@ -173,7 +173,6 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/panel/library-shortcode.php';
 			require_once OE_PATH . '/includes/menu-icons/menu-icons.php';
 			require_once OE_PATH . '/includes/onboarding/start.php';
-			// require_once OE_PATH . '/includes/wizard/wizard.php';
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 

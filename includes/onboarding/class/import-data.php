@@ -187,6 +187,81 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             ));
         }
 
+        // public function onboarding_import_data() {
+
+        //     if ( !isset($_POST['nonce']) || !wp_verify_nonce( sanitize_key($_POST['nonce']), 'owp-onboarding' ) ) {
+        //         wp_send_json_error(array(
+        //             'message' => __('Nonce verification failed.', 'ocean-extra')
+        //         ));
+        //     }
+
+        //     $template = get_option('ocean_installing_template_data');
+
+        //     if ( empty( $template ) ) {
+        //         wp_send_json_error(array(
+        //             'message' => __('no template selected.', 'ocean-extra')
+        //         ));
+        //     }
+
+        //     $data_to_import = [];
+
+        //     if ( isset($_POST['dataImport']) ) {
+        //         $decoded = json_decode(stripslashes($_POST['dataImport']), true);
+        //         if ( is_array($decoded) ) {
+        //             $data_to_import = $decoded;
+        //         }
+        //     }
+
+        //     //error_log(print_r($data_to_import, true));
+
+        //     if ( empty( $data_to_import ) ) {
+        //         wp_send_json_error(array(
+        //             'message' => __('No import type selected.', 'ocean-extra')
+        //         ));
+        //     }
+
+        //     if (in_array('content', $data_to_import)) {
+        //         $content_result = $this->import_content($template);
+        //         if ( is_wp_error( $content_result ) ) {
+        //             wp_send_json_error(array(
+        //                 'message' => $content_result->get_error_message()
+        //             ));
+        //         }
+        //     }
+
+        //     if (in_array('customizer', $data_to_import)) {
+        //         $theme_result = $this->import_theme_settings($template);
+        //         if ( is_wp_error( $theme_result ) ) {
+        //             wp_send_json_error(array(
+        //                 'message' => $theme_result->get_error_message()
+        //             ));
+        //         }
+        //     }
+
+        //     if (in_array('widgets', $data_to_import)) {
+        //         $widgets_result = $this->import_widgets($template);
+        //         if ( is_wp_error( $widgets_result ) ) {
+        //             wp_send_json_error(array(
+        //                 'message' => $widgets_result->get_error_message()
+        //             ));
+        //         }
+        //     }
+
+        //     if (in_array('form', $data_to_import)) {
+        //         $wpforms_result = $this->import_wpforms($template);
+        //         if ( is_wp_error( $wpforms_result ) ) {
+        //             wp_send_json_error(array(
+        //                 'message' => $wpforms_result->get_error_message()
+        //             ));
+        //         }
+        //     }
+
+        //     wp_send_json_success(array(
+        //         'success' => true,
+        //         'content' => __('Imported successfully.', 'ocean-extra'),
+        //     ));
+        // }
+
         public function onboarding_import_data() {
 
             if ( !isset($_POST['nonce']) || !wp_verify_nonce( sanitize_key($_POST['nonce']), 'owp-onboarding' ) ) {
@@ -197,69 +272,44 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
             $template = get_option('ocean_installing_template_data');
 
-            if ( empty( $template ) ) {
-                wp_send_json_error(array(
-                    'message' => __('no template selected.', 'ocean-extra')
-                ));
+            if (empty($template)) {
+                wp_send_json_error(['message' => __('No template selected.', 'ocean-extra')]);
             }
 
-            $data_to_import = [];
+            $import_type = isset($_POST['importType']) ? sanitize_text_field($_POST['importType']) : '';
 
-            if ( isset($_POST['dataImport']) ) {
-                $decoded = json_decode(stripslashes($_POST['dataImport']), true);
-                if ( is_array($decoded) ) {
-                    $data_to_import = $decoded;
-                }
+            if (empty($import_type)) {
+                wp_send_json_error(['message' => __('No import type specified.', 'ocean-extra')]);
             }
 
-            //error_log(print_r($data_to_import, true));
+            $result = null;
 
-            if ( empty( $data_to_import ) ) {
-                wp_send_json_error(array(
-                    'message' => __('No import type selected.', 'ocean-extra')
-                ));
+            switch ($import_type) {
+                case 'content':
+                    $result = $this->import_content($template);
+                    break;
+                case 'customizer':
+                    $result = $this->import_theme_settings($template);
+                    break;
+                case 'widgets':
+                    $result = $this->import_widgets($template);
+                    break;
+                case 'form':
+                    $result = $this->import_wpforms($template);
+                    break;
+                default:
+                    wp_send_json_error(['message' => __('Invalid import type.', 'ocean-extra')]);
             }
 
-            if (in_array('content', $data_to_import)) {
-                $content_result = $this->import_content($template);
-                if ( is_wp_error( $content_result ) ) {
-                    wp_send_json_error(array(
-                        'message' => $content_result->get_error_message()
-                    ));
-                }
+            if (is_wp_error($result)) {
+                wp_send_json_error(['message' => $result->get_error_message()]);
             }
 
-            if (in_array('customizer', $data_to_import)) {
-                $theme_result = $this->import_theme_settings($template);
-                if ( is_wp_error( $theme_result ) ) {
-                    wp_send_json_error(array(
-                        'message' => $theme_result->get_error_message()
-                    ));
-                }
-            }
-
-            if (in_array('widgets', $data_to_import)) {
-                $widgets_result = $this->import_widgets($template);
-                if ( is_wp_error( $widgets_result ) ) {
-                    wp_send_json_error(array(
-                        'message' => $widgets_result->get_error_message()
-                    ));
-                }
-            }
-
-            if (in_array('form', $data_to_import)) {
-                $wpforms_result = $this->import_wpforms($template);
-                if ( is_wp_error( $wpforms_result ) ) {
-                    wp_send_json_error(array(
-                        'message' => $wpforms_result->get_error_message()
-                    ));
-                }
-            }
-
-            wp_send_json_success(array(
+            wp_send_json_success([
                 'success' => true,
-                'content' => __('Imported successfully.', 'ocean-extra'),
-            ));
+                'imported' => $import_type,
+                'message'  => sprintf(__('Successfully imported %s.', 'ocean-extra'), $import_type),
+            ]);
         }
 
         public function import_content($template) {
