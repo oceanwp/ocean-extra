@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-05-14T09:11:55+00:00\n"
+"POT-Creation-Date: 2025-05-14T10:16:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -10377,12 +10377,7 @@ msgid "Preparing your website for import"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:115
-msgid "Import step timed out."
-msgstr ""
-
-#: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:191
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:154
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:239
 msgid "Importing content"
 msgstr ""
@@ -10400,31 +10395,31 @@ msgid "Finalization error occurred."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:194
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:157
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:244
 msgid "Working the magic..."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:197
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:160
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:247
 msgid "Demo imported successfully"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:202
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:165
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:252
 msgid "An error occurred during the import process."
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:215
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:178
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:265
 msgid "Working the Magic"
 msgstr ""
 
 #: includes/onboarding/assets/dist/index.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:228
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:191
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:278
 msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
 msgstr ""
