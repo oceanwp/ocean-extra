@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.4.7\n"
+"Project-Id-Version: Ocean Extra 2.4.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-21T08:18:35+00:00\n"
+"POT-Creation-Date: 2025-05-14T10:16:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: ocean-extra\n"
@@ -148,7 +148,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/functions.php:67
 #: includes/metabox/metabox.php:660
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:150
 msgid "Medium"
 msgstr ""
 
@@ -173,9 +172,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:595
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/image-picker/index.js:73
-#: includes/post-settings/oe-ps-src/controls/media-url-picker/index.js:80
-#: includes/post-settings/oe-ps-src/controls/multi-image-picker/index.js:82
 msgid "Remove"
 msgstr ""
 
@@ -211,6 +207,19 @@ msgstr ""
 #: includes/themepanel/views/panes/install-demos-catalog.php:71
 #: includes/wizard/wizard.php:550
 #: includes/wizard/wizard.php:564
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:232
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:311
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:330
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:333
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:342
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:345
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:309
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:412
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:431
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:434
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:443
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:446
 msgid "All"
 msgstr ""
 
@@ -241,7 +250,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1710
 #: includes/widgets/recent-posts.php:236
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:158
 msgid "Post"
 msgstr ""
 
@@ -276,6 +284,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:169
 #: includes/menu-icons/includes/library/icon-selector/includes/types/elusive.php:42
 #: includes/menu-icons/includes/library/icon-selector/includes/types/simple-line-icons.php:52
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:278
 msgid "Media"
 msgstr ""
 
@@ -421,7 +431,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:631
 #: includes/metabox/metabox.php:1689
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:129
 msgid "Quote"
 msgstr ""
 
@@ -464,6 +473,8 @@ msgid "View Site"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:294
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:139
 msgid "Widgets"
 msgstr ""
 
@@ -514,8 +525,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:424
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:355
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:671
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:65
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:65
 msgid "Bold"
 msgstr ""
 
@@ -623,7 +634,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:459
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:126
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/help/index.js:13
 msgid "Help"
 msgstr ""
 
@@ -688,7 +698,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1074
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:661
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/multi-image-picker/index.js:72
 msgid "Edit"
 msgstr ""
 
@@ -775,6 +784,8 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:654
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:659
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:364
 msgid "Email"
 msgstr ""
 
@@ -865,6 +876,9 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:759
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:336
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:259
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:360
 msgid "Category"
 msgstr ""
 
@@ -990,8 +1004,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1298
 #: includes/metabox/metabox.php:1303
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:252
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:265
 msgid "Repeat"
 msgstr ""
 
@@ -1039,26 +1051,11 @@ msgstr ""
 #: includes/widgets/contact-info.php:382
 #: includes/widgets/custom-menu.php:366
 #: includes/widgets/tags.php:359
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:40
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:63
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:2
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:40
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:63
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:48
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:50
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:98
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:49
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:73
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:50
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:98
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:144
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:51
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:101
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:178
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:218
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:244
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:263
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:284
 msgid "Default"
 msgstr ""
 
@@ -1430,7 +1427,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1650
 #: includes/widgets/custom-menu.php:327
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:80
 msgid "Link"
 msgstr ""
 
@@ -1918,8 +1914,8 @@ msgstr ""
 #: includes/preloader/customizer.php:475
 #: includes/preloader/customizer.php:482
 #: includes/widgets/social.php:479
+#: includes/onboarding/oe-sw-src/app/components/typography/font-format.js:176
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-format.js:176
 msgid "Font Size"
 msgstr ""
 
@@ -2381,6 +2377,9 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fa.php:244
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:954
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:335
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:436
 msgid "Copyright"
 msgstr ""
 
@@ -3650,6 +3649,8 @@ msgid "Hourglass Start"
 msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1699
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:228
 msgid "Ice Cream"
 msgstr ""
 
@@ -4660,6 +4661,11 @@ msgstr ""
 
 #: includes/menu-icons/includes/library/icon-selector/includes/types/foundation-icons.php:910
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:166
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:467
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:110
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:606
 msgid "Next"
 msgstr ""
 
@@ -5024,7 +5030,6 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:656
 #: includes/metabox/metabox.php:1276
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:233
 msgid "Attachment"
 msgstr ""
 
@@ -5500,7 +5505,6 @@ msgstr ""
 #: includes/menu-icons/includes/settings.php:312
 #: includes/metabox/metabox.php:1247
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:207
 msgid "Position"
 msgstr ""
 
@@ -5583,7 +5587,6 @@ msgstr ""
 
 #: includes/menu-icons/includes/settings.php:544
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:133
 msgid "Reset"
 msgstr ""
 
@@ -5596,6 +5599,11 @@ msgid "Change"
 msgstr ""
 
 #: includes/menu-icons/includes/settings.php:598
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:405
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:410
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:506
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:511
 msgid "Preview"
 msgstr ""
 
@@ -5610,7 +5618,6 @@ msgstr ""
 #: includes/metabox/butterbean/inc/controls/class-control-media.php:54
 #: includes/metabox/controls/media/class-control-media.php:53
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/media-url-picker/index.js:71
 msgid "Browse"
 msgstr ""
 
@@ -5632,7 +5639,6 @@ msgstr ""
 
 #: includes/metabox/gallery-metabox/gallery-metabox.php:152
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/gallery.js:35
 msgid "Enable lightbox for this gallery?"
 msgstr ""
 
@@ -5642,7 +5648,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:254
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:38
 msgid "Content Layout"
 msgstr ""
 
@@ -5652,37 +5657,31 @@ msgstr ""
 
 #: includes/metabox/metabox.php:258
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:50
 msgid "Right Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:259
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:51
 msgid "Left Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:260
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:52
 msgid "Full Width"
 msgstr ""
 
 #: includes/metabox/metabox.php:261
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:53
 msgid "100% Full Width"
 msgstr ""
 
 #: includes/metabox/metabox.php:262
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:54
 msgid "Both Sidebars"
 msgstr ""
 
 #: includes/metabox/metabox.php:279
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:62
 msgid "Both Sidebars: Style"
 msgstr ""
 
@@ -5692,25 +5691,21 @@ msgstr ""
 
 #: includes/metabox/metabox.php:283
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:74
 msgid "Sidebar / Sidebar / Content"
 msgstr ""
 
 #: includes/metabox/metabox.php:284
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:75
 msgid "Sidebar / Content / Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:285
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:76
 msgid "Content / Sidebar / Sidebar"
 msgstr ""
 
 #: includes/metabox/metabox.php:302
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:82
 msgid "Both Sidebars: Content Width (%)"
 msgstr ""
 
@@ -5720,7 +5715,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:323
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:99
 msgid "Both Sidebars: Sidebars Width (%)"
 msgstr ""
 
@@ -5730,7 +5724,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:344
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:118
 msgid "Sidebar"
 msgstr ""
 
@@ -5740,7 +5733,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:362
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:135
 msgid "Second Sidebar"
 msgstr ""
 
@@ -5766,15 +5758,6 @@ msgstr ""
 #: includes/metabox/metabox.php:1539
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:61
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:63
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:111
-#: includes/post-settings/oe-ps-src/sidebar/settings/gallery.js:48
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:166
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:63
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:111
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:64
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:114
 msgid "Enable"
 msgstr ""
 
@@ -5788,21 +5771,11 @@ msgstr ""
 #: includes/metabox/metabox.php:1540
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:74
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:76
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:124
-#: includes/post-settings/oe-ps-src/sidebar/settings/gallery.js:61
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:179
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:76
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:124
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:77
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:127
 msgid "Disable"
 msgstr ""
 
 #: includes/metabox/metabox.php:402
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:187
 msgid "Custom Body Class"
 msgstr ""
 
@@ -5816,7 +5789,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:427
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:38
 msgid "Shortcode Before Top Bar"
 msgstr ""
 
@@ -5826,7 +5798,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:444
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:52
 msgid "Shortcode After Top Bar"
 msgstr ""
 
@@ -5836,7 +5807,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:461
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:71
 msgid "Shortcode Before Header"
 msgstr ""
 
@@ -5846,7 +5816,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:478
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:85
 msgid "Shortcode After Header"
 msgstr ""
 
@@ -5872,7 +5841,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:529
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:137
 msgid "Shortcode Before Footer Widgets"
 msgstr ""
 
@@ -5882,7 +5850,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:546
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:151
 msgid "Shortcode After Footer Widgets"
 msgstr ""
 
@@ -5892,7 +5859,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:563
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:170
 msgid "Shortcode Before Footer Bottom"
 msgstr ""
 
@@ -5902,7 +5868,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:580
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:184
 msgid "Shortcode After Footer Bottom"
 msgstr ""
 
@@ -5912,13 +5877,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:595
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:67
 msgid "Header"
 msgstr ""
 
 #: includes/metabox/metabox.php:605
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:37
 msgid "Display Top Bar"
 msgstr ""
 
@@ -5928,7 +5891,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:628
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:85
 msgid "Display Header"
 msgstr ""
 
@@ -5938,7 +5900,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:651
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:133
 msgid "Header Style"
 msgstr ""
 
@@ -5950,25 +5911,21 @@ msgstr ""
 #: includes/widgets/social-share.php:336
 #: includes/widgets/social-share.php:354
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:145
 msgid "Minimal"
 msgstr ""
 
 #: includes/metabox/metabox.php:656
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:146
 msgid "Transparent"
 msgstr ""
 
 #: includes/metabox/metabox.php:657
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:147
 msgid "Top Menu"
 msgstr ""
 
 #: includes/metabox/metabox.php:658
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:148
 msgid "Full Screen"
 msgstr ""
 
@@ -5978,25 +5935,21 @@ msgstr ""
 #: includes/widgets/custom-menu.php:311
 #: includes/widgets/instagram.php:252
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:149
 msgid "Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:661
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:151
 msgid "Vertical"
 msgstr ""
 
 #: includes/metabox/metabox.php:662
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:152
 msgid "Custom Header"
 msgstr ""
 
 #: includes/metabox/metabox.php:679
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:160
 msgid "Left Menu"
 msgstr ""
 
@@ -6009,8 +5962,6 @@ msgstr ""
 #: includes/preloader/customizer.php:158
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:133
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:177
 msgid "Select Template"
 msgstr ""
 
@@ -6023,8 +5974,9 @@ msgstr ""
 #: includes/metabox/metabox.php:723
 #: includes/preloader/customizer.php:231
 #: includes/wizard/wizard.php:718
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:51
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:83
 msgid "Logo"
 msgstr ""
 
@@ -6034,8 +5986,9 @@ msgstr ""
 
 #: includes/metabox/metabox.php:740
 #: includes/wizard/wizard.php:747
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:64
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:88
 msgid "Retina Logo"
 msgstr ""
 
@@ -6093,7 +6046,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:891
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:44
 msgid "Main Navigation Menu"
 msgstr ""
 
@@ -6103,7 +6055,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:909
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:58
 msgid "Typography"
 msgstr ""
 
@@ -6113,7 +6064,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:937
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:83
 msgid "Link Color"
 msgstr ""
 
@@ -6124,7 +6074,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:954
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:91
 msgid "Link Color: Hover"
 msgstr ""
 
@@ -6139,7 +6088,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:988
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:107
 msgid "Link Background"
 msgstr ""
 
@@ -6152,7 +6100,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1005
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:115
 msgid "Link Background: Hover"
 msgstr ""
 
@@ -6218,12 +6165,13 @@ msgstr ""
 #: includes/widgets/social.php:432
 #: includes/widgets/tags.php:263
 #: includes/widgets/video.php:114
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:54
 msgid "Title"
 msgstr ""
 
 #: includes/metabox/metabox.php:1115
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:38
 msgid "Display Page Title"
 msgstr ""
 
@@ -6233,7 +6181,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1138
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:88
 msgid "Display Heading"
 msgstr ""
 
@@ -6251,7 +6198,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1178
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:152
 msgid "Subheading"
 msgstr ""
 
@@ -6261,7 +6207,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1195
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:167
 msgid "Title Style"
 msgstr ""
 
@@ -6271,7 +6216,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1213
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:189
 msgid "Title: Background Color"
 msgstr ""
 
@@ -6281,7 +6225,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1230
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:202
 msgid "Title: Background Image"
 msgstr ""
 
@@ -6295,55 +6238,46 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1251
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:219
 msgid "Top Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1252
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:220
 msgid "Top Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1253
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:221
 msgid "Top Right"
 msgstr ""
 
 #: includes/metabox/metabox.php:1254
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:222
 msgid "Center Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1255
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:223
 msgid "Center Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1256
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:224
 msgid "Center Right"
 msgstr ""
 
 #: includes/metabox/metabox.php:1257
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:225
 msgid "Bottom Left"
 msgstr ""
 
 #: includes/metabox/metabox.php:1258
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:226
 msgid "Bottom Center"
 msgstr ""
 
 #: includes/metabox/metabox.php:1259
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:227
 msgid "Bottom Right"
 msgstr ""
 
@@ -6353,13 +6287,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1280
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:245
 msgid "Scroll"
 msgstr ""
 
 #: includes/metabox/metabox.php:1281
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:246
 msgid "Fixed"
 msgstr ""
 
@@ -6381,7 +6313,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1322
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:273
 msgid "Size"
 msgstr ""
 
@@ -6392,19 +6323,16 @@ msgstr ""
 #: includes/metabox/metabox.php:1326
 #: includes/themepanel/views/panes/integration-cloudflare-turnstile.php:62
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:285
 msgid "Auto"
 msgstr ""
 
 #: includes/metabox/metabox.php:1327
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:286
 msgid "Cover"
 msgstr ""
 
 #: includes/metabox/metabox.php:1328
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:287
 msgid "Contain"
 msgstr ""
 
@@ -6418,7 +6346,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1366
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:310
 msgid "Title: Background Overlay Opacity"
 msgstr ""
 
@@ -6428,7 +6355,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1388
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:326
 msgid "Title: Background Overlay Color"
 msgstr ""
 
@@ -6438,7 +6364,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1413
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:35
 msgid "Display Breadcrumbs"
 msgstr ""
 
@@ -6450,26 +6375,22 @@ msgstr ""
 #: includes/widgets/about-me.php:403
 #: includes/widgets/social.php:501
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:83
 msgid "Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1453
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:91
 msgid "Separator Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1470
 #: includes/wizard/wizard.php:826
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:99
 msgid "Links Color"
 msgstr ""
 
 #: includes/metabox/metabox.php:1487
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:107
 msgid "Links Color: Hover"
 msgstr ""
 
@@ -6479,13 +6400,11 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1502
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:133
 msgid "Footer"
 msgstr ""
 
 #: includes/metabox/metabox.php:1512
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:37
 msgid "Display Footer Widgets Area"
 msgstr ""
 
@@ -6495,7 +6414,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1535
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:85
 msgid "Display Copyright Area"
 msgstr ""
 
@@ -6505,7 +6423,6 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1601
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:45
 msgid "oEmbed URL"
 msgstr ""
 
@@ -6515,38 +6432,32 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1618
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:60
 msgid "Self Hosted"
 msgstr ""
 
 #: includes/metabox/metabox.php:1619
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:61
 msgid "Insert your self hosted video or audio url here."
 msgstr ""
 
 #: includes/metabox/metabox.php:1635
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:65
 msgid "Embed Code"
 msgstr ""
 
 #: includes/metabox/metabox.php:1636
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:66
 msgid "Insert your embed/iframe code. This setting is used for your video and audio post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1651
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:81
 msgid "Enter your external url. This setting is used for your link post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1667
 #: includes/widgets/social.php:457
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:96
 msgid "Link Target"
 msgstr ""
 
@@ -6561,7 +6472,6 @@ msgstr ""
 #: includes/widgets/instagram.php:263
 #: includes/widgets/social.php:460
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:109
 msgid "Self"
 msgstr ""
 
@@ -6573,19 +6483,16 @@ msgstr ""
 #: includes/widgets/instagram.php:262
 #: includes/widgets/social.php:459
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:122
 msgid "Blank"
 msgstr ""
 
 #: includes/metabox/metabox.php:1690
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:130
 msgid "Enter your quote. This setting is used for your quote post formats."
 msgstr ""
 
 #: includes/metabox/metabox.php:1707
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:145
 msgid "Quote Link"
 msgstr ""
 
@@ -6597,7 +6504,6 @@ msgstr ""
 #: includes/widgets/social.php:449
 #: includes/widgets/tags.php:363
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:171
 msgid "None"
 msgstr ""
 
@@ -6607,32 +6513,27 @@ msgstr ""
 
 #: includes/metabox/metabox.php:1770
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:179
 msgid "Default Style"
 msgstr ""
 
 #: includes/metabox/metabox.php:1771
 #: includes/metabox/metabox.php:1772
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:180
 msgid "Centered"
 msgstr ""
 
 #: includes/metabox/metabox.php:1773
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:181
 msgid "Centered Minimal"
 msgstr ""
 
 #: includes/metabox/metabox.php:1774
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:182
 msgid "Background Image"
 msgstr ""
 
 #: includes/metabox/metabox.php:1775
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:183
 msgid "Solid Color and White Text"
 msgstr ""
 
@@ -6676,6 +6577,428 @@ msgstr ""
 msgid "Submit your search"
 msgstr ""
 
+#: includes/onboarding/class/child-theme.php:75
+msgid "Failed to install child theme. Please install it manually."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:80
+msgid "Child theme manually generated and activated."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:84
+msgid "Child theme installed and activated."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:119
+msgid "Child theme already installed."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:131
+msgid "Failed to download child theme."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:139
+msgid "Downloaded file not found."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:149
+msgid "Zip failed to open: %s."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:159
+msgid "Failed to extract child theme."
+msgstr ""
+
+#: includes/onboarding/class/child-theme.php:166
+msgid "Child theme installed and activated successfully."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:70
+#: includes/onboarding/class/import-data.php:138
+msgid "No template selected."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:77
+msgid "Failed to download the file."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:83
+msgid "Template is downloading in the background."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:108
+msgid "Failed to download file: %s."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:117
+msgid "All files downloaded successfully."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:131
+#: includes/onboarding/class/import-data.php:375
+msgid "Nonce verification failed."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:144
+msgid "No import type specified."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:163
+msgid "Invalid import type."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:173
+msgid "Successfully imported %s."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:187
+msgid "Failed to download the XML file."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:233
+msgid "Import failed: %s"
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:248
+msgid "Failed to download theme settings."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:261
+msgid "Failed to import theme settings: %s"
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:282
+msgid "Failed to download widgets."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:295
+msgid "Failed to import widgets: %s"
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:316
+msgid "Failed to download wpForms."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:329
+msgid "Failed to import wpForms: %s"
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:383
+msgid "no template selected."
+msgstr ""
+
+#: includes/onboarding/class/importer/theme-settings.php:28
+#: includes/onboarding/class/importer/widgets.php:24
+#: includes/onboarding/class/importer/wpforms.php:23
+msgid "The specified file does not exist"
+msgstr ""
+
+#: includes/onboarding/class/importer/theme-settings.php:34
+msgid "Unable to read the file"
+msgstr ""
+
+#: includes/onboarding/class/importer/theme-settings.php:40
+msgid "Failed to unserialize data from file"
+msgstr ""
+
+#: includes/onboarding/class/importer/theme-settings.php:60
+msgid "No settings data found to import"
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:30
+msgid "Unable to read widget data file."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:36
+msgid "Invalid widget data format."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:54
+msgid "Invalid or empty widget data."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:76
+msgid "Sidebar does not exist in theme. Moving widget to Inactive."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:106
+msgid "Unknown Widget"
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:108
+msgid "This widget type is not supported on this site."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:121
+#: includes/onboarding/class/importer/widgets.php:141
+msgid "No Title"
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:123
+msgid "Widget already exists."
+msgstr ""
+
+#: includes/onboarding/class/importer/widgets.php:143
+msgid "Widget imported successfully."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:124
+#: includes/onboarding/class/importer/wp-importer.php:133
+#: includes/onboarding/class/importer/wp-importer.php:184
+#: includes/onboarding/class/importer/wp-importer.php:188
+#: includes/onboarding/class/importer/wp-importer.php:197
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:125
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:168
+msgid "All done."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:168
+msgid "Have fun!"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:169
+msgid "Remember to update the passwords and roles of imported users."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:189
+msgid "The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:205
+msgid "This WXR file (version %s) may not be supported by this version of the importer. Please consider updating."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:230
+msgid "Failed to import author %s. Their posts will be attributed to the current user."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:258
+msgid "Assign Authors"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:259
+msgid "To make it simpler for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site, such as your primary administrator account."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:261
+msgid "If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:271
+msgid "Import Attachments"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:274
+msgid "Download and import file attachments"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:278
+msgid "Submit"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:292
+msgid "Import author:"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:307
+msgid "or create new user with login name:"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:310
+msgid "as a new user:"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:320
+msgid "assign posts to an existing user:"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:322
+msgid "or assign posts to an existing user:"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:331
+msgid "- Select -"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:390
+msgid "Failed to create new user for %s. Their posts will be attributed to the current user."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:449
+msgid "Failed to import category %s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:500
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:561
+#: includes/onboarding/class/importer/wp-importer.php:809
+msgid "Failed to import %1$s %2$s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:652
+msgid "Failed to import &#8220;%1$s&#8221;: Invalid post type %2$s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:693
+msgid "%1$s &#8220;%2$s&#8221; already exists."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:770
+msgid "Failed to import %1$s &#8220;%2$s&#8221;"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:956
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:963
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1030
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1048
+msgid "Invalid file type"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1092
+msgid "Could not create temporary file."
+msgstr ""
+
+#. translators: 1: The WordPress error message. 2: The WordPress error code.
+#: includes/onboarding/class/importer/wp-importer.php:1114
+msgid "Request failed due to an error: %1$s (%2$s)"
+msgstr ""
+
+#. translators: 1: The HTTP error message. 2: The HTTP error code.
+#: includes/onboarding/class/importer/wp-importer.php:1130
+msgid "Remote server returned the following unexpected result: %1$s (%2$s)"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1142
+msgid "Remote server did not respond"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1149
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1154
+msgid "Downloaded file has incorrect size"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1160
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1192
+msgid "Sorry, this file type is not permitted for security reasons."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1207
+msgid "The uploaded file could not be moved"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1329
+msgid "Import WordPress"
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1336
+msgid "A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1351
+msgid "Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import the posts, pages, comments, custom fields, categories, and tags into this site."
+msgstr ""
+
+#: includes/onboarding/class/importer/wp-importer.php:1352
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr ""
+
+#: includes/onboarding/class/importer/wpforms.php:29
+msgid "Unable to read form data file."
+msgstr ""
+
+#: includes/onboarding/class/importer/wpforms.php:35
+msgid "Invalid form data format."
+msgstr ""
+
+#: includes/onboarding/class/install-template.php:52
+msgid "No template selected"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:58
+#: includes/onboarding/class/plugin-manager.php:89
+msgid "Plugin slug is required"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:62
+msgid "Plugin is already installed"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:67
+msgid "Invalid plugin slug or API error"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:74
+msgid "Failed to install plugin. "
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:77
+msgid "Plugin installed successfully"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:94
+msgid "Plugin not found"
+msgstr ""
+
+#: includes/onboarding/class/plugin-manager.php:101
+msgid "Failed to activate plugin. %s."
+msgstr ""
+
+#: includes/onboarding/class/rest.php:301
+msgid "Settings updated successfully"
+msgstr ""
+
+#: includes/onboarding/class/rest.php:345
+msgid "Cleanup Completed!"
+msgstr ""
+
+#: includes/onboarding/class/rest.php:473
+msgid "Setup completed successfully."
+msgstr ""
+
+#: includes/onboarding/class/rest.php:539
+msgid "Mode Applied"
+msgstr ""
+
+#: includes/onboarding/class/rest.php:542
+msgid "No color mode applied"
+msgstr ""
+
+#: includes/onboarding/class/site-template.php:69
+msgid "Unable to fetch demo data from source."
+msgstr ""
+
+#: includes/onboarding/class/site-template.php:117
+msgid "Unable to fetch plugin data from source."
+msgstr ""
+
+#: includes/onboarding/start.php:105
+#: includes/wizard/wizard.php:476
+msgid "Setup Wizard"
+msgstr ""
+
 #: includes/panel/assets/class-plugin-installer.php:39
 #: includes/panel/assets/class-plugin-installer.php:512
 #: includes/panel/demos.php:1127
@@ -6708,6 +7031,8 @@ msgid "More Details"
 msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:236
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1129
 msgid "Get This Plugin"
 msgstr ""
 
@@ -6716,6 +7041,9 @@ msgid "Get This Add On"
 msgstr ""
 
 #: includes/panel/assets/class-plugin-installer.php:257
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:347
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:448
 msgid "Premium"
 msgstr ""
 
@@ -6819,6 +7147,8 @@ msgstr ""
 
 #: includes/panel/demos.php:1021
 #: includes/wizard/classes/WizardAjax.php:59
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:43
 msgid "Required Plugins"
 msgstr ""
 
@@ -6906,23 +7236,23 @@ msgstr ""
 msgid "Importing Form"
 msgstr ""
 
-#: includes/panel/demos.php:1570
+#: includes/panel/demos.php:1574
 msgid "Can not retrieve sample data xml file. The server may be down at the moment please try again later. If you still have issues contact the theme developer for assistance."
 msgstr ""
 
-#: includes/panel/demos.php:1585
+#: includes/panel/demos.php:1589
 msgid "The xml import file could not be accessed. Please try again or contact the theme developer."
 msgstr ""
 
-#: includes/panel/demos.php:1622
+#: includes/panel/demos.php:1626
 msgid "Can not retrieve class-wp-importer.php"
 msgstr ""
 
-#: includes/panel/demos.php:1632
+#: includes/panel/demos.php:1636
 msgid "Can not retrieve wordpress-importer.php"
 msgstr ""
 
-#: includes/panel/demos.php:1643
+#: includes/panel/demos.php:1647
 msgid "Sample data file appears corrupt or can not be accessed."
 msgstr ""
 
@@ -6987,181 +7317,181 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: includes/panel/theme-panel.php:65
+#: includes/panel/theme-panel.php:69
 msgid "Lovely jubbly! Your website is starting to look fabulous!"
 msgstr ""
 
-#: includes/panel/theme-panel.php:69
+#: includes/panel/theme-panel.php:73
 msgid "But you know what would make your website look stunning and leave your visitors in awe? The  %1$sOcean Core Extensions Bundle%2$s features."
 msgstr ""
 
-#: includes/panel/theme-panel.php:75
+#: includes/panel/theme-panel.php:79
 msgid "You'll get:"
 msgstr ""
 
-#: includes/panel/theme-panel.php:78
+#: includes/panel/theme-panel.php:82
 msgid "access to premium website template demos,"
 msgstr ""
 
-#: includes/panel/theme-panel.php:79
+#: includes/panel/theme-panel.php:83
 msgid "sticky header,"
 msgstr ""
 
-#: includes/panel/theme-panel.php:80
+#: includes/panel/theme-panel.php:84
 msgid "royalty free images and icons with templates,"
 msgstr ""
 
-#: includes/panel/theme-panel.php:81
+#: includes/panel/theme-panel.php:85
 msgid "Elementor widgets"
 msgstr ""
 
-#: includes/panel/theme-panel.php:82
+#: includes/panel/theme-panel.php:86
 msgid "Gutenberg blocks,"
 msgstr ""
 
-#: includes/panel/theme-panel.php:83
+#: includes/panel/theme-panel.php:87
 msgid "images and icons library,"
 msgstr ""
 
-#: includes/panel/theme-panel.php:84
+#: includes/panel/theme-panel.php:88
 msgid "and so much more."
 msgstr ""
 
-#: includes/panel/theme-panel.php:86
+#: includes/panel/theme-panel.php:90
 msgid "Yes! I want the Upgrade"
 msgstr ""
 
-#: includes/panel/theme-panel.php:167
+#: includes/panel/theme-panel.php:171
 #: includes/themepanel/theme-panel.php:530
 msgid "Site Style & Settings Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:170
+#: includes/panel/theme-panel.php:174
 #: includes/themepanel/theme-panel.php:533
 msgid "Colors Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:173
+#: includes/panel/theme-panel.php:177
 #: includes/themepanel/theme-panel.php:536
 msgid "Site Page Settings Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:176
+#: includes/panel/theme-panel.php:180
 #: includes/themepanel/theme-panel.php:539
 msgid "Site Performance Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:179
+#: includes/panel/theme-panel.php:183
 #: includes/themepanel/theme-panel.php:542
 msgid "SEO Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:185
+#: includes/panel/theme-panel.php:189
 #: includes/themepanel/theme-panel.php:548
 msgid "General Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:191
+#: includes/panel/theme-panel.php:195
 #: includes/themepanel/theme-panel.php:554
 msgid "Typography Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:194
+#: includes/panel/theme-panel.php:198
 #: includes/themepanel/theme-panel.php:557
 msgid "Top Bar Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:197
+#: includes/panel/theme-panel.php:201
 #: includes/themepanel/theme-panel.php:560
 msgid "Header Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:200
+#: includes/panel/theme-panel.php:204
 #: includes/themepanel/theme-panel.php:563
 msgid "Blog Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:203
+#: includes/panel/theme-panel.php:207
 #: includes/themepanel/theme-panel.php:566
 msgid "Sidebar Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:206
+#: includes/panel/theme-panel.php:210
 #: includes/themepanel/theme-panel.php:569
 msgid "Footer Widgets Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:209
+#: includes/panel/theme-panel.php:213
 #: includes/themepanel/theme-panel.php:572
 msgid "Footer Bottom Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:212
+#: includes/panel/theme-panel.php:216
 #: includes/themepanel/theme-panel.php:575
 msgid "Custom CSS/JS Panel"
 msgstr ""
 
-#: includes/panel/theme-panel.php:228
+#: includes/panel/theme-panel.php:232
 msgid "Upload your logo"
 msgstr ""
 
-#: includes/panel/theme-panel.php:229
+#: includes/panel/theme-panel.php:233
 msgid "Add your own logo and retina logo used for retina screens."
 msgstr ""
 
-#: includes/panel/theme-panel.php:232
+#: includes/panel/theme-panel.php:236
 msgid "Add your favicon"
 msgstr ""
 
-#: includes/panel/theme-panel.php:233
+#: includes/panel/theme-panel.php:237
 msgid "The favicon is used as a browser and app icon for your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:236
+#: includes/panel/theme-panel.php:240
 msgid "Choose your primary color"
 msgstr ""
 
-#: includes/panel/theme-panel.php:237
+#: includes/panel/theme-panel.php:241
 msgid "Replace the default primary and hover color by your own colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:240
+#: includes/panel/theme-panel.php:244
 msgid "Choose your typography"
 msgstr ""
 
-#: includes/panel/theme-panel.php:241
+#: includes/panel/theme-panel.php:245
 msgid "Choose your own typography for any parts of your website."
 msgstr ""
 
-#: includes/panel/theme-panel.php:245
+#: includes/panel/theme-panel.php:249
 msgid "Top bar options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:246
+#: includes/panel/theme-panel.php:250
 msgid "Enable/Disable the top bar, add your own paddings and colors."
 msgstr ""
 
-#: includes/panel/theme-panel.php:249
+#: includes/panel/theme-panel.php:253
 msgid "Header options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:250
+#: includes/panel/theme-panel.php:254
 msgid "Choose the style, the height and the colors for your site header."
 msgstr ""
 
-#: includes/panel/theme-panel.php:253
+#: includes/panel/theme-panel.php:257
 msgid "Footer widgets options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:254
+#: includes/panel/theme-panel.php:258
 msgid "Choose the columns number, paddings and colors for the footer widgets."
 msgstr ""
 
-#: includes/panel/theme-panel.php:257
+#: includes/panel/theme-panel.php:261
 msgid "Footer bottom options"
 msgstr ""
 
-#: includes/panel/theme-panel.php:258
+#: includes/panel/theme-panel.php:262
 msgid "Add your copyright, paddings and colors for the footer bottom."
 msgstr ""
 
@@ -7187,6 +7517,9 @@ msgid "Plugin file does not exist."
 msgstr ""
 
 #: includes/post-settings/functions.php:150
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:44
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:256
 msgid "Pages"
 msgstr ""
 
@@ -7365,22 +7698,22 @@ msgid "Content Text"
 msgstr ""
 
 #: includes/preloader/customizer.php:432
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:136
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:136
 msgid "Font Family"
 msgstr ""
 
 #: includes/preloader/customizer.php:439
 #: includes/preloader/customizer.php:446
 #: includes/preloader/customizer.php:453
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:164
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:164
 msgid "Font Weight"
 msgstr ""
 
 #: includes/preloader/customizer.php:460
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:186
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:186
 msgid "Font Subset"
 msgstr ""
 
@@ -7393,24 +7726,24 @@ msgstr ""
 #: includes/preloader/customizer.php:497
 #: includes/preloader/customizer.php:505
 #: includes/preloader/customizer.php:512
+#: includes/onboarding/oe-sw-src/app/components/typography/font-format.js:243
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/font-format.js:243
 msgid "Letter Spacing"
 msgstr ""
 
 #: includes/preloader/customizer.php:526
 #: includes/preloader/customizer.php:534
 #: includes/preloader/customizer.php:541
+#: includes/onboarding/oe-sw-src/app/components/typography/font-format.js:227
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/font-format.js:227
 msgid "Line Height"
 msgstr ""
 
 #: includes/preloader/customizer.php:555
 #: includes/preloader/customizer.php:562
 #: includes/preloader/customizer.php:569
+#: includes/onboarding/oe-sw-src/app/components/typography/font-format.js:193
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-format.js:193
 msgid "Text Transform"
 msgstr ""
 
@@ -7422,8 +7755,6 @@ msgstr ""
 #: includes/preloader/customizer.php:634
 #: includes/preloader/customizer.php:660
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:57
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:73
 msgid "Select Color"
 msgstr ""
 
@@ -7594,6 +7925,7 @@ msgid "Delete your settings and reset all Customizer options to default theme va
 msgstr ""
 
 #: includes/themepanel/views/panes/customizer-reset.php:5
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:46
 msgid "Reset Customizer Settings"
 msgstr ""
 
@@ -7815,6 +8147,9 @@ msgid "Author URL"
 msgstr ""
 
 #: includes/themepanel/views/panes/system-info-details.php:236
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:63
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:283
 msgid "Child Theme"
 msgstr ""
 
@@ -9175,10 +9510,6 @@ msgstr ""
 msgid "OceanWP &rsaquo; Setup Wizard"
 msgstr ""
 
-#: includes/wizard/wizard.php:476
-msgid "Setup Wizard"
-msgstr ""
-
 #: includes/wizard/wizard.php:477
 msgid "Welcome!"
 msgstr ""
@@ -9233,6 +9564,8 @@ msgid "Please add your Site Title below."
 msgstr ""
 
 #: includes/wizard/wizard.php:767
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:64
 msgid "Tagline"
 msgstr ""
 
@@ -9285,6 +9618,14 @@ msgid "Please add your Links Hover Color below."
 msgstr ""
 
 #: includes/wizard/wizard.php:843
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1162
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:234
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:322
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:216
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:43
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:90
 msgid "Continue"
 msgstr ""
 
@@ -9321,6 +9662,8 @@ msgid "Agency"
 msgstr ""
 
 #: includes/wizard/wizard.php:941
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1060
 msgid "Other"
 msgstr ""
 
@@ -9340,329 +9683,1048 @@ msgstr ""
 msgid "View Your Website"
 msgstr ""
 
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/media-upload/index.js:49
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/help/index.js:19
+#: includes/post-settings/assets/index.js:3
+msgid "Replace"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/media-upload/index.js:55
+msgid "Delete"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1144
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:303
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:444
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:206
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:408
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:584
+msgid "Go back"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1154
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:456
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:99
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:595
+msgid "Skip this Step"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1172
+msgid "Install & Activate"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:186
+msgid "Install Child Theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:190
+msgid "Activate Child Theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:192
+msgid "Child Theme Active"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:203
+msgid "Preparing your website for magic"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:211
+msgid "Don't close or refresh this window"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:217
+msgid "Victory!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:225
+msgid "Now it's time for the magic part"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:239
+msgid "Let's prepare your website for the import"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:41
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:83
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:247
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:339
+msgid "Clean Install"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:252
+msgid "Website templates work best on clean installations. This is the previous content we're going to remove:"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:45
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:257
+msgid "Menus"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:258
+msgid "Reset Customizer settings"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:259
+msgid "Disable all plugins except the necessary ones"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:50
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:264
+msgid "Additional Cleanup"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:269
+msgid "Select additional you want to remove (optional)"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:277
+msgid "Posts"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:288
+msgid "This option will install and activate the child theme"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:315
+msgid "Skip this step"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:84
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:343
+msgid "Based on the default and selected options, this will clean your existing content to prepare your site for the website template import."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/index.js:360
+#: includes/onboarding/oe-sw-src/app/index copy.js:380
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:91
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:352
+#: includes/post-settings/assets/index.js:1
+msgid "Cancel"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:101
+#: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:362
+msgid "Proceed with Clean Install"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:10
+msgid "Existing Website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:11
+msgid "I have an established website with relevant content I may want to keep."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:12
+msgid "Go with Existing Site"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:18
+msgid "NEW Website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:19
+msgid "I have a brand new WordPress installation and/or my website contains irrelevant or sample content only."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:20
+msgid "Go with New Site"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:30
+msgid "Tell us about your current website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-type.js:63
+msgid "Exit to WP Dashboard"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:126
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:100
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:54
+msgid "Error parsing the JSON data"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:139
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:113
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:65
+msgid "No templates found"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:143
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:148
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:117
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:122
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:69
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:74
+msgid "Error fetching templates"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:41
+msgid "From Scratch"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:42
+msgid "Build pages based on a pre-made design of your own or following a tutorial."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:43
+msgid "Go with From Scratch"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:51
+msgid "From Website Templates"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:52
+msgid "Save time on design — start with a professionally pre-designed full site template and easily customize and personalize every detail to fit your unique needs."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:53
+msgid "Go with Website Template"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/setup-choices.js:63
+msgid "How do you want to build your site"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:201
+msgid "Error parsing plugin JSON data"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:213
+msgid "Invalid plugin list response format"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:216
+msgid "Error fetching plugins"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:48
+msgid "Add your website details*"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:75
+msgid "Site icon"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:76
+msgid "Upload site icon"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:437
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:89
+#: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:87
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:577
+msgid "*You can always change this at any point, directly from the Customizer"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:44
+msgid "Add your branding*"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:52
+msgid "Upload logo"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:65
+msgid "Upload retina logo"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:77
+msgid "Mobile Logo"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:78
+msgid "Upload mobile logo"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:223
+msgid "Garden Tulips"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:233
+msgid "Summer Beach"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:238
+msgid "Party Lights"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:243
+msgid "Autumn Feast"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:248
+msgid "Hello Winter"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:253
+msgid "Mountain Road"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:258
+msgid "Ocean Sunrise"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:263
+msgid "Wild Berries"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:268
+msgid "Fruit Slushy"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:273
+msgid "Cocktail Night"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:278
+msgid "Nebula Ultra"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:366
+msgid "Choose a palette and add color to your world*"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:372
+msgid "Custom Presets"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:426
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:566
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:47
+msgid "Or"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:432
+msgid "Use default website demo template colors"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:508
+msgid "Time to add the Typography ingredient*"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:514
+msgid "Custom Typography"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:517
+msgid "Select a Typography"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:572
+msgid "Use default website demo template typography"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:339
+msgid "You're Almost There! One Last Step"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:344
+msgid "Subscribe for a chance to win"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:346
+msgid "Subscribe to unlock more rewards"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:353
+msgid "Subscribe to our newsletter for a chance to win a free product license, get exclusive discounts, exciting freebies, and stay in the loop with insightful content you don't want to miss. No spam, just the good stuff."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:355
+msgid "Subscribe to our newsletter and unlock even more perks - exclusive discounts, exciting freebies, insider updates on new products and product tips, plus insightful content. No spam, only the good stuff."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:402
+msgid "Finish and Launch My Website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:23
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:36
+msgid "Congratulations!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:27
+msgid "Your website is ready!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:39
+msgid "View My Website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/final.jsx:50
+msgid "Go to WordPress dashboard"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/suggested-plugins.jsx:34
+msgid "Suggested Plugins"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/optional-plugins.jsx:48
+#: includes/onboarding/oe-sw-src/app/modal/modules/suggested-plugins.jsx:38
+msgid "Add more functionality to your website."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:25
+msgid "Unlock your VIP reward"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:40
+msgid "As a special welcome, we've prepared an exclusive one-time surprise offer to help you elevate and equip your new website with luxurious premium options."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:44
+msgid "Unwrap My Surprise"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:53
+msgid "Continue Without Surprise"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:203
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:280
+msgid "What type of website are you building?"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:210
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:287
+msgid "Search for Starter Templates"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:334
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:435
+msgid "Royalty-Free"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:346
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:447
+msgid "Free"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:383
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:484
+msgid "Pro"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:427
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:528
+msgid "Import Template"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:446
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:547
+msgid "Get unlimited access to all full site templates with the OceanWP Pro Bundle"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:449
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:550
+msgid "You are currently using the free version"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:188
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:228
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:454
+#: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:555
+msgid "Get OceanWP Pro Bundle"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:157
+msgid "That's an excellent choice"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:181
+msgid "Premium Template"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:184
+msgid "You've selected a premium website template — great choice! Unlock this design and gain access to all premium templates and features by upgrading to the OceanWP Pro Bundle."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:191
+msgid "Already purchased?"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:194
+msgid "Activate Premium Options"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:207
+msgid "Great choice! Just click the button below to instantly import this template and have your website up and running in minutes."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:220
+msgid "Import This Template"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:225
+msgid "Get Pro Bundle?"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:47
+msgid "Required plugins are plugins necessary for the website template to look exactly as is after the import."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/optional-plugins.jsx:44
+msgid "Optional Plugins"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:127
+msgid "Site Content"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:130
+msgid "Pages, posts, menus, custom templates, media and more."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:133
+msgid "Customizer Styling"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:136
+msgid "All OceanWP theme Customizer styling for the selected template."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:142
+msgid "WordPress widgets for widget areas (sidebars / footer)."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:145
+msgid "Contact Form"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:148
+msgid "Form sample for the WPForms Lite plugin."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:167
+msgid "Website Content"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:171
+msgid "Choose which content you would like to import"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:11
+msgid "Copyrighted Images"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:13
+msgid "I understand how copyrighted images work"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:14
+msgid "I understand that I have selected a website template with copyrighted images, and that I will receive image placeholders or will need to replace the images with images of my own."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:17
+msgid "Content Import"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:19
+msgid "I understand, let's build my website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:20
+msgid "I understand that my theme settings will be overwritten with new ones, and new content added to my website based on my selections."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:58
+msgid "Start the Import"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:95
+msgid "Start the Import and Build My Website"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:14
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:14
+msgid "Preparing your website for import"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:154
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:239
+msgid "Importing content"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:55
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:110
+msgid "Finalization failed!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:58
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:113
+msgid "Finalization error occurred."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:157
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:244
+msgid "Working the magic..."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:160
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:247
+msgid "Demo imported successfully"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:165
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:252
+msgid "An error occurred during the import process."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:178
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:265
+msgid "Working the Magic"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:191
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:278
+msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:26
+msgid "Hooray! This was awesome!"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:35
+msgid "Your website template was imported successfully and everything is ready to go. It's time for you to start adding personal touches and sprinkle some of your magic dust."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:52
+msgid "Oops! Something went wrong"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:61
+msgid "It appears that something is preventing the template import. Open a support ticket with us or get in touch with us directly via "
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:63
+msgid " so that our team can assist you get back on the track."
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/import-status.jsx:74
+msgid "Open a Ticket "
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/modal/header.jsx:160
+msgid "Select Builder"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/index.js:354
+#: includes/onboarding/oe-sw-src/app/index copy.js:374
+msgid "Are you sure you want to exit the setup wizard?"
+msgstr ""
+
+#: includes/onboarding/assets/dist/index.js:1
+#: includes/onboarding/oe-sw-src/app/index.js:357
+#: includes/onboarding/oe-sw-src/app/index copy.js:377
+msgid "Yes, Exit"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/device-type/index.js:52
+#: includes/post-settings/assets/index.js:1
+msgid "Device"
+msgstr ""
+
+#. translators: Unit type
+#: includes/onboarding/oe-sw-src/app/components/device-type/index.js:58
+#: includes/post-settings/assets/index.js:2
+msgid "%s settings"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/typography/font-family.js:64
+#: includes/post-settings/assets/index.js:2
+msgid "Normal"
+msgstr ""
+
+#. translators: option name
+#: includes/onboarding/oe-sw-src/app/components/typography/font-format.js:200
+#: includes/post-settings/assets/index.js:3
+msgid "%s"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/typography/index.js:53
+#: includes/onboarding/oe-sw-src/app/components/typography/index.js:66
+#: includes/post-settings/assets/index.js:3
+msgid "Typograhpy"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/typography/index.js:58
+#: includes/onboarding/oe-sw-src/app/components/typography/index.js:71
+#: includes/post-settings/assets/index.js:3
+msgid "Typograhpy Settings"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/typography/reset.js:17
+#: includes/post-settings/assets/index.js:3
+msgid "Reset typography settings"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/components/typography/reset.js:48
+#: includes/post-settings/assets/index.js:3
+msgid "Reset color"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:42
+msgid "Website templates work best on clean installation. This is the previous content we're going to remove:"
+msgstr ""
+
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:47
+msgid "Disable All plugins except the necessary ones"
+msgstr ""
+
+#: includes/post-settings/assets/index.js:1
 msgid "Learn how to take full advantage and control of each page on your website - "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/help/index.js:21
 msgid "Read more about sidebar settings"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:83
 msgid "More Options"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:95
 msgid "Reset Options to default"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:102
 msgid "Reset Options"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:106
 msgid "Reset this page options to default"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:113
 msgid "Reset Page Settings & Styling"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:141
-msgid "Cancel"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/upsell/index.js:14
 msgid "Extra Power"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/upsell/index.js:22
 msgid "Enjoying the free OceanWP features? Imagine what additional power options you can add to your website with OceanWP premium plans."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/upsell/index.js:31
 msgid "OceanWP Pro Bundle"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/upsell/index.js:38
 msgid "Ocean eCommerce"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/panel-page-option/index.js:12
-#: includes/post-settings/oe-ps-src/sidebar/registerSidebar.js:44
 msgid "Page Settings & Styling"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:153
 msgid "Padding"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:214
-#: includes/post-settings/oe-ps-src/sidebar/settings/general.js:215
 msgid "Learn how to use the General settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:34
 msgid "Top Bar"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:100
 msgid "Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:104
 msgid "Shortcode Before Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:118
 msgid "Shortcode After Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:166
 msgid "Footer Bottom"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:215
-#: includes/post-settings/oe-ps-src/sidebar/settings/shortcode.js:216
 msgid "Learn how to use the Shortcode settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:206
-#: includes/post-settings/oe-ps-src/sidebar/settings/header.js:207
 msgid "Learn how to use the Header settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/image-picker/index.js:63
-#: includes/post-settings/oe-ps-src/controls/media-url-picker/index.js:70
-msgid "Replace"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:1
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/image-picker/index.js:64
-#: includes/post-settings/oe-ps-src/controls/multi-image-picker/index.js:73
 msgid "Add Image"
 msgstr ""
 
-#: includes/post-settings/assets/index.js:1
-#: includes/post-settings/oe-ps-src/controls/device-type/index.js:52
-msgid "Device"
-msgstr ""
-
-#. translators: Unit type
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/device-type/index.js:58
-msgid "%s settings"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:96
 msgid "Logo Width (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:118
 msgid "Logo Height (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:150
-#: includes/post-settings/oe-ps-src/sidebar/settings/logo.js:151
 msgid "Learn how to use the Logo settings."
 msgstr ""
 
-#: includes/post-settings/assets/index.js:2
-#: includes/post-settings/oe-ps-src/controls/typography/font-family.js:64
-msgid "Normal"
-msgstr ""
-
-#. translators: option name
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/font-format.js:200
-msgid "%s"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/reset.js:17
-msgid "Reset typography settings"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:226
-#: includes/post-settings/oe-ps-src/controls/typography/reset.js:48
-msgid "Reset color"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/index.js:53
-#: includes/post-settings/oe-ps-src/controls/typography/index.js:66
-msgid "Typograhpy"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/typography/index.js:58
-#: includes/post-settings/oe-ps-src/controls/typography/index.js:71
-msgid "Typograhpy Settings"
-msgstr ""
-
-#: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:63
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:79
 msgid "Color picker"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:173
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:177
 msgid "Opacity"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:202
-#: includes/post-settings/oe-ps-src/controls/color-picker/index.js:205
 msgid "Reset Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:99
 msgid "Link Color: Active"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:123
 msgid "Link Background: Active"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:131
 msgid "Simple Social Background"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:139
 msgid "Simple Social Background: Hover"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:147
 msgid "Simple Social Color"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:155
 msgid "Simple Social Color: Hover"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:177
-#: includes/post-settings/oe-ps-src/sidebar/settings/menu.js:178
 msgid "Learn how to use the Menu settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:136
 msgid "Custom Page Title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:137
 msgid "Add page title"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:153
 msgid "Add subheading"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:264
 msgid "No Repeat"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:266
 msgid "Repeat-X"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:267
 msgid "Repeat-Y"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:293
 msgid "Title: Background Height (px)"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:354
-#: includes/post-settings/oe-ps-src/sidebar/settings/title.js:355
 msgid "Learn how to use the Title settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:131
-#: includes/post-settings/oe-ps-src/sidebar/settings/breadcrumbs.js:132
 msgid "Learn how to use the Breadcrumb settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:162
-#: includes/post-settings/oe-ps-src/sidebar/settings/footer.js:163
 msgid "Learn how to use the Footer settings."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:31
 msgid "Enter a URL that is compatible with WP's built-in oEmbed feature. This setting is used for your video and audio post formats - "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/post.js:33
 msgid "learn more"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/settings/gallery.js:69
 msgid "Add Gallery Images"
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/panel-page-option/index.js:16
 msgid "Page Metabox Settings are now available in the main Editor Toolbar."
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/panel-page-option/index.js:22
 msgid "Click the "
 msgstr ""
 
 #: includes/post-settings/assets/index.js:3
-#: includes/post-settings/oe-ps-src/sidebar/panel-page-option/index.js:24
 msgid " icon in the upper corner for countless settings, customization and styling Options."
 msgstr ""

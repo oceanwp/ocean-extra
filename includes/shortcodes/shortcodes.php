@@ -870,9 +870,9 @@ if ( ! function_exists( 'oceanwp_svg_icon_shortcode' ) ) {
 		$attr['area_hidden'] = filter_var( $attr['area_hidden'], FILTER_VALIDATE_BOOLEAN );
 		$attr['fallback']    = filter_var( $attr['fallback'], FILTER_VALIDATE_BOOLEAN );
 
-		if ( isset($attr['location']) && $attr['location'] === "true" ) {
+		if ( isset($attr['location']) && $attr['location'] === true ) {
 			$location = true;
-		} else if ( isset($attr['location']) && $attr['location'] === "false" ) {
+		} else if ( isset($attr['location']) && $attr['location'] === false ) {
 			$location = false;
 		}
 

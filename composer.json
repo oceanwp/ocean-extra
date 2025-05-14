@@ -28,7 +28,13 @@
 		],
         "lint:wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs",
         "lint:summary": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
-        "make-pot": "wp i18n make-pot . languages/ocean-extra.pot --exclude=build"
+        "make-pot": "wp i18n make-pot . languages/ocean-extra.pot --exclude=build",
+        "update-mo": [
+            "msgmerge --backup=off --update languages/ocean-extra-es_ES.po languages/ocean-extra.pot",
+            "msgmerge --backup=off --update languages/ocean-extra-fr_FR.po languages/ocean-extra.pot",
+            "msgfmt languages/ocean-extra-es_ES.po -o languages/ocean-extra-es_ES.mo",
+            "msgfmt languages/ocean-extra-fr_FR.po -o languages/ocean-extra-fr_FR.mo"
+        ]
     },
 
     "config": {

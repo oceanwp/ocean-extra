@@ -177,7 +177,7 @@ class Ocean_Admin_Bar {
 	 * Enqueue styles
 	 */
 	public function enqueue_css() {
-		wp_enqueue_style( 'ocean-admin-bar', plugins_url( '/assets/css/admin-bar.css', __FILE__ ), false, OCEANWP_THEME_VERSION );
+		wp_enqueue_style( 'ocean-admin-bar', plugins_url( '/assets/css/admin-bar.css', __FILE__ ), false, OE_VERSION );
 	}
 }
 

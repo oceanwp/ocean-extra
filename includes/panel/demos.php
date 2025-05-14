@@ -1519,6 +1519,10 @@ if ( ! class_exists( 'OceanWP_Demos' ) ) {
 				// Disable Elementor default settings
 				update_option( 'elementor_disable_color_schemes', 'yes' );
 				update_option( 'elementor_disable_typography_schemes', 'yes' );
+
+				// Disable Elementor Local Google Fonts download.
+                update_option( 'elementor_experiment-e_local_google_fonts', 'inactive' );
+
 				if ( ! empty( $elementor_width ) ) {
 					update_option( 'elementor_container_width', $elementor_width );
 				}
