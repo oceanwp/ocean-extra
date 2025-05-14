@@ -2,7 +2,7 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.8
+Tested up to: 6.8.1
 Stable tag: 2.4.8
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -218,6 +218,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.4.8 - MAY 14 2025 =
+- NEW: Setup Wizard for new installations.
+- Updated: Preparations to remove old/previous Wizard files with next updates.
+- Updated: Preparations to add new regular site templates (demos) import with next updates.
 
 = 2.4.7 - APR 21 2025 =
 - Updated: Compatibility: WordPress version number.

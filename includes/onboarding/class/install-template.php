@@ -49,7 +49,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Install')) {
             $params = $request->get_json_params();
 
             if (empty($params['selected_template'])) {
-                return new WP_REST_Response(['success' => false, 'message' => 'No template selected'], 400);
+                return new WP_REST_Response(['success' => false, 'message' => __('No template selected', 'ocean-extra')], 400);
             }
 
             $selected_template = sanitize_text_field($params['selected_template']);

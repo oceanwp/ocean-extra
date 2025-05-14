@@ -55,26 +55,26 @@ if (!class_exists('OE_Onboarding_Plugin_Manager')) {
             $plugin_slug = sanitize_text_field($request->get_param('plugin_slug'));
 
             if (!$plugin_slug) {
-                return new WP_REST_Response(['message' => 'Plugin slug is required'], 400);
+                return new WP_REST_Response(['message' => __('Plugin slug is required', 'ocean-extra')], 400);
             }
 
             if ($this->get_plugin_status($plugin_slug) !== 'uninstalled') {
-                return new WP_REST_Response(['message' => 'Plugin is already installed'], 200);
+                return new WP_REST_Response(['message' => __('Plugin is already installed', 'ocean-extra')], 200);
             }
 
             $api = plugins_api('plugin_information', ['slug' => $plugin_slug, 'fields' => ['sections' => false]]);
             if (is_wp_error($api)) {
-                return new WP_REST_Response(['message' => 'Invalid plugin slug or API error'], 400);
+                return new WP_REST_Response(['message' => __('Invalid plugin slug or API error', 'ocean-extra')], 400);
             }
 
             $upgrader = new Plugin_Upgrader(new WP_Ajax_Upgrader_Skin());
             $result = $upgrader->install($api->download_link);
 
             if (is_wp_error($result)) {
-                return new WP_REST_Response(['message' => 'Failed to install plugin. ' . $result->get_error_message()], 400);
+                return new WP_REST_Response(['message' => __('Failed to install plugin. ', 'ocean-extra') . $result->get_error_message()], 400);
             }
 
-            return new WP_REST_Response(['message' => 'Plugin installed successfully'], 200);
+            return new WP_REST_Response(['message' => __('Plugin installed successfully', 'ocean-extra')], 200);
         }
 
         /**
@@ -86,18 +86,21 @@ if (!class_exists('OE_Onboarding_Plugin_Manager')) {
             $plugin_slug = sanitize_text_field($request->get_param('plugin_slug'));
 
             if (!$plugin_slug) {
-                return new WP_REST_Response(['message' => 'Plugin slug is required'], 400);
+                return new WP_REST_Response(['message' => __('Plugin slug is required', 'ocean-extra')], 400);
             }
 
             $plugin_path = $this->is_plugin_installed($plugin_slug);
             if (!$plugin_path) {
-                return new WP_REST_Response(['message' => 'Plugin not found'], 400);
+                return new WP_REST_Response(['message' => __('Plugin not found', 'ocean-extra')], 400);
             }
 
             $result = activate_plugin($plugin_path);
 
             if (is_wp_error($result)) {
-                return new WP_REST_Response(['message' => 'Failed to activate plugin. ' . $result->get_error_message()], 400);
+                return new WP_REST_Response([
+                    'message' => sprintf(__('Failed to activate plugin. %s.', 'ocean-extra'), $result->get_error_message()),
+                    400
+                ]);
             }
 
             return new WP_REST_Response(['message' => 'Plugin activated successfully'], 200);

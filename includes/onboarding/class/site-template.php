@@ -59,14 +59,14 @@ if ( ! class_exists('OE_Onboarding_Site_Templates') ) {
                 $primary_api_url = 'https://demos.oceanwp.org/1wizard-installation/demos.json';
                 $fallback_api_url = 'https://vx4nrbekbe5yqsuv52.pages.dev/demos.json';
 
-                $response = wp_remote_get($primary_api_url, ['timeout' => 15]);
+                $response = wp_remote_get(esc_url_raw($primary_api_url), ['timeout' => 15]);
 
                 if (is_wp_error($response)) {
 
-                    $response = wp_remote_get($fallback_api_url, ['timeout' => 15]);
+                    $response = wp_remote_get(esc_url_raw($fallback_api_url), ['timeout' => 15]);
 
                     if (is_wp_error($response)) {
-                        return new WP_Error('demo_api_error', 'Unable to fetch demo data from source.');
+                        return new WP_Error('demo_api_error', __('Unable to fetch demo data from source.', 'ocean-extra'));
                     }
                 }
 
@@ -107,14 +107,14 @@ if ( ! class_exists('OE_Onboarding_Site_Templates') ) {
             $primary_api_url = 'https://demos.oceanwp.org/1wizard-installation/demo-plugins.json';
             $fallback_api_url = 'https://vx4nrbekbe5yqsuv52.pages.dev/demo-plugins.json';
 
-            $response = wp_remote_get($primary_api_url, ['timeout' => 15]);
+            $response = wp_remote_get(esc_url_raw($primary_api_url), ['timeout' => 15]);
 
             // If the primary fails, try fallback
             if (is_wp_error($response)) {
-                $response = wp_remote_get($fallback_api_url, ['timeout' => 15]);
+                $response = wp_remote_get(esc_url_raw($fallback_api_url), ['timeout' => 15]);
 
                 if (is_wp_error($response)) {
-                    return new WP_Error('plugin_api_error', 'Unable to fetch plugin data from source.');
+                    return new WP_Error('plugin_api_error', __('Unable to fetch plugin data from source.', 'ocean-extra'));
                 }
             }
 
