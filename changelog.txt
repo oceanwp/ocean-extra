@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.4.8 - MAY 14 2025 =
+- NEW: Setup Wizard for new installations.
+- Updated: Preparations to remove old/previous Wizard files with next updates.
+- Updated: Preparations to add new regular site templates (demos) import with next updates.
+
 = 2.4.7 - APR 21 2025 =
 - Updated: Compatibility: WordPress version number.
 - Fixed: Potential vulnerability patched: Report by Wordfence from APR 11th 2025 (1/3).

@@ -39,7 +39,11 @@ class Ocean_Extra_Theme_Panel {
 		if ( ! $need_to_upgrade
 			|| '1' === get_option( 'owp_dismiss_sticky_notice' )
 			|| true === apply_filters( 'oceanwp_licence_tab_enable', false )
-			|| ! current_user_can( 'manage_options' ) ) {
+			|| ! current_user_can( 'manage_options' )
+			|| ! get_option( 'owp_onboarding_completed' )
+			|| ! get_option( 'oceanwp_plugin_notice_first_dismissed' )
+			|| ! get_option( 'oceanwp_plugin_notice_permanently_dismissed' )
+		) {
 			return;
 		}
 

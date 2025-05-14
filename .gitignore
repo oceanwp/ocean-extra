@@ -270,6 +270,7 @@ build/
 # src folder
 includes/post-settings/src/
 includes/post-settings/oe-ps-src/
+includes/onboarding/oe-sw-src/
 
 # vender folder
 vendor/

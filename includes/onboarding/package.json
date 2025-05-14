@@ -1,0 +1,21 @@
+{
+  "name": "ocean-setup-wizard",
+  "version": "1.0.0",
+  "description": "OceanWP Setup Wizard",
+  "scripts": {
+    "build": "wp-scripts build oe-sw-src/index.js --output-path=assets/dist",
+    "start": "wp-scripts start oe-sw-src/index.js --output-path=assets/dist",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc.json"
+  },
+  "devDependencies": {
+    "@wordpress/block-editor": "^14.15.0",
+    "@wordpress/components": "^29.4.0",
+    "@wordpress/element": "^6.18.0",
+    "@wordpress/hooks": "^4.18.0",
+    "@wordpress/i18n": "^5.18.0",
+    "@wordpress/scripts": "^30.11.0",
+    "prettier": "^3.5.2"
+  }
+}
