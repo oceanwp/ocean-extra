@@ -1,7 +1,8 @@
 == Changelog ==
 
-= 2.4.8 - XXX XX 2025 =
+= 2.4.9 - XXX XX 2025 =
 - Deleted: Wizard: Removed files of old demo import wizard. (12234)
+- Fixed: Widget: Social Share: WhatsApp API url (12192)
 
 = 2.4.8 - MAY 14 2025 =
 - NEW: Setup Wizard for new installations.
