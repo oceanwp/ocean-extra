@@ -105,6 +105,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
                     if (is_wp_error($file_path)) {
                         wp_send_json_error(array(
+                            // translators: %s: error message when download failed.
                             'message' => sprintf(__('Failed to download file: %s.', 'ocean-extra'), $file_name),
                         ));
                     }
@@ -170,6 +171,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             wp_send_json_success([
                 'success' => true,
                 'imported' => $import_type,
+                // translators: %s: Successfully imported message.
                 'message'  => sprintf(__('Successfully imported %s.', 'ocean-extra'), $import_type),
             ]);
         }
@@ -217,7 +219,8 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 ob_end_clean();
 
                 if ( file_exists( $file_path ) ) {
-                    unlink( $file_path );
+                    // unlink( $file_path );
+                    wp_delete_file($file_path);
                 }
 
                 return true;
@@ -225,11 +228,13 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             } catch ( Exception $e ) {
 
                 if ( file_exists( $file_path ) ) {
-                    unlink( $file_path );
+                    // unlink( $file_path );
+                    wp_delete_file($file_path);
                 }
 
                 return new WP_Error(
                     'import_failed',
+                    // translators: %s: import failed.
                     sprintf(__('Import failed: %s', 'ocean-extra'), $e->getMessage())
                 );
             }
@@ -258,11 +263,13 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
                     return new WP_Error(
                         'theme_import_failed',
+                        // translators: %s: import failed.
                         sprintf(__('Failed to import theme settings: %s', 'ocean-extra'), $result->get_error_message())
                     );
                 }
 
-                unlink( $file_path );
+                // unlink( $file_path );
+                wp_delete_file($file_path);
                 delete_option( 'ocean_import_data_theme_settings_path' );
             }
 
@@ -292,11 +299,13 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
                     return new WP_Error(
                         'widgets_import_failed',
+                        // translators: %s: import failed.
                         sprintf(__('Failed to import widgets: %s', 'ocean-extra'), $result->get_error_message())
                     );
                 }
 
-                unlink( $file_path );
+                // unlink( $file_path );
+                wp_delete_file($file_path);
                 delete_option( 'ocean_import_data_widgets_path' );
             }
 
@@ -326,11 +335,13 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
                     return new WP_Error(
                         'wpform_import_failed',
+                        // translators: %s: import failed.
                         sprintf(__('Failed to import wpForms: %s', 'ocean-extra'), $result->get_error_message())
                     );
                 }
 
-                unlink( $file_path );
+                // unlink( $file_path );
+                wp_delete_file($file_path);
                 delete_option( 'ocean_import_data_form_path' );
             }
 
@@ -349,7 +360,8 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             $file_path = $temp_data_dir . basename( $file_url );
 
             if ( file_exists( $file_path ) ) {
-                unlink( $file_path );
+                // unlink( $file_path );
+                wp_delete_file($file_path);
             }
 
             $response = wp_remote_get( $file_url, array( 'timeout' => 60 ) );

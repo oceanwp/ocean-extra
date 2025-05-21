@@ -98,7 +98,10 @@ if (!class_exists('OE_Onboarding_Plugin_Manager')) {
 
             if (is_wp_error($result)) {
                 return new WP_REST_Response([
-                    'message' => sprintf(__('Failed to activate plugin. %s.', 'ocean-extra'), $result->get_error_message()),
+                    'message' => sprintf(
+                        /* translators: 1: Error message. */
+                        __('Failed to activate plugin. %s.', 'ocean-extra'), $result->get_error_message()
+                    ),
                     400
                 ]);
             }

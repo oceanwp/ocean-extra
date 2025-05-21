@@ -144,9 +144,13 @@ if ( ! class_exists( 'OE_Onboarding_Child_Theme' ) ) {
 			$zip_open_result = $zip->open($zip_file);
 
 			if ($zip_open_result !== true) {
-				unlink($zip_file);
+				//unlink($zip_file);
+				wp_delete_file($zip_file);
 				return new WP_REST_Response([
-					'error' => sprintf(__('Zip failed to open: %s.', 'ocean-extra'), $zip->getStatusString()),
+					'error' => sprintf(
+						/* translators: 1: Error message. */
+						__('Zip failed to open: %s.', 'ocean-extra'), $zip->getStatusString()
+					),
 				], 500);
 			}
 
@@ -154,13 +158,15 @@ if ( ! class_exists( 'OE_Onboarding_Child_Theme' ) ) {
 			$zip->close();
 
 			if (!file_exists($theme_directory . $theme_slug)) {
-				unlink($zip_file);
+				// unlink($zip_file);
+				wp_delete_file($zip_file);
 				return new WP_REST_Response([
 					'error' => __('Failed to extract child theme.', 'ocean-extra')
 				], 500);
 			}
 
-			unlink($zip_file);
+			// unlink($zip_file);
+			wp_delete_file($zip_file);
 
 			return new WP_REST_Response([
 				'success' => __('Child theme installed and activated successfully.', 'ocean-extra')

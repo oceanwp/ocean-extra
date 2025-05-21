@@ -186,7 +186,11 @@ if ( class_exists( 'WP_Importer' ) ) {
                 return false;
             } elseif ( ! file_exists( $file['file'] ) ) {
                 echo '<p><strong>' . __( 'Sorry, there has been an error.', 'ocean-extra' ) . '</strong><br />';
-                printf( __( 'The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem.', 'ocean-extra' ), esc_html( $file['file'] ) );
+                printf(
+                    /* translators: 1: File. */
+                    __( 'The export file could not be found at <code>%s</code>. It is likely that this was caused by a permissions problem.', 'ocean-extra' ),
+                    esc_html( $file['file'] )
+                );
                 echo '</p>';
                 return false;
             }
@@ -202,7 +206,11 @@ if ( class_exists( 'WP_Importer' ) ) {
             $this->version = $import_data['version'];
             if ( $this->version > $this->max_wxr_version ) {
                 echo '<div class="error"><p><strong>';
-                printf( __( 'This WXR file (version %s) may not be supported by this version of the importer. Please consider updating.', 'ocean-extra' ), esc_html( $import_data['version'] ) );
+                printf(
+                    /* translators: 1: Version. */
+                    __( 'This WXR file (version %s) may not be supported by this version of the importer. Please consider updating.', 'ocean-extra' ),
+                    esc_html( $import_data['version'] )
+                );
                 echo '</strong></p></div>';
             }
 
@@ -227,7 +235,11 @@ if ( class_exists( 'WP_Importer' ) ) {
                 foreach ( $import_data['posts'] as $post ) {
                     $login = sanitize_user( $post['post_author'], true );
                     if ( empty( $login ) ) {
-                        printf( __( 'Failed to import author %s. Their posts will be attributed to the current user.', 'ocean-extra' ), esc_html( $post['post_author'] ) );
+                        printf(
+                            /* translators: 1: Author name. */
+                            __( 'Failed to import author %s. Their posts will be attributed to the current user.', 'ocean-extra' ),
+                            esc_html( $post['post_author'] )
+                        );
                         echo '<br />';
                         continue;
                     }
@@ -250,33 +262,39 @@ if ( class_exists( 'WP_Importer' ) ) {
             $j = 0;
             // phpcs:disable Generic.WhiteSpace.ScopeIndent.Incorrect
             ?>
-    <form action="<?php echo admin_url( 'admin.php?import=wordpress&amp;step=2' ); ?>" method="post">
-        <?php wp_nonce_field( 'import-wordpress' ); ?>
-        <input type="hidden" name="import_id" value="<?php echo $this->id; ?>" />
+            <form action="<?php echo admin_url( 'admin.php?import=wordpress&amp;step=2' ); ?>" method="post">
+                <?php wp_nonce_field( 'import-wordpress' ); ?>
+                <input type="hidden" name="import_id" value="<?php echo $this->id; ?>" />
 
-    <?php if ( ! empty( $this->authors ) ) : ?>
-        <h3><?php _e( 'Assign Authors', 'ocean-extra' ); ?></h3>
-        <p><?php _e( 'To make it simpler for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site, such as your primary administrator account.', 'ocean-extra' ); ?></p>
-    <?php if ( $this->allow_create_users() ) : ?>
-        <p><?php printf( __( 'If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary.', 'ocean-extra' ), esc_html( get_option( 'default_role' ) ) ); ?></p>
-    <?php endif; ?>
-        <ol id="authors">
-    <?php foreach ( $this->authors as $author ) : ?>
-            <li><?php $this->author_select( $j++, $author ); ?></li>
-    <?php endforeach; ?>
-        </ol>
-    <?php endif; ?>
+            <?php if ( ! empty( $this->authors ) ) : ?>
+                <h3><?php _e( 'Assign Authors', 'ocean-extra' ); ?></h3>
+                <p><?php _e( 'To make it simpler for you to edit and save the imported content, you may want to reassign the author of the imported item to an existing user of this site, such as your primary administrator account.', 'ocean-extra' ); ?></p>
+            <?php if ( $this->allow_create_users() ) : ?>
+                <p><?php
+                    printf(
+                        /* translators: 1: User role. */
+                        __( 'If a new user is created by WordPress, a new password will be randomly generated and the new user&#8217;s role will be set as %s. Manually changing the new user&#8217;s details will be necessary.', 'ocean-extra' ),
+                        esc_html( get_option( 'default_role' ) )
+                    );
+                ?></p>
+            <?php endif; ?>
+                <ol id="authors">
+            <?php foreach ( $this->authors as $author ) : ?>
+                    <li><?php $this->author_select( $j++, $author ); ?></li>
+            <?php endforeach; ?>
+                </ol>
+            <?php endif; ?>
 
-    <?php if ( $this->allow_fetch_attachments() ) : ?>
-        <h3><?php _e( 'Import Attachments', 'ocean-extra' ); ?></h3>
-        <p>
-            <input type="checkbox" value="1" name="fetch_attachments" id="import-attachments" />
-            <label for="import-attachments"><?php _e( 'Download and import file attachments', 'ocean-extra' ); ?></label>
-        </p>
-    <?php endif; ?>
+            <?php if ( $this->allow_fetch_attachments() ) : ?>
+                <h3><?php _e( 'Import Attachments', 'ocean-extra' ); ?></h3>
+                <p>
+                    <input type="checkbox" value="1" name="fetch_attachments" id="import-attachments" />
+                    <label for="import-attachments"><?php _e( 'Download and import file attachments', 'ocean-extra' ); ?></label>
+                </p>
+            <?php endif; ?>
 
-        <p class="submit"><input type="submit" class="button" value="<?php esc_attr_e( 'Submit', 'ocean-extra' ); ?>" /></p>
-    </form>
+                <p class="submit"><input type="submit" class="button" value="<?php esc_attr_e( 'Submit', 'ocean-extra' ); ?>" /></p>
+            </form>
             <?php
             // phpcs:enable Generic.WhiteSpace.ScopeIndent.Incorrect
         }
@@ -387,7 +405,11 @@ if ( class_exists( 'WP_Importer' ) ) {
                         }
                         $this->author_mapping[ $santized_old_login ] = $user_id;
                     } else {
-                        printf( __( 'Failed to create new user for %s. Their posts will be attributed to the current user.', 'ocean-extra' ), esc_html( $this->authors[ $old_login ]['author_display_name'] ) );
+                        printf(
+                            /* translators: 1: Display mname. */
+                            __( 'Failed to create new user for %s. Their posts will be attributed to the current user.', 'ocean-extra' ),
+                            esc_html( $this->authors[ $old_login ]['author_display_name'] )
+                        );
                         if ( defined( 'IMPORT_DEBUG' ) && IMPORT_DEBUG ) {
                             echo ' ' . $user_id->get_error_message();
                         }
@@ -446,7 +468,11 @@ if ( class_exists( 'WP_Importer' ) ) {
                         $this->processed_terms[ intval( $cat['term_id'] ) ] = $id;
                     }
                 } else {
-                    printf( __( 'Failed to import category %s', 'ocean-extra' ), esc_html( $cat['category_nicename'] ) );
+                    printf(
+                        /* translators: 1: Nice name. */
+                        __( 'Failed to import category %s', 'ocean-extra' ),
+                        esc_html( $cat['category_nicename'] )
+                    );
                     if ( defined( 'IMPORT_DEBUG' ) && IMPORT_DEBUG ) {
                         echo ': ' . $id->get_error_message();
                     }
@@ -497,7 +523,11 @@ if ( class_exists( 'WP_Importer' ) ) {
                         $this->processed_terms[ intval( $tag['term_id'] ) ] = $id['term_id'];
                     }
                 } else {
-                    printf( __( 'Failed to import post tag %s', 'ocean-extra' ), esc_html( $tag['tag_name'] ) );
+                    printf(
+                        /* translators: 1: Tag name. */
+                        __( 'Failed to import post tag %s', 'ocean-extra' ),
+                        esc_html( $tag['tag_name'] )
+                    );
                     if ( defined( 'IMPORT_DEBUG' ) && IMPORT_DEBUG ) {
                         echo ': ' . $id->get_error_message();
                     }
@@ -558,7 +588,12 @@ if ( class_exists( 'WP_Importer' ) ) {
                         $this->processed_terms[ intval( $term['term_id'] ) ] = $id['term_id'];
                     }
                 } else {
-                    printf( __( 'Failed to import %1$s %2$s', 'ocean-extra' ), esc_html( $term['term_taxonomy'] ), esc_html( $term['term_name'] ) );
+                    printf(
+                        /* translators: 1: Term taxonomy. 2: Term name. */
+                        __( 'Failed to import %1$s %2$s', 'ocean-extra' ),
+                        esc_html( $term['term_taxonomy'] ),
+                        esc_html( $term['term_name'] )
+                    );
                     if ( defined( 'IMPORT_DEBUG' ) && IMPORT_DEBUG ) {
                         echo ': ' . $id->get_error_message();
                     }
@@ -649,6 +684,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 
                 if ( ! post_type_exists( $post['post_type'] ) ) {
                     printf(
+                        /* translators: 1: Post title. 2: Post type. */
                         __( 'Failed to import &#8220;%1$s&#8221;: Invalid post type %2$s', 'ocean-extra' ),
                         esc_html( $post['post_title'] ),
                         esc_html( $post['post_type'] )
@@ -690,7 +726,12 @@ if ( class_exists( 'WP_Importer' ) ) {
                 $post_exists = apply_filters( 'wp_import_existing_post', $post_exists, $post );
 
                 if ( $post_exists && get_post_type( $post_exists ) == $post['post_type'] ) {
-                    printf( __( '%1$s &#8220;%2$s&#8221; already exists.', 'ocean-extra' ), $post_type_object->labels->singular_name, esc_html( $post['post_title'] ) );
+                    printf(
+                        /* translators: 1: Label name. 2: Post title. */
+                        __( '%1$s &#8220;%2$s&#8221; already exists.', 'ocean-extra' ),
+                        $post_type_object->labels->singular_name,
+                        esc_html( $post['post_title'] )
+                    );
                     echo '<br />';
                     $comment_post_id = $post_exists;
                     $post_id         = $post_exists;
@@ -767,6 +808,7 @@ if ( class_exists( 'WP_Importer' ) ) {
 
                     if ( is_wp_error( $post_id ) ) {
                         printf(
+                            /* translators: 1: Label name. 2: Post title. */
                             __( 'Failed to import %1$s &#8220;%2$s&#8221;', 'ocean-extra' ),
                             $post_type_object->labels->singular_name,
                             esc_html( $post['post_title'] )
@@ -806,7 +848,12 @@ if ( class_exists( 'WP_Importer' ) ) {
                                 $term_id = $t['term_id'];
                                 do_action( 'wp_import_insert_term', $t, $term, $post_id, $post );
                             } else {
-                                printf( __( 'Failed to import %1$s %2$s', 'ocean-extra' ), esc_html( $taxonomy ), esc_html( $term['name'] ) );
+                                printf(
+                                    /* translators: 1: Term taxonomy. 2: Term name. */
+                                    __( 'Failed to import %1$s %2$s', 'ocean-extra' ),
+                                    esc_html( $taxonomy ),
+                                    esc_html( $term['name'] )
+                                );
                                 if ( defined( 'IMPORT_DEBUG' ) && IMPORT_DEBUG ) {
                                     echo ': ' . $t->get_error_message();
                                 }
@@ -960,7 +1007,11 @@ if ( class_exists( 'WP_Importer' ) ) {
 
             $menu_id = term_exists( $menu_slug, 'nav_menu' );
             if ( ! $menu_id ) {
-                printf( __( 'Menu item skipped due to invalid menu slug: %s', 'ocean-extra' ), esc_html( $menu_slug ) );
+                printf(
+                    /* translators: 1: Menu slug. */
+                    __( 'Menu item skipped due to invalid menu slug: %s', 'ocean-extra' ),
+                    esc_html( $menu_slug )
+                );
                 echo '<br />';
                 return;
             } else {
@@ -1077,7 +1128,8 @@ if ( class_exists( 'WP_Importer' ) ) {
          */
         public function fetch_remote_file( $url, $post ) {
             // Extract the file name from the URL.
-            $path      = parse_url( $url, PHP_URL_PATH );
+            // $path      = parse_url( $url, PHP_URL_PATH );
+            $path      = wp_parse_url( $url, PHP_URL_PATH );
             $file_name = '';
             if ( is_string( $path ) ) {
                 $file_name = basename( $path );
@@ -1106,7 +1158,8 @@ if ( class_exists( 'WP_Importer' ) ) {
             );
 
             if ( is_wp_error( $remote_response ) ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error(
                     'import_file_error',
                     sprintf(
@@ -1122,7 +1175,8 @@ if ( class_exists( 'WP_Importer' ) ) {
 
             // Make sure the fetch was successful.
             if ( 200 !== $remote_response_code ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error(
                     'import_file_error',
                     sprintf(
@@ -1138,26 +1192,37 @@ if ( class_exists( 'WP_Importer' ) ) {
 
             // Request failed.
             if ( ! $headers ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error( 'import_file_error', __( 'Remote server did not respond', 'ocean-extra' ) );
             }
 
             $filesize = (int) filesize( $tmp_file_name );
 
             if ( 0 === $filesize ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error( 'import_file_error', __( 'Zero size file downloaded', 'ocean-extra' ) );
             }
 
             if ( ! isset( $headers['content-encoding'] ) && isset( $headers['content-length'] ) && $filesize !== (int) $headers['content-length'] ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error( 'import_file_error', __( 'Downloaded file has incorrect size', 'ocean-extra' ) );
             }
 
             $max_size = (int) $this->max_attachment_size();
             if ( ! empty( $max_size ) && $filesize > $max_size ) {
-                @unlink( $tmp_file_name );
-                return new WP_Error( 'import_file_error', sprintf( __( 'Remote file is too large, limit is %s', 'ocean-extra' ), size_format( $max_size ) ) );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
+                return new WP_Error(
+                    'import_file_error',
+                    sprintf(
+                        /* translators: 1: Size limit . */
+                        __( 'Remote file is too large, limit is %s', 'ocean-extra' ),
+                        size_format( $max_size )
+                    )
+                );
             }
 
             // Override file name with Content-Disposition header value.
@@ -1203,7 +1268,8 @@ if ( class_exists( 'WP_Importer' ) ) {
             $move_new_file = copy( $tmp_file_name, $new_file );
 
             if ( ! $move_new_file ) {
-                @unlink( $tmp_file_name );
+                // @unlink( $tmp_file_name );
+                wp_delete_file( $tmp_file_name );
                 return new WP_Error( 'import_file_error', __( 'The uploaded file could not be moved', 'ocean-extra' ) );
             }
 
@@ -1333,7 +1399,11 @@ if ( class_exists( 'WP_Importer' ) ) {
             if ( isset( $updates[ $basename ] ) ) {
                 $update = $updates[ $basename ];
                 echo '<div class="error"><p><strong>';
-                printf( __( 'A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files.', 'ocean-extra' ), $update->update->new_version );
+                printf(
+                    /* translators: 1: Version. */
+                    __( 'A new version of this importer is available. Please update to version %s to ensure compatibility with newer export files.', 'ocean-extra' ),
+                    $update->update->new_version
+                );
                 echo '</strong></p></div>';
             }
         }
