@@ -9,42 +9,46 @@
             var $this = $(this);
             var userId = $this.data('user-id');
             var maxPhotos = $this.data('max-photos');
+            var containerId = $this.attr('id') || Math.random().toString(36).substring(2);
 
-            var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?id=' +
-                encodeURIComponent(userId) + '&format=json&nojsoncallback=1';
+            // Sanitize the containerId
+            containerId = containerId.replace(/[^a-zA-Z0-9_-]/g, '');
+            var callbackName = 'jsonFlickrFeed_' + containerId;
 
-            function getPhotoUrl(photo) {
-                return photo.media.m.replace('_m.jpg', '_q.jpg');
-            }
-
-            fetch(feedUrl)
-                .then(response => response.json())
-                .then(data => {
-                    var counter = 0;
-                    data.items.forEach(function(item) {
-                        if (counter < maxPhotos) {
-                            const photoUrl = getPhotoUrl(item);
-                            const $img = $('<img>')
-                                .attr('src', photoUrl)
-                                .attr('alt', item.title);
-                            $this.append($img);
-                            counter++;
-                        }
-                    });
-                })
-                .catch(error => {
-                    console.error('Error loading Flickr feed:', error);
+            window[callbackName] = function(data) {
+                var counter = 0;
+                data.items.forEach(function(item) {
+                    if (counter < maxPhotos) {
+                        var photoUrl = item.media.m.replace('_m.jpg', '_q.jpg');
+                        var $img = $('<img>')
+                            .attr('src', photoUrl)
+                            .attr('alt', item.title || 'Flickr image');
+                        $this.append($img);
+                        counter++;
+                    }
                 });
-        });
 
+                // Clean up
+                delete window[callbackName];
+            };
+
+            var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?' +
+                'id=' + encodeURIComponent(userId) +
+                '&format=json&jsoncallback=' + callbackName;
+
+            var script = document.createElement('script');
+            script.src = feedUrl;
+            script.onerror = function() {
+                console.error('Error loading Flickr feed.');
+            };
+            document.head.appendChild(script);
+        });
     }
 
-    // Execute when the document is ready
     $(document).ready(function() {
         loadFlickrPhotos($(document));
     });
 
-    // Execute when Elementor previews are loaded
     $(window).on('elementor/frontend/init', function() {
         elementorFrontend.hooks.addAction('frontend/element_ready/widget', function($scope) {
             loadFlickrPhotos($scope);
