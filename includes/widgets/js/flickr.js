@@ -9,29 +9,34 @@
             var $this = $(this);
             var userId = $this.data('user-id');
             var maxPhotos = $this.data('max-photos');
-            var containerId = $this.attr('id');
-            var callbackName = 'jsonFlickrFeed_' + containerId;
-            var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?id=' + userId + '&format=json&jsoncallback=' + callbackName;
+
+            var feedUrl = 'https://www.flickr.com/services/feeds/photos_public.gne?id=' +
+                encodeURIComponent(userId) + '&format=json&nojsoncallback=1';
 
             function getPhotoUrl(photo) {
                 return photo.media.m.replace('_m.jpg', '_q.jpg');
             }
 
-            window[callbackName] = function(data) {
-                var counter = 0;
-                $.each(data.items, function(i, item) {
-                    if (counter < maxPhotos) {
-                        var photoUrl = getPhotoUrl(item);
-                        $this.append('<img src="' + photoUrl + '" alt="' + item.title + '">');
-                        counter++;
-                    }
+            fetch(feedUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var counter = 0;
+                    data.items.forEach(function(item) {
+                        if (counter < maxPhotos) {
+                            const photoUrl = getPhotoUrl(item);
+                            const $img = $('<img>')
+                                .attr('src', photoUrl)
+                                .attr('alt', item.title);
+                            $this.append($img);
+                            counter++;
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading Flickr feed:', error);
                 });
-            };
-
-            var script = document.createElement('script');
-            script.src = feedUrl;
-            document.head.appendChild(script);
         });
+
     }
 
     // Execute when the document is ready
