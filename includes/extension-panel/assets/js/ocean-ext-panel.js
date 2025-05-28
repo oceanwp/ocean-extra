@@ -44,13 +44,14 @@ jQuery(document).ready(function($) {
                         $btn.data('plugin-action', 'activate');
                         $btn.data('plugin-file_path', response.data.file_path);
                         $btn.text(OCEAN_EXT_PANEL.strings.activate);
+                        $btn.removeClass('install-button').addClass('activate-button');
                     } else {
                         $btn.text(OCEAN_EXT_PANEL.strings.install);
                         alert(response.data.message);
                     }
                 },
                 error: function() {
-                    $btn.text(OCEAN_EXT_PANEL.strings.activate);
+                    $btn.text(OCEAN_EXT_PANEL.strings.install);
                     alert(OCEAN_EXT_PANEL.strings.install_error);
                 }
             });
@@ -66,7 +67,10 @@ jQuery(document).ready(function($) {
                 },
                 success: function(response) {
                     if (response.success) {
-                        $btn.text(OCEAN_EXT_PANEL.strings.active).prop('disabled', true);
+                        $btn.text(OCEAN_EXT_PANEL.strings.active)
+                            .prop('disabled', true)
+                            .removeClass('activate-button install-button')
+                            .addClass('active-button');
                     } else {
                         $btn.text(OCEAN_EXT_PANEL.strings.activate);
                         alert(response.data.message);
