@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.4.9 - JUN 2 2025 =
+- Fixed: Potential vulnerability patched: Report by Patchstack from MAY 26th 2025. Shoutout and a thanks to the Patchstack team for patch test and confirmation.
+
 = 2.4.8 - MAY 14 2025 =
 - NEW: Setup Wizard for new installations.
 - Updated: Preparations to remove old/previous Wizard files with next updates.
