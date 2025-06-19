@@ -717,88 +717,109 @@ add_action( 'wp_enqueue_scripts', 'oceanwp_woo_free_shipping_left_script' );
  * Breadcrumb shortcode
  *
  * @since 1.3.3
+ * @updated 2.6.0 Compatibility with new Breadcrumb class
  */
 if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 
 	function oceanwp_breadcrumb_shortcode( $atts ) {
 
-		// Return if is in the Elementor edit mode, to avoid error
-		if ( class_exists( 'Elementor\Plugin' )
-			&& \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-			return esc_html__( 'This shortcode only works in front end', 'ocean-extra' );
+		// Avoid issues in Elementor or admin area.
+		if (
+			( class_exists( 'Elementor\Plugin' ) && \Elementor\Plugin::$instance->editor->is_edit_mode() ) ||
+			is_admin()
+		) {
+			return '';
 		}
 
-		// Return if is in the admin, to avoid conflict with Yoast SEO
-		if ( is_admin() ) {
-			return;
-		}
+		$atts = shortcode_atts( array(
+			'class'        => '',
+			'color'        => '',
+			'hover_color'  => '',
+			'source'       => '', // Optional: override breadcrumb source.
+		), $atts, 'oceanwp_breadcrumb' );
 
-		// Return if OceanWP_Breadcrumb_Trail doesn't exist
-		if ( ! class_exists( 'OceanWP_Breadcrumb_Trail' ) ) {
-			return;
-		}
+		$class       = $atts['class'];
+		$color       = $atts['color'];
+		$hover_color = $atts['hover_color'];
+		$source      = trim( $atts['source'] );
+		$extra_class = $class ? ' ' . esc_attr( $class ) : '';
 
-		$settings = shortcode_atts(
-			array(
-				'class'       => '',
-				'color'       => '',
-				'hover_color' => '',
-			),
-			$atts
-		);
+		// Inline style support.
+		if ( $color || $hover_color ) {
+			$css = '';
 
-		$class       = $settings['class'];
-		$color       = $settings['color'];
-		$hover_color = $settings['hover_color'];
-
-		$args = '';
-
-		// Add a space for the beginning of the class attr
-		if ( ! empty( $class ) ) {
-			$class = ' ' . $class;
-		}
-
-		// Style
-		if ( ! empty( $color ) || ! empty( $hover_color ) ) {
-
-			// Vars
-			$css    = '';
-			$output = '';
-
-			if ( ! empty( $color ) ) {
+			if ( $color ) {
 				$css .= '.oceanwp-breadcrumb .site-breadcrumbs, .oceanwp-breadcrumb .site-breadcrumbs a {color:' . esc_attr( $color ) . ';}';
 			}
-
-			if ( ! empty( $hover_color ) ) {
+			if ( $hover_color ) {
 				$css .= '.oceanwp-breadcrumb .site-breadcrumbs a:hover {color:' . esc_attr( $hover_color ) . ';}';
 			}
 
-			if ( ! empty( $css ) ) {
-				wp_register_style( 'ocean-breadcrumbs-shortcode', false );
-				wp_enqueue_style( 'ocean-breadcrumbs-shortcode' );
-				wp_add_inline_style( 'ocean-breadcrumbs-shortcode', wp_strip_all_tags( oceanwp_minify_css( $css ) ) );
+			wp_register_style( 'ocean-breadcrumbs-shortcode', false );
+			wp_enqueue_style( 'ocean-breadcrumbs-shortcode' );
+			wp_add_inline_style( 'ocean-breadcrumbs-shortcode', oceanwp_minify_css( $css ) );
+		}
+
+		// Determine the source: shortcode override > theme mod > fallback.
+		$selected_source = $source ? $source : get_theme_mod( 'ocean_breadcrumbs_source', '' );
+
+		// Legacy fallback: if source is empty and Yoast is active and supported.
+		if (
+			empty( $selected_source ) &&
+			function_exists( 'yoast_breadcrumb' ) &&
+			current_theme_supports( 'yoast-seo-breadcrumbs' )
+		) {
+			$classes = get_breadcrumb_css_class_string();
+			return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ) . $extra_class . '">', '</nav>', false );
+		}
+
+		// Handle SEO plugin breadcrumb output.
+		switch ( $selected_source ) {
+			case 'yoast-seo':
+				if ( function_exists( 'yoast_breadcrumb' ) && current_theme_supports( 'yoast-seo-breadcrumbs' ) ) {
+					$classes = get_breadcrumb_css_class_string();
+					return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ) . $extra_class . '">', '</nav>', false );
+				}
+				break;
+
+			case 'seopress':
+				if ( function_exists( 'seopress_display_breadcrumbs' ) ) {
+					ob_start();
+					do_action( 'seopress_breadcrumbs_before_html' );
+					seopress_display_breadcrumbs();
+					do_action( 'seopress_breadcrumbs_after_html' );
+					return ob_get_clean();
+				}
+				break;
+
+			case 'rank-math':
+				if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+					ob_start();
+					rank_math_the_breadcrumbs();
+					return ob_get_clean();
+				}
+				break;
+		}
+
+		// Use new modular breadcrumb system if available.
+		if ( function_exists( 'oceanwp_get_breadcrumb_html' ) ) {
+			$output = oceanwp_get_breadcrumb_html();
+			if ( $output ) {
+				return '<span class="oceanwp-breadcrumb' . $extra_class . '">' . $output . '</span>';
 			}
 		}
 
-		// Yoast breadcrumbs
-		if ( function_exists( 'yoast_breadcrumb' ) && current_theme_supports( 'yoast-seo-breadcrumbs' ) ) {
-			$classes = 'site-breadcrumbs clr';
-			if ( $breadcrumbs_position = get_theme_mod( 'ocean_breadcrumbs_position' ) ) {
-				$classes .= ' position-' . esc_attr( $breadcrumbs_position );
-			}
-			return yoast_breadcrumb( '<nav class="' . esc_attr( $classes ) . '">', '</nav>' );
+		// Fallback to legacy system if necessary.
+		if ( class_exists( 'OceanWP_Breadcrumb_Trail' ) ) {
+			$breadcrumb = new OceanWP_Breadcrumb_Trail();
+			return '<span class="oceanwp-breadcrumb' . $extra_class . '">' . $breadcrumb->get_trail() . '</span>';
 		}
 
-		$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
-
-		if ( ! is_object( $breadcrumb ) ) {
-			$breadcrumb = new OceanWP_Breadcrumb_Trail( $args );
-		}
-
-		return '<span class="oceanwp-breadcrumb' . esc_attr( $class ) . '">' . $breadcrumb->get_trail() . '</span>';
-
+		// Final fallback — nothing to show.
+		return '';
 	}
 }
+
 add_shortcode( 'oceanwp_breadcrumb', 'oceanwp_breadcrumb_shortcode' );
 
 /**

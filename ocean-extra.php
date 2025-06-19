@@ -188,6 +188,12 @@ final class Ocean_Extra {
 			// Register Custom JS file
 			add_action( 'init', array( $this, 'register_custom_js' ) );
 
+			// Load OceanWP Schema Cache Handler.
+			add_action( 'init', array( $this, 'oceanwp_schema_caching' ) );
+
+			// Load OceanWP WooCommerce Schema.
+			add_action( 'init', array( $this, 'oceanwp_schema_woocommerce' ) );
+
 			// Move the Custom CSS section into the Custom CSS/JS section
 			add_action( 'customize_register', array( $this, 'customize_register' ), 11 );
 
@@ -512,6 +518,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/adobe-font.php';
 			require_once OE_PATH . '/includes/preloader/customizer.php';
 			require_once OE_PATH . '/includes/customizer/customizer.php';
+			require_once OE_PATH . '/includes/schema/schema-cache-helpers.php';
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ), 999 );
 		}
@@ -752,6 +759,41 @@ final class Ocean_Extra {
 		// If rtl
 		if ( is_RTL() ) {
 			wp_enqueue_style( 'oe-widgets-style-rtl', plugins_url( '/assets/css/rtl.css', __FILE__ ) );
+		}
+
+	}
+
+	/**
+	 * Load Schema Cache Handler
+	 *
+	 * @since   2.6.0
+	 */
+	public function oceanwp_schema_caching() {
+
+		if (
+			class_exists( 'OceanWP_JsonLD_Schema' ) &&
+			get_theme_mod( 'ocean_schema_markup', true ) &&
+			get_theme_mod( 'ocean_schema_manager', false )
+		) {
+			require_once OE_PATH . 'includes/schema/class-oceanwp-schema-cache-handler.php';
+			new OceanWP_Schema_Cache_Handler();
+		}
+
+	}
+
+	/**
+	 * Load WooCommerce Schema
+	 */
+	public function oceanwp_schema_woocommerce() {
+
+		if (
+			OCEANWP_WOOCOMMERCE_ACTIVE &&
+			class_exists( 'OceanWP_JsonLD_Schema' ) &&
+			get_theme_mod( 'ocean_schema_markup', true ) &&
+			get_theme_mod( 'ocean_schema_manager', false )
+		) {
+			require_once OE_PATH . 'includes/schema/class-oceanwp-woocommerce-schema.php';
+			new OceanWP_WooCommerce_Schema();
 		}
 
 	}

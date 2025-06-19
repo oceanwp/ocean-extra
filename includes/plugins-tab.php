@@ -206,4 +206,3 @@ class OceanWP_Plugins_Tab {
 
 // Initialize the class
 new OceanWP_Plugins_Tab();
-
