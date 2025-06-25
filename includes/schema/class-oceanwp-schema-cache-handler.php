@@ -57,7 +57,7 @@ if (
 		 * Output cached Schema.
 		 */
 		public function output_cached_schema() {
-			if ( is_preview() || is_admin() || wp_doing_ajax() ) {
+			if ( is_preview() || is_customize_preview() || is_admin() || wp_doing_ajax() ) {
 				return;
 			}
 
@@ -71,7 +71,7 @@ if (
 
 			$schema = OceanWP_JsonLD_Schema::instance();
 			if ( ! $schema ) {
-				error_log( '[Schema Cache] Schema instance is null, skipping output.' );
+				//error_log( '[Schema Cache] Schema instance is null, skipping output.' );
 				return;
 			}
 			$cache_key = apply_filters( 'oceanwp_schema_cache_key', $this->get_cache_key() );
@@ -80,13 +80,12 @@ if (
 
 			if ( false === $json || ! is_string( $json ) || empty( $json ) ) {
 				$data = $schema->generate_schema();
-				error_log( '[Schema Cache] Transient not found, generating...' );
 
 				// Apply filters for developers to include their own schema before caching.
 				$data = apply_filters( 'oceanwp_schema_cache_data', $data, $cache_key );
 
 				if ( empty( $data ) ) {
-					error_log( '[Schema Cache] Schema generated but empty.' );
+					//error_log( '[Schema Cache] Schema generated but empty.' );
 					return;
 				}
 
@@ -94,12 +93,12 @@ if (
 
 				$json = wp_json_encode( $data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 				set_transient( $cache_key, $json, $expiration );
-				error_log( '[Schema Cache] Cached schema with key: ' . $cache_key );
+				//error_log( '[Schema Cache] Cached schema with key: ' . $cache_key );
 			}
 
 			echo "\n<script type=\"application/ld+json\">\n$json\n</script>\n";
 
-			error_log( '[Schema Cache] Checking key: ' . $cache_key );
+			//error_log( '[Schema Cache] Checking key: ' . $cache_key );
 		}
 
 		/**
@@ -107,7 +106,7 @@ if (
 		 */
 		protected function get_cache_duration() {
 			if ( ! get_theme_mod( 'ocean_schema_cache_enable', false ) ) {
-				return 2 * DAY_IN_SECONDS;
+				return;
 			}
 
 			$duration = get_theme_mod( 'ocean_schema_cache_duration', '2' );
@@ -239,7 +238,7 @@ if (
 				'section'  => 'ocean_seo_settings',
 				'after'    => 'ocean_divider_before_schema_caching',
 				'class'    => 'section-site-layout',
-				'priority' => 10,
+				'priority' => 15,
 				'options'  => [
 					'ocean_schema_cache_enable' => [
 						'type'              => 'ocean-switch',
@@ -247,7 +246,7 @@ if (
 						'section'           => 'oe_schema_caching',
 						'default'           => false,
 						'transport'         => 'postMessage',
-						'priority'          => 10,
+						'priority'          => 16,
 						'hideLabel'         => false,
 						'active_callback'   => function() {
 							return function_exists( 'oceanwp_cac_is_schema_manager_enabled' )
@@ -263,7 +262,7 @@ if (
 						'section'           => 'oe_schema_caching',
 						'transport'         => 'postMessage',
 						'default'           => '2',
-						'priority'          => 10,
+						'priority'          => 17,
 						'hideLabel'         => false,
 						'multiple'          => false,
 						'active_callback'   => function() {
@@ -286,7 +285,7 @@ if (
 						'section'           => 'oe_schema_caching',
 						'default'           => false,
 						'transport'         => 'postMessage',
-						'priority'          => 10,
+						'priority'          => 18,
 						'hideLabel'         => false,
 						'active_callback'   => function() {
 							return function_exists( 'oceanwp_cac_is_schema_manager_enabled' )
@@ -307,6 +306,10 @@ if (
 		 * @param WP_Admin_Bar $wp_admin_bar The admin bar instance.
 		 */
 		public function add_clear_schema_admin_bar_button( $wp_admin_bar ) {
+			if ( ! get_theme_mod( 'ocean_schema_cache_enable', false ) ) {
+				return;
+			}
+
 			if ( ! is_admin_bar_showing() ) {
 				return;
 			}
@@ -425,7 +428,7 @@ if (
 				true
 			);
 
-			error_log( plugins_url( 'assets/js/schema-cache-bar.js', __FILE__ ) );
+			//error_log( plugins_url( 'assets/js/schema-cache-bar.js', __FILE__ ) );
 
 			wp_localize_script( 'oceanwp-schema-cache-bar', 'OceanSchemaCacheBar', [
 				'confirm_message' => esc_html__( "⚠️ You are about to clear all cached JSON Schema data.\n\nThis may affect structured data visibility in search engines temporarily.\n\nWe recommend taking a full website backup before continuing.\n\nDo you want to proceed?", 'ocean-extra' ),

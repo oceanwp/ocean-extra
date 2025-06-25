@@ -133,16 +133,15 @@ if (
 		 */
 		public function register_customize_options($options) {
 
-			$options['ocean_seo_settings']['options'] = [
-
+			$new_options = [
 				'ocean_schema_woocommerce_enable' => [
 					'type'              => 'ocean-switch',
 					'label'             => esc_html__( 'Enable WooCommerce Schema', 'ocean-extra' ),
 					'section'           => 'ocean_seo_settings',
-					'after'             => 'oe_schema_caching',
+					'after'             => 'ocean_configure_breadcrumb_link',
 					'default'           => false,
 					'transport'         => 'postMessage',
-					'priority'          => 10,
+					'priority'          => 11,
 					'hideLabel'         => false,
 					'active_callback'   => function() {
 						return function_exists( 'oceanwp_cac_is_schema_manager_enabled' )
@@ -152,6 +151,15 @@ if (
 					'sanitize_callback' => 'oceanwp_sanitize_checkbox',
 				],
 			];
+
+			if ( isset( $options['ocean_seo_settings']['options'] ) && is_array( $options['ocean_seo_settings']['options'] ) ) {
+				$options['ocean_seo_settings']['options'] = array_merge(
+					$options['ocean_seo_settings']['options'],
+					$new_options
+				);
+			} else {
+				$options['ocean_seo_settings']['options'] = $new_options;
+			}
 
 			return $options;
 		}
