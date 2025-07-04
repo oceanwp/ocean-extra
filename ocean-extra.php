@@ -775,10 +775,10 @@ final class Ocean_Extra {
 			get_theme_mod( 'ocean_schema_markup', true ) &&
 			get_theme_mod( 'ocean_schema_manager', false )
 		) {
-			require_once OE_PATH . 'includes/schema/class-oceanwp-schema-cache-handler.php';
+			require_once OE_PATH . '/includes/schema/class-oceanwp-schema-cache-handler.php';
 			new OceanWP_Schema_Cache_Handler();
+			
 		}
-
 	}
 
 	/**
@@ -792,7 +792,7 @@ final class Ocean_Extra {
 			get_theme_mod( 'ocean_schema_markup', true ) &&
 			get_theme_mod( 'ocean_schema_manager', false )
 		) {
-			require_once OE_PATH . 'includes/schema/class-oceanwp-woocommerce-schema.php';
+			require_once OE_PATH . '/includes/schema/class-oceanwp-woocommerce-schema.php';
 			new OceanWP_WooCommerce_Schema();
 		}
 
