@@ -23,20 +23,6 @@ if ( ! class_exists( 'OE_Onboarding_Manager' ) ) {
 	 */
 	class OE_Onboarding_Manager {
 
-		// /**
-		//  * Namespace.
-		//  *
-		//  * @var string
-		//  */
-		// protected $namespace = 'oceanwp/v';
-
-		// /**
-		//  * Version.
-		//  *
-		//  * @var string
-		//  */
-		// protected $version = '1';
-
 		/**
 		 * Class instance.
 		 *

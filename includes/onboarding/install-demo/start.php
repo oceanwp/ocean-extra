@@ -62,7 +62,7 @@ if ( ! class_exists( 'OE_Install_Demo' ) ) {
 		 */
 		public function add_page() {
 
-			$title = esc_html__( 'Install Demo (beta)', 'ocean-extra' );
+			$title = esc_html__( 'Install Demo', 'ocean-extra' );
 
 			add_submenu_page(
 				'oceanwp',
