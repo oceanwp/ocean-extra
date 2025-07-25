@@ -247,27 +247,27 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
             }
 
             // Colors.
-            if (isset($new_options['backgroundColor']) && !empty($new_options['backgroundColor'])) {
+            if (isset($new_options['backgroundColor']) && !empty($new_options['backgroundColor']) && '#ffffff' !== $new_options['backgroundColor']) {
                 set_theme_mod('ocean_background_color', sanitize_hex_color($new_options['backgroundColor']) );
             }
 
-            if (isset($new_options['primaryColor']) && !empty($new_options['primaryColor'])) {
+            if (isset($new_options['primaryColor']) && !empty($new_options['primaryColor']) && '#13aff0' !== $new_options['primaryColor']) {
                 set_theme_mod('ocean_primary_color', sanitize_hex_color($new_options['primaryColor']) );
             }
 
-            if (isset($new_options['primaryHoverColor']) && !empty($new_options['primaryHoverColor'])) {
+            if (isset($new_options['primaryHoverColor']) && !empty($new_options['primaryHoverColor']) && '#0b7cac' !== $new_options['primaryHoverColor']) {
                 set_theme_mod('ocean_hover_primary_color', sanitize_hex_color($new_options['primaryHoverColor']) );
             }
 
-            if (isset($new_options['borderColor']) && !empty($new_options['borderColor'])) {
+            if (isset($new_options['borderColor']) && !empty($new_options['borderColor']) && '#e9e9e9' !== $new_options['borderColor']) {
                 set_theme_mod('ocean_main_border_color', sanitize_hex_color($new_options['borderColor']) );
             }
 
-            if (isset($new_options['linkColor']) && !empty($new_options['linkColor'])) {
+            if (isset($new_options['linkColor']) && !empty($new_options['linkColor']) && '#333333' !== $new_options['linkColor']) {
                 set_theme_mod('ocean_links_color', sanitize_hex_color($new_options['linkHoverColor']) );
             }
 
-            if (isset($new_options['linkHoverColor']) && !empty($new_options['linkHoverColor'])) {
+            if (isset($new_options['linkHoverColor']) && !empty($new_options['linkHoverColor']) && '#13aff0' !== $new_options['linkHoverColor']) {
                 set_theme_mod('ocean_links_color_hover', sanitize_hex_color($new_options['linkHoverColor']) );
             }
 
