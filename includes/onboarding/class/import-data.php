@@ -51,7 +51,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
             add_action('wp_ajax_download_template_data', array( $this, 'download_selected_template_data' ) );
             add_action( 'wp_ajax_oceanwp_onboarding_import_data', array( $this, 'onboarding_import_data' ) );
-            add_action( 'wp_ajax_oceanwp_onboaring_after_import', array( $this, 'ajax_after_import' ) );
+            add_action( 'wp_ajax_oceanwp_onboarding_after_import', array( $this, 'ajax_after_import' ) );
 
 		}
 

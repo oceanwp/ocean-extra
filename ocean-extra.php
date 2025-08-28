@@ -176,6 +176,7 @@ final class Ocean_Extra {
 
 			require_once OE_PATH . '/includes/themepanel/theme-panel.php';
 
+			require_once OE_PATH . '/includes/extension-panel/extension-panel.php';
 			if ( ! empty( $current_theme_version ) && ! empty( $required_theme_version ) && version_compare( $current_theme_version, $required_theme_version , '>' ) ) {
 				require_once OE_PATH . '/includes/compatibility/ocean.php';
 			}
@@ -502,7 +503,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/walker.php';
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';
 			require_once OE_PATH . '/includes/dashboard.php';
-			require_once OE_PATH . '/includes/panel/demos.php';
+			// require_once OE_PATH . '/includes/panel/demos.php';
 			require_once OE_PATH . '/includes/plugins-tab.php';
 			$oe_notification_active_status = get_option( 'oe_notification_active_status', 'no' );
 			if( $oe_notification_active_status == 'no' ) {
