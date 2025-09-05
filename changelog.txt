@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.5.1 - XXX XX 2025 =
+- Fixed: Social Share widget - WhatsApp icon (12192).
+- Improved: Wizard: UI improvement for plugin selection (13090)
+
 = 2.5.0 - AUG 28 2025 =
 - Fixed: Potential vulnerability patched: Report by Wordfence from Aug 27th. Shoutout to the Wordfence team for the patch verification and confirmation.
 
