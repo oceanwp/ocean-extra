@@ -25,7 +25,7 @@ if ( ! class_exists( 'OceanWP_Custom_Code_Customizer' ) ) :
 		public function __construct() {
 
 			add_action( 'customize_register', array( $this, 'customizer_options' ) );
-			add_action( 'ocean_footer_js', array( $this, 'output_custom_js' ), 9999 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'output_custom_js' ), 9999 );
 
 		}
 
@@ -85,13 +85,14 @@ if ( ! class_exists( 'OceanWP_Custom_Code_Customizer' ) ) :
 		 *
 		 * @param string $output Custom JS output.
 		 */
-		public function output_custom_js( $output ) {
+		public function output_custom_js() {
 
 			$js = get_theme_mod( 'ocean_custom_js', false );
 			if ( $js ) {
-				$output .= $js;
+				// $output .= $js;
+				wp_add_inline_script( 'oceanwp-main', $js );
 			}
-			return $output;
+			// return $output;
 
 		}
 
