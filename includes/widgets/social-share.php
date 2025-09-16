@@ -190,7 +190,7 @@ if ( ! class_exists( 'Ocean_Extra_Social_Share_Widget' ) ) {
 								0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6
 								32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
 							</svg>',
-					'url'   => 'https://api.whatsapp://send?text=' . rawurlencode( esc_url( $post_url ) ),
+					'url'   => 'https://wa.me/?text=' . rawurlencode( esc_url( $post_url ) ),
 				),
 			) );
 

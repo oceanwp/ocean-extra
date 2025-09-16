@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.8
-Stable tag: 2.5.0
+Stable tag: 2.5.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -218,6 +218,14 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.5.1 - SEP 16 2025 =
+- Added: New Installation Wizard for regular website template (demo) import.
+- Updated: Freemius SDK to version 2.12.2.
+- Improved: Customizer: Custom JS: Output sanitization.
+- Improved: Installation Wizard: Checkbox clicks extended to the entire wrapper.
+- Fixed: Widgets: Social Share: WhatsApp API URL.
+- Removed: Old Setup Wizard Files.
 
 = 2.5.0 - AUG 28 2025 =
 - Fixed: Potential vulnerability patched: Report by Wordfence from Aug 27th. Shoutout to the Wordfence team for the patch verification and confirmation.

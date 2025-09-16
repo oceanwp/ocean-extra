@@ -13,29 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // The Setup Wizard class
-if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
+if ( ! class_exists( 'OE_Onboarding_Manager' ) ) {
 
 	/**
-	 * Main class - OE_Onboarding_Wizard.
+	 * Main class - OE_Onboarding_Manager.
 	 *
 	 * @since  2.4.8
 	 * @access public
 	 */
-	final class OE_Onboarding_Wizard {
-
-		/**
-		 * Namespace.
-		 *
-		 * @var string
-		 */
-		protected $namespace = 'oceanwp/v';
-
-		/**
-		 * Version.
-		 *
-		 * @var string
-		 */
-		protected $version = '1';
+	class OE_Onboarding_Manager {
 
 		/**
 		 * Class instance.
@@ -64,55 +50,11 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 		 */
 		public function __construct() {
 
-			$installed_version = get_option( 'ocean-extra-installed-version' );
-
-			if ( !empty($installed_version) && defined('OE_VERSION') && version_compare( $installed_version, OE_VERSION, '<' ) ) {
-				add_action( 'plugin_loaded', [$this, 'owp_onboarding_existing_site_flags']);
-				return;
-			}
-
 			$this->includes();
 
-			add_action( 'admin_menu', [$this, 'add_page'], 999 );
-            add_action( 'admin_footer', [$this, 'onboarding_app'] );
-            add_action( 'admin_enqueue_scripts', [$this, 'onboarding_scripts'], 120 );
+			add_action( 'admin_enqueue_scripts', [$this, 'onboarding_scripts'] );
 		}
 
-		/**
-		 * Onboarding flags for existing sites
-		 *
-		 * @return void
-		 */
-		public function owp_onboarding_existing_site_flags() {
-			if ( ! get_option('owp_onboarding_completed') ) {
-				update_option('owp_onboarding_completed', true);
-			}
-
-			if ( ! get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
-				update_option('oceanwp_plugin_notice_permanently_dismissed', true);
-			}
-		}
-
-		/**
-		 * Add submenu page
-		 */
-		public function add_page() {
-
-			if ( get_option( 'owp_onboarding_completed' ) || get_option( 'oceanwp_plugin_notice_permanently_dismissed' )) {
-				return;
-			}
-
-			$title = esc_html__( 'Setup Wizard', 'ocean-extra' );
-
-			add_submenu_page(
-				'oceanwp',
-				$title,
-				$title,
-				'manage_options',
-				'#setup-wizard',
-				''
-			);
-		}
 
 		/**
 		 * Load required files
@@ -135,30 +77,32 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 			require_once $dir . 'class/import-data.php';
 			require_once $dir . 'class/rest.php';
 
+			require_once $dir . 'install-demo/start.php';
+			require_once $dir . 'setup-wizard/start.php';
+
 		}
 
-        /**
-         * Onboarding wizard
-         */
-        public function onboarding_app() {
-
-			if ( get_option('owp_onboarding_completed') || get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
-				return;
+		/**
+		 * Check if user need to upgrade.
+		 *
+		 * @return bool
+		 */
+		public function validate_license() {
+			global $owp_fs;
+			$status = false;
+			if ( ! empty( $owp_fs ) ) {
+				$status = $owp_fs->is_pricing_page_visible();
+			} else {
+				$status = false;
 			}
 
-            ?>
-            <div id="oe-onboarding-app"></div>
-            <?php
-        }
+			return $status;
+		}
 
 		/**
 		 * Enqueque Scripts
 		 */
 		public function onboarding_scripts() {
-
-			if ( get_option('owp_onboarding_completed') || get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
-				return;
-			}
 
 			$uri   = OE_URL . 'includes/onboarding/assets/dist/';
 			$asset = require OE_PATH . 'includes/onboarding/assets/dist/index.asset.php';
@@ -182,6 +126,13 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 				filemtime( OE_PATH . 'includes/onboarding/assets/dist/style-index.css' )
 			);
 
+			wp_enqueue_style(
+				'oe-onboarding-component',
+				$uri . 'style-setup-wizard.css',
+				[],
+				filemtime( OE_PATH . 'includes/onboarding/assets/dist/style-setup-wizard.css' )
+			);
+
 			wp_enqueue_script( 'oe-onboarding' );
 
 			if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -199,32 +150,11 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 		}
 
 		/**
-		 * Check if user need to upgrade.
-		 *
-		 * @return bool
-		 */
-		public function validate_license() {
-			global $owp_fs;
-			$status = false;
-			if ( ! empty( $owp_fs ) ) {
-				$status = $owp_fs->is_pricing_page_visible();
-			} else {
-				$status = false;
-			}
-
-			return $status;
-		}
-
-		/**
 		 * Localize Script.
 		 *
 		 * @return mixed|void
 		 */
 		public function localize_script() {
-
-			if ( get_option('owp_onboarding_completed')|| get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
-				return;
-			}
 
 			$theme_slug = 'oceanwp-child-theme-master';
 			$child_theme_status = [
@@ -255,23 +185,4 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 	}
 }
 
-/**
- * Returns the main instance of OE_Onboarding_Wizard to prevent the need to use globals.
- *
- * @return object OE_Onboarding_Wizard
- */
-function oe_onboarding_wizard() {
-
-	if ( ! defined( 'OE_ONBOARDING_WIZARD' ) ) {
-		define( 'OE_ONBOARDING_WIZARD', true );
-
-		if ( ! defined( 'OE_ONBOARDING_WIZARD_VERSION' ) ) {
-			define( 'OE_ONBOARDING_WIZARD_VERSION', '2.4.8' );
-		}
-
-		return OE_Onboarding_Wizard::instance();
-	}
-}
-
-// Run the setup wizard.
-oe_onboarding_wizard();
+return OE_Onboarding_Manager::instance();

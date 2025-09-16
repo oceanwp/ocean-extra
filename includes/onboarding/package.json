@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "OceanWP Setup Wizard",
   "scripts": {
-    "build": "wp-scripts build oe-sw-src/index.js --output-path=assets/dist",
-    "start": "wp-scripts start oe-sw-src/index.js --output-path=assets/dist",
+    "build": "wp-scripts build oe-sw-src/index.js oe-sw-src/setup-wizard oe-sw-src/install-demo --output-path=assets/dist",
+    "start": "wp-scripts start oe-sw-src/index.js oe-sw-src/setup-wizard oe-sw-src/install-demo --output-path=assets/dist",
     "lint:js": "wp-scripts lint-js",
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc.json"
