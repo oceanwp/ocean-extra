@@ -227,23 +227,56 @@ function oe_get_choices() {
 
 	$data['page_list'] = $page_list;
 
+	// // User roles.
+	// $default_user_roles = array( array( 'label' => 'Select', 'value' => '' ) );
+	// $added_user_roles = array();
+	// $get_user_roles = array_reverse( get_editable_roles() );
+	// if ( ! empty( $get_user_roles ) ) {
+	// 	foreach ( $get_user_roles as $roles => $role_details ) {
+	// 		$name = translate_user_role( $role_details['name'] );
+	// 		$added_user_roles[] = array(
+	// 			'label' => $name,
+	// 			'value' => $roles
+	// 		);
+	// 	}
+	// }
+
+	// $user_roles = array_merge( $default_user_roles, $added_user_roles );
+
+	// $data['user_roles'] = $user_roles;
+
 	// User roles.
-	$default_user_roles = array( array( 'label' => 'Select', 'value' => '' ) );
+	$default_user_roles = array(
+		array(
+			'label' => 'Select',
+			'value' => ''
+		)
+	);
+
 	$added_user_roles = array();
-	$get_user_roles = array_reverse( get_editable_roles() );
+
+	global $wp_roles;
+
+	if ( ! isset( $wp_roles ) ) {
+		$wp_roles = wp_roles();
+	}
+
+	$get_user_roles = array_reverse( $wp_roles->roles, true );
+
 	if ( ! empty( $get_user_roles ) ) {
-		foreach ( $get_user_roles as $roles => $role_details ) {
+		foreach ( $get_user_roles as $role_key => $role_details ) {
 			$name = translate_user_role( $role_details['name'] );
+
 			$added_user_roles[] = array(
 				'label' => $name,
-				'value' => $roles
+				'value' => $role_key
 			);
 		}
 	}
 
-	$user_roles = array_merge( $default_user_roles, $added_user_roles );
+	$role_options = array_merge( $default_user_roles, $added_user_roles );
 
-	$data['user_roles'] = $user_roles;
+	$data['user_roles'] = $role_options;
 
 	// Return data.
 	return apply_filters( 'ocean_post_settings_data_choices', $data );
@@ -470,6 +503,65 @@ if ( ! function_exists( 'oe_pro_license_check' ) ) {
 	}
 }
 
+/**
+ * Get allowed condition values
+ */
+function oe_get_allowed_condition_values() {
+
+    $choices = oe_get_choices();
+    $allowed = [];
+
+    // Menu
+    if ( ! empty( $choices['menu'] ) ) {
+        foreach ( $choices['menu'] as $m ) {
+            if ( isset( $m['value'] ) ) {
+                $allowed[] = (string) $m['value'];
+            }
+        }
+    }
+
+    // Templates
+    if ( ! empty( $choices['templates'] ) ) {
+        foreach ( $choices['templates'] as $t ) {
+            if ( isset( $t['value'] ) ) {
+                $allowed[] = (string) $t['value'];
+            }
+        }
+    }
+
+    // Widget areas
+    if ( ! empty( $choices['widget_area'] ) ) {
+        foreach ( $choices['widget_area'] as $w ) {
+            if ( isset( $w['value'] ) ) {
+                $allowed[] = (string) $w['value'];
+            }
+        }
+    }
+
+    // Page list (nested)
+    if ( ! empty( $choices['page_list'] ) ) {
+        foreach ( $choices['page_list'] as $group ) {
+            if ( ! empty( $group['options'] ) ) {
+                foreach ( $group['options'] as $opt ) {
+                    if ( isset( $opt['value'] ) ) {
+                        $allowed[] = (string) $opt['value'];
+                    }
+                }
+            }
+        }
+    }
+
+    // User roles
+    if ( ! empty( $choices['user_roles'] ) ) {
+        foreach ( $choices['user_roles'] as $r ) {
+            if ( isset( $r['value'] ) ) {
+                $allowed[] = (string) $r['value'];
+            }
+        }
+    }
+
+    return array_unique( $allowed );
+}
 
 if ( ! function_exists('oe_match_conditions') ) {
 	/**
@@ -491,7 +583,13 @@ if ( ! function_exists('oe_match_conditions') ) {
 			return false;
 		}
 
+		$allowed_values = oe_get_allowed_condition_values();
+
 		$conds = oe_parse_condition_string($values);
+
+		if ( ! in_array( $conds, $allowed_values, true ) ) {
+			return true;
+		}
 
 		foreach ( $conds as $cond ) {
 
@@ -593,6 +691,14 @@ if ( ! function_exists('oe_match_conditions') ) {
 						}
 						break;
 
+					case 'is_user_logged_in':
+						if ( function_exists( 'is_user_logged_in' ) && is_user_logged_in() ) return true;
+						break;
+
+					case '!is_user_logged_in':
+						if ( function_exists( 'is_user_logged_in' ) && !is_user_logged_in() ) return true;
+						break;
+
 				}
 			}
 
@@ -651,7 +757,10 @@ if ( ! function_exists('oe_match_conditions') ) {
 }
 
 function oe_parse_condition_string( $str ) {
-    if ( empty( $str ) ) return [];
+
+	if ( empty( $str ) ) {
+		return [];
+	}
 
     // Split by || or &&
     $parts = preg_split( '/\s*(\|\||&&)\s*/', $str );
@@ -660,12 +769,32 @@ function oe_parse_condition_string( $str ) {
 
     foreach ( $parts as $p ) {
         $p = trim($p);
-        // match is_page(123), is_single(44), etc.
-        if ( preg_match('/^([a-z_]+)\(([\w-]+)\)$/i', $p, $m ) ) {
-            $final[] = $m[1] . ':' . $m[2];
+
+        // 1. Match:  is_page(123), is_single(about)
+        if ( preg_match('/^(!?[a-z_]+)\(([\w-]*)\)$/i', $p, $m ) ) {
+            // handles empty parentheses too: is_user_logged_in()
+            if ( $m[2] === '' ) {
+                $final[] = $m[1];
+            } else {
+                $final[] = $m[1] . ':' . $m[2];
+            }
+            continue;
         }
+
+        // 2. Match:  is_page:123
+        if ( preg_match('/^(!?[a-z_]+):([\w-]+)$/i', $p, $m ) ) {
+            $final[] = $m[1] . ':' . $m[2];
+            continue;
+        }
+
+        // 3. Match:  is_user_logged_in  OR  !is_user_logged_in  OR is_page
+        if ( preg_match('/^!?[a-z_]+$/i', $p ) ) {
+            $final[] = $p;
+            continue;
+        }
+
+        // If no match, ignore it.
     }
 
     return $final;
 }
-
