@@ -587,11 +587,28 @@ if ( ! function_exists('oe_match_conditions') ) {
 
 		$conds = oe_parse_condition_string($values);
 
-		if ( ! in_array( $conds, $allowed_values, true ) ) {
-			return true;
-		}
+		$valid_conds = [];
 
 		foreach ( $conds as $cond ) {
+
+			if ( strpos( $cond, ':' ) !== false ) {
+				list( $fn, $arg ) = explode( ':', $cond, 2 );
+
+				// If argument is not part of the allowed choices, skip it entirely
+				if ( ! in_array( $arg, $allowed_values, true ) ) {
+					continue;
+				}
+			}
+
+			$valid_conds[] = $cond;
+		}
+
+		// No valid conditions after filtering
+		if ( empty( $valid_conds ) ) {
+			return false;
+		}
+
+		foreach ( $valid_conds as $cond ) {
 
 			if ( ! is_string( $cond ) ) {
 				continue;
@@ -617,7 +634,7 @@ if ( ! function_exists('oe_match_conditions') ) {
 			//   is_product, is_shop, is_cart (Woo)
 			// ----------------------------
 
-			if ( preg_match( '/^([a-z_]+)(?::([a-zA-Z0-9_-]+))?$/', $cond, $m ) ) {
+			if ( preg_match( '/^(!?[a-z_]+)(?:[:\(]([a-zA-Z0-9_-]*)\)?)?$/', $cond, $m ) ) {
 
 				$token = $m[1];
 				$arg = isset( $m[2] ) ? $m[2] : null;
@@ -758,9 +775,9 @@ if ( ! function_exists('oe_match_conditions') ) {
 
 function oe_parse_condition_string( $str ) {
 
-	if ( empty( $str ) ) {
-		return [];
-	}
+    if ( empty( $str ) ) {
+        return [];
+    }
 
     // Split by || or &&
     $parts = preg_split( '/\s*(\|\||&&)\s*/', $str );
@@ -770,30 +787,29 @@ function oe_parse_condition_string( $str ) {
     foreach ( $parts as $p ) {
         $p = trim($p);
 
-        // 1. Match:  is_page(123), is_single(about)
+        // 1. Match: is_page(123), is_single(about)
         if ( preg_match('/^(!?[a-z_]+)\(([\w-]*)\)$/i', $p, $m ) ) {
-            // handles empty parentheses too: is_user_logged_in()
+
+            // function with no args: is_user_logged_in()
             if ( $m[2] === '' ) {
-                $final[] = $m[1];
+                $final[] = $m[1] . '()';
             } else {
-                $final[] = $m[1] . ':' . $m[2];
+                $final[] = $m[1] . '(' . $m[2] . ')';
             }
             continue;
         }
 
-        // 2. Match:  is_page:123
+        // 2. Match: is_page:123 → convert to is_page(123)
         if ( preg_match('/^(!?[a-z_]+):([\w-]+)$/i', $p, $m ) ) {
-            $final[] = $m[1] . ':' . $m[2];
+            $final[] = $m[1] . '(' . $m[2] . ')';
             continue;
         }
 
-        // 3. Match:  is_user_logged_in  OR  !is_user_logged_in  OR is_page
+        // 3. Match: is_user_logged_in OR !is_user_logged_in
         if ( preg_match('/^!?[a-z_]+$/i', $p ) ) {
-            $final[] = $p;
+            $final[] = $p . '()';
             continue;
         }
-
-        // If no match, ignore it.
     }
 
     return $final;
