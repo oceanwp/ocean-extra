@@ -227,24 +227,6 @@ function oe_get_choices() {
 
 	$data['page_list'] = $page_list;
 
-	// // User roles.
-	// $default_user_roles = array( array( 'label' => 'Select', 'value' => '' ) );
-	// $added_user_roles = array();
-	// $get_user_roles = array_reverse( get_editable_roles() );
-	// if ( ! empty( $get_user_roles ) ) {
-	// 	foreach ( $get_user_roles as $roles => $role_details ) {
-	// 		$name = translate_user_role( $role_details['name'] );
-	// 		$added_user_roles[] = array(
-	// 			'label' => $name,
-	// 			'value' => $roles
-	// 		);
-	// 	}
-	// }
-
-	// $user_roles = array_merge( $default_user_roles, $added_user_roles );
-
-	// $data['user_roles'] = $user_roles;
-
 	// User roles.
 	$default_user_roles = array(
 		array(
@@ -486,7 +468,7 @@ function ocean_check_pro_license() {
 
 /**
  * Check if user requires upgrading
- * 
+ *
  * @return bool
  */
 if ( ! function_exists( 'oe_pro_license_check' ) ) {
@@ -773,6 +755,9 @@ if ( ! function_exists('oe_match_conditions') ) {
 	}
 }
 
+/**
+ * Parse condition string into array of conditions
+ */
 function oe_parse_condition_string( $str ) {
 
     if ( empty( $str ) ) {
