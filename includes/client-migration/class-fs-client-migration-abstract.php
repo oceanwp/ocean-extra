@@ -795,46 +795,81 @@
          * @return object|string
          */
         public function try_migrate_on_activation( $response, $args ) {
-            if ( empty( $args['license_key'] ) ||
-                 $this->_fs->apply_filters( 'license_key_maxlength', 32 ) !== strlen( $args['license_key'] )
-            ) {
-                // No license key provided (or invalid length), ignore.
+
+            if ( empty( $args['license_key'] ) || $this->_fs->apply_filters( 'license_key_maxlength', 32 ) !== strlen( $args['license_key'] ) ) {
                 return $response;
             }
 
             if ( ! $this->_fs->has_api_connectivity() ) {
-                // No connectivity to Freemius API, it's up to you what to do.
                 return $response;
             }
 
-            if ( ( is_object( $response->error ) && 'invalid_license_key' === $response->error->code ) ||
-                 ( is_string( $response->error ) && false !== strpos( strtolower( $response->error ), 'license' ) )
-            ) {
-                // Set license for migration.
-                if ( self::TYPE_CHILDREN_TO_PRODUCT === $this->_migraiton_type ) {
-                    $this->_children_license_keys = array( $args['license_key'] );
-                } else {
-                    $this->_license_key = $args['license_key'];
+            // Normalize $response for PHP 8.4 safety before property reads.
+            if ( ! is_object( $response ) && ! is_array( $response ) ) {
+                $response = (object) array();
+            }
+
+            if ( is_array( $response ) ) {
+                $response = (object) $response;
+            }
+
+            if ( isset( $response->error ) && is_array( $response->error ) ) {
+                $response->error = (object) $response->error;
+            }
+
+            // Only try migration if the failure looks license-related.
+            $is_licenseish_error = ( isset( $response->error ) && is_object( $response->error ) && isset( $response->error->code ) && 'invalid_license_key' === $response->error->code ) || ( isset( $response->error ) && is_string( $response->error ) && false !== strpos( strtolower( $response->error ), 'license' ) );
+
+            if ( ! $is_licenseish_error ) {
+                return $response;
+            }
+
+            // Set license for migration.
+            if ( self::TYPE_CHILDREN_TO_PRODUCT === $this->_migraiton_type ) {
+                $this->_children_license_keys = array( $args['license_key'] );
+            } else {
+                $this->_license_key = $args['license_key'];
+            }
+
+            // Attempt migration.
+            if ( 'success' === $this->non_blocking_license_migration( true ) ) {
+                return $this->_fs->get_after_activation_url( 'after_connect_url' );
+            }
+
+            // If non-blocking migration failed, read the transient WITHOUT clobbering $response.
+            $result         = $this->get_site_migration_data_and_licenses();
+            $all_licenses   = isset( $result['licenses'] ) ? $result['licenses'] : array();
+            $transient_key  = 'fs_license_migration_' . $this->_product_id . '_' . md5( implode( '', $all_licenses ) );
+            $mig_http_reply = $this->get_transient( $transient_key );
+
+            // Soft-handle any type here.
+            $mig_body = '';
+            $mig_code = 0;
+            if ( is_array( $mig_http_reply ) || is_object( $mig_http_reply ) ) {
+                $mig_obj = (object) $mig_http_reply;
+                if ( isset( $mig_obj->response['code'] ) ) {
+                    $mig_code = (int) $mig_obj->response['code'];
                 }
-
-                // Try to migrate the license.
-                if ( 'success' === $this->non_blocking_license_migration( true ) ) {
-                    /**
-                     * If successfully migrated license and got to this point (no redirect),
-                     * it means that it's an AJAX installation (opt-in), therefore,
-                     * override the response with the after connect URL.
-                     */
-                    return $this->_fs->get_after_activation_url( 'after_connect_url' );
-                } else {
-                    $result = $this->get_site_migration_data_and_licenses();
-
-                    $all_licenses   = $result['licenses'];
-
-                    $transient_key = 'fs_license_migration_' . $this->_product_id . '_' . md5( implode( '', $all_licenses ) );
-                    $response      = $this->get_transient( $transient_key );
-
-                    $response->error->message = 'Migration error: ' . var_export( $response, true );
+                if ( isset( $mig_obj->body ) ) {
+                    $mig_body = (string) $mig_obj->body;
                 }
+            }
+
+            // If the endpoint is blocked or returns a known validation (e.g., charset_required),
+            $is_known_validation = ( false !== strpos( $mig_body, 'charset_required' ) );
+            $is_block_like       = ( 0 === $mig_code || $mig_code >= 400 );
+
+            // Minimal internal log
+            if ( method_exists( $this->_fs, 'do_action' ) ) {
+                $this->_fs->do_action( 'log', sprintf( 'License migration skipped; http=%s, known_validation=%s', $mig_code ?: 'n/a', $is_known_validation ? 'yes' : 'no' ) );
+            }
+
+            if ( ! isset( $response->error ) || ! is_object( $response->error ) ) {
+                $response->error = (object) array();
+            }
+
+            if ( empty( $response->error->message ) ) {
+                $response->error->message = __( 'License activation encountered a migration hiccup but continued. If activation fails, contact support.', 'ocean-extra' );
             }
 
             return $response;

@@ -2,8 +2,8 @@
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
-Tested up to: 6.8
-Stable tag: 2.5.1
+Tested up to: 6.9
+Stable tag: 2.5.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -218,6 +218,11 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.5.2 - NOV 24 2025 =
+- Added: Metabox Settings: Compatibility for the upcoming WordPress 6.9 version.
+- Updated: Compatibility: WordPress: Upcoming 6.9 version.
+- Fixed: Compatibility: PHP: 8.4: Fatal error on license activation: PHP Fatal error:  Uncaught Error: Attempt to modify property "error" on array in .../wp-content/plugins/ocean-extra/includes/client-migration/class-fs-client-migration-abstract.php:836
 
 = 2.5.1 - SEP 16 2025 =
 - Added: New Installation Wizard for regular website template (demo) import.
