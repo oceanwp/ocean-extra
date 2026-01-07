@@ -49,6 +49,7 @@ if ( class_exists( 'WP_Importer' ) ) {
         public $processed_menu_items = array();
         public $menu_item_orphans    = array();
         public $missing_menu_items   = array();
+        public $elementor_posts      = array();
 
         public $fetch_attachments = false;
         public $url_remap         = array();
@@ -644,6 +645,8 @@ if ( class_exists( 'WP_Importer' ) ) {
         public function process_posts() {
             $this->posts = apply_filters( 'wp_import_posts', $this->posts );
 
+            $menu_items_to_process = array();
+
             foreach ( $this->posts as $post ) {
                 $post = apply_filters( 'wp_import_post_data_raw', $post );
 
@@ -666,14 +669,13 @@ if ( class_exists( 'WP_Importer' ) ) {
                     continue;
                 }
 
-                if ( 'nav_menu_item' == $post['post_type'] ) {
-                    $this->process_menu_item( $post );
-                    continue;
-                }
-
                 $post_type_object = get_post_type_object( $post['post_type'] );
 
-                $post_exists = post_exists( $post['post_title'], '', $post['post_date'], $post['post_type'] );
+                if ( 'nav_menu_item' == $post['post_type'] ) {
+                    $post_exists = 0;
+                } else {
+                    $post_exists = post_exists( $post['post_title'], '', $post['post_date'], $post['post_type'] );
+                }
 
                 /**
                 * Filter ID of the existing post corresponding to post currently importing.
@@ -908,6 +910,10 @@ if ( class_exists( 'WP_Importer' ) ) {
                                 $value = $this->maybe_unserialize( $meta['value'] );
                             }
 
+                            if ( '_elementor_data' === $key && ! empty( $value ) ) {
+                                $this->elementor_posts[ $post_id ] = $value;
+                            }
+
                             add_post_meta( $post_id, wp_slash( $key ), wp_slash_strings_only( $value ) );
 
                             do_action( 'import_post_meta', $post_id, $key, $value );
@@ -919,9 +925,92 @@ if ( class_exists( 'WP_Importer' ) ) {
                         }
                     }
                 }
+
+                if ( 'nav_menu_item' == $post['post_type'] ) {
+                    $menu_items_to_process[] = array(
+                        'post_id' => $post_id,
+                        'post' => $post,
+                        'postmeta' => isset( $post['postmeta'] ) ? $post['postmeta'] : array()
+                    );
+                }
+            }
+
+            foreach ( $menu_items_to_process as $menu_item ) {
+                $this->processed_menu_items[ intval( $menu_item['post']['post_id'] ) ] = (int) $menu_item['post_id'];
+                $this->process_menu_item_meta( $menu_item['post_id'], $menu_item['post'], $menu_item['postmeta'] );
+            }
+
+            if ( class_exists( '\Elementor\Plugin' ) && ! empty( $this->elementor_posts ) ) {
+
+                require_once plugin_dir_path( __FILE__ ) . 'elementor.php';
+
+                $elementor_import = new \Elementor\TemplateLibrary\Ocean_Elementor_Import();
+                $elementor_import->set_term_mappings( $this->processed_terms );
+
+                foreach ( $this->elementor_posts as $post_id => $data ) {
+                    $elementor_import->import( $post_id, $data );
+                }
             }
 
             unset( $this->posts );
+        }
+
+        /**
+         * Process menu item meta to remap object IDs
+         *
+         * @param int   $post_id Menu item post ID.
+         * @param array $post    Menu item data.
+         * @param array $meta    Menu item meta data.
+         */
+        protected function process_menu_item_meta( $post_id, $post, $meta ) {
+            $item_type = get_post_meta( $post_id, '_menu_item_type', true );
+            $original_object_id = get_post_meta( $post_id, '_menu_item_object_id', true );
+
+            if ( empty( $item_type ) ) {
+                return;
+            }
+
+            $object_id = null;
+            $needs_remapping = false;
+
+            switch ( $item_type ) {
+                case 'taxonomy':
+                    if ( ! empty( $original_object_id ) && isset( $this->processed_terms[ intval( $original_object_id ) ] ) ) {
+                        $object_id = $this->processed_terms[ intval( $original_object_id ) ];
+                    } elseif ( ! empty( $original_object_id ) ) {
+                        $needs_remapping = true;
+                    }
+                    break;
+
+                case 'post_type':
+                    if ( ! empty( $original_object_id ) && isset( $this->processed_posts[ intval( $original_object_id ) ] ) ) {
+                        $object_id = $this->processed_posts[ intval( $original_object_id ) ];
+                    } elseif ( ! empty( $original_object_id ) ) {
+                        $needs_remapping = true;
+                    }
+                    break;
+
+                case 'custom':
+                    $object_id = $original_object_id;
+                    break;
+            }
+
+            if ( ! empty( $object_id ) && $object_id != $original_object_id ) {
+                update_post_meta( $post_id, '_menu_item_object_id', wp_slash( $object_id ) );
+            }
+
+            if ( $needs_remapping ) {
+                $this->missing_menu_items[] = array(
+                    'post_id' => $post_id,
+                    'data' => $post,
+                    'meta' => $meta
+                );
+            }
+
+            $original_parent = get_post_meta( $post_id, '_menu_item_menu_item_parent', true );
+            if ( ! empty( $original_parent ) && isset( $this->processed_menu_items[ intval( $original_parent ) ] ) ) {
+                update_post_meta( $post_id, '_menu_item_menu_item_parent', wp_slash( $this->processed_menu_items[ intval( $original_parent ) ] ) );
+            }
         }
 
         /**
@@ -975,7 +1064,7 @@ if ( class_exists( 'WP_Importer' ) ) {
                 $_menu_item_object_id = $this->processed_terms[ intval( $_menu_item_object_id ) ];
             } elseif ( 'post_type' == $_menu_item_type && isset( $this->processed_posts[ intval( $_menu_item_object_id ) ] ) ) {
                 $_menu_item_object_id = $this->processed_posts[ intval( $_menu_item_object_id ) ];
-            } elseif ( 'custom' != $_menu_item_type ) {
+            } elseif ( 'custom' !== $_menu_item_type ) {
                 // associated object is missing or not imported yet, we'll retry later
                 $this->missing_menu_items[] = $item;
                 return;

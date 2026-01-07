@@ -216,6 +216,8 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 $importer->import( $file_path );
                 ob_end_clean();
 
+                update_option( 'ocean_wp_importer_instance', $importer );
+
                 if ( file_exists( $file_path ) ) {
                     unlink( $file_path );
                 }
@@ -286,6 +288,12 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
             if ( file_exists( $file_path ) ) {
 
                 $importer = new Ocean_Widget_Importer();
+
+                $content_importer = get_option( 'ocean_wp_importer_instance' );
+                if ( $content_importer && isset( $content_importer->processed_terms ) ) {
+                    $importer->processed_terms = $content_importer->processed_terms;
+                }
+
                 $result = $importer->process_import_file( $file_path );
 
                 if ( is_wp_error( $result ) ) {
@@ -298,6 +306,7 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
                 unlink( $file_path );
                 delete_option( 'ocean_import_data_widgets_path' );
+                delete_option( 'ocean_wp_importer_instance' );
             }
 
             return true;
