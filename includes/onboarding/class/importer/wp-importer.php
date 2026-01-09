@@ -112,6 +112,9 @@ if ( class_exists( 'WP_Importer' ) ) {
             $this->backfill_attachment_urls();
             $this->remap_featured_images();
 
+            // Remap menu id
+            $this->store_menu_id_map();
+
             $this->import_end();
         }
 
@@ -1010,6 +1013,36 @@ if ( class_exists( 'WP_Importer' ) ) {
             $original_parent = get_post_meta( $post_id, '_menu_item_menu_item_parent', true );
             if ( ! empty( $original_parent ) && isset( $this->processed_menu_items[ intval( $original_parent ) ] ) ) {
                 update_post_meta( $post_id, '_menu_item_menu_item_parent', wp_slash( $this->processed_menu_items[ intval( $original_parent ) ] ) );
+            }
+        }
+
+        /**
+         * Store menu id for mapping
+         */
+        private function store_menu_id_map() {
+            $menu_map = [];
+
+            foreach ( $this->processed_terms as $old_term_id => $new_term_id ) {
+                $term = get_term( $new_term_id );
+
+                if ( ! $term || is_wp_error( $term ) ) {
+                    continue;
+                }
+
+                if ( 'nav_menu' !== $term->taxonomy ) {
+                    continue;
+                }
+
+                $menu_map[ $old_term_id ] = [
+                    'old_id' => (int) $old_term_id,
+                    'new_id' => (int) $new_term_id,
+                    'slug'   => $term->slug,
+                    'name'   => $term->name,
+                ];
+            }
+
+            if ( ! empty( $menu_map ) ) {
+                update_option( '_ocean_import_menu_map', $menu_map, false );
             }
         }
 

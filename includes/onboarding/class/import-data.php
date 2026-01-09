@@ -454,31 +454,8 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
 				}
 
-				// Set imported menus to registered theme locations.
-				$locations = get_theme_mod( 'nav_menu_locations' );
-                $locations = is_array( $locations ) ? $locations : [];
-				$menus     = wp_get_nav_menus();
-
-				if ( $menus ) {
-
-					foreach ( $menus as $menu ) {
-
-						if ( $menu->name == 'Main Menu' ) {
-							$locations['main_menu'] = $menu->term_id;
-						} else if ( $menu->name == 'Top Menu' ) {
-							$locations['topbar_menu'] = $menu->term_id;
-						} else if ( $menu->name == 'Footer Menu' ) {
-							$locations['footer_menu'] = $menu->term_id;
-						} else if ( $menu->name == 'Sticky Footer' ) {
-							$locations['sticky_footer_menu'] = $menu->term_id;
-						}
-
-					}
-
-				}
-
-				// Set menus to locations
-				set_theme_mod( 'nav_menu_locations', $locations );
+                // Assign menu locations.
+				$this->remap_menu_locations();
 
 				// Disable Elementor default settings
 				update_option( 'elementor_disable_color_schemes', 'yes' );
@@ -532,6 +509,35 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 ));
 			}
 		}
+
+        /**
+         * Remap imported menu locations using stored menu ID map.
+         */
+        public function remap_menu_locations() {
+
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations = is_array( $locations ) ? $locations : [];
+
+            if ( empty( $locations ) ) {
+                return;
+            }
+
+            $menu_map = get_option( '_ocean_import_menu_map', [] );
+
+            if ( empty( $menu_map ) ) {
+                return;
+            }
+
+            foreach ( $locations as $location => $menu_id ) {
+
+                if ( isset( $menu_map[ $menu_id ]['new_id'] ) ) {
+                    $locations[ $location ] = (int) $menu_map[ $menu_id ]['new_id'];
+                }
+            }
+
+            set_theme_mod( 'nav_menu_locations', $locations );
+            delete_option( '_ocean_import_menu_map' );
+        }
 
 
     }
