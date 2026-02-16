@@ -219,6 +219,10 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.5.3 - FEB 16 2026 =
+- Improved: Demo Import: Dynamic menu location assignment after import.
+- Improved: Demo Import: Conditional step validation of the import workflow.
+
 = 2.5.2 - NOV 24 2025 =
 - Added: Metabox Settings: Compatibility for the upcoming WordPress 6.9 version.
 - Updated: Compatibility: WordPress: Upcoming 6.9 version.
