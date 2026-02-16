@@ -15,6 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Ocean_Widget_Importer {
 
     /**
+     * Term ID mappings from import
+     * @var array
+     */
+    public $processed_terms = array();
+
+    /**
      * Process import file - this parses the widget data and returns it.
      *
      * @param string $file Path to the JSON file.
@@ -111,6 +117,8 @@ class Ocean_Widget_Importer {
 
         $widget = json_decode( json_encode( $widget ), true );
 
+        $widget = $this->fix_custom_menu_widget_ids( $widget );
+
         if ( isset( $widget_instances[ $id_base ] ) ) {
             $existing_instances = get_option( 'sidebars_widgets' )[ $sidebar_id ] ?? [];
 
@@ -164,5 +172,30 @@ class Ocean_Widget_Importer {
         }
 
         return $available_widgets;
+    }
+
+    /**
+     * Fix menu IDs in nav_menu and ocean_custom_menu widgets after import
+     *
+     * @param array $widget Widget instance data
+     * @return array Modified widget instance data
+     */
+    private function fix_custom_menu_widget_ids( $widget ) {
+
+        if ( ! isset( $widget['nav_menu'] ) || empty( $widget['nav_menu'] ) || ! is_int( $widget['nav_menu'] ) ) {
+            return $widget;
+        }
+
+        if ( ! isset( $this->processed_terms ) || empty( $this->processed_terms ) ) {
+            return $widget;
+        }
+
+        $old_menu_id = $widget['nav_menu'];
+
+        if ( isset( $this->processed_terms[ $old_menu_id ] ) ) {
+            $widget['nav_menu'] = $this->processed_terms[ $old_menu_id ];
+        }
+
+        return $widget;
     }
 }

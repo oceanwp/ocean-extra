@@ -365,11 +365,17 @@ class OE_Onboarding_Rest_Controller extends WP_REST_Controller {
      * Delete Menus
      */
     public function delete_menus() {
-        $menu_locations = get_nav_menu_locations();
+        $menus = wp_get_nav_menus();
 
-        foreach ($menu_locations as $location => $menu_id) {
-            wp_delete_nav_menu($menu_id);
+        if ( empty( $menus ) ) {
+            return;
         }
+
+        foreach ( $menus as $menu ) {
+            wp_delete_nav_menu( $menu->term_id );
+        }
+
+        set_theme_mod( 'nav_menu_locations', [] );
     }
 
     /**
