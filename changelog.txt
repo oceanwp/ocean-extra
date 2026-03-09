@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.5.4 - MAR 9 2026 =
+- Fixed: Potential vulnerability patched: Report by Patchstack from FEB 16th 2026 / patch verification from MAR 4th 2026. Shoutout and a thanks to the Patchstack team for patch test and confirmation.
+
 = 2.5.3 - FEB 16 2026 =
 - Improved: Demo Import: Dynamic menu location assignment after import.
 - Improved: Demo Import: Conditional step validation of the import workflow.

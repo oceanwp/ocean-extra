@@ -64,6 +64,15 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
 
             check_ajax_referer('owp-onboarding', 'security');
 
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_send_json_error(
+                    array(
+                        'message' => __( 'You do not have permission to perform this action.', 'ocean-extra' )
+                    ),
+                    403
+                );
+            }
+
             $template = get_option('ocean_installing_template_data');
 
             if (empty($template)) {
@@ -130,6 +139,15 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 wp_send_json_error(array(
                     'message' => __('Nonce verification failed.', 'ocean-extra')
                 ));
+            }
+
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_send_json_error(
+                    array(
+                        'message' => __( 'You do not have permission to perform this action.', 'ocean-extra' )
+                    ),
+                    403
+                );
             }
 
             $template = get_option('ocean_installing_template_data');
@@ -383,6 +401,15 @@ if (!class_exists('OE_Onboarding_Site_Templates_Import_Data')) {
                 wp_send_json_error(array(
                     'message' => __('Nonce verification failed.', 'ocean-extra')
                 ));
+            }
+
+            if ( ! current_user_can( 'manage_options' ) ) {
+                wp_send_json_error(
+                    array(
+                        'message' => __( 'You do not have permission to perform this action.', 'ocean-extra' )
+                    ),
+                    403
+                );
             }
 
             $template = get_option('ocean_installing_template_data');

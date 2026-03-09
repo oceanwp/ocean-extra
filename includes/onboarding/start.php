@@ -104,6 +104,10 @@ if ( ! class_exists( 'OE_Onboarding_Manager' ) ) {
 		 */
 		public function onboarding_scripts() {
 
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
 			$uri   = OE_URL . 'includes/onboarding/assets/dist/';
 			$asset = require OE_PATH . 'includes/onboarding/assets/dist/index.asset.php';
 			$deps  = $asset['dependencies'];

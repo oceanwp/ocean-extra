@@ -3,7 +3,7 @@ Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.6
 Tested up to: 6.9
-Stable tag: 2.5.3
+Stable tag: 2.5.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -218,6 +218,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.5.4 - MAR 9 2026 =
+- Fixed: Potential vulnerability patched: Report by Patchstack from FEB 16th 2026 / patch verification from MAR 4th 2026. Shoutout and a thanks to the Patchstack team for patch test and confirmation.
 
 = 2.5.3 - FEB 16 2026 =
 - Improved: Demo Import: Dynamic menu location assignment after import.
