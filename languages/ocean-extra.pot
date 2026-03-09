@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.5.3\n"
+"Project-Id-Version: Ocean Extra 2.5.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-16T05:19:00+00:00\n"
+"POT-Creation-Date: 2026-03-09T08:26:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-extra\n"
@@ -6779,82 +6779,88 @@ msgid "Child theme installed and activated successfully."
 msgstr ""
 
 #: includes/onboarding/class/import-data.php:70
-#: includes/onboarding/class/import-data.php:138
+#: includes/onboarding/class/import-data.php:147
+#: includes/onboarding/class/import-data.php:409
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/onboarding/class/import-data.php:79
+#: includes/onboarding/class/import-data.php:156
 msgid "No template selected."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:77
+#: includes/onboarding/class/import-data.php:86
 msgid "Failed to download the file."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:83
+#: includes/onboarding/class/import-data.php:92
 msgid "Template is downloading in the background."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:108
+#: includes/onboarding/class/import-data.php:117
 #, php-format
 msgid "Failed to download file: %s."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:117
+#: includes/onboarding/class/import-data.php:126
 msgid "All files downloaded successfully."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:131
-#: includes/onboarding/class/import-data.php:384
+#: includes/onboarding/class/import-data.php:140
+#: includes/onboarding/class/import-data.php:402
 msgid "Nonce verification failed."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:144
+#: includes/onboarding/class/import-data.php:162
 msgid "No import type specified."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:163
+#: includes/onboarding/class/import-data.php:181
 msgid "Invalid import type."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:173
+#: includes/onboarding/class/import-data.php:191
 #, php-format
 msgid "Successfully imported %s."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:187
+#: includes/onboarding/class/import-data.php:205
 msgid "Failed to download the XML file."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:235
+#: includes/onboarding/class/import-data.php:253
 #, php-format
 msgid "Import failed: %s"
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:250
+#: includes/onboarding/class/import-data.php:268
 msgid "Failed to download theme settings."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:263
+#: includes/onboarding/class/import-data.php:281
 #, php-format
 msgid "Failed to import theme settings: %s"
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:284
+#: includes/onboarding/class/import-data.php:302
 msgid "Failed to download widgets."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:303
+#: includes/onboarding/class/import-data.php:321
 #, php-format
 msgid "Failed to import widgets: %s"
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:325
+#: includes/onboarding/class/import-data.php:343
 msgid "Failed to download wpForms."
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:338
+#: includes/onboarding/class/import-data.php:356
 #, php-format
 msgid "Failed to import wpForms: %s"
 msgstr ""
 
-#: includes/onboarding/class/import-data.php:392
+#: includes/onboarding/class/import-data.php:419
 msgid "no template selected."
 msgstr ""
 

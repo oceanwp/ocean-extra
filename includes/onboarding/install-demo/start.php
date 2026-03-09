@@ -79,6 +79,10 @@ if ( ! class_exists( 'OE_Install_Demo' ) ) {
          */
         public function render_install_demo() {
 
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
             ?>
             <div id="oe-install-demo-app"></div>
             <?php
@@ -88,6 +92,10 @@ if ( ! class_exists( 'OE_Install_Demo' ) ) {
 		 * Enqueque Scripts
 		 */
 		public function onboarding_scripts() {
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
 			$uri   = OE_URL . 'includes/onboarding/assets/dist/';
 			$asset = require OE_PATH . 'includes/onboarding/assets/dist/install-demo.asset.php';

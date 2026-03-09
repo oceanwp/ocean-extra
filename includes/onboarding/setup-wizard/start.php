@@ -105,6 +105,10 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
          */
         public function onboarding_app() {
 
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
 			if ( get_option('owp_onboarding_completed') || get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
 				return;
 			}
@@ -119,6 +123,10 @@ if ( ! class_exists( 'OE_Onboarding_Wizard' ) ) {
 		 * Enqueque Scripts
 		 */
 		public function onboarding_scripts() {
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
 			if ( get_option('owp_onboarding_completed') || get_option('oceanwp_plugin_notice_permanently_dismissed') ) {
 				return;
