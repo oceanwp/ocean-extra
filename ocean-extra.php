@@ -501,6 +501,7 @@ final class Ocean_Extra {
 			require_once OE_PATH . '/includes/panel/notice.php';
 			require_once OE_PATH . '/includes/walker.php';
 			require_once OE_PATH . '/includes/ocean-extra-strings.php';
+			require_once OE_PATH . '/includes/mautic.php';
 			require_once OE_PATH . '/includes/dashboard.php';
 			// require_once OE_PATH . '/includes/panel/demos.php';
 			require_once OE_PATH . '/includes/plugins-tab.php';
