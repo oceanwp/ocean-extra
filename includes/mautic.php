@@ -26,11 +26,10 @@ class Ocean_Extra_Mautic {
     private static $_instance = null;
 
     /**
-     * Main OE_Onboarding_Wizard Instance
+     * Main Ocean_Extra_Mautic Instance
      *
      * @static
-     * @see OE_Onboarding_Wizard()
-     * @return Main OE_Onboarding_Wizard instance
+     * @return Main Ocean_Extra_Mautic instance
      */
     public static function instance() {
         if ( is_null( self::$_instance ) ) {
