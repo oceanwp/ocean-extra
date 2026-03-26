@@ -138,6 +138,20 @@ class Ocean_Widget_Importer {
         end( $widget_instances[ $id_base ] );
         $new_instance_id_number = key( $widget_instances[ $id_base ] );
 
+        // If key is 0, make it 1. (0 crashes WP Customizer)
+        if ( '0' === strval( $new_instance_id_number ) ) {
+            $new_instance_id_number = 1;
+            $widget_instances[ $id_base ][ $new_instance_id_number ] = $widget_instances[ $id_base ][0];
+            unset( $widget_instances[ $id_base ][0] );
+        }
+
+        // Move _multiwidget to end of array for uniformity.
+        if ( isset( $widget_instances[ $id_base ]['_multiwidget'] ) ) {
+            $multiwidget = $widget_instances[ $id_base ]['_multiwidget'];
+            unset( $widget_instances[ $id_base ]['_multiwidget'] );
+            $widget_instances[ $id_base ]['_multiwidget'] = $multiwidget;
+        }
+
         update_option( 'widget_' . $id_base, $widget_instances[ $id_base ] );
 
         $sidebars_widgets = get_option( 'sidebars_widgets', [] );
