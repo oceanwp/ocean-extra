@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.5.4
+ * Version:             2.5.5
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.6
@@ -13,7 +13,7 @@
  * Domain Path: /languages
  *
  * @package Ocean_Extra
- * @copyright Copyright (C) 2016-2025, Ocean Extra by OceanWP LLC - https://oceanwp.org
+ * @copyright Copyright (C) 2016-2026, Ocean Extra by OceanWP LLC - https://oceanwp.org
  * @category Core
  * @author OceanWP
  */

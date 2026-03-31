@@ -138,6 +138,18 @@ class Ocean_Widget_Importer {
         end( $widget_instances[ $id_base ] );
         $new_instance_id_number = key( $widget_instances[ $id_base ] );
 
+        if ( '0' === strval( $new_instance_id_number ) ) {
+            $new_instance_id_number = 1;
+            $widget_instances[ $id_base ][ $new_instance_id_number ] = $widget_instances[ $id_base ][0];
+            unset( $widget_instances[ $id_base ][0] );
+        }
+
+        if ( isset( $widget_instances[ $id_base ]['_multiwidget'] ) ) {
+            $multiwidget = $widget_instances[ $id_base ]['_multiwidget'];
+            unset( $widget_instances[ $id_base ]['_multiwidget'] );
+            $widget_instances[ $id_base ]['_multiwidget'] = $multiwidget;
+        }
+
         update_option( 'widget_' . $id_base, $widget_instances[ $id_base ] );
 
         $sidebars_widgets = get_option( 'sidebars_widgets', [] );

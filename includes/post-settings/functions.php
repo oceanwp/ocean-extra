@@ -686,7 +686,6 @@ if ( ! function_exists('oe_match_conditions') ) {
 						if ( function_exists( 'is_product_category' ) ) {
 
 							if ( $arg ) {
-								error_log('FINAL STRING: ' . $arg );
 								if ( is_product_category( sanitize_text_field( $arg ) ) ) {
 									return true;
 								}
