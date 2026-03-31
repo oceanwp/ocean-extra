@@ -682,11 +682,19 @@ if ( ! function_exists('oe_match_conditions') ) {
 						if ( function_exists( 'is_checkout' ) && is_checkout() ) return true;
 						break;
 
-					// Product category: is_product_category:slug
 					case 'is_product_category':
 						if ( function_exists( 'is_product_category' ) ) {
-							if ( $arg && is_product_category( sanitize_text_field( $arg ) ) ) return true;
-							if ( is_product_category() ) return true;
+
+							if ( $arg ) {
+								if ( is_product_category( sanitize_text_field( $arg ) ) ) {
+									return true;
+								}
+							} else {
+								if ( is_product_category() ) {
+									return true;
+								}
+							}
+
 						}
 						break;
 

@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.5.4\n"
+"Project-Id-Version: Ocean Extra 2.5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-09T08:26:08+00:00\n"
+"POT-Creation-Date: 2026-03-31T07:10:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-extra\n"
@@ -142,6 +142,14 @@ msgstr ""
 
 #: includes/dashboard.php:201
 msgid "This widget requires JavaScript."
+msgstr ""
+
+#: includes/mautic.php:111
+msgid "Connection to mailing server failed."
+msgstr ""
+
+#: includes/mautic.php:117
+msgid "Subscription failed. Please try again."
 msgstr ""
 
 #: includes/menu-icons/includes/library/form-fields.php:125
@@ -810,7 +818,8 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/dashicons.php:659
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:364
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:140
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:364
 msgid "Email"
 msgstr ""
 
@@ -6907,7 +6916,7 @@ msgid "This widget type is not supported on this site."
 msgstr ""
 
 #: includes/onboarding/class/importer/widgets.php:129
-#: includes/onboarding/class/importer/widgets.php:149
+#: includes/onboarding/class/importer/widgets.php:161
 msgid "No Title"
 msgstr ""
 
@@ -6915,7 +6924,7 @@ msgstr ""
 msgid "Widget already exists."
 msgstr ""
 
-#: includes/onboarding/class/importer/widgets.php:151
+#: includes/onboarding/class/importer/widgets.php:163
 msgid "Widget imported successfully."
 msgstr ""
 
@@ -9718,7 +9727,8 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:219
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:408
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:187
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:408
 #: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
 #: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:584
 msgid "Go back"
@@ -9875,10 +9885,10 @@ msgstr ""
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/index.js:367
-#: includes/onboarding/oe-sw-src/app/index copy.js:380
+#: includes/onboarding/oe-sw-src/app/index copy.js:176
 #: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:91
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:236
-#: includes/onboarding/oe-sw-src/install-demo/index.js:271
+#: includes/onboarding/oe-sw-src/install-demo/index.js:220
 #: includes/post-settings/assets/index.js:1
 #: includes/post-settings/oe-ps-src/sidebar/settings/reset-options/reset.js:141
 msgid "Cancel"
@@ -10290,37 +10300,85 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:339
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:115
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:339
 msgid "You're Almost There! One Last Step"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:344
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:120
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:344
 msgid "Subscribe for a chance to win"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:346
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:122
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:346
 msgid "Subscribe to unlock more rewards"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:353
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:129
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:353
 msgid "Subscribe to our newsletter for a chance to win a free product license, get exclusive discounts, exciting freebies, and stay in the loop with insightful content you don't want to miss. No spam, just the good stuff."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:355
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:131
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:355
 msgid "Subscribe to our newsletter and unlock even more perks - exclusive discounts, exciting freebies, insider updates on new products and product tips, plus insightful content. No spam, only the good stuff."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:402
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:148
+msgid "Add your email address here to subscribe"
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:71
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:97
+msgid "Subscribed successfully."
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:99
+msgid "Subscription failed."
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:104
+msgid "Connection failed. Please try again."
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:159
+msgid "Subscribing..."
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:159
+msgid "Subscribe Now"
+msgstr ""
+
+#: includes/onboarding/assets/dist/install-demo.js:1
+#: includes/onboarding/assets/dist/setup-wizard.js:1
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:181
+#: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:402
 msgid "Finish and Launch My Website"
 msgstr ""
 
@@ -10656,16 +10714,16 @@ msgstr ""
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/index.js:361
-#: includes/onboarding/oe-sw-src/app/index copy.js:374
-#: includes/onboarding/oe-sw-src/install-demo/index.js:265
+#: includes/onboarding/oe-sw-src/app/index copy.js:170
+#: includes/onboarding/oe-sw-src/install-demo/index.js:214
 msgid "Are you sure you want to exit the setup wizard?"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/index.js:364
-#: includes/onboarding/oe-sw-src/app/index copy.js:377
-#: includes/onboarding/oe-sw-src/install-demo/index.js:268
+#: includes/onboarding/oe-sw-src/app/index copy.js:173
+#: includes/onboarding/oe-sw-src/install-demo/index.js:217
 msgid "Yes, Exit"
 msgstr ""
 
