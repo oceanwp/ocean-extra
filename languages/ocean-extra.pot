@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Ocean Extra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ocean Extra 2.5.5\n"
+"Project-Id-Version: Ocean Extra 2.5.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ocean-extra\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-31T07:10:43+00:00\n"
+"POT-Creation-Date: 2026-05-19T08:52:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ocean-extra\n"
@@ -3704,7 +3704,7 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/fas.php:1699
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:229
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:17
 msgid "Ice Cream"
 msgstr ""
 
@@ -4717,10 +4717,10 @@ msgstr ""
 #: includes/menu-icons/includes/library/icon-selector/includes/types/genericon.php:166
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:471
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:259
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:119
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:110
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:606
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:382
 msgid "Next"
 msgstr ""
 
@@ -7349,7 +7349,7 @@ msgstr ""
 #: includes/panel/demos.php:1021
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:43
+#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:34
 msgid "Required Plugins"
 msgstr ""
 
@@ -7714,7 +7714,7 @@ msgstr ""
 #: includes/post-settings/functions.php:150
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:44
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:42
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:140
 msgid "Pages"
 msgstr ""
@@ -8131,7 +8131,7 @@ msgid "Delete your settings and reset all Customizer options to default theme va
 msgstr ""
 
 #: includes/themepanel/views/panes/customizer-reset.php:5
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:46
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:44
 msgid "Reset Customizer Settings"
 msgstr ""
 
@@ -8362,7 +8362,7 @@ msgstr ""
 #: includes/themepanel/views/panes/system-info-details.php:236
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:63
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:61
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:167
 msgid "Child Theme"
 msgstr ""
@@ -9723,31 +9723,31 @@ msgstr ""
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1161
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:187
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:448
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:236
 #: includes/onboarding/oe-sw-src/app/modal/modules/consent.jsx:104
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:219
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:96
 #: includes/onboarding/oe-sw-src/app/modal/modules/newsletter.jsx:187
 #: includes/onboarding/oe-sw-src/app/modal/modules/newsletter copy.jsx:408
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:241
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:584
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:173
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:360
 msgid "Go back"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1171
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:460
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:248
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:108
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:99
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:595
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:371
 msgid "Skip this Step"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/components/plugin-installer/index.js:1179
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:76
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:74
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:118
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:206
 #: includes/onboarding/oe-sw-src/app/modal/modules/data-import.jsx:229
@@ -9812,8 +9812,8 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:41
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:83
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:39
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:81
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:131
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:223
 msgid "Clean Install"
@@ -9827,7 +9827,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:45
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:43
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:141
 msgid "Menus"
 msgstr ""
@@ -9846,7 +9846,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:50
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:48
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:148
 msgid "Additional Cleanup"
 msgstr ""
@@ -9877,16 +9877,16 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:84
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:82
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:227
 msgid "Based on the default and selected options, this will clean your existing content to prepare your site for the website template import."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/index.js:367
+#: includes/onboarding/oe-sw-src/app/index.js:215
 #: includes/onboarding/oe-sw-src/app/index copy.js:176
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:91
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:89
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:236
 #: includes/onboarding/oe-sw-src/install-demo/index.js:220
 #: includes/post-settings/assets/index.js:1
@@ -9896,7 +9896,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:101
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:98
 #: includes/onboarding/oe-sw-src/app/modal/modules/cleanup.js:246
 msgid "Proceed with Clean Install"
 msgstr ""
@@ -9917,7 +9917,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:140
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:100
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:54
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:17
 msgid "Error parsing the JSON data"
 msgstr ""
 
@@ -9925,7 +9925,7 @@ msgstr ""
 #: includes/onboarding/assets/dist/setup-wizard.js:1
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:153
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:113
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:65
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:28
 msgid "No templates found"
 msgstr ""
 
@@ -9935,8 +9935,8 @@ msgstr ""
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:162
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:117
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:122
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:69
-#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:74
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:32
+#: includes/onboarding/oe-sw-src/app/modal/sync-templates.js:37
 msgid "Error fetching templates"
 msgstr ""
 
@@ -10040,8 +10040,8 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:188
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:228
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:120
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:160
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates.js:468
 #: includes/onboarding/oe-sw-src/app/modal/modules/view-templates copy.js:555
 msgid "Get OceanWP Pro Bundle"
@@ -10049,73 +10049,73 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:157
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:89
 msgid "That's an excellent choice"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:181
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:113
 msgid "Premium Template"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:184
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:116
 msgid "You've selected a premium website template — great choice! Unlock this design and gain access to all premium templates and features by upgrading to the OceanWP Pro Bundle."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:191
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:123
 msgid "Already purchased?"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:194
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:126
 msgid "Activate Premium Options"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:207
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:139
 msgid "Great choice! Just click the button below to instantly import this template and have your website up and running in minutes."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:220
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:152
 msgid "Import This Template"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:225
+#: includes/onboarding/oe-sw-src/app/modal/modules/selected-templates.jsx:157
 msgid "Get Pro Bundle?"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:201
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:16
 msgid "Error parsing plugin JSON data"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:213
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:28
 msgid "Invalid plugin list response format"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:216
+#: includes/onboarding/oe-sw-src/app/modal/get-plugins.js:31
 msgid "Error fetching plugins"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:47
+#: includes/onboarding/oe-sw-src/app/modal/modules/required-plugins.jsx:38
 msgid "Required plugins are plugins necessary for the website template to look exactly as is after the import."
 msgstr ""
 
@@ -10145,10 +10145,10 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:441
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:229
 #: includes/onboarding/oe-sw-src/app/modal/modules/logo.js:89
 #: includes/onboarding/oe-sw-src/app/modal/modules/site-title.js:87
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:577
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:353
 msgid "*You can always change this at any point, directly from the Customizer"
 msgstr ""
 
@@ -10184,117 +10184,117 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:224
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:12
 msgid "Garden Tulips"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:234
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:22
 msgid "Summer Beach"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:239
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:27
 msgid "Party Lights"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:244
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:32
 msgid "Autumn Feast"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:249
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:37
 msgid "Hello Winter"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:254
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:42
 msgid "Mountain Road"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:259
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:47
 msgid "Ocean Sunrise"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:264
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:52
 msgid "Wild Berries"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:269
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:57
 msgid "Fruit Slushy"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:274
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:62
 msgid "Cocktail Night"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:279
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:67
 msgid "Nebula Ultra"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:370
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:158
 msgid "Choose a palette and add color to your world*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:376
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:164
 msgid "Custom Presets"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:430
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:566
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:218
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:342
 #: includes/onboarding/oe-sw-src/app/modal/modules/upgrade-to-pro.jsx:47
 msgid "Or"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:436
+#: includes/onboarding/oe-sw-src/app/modal/modules/colors.js:224
 msgid "Use default website demo template colors"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:508
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:297
 msgid "Time to add the Typography ingredient*"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:514
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:303
 msgid "Custom Typography"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:517
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:306
 msgid "Select a Typography"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:572
+#: includes/onboarding/oe-sw-src/app/modal/modules/typography.jsx:348
 msgid "Use default website demo template typography"
 msgstr ""
 
@@ -10530,75 +10530,75 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:231
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:15
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:14
 msgid "Preparing your website for import"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:314
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:98
 #, js-format
 msgid "Import incomplete while processing %s. Please retry."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:410
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:182
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:239
 msgid "Importing content"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:282
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:66
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:110
 msgid "Finalization failed!"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:413
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:185
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:244
 msgid "Working the magic..."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:366
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:138
 msgid "Failed to save settings"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:371
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:143
 msgid "Saving settings timed out"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:416
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:188
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:247
 msgid "Demo imported successfully"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:424
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:196
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:252
 msgid "An error occurred during the import process."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:441
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:213
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:265
 msgid "Working the Magic"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:454
+#: includes/onboarding/oe-sw-src/app/modal/modules/importing-data.jsx:226
 #: includes/onboarding/oe-sw-src/app/modal/modules/importing-data copy.jsx:278
 msgid "Don't close or refresh this window. The process may take a while depending your server and website configuration."
 msgstr ""
@@ -10665,55 +10665,55 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:220
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:123
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:29
 msgid "Existing Website"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:221
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:124
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:30
 msgid "I have an established website with relevant content I may want to keep."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:222
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:125
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:31
 msgid "Go with Existing Site"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:228
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:131
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:37
 msgid "NEW Website"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:229
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:132
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:38
 msgid "I have a brand new WordPress installation and/or my website contains irrelevant or sample content only."
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/canvas.js:230
+#: includes/onboarding/oe-sw-src/app/modal/canvas.js:133
 #: includes/onboarding/oe-sw-src/app/modal/steps/regular-import.js:39
 msgid "Go with New Site"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/modal/header.jsx:160
+#: includes/onboarding/oe-sw-src/app/modal/header.jsx:119
 msgid "Select Builder"
 msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/index.js:361
+#: includes/onboarding/oe-sw-src/app/index.js:209
 #: includes/onboarding/oe-sw-src/app/index copy.js:170
 #: includes/onboarding/oe-sw-src/install-demo/index.js:214
 msgid "Are you sure you want to exit the setup wizard?"
@@ -10721,7 +10721,7 @@ msgstr ""
 
 #: includes/onboarding/assets/dist/install-demo.js:1
 #: includes/onboarding/assets/dist/setup-wizard.js:1
-#: includes/onboarding/oe-sw-src/app/index.js:364
+#: includes/onboarding/oe-sw-src/app/index.js:212
 #: includes/onboarding/oe-sw-src/app/index copy.js:173
 #: includes/onboarding/oe-sw-src/install-demo/index.js:217
 msgid "Yes, Exit"
@@ -10784,11 +10784,11 @@ msgstr ""
 msgid "Reset color"
 msgstr ""
 
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:42
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:40
 msgid "Website templates work best on clean installation. This is the previous content we're going to remove:"
 msgstr ""
 
-#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:47
+#: includes/onboarding/oe-sw-src/app/modal/existing/cleanup.js:45
 msgid "Disable All plugins except the necessary ones"
 msgstr ""
 
