@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.5.6 - MAY 20 2026 =
+- Updated: Compatibility: WordPress version number.
+
 = 2.5.5 - MAR 31 2026 =
 - Updated: Setup Wizard: Optional newsletter integration provider changed in favor of a self-hosted solution. Remains strictly opt-in.
 - Fixed: Hooks: Hook condition on product category pages. Also relates to the exact same problem in Ocean Hooks plugin.
