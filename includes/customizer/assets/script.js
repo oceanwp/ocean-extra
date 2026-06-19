@@ -119,6 +119,10 @@ document.addEventListener("DOMContentLoaded", function () {
           iconClass: _svg.seo,
           className: 'ocean-customizer-section section-perf-group'
         },
+        ocean_accessibility: {
+          iconClass: _svg.a11y,
+          className: 'ocean-customizer-section section-perf-group'
+        },
         ocean_site_performance: {
           iconClass: _svg.performance,
           className: 'ocean-customizer-section section-perf-group'

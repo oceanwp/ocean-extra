@@ -805,6 +805,13 @@ const wooPopup = `<svg id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 
             <circle class="cls-wpi-1" cx="16" cy="16" r="12.8024281519"/>
         </svg>`;
 
+const a11y = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#045e8b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing">
+			<circle cx="12" cy="5" r="1"/>
+			<path d="m9 20 3-6 3 6"/>
+			<path d="m6 8 6 2 6-2"/>
+			<path d="M12 10v4"/>
+		</svg>`;
+
 export {
     header,
     topbar,
@@ -841,5 +848,6 @@ export {
     sidePanel,
     stickyHeader,
     stickyFooter,
-    wooPopup
+    wooPopup,
+	a11y
 };
