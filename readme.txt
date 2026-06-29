@@ -221,6 +221,10 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
+= 2.5.7 - JUN 29 2026 =
+- Added: Customizer: Icon for the new OceanWP 'Accessibility - A11Y' panel. Requires latest OceanWP 4.2.0 version.
+- Improved: Widgets: Flickr: Script handling when widget not in use.
+
 = 2.5.6 - MAY 20 2026 =
 - Updated: Compatibility: WordPress version number.
 
