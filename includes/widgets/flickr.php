@@ -28,8 +28,6 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 					'customize_selective_refresh' => true,
 				)
 			);
-
-			// add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		/**
