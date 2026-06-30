@@ -28,8 +28,6 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 					'customize_selective_refresh' => true,
 				)
 			);
-
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		}
 
 		/**
@@ -41,6 +39,8 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget( $args, $instance ) {
+
+			$this->enqueue_scripts();
 
 			$title  = isset( $instance['title'] ) ? apply_filters( 'widget_title', $instance['title'] ) : '';
 			$number = isset( $instance['number'] ) ? intval( $instance['number'] ) : '';
@@ -135,6 +135,11 @@ if ( ! class_exists( 'Ocean_Extra_Flickr_Widget' ) ) {
 		 * Scripts
 		 */
 		public function enqueue_scripts() {
+
+			if ( wp_script_is( 'flickr-widget-script', 'enqueued' ) ) {
+				return;
+			}
+
 			wp_enqueue_script( 'flickr-widget-script', OE_URL . 'includes/widgets/js/flickr.min.js', array( 'jquery' ), false, true );
 
 			$widgets_settings = $this->get_settings();
