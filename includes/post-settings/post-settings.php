@@ -69,7 +69,7 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 			$capabilities = apply_filters('ocean_main_metaboxes_capabilities', 'manage_options');
 
 			add_action( 'init',  array( $this, 'register_meta_settings' ), 15 );
-			add_filter( 'option_oe_display_front_end_style_editor_active_status', array( $this, 'enable_front_end_style_editor_for_post' ) );
+			add_filter( 'oceanwp_enable_front_end_style_editor', array( $this, 'enable_front_end_style_editor_for_post' ) );
 
 			if ( current_user_can($capabilities) ) {
 
@@ -128,33 +128,37 @@ if ( ! class_exists( 'OceanWP_Post_Settings' ) ) {
 		 * @return string
 		 */
 		public function enable_front_end_style_editor_for_post( $status ) {
+
 			$post_id = 0;
 
 			if ( is_admin() ) {
-				// Retrieve post ID in block editor / admin context
+
 				if ( isset( $_GET['post'] ) ) {
 					$post_id = absint( $_GET['post'] );
 				} elseif ( isset( $_POST['post_ID'] ) ) {
 					$post_id = absint( $_POST['post_ID'] );
 				}
+
 			} elseif ( is_singular() ) {
-				// Front-end post/page context
+
 				$post_id = get_queried_object_id();
+
 			}
 
-			if ( $post_id ) {
-				$meta_value = get_post_meta( $post_id, 'ocean_front_end_style_editor', true );
-
-				if ( 'yes' === $meta_value ) {
-					return 'yes';
-				}
-
-				if ( 'no' === $meta_value ) {
-					return 'no';
-				}
+			if ( ! $post_id ) {
+				return $status;
 			}
 
-			// Fall back to the default site-wide option
+			$meta_value = get_post_meta(
+				$post_id,
+				'ocean_front_end_style_editor',
+				true
+			);
+
+			if ( in_array( $meta_value, array( 'yes', 'no' ), true ) ) {
+				return $meta_value;
+			}
+
 			return $status;
 		}
 
