@@ -1,9 +1,9 @@
 === Ocean Extra ===
 Contributors: oceanwp, apprimit, wpfleek
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
-Requires at least: 5.6
+Requires at least: 5.9
 Tested up to: 7.0
-Stable tag: 2.5.8.1
+Stable tag: 2.5.8
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -220,6 +220,9 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.5.8 - JUL 27 2026 =
+- Added: Gutenberg Block Editor: Posts & Pages: Editor Style: Front-End Style in Editor option: Display website's front-end style (typography, colors, etc.) inside the editor.
 
 = 2.5.7 - JUN 29 2026 =
 - Added: Customizer: Icon for the new OceanWP 'Accessibility - A11Y' panel. Requires latest OceanWP 4.2.0 version.
