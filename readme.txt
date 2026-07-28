@@ -221,7 +221,7 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 
 == Changelog ==
 
-= 2.5.8 - JUL 27 2026 =
+= 2.5.8 - JUL 28 2026 =
 - Added: Gutenberg Block Editor: Posts & Pages: Editor Style: Front-End Style in Editor option: Display website's front-end style (typography, colors, etc.) inside the editor.
 
 = 2.5.7 - JUN 29 2026 =
