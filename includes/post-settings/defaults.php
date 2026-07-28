@@ -17,6 +17,14 @@ function ocean_post_setting_data() {
 	$defaults = array(
 
 		// General.
+		'ocean_front_end_style_editor' => array(
+			'type'     => 'string',
+			'single'   => true,
+			'rest'     => true,
+			'subType'  => '',
+			'value'    => get_option( 'oe_display_front_end_style_editor_active_status', 'no' ),
+			'sanitize' => 'sanitize_key',
+		),
 		'ocean_post_layout' => array(
 			'type'   => 'string',
 			'single' => true,

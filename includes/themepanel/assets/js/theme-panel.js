@@ -108,6 +108,12 @@ jQuery(document).ready(function ($) {
         runSaveSingleOption('oe_disable_edit_post_active_status', optionVal);
     });
 
+    $(document.body).on('change', '#oceanwp-switch-display-front-end-style-editor', function (event) {
+        event.preventDefault();
+        var optionVal = $(this).prop('checked') ? 'yes' : 'no';
+        runSaveSingleOption('oe_display_front_end_style_editor_active_status', optionVal);
+    });
+
     $(document.body).on('change', '#oceanwp-switch-svg-support-disable', function (event) {
         event.preventDefault();
         var optionVal = $(this).prop('checked') ? 'yes' : 'no';
