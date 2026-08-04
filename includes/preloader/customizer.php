@@ -164,7 +164,7 @@ class Ocean_Preloader_Customizer {
 							'hideLabel' => false,
 							'multiple' => false,
 							'active_callback' => 'oe_cac_has_preloader_custom',
-							'choices' => oceanwp_library_template_choices(),
+							'choices_callback' => 'oceanwp_library_template_choices',
 							'sanitize_callback' => 'sanitize_key',
 						],
 
