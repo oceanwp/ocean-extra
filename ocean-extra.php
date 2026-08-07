@@ -3,7 +3,7 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.5.9.1
+ * Version:             2.5.9.2
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.9
@@ -665,7 +665,13 @@ final class Ocean_Extra {
 			$output .= self::opengraph_tag( 'property', 'og:image:height', absint( $get_image[2] ) );
 		}
 
-		$output .= self::opengraph_tag( 'property', 'og:url', trim( ocean_get_opengraph_url() ) );
+		$opengraph_url = ocean_get_opengraph_url();
+
+		// Avoid empty og:url tag generation.
+		if ( '' !== $opengraph_url ) {
+			$output .= self::opengraph_tag( 'property', 'og:url', $opengraph_url );
+		}
+
 		$output .= self::opengraph_tag( 'property', 'og:site_name', trim( get_bloginfo( 'name' ) ) );
 
 		if ( is_singular() && ! is_front_page() ) {
@@ -774,7 +780,14 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 				$url = get_author_posts_url( get_query_var( 'author' ), get_query_var( 'author_name' ) );
 			} else if ( is_tax() || is_tag() || is_category() ) {
 				$term = get_queried_object();
-				$url = get_term_link( $term, $term->taxonomy );
+
+				if ( $term instanceof WP_Term ) {
+					$term_link = get_term_link( $term );
+
+					if ( ! is_wp_error( $term_link ) ) {
+						$url = $term_link;
+					}
+				}
 			} else if ( is_search() ) {
 				$url = get_search_link();
 			} else if ( is_front_page() ) {
@@ -801,6 +814,10 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 		}
 
 		$url = apply_filters( 'ocean_seo_opengraph_tag_url', $url );
+
+		if ( is_wp_error( $url ) || ! is_string( $url ) ) {
+			return '';
+		}
 
 		return esc_url( $url );
 	}
