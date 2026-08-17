@@ -11,6 +11,8 @@
  * OceanWP requires at least: 4.2.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Ocean_Extra
  * @copyright Copyright (C) 2016-2026, Ocean Extra by OceanWP LLC - https://oceanwp.org
@@ -135,8 +137,6 @@ final class Ocean_Extra {
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-
 		// Setup all the things
 		add_action( 'init', array( $this, 'setup' ) );
 
@@ -226,16 +226,6 @@ final class Ocean_Extra {
 		return self::$_instance;
 	} // End instance()
 
-	/**
-	 * Load the localisation file.
-	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-	}
 
 	/**
 	 * Cloning is forbidden.
@@ -243,7 +233,7 @@ final class Ocean_Extra {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 	}
 
 	/**
@@ -252,7 +242,7 @@ final class Ocean_Extra {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 	}
 
 	/**
