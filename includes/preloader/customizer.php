@@ -164,7 +164,7 @@ class Ocean_Preloader_Customizer {
 							'hideLabel' => false,
 							'multiple' => false,
 							'active_callback' => 'oe_cac_has_preloader_custom',
-							'choices' => oceanwp_library_template_choices(),
+							'choices_callback' => 'oceanwp_library_template_choices',
 							'sanitize_callback' => 'sanitize_key',
 						],
 
@@ -799,6 +799,96 @@ class Ocean_Preloader_Customizer {
 }
 
 new Ocean_Preloader_Customizer();
+
+/**
+ * Build an active rule for a preloader icon type.
+ *
+ * @param string $value Icon type.
+ * @return array
+ */
+function oe_preloader_customize_icon_active_rule( $value ) {
+	return ocean_customize_active_rule_equals( 'ocean_preloader_icon_type', $value );
+}
+
+/**
+ * Register client-side equivalents of the preloader active callbacks.
+ *
+ * @param array $rules Registered active callback rules.
+ * @return array
+ */
+function oe_preloader_customize_active_callback_rules( $rules ) {
+	
+	if ( ! function_exists( 'ocean_customize_active_rule_equals' ) ) {
+		return $rules;
+	}
+
+	$enabled = ocean_customize_active_rule_equals(
+		'ocean_preloader_enable',
+		true
+	);
+	$default = ocean_customize_active_rule_equals(
+		'ocean_preloader_type',
+		'default'
+	);
+
+	$rules['oe_cac_has_preloader'] = $enabled;
+
+	$rules['oe_cac_has_preloader_default'] = array(
+		'all' => array(
+			$enabled,
+			$default,
+		),
+	);
+
+	$rules['oe_cac_has_preloader_custom'] = array(
+		'all' => array(
+			$enabled,
+			ocean_customize_active_rule_equals(
+				'ocean_preloader_type',
+				'custom'
+			),
+		),
+	);
+
+	$rules['oe_cac_has_preloader_icon_css'] = array(
+		'all' => array(
+			$enabled,
+			$default,
+			oe_preloader_customize_icon_active_rule( 'css' ),
+		),
+	);
+
+	$rules['oe_cac_has_preloader_icon_image'] = array(
+		'all' => array(
+			$enabled,
+			$default,
+			oe_preloader_customize_icon_active_rule( 'image' ),
+		),
+	);
+
+	$rules['oe_cac_has_not_preloader_icon_css'] = array(
+		'all' => array(
+			$enabled,
+			$default,
+			array(
+				'setting'  => 'ocean_preloader_icon_type',
+				'operator' => 'not-equals',
+				'value'    => 'css',
+			),
+		),
+	);
+
+	$rules['oe_cac_has_preloader_icon_svg'] = array(
+		'all' => array(
+			$enabled,
+			$default,
+			oe_preloader_customize_icon_active_rule( 'svg' ),
+		),
+	);
+
+	return $rules;
+}
+add_filter( 'ocean_customize_active_callback_rules', 'oe_preloader_customize_active_callback_rules' );
 
 /**
  * Callback function

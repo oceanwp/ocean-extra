@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 2.5.9 - AUG 18 2026 =
+- Added: Compatibility: WordPress 7.1.
+- Improved: Customizer: Panels and options rendering logic for improved Customizer speed.
+- Improved: Minified CSS files: Encoding changed from 'UTF-8 with BOM' to 'UTF-8' to avoid issues with CSS file combination features delivered by optimization plugins.
+- Improved: Opengraph: Logic to avoid empty 'og:url' tag generation.
+- Improved: Opengraph: Logic to avoid returning WP errors as 'og:url' tag.
+
 = 2.5.8 - JUL 28 2026 =
 - Added: Gutenberg Block Editor: Posts & Pages: Editor Style: Front-End Style in Editor option: Display website's front-end style (typography, colors, etc.) inside the editor.
 

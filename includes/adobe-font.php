@@ -84,14 +84,14 @@ if ( ! class_exists( 'OceanWP_Adobe_Font' ) ) {
 		 * Cloning is forbidden.
 		 */
 		public function __clone() {
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 		}
 
 		/**
 		 * Deserializing instances of this class is forbidden.
 		 */
 		public function __wakeup() {
-			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?' ), '1.0.0' );
+			_doing_it_wrong( __FUNCTION__, esc_html__( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 		}
 
 		/**

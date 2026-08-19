@@ -86,6 +86,7 @@ module.exports = function (grunt) {
                     implementation: sass,
                     outputStyle: "compressed",
                     sourceMap: false,
+                    charset: false,
                 },
                 files: {
                     "assets/css/widgets.css": "sass/widgets.scss",

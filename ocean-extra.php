@@ -3,14 +3,16 @@
  * Plugin Name:         Ocean Extra
  * Plugin URI:          https://oceanwp.org/extension/ocean-extra/
  * Description:         Add extra features and flexibility to your OceanWP theme for a turbocharged premium experience and full control over every aspect of your website.
- * Version:             2.5.8
+ * Version:             2.5.9
  * Author:              OceanWP
  * Author URI:          https://oceanwp.org/
  * Requires at least:   5.9
- * Tested up to:        7.0
+ * Tested up to:        7.1
  * OceanWP requires at least: 4.2.2
  * Text Domain: ocean-extra
  * Domain Path: /languages
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Ocean_Extra
  * @copyright Copyright (C) 2016-2026, Ocean Extra by OceanWP LLC - https://oceanwp.org
@@ -135,8 +137,6 @@ final class Ocean_Extra {
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
-
 		// Setup all the things
 		add_action( 'init', array( $this, 'setup' ) );
 
@@ -226,16 +226,6 @@ final class Ocean_Extra {
 		return self::$_instance;
 	} // End instance()
 
-	/**
-	 * Load the localisation file.
-	 *
-	 * @access  public
-	 * @since   1.0.0
-	 * @return  void
-	 */
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'ocean-extra', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-	}
 
 	/**
 	 * Cloning is forbidden.
@@ -243,7 +233,7 @@ final class Ocean_Extra {
 	 * @since 1.0.0
 	 */
 	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 	}
 
 	/**
@@ -252,7 +242,7 @@ final class Ocean_Extra {
 	 * @since 1.0.0
 	 */
 	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?' ), '1.0.0' );
+		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'ocean-extra' ), '1.0.0' );
 	}
 
 	/**
@@ -665,7 +655,13 @@ final class Ocean_Extra {
 			$output .= self::opengraph_tag( 'property', 'og:image:height', absint( $get_image[2] ) );
 		}
 
-		$output .= self::opengraph_tag( 'property', 'og:url', trim( ocean_get_opengraph_url() ) );
+		$opengraph_url = ocean_get_opengraph_url();
+
+		// Avoid empty og:url tag generation.
+		if ( '' !== $opengraph_url ) {
+			$output .= self::opengraph_tag( 'property', 'og:url', $opengraph_url );
+		}
+
 		$output .= self::opengraph_tag( 'property', 'og:site_name', trim( get_bloginfo( 'name' ) ) );
 
 		if ( is_singular() && ! is_front_page() ) {
@@ -774,7 +770,14 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 				$url = get_author_posts_url( get_query_var( 'author' ), get_query_var( 'author_name' ) );
 			} else if ( is_tax() || is_tag() || is_category() ) {
 				$term = get_queried_object();
-				$url = get_term_link( $term, $term->taxonomy );
+
+				if ( $term instanceof WP_Term ) {
+					$term_link = get_term_link( $term );
+
+					if ( ! is_wp_error( $term_link ) ) {
+						$url = $term_link;
+					}
+				}
 			} else if ( is_search() ) {
 				$url = get_search_link();
 			} else if ( is_front_page() ) {
@@ -801,6 +804,10 @@ if ( ! function_exists( 'ocean_get_opengraph_url' ) ) {
 		}
 
 		$url = apply_filters( 'ocean_seo_opengraph_tag_url', $url );
+
+		if ( is_wp_error( $url ) || ! is_string( $url ) ) {
+			return '';
+		}
 
 		return esc_url( $url );
 	}
