@@ -44,6 +44,7 @@ module.exports = function (grunt) {
                     "includes/widgets/js/flickr.min.js": "includes/widgets/js/flickr.js",
                     "includes/widgets/js/share.min.js": "includes/widgets/js/share.js",
                     "includes/shortcodes/js/shortcode.min.js": "includes/shortcodes/js/shortcode.js",
+                    "includes/shortcodes/js/current-user.min.js": "includes/shortcodes/js/current-user.js",
                     "includes/preloader/assets/js/preloader.min.js": "includes/preloader/assets/js/preloader.js",
                     "includes/customizer/assets/script.min.js": "includes/customizer/assets/script.min.js",
                     "includes/preloader/assets/js/customize-preview.min.js": "includes/preloader/assets/js/customize-preview.js",
