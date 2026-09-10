@@ -258,12 +258,25 @@ class Ocean_Preloader {
 			else {
 
 				// If Gutenberg.
-				if ( ocean_is_block_template( $this->template_id ) ) {
+				$is_block_template = (
+					function_exists( 'ocean_is_block_template' )
+					&& ocean_is_block_template( $this->template_id )
+				);
+
+				if ( $is_block_template ) {
+					/*
+					 * Process shortcodes from the stored Library template before
+					 * rendering dynamic blocks. This prevents shortcode syntax
+					 * introduced by dynamic block output (for example comments)
+					 * from being executed in a second pass.
+					 */
+					$get_content = do_shortcode( $get_content );
+
 					$get_content = apply_filters( 'ocean_preloader_template_content', do_blocks( $get_content ) );
 				}
 
 				// Display template content.
-				echo do_shortcode( $get_content );
+				echo $is_block_template ? $get_content : do_shortcode( $get_content );
 
 			}
 
