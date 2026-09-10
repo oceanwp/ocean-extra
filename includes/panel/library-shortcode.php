@@ -122,10 +122,20 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 					}
 
 					// If Gutenberg.
-					if (
+					$is_block_template = (
 						function_exists( 'ocean_is_block_template' )
 						&& ocean_is_block_template( $id )
-					) {
+					);
+
+					if ( $is_block_template ) {
+						/*
+						 * Process shortcodes from the stored Library template before
+						 * rendering dynamic blocks. This prevents shortcode syntax
+						 * introduced by dynamic block output (for example comments)
+						 * from being executed in a second pass.
+						 */
+						$content = do_shortcode( $content );
+
 						$content = apply_filters(
 							'oe_library_shortcode_template_content',
 							do_blocks( $content )
@@ -135,7 +145,7 @@ if ( ! class_exists( 'OceanWP_Library_Shortcode' ) ) {
 
 				// Display template content.
 				if ( ! empty( $content ) ) {
-					echo do_shortcode( $content );
+					echo $is_block_template ? $content : do_shortcode( $content );
 				}
 			}
 

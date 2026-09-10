@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.6.1 - SEP 10 2026 =
+- Fixed: Potential vulnerability patched. Report by Wordfence from September 8, 2026.
+
 = 2.6.0 - SEP 8 2026 =
 - Added: Shortcode: Current User: Support for 'first_name', 'last_name', and 'nickname' display options.
 - Improved: Shortcode: Current User: Data handling and output processing.
