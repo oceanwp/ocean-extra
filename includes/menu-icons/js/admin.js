@@ -653,8 +653,15 @@ var MenuIconsSidebar = wp.media.view.IconPickerSidebar.extend({
 	createSettings: function createSettings() {
 		var frame = this.controller,
 		    state = frame.state(),
-		    fieldIds = state.get('data').settingsFields,
+		    data = state ? state.get('data') : null,
+		    fieldIds = data && _.isArray(data.settingsFields) ? data.settingsFields : [],
 		    fields = [];
+
+		// A selection event can outlive its icon-type state while the media frame
+		// is switching tabs. In that case there are no settings to render.
+		if (!fieldIds.length) {
+			return;
+		}
 
 		_.each(fieldIds, function (fieldId) {
 			var field = window.menuIcons.settingsFields[fieldId],

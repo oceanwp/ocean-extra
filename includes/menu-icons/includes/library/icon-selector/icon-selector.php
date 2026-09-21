@@ -1,7 +1,13 @@
 <?php
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 final class OE_Icon_Selector {
 
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.4';
 
 	/**
 	 * OE_Icon_Selector singleton

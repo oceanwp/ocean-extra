@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $oe_library_active_status = get_option( 'oe_library_active_status', 'yes' );
 ?>
 

@@ -108,16 +108,37 @@ var IconPickerFont = wp.media.controller.State.extend(_.extend({}, wp.media.cont
 	},
 
 	initialize: function initialize() {
-		var data = this.get('data');
-
-		this.set('groups', new Backbone.Collection(data.groups));
-		this.set('library', new wp.media.model.IconPickerFonts(data.items));
+		// Keep icon data as plain objects until this icon type is actually opened.
 		this.set('selection', new wp.media.model.Selection(null, {
 			multiple: this.get('multiple')
 		}));
 	},
 
+	/**
+	 * Build this state's groups and icon collection on first use only.
+	 *
+	 * @returns {wp.media.model.IconPickerFonts} Icon library.
+	 */
+	ensureLibrary: function ensureLibrary() {
+		var data;
+
+		if (this.get('library')) {
+			return this.get('library');
+		}
+
+		data = this.get('data') || {};
+
+		this.set('groups', new Backbone.Collection(data.groups || []));
+		this.set('library', new wp.media.model.IconPickerFonts(data.items || []));
+
+		// Keep the type data available after lazy initialization. Menu Icons uses
+		// state.get('data').settingsFields when an icon is selected.
+
+		return this.get('library');
+	},
+
 	activate: function activate() {
+		this.ensureLibrary();
 		this.frame.on('open', this.updateSelection, this);
 		this.resetFilter();
 		this.updateSelection();
@@ -128,12 +149,12 @@ var IconPickerFont = wp.media.controller.State.extend(_.extend({}, wp.media.cont
 	},
 
 	resetFilter: function resetFilter() {
-		this.get('library').props.set('group', 'all');
+		this.ensureLibrary().props.set('group', 'all');
 	},
 
 	updateSelection: function updateSelection() {
 		var selection = this.get('selection'),
-		    library = this.get('library'),
+		    library = this.ensureLibrary(),
 		    target = this.frame.target,
 		    icon = target.get('icon'),
 		    type = target.get('type'),
@@ -147,6 +168,8 @@ var IconPickerFont = wp.media.controller.State.extend(_.extend({}, wp.media.cont
 	},
 
 	getContentView: function getContentView() {
+		this.ensureLibrary();
+
 		return new wp.media.view.IconPickerFontBrowser(_.extend({
 			controller: this.frame,
 			model: this,
@@ -519,9 +542,11 @@ var IconPickerFontBrowser = wp.media.View.extend(_.extend({
 			type: this.options.type
 		});
 
-		// Add keydown listener to the instance of the library view
-		this.items.listenTo(this.controller, 'attachment:keydown:arrow', this.items.arrowEvent);
-		this.items.listenTo(this.controller, 'attachment:details:shift-tab', this.items.restoreFocus);
+		// WordPress media disposes views by calling controller.off() directly.
+		// Register these with matching on/off handlers instead of listenTo() so
+		// Backbone 1.6 does not try to clean the same listener records twice.
+		this.controller.on('attachment:keydown:arrow', this.items.arrowEvent, this.items);
+		this.controller.on('attachment:details:shift-tab', this.items.restoreFocus, this.items);
 
 		this.views.add(this.items);
 	},
@@ -638,18 +663,33 @@ var $ = jQuery,
 IconPickerFontLibrary = Attachments.extend({
 	className: 'attachments iconpicker-items clearfix',
 
+	// Keep each synchronous render small enough for the media modal to remain
+	// responsive while large icon sets (notably Font Awesome Solid) are built.
+	renderBatchSize: 60,
+
 	initialize: function initialize() {
 		Attachments.prototype.initialize.apply(this, arguments);
 
-		_.bindAll(this, 'scrollToSelected');
+		_.bindAll(this, 'scrollToSelected', '_renderNextBatch');
+		this._renderGeneration = 0;
+		this._renderHandle = null;
+		this._renderHandleType = null;
+		this._renderModels = [];
+		this._renderIndex = 0;
+		this._scrollToSelectedPending = false;
+
 		_.defer(this.scrollToSelected, this);
 		this.controller.on('open', this.scrollToSelected, this);
 		$(this.options.scrollElement).off('scroll', this.scroll);
 	},
 
-	_addItem: function _addItem(model) {
+	_addItem: function _addItem(model, index) {
+		if (typeof index === 'undefined') {
+			index = this.collection.indexOf(model);
+		}
+
 		this.views.add(this.createAttachmentView(model), {
-			at: this.collection.indexOf(model)
+			at: index
 		});
 	},
 
@@ -658,15 +698,97 @@ IconPickerFontLibrary = Attachments.extend({
 		delete this._viewsByCid[model.cid];
 
 		if (view) {
-			view.remove();
+			// Remove the view through the subviews manager so it is not disposed
+			// for a second time when the parent icon library is removed.
+			this.views.unset(view);
 		}
 	},
 
+	/**
+	 * Render icons progressively instead of creating every attachment view in a
+	 * single blocking loop. Search and filtering still operate on the complete
+	 * collection; only DOM/view creation is batched.
+	 */
 	render: function render() {
+		this._cancelPendingRender();
 		_.each(this._viewsByCid, this._removeItem, this);
-		this.collection.each(this._addItem, this);
+
+		this._renderModels = this.collection.models.slice();
+		this._renderIndex = 0;
+		this._scrollToSelectedPending = false;
+
+		// Render the first batch synchronously so the picker has useful content
+		// as soon as it opens, then yield between subsequent batches.
+		this._renderNextBatch(this._renderGeneration);
 
 		return this;
+	},
+
+	_renderNextBatch: function _renderNextBatch(generation) {
+		var end, index;
+
+		if (generation !== this._renderGeneration) {
+			return;
+		}
+
+		end = Math.min(this._renderIndex + this.renderBatchSize, this._renderModels.length);
+
+		for (index = this._renderIndex; index < end; index++) {
+			this._addItem(this._renderModels[index], index);
+		}
+
+		this._renderIndex = end;
+
+		if (this._renderIndex < this._renderModels.length) {
+			this._scheduleNextBatch(generation);
+			return;
+		}
+
+		this._renderHandle = null;
+		this._renderHandleType = null;
+		this._renderModels = [];
+
+		if (this._scrollToSelectedPending) {
+			this._scrollToSelectedPending = false;
+			this.scrollToSelected();
+		}
+	},
+
+	_scheduleNextBatch: function _scheduleNextBatch(generation) {
+		var self = this;
+
+		if (window.requestIdleCallback) {
+			this._renderHandleType = 'idle';
+			this._renderHandle = window.requestIdleCallback(function () {
+				self._renderHandle = null;
+				self._renderHandleType = null;
+				self._renderNextBatch(generation);
+			}, { timeout: 80 });
+		} else {
+			this._renderHandleType = 'timeout';
+			this._renderHandle = window.setTimeout(function () {
+				self._renderHandle = null;
+				self._renderHandleType = null;
+				self._renderNextBatch(generation);
+			}, 0);
+		}
+	},
+
+	_cancelPendingRender: function _cancelPendingRender() {
+		this._renderGeneration++;
+
+		if (this._renderHandle !== null) {
+			if (this._renderHandleType === 'idle' && window.cancelIdleCallback) {
+				window.cancelIdleCallback(this._renderHandle);
+			} else {
+				window.clearTimeout(this._renderHandle);
+			}
+		}
+
+		this._renderHandle = null;
+		this._renderHandleType = null;
+		this._renderModels = [];
+		this._renderIndex = 0;
 	},
 
 	createAttachmentView: function createAttachmentView(model) {
@@ -696,6 +818,13 @@ IconPickerFontLibrary = Attachments.extend({
 
 		singleView = this.getView(selected);
 
+		// The selected icon may belong to a later render batch. Defer scrolling
+		// until that batch has been created rather than forcing a full render.
+		if (!singleView && this._renderIndex < this._renderModels.length) {
+			this._scrollToSelectedPending = true;
+			return;
+		}
+
 		if (singleView && !this.isInView(singleView.$el)) {
 			distance = singleView.$el.offset().top - parseInt(singleView.$el.css('paddingTop'), 10) - this.$el.offset().top + this.$el.scrollTop() - parseInt(this.$el.css('paddingTop'), 10);
 
@@ -714,6 +843,16 @@ IconPickerFontLibrary = Attachments.extend({
 		    elemBottom = elemTop + $elem.height();
 
 		return elemBottom <= docViewBottom && elemTop >= docViewTop;
+	},
+
+	remove: function remove() {
+		this._cancelPendingRender();
+
+		this.controller.off('attachment:keydown:arrow', this.arrowEvent, this);
+		this.controller.off('attachment:details:shift-tab', this.restoreFocus, this);
+		this.controller.off('open', this.scrollToSelected, this);
+
+		return Attachments.prototype.remove.apply(this, arguments);
 	},
 
 	prepare: function prepare() {},

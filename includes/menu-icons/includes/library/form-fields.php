@@ -3,6 +3,12 @@
 /**
  * Form Fields
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 abstract class OE_Form_Field {
 
 	/**

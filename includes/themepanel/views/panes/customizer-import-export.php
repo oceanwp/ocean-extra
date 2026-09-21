@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Export Customizer settings of the current theme and import on a Child Theme or use to create your own default styling for the next website.', 'ocean-extra' ); ?></h3>
 
 <div id="ocean-customizer-import-export" class="column-wrap clr">

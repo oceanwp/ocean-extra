@@ -3,6 +3,11 @@
  * All shortcodes
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Logo shortcode for the Custom Header style
  *

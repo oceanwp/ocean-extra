@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <h3 class="oceanwp-tp-block-description">
 	<?php esc_html_e( 'Access specific Customizer control settings quickly.', 'ocean-extra' ); ?>
 </h3>

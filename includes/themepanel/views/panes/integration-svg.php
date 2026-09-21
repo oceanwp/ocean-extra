@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $oe_svg_support_active_status = get_option( 'oe_svg_support_active_status', 'no' );
 ?>
 <h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Enable SVG files support for your WordPress Media Library.', 'ocean-extra' ); ?></h3>

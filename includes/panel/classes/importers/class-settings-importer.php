@@ -3,6 +3,11 @@
  * Class for the settings importer.
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class OWP_Settings_Importer {
 
 	/**

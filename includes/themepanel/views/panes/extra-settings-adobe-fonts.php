@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $ocean_adobe_fonts_settings = Ocean_Extra_New_Theme_Panel::get_adobe_fonts_settings();
 ?>
 

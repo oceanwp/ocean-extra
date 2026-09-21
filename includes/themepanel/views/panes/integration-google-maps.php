@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $google_maps_settings = Ocean_Extra_New_Theme_Panel::get_google_maps_settings();
 ?>
 

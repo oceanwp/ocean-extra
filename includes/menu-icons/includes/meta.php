@@ -4,6 +4,12 @@
  * Menu item metadata
  *
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 final class OE_Menu_Icons_Meta {
 
 	const KEY = 'oe-icons';

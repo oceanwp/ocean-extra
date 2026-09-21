@@ -6,6 +6,12 @@
  * @copyright Copyright (c) 2014, Dzikri Aziz, https://kucrut.org/
  * @license   GPLv2
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 final class OE_Menu_Icons {
 
 	const VERSION = '1.0.0';

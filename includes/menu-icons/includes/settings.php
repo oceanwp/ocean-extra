@@ -4,6 +4,11 @@
  *
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Menu Icons Settings module
  */
@@ -579,7 +584,7 @@ final class OE_Menu_Icons_Settings {
 			'oe-icons',
 			"{$url}js/admin{$suffix}.js",
 			self::$script_deps,
-			OE_Menu_Icons::VERSION,
+			defined( 'OE_VERSION' ) ? OE_VERSION : OE_Menu_Icons::VERSION,
 			true
 		);
 

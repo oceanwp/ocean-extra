@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 remove_filter( 'ocean_main_metaboxes_post_types', array( 'Ocean_Extra_New_Theme_Panel', 'control_metaboxes' ), 9999 );
 $metabox_posttypes          = apply_filters(
 	'ocean_main_metaboxes_post_types',

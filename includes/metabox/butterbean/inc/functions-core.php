@@ -10,6 +10,11 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Function for validating booleans before saving them as metadata. If the value is
  * `true`, we'll return a `1` to be stored as the meta value.  Else, we return `false`.

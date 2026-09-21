@@ -4,6 +4,11 @@
  *
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 final class OE_Icon_Picker_Fontpack {
 
 	/**

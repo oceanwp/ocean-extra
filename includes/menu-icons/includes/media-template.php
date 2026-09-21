@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <script type="text/html" id="tmpl-oe-icons-item-field-preview-font">
 	<i class="_icon {{data.type}} {{ data.icon }}"></i>
 </script>

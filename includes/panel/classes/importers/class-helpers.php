@@ -3,6 +3,11 @@
  * Helpers class
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class OWP_Demos_Helpers {
 
 	/**

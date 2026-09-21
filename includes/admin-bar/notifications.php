@@ -3,6 +3,12 @@
 /**
  * Ocean Notifications.
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class Ocean_Notifications {
 
 	protected static $instance = null;

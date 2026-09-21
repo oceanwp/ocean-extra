@@ -7,6 +7,11 @@
  * @see https://wordpress.org/plugins/widget-importer-exporter/
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class OWP_Widget_Importer {
 
 	/**

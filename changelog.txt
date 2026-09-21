@@ -1,5 +1,10 @@
 == Changelog ==
 
+= 2.6.2 - SEP 21 2026 =
+- Improved: Metabox Settings: Access control consistency for all Shortcode options.
+- Improved: Menu Icons: Icon selector loading and rendering performance.
+- Improved: Standardized file access checks across plugin files.
+
 = 2.6.1 - SEP 10 2026 =
 - Fixed: Potential vulnerability patched. Report by Wordfence from September 8, 2026.
 

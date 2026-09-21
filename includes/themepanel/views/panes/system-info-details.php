@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $sysinfo = OceanWP_Theme_Panel_System_Status::compile_system_status();
 // $sysinfo_warnings = OceanWP_Theme_Panel_System_Status::compile_system_status_warnings();
 ?>

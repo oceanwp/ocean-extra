@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <# if ( data.label ) { #>
 	<span class="butterbean-label">{{ data.label }}</span>
 <# } #>

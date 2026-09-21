@@ -1,4 +1,8 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 $oe_install_demos_active = get_option( 'oe_install_demos_active', 'yes' );
 

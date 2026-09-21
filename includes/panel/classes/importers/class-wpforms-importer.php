@@ -5,6 +5,11 @@
  * Thank you very much to SiteGround for the code.
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'WPForms' ) ) {
 	return;
 }
