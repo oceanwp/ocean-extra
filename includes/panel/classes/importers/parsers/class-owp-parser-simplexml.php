@@ -6,6 +6,11 @@
  * @subpackage Importer
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * OWP Parser that makes use of the SimpleXML PHP extension.
  */

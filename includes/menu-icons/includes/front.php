@@ -4,6 +4,12 @@
  * Front end functionalities
  *
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 final class OE_Menu_Icons_Front_End {
 
 	/**

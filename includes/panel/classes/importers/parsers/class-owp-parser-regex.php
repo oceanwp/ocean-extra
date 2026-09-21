@@ -6,6 +6,11 @@
  * @subpackage Importer
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * WXR Parser that uses regular expressions. Fallback for installs without an XML parser.
  */

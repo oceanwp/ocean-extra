@@ -14,6 +14,11 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 // For each version release, the priority needs to decrement by 1. This is so that
 // we can load newer versions earlier than older versions when there's a conflict.
 // add_action( 'init', 'butterbean_loader_100', 9999 );

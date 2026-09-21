@@ -8,6 +8,11 @@
  * @license     http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Editor control class.
  *

@@ -21,6 +21,11 @@
  * @return str|array
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'Ocean_Extra_Resize' ) ) {
 	class Ocean_Extra_Exception extends Exception {}
 

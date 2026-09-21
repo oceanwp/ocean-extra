@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $theme_panels = Ocean_Extra_New_Theme_Panel::get_panels();
 ?>
 <h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Disable Customizer OceanWP Control panels for faster Customizer load or faster management by displaying fewer options.', 'ocean-extra' ); ?></h3>

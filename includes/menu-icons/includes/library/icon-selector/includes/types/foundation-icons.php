@@ -3,6 +3,12 @@
  * Foundation Icons
  *
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class OE_Icon_Picker_Type_Foundation extends OE_Icon_Picker_Type_Font {
 
 	/**

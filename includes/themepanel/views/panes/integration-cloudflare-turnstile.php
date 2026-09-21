@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $cloudflare_turnstile_settings = Ocean_Extra_New_Theme_Panel::get_cloudlfare_turnstile_settings();
 ?>
 

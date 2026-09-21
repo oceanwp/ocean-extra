@@ -4,6 +4,11 @@
  *
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Base icon type class
  */

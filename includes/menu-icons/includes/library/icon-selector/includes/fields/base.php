@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'wp_get_attachment_image_url' ) ) {
 	/**
 	 * Get the URL of an image attachment.

@@ -4,6 +4,11 @@
  *
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 require_once dirname( __FILE__ ) . '/font.php';
 
 /**

@@ -7,6 +7,11 @@
  * @author OceanWP
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! class_exists( 'Ocean_Extra_Nav_Walker' ) ) {
 
 	class Ocean_Extra_Nav_Walker extends Walker_Nav_Menu {

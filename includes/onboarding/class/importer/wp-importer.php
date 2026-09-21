@@ -6,6 +6,11 @@
  * @subpackage Importer
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 /** Display verbose errors */
 if (! defined('IMPORT_DEBUG')) {
 	define('IMPORT_DEBUG', false);

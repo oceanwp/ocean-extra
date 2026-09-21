@@ -1,5 +1,8 @@
 <?php
-
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class OceanWP_Freemius_Custom_Section extends WP_Customize_Section
 {

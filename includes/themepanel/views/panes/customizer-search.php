@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <h3 class="oceanwp-tp-block-description"><?php esc_html_e( 'Find all Customizer settings with ease.', 'ocean-extra' ); ?></h3>
 <div id="ocean-customizer-search" class="column-wrap clr">
 	<label for="oceanwp-switch-customizer-search" class="oceanwp-tp-switcher column-name clr">

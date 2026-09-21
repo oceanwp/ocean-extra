@@ -1,4 +1,9 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 $mailchimp_settings = Ocean_Extra_New_Theme_Panel::get_mailchimp_settings();
 ?>
 

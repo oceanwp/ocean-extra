@@ -1,4 +1,8 @@
 <?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 remove_filter( 'ocean_custom_widgets', array( 'Ocean_Extra_New_Theme_Panel', 'control_widgets' ), 9999 );
 $widgets = apply_filters(

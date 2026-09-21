@@ -4,6 +4,11 @@
  *
  */
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! function_exists( 'oe_get_array_value_deep' ) ) {
 	/**
 	 * Get value of a multidimensional array

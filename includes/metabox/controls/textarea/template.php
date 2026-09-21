@@ -1,3 +1,9 @@
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
 <label>
 	<div class="oceanwp-mb-desc">
 		<# if ( data.label ) { #>
