@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.6.3 - OCT 13 2026 =
+- Updated: Freemius SDK to its latest version.
+
 = 2.6.2 - SEP 21 2026 =
 - Improved: Metabox Settings: Access control consistency for all Shortcode options.
 - Improved: Menu Icons: Icon selector loading and rendering performance.
