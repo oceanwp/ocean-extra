@@ -56,7 +56,7 @@ The OceanWP Panel page (`toplevel_page_oceanwp`) belongs to the theme (`themes/o
 
 ## Where settings live
 
-- `oe_panels_settings`: customizer panel on/off array (read with `Ocean_Extra_Theme_Panel::get_setting()`, missing keys default to on).
+- `oe_panels_settings`: customizer panel on/off array (read with `Ocean_Extra_Theme_Panel::get_setting()` or `Ocean_Extra_New_Theme_Panel::get_setting()`). Missing keys that are in `get_panels()` default to on. Any other key, such as `customizer-search`, defaults to off.
 - `oe_widgets_settings`, `oe_metabox_posttypes_settings`: which widgets load and which post types get the metabox.
 - Single-value toggles: `oe_library_active_status`, `oe_svg_support_active_status`, `oe_install_demos_active`, `oe_notification_active_status`.
 - Integrations: `owp_mailchimp_api_key`, `owp_mailchimp_list_id`, `owp_adobe_fonts_integration*`, `oe-adobe-fonts`.
