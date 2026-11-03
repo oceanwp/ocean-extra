@@ -957,7 +957,7 @@ if ( ! function_exists( 'oceanwp_breadcrumb_shortcode' ) ) {
 		$color       = sanitize_hex_color( $settings['color'] );
 		$hover_color = sanitize_hex_color( $settings['hover_color'] );
 
-		$args = '';
+		$args = array();
 
 		// Add a space for the beginning of the class attr.
 		if ( ! empty( $class ) ) {
