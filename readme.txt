@@ -1,9 +1,9 @@
 === Ocean Extra ===
-Contributors: oceanwp, apprimit, wpfleek
+Contributors: oceanwp, apprimit, wpfleek, benjaminprojas, cristianrossi
 Tags: widgets, meta box, metaboxes, metabox, oceanwp
 Requires at least: 5.9
 Tested up to: 7.1
-Stable tag: 2.6.3
+Stable tag: 2.6.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -220,6 +220,12 @@ You can report problems on [this support forum](https://wordpress.org/support/pl
 11. WordPress Menu icons support feature, various icon libraries support.
 
 == Changelog ==
+
+= 2.6.4 - NOV 20 2026 =
+- Improved: Setup Wizard: Layout, style, and descriptions for a smoother UX.
+- Fixed: Setup Wizard: Using 'Exit to WP dashboard' option on first screen displays a blank screen in the Wizard and doesn't redirect to the WordPress dashboard.
+- Fixed: Setup Wizard: The modal window on the templates selection screen reappears during the same session even after being dismissed.
+- Fixed: Security: Potential vulnerability patched. Wordfence report from November 14, 2026.
 
 = 2.6.3 - OCT 13 2026 =
 - Updated: Freemius SDK to its latest version.

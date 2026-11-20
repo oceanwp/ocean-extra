@@ -32,6 +32,22 @@ function ops_sanitize_decimal( $value ) {
 }
 
 /**
+ * Sanitize a hexadecimal color for post meta.
+ *
+ * @param mixed $value Raw meta value.
+ * @return string
+ */
+function ops_sanitize_hex_color( $value ) {
+	if ( ! is_string( $value ) ) {
+		return '';
+	}
+
+	$color = sanitize_hex_color( $value );
+
+	return is_string( $color ) ? $color : '';
+}
+
+/**
 * Sanitize function for array
 */
 function ops_sanitize_array($meta_value) {

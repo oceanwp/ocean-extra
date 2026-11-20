@@ -123,7 +123,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 							<li class="clr">
 
 								<?php if ( has_post_thumbnail() ) { ?>
-									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="recent-posts-thumbnail">
+									<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" class="recent-posts-thumbnail">
 										<?php
 										// Display post thumbnail
 										the_post_thumbnail(
@@ -143,7 +143,7 @@ if ( ! class_exists( 'Ocean_Extra_Recent_Posts_Thumbnails_Widget' ) ) {
 
 									<div class="recent-posts-details-inner clr">
 
-										<a href="<?php the_permalink(); ?>" class="recent-posts-title"><?php the_title(); ?></a>
+										<a href="<?php the_permalink(); ?>" class="recent-posts-title"><?php echo esc_html( get_the_title() ); ?></a>
 
 										<div class="recent-posts-info clr">
 											<div class="recent-posts-date"><?php echo get_the_date(); ?><span class="sep">/</span></div>
